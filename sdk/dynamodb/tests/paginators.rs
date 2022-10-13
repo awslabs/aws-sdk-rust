@@ -171,7 +171,7 @@ async fn paginators_handle_errors() {
 }
 
 #[tokio::test]
-async fn paginators_error_on_repeated_token() {
+async fn paginators_stop_on_duplicate_token_by_default() {
     let response = r#"{
         "Count": 1,
         "Items": [{
@@ -212,11 +212,80 @@ async fn paginators_error_on_repeated_token() {
             .get("PostedBy"),
         Some(&AttributeValue::S("joe@example.com".to_string()))
     );
-    let err = rows.try_next().await.expect_err("failure");
-    assert!(
-        format!("{}", err).contains("next token did not change"),
-        "{}",
-        err
+    assert_eq!(
+        rows.try_next()
+            .await
+            .expect("no error")
+            .expect("not EOS")
+            .get("PostedBy"),
+        Some(&AttributeValue::S("joe@example.com".to_string()))
     );
-    assert_eq!(rows.try_next().await.expect("ok"), None);
+    assert_eq!(None, rows.try_next().await.expect("success"));
+}
+
+#[tokio::test]
+async fn paginators_can_continue_on_duplicate_token() {
+    let response = r#"{
+        "Count": 1,
+        "Items": [{
+            "PostedBy": {
+                "S": "joe@example.com"
+            }
+        }],
+        "LastEvaluatedKey": {
+            "PostedBy": { "S": "joe@example.com" }
+        }
+    }"#;
+    // send the same response twice with the same pagination token
+    let conn = TestConnection::new(vec![
+        (
+            mk_request(r#"{"TableName":"test-table","Limit":32}"#),
+            mk_response(response),
+        ),
+        (
+            mk_request(
+                r#"{"TableName":"test-table","Limit":32,"ExclusiveStartKey":{"PostedBy":{"S":"joe@example.com"}}}"#,
+            ),
+            mk_response(response),
+        ),
+        (
+            mk_request(
+                r#"{"TableName":"test-table","Limit":32,"ExclusiveStartKey":{"PostedBy":{"S":"joe@example.com"}}}"#,
+            ),
+            mk_response(response),
+        ),
+    ]);
+    let client = Client::from_conf_conn(stub_config(), conn.clone());
+    let mut rows = client
+        .scan()
+        .table_name("test-table")
+        .into_paginator()
+        .stop_on_duplicate_token(false)
+        .page_size(32)
+        .items()
+        .send();
+    assert_eq!(
+        rows.try_next()
+            .await
+            .expect("no error")
+            .expect("not EOS")
+            .get("PostedBy"),
+        Some(&AttributeValue::S("joe@example.com".to_string()))
+    );
+    assert_eq!(
+        rows.try_next()
+            .await
+            .expect("no error")
+            .expect("not EOS")
+            .get("PostedBy"),
+        Some(&AttributeValue::S("joe@example.com".to_string()))
+    );
+    assert_eq!(
+        rows.try_next()
+            .await
+            .expect("no error")
+            .expect("not EOS")
+            .get("PostedBy"),
+        Some(&AttributeValue::S("joe@example.com".to_string()))
+    );
 }

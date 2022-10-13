@@ -3,6 +3,7 @@
 pub struct DescribeAddressesAttributePaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_addresses_attribute_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeAddressesAttributePaginator {
@@ -11,7 +12,11 @@ impl DescribeAddressesAttributePaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_addresses_attribute_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -28,6 +33,18 @@ impl DescribeAddressesAttributePaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeAddressesAttributePaginatorItems {
         crate::paginator::DescribeAddressesAttributePaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -72,12 +89,15 @@ impl DescribeAddressesAttributePaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_addresses_attribute_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -98,6 +118,7 @@ impl DescribeAddressesAttributePaginator {
 pub struct DescribeByoipCidrsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_byoip_cidrs_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeByoipCidrsPaginator {
@@ -106,7 +127,11 @@ impl DescribeByoipCidrsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_byoip_cidrs_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -123,6 +148,18 @@ impl DescribeByoipCidrsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeByoipCidrsPaginatorItems {
         crate::paginator::DescribeByoipCidrsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -167,12 +204,15 @@ impl DescribeByoipCidrsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_byoip_cidrs_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -193,6 +233,7 @@ impl DescribeByoipCidrsPaginator {
 pub struct DescribeCapacityReservationFleetsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_capacity_reservation_fleets_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeCapacityReservationFleetsPaginator {
@@ -201,7 +242,11 @@ impl DescribeCapacityReservationFleetsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_capacity_reservation_fleets_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -218,6 +263,18 @@ impl DescribeCapacityReservationFleetsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeCapacityReservationFleetsPaginatorItems {
         crate::paginator::DescribeCapacityReservationFleetsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -262,12 +319,15 @@ impl DescribeCapacityReservationFleetsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_capacity_reservation_fleets_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -288,6 +348,7 @@ impl DescribeCapacityReservationFleetsPaginator {
 pub struct DescribeCapacityReservationsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_capacity_reservations_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeCapacityReservationsPaginator {
@@ -296,7 +357,11 @@ impl DescribeCapacityReservationsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_capacity_reservations_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -313,6 +378,18 @@ impl DescribeCapacityReservationsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeCapacityReservationsPaginatorItems {
         crate::paginator::DescribeCapacityReservationsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -357,12 +434,15 @@ impl DescribeCapacityReservationsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_capacity_reservations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -383,6 +463,7 @@ impl DescribeCapacityReservationsPaginator {
 pub struct DescribeCarrierGatewaysPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_carrier_gateways_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeCarrierGatewaysPaginator {
@@ -391,7 +472,11 @@ impl DescribeCarrierGatewaysPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_carrier_gateways_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -408,6 +493,18 @@ impl DescribeCarrierGatewaysPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeCarrierGatewaysPaginatorItems {
         crate::paginator::DescribeCarrierGatewaysPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -452,12 +549,15 @@ impl DescribeCarrierGatewaysPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_carrier_gateways_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -478,6 +578,7 @@ impl DescribeCarrierGatewaysPaginator {
 pub struct DescribeClassicLinkInstancesPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_classic_link_instances_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeClassicLinkInstancesPaginator {
@@ -486,7 +587,11 @@ impl DescribeClassicLinkInstancesPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_classic_link_instances_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -503,6 +608,18 @@ impl DescribeClassicLinkInstancesPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeClassicLinkInstancesPaginatorItems {
         crate::paginator::DescribeClassicLinkInstancesPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -547,12 +664,15 @@ impl DescribeClassicLinkInstancesPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_classic_link_instances_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -573,6 +693,7 @@ impl DescribeClassicLinkInstancesPaginator {
 pub struct DescribeClientVpnAuthorizationRulesPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_client_vpn_authorization_rules_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeClientVpnAuthorizationRulesPaginator {
@@ -581,7 +702,11 @@ impl DescribeClientVpnAuthorizationRulesPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_client_vpn_authorization_rules_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -598,6 +723,18 @@ impl DescribeClientVpnAuthorizationRulesPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeClientVpnAuthorizationRulesPaginatorItems {
         crate::paginator::DescribeClientVpnAuthorizationRulesPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -644,12 +781,15 @@ impl DescribeClientVpnAuthorizationRulesPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_client_vpn_authorization_rules_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -670,6 +810,7 @@ impl DescribeClientVpnAuthorizationRulesPaginator {
 pub struct DescribeClientVpnConnectionsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_client_vpn_connections_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeClientVpnConnectionsPaginator {
@@ -678,7 +819,11 @@ impl DescribeClientVpnConnectionsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_client_vpn_connections_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -695,6 +840,18 @@ impl DescribeClientVpnConnectionsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeClientVpnConnectionsPaginatorItems {
         crate::paginator::DescribeClientVpnConnectionsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -739,12 +896,15 @@ impl DescribeClientVpnConnectionsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_client_vpn_connections_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -765,6 +925,7 @@ impl DescribeClientVpnConnectionsPaginator {
 pub struct DescribeClientVpnEndpointsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_client_vpn_endpoints_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeClientVpnEndpointsPaginator {
@@ -773,7 +934,11 @@ impl DescribeClientVpnEndpointsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_client_vpn_endpoints_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -790,6 +955,18 @@ impl DescribeClientVpnEndpointsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeClientVpnEndpointsPaginatorItems {
         crate::paginator::DescribeClientVpnEndpointsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -834,12 +1011,15 @@ impl DescribeClientVpnEndpointsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_client_vpn_endpoints_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -860,6 +1040,7 @@ impl DescribeClientVpnEndpointsPaginator {
 pub struct DescribeClientVpnRoutesPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_client_vpn_routes_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeClientVpnRoutesPaginator {
@@ -868,7 +1049,11 @@ impl DescribeClientVpnRoutesPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_client_vpn_routes_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -885,6 +1070,18 @@ impl DescribeClientVpnRoutesPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeClientVpnRoutesPaginatorItems {
         crate::paginator::DescribeClientVpnRoutesPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -929,12 +1126,15 @@ impl DescribeClientVpnRoutesPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_client_vpn_routes_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -955,6 +1155,7 @@ impl DescribeClientVpnRoutesPaginator {
 pub struct DescribeClientVpnTargetNetworksPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_client_vpn_target_networks_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeClientVpnTargetNetworksPaginator {
@@ -963,7 +1164,11 @@ impl DescribeClientVpnTargetNetworksPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_client_vpn_target_networks_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -980,6 +1185,18 @@ impl DescribeClientVpnTargetNetworksPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeClientVpnTargetNetworksPaginatorItems {
         crate::paginator::DescribeClientVpnTargetNetworksPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -1024,12 +1241,15 @@ impl DescribeClientVpnTargetNetworksPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_client_vpn_target_networks_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -1050,6 +1270,7 @@ impl DescribeClientVpnTargetNetworksPaginator {
 pub struct DescribeCoipPoolsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_coip_pools_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeCoipPoolsPaginator {
@@ -1058,7 +1279,11 @@ impl DescribeCoipPoolsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_coip_pools_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -1075,6 +1300,18 @@ impl DescribeCoipPoolsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeCoipPoolsPaginatorItems {
         crate::paginator::DescribeCoipPoolsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -1119,12 +1356,15 @@ impl DescribeCoipPoolsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_coip_pools_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -1145,6 +1385,7 @@ impl DescribeCoipPoolsPaginator {
 pub struct DescribeDhcpOptionsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_dhcp_options_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeDhcpOptionsPaginator {
@@ -1153,7 +1394,11 @@ impl DescribeDhcpOptionsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_dhcp_options_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -1170,6 +1415,18 @@ impl DescribeDhcpOptionsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeDhcpOptionsPaginatorItems {
         crate::paginator::DescribeDhcpOptionsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -1214,12 +1471,15 @@ impl DescribeDhcpOptionsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_dhcp_options_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -1240,6 +1500,7 @@ impl DescribeDhcpOptionsPaginator {
 pub struct DescribeEgressOnlyInternetGatewaysPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_egress_only_internet_gateways_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeEgressOnlyInternetGatewaysPaginator {
@@ -1248,7 +1509,11 @@ impl DescribeEgressOnlyInternetGatewaysPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_egress_only_internet_gateways_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -1265,6 +1530,18 @@ impl DescribeEgressOnlyInternetGatewaysPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeEgressOnlyInternetGatewaysPaginatorItems {
         crate::paginator::DescribeEgressOnlyInternetGatewaysPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -1311,12 +1588,15 @@ impl DescribeEgressOnlyInternetGatewaysPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_egress_only_internet_gateways_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -1337,6 +1617,7 @@ impl DescribeEgressOnlyInternetGatewaysPaginator {
 pub struct DescribeExportImageTasksPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_export_image_tasks_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeExportImageTasksPaginator {
@@ -1345,7 +1626,11 @@ impl DescribeExportImageTasksPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_export_image_tasks_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -1362,6 +1647,18 @@ impl DescribeExportImageTasksPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeExportImageTasksPaginatorItems {
         crate::paginator::DescribeExportImageTasksPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -1406,12 +1703,15 @@ impl DescribeExportImageTasksPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_export_image_tasks_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -1432,6 +1732,7 @@ impl DescribeExportImageTasksPaginator {
 pub struct DescribeFastLaunchImagesPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_fast_launch_images_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeFastLaunchImagesPaginator {
@@ -1440,7 +1741,11 @@ impl DescribeFastLaunchImagesPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_fast_launch_images_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -1457,6 +1762,18 @@ impl DescribeFastLaunchImagesPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeFastLaunchImagesPaginatorItems {
         crate::paginator::DescribeFastLaunchImagesPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -1501,12 +1818,15 @@ impl DescribeFastLaunchImagesPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_fast_launch_images_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -1527,6 +1847,7 @@ impl DescribeFastLaunchImagesPaginator {
 pub struct DescribeFastSnapshotRestoresPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_fast_snapshot_restores_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeFastSnapshotRestoresPaginator {
@@ -1535,7 +1856,11 @@ impl DescribeFastSnapshotRestoresPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_fast_snapshot_restores_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -1552,6 +1877,18 @@ impl DescribeFastSnapshotRestoresPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeFastSnapshotRestoresPaginatorItems {
         crate::paginator::DescribeFastSnapshotRestoresPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -1596,12 +1933,15 @@ impl DescribeFastSnapshotRestoresPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_fast_snapshot_restores_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -1622,6 +1962,7 @@ impl DescribeFastSnapshotRestoresPaginator {
 pub struct DescribeFleetsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_fleets_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeFleetsPaginator {
@@ -1630,7 +1971,11 @@ impl DescribeFleetsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_fleets_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -1647,6 +1992,18 @@ impl DescribeFleetsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeFleetsPaginatorItems {
         crate::paginator::DescribeFleetsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -1691,12 +2048,15 @@ impl DescribeFleetsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_fleets_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -1717,6 +2077,7 @@ impl DescribeFleetsPaginator {
 pub struct DescribeFlowLogsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_flow_logs_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeFlowLogsPaginator {
@@ -1725,7 +2086,11 @@ impl DescribeFlowLogsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_flow_logs_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -1742,6 +2107,18 @@ impl DescribeFlowLogsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeFlowLogsPaginatorItems {
         crate::paginator::DescribeFlowLogsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -1786,12 +2163,15 @@ impl DescribeFlowLogsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_flow_logs_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -1812,6 +2192,7 @@ impl DescribeFlowLogsPaginator {
 pub struct DescribeFpgaImagesPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_fpga_images_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeFpgaImagesPaginator {
@@ -1820,7 +2201,11 @@ impl DescribeFpgaImagesPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_fpga_images_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -1837,6 +2222,18 @@ impl DescribeFpgaImagesPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeFpgaImagesPaginatorItems {
         crate::paginator::DescribeFpgaImagesPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -1881,12 +2278,15 @@ impl DescribeFpgaImagesPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_fpga_images_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -1907,6 +2307,7 @@ impl DescribeFpgaImagesPaginator {
 pub struct DescribeHostReservationOfferingsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_host_reservation_offerings_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeHostReservationOfferingsPaginator {
@@ -1915,7 +2316,11 @@ impl DescribeHostReservationOfferingsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_host_reservation_offerings_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -1932,6 +2337,18 @@ impl DescribeHostReservationOfferingsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeHostReservationOfferingsPaginatorItems {
         crate::paginator::DescribeHostReservationOfferingsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -1976,12 +2393,15 @@ impl DescribeHostReservationOfferingsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_host_reservation_offerings_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -2002,6 +2422,7 @@ impl DescribeHostReservationOfferingsPaginator {
 pub struct DescribeHostReservationsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_host_reservations_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeHostReservationsPaginator {
@@ -2010,7 +2431,11 @@ impl DescribeHostReservationsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_host_reservations_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -2027,6 +2452,18 @@ impl DescribeHostReservationsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeHostReservationsPaginatorItems {
         crate::paginator::DescribeHostReservationsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -2071,12 +2508,15 @@ impl DescribeHostReservationsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_host_reservations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -2097,6 +2537,7 @@ impl DescribeHostReservationsPaginator {
 pub struct DescribeHostsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_hosts_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeHostsPaginator {
@@ -2105,7 +2546,11 @@ impl DescribeHostsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_hosts_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -2122,6 +2567,18 @@ impl DescribeHostsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeHostsPaginatorItems {
         crate::paginator::DescribeHostsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -2166,12 +2623,15 @@ impl DescribeHostsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_hosts_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -2192,6 +2652,7 @@ impl DescribeHostsPaginator {
 pub struct DescribeIamInstanceProfileAssociationsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_iam_instance_profile_associations_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeIamInstanceProfileAssociationsPaginator {
@@ -2200,7 +2661,11 @@ impl DescribeIamInstanceProfileAssociationsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_iam_instance_profile_associations_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -2217,6 +2682,18 @@ impl DescribeIamInstanceProfileAssociationsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeIamInstanceProfileAssociationsPaginatorItems {
         crate::paginator::DescribeIamInstanceProfileAssociationsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -2263,12 +2740,15 @@ impl DescribeIamInstanceProfileAssociationsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_iam_instance_profile_associations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -2289,6 +2769,7 @@ impl DescribeIamInstanceProfileAssociationsPaginator {
 pub struct DescribeImportImageTasksPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_import_image_tasks_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeImportImageTasksPaginator {
@@ -2297,7 +2778,11 @@ impl DescribeImportImageTasksPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_import_image_tasks_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -2314,6 +2799,18 @@ impl DescribeImportImageTasksPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeImportImageTasksPaginatorItems {
         crate::paginator::DescribeImportImageTasksPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -2358,12 +2855,15 @@ impl DescribeImportImageTasksPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_import_image_tasks_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -2384,6 +2884,7 @@ impl DescribeImportImageTasksPaginator {
 pub struct DescribeImportSnapshotTasksPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_import_snapshot_tasks_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeImportSnapshotTasksPaginator {
@@ -2392,7 +2893,11 @@ impl DescribeImportSnapshotTasksPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_import_snapshot_tasks_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -2409,6 +2914,18 @@ impl DescribeImportSnapshotTasksPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeImportSnapshotTasksPaginatorItems {
         crate::paginator::DescribeImportSnapshotTasksPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -2453,12 +2970,15 @@ impl DescribeImportSnapshotTasksPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_import_snapshot_tasks_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -2479,6 +2999,7 @@ impl DescribeImportSnapshotTasksPaginator {
 pub struct DescribeInstanceCreditSpecificationsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_instance_credit_specifications_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeInstanceCreditSpecificationsPaginator {
@@ -2487,7 +3008,11 @@ impl DescribeInstanceCreditSpecificationsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_instance_credit_specifications_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -2504,6 +3029,18 @@ impl DescribeInstanceCreditSpecificationsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeInstanceCreditSpecificationsPaginatorItems {
         crate::paginator::DescribeInstanceCreditSpecificationsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -2550,12 +3087,15 @@ impl DescribeInstanceCreditSpecificationsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_instance_credit_specifications_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -2576,6 +3116,7 @@ impl DescribeInstanceCreditSpecificationsPaginator {
 pub struct DescribeInstanceEventWindowsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_instance_event_windows_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeInstanceEventWindowsPaginator {
@@ -2584,7 +3125,11 @@ impl DescribeInstanceEventWindowsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_instance_event_windows_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -2601,6 +3146,18 @@ impl DescribeInstanceEventWindowsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeInstanceEventWindowsPaginatorItems {
         crate::paginator::DescribeInstanceEventWindowsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -2645,12 +3202,15 @@ impl DescribeInstanceEventWindowsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_instance_event_windows_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -2671,6 +3231,7 @@ impl DescribeInstanceEventWindowsPaginator {
 pub struct DescribeInstancesPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_instances_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeInstancesPaginator {
@@ -2679,7 +3240,11 @@ impl DescribeInstancesPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_instances_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -2696,6 +3261,18 @@ impl DescribeInstancesPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeInstancesPaginatorItems {
         crate::paginator::DescribeInstancesPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -2740,12 +3317,15 @@ impl DescribeInstancesPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_instances_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -2766,6 +3346,7 @@ impl DescribeInstancesPaginator {
 pub struct DescribeInstanceStatusPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_instance_status_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeInstanceStatusPaginator {
@@ -2774,7 +3355,11 @@ impl DescribeInstanceStatusPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_instance_status_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -2791,6 +3376,18 @@ impl DescribeInstanceStatusPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeInstanceStatusPaginatorItems {
         crate::paginator::DescribeInstanceStatusPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -2835,12 +3432,15 @@ impl DescribeInstanceStatusPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_instance_status_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -2861,6 +3461,7 @@ impl DescribeInstanceStatusPaginator {
 pub struct DescribeInstanceTypeOfferingsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_instance_type_offerings_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeInstanceTypeOfferingsPaginator {
@@ -2869,7 +3470,11 @@ impl DescribeInstanceTypeOfferingsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_instance_type_offerings_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -2886,6 +3491,18 @@ impl DescribeInstanceTypeOfferingsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeInstanceTypeOfferingsPaginatorItems {
         crate::paginator::DescribeInstanceTypeOfferingsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -2930,12 +3547,15 @@ impl DescribeInstanceTypeOfferingsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_instance_type_offerings_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -2956,6 +3576,7 @@ impl DescribeInstanceTypeOfferingsPaginator {
 pub struct DescribeInstanceTypesPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_instance_types_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeInstanceTypesPaginator {
@@ -2964,7 +3585,11 @@ impl DescribeInstanceTypesPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_instance_types_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -2981,6 +3606,18 @@ impl DescribeInstanceTypesPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeInstanceTypesPaginatorItems {
         crate::paginator::DescribeInstanceTypesPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -3025,12 +3662,15 @@ impl DescribeInstanceTypesPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_instance_types_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -3051,6 +3691,7 @@ impl DescribeInstanceTypesPaginator {
 pub struct DescribeInternetGatewaysPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_internet_gateways_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeInternetGatewaysPaginator {
@@ -3059,7 +3700,11 @@ impl DescribeInternetGatewaysPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_internet_gateways_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -3076,6 +3721,18 @@ impl DescribeInternetGatewaysPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeInternetGatewaysPaginatorItems {
         crate::paginator::DescribeInternetGatewaysPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -3120,12 +3777,15 @@ impl DescribeInternetGatewaysPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_internet_gateways_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -3146,6 +3806,7 @@ impl DescribeInternetGatewaysPaginator {
 pub struct DescribeIpamPoolsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_ipam_pools_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeIpamPoolsPaginator {
@@ -3154,7 +3815,11 @@ impl DescribeIpamPoolsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_ipam_pools_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -3171,6 +3836,18 @@ impl DescribeIpamPoolsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeIpamPoolsPaginatorItems {
         crate::paginator::DescribeIpamPoolsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -3215,12 +3892,15 @@ impl DescribeIpamPoolsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_ipam_pools_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -3241,6 +3921,7 @@ impl DescribeIpamPoolsPaginator {
 pub struct DescribeIpamsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_ipams_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeIpamsPaginator {
@@ -3249,7 +3930,11 @@ impl DescribeIpamsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_ipams_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -3266,6 +3951,18 @@ impl DescribeIpamsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeIpamsPaginatorItems {
         crate::paginator::DescribeIpamsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -3310,12 +4007,15 @@ impl DescribeIpamsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_ipams_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -3336,6 +4036,7 @@ impl DescribeIpamsPaginator {
 pub struct DescribeIpamScopesPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_ipam_scopes_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeIpamScopesPaginator {
@@ -3344,7 +4045,11 @@ impl DescribeIpamScopesPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_ipam_scopes_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -3361,6 +4066,18 @@ impl DescribeIpamScopesPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeIpamScopesPaginatorItems {
         crate::paginator::DescribeIpamScopesPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -3405,12 +4122,15 @@ impl DescribeIpamScopesPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_ipam_scopes_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -3431,6 +4151,7 @@ impl DescribeIpamScopesPaginator {
 pub struct DescribeIpv6PoolsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_ipv6_pools_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeIpv6PoolsPaginator {
@@ -3439,7 +4160,11 @@ impl DescribeIpv6PoolsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_ipv6_pools_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -3456,6 +4181,18 @@ impl DescribeIpv6PoolsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeIpv6PoolsPaginatorItems {
         crate::paginator::DescribeIpv6PoolsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -3500,12 +4237,15 @@ impl DescribeIpv6PoolsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_ipv6_pools_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -3526,6 +4266,7 @@ impl DescribeIpv6PoolsPaginator {
 pub struct DescribeLaunchTemplatesPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_launch_templates_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeLaunchTemplatesPaginator {
@@ -3534,7 +4275,11 @@ impl DescribeLaunchTemplatesPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_launch_templates_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -3551,6 +4296,18 @@ impl DescribeLaunchTemplatesPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeLaunchTemplatesPaginatorItems {
         crate::paginator::DescribeLaunchTemplatesPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -3595,12 +4352,15 @@ impl DescribeLaunchTemplatesPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_launch_templates_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -3621,6 +4381,7 @@ impl DescribeLaunchTemplatesPaginator {
 pub struct DescribeLaunchTemplateVersionsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_launch_template_versions_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeLaunchTemplateVersionsPaginator {
@@ -3629,7 +4390,11 @@ impl DescribeLaunchTemplateVersionsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_launch_template_versions_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -3646,6 +4411,18 @@ impl DescribeLaunchTemplateVersionsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeLaunchTemplateVersionsPaginatorItems {
         crate::paginator::DescribeLaunchTemplateVersionsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -3690,12 +4467,15 @@ impl DescribeLaunchTemplateVersionsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_launch_template_versions_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -3716,6 +4496,7 @@ impl DescribeLaunchTemplateVersionsPaginator {
 pub struct DescribeLocalGatewayRouteTablesPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_local_gateway_route_tables_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeLocalGatewayRouteTablesPaginator {
@@ -3724,7 +4505,11 @@ impl DescribeLocalGatewayRouteTablesPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_local_gateway_route_tables_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -3741,6 +4526,18 @@ impl DescribeLocalGatewayRouteTablesPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeLocalGatewayRouteTablesPaginatorItems {
         crate::paginator::DescribeLocalGatewayRouteTablesPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -3785,12 +4582,15 @@ impl DescribeLocalGatewayRouteTablesPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_local_gateway_route_tables_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -3810,7 +4610,8 @@ impl DescribeLocalGatewayRouteTablesPaginator {
 /// Paginator for [`DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations`](crate::operation::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations)
 pub struct DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator {
                 handle: std::sync::Arc<crate::client::Handle>,
-                builder: crate::input::describe_local_gateway_route_table_virtual_interface_group_associations_input::Builder
+                builder: crate::input::describe_local_gateway_route_table_virtual_interface_group_associations_input::Builder,
+                stop_on_duplicate_token: bool,
             }
 
 impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator {
@@ -3819,7 +4620,11 @@ impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_local_gateway_route_table_virtual_interface_group_associations_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -3836,6 +4641,18 @@ impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginatorItems{
         crate::paginator::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -3882,12 +4699,15 @@ impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_local_gateway_route_table_virtual_interface_group_associations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -3908,6 +4728,7 @@ impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator {
 pub struct DescribeLocalGatewayRouteTableVpcAssociationsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_local_gateway_route_table_vpc_associations_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeLocalGatewayRouteTableVpcAssociationsPaginator {
@@ -3916,7 +4737,11 @@ impl DescribeLocalGatewayRouteTableVpcAssociationsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_local_gateway_route_table_vpc_associations_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -3935,6 +4760,18 @@ impl DescribeLocalGatewayRouteTableVpcAssociationsPaginator {
         self,
     ) -> crate::paginator::DescribeLocalGatewayRouteTableVpcAssociationsPaginatorItems {
         crate::paginator::DescribeLocalGatewayRouteTableVpcAssociationsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -3981,12 +4818,15 @@ impl DescribeLocalGatewayRouteTableVpcAssociationsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_local_gateway_route_table_vpc_associations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -4007,6 +4847,7 @@ impl DescribeLocalGatewayRouteTableVpcAssociationsPaginator {
 pub struct DescribeLocalGatewaysPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_local_gateways_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeLocalGatewaysPaginator {
@@ -4015,7 +4856,11 @@ impl DescribeLocalGatewaysPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_local_gateways_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -4032,6 +4877,18 @@ impl DescribeLocalGatewaysPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeLocalGatewaysPaginatorItems {
         crate::paginator::DescribeLocalGatewaysPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -4076,12 +4933,15 @@ impl DescribeLocalGatewaysPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_local_gateways_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -4102,6 +4962,7 @@ impl DescribeLocalGatewaysPaginator {
 pub struct DescribeLocalGatewayVirtualInterfaceGroupsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_local_gateway_virtual_interface_groups_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeLocalGatewayVirtualInterfaceGroupsPaginator {
@@ -4110,7 +4971,11 @@ impl DescribeLocalGatewayVirtualInterfaceGroupsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_local_gateway_virtual_interface_groups_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -4129,6 +4994,18 @@ impl DescribeLocalGatewayVirtualInterfaceGroupsPaginator {
         self,
     ) -> crate::paginator::DescribeLocalGatewayVirtualInterfaceGroupsPaginatorItems {
         crate::paginator::DescribeLocalGatewayVirtualInterfaceGroupsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -4175,12 +5052,15 @@ impl DescribeLocalGatewayVirtualInterfaceGroupsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_local_gateway_virtual_interface_groups_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -4201,6 +5081,7 @@ impl DescribeLocalGatewayVirtualInterfaceGroupsPaginator {
 pub struct DescribeLocalGatewayVirtualInterfacesPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_local_gateway_virtual_interfaces_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeLocalGatewayVirtualInterfacesPaginator {
@@ -4209,7 +5090,11 @@ impl DescribeLocalGatewayVirtualInterfacesPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_local_gateway_virtual_interfaces_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -4226,6 +5111,18 @@ impl DescribeLocalGatewayVirtualInterfacesPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeLocalGatewayVirtualInterfacesPaginatorItems {
         crate::paginator::DescribeLocalGatewayVirtualInterfacesPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -4272,12 +5169,15 @@ impl DescribeLocalGatewayVirtualInterfacesPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_local_gateway_virtual_interfaces_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -4298,6 +5198,7 @@ impl DescribeLocalGatewayVirtualInterfacesPaginator {
 pub struct DescribeManagedPrefixListsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_managed_prefix_lists_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeManagedPrefixListsPaginator {
@@ -4306,7 +5207,11 @@ impl DescribeManagedPrefixListsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_managed_prefix_lists_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -4323,6 +5228,18 @@ impl DescribeManagedPrefixListsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeManagedPrefixListsPaginatorItems {
         crate::paginator::DescribeManagedPrefixListsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -4367,12 +5284,15 @@ impl DescribeManagedPrefixListsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_managed_prefix_lists_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -4393,6 +5313,7 @@ impl DescribeManagedPrefixListsPaginator {
 pub struct DescribeMovingAddressesPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_moving_addresses_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeMovingAddressesPaginator {
@@ -4401,7 +5322,11 @@ impl DescribeMovingAddressesPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_moving_addresses_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -4418,6 +5343,18 @@ impl DescribeMovingAddressesPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeMovingAddressesPaginatorItems {
         crate::paginator::DescribeMovingAddressesPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -4462,12 +5399,15 @@ impl DescribeMovingAddressesPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_moving_addresses_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -4488,6 +5428,7 @@ impl DescribeMovingAddressesPaginator {
 pub struct DescribeNatGatewaysPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_nat_gateways_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeNatGatewaysPaginator {
@@ -4496,7 +5437,11 @@ impl DescribeNatGatewaysPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_nat_gateways_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -4513,6 +5458,18 @@ impl DescribeNatGatewaysPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeNatGatewaysPaginatorItems {
         crate::paginator::DescribeNatGatewaysPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -4557,12 +5514,15 @@ impl DescribeNatGatewaysPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_nat_gateways_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -4583,6 +5543,7 @@ impl DescribeNatGatewaysPaginator {
 pub struct DescribeNetworkAclsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_network_acls_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeNetworkAclsPaginator {
@@ -4591,7 +5552,11 @@ impl DescribeNetworkAclsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_network_acls_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -4608,6 +5573,18 @@ impl DescribeNetworkAclsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeNetworkAclsPaginatorItems {
         crate::paginator::DescribeNetworkAclsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -4652,12 +5629,15 @@ impl DescribeNetworkAclsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_network_acls_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -4678,6 +5658,7 @@ impl DescribeNetworkAclsPaginator {
 pub struct DescribeNetworkInsightsAccessScopeAnalysesPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_network_insights_access_scope_analyses_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeNetworkInsightsAccessScopeAnalysesPaginator {
@@ -4686,7 +5667,11 @@ impl DescribeNetworkInsightsAccessScopeAnalysesPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_network_insights_access_scope_analyses_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -4705,6 +5690,18 @@ impl DescribeNetworkInsightsAccessScopeAnalysesPaginator {
         self,
     ) -> crate::paginator::DescribeNetworkInsightsAccessScopeAnalysesPaginatorItems {
         crate::paginator::DescribeNetworkInsightsAccessScopeAnalysesPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -4751,12 +5748,15 @@ impl DescribeNetworkInsightsAccessScopeAnalysesPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_network_insights_access_scope_analyses_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -4777,6 +5777,7 @@ impl DescribeNetworkInsightsAccessScopeAnalysesPaginator {
 pub struct DescribeNetworkInsightsAccessScopesPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_network_insights_access_scopes_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeNetworkInsightsAccessScopesPaginator {
@@ -4785,7 +5786,11 @@ impl DescribeNetworkInsightsAccessScopesPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_network_insights_access_scopes_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -4802,6 +5807,18 @@ impl DescribeNetworkInsightsAccessScopesPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeNetworkInsightsAccessScopesPaginatorItems {
         crate::paginator::DescribeNetworkInsightsAccessScopesPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -4848,12 +5865,15 @@ impl DescribeNetworkInsightsAccessScopesPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_network_insights_access_scopes_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -4874,6 +5894,7 @@ impl DescribeNetworkInsightsAccessScopesPaginator {
 pub struct DescribeNetworkInsightsAnalysesPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_network_insights_analyses_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeNetworkInsightsAnalysesPaginator {
@@ -4882,7 +5903,11 @@ impl DescribeNetworkInsightsAnalysesPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_network_insights_analyses_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -4899,6 +5924,18 @@ impl DescribeNetworkInsightsAnalysesPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeNetworkInsightsAnalysesPaginatorItems {
         crate::paginator::DescribeNetworkInsightsAnalysesPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -4943,12 +5980,15 @@ impl DescribeNetworkInsightsAnalysesPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_network_insights_analyses_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -4969,6 +6009,7 @@ impl DescribeNetworkInsightsAnalysesPaginator {
 pub struct DescribeNetworkInsightsPathsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_network_insights_paths_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeNetworkInsightsPathsPaginator {
@@ -4977,7 +6018,11 @@ impl DescribeNetworkInsightsPathsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_network_insights_paths_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -4994,6 +6039,18 @@ impl DescribeNetworkInsightsPathsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeNetworkInsightsPathsPaginatorItems {
         crate::paginator::DescribeNetworkInsightsPathsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -5038,12 +6095,15 @@ impl DescribeNetworkInsightsPathsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_network_insights_paths_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -5064,6 +6124,7 @@ impl DescribeNetworkInsightsPathsPaginator {
 pub struct DescribeNetworkInterfacePermissionsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_network_interface_permissions_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeNetworkInterfacePermissionsPaginator {
@@ -5072,7 +6133,11 @@ impl DescribeNetworkInterfacePermissionsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_network_interface_permissions_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -5089,6 +6154,18 @@ impl DescribeNetworkInterfacePermissionsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeNetworkInterfacePermissionsPaginatorItems {
         crate::paginator::DescribeNetworkInterfacePermissionsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -5135,12 +6212,15 @@ impl DescribeNetworkInterfacePermissionsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_network_interface_permissions_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -5161,6 +6241,7 @@ impl DescribeNetworkInterfacePermissionsPaginator {
 pub struct DescribeNetworkInterfacesPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_network_interfaces_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeNetworkInterfacesPaginator {
@@ -5169,7 +6250,11 @@ impl DescribeNetworkInterfacesPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_network_interfaces_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -5186,6 +6271,18 @@ impl DescribeNetworkInterfacesPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeNetworkInterfacesPaginatorItems {
         crate::paginator::DescribeNetworkInterfacesPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -5230,12 +6327,15 @@ impl DescribeNetworkInterfacesPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_network_interfaces_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -5256,6 +6356,7 @@ impl DescribeNetworkInterfacesPaginator {
 pub struct DescribePrefixListsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_prefix_lists_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribePrefixListsPaginator {
@@ -5264,7 +6365,11 @@ impl DescribePrefixListsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_prefix_lists_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -5281,6 +6386,18 @@ impl DescribePrefixListsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribePrefixListsPaginatorItems {
         crate::paginator::DescribePrefixListsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -5325,12 +6442,15 @@ impl DescribePrefixListsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_prefix_lists_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -5351,6 +6471,7 @@ impl DescribePrefixListsPaginator {
 pub struct DescribePrincipalIdFormatPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_principal_id_format_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribePrincipalIdFormatPaginator {
@@ -5359,7 +6480,11 @@ impl DescribePrincipalIdFormatPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_principal_id_format_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -5376,6 +6501,18 @@ impl DescribePrincipalIdFormatPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribePrincipalIdFormatPaginatorItems {
         crate::paginator::DescribePrincipalIdFormatPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -5420,12 +6557,15 @@ impl DescribePrincipalIdFormatPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_principal_id_format_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -5446,6 +6586,7 @@ impl DescribePrincipalIdFormatPaginator {
 pub struct DescribePublicIpv4PoolsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_public_ipv4_pools_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribePublicIpv4PoolsPaginator {
@@ -5454,7 +6595,11 @@ impl DescribePublicIpv4PoolsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_public_ipv4_pools_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -5471,6 +6616,18 @@ impl DescribePublicIpv4PoolsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribePublicIpv4PoolsPaginatorItems {
         crate::paginator::DescribePublicIpv4PoolsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -5515,12 +6672,15 @@ impl DescribePublicIpv4PoolsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_public_ipv4_pools_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -5541,6 +6701,7 @@ impl DescribePublicIpv4PoolsPaginator {
 pub struct DescribeReplaceRootVolumeTasksPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_replace_root_volume_tasks_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeReplaceRootVolumeTasksPaginator {
@@ -5549,7 +6710,11 @@ impl DescribeReplaceRootVolumeTasksPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_replace_root_volume_tasks_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -5566,6 +6731,18 @@ impl DescribeReplaceRootVolumeTasksPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeReplaceRootVolumeTasksPaginatorItems {
         crate::paginator::DescribeReplaceRootVolumeTasksPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -5610,12 +6787,15 @@ impl DescribeReplaceRootVolumeTasksPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_replace_root_volume_tasks_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -5636,6 +6816,7 @@ impl DescribeReplaceRootVolumeTasksPaginator {
 pub struct DescribeReservedInstancesModificationsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_reserved_instances_modifications_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeReservedInstancesModificationsPaginator {
@@ -5644,7 +6825,11 @@ impl DescribeReservedInstancesModificationsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_reserved_instances_modifications_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Create a flattened paginator
@@ -5653,6 +6838,18 @@ impl DescribeReservedInstancesModificationsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeReservedInstancesModificationsPaginatorItems {
         crate::paginator::DescribeReservedInstancesModificationsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -5699,12 +6896,15 @@ impl DescribeReservedInstancesModificationsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_reserved_instances_modifications_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -5725,6 +6925,7 @@ impl DescribeReservedInstancesModificationsPaginator {
 pub struct DescribeReservedInstancesOfferingsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_reserved_instances_offerings_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeReservedInstancesOfferingsPaginator {
@@ -5733,7 +6934,11 @@ impl DescribeReservedInstancesOfferingsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_reserved_instances_offerings_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -5750,6 +6955,18 @@ impl DescribeReservedInstancesOfferingsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeReservedInstancesOfferingsPaginatorItems {
         crate::paginator::DescribeReservedInstancesOfferingsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -5796,12 +7013,15 @@ impl DescribeReservedInstancesOfferingsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_reserved_instances_offerings_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -5822,6 +7042,7 @@ impl DescribeReservedInstancesOfferingsPaginator {
 pub struct DescribeRouteTablesPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_route_tables_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeRouteTablesPaginator {
@@ -5830,7 +7051,11 @@ impl DescribeRouteTablesPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_route_tables_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -5847,6 +7072,18 @@ impl DescribeRouteTablesPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeRouteTablesPaginatorItems {
         crate::paginator::DescribeRouteTablesPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -5891,12 +7128,15 @@ impl DescribeRouteTablesPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_route_tables_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -5917,6 +7157,7 @@ impl DescribeRouteTablesPaginator {
 pub struct DescribeScheduledInstanceAvailabilityPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_scheduled_instance_availability_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeScheduledInstanceAvailabilityPaginator {
@@ -5925,7 +7166,11 @@ impl DescribeScheduledInstanceAvailabilityPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_scheduled_instance_availability_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -5942,6 +7187,18 @@ impl DescribeScheduledInstanceAvailabilityPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeScheduledInstanceAvailabilityPaginatorItems {
         crate::paginator::DescribeScheduledInstanceAvailabilityPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -5988,12 +7245,15 @@ impl DescribeScheduledInstanceAvailabilityPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_scheduled_instance_availability_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -6014,6 +7274,7 @@ impl DescribeScheduledInstanceAvailabilityPaginator {
 pub struct DescribeScheduledInstancesPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_scheduled_instances_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeScheduledInstancesPaginator {
@@ -6022,7 +7283,11 @@ impl DescribeScheduledInstancesPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_scheduled_instances_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -6039,6 +7304,18 @@ impl DescribeScheduledInstancesPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeScheduledInstancesPaginatorItems {
         crate::paginator::DescribeScheduledInstancesPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -6083,12 +7360,15 @@ impl DescribeScheduledInstancesPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_scheduled_instances_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -6109,6 +7389,7 @@ impl DescribeScheduledInstancesPaginator {
 pub struct DescribeSecurityGroupRulesPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_security_group_rules_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeSecurityGroupRulesPaginator {
@@ -6117,7 +7398,11 @@ impl DescribeSecurityGroupRulesPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_security_group_rules_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -6134,6 +7419,18 @@ impl DescribeSecurityGroupRulesPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeSecurityGroupRulesPaginatorItems {
         crate::paginator::DescribeSecurityGroupRulesPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -6178,12 +7475,15 @@ impl DescribeSecurityGroupRulesPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_security_group_rules_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -6204,6 +7504,7 @@ impl DescribeSecurityGroupRulesPaginator {
 pub struct DescribeSecurityGroupsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_security_groups_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeSecurityGroupsPaginator {
@@ -6212,7 +7513,11 @@ impl DescribeSecurityGroupsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_security_groups_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -6229,6 +7534,18 @@ impl DescribeSecurityGroupsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeSecurityGroupsPaginatorItems {
         crate::paginator::DescribeSecurityGroupsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -6273,12 +7590,15 @@ impl DescribeSecurityGroupsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_security_groups_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -6299,6 +7619,7 @@ impl DescribeSecurityGroupsPaginator {
 pub struct DescribeSnapshotsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_snapshots_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeSnapshotsPaginator {
@@ -6307,7 +7628,11 @@ impl DescribeSnapshotsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_snapshots_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -6324,6 +7649,18 @@ impl DescribeSnapshotsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeSnapshotsPaginatorItems {
         crate::paginator::DescribeSnapshotsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -6368,12 +7705,15 @@ impl DescribeSnapshotsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_snapshots_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -6394,6 +7734,7 @@ impl DescribeSnapshotsPaginator {
 pub struct DescribeSnapshotTierStatusPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_snapshot_tier_status_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeSnapshotTierStatusPaginator {
@@ -6402,7 +7743,11 @@ impl DescribeSnapshotTierStatusPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_snapshot_tier_status_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -6419,6 +7764,18 @@ impl DescribeSnapshotTierStatusPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeSnapshotTierStatusPaginatorItems {
         crate::paginator::DescribeSnapshotTierStatusPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -6463,12 +7820,15 @@ impl DescribeSnapshotTierStatusPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_snapshot_tier_status_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -6489,6 +7849,7 @@ impl DescribeSnapshotTierStatusPaginator {
 pub struct DescribeSpotFleetRequestsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_spot_fleet_requests_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeSpotFleetRequestsPaginator {
@@ -6497,7 +7858,11 @@ impl DescribeSpotFleetRequestsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_spot_fleet_requests_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -6514,6 +7879,18 @@ impl DescribeSpotFleetRequestsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeSpotFleetRequestsPaginatorItems {
         crate::paginator::DescribeSpotFleetRequestsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -6558,12 +7935,15 @@ impl DescribeSpotFleetRequestsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_spot_fleet_requests_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -6584,6 +7964,7 @@ impl DescribeSpotFleetRequestsPaginator {
 pub struct DescribeSpotInstanceRequestsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_spot_instance_requests_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeSpotInstanceRequestsPaginator {
@@ -6592,7 +7973,11 @@ impl DescribeSpotInstanceRequestsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_spot_instance_requests_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -6609,6 +7994,18 @@ impl DescribeSpotInstanceRequestsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeSpotInstanceRequestsPaginatorItems {
         crate::paginator::DescribeSpotInstanceRequestsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -6653,12 +8050,15 @@ impl DescribeSpotInstanceRequestsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_spot_instance_requests_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -6679,6 +8079,7 @@ impl DescribeSpotInstanceRequestsPaginator {
 pub struct DescribeSpotPriceHistoryPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_spot_price_history_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeSpotPriceHistoryPaginator {
@@ -6687,7 +8088,11 @@ impl DescribeSpotPriceHistoryPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_spot_price_history_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -6704,6 +8109,18 @@ impl DescribeSpotPriceHistoryPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeSpotPriceHistoryPaginatorItems {
         crate::paginator::DescribeSpotPriceHistoryPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -6748,12 +8165,15 @@ impl DescribeSpotPriceHistoryPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_spot_price_history_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -6774,6 +8194,7 @@ impl DescribeSpotPriceHistoryPaginator {
 pub struct DescribeStaleSecurityGroupsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_stale_security_groups_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeStaleSecurityGroupsPaginator {
@@ -6782,7 +8203,11 @@ impl DescribeStaleSecurityGroupsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_stale_security_groups_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -6799,6 +8224,18 @@ impl DescribeStaleSecurityGroupsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeStaleSecurityGroupsPaginatorItems {
         crate::paginator::DescribeStaleSecurityGroupsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -6843,12 +8280,15 @@ impl DescribeStaleSecurityGroupsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_stale_security_groups_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -6869,6 +8309,7 @@ impl DescribeStaleSecurityGroupsPaginator {
 pub struct DescribeStoreImageTasksPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_store_image_tasks_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeStoreImageTasksPaginator {
@@ -6877,7 +8318,11 @@ impl DescribeStoreImageTasksPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_store_image_tasks_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -6894,6 +8339,18 @@ impl DescribeStoreImageTasksPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeStoreImageTasksPaginatorItems {
         crate::paginator::DescribeStoreImageTasksPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -6938,12 +8395,15 @@ impl DescribeStoreImageTasksPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_store_image_tasks_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -6964,6 +8424,7 @@ impl DescribeStoreImageTasksPaginator {
 pub struct DescribeSubnetsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_subnets_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeSubnetsPaginator {
@@ -6972,7 +8433,11 @@ impl DescribeSubnetsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_subnets_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -6989,6 +8454,18 @@ impl DescribeSubnetsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeSubnetsPaginatorItems {
         crate::paginator::DescribeSubnetsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -7033,12 +8510,15 @@ impl DescribeSubnetsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_subnets_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -7059,6 +8539,7 @@ impl DescribeSubnetsPaginator {
 pub struct DescribeTagsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_tags_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeTagsPaginator {
@@ -7067,7 +8548,11 @@ impl DescribeTagsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_tags_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -7084,6 +8569,18 @@ impl DescribeTagsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeTagsPaginatorItems {
         crate::paginator::DescribeTagsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -7128,12 +8625,15 @@ impl DescribeTagsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_tags_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -7154,6 +8654,7 @@ impl DescribeTagsPaginator {
 pub struct DescribeTrafficMirrorFiltersPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_traffic_mirror_filters_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeTrafficMirrorFiltersPaginator {
@@ -7162,7 +8663,11 @@ impl DescribeTrafficMirrorFiltersPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_traffic_mirror_filters_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -7179,6 +8684,18 @@ impl DescribeTrafficMirrorFiltersPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeTrafficMirrorFiltersPaginatorItems {
         crate::paginator::DescribeTrafficMirrorFiltersPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -7223,12 +8740,15 @@ impl DescribeTrafficMirrorFiltersPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_traffic_mirror_filters_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -7249,6 +8769,7 @@ impl DescribeTrafficMirrorFiltersPaginator {
 pub struct DescribeTrafficMirrorSessionsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_traffic_mirror_sessions_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeTrafficMirrorSessionsPaginator {
@@ -7257,7 +8778,11 @@ impl DescribeTrafficMirrorSessionsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_traffic_mirror_sessions_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -7274,6 +8799,18 @@ impl DescribeTrafficMirrorSessionsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeTrafficMirrorSessionsPaginatorItems {
         crate::paginator::DescribeTrafficMirrorSessionsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -7318,12 +8855,15 @@ impl DescribeTrafficMirrorSessionsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_traffic_mirror_sessions_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -7344,6 +8884,7 @@ impl DescribeTrafficMirrorSessionsPaginator {
 pub struct DescribeTrafficMirrorTargetsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_traffic_mirror_targets_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeTrafficMirrorTargetsPaginator {
@@ -7352,7 +8893,11 @@ impl DescribeTrafficMirrorTargetsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_traffic_mirror_targets_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -7369,6 +8914,18 @@ impl DescribeTrafficMirrorTargetsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeTrafficMirrorTargetsPaginatorItems {
         crate::paginator::DescribeTrafficMirrorTargetsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -7413,12 +8970,15 @@ impl DescribeTrafficMirrorTargetsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_traffic_mirror_targets_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -7439,6 +8999,7 @@ impl DescribeTrafficMirrorTargetsPaginator {
 pub struct DescribeTransitGatewayAttachmentsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_transit_gateway_attachments_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeTransitGatewayAttachmentsPaginator {
@@ -7447,7 +9008,11 @@ impl DescribeTransitGatewayAttachmentsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_transit_gateway_attachments_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -7464,6 +9029,18 @@ impl DescribeTransitGatewayAttachmentsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeTransitGatewayAttachmentsPaginatorItems {
         crate::paginator::DescribeTransitGatewayAttachmentsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -7508,12 +9085,15 @@ impl DescribeTransitGatewayAttachmentsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_transit_gateway_attachments_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -7534,6 +9114,7 @@ impl DescribeTransitGatewayAttachmentsPaginator {
 pub struct DescribeTransitGatewayConnectPeersPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_transit_gateway_connect_peers_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeTransitGatewayConnectPeersPaginator {
@@ -7542,7 +9123,11 @@ impl DescribeTransitGatewayConnectPeersPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_transit_gateway_connect_peers_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -7559,6 +9144,18 @@ impl DescribeTransitGatewayConnectPeersPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeTransitGatewayConnectPeersPaginatorItems {
         crate::paginator::DescribeTransitGatewayConnectPeersPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -7605,12 +9202,15 @@ impl DescribeTransitGatewayConnectPeersPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_transit_gateway_connect_peers_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -7631,6 +9231,7 @@ impl DescribeTransitGatewayConnectPeersPaginator {
 pub struct DescribeTransitGatewayConnectsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_transit_gateway_connects_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeTransitGatewayConnectsPaginator {
@@ -7639,7 +9240,11 @@ impl DescribeTransitGatewayConnectsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_transit_gateway_connects_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -7656,6 +9261,18 @@ impl DescribeTransitGatewayConnectsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeTransitGatewayConnectsPaginatorItems {
         crate::paginator::DescribeTransitGatewayConnectsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -7700,12 +9317,15 @@ impl DescribeTransitGatewayConnectsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_transit_gateway_connects_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -7726,6 +9346,7 @@ impl DescribeTransitGatewayConnectsPaginator {
 pub struct DescribeTransitGatewayMulticastDomainsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_transit_gateway_multicast_domains_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeTransitGatewayMulticastDomainsPaginator {
@@ -7734,7 +9355,11 @@ impl DescribeTransitGatewayMulticastDomainsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_transit_gateway_multicast_domains_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -7751,6 +9376,18 @@ impl DescribeTransitGatewayMulticastDomainsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeTransitGatewayMulticastDomainsPaginatorItems {
         crate::paginator::DescribeTransitGatewayMulticastDomainsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -7797,12 +9434,15 @@ impl DescribeTransitGatewayMulticastDomainsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_transit_gateway_multicast_domains_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -7823,6 +9463,7 @@ impl DescribeTransitGatewayMulticastDomainsPaginator {
 pub struct DescribeTransitGatewayPeeringAttachmentsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_transit_gateway_peering_attachments_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeTransitGatewayPeeringAttachmentsPaginator {
@@ -7831,7 +9472,11 @@ impl DescribeTransitGatewayPeeringAttachmentsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_transit_gateway_peering_attachments_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -7848,6 +9493,18 @@ impl DescribeTransitGatewayPeeringAttachmentsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeTransitGatewayPeeringAttachmentsPaginatorItems {
         crate::paginator::DescribeTransitGatewayPeeringAttachmentsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -7894,12 +9551,15 @@ impl DescribeTransitGatewayPeeringAttachmentsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_transit_gateway_peering_attachments_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -7920,6 +9580,7 @@ impl DescribeTransitGatewayPeeringAttachmentsPaginator {
 pub struct DescribeTransitGatewayPolicyTablesPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_transit_gateway_policy_tables_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeTransitGatewayPolicyTablesPaginator {
@@ -7928,7 +9589,11 @@ impl DescribeTransitGatewayPolicyTablesPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_transit_gateway_policy_tables_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -7945,6 +9610,18 @@ impl DescribeTransitGatewayPolicyTablesPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeTransitGatewayPolicyTablesPaginatorItems {
         crate::paginator::DescribeTransitGatewayPolicyTablesPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -7991,12 +9668,15 @@ impl DescribeTransitGatewayPolicyTablesPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_transit_gateway_policy_tables_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -8017,6 +9697,7 @@ impl DescribeTransitGatewayPolicyTablesPaginator {
 pub struct DescribeTransitGatewayRouteTableAnnouncementsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_transit_gateway_route_table_announcements_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeTransitGatewayRouteTableAnnouncementsPaginator {
@@ -8025,7 +9706,11 @@ impl DescribeTransitGatewayRouteTableAnnouncementsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_transit_gateway_route_table_announcements_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -8044,6 +9729,18 @@ impl DescribeTransitGatewayRouteTableAnnouncementsPaginator {
         self,
     ) -> crate::paginator::DescribeTransitGatewayRouteTableAnnouncementsPaginatorItems {
         crate::paginator::DescribeTransitGatewayRouteTableAnnouncementsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -8090,12 +9787,15 @@ impl DescribeTransitGatewayRouteTableAnnouncementsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_transit_gateway_route_table_announcements_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -8116,6 +9816,7 @@ impl DescribeTransitGatewayRouteTableAnnouncementsPaginator {
 pub struct DescribeTransitGatewayRouteTablesPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_transit_gateway_route_tables_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeTransitGatewayRouteTablesPaginator {
@@ -8124,7 +9825,11 @@ impl DescribeTransitGatewayRouteTablesPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_transit_gateway_route_tables_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -8141,6 +9846,18 @@ impl DescribeTransitGatewayRouteTablesPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeTransitGatewayRouteTablesPaginatorItems {
         crate::paginator::DescribeTransitGatewayRouteTablesPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -8185,12 +9902,15 @@ impl DescribeTransitGatewayRouteTablesPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_transit_gateway_route_tables_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -8211,6 +9931,7 @@ impl DescribeTransitGatewayRouteTablesPaginator {
 pub struct DescribeTransitGatewaysPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_transit_gateways_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeTransitGatewaysPaginator {
@@ -8219,7 +9940,11 @@ impl DescribeTransitGatewaysPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_transit_gateways_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -8236,6 +9961,18 @@ impl DescribeTransitGatewaysPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeTransitGatewaysPaginatorItems {
         crate::paginator::DescribeTransitGatewaysPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -8280,12 +10017,15 @@ impl DescribeTransitGatewaysPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_transit_gateways_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -8306,6 +10046,7 @@ impl DescribeTransitGatewaysPaginator {
 pub struct DescribeTransitGatewayVpcAttachmentsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_transit_gateway_vpc_attachments_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeTransitGatewayVpcAttachmentsPaginator {
@@ -8314,7 +10055,11 @@ impl DescribeTransitGatewayVpcAttachmentsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_transit_gateway_vpc_attachments_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -8331,6 +10076,18 @@ impl DescribeTransitGatewayVpcAttachmentsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeTransitGatewayVpcAttachmentsPaginatorItems {
         crate::paginator::DescribeTransitGatewayVpcAttachmentsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -8377,12 +10134,15 @@ impl DescribeTransitGatewayVpcAttachmentsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_transit_gateway_vpc_attachments_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -8403,6 +10163,7 @@ impl DescribeTransitGatewayVpcAttachmentsPaginator {
 pub struct DescribeTrunkInterfaceAssociationsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_trunk_interface_associations_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeTrunkInterfaceAssociationsPaginator {
@@ -8411,7 +10172,11 @@ impl DescribeTrunkInterfaceAssociationsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_trunk_interface_associations_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -8428,6 +10193,18 @@ impl DescribeTrunkInterfaceAssociationsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeTrunkInterfaceAssociationsPaginatorItems {
         crate::paginator::DescribeTrunkInterfaceAssociationsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -8474,12 +10251,15 @@ impl DescribeTrunkInterfaceAssociationsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_trunk_interface_associations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -8500,6 +10280,7 @@ impl DescribeTrunkInterfaceAssociationsPaginator {
 pub struct DescribeVolumesPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_volumes_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeVolumesPaginator {
@@ -8508,7 +10289,11 @@ impl DescribeVolumesPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_volumes_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -8525,6 +10310,18 @@ impl DescribeVolumesPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeVolumesPaginatorItems {
         crate::paginator::DescribeVolumesPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -8569,12 +10366,15 @@ impl DescribeVolumesPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_volumes_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -8595,6 +10395,7 @@ impl DescribeVolumesPaginator {
 pub struct DescribeVolumesModificationsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_volumes_modifications_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeVolumesModificationsPaginator {
@@ -8603,7 +10404,11 @@ impl DescribeVolumesModificationsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_volumes_modifications_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -8620,6 +10425,18 @@ impl DescribeVolumesModificationsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeVolumesModificationsPaginatorItems {
         crate::paginator::DescribeVolumesModificationsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -8664,12 +10481,15 @@ impl DescribeVolumesModificationsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_volumes_modifications_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -8690,6 +10510,7 @@ impl DescribeVolumesModificationsPaginator {
 pub struct DescribeVolumeStatusPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_volume_status_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeVolumeStatusPaginator {
@@ -8698,7 +10519,11 @@ impl DescribeVolumeStatusPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_volume_status_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -8715,6 +10540,18 @@ impl DescribeVolumeStatusPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeVolumeStatusPaginatorItems {
         crate::paginator::DescribeVolumeStatusPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -8759,12 +10596,15 @@ impl DescribeVolumeStatusPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_volume_status_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -8785,6 +10625,7 @@ impl DescribeVolumeStatusPaginator {
 pub struct DescribeVpcClassicLinkDnsSupportPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_vpc_classic_link_dns_support_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeVpcClassicLinkDnsSupportPaginator {
@@ -8793,7 +10634,11 @@ impl DescribeVpcClassicLinkDnsSupportPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_vpc_classic_link_dns_support_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -8810,6 +10655,18 @@ impl DescribeVpcClassicLinkDnsSupportPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeVpcClassicLinkDnsSupportPaginatorItems {
         crate::paginator::DescribeVpcClassicLinkDnsSupportPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -8854,12 +10711,15 @@ impl DescribeVpcClassicLinkDnsSupportPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_vpc_classic_link_dns_support_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -8880,6 +10740,7 @@ impl DescribeVpcClassicLinkDnsSupportPaginator {
 pub struct DescribeVpcEndpointConnectionNotificationsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_vpc_endpoint_connection_notifications_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeVpcEndpointConnectionNotificationsPaginator {
@@ -8888,7 +10749,11 @@ impl DescribeVpcEndpointConnectionNotificationsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_vpc_endpoint_connection_notifications_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -8907,6 +10772,18 @@ impl DescribeVpcEndpointConnectionNotificationsPaginator {
         self,
     ) -> crate::paginator::DescribeVpcEndpointConnectionNotificationsPaginatorItems {
         crate::paginator::DescribeVpcEndpointConnectionNotificationsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -8953,12 +10830,15 @@ impl DescribeVpcEndpointConnectionNotificationsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_vpc_endpoint_connection_notifications_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -8979,6 +10859,7 @@ impl DescribeVpcEndpointConnectionNotificationsPaginator {
 pub struct DescribeVpcEndpointConnectionsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_vpc_endpoint_connections_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeVpcEndpointConnectionsPaginator {
@@ -8987,7 +10868,11 @@ impl DescribeVpcEndpointConnectionsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_vpc_endpoint_connections_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -9004,6 +10889,18 @@ impl DescribeVpcEndpointConnectionsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeVpcEndpointConnectionsPaginatorItems {
         crate::paginator::DescribeVpcEndpointConnectionsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -9048,12 +10945,15 @@ impl DescribeVpcEndpointConnectionsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_vpc_endpoint_connections_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -9074,6 +10974,7 @@ impl DescribeVpcEndpointConnectionsPaginator {
 pub struct DescribeVpcEndpointsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_vpc_endpoints_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeVpcEndpointsPaginator {
@@ -9082,7 +10983,11 @@ impl DescribeVpcEndpointsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_vpc_endpoints_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -9099,6 +11004,18 @@ impl DescribeVpcEndpointsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeVpcEndpointsPaginatorItems {
         crate::paginator::DescribeVpcEndpointsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -9143,12 +11060,15 @@ impl DescribeVpcEndpointsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_vpc_endpoints_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -9169,6 +11089,7 @@ impl DescribeVpcEndpointsPaginator {
 pub struct DescribeVpcEndpointServiceConfigurationsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_vpc_endpoint_service_configurations_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeVpcEndpointServiceConfigurationsPaginator {
@@ -9177,7 +11098,11 @@ impl DescribeVpcEndpointServiceConfigurationsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_vpc_endpoint_service_configurations_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -9194,6 +11119,18 @@ impl DescribeVpcEndpointServiceConfigurationsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeVpcEndpointServiceConfigurationsPaginatorItems {
         crate::paginator::DescribeVpcEndpointServiceConfigurationsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -9240,12 +11177,15 @@ impl DescribeVpcEndpointServiceConfigurationsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_vpc_endpoint_service_configurations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -9266,6 +11206,7 @@ impl DescribeVpcEndpointServiceConfigurationsPaginator {
 pub struct DescribeVpcEndpointServicePermissionsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_vpc_endpoint_service_permissions_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeVpcEndpointServicePermissionsPaginator {
@@ -9274,7 +11215,11 @@ impl DescribeVpcEndpointServicePermissionsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_vpc_endpoint_service_permissions_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -9291,6 +11236,18 @@ impl DescribeVpcEndpointServicePermissionsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeVpcEndpointServicePermissionsPaginatorItems {
         crate::paginator::DescribeVpcEndpointServicePermissionsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -9337,12 +11294,15 @@ impl DescribeVpcEndpointServicePermissionsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_vpc_endpoint_service_permissions_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -9363,6 +11323,7 @@ impl DescribeVpcEndpointServicePermissionsPaginator {
 pub struct DescribeVpcPeeringConnectionsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_vpc_peering_connections_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeVpcPeeringConnectionsPaginator {
@@ -9371,7 +11332,11 @@ impl DescribeVpcPeeringConnectionsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_vpc_peering_connections_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -9388,6 +11353,18 @@ impl DescribeVpcPeeringConnectionsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeVpcPeeringConnectionsPaginatorItems {
         crate::paginator::DescribeVpcPeeringConnectionsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -9432,12 +11409,15 @@ impl DescribeVpcPeeringConnectionsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_vpc_peering_connections_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -9458,6 +11438,7 @@ impl DescribeVpcPeeringConnectionsPaginator {
 pub struct DescribeVpcsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::describe_vpcs_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl DescribeVpcsPaginator {
@@ -9466,7 +11447,11 @@ impl DescribeVpcsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::describe_vpcs_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -9483,6 +11468,18 @@ impl DescribeVpcsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::DescribeVpcsPaginatorItems {
         crate::paginator::DescribeVpcsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -9527,12 +11524,15 @@ impl DescribeVpcsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_describe_vpcs_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -9553,6 +11553,7 @@ impl DescribeVpcsPaginator {
 pub struct GetAssociatedIpv6PoolCidrsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::get_associated_ipv6_pool_cidrs_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl GetAssociatedIpv6PoolCidrsPaginator {
@@ -9561,7 +11562,11 @@ impl GetAssociatedIpv6PoolCidrsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::get_associated_ipv6_pool_cidrs_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -9578,6 +11583,18 @@ impl GetAssociatedIpv6PoolCidrsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::GetAssociatedIpv6PoolCidrsPaginatorItems {
         crate::paginator::GetAssociatedIpv6PoolCidrsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -9622,12 +11639,15 @@ impl GetAssociatedIpv6PoolCidrsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_get_associated_ipv6_pool_cidrs_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -9648,6 +11668,7 @@ impl GetAssociatedIpv6PoolCidrsPaginator {
 pub struct GetGroupsForCapacityReservationPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::get_groups_for_capacity_reservation_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl GetGroupsForCapacityReservationPaginator {
@@ -9656,7 +11677,11 @@ impl GetGroupsForCapacityReservationPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::get_groups_for_capacity_reservation_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -9673,6 +11698,18 @@ impl GetGroupsForCapacityReservationPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::GetGroupsForCapacityReservationPaginatorItems {
         crate::paginator::GetGroupsForCapacityReservationPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -9717,12 +11754,15 @@ impl GetGroupsForCapacityReservationPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_get_groups_for_capacity_reservation_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -9743,6 +11783,7 @@ impl GetGroupsForCapacityReservationPaginator {
 pub struct GetInstanceTypesFromInstanceRequirementsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::get_instance_types_from_instance_requirements_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl GetInstanceTypesFromInstanceRequirementsPaginator {
@@ -9751,7 +11792,11 @@ impl GetInstanceTypesFromInstanceRequirementsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::get_instance_types_from_instance_requirements_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -9768,6 +11813,18 @@ impl GetInstanceTypesFromInstanceRequirementsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::GetInstanceTypesFromInstanceRequirementsPaginatorItems {
         crate::paginator::GetInstanceTypesFromInstanceRequirementsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -9814,12 +11871,15 @@ impl GetInstanceTypesFromInstanceRequirementsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_get_instance_types_from_instance_requirements_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -9840,6 +11900,7 @@ impl GetInstanceTypesFromInstanceRequirementsPaginator {
 pub struct GetIpamAddressHistoryPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::get_ipam_address_history_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl GetIpamAddressHistoryPaginator {
@@ -9848,7 +11909,11 @@ impl GetIpamAddressHistoryPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::get_ipam_address_history_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -9865,6 +11930,18 @@ impl GetIpamAddressHistoryPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::GetIpamAddressHistoryPaginatorItems {
         crate::paginator::GetIpamAddressHistoryPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -9909,12 +11986,15 @@ impl GetIpamAddressHistoryPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_get_ipam_address_history_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -9935,6 +12015,7 @@ impl GetIpamAddressHistoryPaginator {
 pub struct GetIpamPoolAllocationsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::get_ipam_pool_allocations_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl GetIpamPoolAllocationsPaginator {
@@ -9943,7 +12024,11 @@ impl GetIpamPoolAllocationsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::get_ipam_pool_allocations_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -9960,6 +12045,18 @@ impl GetIpamPoolAllocationsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::GetIpamPoolAllocationsPaginatorItems {
         crate::paginator::GetIpamPoolAllocationsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -10004,12 +12101,15 @@ impl GetIpamPoolAllocationsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_get_ipam_pool_allocations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -10030,6 +12130,7 @@ impl GetIpamPoolAllocationsPaginator {
 pub struct GetIpamPoolCidrsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::get_ipam_pool_cidrs_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl GetIpamPoolCidrsPaginator {
@@ -10038,7 +12139,11 @@ impl GetIpamPoolCidrsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::get_ipam_pool_cidrs_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -10055,6 +12160,18 @@ impl GetIpamPoolCidrsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::GetIpamPoolCidrsPaginatorItems {
         crate::paginator::GetIpamPoolCidrsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -10099,12 +12216,15 @@ impl GetIpamPoolCidrsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_get_ipam_pool_cidrs_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -10125,6 +12245,7 @@ impl GetIpamPoolCidrsPaginator {
 pub struct GetIpamResourceCidrsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::get_ipam_resource_cidrs_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl GetIpamResourceCidrsPaginator {
@@ -10133,7 +12254,11 @@ impl GetIpamResourceCidrsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::get_ipam_resource_cidrs_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -10150,6 +12275,18 @@ impl GetIpamResourceCidrsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::GetIpamResourceCidrsPaginatorItems {
         crate::paginator::GetIpamResourceCidrsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -10194,12 +12331,15 @@ impl GetIpamResourceCidrsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_get_ipam_resource_cidrs_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -10220,6 +12360,7 @@ impl GetIpamResourceCidrsPaginator {
 pub struct GetManagedPrefixListAssociationsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::get_managed_prefix_list_associations_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl GetManagedPrefixListAssociationsPaginator {
@@ -10228,7 +12369,11 @@ impl GetManagedPrefixListAssociationsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::get_managed_prefix_list_associations_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -10245,6 +12390,18 @@ impl GetManagedPrefixListAssociationsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::GetManagedPrefixListAssociationsPaginatorItems {
         crate::paginator::GetManagedPrefixListAssociationsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -10289,12 +12446,15 @@ impl GetManagedPrefixListAssociationsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_get_managed_prefix_list_associations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -10315,6 +12475,7 @@ impl GetManagedPrefixListAssociationsPaginator {
 pub struct GetManagedPrefixListEntriesPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::get_managed_prefix_list_entries_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl GetManagedPrefixListEntriesPaginator {
@@ -10323,7 +12484,11 @@ impl GetManagedPrefixListEntriesPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::get_managed_prefix_list_entries_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -10340,6 +12505,18 @@ impl GetManagedPrefixListEntriesPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::GetManagedPrefixListEntriesPaginatorItems {
         crate::paginator::GetManagedPrefixListEntriesPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -10384,12 +12561,15 @@ impl GetManagedPrefixListEntriesPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_get_managed_prefix_list_entries_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -10410,6 +12590,7 @@ impl GetManagedPrefixListEntriesPaginator {
 pub struct GetSpotPlacementScoresPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::get_spot_placement_scores_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl GetSpotPlacementScoresPaginator {
@@ -10418,7 +12599,11 @@ impl GetSpotPlacementScoresPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::get_spot_placement_scores_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -10435,6 +12620,18 @@ impl GetSpotPlacementScoresPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::GetSpotPlacementScoresPaginatorItems {
         crate::paginator::GetSpotPlacementScoresPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -10479,12 +12676,15 @@ impl GetSpotPlacementScoresPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_get_spot_placement_scores_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -10505,6 +12705,7 @@ impl GetSpotPlacementScoresPaginator {
 pub struct GetTransitGatewayAttachmentPropagationsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::get_transit_gateway_attachment_propagations_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl GetTransitGatewayAttachmentPropagationsPaginator {
@@ -10513,7 +12714,11 @@ impl GetTransitGatewayAttachmentPropagationsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::get_transit_gateway_attachment_propagations_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -10530,6 +12735,18 @@ impl GetTransitGatewayAttachmentPropagationsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::GetTransitGatewayAttachmentPropagationsPaginatorItems {
         crate::paginator::GetTransitGatewayAttachmentPropagationsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -10576,12 +12793,15 @@ impl GetTransitGatewayAttachmentPropagationsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_get_transit_gateway_attachment_propagations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -10602,6 +12822,7 @@ impl GetTransitGatewayAttachmentPropagationsPaginator {
 pub struct GetTransitGatewayMulticastDomainAssociationsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::get_transit_gateway_multicast_domain_associations_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl GetTransitGatewayMulticastDomainAssociationsPaginator {
@@ -10610,7 +12831,11 @@ impl GetTransitGatewayMulticastDomainAssociationsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::get_transit_gateway_multicast_domain_associations_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -10629,6 +12854,18 @@ impl GetTransitGatewayMulticastDomainAssociationsPaginator {
         self,
     ) -> crate::paginator::GetTransitGatewayMulticastDomainAssociationsPaginatorItems {
         crate::paginator::GetTransitGatewayMulticastDomainAssociationsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -10675,12 +12912,15 @@ impl GetTransitGatewayMulticastDomainAssociationsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_get_transit_gateway_multicast_domain_associations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -10701,6 +12941,7 @@ impl GetTransitGatewayMulticastDomainAssociationsPaginator {
 pub struct GetTransitGatewayPolicyTableAssociationsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::get_transit_gateway_policy_table_associations_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl GetTransitGatewayPolicyTableAssociationsPaginator {
@@ -10709,7 +12950,11 @@ impl GetTransitGatewayPolicyTableAssociationsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::get_transit_gateway_policy_table_associations_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -10726,6 +12971,18 @@ impl GetTransitGatewayPolicyTableAssociationsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::GetTransitGatewayPolicyTableAssociationsPaginatorItems {
         crate::paginator::GetTransitGatewayPolicyTableAssociationsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -10772,12 +13029,15 @@ impl GetTransitGatewayPolicyTableAssociationsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_get_transit_gateway_policy_table_associations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -10798,6 +13058,7 @@ impl GetTransitGatewayPolicyTableAssociationsPaginator {
 pub struct GetTransitGatewayPrefixListReferencesPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::get_transit_gateway_prefix_list_references_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl GetTransitGatewayPrefixListReferencesPaginator {
@@ -10806,7 +13067,11 @@ impl GetTransitGatewayPrefixListReferencesPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::get_transit_gateway_prefix_list_references_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -10823,6 +13088,18 @@ impl GetTransitGatewayPrefixListReferencesPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::GetTransitGatewayPrefixListReferencesPaginatorItems {
         crate::paginator::GetTransitGatewayPrefixListReferencesPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -10869,12 +13146,15 @@ impl GetTransitGatewayPrefixListReferencesPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_get_transit_gateway_prefix_list_references_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -10895,6 +13175,7 @@ impl GetTransitGatewayPrefixListReferencesPaginator {
 pub struct GetTransitGatewayRouteTableAssociationsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::get_transit_gateway_route_table_associations_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl GetTransitGatewayRouteTableAssociationsPaginator {
@@ -10903,7 +13184,11 @@ impl GetTransitGatewayRouteTableAssociationsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::get_transit_gateway_route_table_associations_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -10920,6 +13205,18 @@ impl GetTransitGatewayRouteTableAssociationsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::GetTransitGatewayRouteTableAssociationsPaginatorItems {
         crate::paginator::GetTransitGatewayRouteTableAssociationsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -10966,12 +13263,15 @@ impl GetTransitGatewayRouteTableAssociationsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_get_transit_gateway_route_table_associations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -10992,6 +13292,7 @@ impl GetTransitGatewayRouteTableAssociationsPaginator {
 pub struct GetTransitGatewayRouteTablePropagationsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::get_transit_gateway_route_table_propagations_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl GetTransitGatewayRouteTablePropagationsPaginator {
@@ -11000,7 +13301,11 @@ impl GetTransitGatewayRouteTablePropagationsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::get_transit_gateway_route_table_propagations_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -11017,6 +13322,18 @@ impl GetTransitGatewayRouteTablePropagationsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::GetTransitGatewayRouteTablePropagationsPaginatorItems {
         crate::paginator::GetTransitGatewayRouteTablePropagationsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -11063,12 +13380,15 @@ impl GetTransitGatewayRouteTablePropagationsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_get_transit_gateway_route_table_propagations_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -11089,6 +13409,7 @@ impl GetTransitGatewayRouteTablePropagationsPaginator {
 pub struct GetVpnConnectionDeviceTypesPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::get_vpn_connection_device_types_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl GetVpnConnectionDeviceTypesPaginator {
@@ -11097,7 +13418,11 @@ impl GetVpnConnectionDeviceTypesPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::get_vpn_connection_device_types_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -11114,6 +13439,18 @@ impl GetVpnConnectionDeviceTypesPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::GetVpnConnectionDeviceTypesPaginatorItems {
         crate::paginator::GetVpnConnectionDeviceTypesPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -11158,12 +13495,15 @@ impl GetVpnConnectionDeviceTypesPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_get_vpn_connection_device_types_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -11184,6 +13524,7 @@ impl GetVpnConnectionDeviceTypesPaginator {
 pub struct ListImagesInRecycleBinPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::list_images_in_recycle_bin_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl ListImagesInRecycleBinPaginator {
@@ -11192,7 +13533,11 @@ impl ListImagesInRecycleBinPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::list_images_in_recycle_bin_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -11209,6 +13554,18 @@ impl ListImagesInRecycleBinPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::ListImagesInRecycleBinPaginatorItems {
         crate::paginator::ListImagesInRecycleBinPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -11253,12 +13610,15 @@ impl ListImagesInRecycleBinPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_list_images_in_recycle_bin_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -11279,6 +13639,7 @@ impl ListImagesInRecycleBinPaginator {
 pub struct ListSnapshotsInRecycleBinPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::list_snapshots_in_recycle_bin_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl ListSnapshotsInRecycleBinPaginator {
@@ -11287,7 +13648,11 @@ impl ListSnapshotsInRecycleBinPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::list_snapshots_in_recycle_bin_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -11304,6 +13669,18 @@ impl ListSnapshotsInRecycleBinPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::ListSnapshotsInRecycleBinPaginatorItems {
         crate::paginator::ListSnapshotsInRecycleBinPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -11348,12 +13725,15 @@ impl ListSnapshotsInRecycleBinPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_list_snapshots_in_recycle_bin_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -11374,6 +13754,7 @@ impl ListSnapshotsInRecycleBinPaginator {
 pub struct SearchLocalGatewayRoutesPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::search_local_gateway_routes_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl SearchLocalGatewayRoutesPaginator {
@@ -11382,7 +13763,11 @@ impl SearchLocalGatewayRoutesPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::search_local_gateway_routes_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -11399,6 +13784,18 @@ impl SearchLocalGatewayRoutesPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::SearchLocalGatewayRoutesPaginatorItems {
         crate::paginator::SearchLocalGatewayRoutesPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -11443,12 +13840,15 @@ impl SearchLocalGatewayRoutesPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_search_local_gateway_routes_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
@@ -11469,6 +13869,7 @@ impl SearchLocalGatewayRoutesPaginator {
 pub struct SearchTransitGatewayMulticastGroupsPaginator {
     handle: std::sync::Arc<crate::client::Handle>,
     builder: crate::input::search_transit_gateway_multicast_groups_input::Builder,
+    stop_on_duplicate_token: bool,
 }
 
 impl SearchTransitGatewayMulticastGroupsPaginator {
@@ -11477,7 +13878,11 @@ impl SearchTransitGatewayMulticastGroupsPaginator {
         handle: std::sync::Arc<crate::client::Handle>,
         builder: crate::input::search_transit_gateway_multicast_groups_input::Builder,
     ) -> Self {
-        Self { handle, builder }
+        Self {
+            handle,
+            builder,
+            stop_on_duplicate_token: true,
+        }
     }
 
     /// Set the page size
@@ -11494,6 +13899,18 @@ impl SearchTransitGatewayMulticastGroupsPaginator {
     /// are dispatched lazily.
     pub fn items(self) -> crate::paginator::SearchTransitGatewayMulticastGroupsPaginatorItems {
         crate::paginator::SearchTransitGatewayMulticastGroupsPaginatorItems(self)
+    }
+
+    /// Stop paginating when the service returns the same pagination token twice in a row.
+    ///
+    /// Defaults to true.
+    ///
+    /// For certain operations, it may be useful to continue on duplicate token. For example,
+    /// if an operation is for tailing a log file in real-time, then continuing may be desired.
+    /// This option can be set to `false` to accommodate these use cases.
+    pub fn stop_on_duplicate_token(mut self, stop_on_duplicate_token: bool) -> Self {
+        self.stop_on_duplicate_token = stop_on_duplicate_token;
+        self
     }
 
     /// Create the pagination stream
@@ -11540,12 +13957,15 @@ impl SearchTransitGatewayMulticastGroupsPaginator {
                         Ok(ref resp) => {
                             let new_token = crate::lens::reflens_structure_crate_output_search_transit_gateway_multicast_groups_output_next_token(resp);
                             let is_empty = new_token.map(|token| token.is_empty()).unwrap_or(true);
-                            if !is_empty && new_token == input.next_token.as_ref() {
-                                let _ = tx.send(Err(aws_smithy_http::result::SdkError::ConstructionFailure("next token did not change, aborting paginator. This indicates an SDK or AWS service bug.".into()))).await;
-                                return;
+                            if !is_empty
+                                && new_token == input.next_token.as_ref()
+                                && self.stop_on_duplicate_token
+                            {
+                                true
+                            } else {
+                                input.next_token = new_token.cloned();
+                                is_empty
                             }
-                            input.next_token = new_token.cloned();
-                            is_empty
                         }
                         Err(_) => true,
                     };
