@@ -32,7 +32,7 @@ impl<O, Retry> CustomizableOperation<O, Retry> {
     }
 
     /// Convenience for `map_request` where infallible direct mutation of request is acceptable
-    pub fn mutate_request<E>(self, f: impl FnOnce(&mut http::Request<SdkBody>)) -> Self {
+    pub fn mutate_request(self, f: impl FnOnce(&mut http::Request<SdkBody>)) -> Self {
         self.map_request(|mut req| {
             f(&mut req);
             Result::<_, Infallible>::Ok(req)
