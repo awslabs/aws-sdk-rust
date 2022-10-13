@@ -556,8 +556,8 @@ impl Builder {
     pub async fn build(self) -> Result<Client, BuildError> {
         let config = self.config.unwrap_or_default();
         let timeout_config = TimeoutConfig::builder()
-            .connect_timeout(DEFAULT_CONNECT_TIMEOUT)
-            .read_timeout(DEFAULT_READ_TIMEOUT)
+            .connect_timeout(self.connect_timeout.unwrap_or(DEFAULT_CONNECT_TIMEOUT))
+            .read_timeout(self.read_timeout.unwrap_or(DEFAULT_READ_TIMEOUT))
             .build();
         let connector_settings = ConnectorSettings::from_timeout_config(&timeout_config);
         let connector = expect_connector(config.connector(&connector_settings));
