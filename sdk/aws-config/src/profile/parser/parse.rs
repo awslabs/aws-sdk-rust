@@ -110,7 +110,7 @@ pub(super) fn parse_profile_file(file: &File) -> Result<RawProfileSet<'_>, Profi
         state: State::Starting,
         location: Location {
             line_number: 0,
-            path: file.path.to_string(),
+            path: file.path.clone().unwrap_or_default(),
         },
     };
     parser.parse_profile(&file.contents)?;
@@ -290,6 +290,7 @@ mod test {
     use super::{parse_profile_file, prepare_line, Location};
     use crate::profile::parser::parse::{parse_property_line, PropertyError};
     use crate::profile::parser::source::File;
+    use crate::profile::profile_file::ProfileFileKind;
 
     // most test cases covered by the JSON test suite
 
@@ -330,7 +331,8 @@ mod test {
     #[test]
     fn error_line_numbers() {
         let file = File {
-            path: "~/.aws/config".into(),
+            kind: ProfileFileKind::Config,
+            path: Some("~/.aws/config".into()),
             contents: "[default\nk=v".into(),
         };
         let err = parse_profile_file(&file).expect_err("parsing should fail");

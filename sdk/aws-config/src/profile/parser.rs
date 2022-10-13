@@ -3,17 +3,19 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-mod normalize;
-mod parse;
-mod source;
-
 use crate::profile::parser::parse::parse_profile_file;
-use crate::profile::parser::source::{FileKind, Source};
+use crate::profile::parser::source::Source;
+use crate::profile::profile_file::ProfileFiles;
 use aws_types::os_shim_internal::{Env, Fs};
 use std::borrow::Cow;
 use std::collections::HashMap;
 
 pub use self::parse::ProfileParseError;
+use super::credentials::ProfileFileError;
+
+mod normalize;
+mod parse;
+mod source;
 
 /// Read & parse AWS config files
 ///
@@ -22,23 +24,7 @@ pub use self::parse::ProfileParseError;
 /// Although the basic behavior is straightforward, there are number of nuances to maintain backwards
 /// compatibility with other SDKs enumerated below.
 ///
-/// ## Location of Profile Files
-/// * The location of the config file will be loaded from the `AWS_CONFIG_FILE` environment variable
-/// with a fallback to `~/.aws/config`
-/// * The location of the credentials file will be loaded from the `AWS_SHARED_CREDENTIALS_FILE`
-/// environment variable with a fallback to `~/.aws/credentials`
-///
-/// ## Home directory resolution
-/// Home directory resolution is implemented to match the behavior of the CLI & Python. `~` is only
-/// used for home directory resolution when it:
-/// - Starts the path
-/// - Is followed immediately by `/` or a platform specific separator. (On windows, `~/` and `~\` both
-///   resolve to the home directory.
-///
-/// When determining the home directory, the following environment variables are checked:
-/// - `HOME` on all platforms
-/// - `USERPROFILE` on Windows
-/// - The concatenation of `HOMEDRIVE` and `HOMEPATH` on Windows (`$HOMEDRIVE$HOMEPATH`)
+#[doc = include_str!("location_of_profile_files.md")]
 ///
 /// ## Profile file syntax
 ///
@@ -66,9 +52,13 @@ pub use self::parse::ProfileParseError;
 /// [other]
 /// aws_access_key_id = 456
 /// ```
-pub async fn load(fs: &Fs, env: &Env) -> Result<ProfileSet, ProfileParseError> {
-    let source = source::load(env, fs).await;
-    ProfileSet::parse(source)
+pub async fn load(
+    fs: &Fs,
+    env: &Env,
+    profile_files: &ProfileFiles,
+) -> Result<ProfileSet, ProfileFileError> {
+    let source = source::load(env, fs, profile_files).await?;
+    Ok(ProfileSet::parse(source)?)
 }
 
 /// A top-level configuration source containing multiple named profiles
@@ -141,16 +131,9 @@ impl ProfileSet {
         let mut base = ProfileSet::empty();
         base.selected_profile = source.profile;
 
-        normalize::merge_in(
-            &mut base,
-            parse_profile_file(&source.config_file)?,
-            FileKind::Config,
-        );
-        normalize::merge_in(
-            &mut base,
-            parse_profile_file(&source.credentials_file)?,
-            FileKind::Credentials,
-        );
+        for file in source.files {
+            normalize::merge_in(&mut base, parse_profile_file(&file)?, file.kind);
+        }
         Ok(base)
     }
 
@@ -215,6 +198,7 @@ impl Property {
 #[cfg(test)]
 mod test {
     use crate::profile::parser::source::{File, Source};
+    use crate::profile::profile_file::ProfileFileKind;
     use crate::profile::ProfileSet;
     use arbitrary::{Arbitrary, Unstructured};
     use serde::Deserialize;
@@ -276,14 +260,18 @@ mod test {
             let (conf, creds): (Option<&str>, Option<&str>) =
                 Arbitrary::arbitrary(&mut unstructured)?;
             let profile_source = Source {
-                config_file: File {
-                    path: "~/.aws/config".to_string(),
-                    contents: conf.unwrap_or_default().to_string(),
-                },
-                credentials_file: File {
-                    path: "~/.aws/config".to_string(),
-                    contents: creds.unwrap_or_default().to_string(),
-                },
+                files: vec![
+                    File {
+                        kind: ProfileFileKind::Config,
+                        path: Some("~/.aws/config".to_string()),
+                        contents: conf.unwrap_or_default().to_string(),
+                    },
+                    File {
+                        kind: ProfileFileKind::Credentials,
+                        path: Some("~/.aws/credentials".to_string()),
+                        contents: creds.unwrap_or_default().to_string(),
+                    },
+                ],
                 profile: "default".into(),
             };
             // don't care if parse fails, just don't panic
@@ -313,14 +301,18 @@ mod test {
 
     fn make_source(input: ParserInput) -> Source {
         Source {
-            config_file: File {
-                path: "~/.aws/config".to_string(),
-                contents: input.config_file.unwrap_or_default(),
-            },
-            credentials_file: File {
-                path: "~/.aws/credentials".to_string(),
-                contents: input.credentials_file.unwrap_or_default(),
-            },
+            files: vec![
+                File {
+                    kind: ProfileFileKind::Config,
+                    path: Some("~/.aws/config".to_string()),
+                    contents: input.config_file.unwrap_or_default(),
+                },
+                File {
+                    kind: ProfileFileKind::Credentials,
+                    path: Some("~/.aws/credentials".to_string()),
+                    contents: input.credentials_file.unwrap_or_default(),
+                },
+            ],
             profile: "default".into(),
         }
     }

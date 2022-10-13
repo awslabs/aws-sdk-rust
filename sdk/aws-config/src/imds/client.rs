@@ -37,7 +37,7 @@ use tokio::sync::OnceCell;
 
 use crate::connector::expect_connector;
 use crate::imds::client::token::TokenMiddleware;
-use crate::profile::ProfileParseError;
+use crate::profile::credentials::ProfileFileError;
 use crate::provider_config::ProviderConfig;
 use crate::{profile, PKG_VERSION};
 use aws_sdk_sso::config::timeout::TimeoutConfig;
@@ -439,7 +439,7 @@ pub enum BuildError {
     InvalidEndpointMode(InvalidEndpointMode),
 
     /// The AWS Profile (e.g. `~/.aws/config`) was invalid
-    InvalidProfile(ProfileParseError),
+    InvalidProfile(ProfileFileError),
 
     /// The specified endpoint was not a valid URI
     InvalidEndpointUri(InvalidUri),
@@ -626,7 +626,7 @@ impl EndpointSource {
             }
             EndpointSource::Env(env, fs) => {
                 // load an endpoint override from the environment
-                let profile = profile::load(fs, env)
+                let profile = profile::load(fs, env, &Default::default())
                     .await
                     .map_err(BuildError::InvalidProfile)?;
                 let uri_override = if let Ok(uri) = env.get(env::ENDPOINT) {
