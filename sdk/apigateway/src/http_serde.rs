@@ -13,7 +13,7 @@ pub fn add_headers_get_export(
                         field: "accepts",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;

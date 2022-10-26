@@ -13,7 +13,7 @@ pub fn add_headers_complete_attachment_upload(
                         field: "connection_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -37,7 +37,7 @@ pub fn add_headers_create_participant_connection(
                         field: "participant_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -61,7 +61,7 @@ pub fn add_headers_disconnect_participant(
                         field: "connection_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -85,7 +85,7 @@ pub fn add_headers_get_attachment(
                         field: "connection_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -109,7 +109,7 @@ pub fn add_headers_get_transcript(
                         field: "connection_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -133,7 +133,7 @@ pub fn add_headers_send_event(
                         field: "connection_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -157,7 +157,7 @@ pub fn add_headers_send_message(
                         field: "connection_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -181,7 +181,7 @@ pub fn add_headers_start_attachment_upload(
                         field: "connection_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;

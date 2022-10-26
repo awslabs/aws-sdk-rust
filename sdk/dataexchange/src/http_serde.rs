@@ -13,7 +13,7 @@ pub fn add_headers_send_api_asset(
                         field: "asset_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -30,7 +30,7 @@ pub fn add_headers_send_api_asset(
                         field: "data_set_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -47,7 +47,7 @@ pub fn add_headers_send_api_asset(
                         field: "method",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -64,7 +64,7 @@ pub fn add_headers_send_api_asset(
                         field: "path",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -81,7 +81,7 @@ pub fn add_headers_send_api_asset(
                         field: "revision_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -104,7 +104,7 @@ pub fn add_headers_send_api_asset(
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                     aws_smithy_http::operation::BuildError::InvalidField {
                         field: "request_headers",
-                        details: format!("`{}` cannot be used as a header value: {}", v, err),
+                        details: format!("`{}` cannot be used as a header value: {}", v, err,),
                     }
                 })?;
             builder = builder.header(header_name, header_value);

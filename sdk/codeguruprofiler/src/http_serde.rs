@@ -13,7 +13,7 @@ pub fn add_headers_get_profile(
                         field: "accept",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -37,7 +37,7 @@ pub fn add_headers_post_agent_profile(
                         field: "content_type",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;

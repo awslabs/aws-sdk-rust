@@ -13,7 +13,7 @@ pub fn add_headers_attach_principal_policy(
                         field: "principal",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -37,7 +37,7 @@ pub fn add_headers_attach_thing_principal(
                         field: "principal",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -61,7 +61,7 @@ pub fn add_headers_create_topic_rule(
                         field: "tags",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -85,7 +85,7 @@ pub fn add_headers_detach_principal_policy(
                         field: "principal",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -109,7 +109,7 @@ pub fn add_headers_detach_thing_principal(
                         field: "principal",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -133,7 +133,7 @@ pub fn add_headers_list_policy_principals(
                         field: "policy_name",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -157,7 +157,7 @@ pub fn add_headers_list_principal_policies(
                         field: "principal",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -181,7 +181,7 @@ pub fn add_headers_list_principal_things(
                         field: "principal",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;

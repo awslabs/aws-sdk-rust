@@ -13,7 +13,7 @@ pub fn add_headers_associate_channel_flow(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -37,7 +37,7 @@ pub fn add_headers_batch_create_channel_membership(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -61,7 +61,7 @@ pub fn add_headers_create_channel(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -85,7 +85,7 @@ pub fn add_headers_create_channel_ban(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -109,7 +109,7 @@ pub fn add_headers_create_channel_membership(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -133,7 +133,7 @@ pub fn add_headers_create_channel_moderator(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -157,7 +157,7 @@ pub fn add_headers_delete_channel(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -181,7 +181,7 @@ pub fn add_headers_delete_channel_ban(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -205,7 +205,7 @@ pub fn add_headers_delete_channel_membership(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -229,7 +229,7 @@ pub fn add_headers_delete_channel_message(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -253,7 +253,7 @@ pub fn add_headers_delete_channel_moderator(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -277,7 +277,7 @@ pub fn add_headers_describe_channel(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -301,7 +301,7 @@ pub fn add_headers_describe_channel_ban(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -325,7 +325,7 @@ pub fn add_headers_describe_channel_membership(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -349,7 +349,7 @@ pub fn add_headers_describe_channel_membership_for_app_instance_user(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -373,7 +373,7 @@ pub fn add_headers_describe_channel_moderated_by_app_instance_user(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -397,7 +397,7 @@ pub fn add_headers_describe_channel_moderator(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -421,7 +421,7 @@ pub fn add_headers_disassociate_channel_flow(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -445,7 +445,7 @@ pub fn add_headers_get_channel_membership_preferences(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -469,7 +469,7 @@ pub fn add_headers_get_channel_message(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -493,7 +493,7 @@ pub fn add_headers_get_channel_message_status(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -517,7 +517,7 @@ pub fn add_headers_list_channel_bans(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -541,7 +541,7 @@ pub fn add_headers_list_channel_memberships(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -565,7 +565,7 @@ pub fn add_headers_list_channel_memberships_for_app_instance_user(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -589,7 +589,7 @@ pub fn add_headers_list_channel_messages(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -613,7 +613,7 @@ pub fn add_headers_list_channel_moderators(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -637,7 +637,7 @@ pub fn add_headers_list_channels(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -661,7 +661,7 @@ pub fn add_headers_list_channels_moderated_by_app_instance_user(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -685,7 +685,7 @@ pub fn add_headers_list_sub_channels(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -709,7 +709,7 @@ pub fn add_headers_put_channel_membership_preferences(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -733,7 +733,7 @@ pub fn add_headers_redact_channel_message(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -757,7 +757,7 @@ pub fn add_headers_search_channels(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -781,7 +781,7 @@ pub fn add_headers_send_channel_message(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -805,7 +805,7 @@ pub fn add_headers_update_channel(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -829,7 +829,7 @@ pub fn add_headers_update_channel_message(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -853,7 +853,7 @@ pub fn add_headers_update_channel_read_marker(
                         field: "chime_bearer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;

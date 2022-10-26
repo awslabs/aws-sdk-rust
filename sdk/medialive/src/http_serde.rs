@@ -13,7 +13,7 @@ pub fn add_headers_describe_input_device_thumbnail(
                         field: "accept",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;

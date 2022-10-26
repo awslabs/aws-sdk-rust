@@ -13,7 +13,7 @@ pub fn add_headers_start_medical_stream_transcription(
                         field: "language_code",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -31,7 +31,7 @@ pub fn add_headers_start_medical_stream_transcription(
                         field: "media_sample_rate_hertz",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -48,7 +48,7 @@ pub fn add_headers_start_medical_stream_transcription(
                         field: "media_encoding",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -65,7 +65,7 @@ pub fn add_headers_start_medical_stream_transcription(
                         field: "vocabulary_name",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -82,7 +82,7 @@ pub fn add_headers_start_medical_stream_transcription(
                         field: "specialty",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -99,7 +99,7 @@ pub fn add_headers_start_medical_stream_transcription(
                         field: "r#type",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -117,7 +117,7 @@ pub fn add_headers_start_medical_stream_transcription(
                         field: "show_speaker_label",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -134,7 +134,7 @@ pub fn add_headers_start_medical_stream_transcription(
                         field: "session_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -153,7 +153,7 @@ pub fn add_headers_start_medical_stream_transcription(
                         field: "enable_channel_identification",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -174,7 +174,7 @@ pub fn add_headers_start_medical_stream_transcription(
                         field: "number_of_channels",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -191,7 +191,7 @@ pub fn add_headers_start_medical_stream_transcription(
                         field: "content_identification_type",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -218,7 +218,7 @@ pub fn add_headers_start_stream_transcription(
                         field: "language_code",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -236,7 +236,7 @@ pub fn add_headers_start_stream_transcription(
                         field: "media_sample_rate_hertz",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -253,7 +253,7 @@ pub fn add_headers_start_stream_transcription(
                         field: "media_encoding",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -270,7 +270,7 @@ pub fn add_headers_start_stream_transcription(
                         field: "vocabulary_name",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -287,7 +287,7 @@ pub fn add_headers_start_stream_transcription(
                         field: "session_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -304,7 +304,7 @@ pub fn add_headers_start_stream_transcription(
                         field: "vocabulary_filter_name",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -321,7 +321,7 @@ pub fn add_headers_start_stream_transcription(
                         field: "vocabulary_filter_method",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -339,7 +339,7 @@ pub fn add_headers_start_stream_transcription(
                         field: "show_speaker_label",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -358,7 +358,7 @@ pub fn add_headers_start_stream_transcription(
                         field: "enable_channel_identification",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -379,7 +379,7 @@ pub fn add_headers_start_stream_transcription(
                         field: "number_of_channels",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -398,7 +398,7 @@ pub fn add_headers_start_stream_transcription(
                         field: "enable_partial_results_stabilization",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -418,7 +418,7 @@ pub fn add_headers_start_stream_transcription(
                         field: "partial_results_stability",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -435,7 +435,7 @@ pub fn add_headers_start_stream_transcription(
                         field: "content_identification_type",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -455,7 +455,7 @@ pub fn add_headers_start_stream_transcription(
                         field: "content_redaction_type",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -472,7 +472,7 @@ pub fn add_headers_start_stream_transcription(
                         field: "pii_entity_types",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -489,7 +489,7 @@ pub fn add_headers_start_stream_transcription(
                         field: "language_model_name",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -507,7 +507,7 @@ pub fn add_headers_start_stream_transcription(
                         field: "identify_language",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -524,7 +524,7 @@ pub fn add_headers_start_stream_transcription(
                         field: "language_options",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -541,7 +541,7 @@ pub fn add_headers_start_stream_transcription(
                         field: "preferred_language",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -558,7 +558,7 @@ pub fn add_headers_start_stream_transcription(
                         field: "vocabulary_names",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -575,7 +575,7 @@ pub fn add_headers_start_stream_transcription(
                         field: "vocabulary_filter_names",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;

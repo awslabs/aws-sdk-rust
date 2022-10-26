@@ -13,7 +13,7 @@ pub fn add_headers_complete_multipart_upload(
                         field: "archive_size",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -30,7 +30,7 @@ pub fn add_headers_complete_multipart_upload(
                         field: "checksum",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -54,7 +54,7 @@ pub fn add_headers_get_job_output(
                         field: "range",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -78,7 +78,7 @@ pub fn add_headers_initiate_multipart_upload(
                         field: "archive_description",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -95,7 +95,7 @@ pub fn add_headers_initiate_multipart_upload(
                         field: "part_size",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -119,7 +119,7 @@ pub fn add_headers_upload_archive(
                         field: "archive_description",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -136,7 +136,7 @@ pub fn add_headers_upload_archive(
                         field: "checksum",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -160,7 +160,7 @@ pub fn add_headers_upload_multipart_part(
                         field: "checksum",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -177,7 +177,7 @@ pub fn add_headers_upload_multipart_part(
                         field: "range",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;

@@ -13,7 +13,7 @@ pub fn add_headers_accept_eulas(
                         field: "client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -37,7 +37,7 @@ pub fn add_headers_create_launch_profile(
                         field: "client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -61,7 +61,7 @@ pub fn add_headers_create_streaming_image(
                         field: "client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -85,7 +85,7 @@ pub fn add_headers_create_streaming_session(
                         field: "client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -109,7 +109,7 @@ pub fn add_headers_create_streaming_session_stream(
                         field: "client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -133,7 +133,7 @@ pub fn add_headers_create_studio(
                         field: "client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -157,7 +157,7 @@ pub fn add_headers_create_studio_component(
                         field: "client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -181,7 +181,7 @@ pub fn add_headers_delete_launch_profile(
                         field: "client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -205,7 +205,7 @@ pub fn add_headers_delete_launch_profile_member(
                         field: "client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -229,7 +229,7 @@ pub fn add_headers_delete_streaming_image(
                         field: "client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -253,7 +253,7 @@ pub fn add_headers_delete_streaming_session(
                         field: "client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -277,7 +277,7 @@ pub fn add_headers_delete_studio(
                         field: "client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -301,7 +301,7 @@ pub fn add_headers_delete_studio_component(
                         field: "client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -325,7 +325,7 @@ pub fn add_headers_delete_studio_member(
                         field: "client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -349,7 +349,7 @@ pub fn add_headers_put_launch_profile_members(
                         field: "client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -373,7 +373,7 @@ pub fn add_headers_put_studio_members(
                         field: "client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -397,7 +397,7 @@ pub fn add_headers_start_streaming_session(
                         field: "client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -421,7 +421,7 @@ pub fn add_headers_start_studio_sso_configuration_repair(
                         field: "client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -445,7 +445,7 @@ pub fn add_headers_stop_streaming_session(
                         field: "client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -469,7 +469,7 @@ pub fn add_headers_update_launch_profile(
                         field: "client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -493,7 +493,7 @@ pub fn add_headers_update_launch_profile_member(
                         field: "client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -517,7 +517,7 @@ pub fn add_headers_update_streaming_image(
                         field: "client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -541,7 +541,7 @@ pub fn add_headers_update_studio(
                         field: "client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -565,7 +565,7 @@ pub fn add_headers_update_studio_component(
                         field: "client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;

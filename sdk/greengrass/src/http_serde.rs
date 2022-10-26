@@ -13,7 +13,7 @@ pub fn add_headers_create_connector_definition(
                         field: "amzn_client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -37,7 +37,7 @@ pub fn add_headers_create_connector_definition_version(
                         field: "amzn_client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -61,7 +61,7 @@ pub fn add_headers_create_core_definition(
                         field: "amzn_client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -85,7 +85,7 @@ pub fn add_headers_create_core_definition_version(
                         field: "amzn_client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -109,7 +109,7 @@ pub fn add_headers_create_deployment(
                         field: "amzn_client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -133,7 +133,7 @@ pub fn add_headers_create_device_definition(
                         field: "amzn_client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -157,7 +157,7 @@ pub fn add_headers_create_device_definition_version(
                         field: "amzn_client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -181,7 +181,7 @@ pub fn add_headers_create_function_definition(
                         field: "amzn_client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -205,7 +205,7 @@ pub fn add_headers_create_function_definition_version(
                         field: "amzn_client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -229,7 +229,7 @@ pub fn add_headers_create_group(
                         field: "amzn_client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -253,7 +253,7 @@ pub fn add_headers_create_group_certificate_authority(
                         field: "amzn_client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -277,7 +277,7 @@ pub fn add_headers_create_group_version(
                         field: "amzn_client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -301,7 +301,7 @@ pub fn add_headers_create_logger_definition(
                         field: "amzn_client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -325,7 +325,7 @@ pub fn add_headers_create_logger_definition_version(
                         field: "amzn_client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -349,7 +349,7 @@ pub fn add_headers_create_resource_definition(
                         field: "amzn_client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -373,7 +373,7 @@ pub fn add_headers_create_resource_definition_version(
                         field: "amzn_client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -397,7 +397,7 @@ pub fn add_headers_create_software_update_job(
                         field: "amzn_client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -421,7 +421,7 @@ pub fn add_headers_create_subscription_definition(
                         field: "amzn_client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -445,7 +445,7 @@ pub fn add_headers_create_subscription_definition_version(
                         field: "amzn_client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -469,7 +469,7 @@ pub fn add_headers_reset_deployments(
                         field: "amzn_client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -493,7 +493,7 @@ pub fn add_headers_start_bulk_deployment(
                         field: "amzn_client_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;

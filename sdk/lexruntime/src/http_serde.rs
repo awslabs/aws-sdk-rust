@@ -13,7 +13,7 @@ pub fn add_headers_post_content(
                         field: "session_attributes",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
+                            &"*** Sensitive Data Redacted ***", err,
                         ),
                     }
                 })?;
@@ -30,7 +30,7 @@ pub fn add_headers_post_content(
                         field: "request_attributes",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
+                            &"*** Sensitive Data Redacted ***", err,
                         ),
                     }
                 })?;
@@ -47,7 +47,7 @@ pub fn add_headers_post_content(
                         field: "content_type",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -64,7 +64,7 @@ pub fn add_headers_post_content(
                         field: "accept",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -81,7 +81,7 @@ pub fn add_headers_post_content(
                         field: "active_contexts",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
+                            &"*** Sensitive Data Redacted ***", err,
                         ),
                     }
                 })?;
@@ -105,7 +105,7 @@ pub fn add_headers_put_session(
                         field: "accept",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;

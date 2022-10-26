@@ -13,7 +13,7 @@ pub fn add_headers_abort_multipart_upload(
                         field: "request_payer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -30,7 +30,7 @@ pub fn add_headers_abort_multipart_upload(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -54,7 +54,7 @@ pub fn add_headers_complete_multipart_upload(
                         field: "checksum_crc32",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -71,7 +71,7 @@ pub fn add_headers_complete_multipart_upload(
                         field: "checksum_crc32_c",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -88,7 +88,7 @@ pub fn add_headers_complete_multipart_upload(
                         field: "checksum_sha1",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -105,7 +105,7 @@ pub fn add_headers_complete_multipart_upload(
                         field: "checksum_sha256",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -122,7 +122,7 @@ pub fn add_headers_complete_multipart_upload(
                         field: "request_payer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -139,7 +139,7 @@ pub fn add_headers_complete_multipart_upload(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -156,7 +156,7 @@ pub fn add_headers_complete_multipart_upload(
                         field: "sse_customer_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -176,7 +176,7 @@ pub fn add_headers_complete_multipart_upload(
                         field: "sse_customer_key",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
+                            &"*** Sensitive Data Redacted ***", err,
                         ),
                     }
                 })?;
@@ -193,7 +193,7 @@ pub fn add_headers_complete_multipart_upload(
                         field: "sse_customer_key_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -220,7 +220,7 @@ pub fn add_headers_copy_object(
                         field: "acl",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -237,7 +237,7 @@ pub fn add_headers_copy_object(
                         field: "cache_control",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -254,7 +254,7 @@ pub fn add_headers_copy_object(
                         field: "checksum_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -271,7 +271,7 @@ pub fn add_headers_copy_object(
                         field: "content_disposition",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -288,7 +288,7 @@ pub fn add_headers_copy_object(
                         field: "content_encoding",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -305,7 +305,7 @@ pub fn add_headers_copy_object(
                         field: "content_language",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -322,7 +322,7 @@ pub fn add_headers_copy_object(
                         field: "content_type",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -339,7 +339,7 @@ pub fn add_headers_copy_object(
                         field: "copy_source",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -356,7 +356,7 @@ pub fn add_headers_copy_object(
                         field: "copy_source_if_match",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -373,7 +373,7 @@ pub fn add_headers_copy_object(
                         field: "copy_source_if_modified_since",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -390,7 +390,7 @@ pub fn add_headers_copy_object(
                         field: "copy_source_if_none_match",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -407,7 +407,7 @@ pub fn add_headers_copy_object(
                         field: "copy_source_if_unmodified_since",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -424,7 +424,7 @@ pub fn add_headers_copy_object(
                         field: "expires",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -441,7 +441,7 @@ pub fn add_headers_copy_object(
                         field: "grant_full_control",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -458,7 +458,7 @@ pub fn add_headers_copy_object(
                         field: "grant_read",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -475,7 +475,7 @@ pub fn add_headers_copy_object(
                         field: "grant_read_acp",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -492,7 +492,7 @@ pub fn add_headers_copy_object(
                         field: "grant_write_acp",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -509,7 +509,7 @@ pub fn add_headers_copy_object(
                         field: "metadata_directive",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -526,7 +526,7 @@ pub fn add_headers_copy_object(
                         field: "tagging_directive",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -543,7 +543,7 @@ pub fn add_headers_copy_object(
                         field: "server_side_encryption",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -560,7 +560,7 @@ pub fn add_headers_copy_object(
                         field: "storage_class",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -577,7 +577,7 @@ pub fn add_headers_copy_object(
                         field: "website_redirect_location",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -594,7 +594,7 @@ pub fn add_headers_copy_object(
                         field: "sse_customer_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -614,7 +614,7 @@ pub fn add_headers_copy_object(
                         field: "sse_customer_key",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
+                            &"*** Sensitive Data Redacted ***", err,
                         ),
                     }
                 })?;
@@ -631,7 +631,7 @@ pub fn add_headers_copy_object(
                         field: "sse_customer_key_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -651,7 +651,7 @@ pub fn add_headers_copy_object(
                         field: "ssekms_key_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
+                            &"*** Sensitive Data Redacted ***", err,
                         ),
                     }
                 })?;
@@ -668,7 +668,7 @@ pub fn add_headers_copy_object(
                         field: "ssekms_encryption_context",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
+                            &"*** Sensitive Data Redacted ***", err,
                         ),
                     }
                 })?;
@@ -686,7 +686,7 @@ pub fn add_headers_copy_object(
                         field: "bucket_key_enabled",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -706,7 +706,7 @@ pub fn add_headers_copy_object(
                         field: "copy_source_sse_customer_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -726,7 +726,7 @@ pub fn add_headers_copy_object(
                         field: "copy_source_sse_customer_key",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
+                            &"*** Sensitive Data Redacted ***", err,
                         ),
                     }
                 })?;
@@ -746,7 +746,7 @@ pub fn add_headers_copy_object(
                         field: "copy_source_sse_customer_key_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -766,7 +766,7 @@ pub fn add_headers_copy_object(
                         field: "request_payer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -783,7 +783,7 @@ pub fn add_headers_copy_object(
                         field: "tagging",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -800,7 +800,7 @@ pub fn add_headers_copy_object(
                         field: "object_lock_mode",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -817,7 +817,7 @@ pub fn add_headers_copy_object(
                         field: "object_lock_retain_until_date",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -834,7 +834,7 @@ pub fn add_headers_copy_object(
                         field: "object_lock_legal_hold_status",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -851,7 +851,7 @@ pub fn add_headers_copy_object(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -868,7 +868,7 @@ pub fn add_headers_copy_object(
                         field: "expected_source_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -890,7 +890,7 @@ pub fn add_headers_copy_object(
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                     aws_smithy_http::operation::BuildError::InvalidField {
                         field: "metadata",
-                        details: format!("`{}` cannot be used as a header value: {}", v, err),
+                        details: format!("`{}` cannot be used as a header value: {}", v, err,),
                     }
                 })?;
             builder = builder.header(header_name, header_value);
@@ -913,7 +913,7 @@ pub fn add_headers_create_bucket(
                         field: "acl",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -930,7 +930,7 @@ pub fn add_headers_create_bucket(
                         field: "grant_full_control",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -947,7 +947,7 @@ pub fn add_headers_create_bucket(
                         field: "grant_read",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -964,7 +964,7 @@ pub fn add_headers_create_bucket(
                         field: "grant_read_acp",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -981,7 +981,7 @@ pub fn add_headers_create_bucket(
                         field: "grant_write",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -998,7 +998,7 @@ pub fn add_headers_create_bucket(
                         field: "grant_write_acp",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1017,7 +1017,7 @@ pub fn add_headers_create_bucket(
                         field: "object_lock_enabled_for_bucket",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1034,7 +1034,7 @@ pub fn add_headers_create_bucket(
                         field: "object_ownership",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1058,7 +1058,7 @@ pub fn add_headers_create_multipart_upload(
                         field: "acl",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1075,7 +1075,7 @@ pub fn add_headers_create_multipart_upload(
                         field: "cache_control",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1092,7 +1092,7 @@ pub fn add_headers_create_multipart_upload(
                         field: "content_disposition",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1109,7 +1109,7 @@ pub fn add_headers_create_multipart_upload(
                         field: "content_encoding",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1126,7 +1126,7 @@ pub fn add_headers_create_multipart_upload(
                         field: "content_language",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1143,7 +1143,7 @@ pub fn add_headers_create_multipart_upload(
                         field: "content_type",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1160,7 +1160,7 @@ pub fn add_headers_create_multipart_upload(
                         field: "expires",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1177,7 +1177,7 @@ pub fn add_headers_create_multipart_upload(
                         field: "grant_full_control",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1194,7 +1194,7 @@ pub fn add_headers_create_multipart_upload(
                         field: "grant_read",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1211,7 +1211,7 @@ pub fn add_headers_create_multipart_upload(
                         field: "grant_read_acp",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1228,7 +1228,7 @@ pub fn add_headers_create_multipart_upload(
                         field: "grant_write_acp",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1245,7 +1245,7 @@ pub fn add_headers_create_multipart_upload(
                         field: "server_side_encryption",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1262,7 +1262,7 @@ pub fn add_headers_create_multipart_upload(
                         field: "storage_class",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1279,7 +1279,7 @@ pub fn add_headers_create_multipart_upload(
                         field: "website_redirect_location",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1296,7 +1296,7 @@ pub fn add_headers_create_multipart_upload(
                         field: "sse_customer_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1316,7 +1316,7 @@ pub fn add_headers_create_multipart_upload(
                         field: "sse_customer_key",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
+                            &"*** Sensitive Data Redacted ***", err,
                         ),
                     }
                 })?;
@@ -1333,7 +1333,7 @@ pub fn add_headers_create_multipart_upload(
                         field: "sse_customer_key_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1353,7 +1353,7 @@ pub fn add_headers_create_multipart_upload(
                         field: "ssekms_key_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
+                            &"*** Sensitive Data Redacted ***", err,
                         ),
                     }
                 })?;
@@ -1370,7 +1370,7 @@ pub fn add_headers_create_multipart_upload(
                         field: "ssekms_encryption_context",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
+                            &"*** Sensitive Data Redacted ***", err,
                         ),
                     }
                 })?;
@@ -1388,7 +1388,7 @@ pub fn add_headers_create_multipart_upload(
                         field: "bucket_key_enabled",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1408,7 +1408,7 @@ pub fn add_headers_create_multipart_upload(
                         field: "request_payer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1425,7 +1425,7 @@ pub fn add_headers_create_multipart_upload(
                         field: "tagging",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1442,7 +1442,7 @@ pub fn add_headers_create_multipart_upload(
                         field: "object_lock_mode",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1459,7 +1459,7 @@ pub fn add_headers_create_multipart_upload(
                         field: "object_lock_retain_until_date",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1476,7 +1476,7 @@ pub fn add_headers_create_multipart_upload(
                         field: "object_lock_legal_hold_status",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1493,7 +1493,7 @@ pub fn add_headers_create_multipart_upload(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1510,7 +1510,7 @@ pub fn add_headers_create_multipart_upload(
                         field: "checksum_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1532,7 +1532,7 @@ pub fn add_headers_create_multipart_upload(
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                     aws_smithy_http::operation::BuildError::InvalidField {
                         field: "metadata",
-                        details: format!("`{}` cannot be used as a header value: {}", v, err),
+                        details: format!("`{}` cannot be used as a header value: {}", v, err,),
                     }
                 })?;
             builder = builder.header(header_name, header_value);
@@ -1555,7 +1555,7 @@ pub fn add_headers_delete_bucket(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1579,7 +1579,7 @@ pub fn add_headers_delete_bucket_analytics_configuration(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1603,7 +1603,7 @@ pub fn add_headers_delete_bucket_cors(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1627,7 +1627,7 @@ pub fn add_headers_delete_bucket_encryption(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1651,7 +1651,7 @@ pub fn add_headers_delete_bucket_inventory_configuration(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1675,7 +1675,7 @@ pub fn add_headers_delete_bucket_lifecycle(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1699,7 +1699,7 @@ pub fn add_headers_delete_bucket_metrics_configuration(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1723,7 +1723,7 @@ pub fn add_headers_delete_bucket_ownership_controls(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1747,7 +1747,7 @@ pub fn add_headers_delete_bucket_policy(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1771,7 +1771,7 @@ pub fn add_headers_delete_bucket_replication(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1795,7 +1795,7 @@ pub fn add_headers_delete_bucket_tagging(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1819,7 +1819,7 @@ pub fn add_headers_delete_bucket_website(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1843,7 +1843,7 @@ pub fn add_headers_delete_object(
                         field: "mfa",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1860,7 +1860,7 @@ pub fn add_headers_delete_object(
                         field: "request_payer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1879,7 +1879,7 @@ pub fn add_headers_delete_object(
                         field: "bypass_governance_retention",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1896,7 +1896,7 @@ pub fn add_headers_delete_object(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1920,7 +1920,7 @@ pub fn add_headers_delete_objects(
                         field: "mfa",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1937,7 +1937,7 @@ pub fn add_headers_delete_objects(
                         field: "request_payer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1956,7 +1956,7 @@ pub fn add_headers_delete_objects(
                         field: "bypass_governance_retention",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1973,7 +1973,7 @@ pub fn add_headers_delete_objects(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1990,7 +1990,7 @@ pub fn add_headers_delete_objects(
                         field: "checksum_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2014,7 +2014,7 @@ pub fn add_headers_delete_object_tagging(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2038,7 +2038,7 @@ pub fn add_headers_delete_public_access_block(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2062,7 +2062,7 @@ pub fn add_headers_get_bucket_accelerate_configuration(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2086,7 +2086,7 @@ pub fn add_headers_get_bucket_acl(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2110,7 +2110,7 @@ pub fn add_headers_get_bucket_analytics_configuration(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2134,7 +2134,7 @@ pub fn add_headers_get_bucket_cors(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2158,7 +2158,7 @@ pub fn add_headers_get_bucket_encryption(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2182,7 +2182,7 @@ pub fn add_headers_get_bucket_inventory_configuration(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2206,7 +2206,7 @@ pub fn add_headers_get_bucket_lifecycle_configuration(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2230,7 +2230,7 @@ pub fn add_headers_get_bucket_location(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2254,7 +2254,7 @@ pub fn add_headers_get_bucket_logging(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2278,7 +2278,7 @@ pub fn add_headers_get_bucket_metrics_configuration(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2302,7 +2302,7 @@ pub fn add_headers_get_bucket_notification_configuration(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2326,7 +2326,7 @@ pub fn add_headers_get_bucket_ownership_controls(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2350,7 +2350,7 @@ pub fn add_headers_get_bucket_policy(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2374,7 +2374,7 @@ pub fn add_headers_get_bucket_policy_status(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2398,7 +2398,7 @@ pub fn add_headers_get_bucket_replication(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2422,7 +2422,7 @@ pub fn add_headers_get_bucket_request_payment(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2446,7 +2446,7 @@ pub fn add_headers_get_bucket_tagging(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2470,7 +2470,7 @@ pub fn add_headers_get_bucket_versioning(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2494,7 +2494,7 @@ pub fn add_headers_get_bucket_website(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2518,7 +2518,7 @@ pub fn add_headers_get_object(
                         field: "if_match",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2535,7 +2535,7 @@ pub fn add_headers_get_object(
                         field: "if_modified_since",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2552,7 +2552,7 @@ pub fn add_headers_get_object(
                         field: "if_none_match",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2569,7 +2569,7 @@ pub fn add_headers_get_object(
                         field: "if_unmodified_since",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2586,7 +2586,7 @@ pub fn add_headers_get_object(
                         field: "range",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2603,7 +2603,7 @@ pub fn add_headers_get_object(
                         field: "sse_customer_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2623,7 +2623,7 @@ pub fn add_headers_get_object(
                         field: "sse_customer_key",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
+                            &"*** Sensitive Data Redacted ***", err,
                         ),
                     }
                 })?;
@@ -2640,7 +2640,7 @@ pub fn add_headers_get_object(
                         field: "sse_customer_key_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2660,7 +2660,7 @@ pub fn add_headers_get_object(
                         field: "request_payer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2677,7 +2677,7 @@ pub fn add_headers_get_object(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2694,7 +2694,7 @@ pub fn add_headers_get_object(
                         field: "checksum_mode",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2718,7 +2718,7 @@ pub fn add_headers_get_object_acl(
                         field: "request_payer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2735,7 +2735,7 @@ pub fn add_headers_get_object_acl(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2760,7 +2760,7 @@ pub fn add_headers_get_object_attributes(
                         field: "max_parts",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2777,7 +2777,7 @@ pub fn add_headers_get_object_attributes(
                         field: "part_number_marker",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2794,7 +2794,7 @@ pub fn add_headers_get_object_attributes(
                         field: "sse_customer_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2814,7 +2814,7 @@ pub fn add_headers_get_object_attributes(
                         field: "sse_customer_key",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
+                            &"*** Sensitive Data Redacted ***", err,
                         ),
                     }
                 })?;
@@ -2831,7 +2831,7 @@ pub fn add_headers_get_object_attributes(
                         field: "sse_customer_key_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2851,7 +2851,7 @@ pub fn add_headers_get_object_attributes(
                         field: "request_payer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2868,7 +2868,7 @@ pub fn add_headers_get_object_attributes(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2887,7 +2887,7 @@ pub fn add_headers_get_object_attributes(
                             field: "object_attributes",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
-                                &header_value, err
+                                &header_value, err,
                             ),
                         }
                     })?;
@@ -2912,7 +2912,7 @@ pub fn add_headers_get_object_legal_hold(
                         field: "request_payer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2929,7 +2929,7 @@ pub fn add_headers_get_object_legal_hold(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2953,7 +2953,7 @@ pub fn add_headers_get_object_lock_configuration(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2977,7 +2977,7 @@ pub fn add_headers_get_object_retention(
                         field: "request_payer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -2994,7 +2994,7 @@ pub fn add_headers_get_object_retention(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3018,7 +3018,7 @@ pub fn add_headers_get_object_tagging(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3035,7 +3035,7 @@ pub fn add_headers_get_object_tagging(
                         field: "request_payer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3059,7 +3059,7 @@ pub fn add_headers_get_object_torrent(
                         field: "request_payer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3076,7 +3076,7 @@ pub fn add_headers_get_object_torrent(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3100,7 +3100,7 @@ pub fn add_headers_get_public_access_block(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3124,7 +3124,7 @@ pub fn add_headers_head_bucket(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3148,7 +3148,7 @@ pub fn add_headers_head_object(
                         field: "if_match",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3165,7 +3165,7 @@ pub fn add_headers_head_object(
                         field: "if_modified_since",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3182,7 +3182,7 @@ pub fn add_headers_head_object(
                         field: "if_none_match",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3199,7 +3199,7 @@ pub fn add_headers_head_object(
                         field: "if_unmodified_since",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3216,7 +3216,7 @@ pub fn add_headers_head_object(
                         field: "range",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3233,7 +3233,7 @@ pub fn add_headers_head_object(
                         field: "sse_customer_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3253,7 +3253,7 @@ pub fn add_headers_head_object(
                         field: "sse_customer_key",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
+                            &"*** Sensitive Data Redacted ***", err,
                         ),
                     }
                 })?;
@@ -3270,7 +3270,7 @@ pub fn add_headers_head_object(
                         field: "sse_customer_key_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3290,7 +3290,7 @@ pub fn add_headers_head_object(
                         field: "request_payer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3307,7 +3307,7 @@ pub fn add_headers_head_object(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3324,7 +3324,7 @@ pub fn add_headers_head_object(
                         field: "checksum_mode",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3348,7 +3348,7 @@ pub fn add_headers_list_bucket_analytics_configurations(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3372,7 +3372,7 @@ pub fn add_headers_list_bucket_inventory_configurations(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3396,7 +3396,7 @@ pub fn add_headers_list_bucket_metrics_configurations(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3420,7 +3420,7 @@ pub fn add_headers_list_multipart_uploads(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3444,7 +3444,7 @@ pub fn add_headers_list_objects(
                         field: "request_payer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3461,7 +3461,7 @@ pub fn add_headers_list_objects(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3485,7 +3485,7 @@ pub fn add_headers_list_objects_v2(
                         field: "request_payer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3502,7 +3502,7 @@ pub fn add_headers_list_objects_v2(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3526,7 +3526,7 @@ pub fn add_headers_list_object_versions(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3550,7 +3550,7 @@ pub fn add_headers_list_parts(
                         field: "request_payer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3567,7 +3567,7 @@ pub fn add_headers_list_parts(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3584,7 +3584,7 @@ pub fn add_headers_list_parts(
                         field: "sse_customer_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3604,7 +3604,7 @@ pub fn add_headers_list_parts(
                         field: "sse_customer_key",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
+                            &"*** Sensitive Data Redacted ***", err,
                         ),
                     }
                 })?;
@@ -3621,7 +3621,7 @@ pub fn add_headers_list_parts(
                         field: "sse_customer_key_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3648,7 +3648,7 @@ pub fn add_headers_put_bucket_accelerate_configuration(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3665,7 +3665,7 @@ pub fn add_headers_put_bucket_accelerate_configuration(
                         field: "checksum_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3689,7 +3689,7 @@ pub fn add_headers_put_bucket_acl(
                         field: "acl",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3706,7 +3706,7 @@ pub fn add_headers_put_bucket_acl(
                         field: "content_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3723,7 +3723,7 @@ pub fn add_headers_put_bucket_acl(
                         field: "checksum_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3740,7 +3740,7 @@ pub fn add_headers_put_bucket_acl(
                         field: "grant_full_control",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3757,7 +3757,7 @@ pub fn add_headers_put_bucket_acl(
                         field: "grant_read",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3774,7 +3774,7 @@ pub fn add_headers_put_bucket_acl(
                         field: "grant_read_acp",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3791,7 +3791,7 @@ pub fn add_headers_put_bucket_acl(
                         field: "grant_write",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3808,7 +3808,7 @@ pub fn add_headers_put_bucket_acl(
                         field: "grant_write_acp",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3825,7 +3825,7 @@ pub fn add_headers_put_bucket_acl(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3849,7 +3849,7 @@ pub fn add_headers_put_bucket_analytics_configuration(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3873,7 +3873,7 @@ pub fn add_headers_put_bucket_cors(
                         field: "content_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3890,7 +3890,7 @@ pub fn add_headers_put_bucket_cors(
                         field: "checksum_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3907,7 +3907,7 @@ pub fn add_headers_put_bucket_cors(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3931,7 +3931,7 @@ pub fn add_headers_put_bucket_encryption(
                         field: "content_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3948,7 +3948,7 @@ pub fn add_headers_put_bucket_encryption(
                         field: "checksum_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3965,7 +3965,7 @@ pub fn add_headers_put_bucket_encryption(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -3989,7 +3989,7 @@ pub fn add_headers_put_bucket_inventory_configuration(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4013,7 +4013,7 @@ pub fn add_headers_put_bucket_lifecycle_configuration(
                         field: "checksum_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4030,7 +4030,7 @@ pub fn add_headers_put_bucket_lifecycle_configuration(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4054,7 +4054,7 @@ pub fn add_headers_put_bucket_logging(
                         field: "content_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4071,7 +4071,7 @@ pub fn add_headers_put_bucket_logging(
                         field: "checksum_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4088,7 +4088,7 @@ pub fn add_headers_put_bucket_logging(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4112,7 +4112,7 @@ pub fn add_headers_put_bucket_metrics_configuration(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4136,7 +4136,7 @@ pub fn add_headers_put_bucket_notification_configuration(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4155,7 +4155,7 @@ pub fn add_headers_put_bucket_notification_configuration(
                         field: "skip_destination_validation",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4179,7 +4179,7 @@ pub fn add_headers_put_bucket_ownership_controls(
                         field: "content_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4196,7 +4196,7 @@ pub fn add_headers_put_bucket_ownership_controls(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4220,7 +4220,7 @@ pub fn add_headers_put_bucket_policy(
                         field: "content_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4237,7 +4237,7 @@ pub fn add_headers_put_bucket_policy(
                         field: "checksum_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4256,7 +4256,7 @@ pub fn add_headers_put_bucket_policy(
                         field: "confirm_remove_self_bucket_access",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4273,7 +4273,7 @@ pub fn add_headers_put_bucket_policy(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4297,7 +4297,7 @@ pub fn add_headers_put_bucket_replication(
                         field: "content_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4314,7 +4314,7 @@ pub fn add_headers_put_bucket_replication(
                         field: "checksum_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4331,7 +4331,7 @@ pub fn add_headers_put_bucket_replication(
                         field: "token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4348,7 +4348,7 @@ pub fn add_headers_put_bucket_replication(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4372,7 +4372,7 @@ pub fn add_headers_put_bucket_request_payment(
                         field: "content_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4389,7 +4389,7 @@ pub fn add_headers_put_bucket_request_payment(
                         field: "checksum_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4406,7 +4406,7 @@ pub fn add_headers_put_bucket_request_payment(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4430,7 +4430,7 @@ pub fn add_headers_put_bucket_tagging(
                         field: "content_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4447,7 +4447,7 @@ pub fn add_headers_put_bucket_tagging(
                         field: "checksum_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4464,7 +4464,7 @@ pub fn add_headers_put_bucket_tagging(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4488,7 +4488,7 @@ pub fn add_headers_put_bucket_versioning(
                         field: "content_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4505,7 +4505,7 @@ pub fn add_headers_put_bucket_versioning(
                         field: "checksum_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4522,7 +4522,7 @@ pub fn add_headers_put_bucket_versioning(
                         field: "mfa",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4539,7 +4539,7 @@ pub fn add_headers_put_bucket_versioning(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4563,7 +4563,7 @@ pub fn add_headers_put_bucket_website(
                         field: "content_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4580,7 +4580,7 @@ pub fn add_headers_put_bucket_website(
                         field: "checksum_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4597,7 +4597,7 @@ pub fn add_headers_put_bucket_website(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4621,7 +4621,7 @@ pub fn add_headers_put_object(
                         field: "acl",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4638,7 +4638,7 @@ pub fn add_headers_put_object(
                         field: "cache_control",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4655,7 +4655,7 @@ pub fn add_headers_put_object(
                         field: "content_disposition",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4672,7 +4672,7 @@ pub fn add_headers_put_object(
                         field: "content_encoding",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4689,7 +4689,7 @@ pub fn add_headers_put_object(
                         field: "content_language",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4707,7 +4707,7 @@ pub fn add_headers_put_object(
                         field: "content_length",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4724,7 +4724,7 @@ pub fn add_headers_put_object(
                         field: "content_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4741,7 +4741,7 @@ pub fn add_headers_put_object(
                         field: "content_type",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4758,7 +4758,7 @@ pub fn add_headers_put_object(
                         field: "checksum_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4775,7 +4775,7 @@ pub fn add_headers_put_object(
                         field: "checksum_crc32",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4792,7 +4792,7 @@ pub fn add_headers_put_object(
                         field: "checksum_crc32_c",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4809,7 +4809,7 @@ pub fn add_headers_put_object(
                         field: "checksum_sha1",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4826,7 +4826,7 @@ pub fn add_headers_put_object(
                         field: "checksum_sha256",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4843,7 +4843,7 @@ pub fn add_headers_put_object(
                         field: "expires",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4860,7 +4860,7 @@ pub fn add_headers_put_object(
                         field: "grant_full_control",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4877,7 +4877,7 @@ pub fn add_headers_put_object(
                         field: "grant_read",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4894,7 +4894,7 @@ pub fn add_headers_put_object(
                         field: "grant_read_acp",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4911,7 +4911,7 @@ pub fn add_headers_put_object(
                         field: "grant_write_acp",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4928,7 +4928,7 @@ pub fn add_headers_put_object(
                         field: "server_side_encryption",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4945,7 +4945,7 @@ pub fn add_headers_put_object(
                         field: "storage_class",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4962,7 +4962,7 @@ pub fn add_headers_put_object(
                         field: "website_redirect_location",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4979,7 +4979,7 @@ pub fn add_headers_put_object(
                         field: "sse_customer_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -4999,7 +4999,7 @@ pub fn add_headers_put_object(
                         field: "sse_customer_key",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
+                            &"*** Sensitive Data Redacted ***", err,
                         ),
                     }
                 })?;
@@ -5016,7 +5016,7 @@ pub fn add_headers_put_object(
                         field: "sse_customer_key_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5036,7 +5036,7 @@ pub fn add_headers_put_object(
                         field: "ssekms_key_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
+                            &"*** Sensitive Data Redacted ***", err,
                         ),
                     }
                 })?;
@@ -5053,7 +5053,7 @@ pub fn add_headers_put_object(
                         field: "ssekms_encryption_context",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
+                            &"*** Sensitive Data Redacted ***", err,
                         ),
                     }
                 })?;
@@ -5071,7 +5071,7 @@ pub fn add_headers_put_object(
                         field: "bucket_key_enabled",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5091,7 +5091,7 @@ pub fn add_headers_put_object(
                         field: "request_payer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5108,7 +5108,7 @@ pub fn add_headers_put_object(
                         field: "tagging",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5125,7 +5125,7 @@ pub fn add_headers_put_object(
                         field: "object_lock_mode",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5142,7 +5142,7 @@ pub fn add_headers_put_object(
                         field: "object_lock_retain_until_date",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5159,7 +5159,7 @@ pub fn add_headers_put_object(
                         field: "object_lock_legal_hold_status",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5176,7 +5176,7 @@ pub fn add_headers_put_object(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5198,7 +5198,7 @@ pub fn add_headers_put_object(
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                     aws_smithy_http::operation::BuildError::InvalidField {
                         field: "metadata",
-                        details: format!("`{}` cannot be used as a header value: {}", v, err),
+                        details: format!("`{}` cannot be used as a header value: {}", v, err,),
                     }
                 })?;
             builder = builder.header(header_name, header_value);
@@ -5221,7 +5221,7 @@ pub fn add_headers_put_object_acl(
                         field: "acl",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5238,7 +5238,7 @@ pub fn add_headers_put_object_acl(
                         field: "content_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5255,7 +5255,7 @@ pub fn add_headers_put_object_acl(
                         field: "checksum_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5272,7 +5272,7 @@ pub fn add_headers_put_object_acl(
                         field: "grant_full_control",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5289,7 +5289,7 @@ pub fn add_headers_put_object_acl(
                         field: "grant_read",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5306,7 +5306,7 @@ pub fn add_headers_put_object_acl(
                         field: "grant_read_acp",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5323,7 +5323,7 @@ pub fn add_headers_put_object_acl(
                         field: "grant_write",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5340,7 +5340,7 @@ pub fn add_headers_put_object_acl(
                         field: "grant_write_acp",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5357,7 +5357,7 @@ pub fn add_headers_put_object_acl(
                         field: "request_payer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5374,7 +5374,7 @@ pub fn add_headers_put_object_acl(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5398,7 +5398,7 @@ pub fn add_headers_put_object_legal_hold(
                         field: "request_payer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5415,7 +5415,7 @@ pub fn add_headers_put_object_legal_hold(
                         field: "content_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5432,7 +5432,7 @@ pub fn add_headers_put_object_legal_hold(
                         field: "checksum_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5449,7 +5449,7 @@ pub fn add_headers_put_object_legal_hold(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5473,7 +5473,7 @@ pub fn add_headers_put_object_lock_configuration(
                         field: "request_payer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5490,7 +5490,7 @@ pub fn add_headers_put_object_lock_configuration(
                         field: "token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5507,7 +5507,7 @@ pub fn add_headers_put_object_lock_configuration(
                         field: "content_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5524,7 +5524,7 @@ pub fn add_headers_put_object_lock_configuration(
                         field: "checksum_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5541,7 +5541,7 @@ pub fn add_headers_put_object_lock_configuration(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5565,7 +5565,7 @@ pub fn add_headers_put_object_retention(
                         field: "request_payer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5584,7 +5584,7 @@ pub fn add_headers_put_object_retention(
                         field: "bypass_governance_retention",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5601,7 +5601,7 @@ pub fn add_headers_put_object_retention(
                         field: "content_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5618,7 +5618,7 @@ pub fn add_headers_put_object_retention(
                         field: "checksum_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5635,7 +5635,7 @@ pub fn add_headers_put_object_retention(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5659,7 +5659,7 @@ pub fn add_headers_put_object_tagging(
                         field: "content_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5676,7 +5676,7 @@ pub fn add_headers_put_object_tagging(
                         field: "checksum_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5693,7 +5693,7 @@ pub fn add_headers_put_object_tagging(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5710,7 +5710,7 @@ pub fn add_headers_put_object_tagging(
                         field: "request_payer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5734,7 +5734,7 @@ pub fn add_headers_put_public_access_block(
                         field: "content_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5751,7 +5751,7 @@ pub fn add_headers_put_public_access_block(
                         field: "checksum_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5768,7 +5768,7 @@ pub fn add_headers_put_public_access_block(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5792,7 +5792,7 @@ pub fn add_headers_restore_object(
                         field: "request_payer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5809,7 +5809,7 @@ pub fn add_headers_restore_object(
                         field: "checksum_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5826,7 +5826,7 @@ pub fn add_headers_restore_object(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5850,7 +5850,7 @@ pub fn add_headers_select_object_content(
                         field: "sse_customer_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5870,7 +5870,7 @@ pub fn add_headers_select_object_content(
                         field: "sse_customer_key",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
+                            &"*** Sensitive Data Redacted ***", err,
                         ),
                     }
                 })?;
@@ -5887,7 +5887,7 @@ pub fn add_headers_select_object_content(
                         field: "sse_customer_key_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5907,7 +5907,7 @@ pub fn add_headers_select_object_content(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5932,7 +5932,7 @@ pub fn add_headers_upload_part(
                         field: "content_length",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5949,7 +5949,7 @@ pub fn add_headers_upload_part(
                         field: "content_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5966,7 +5966,7 @@ pub fn add_headers_upload_part(
                         field: "checksum_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -5983,7 +5983,7 @@ pub fn add_headers_upload_part(
                         field: "checksum_crc32",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6000,7 +6000,7 @@ pub fn add_headers_upload_part(
                         field: "checksum_crc32_c",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6017,7 +6017,7 @@ pub fn add_headers_upload_part(
                         field: "checksum_sha1",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6034,7 +6034,7 @@ pub fn add_headers_upload_part(
                         field: "checksum_sha256",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6051,7 +6051,7 @@ pub fn add_headers_upload_part(
                         field: "sse_customer_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6071,7 +6071,7 @@ pub fn add_headers_upload_part(
                         field: "sse_customer_key",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
+                            &"*** Sensitive Data Redacted ***", err,
                         ),
                     }
                 })?;
@@ -6088,7 +6088,7 @@ pub fn add_headers_upload_part(
                         field: "sse_customer_key_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6108,7 +6108,7 @@ pub fn add_headers_upload_part(
                         field: "request_payer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6125,7 +6125,7 @@ pub fn add_headers_upload_part(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6149,7 +6149,7 @@ pub fn add_headers_upload_part_copy(
                         field: "copy_source",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6166,7 +6166,7 @@ pub fn add_headers_upload_part_copy(
                         field: "copy_source_if_match",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6183,7 +6183,7 @@ pub fn add_headers_upload_part_copy(
                         field: "copy_source_if_modified_since",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6200,7 +6200,7 @@ pub fn add_headers_upload_part_copy(
                         field: "copy_source_if_none_match",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6217,7 +6217,7 @@ pub fn add_headers_upload_part_copy(
                         field: "copy_source_if_unmodified_since",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6234,7 +6234,7 @@ pub fn add_headers_upload_part_copy(
                         field: "copy_source_range",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6251,7 +6251,7 @@ pub fn add_headers_upload_part_copy(
                         field: "sse_customer_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6271,7 +6271,7 @@ pub fn add_headers_upload_part_copy(
                         field: "sse_customer_key",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
+                            &"*** Sensitive Data Redacted ***", err,
                         ),
                     }
                 })?;
@@ -6288,7 +6288,7 @@ pub fn add_headers_upload_part_copy(
                         field: "sse_customer_key_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6308,7 +6308,7 @@ pub fn add_headers_upload_part_copy(
                         field: "copy_source_sse_customer_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6328,7 +6328,7 @@ pub fn add_headers_upload_part_copy(
                         field: "copy_source_sse_customer_key",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
+                            &"*** Sensitive Data Redacted ***", err,
                         ),
                     }
                 })?;
@@ -6348,7 +6348,7 @@ pub fn add_headers_upload_part_copy(
                         field: "copy_source_sse_customer_key_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6368,7 +6368,7 @@ pub fn add_headers_upload_part_copy(
                         field: "request_payer",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6385,7 +6385,7 @@ pub fn add_headers_upload_part_copy(
                         field: "expected_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6402,7 +6402,7 @@ pub fn add_headers_upload_part_copy(
                         field: "expected_source_bucket_owner",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6426,7 +6426,7 @@ pub fn add_headers_write_get_object_response(
                         field: "request_route",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6443,7 +6443,7 @@ pub fn add_headers_write_get_object_response(
                         field: "request_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6461,7 +6461,7 @@ pub fn add_headers_write_get_object_response(
                         field: "status_code",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6478,7 +6478,7 @@ pub fn add_headers_write_get_object_response(
                         field: "error_code",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6495,7 +6495,7 @@ pub fn add_headers_write_get_object_response(
                         field: "error_message",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6512,7 +6512,7 @@ pub fn add_headers_write_get_object_response(
                         field: "accept_ranges",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6529,7 +6529,7 @@ pub fn add_headers_write_get_object_response(
                         field: "cache_control",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6546,7 +6546,7 @@ pub fn add_headers_write_get_object_response(
                         field: "content_disposition",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6563,7 +6563,7 @@ pub fn add_headers_write_get_object_response(
                         field: "content_encoding",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6580,7 +6580,7 @@ pub fn add_headers_write_get_object_response(
                         field: "content_language",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6598,7 +6598,7 @@ pub fn add_headers_write_get_object_response(
                         field: "content_length",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6615,7 +6615,7 @@ pub fn add_headers_write_get_object_response(
                         field: "content_range",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6632,7 +6632,7 @@ pub fn add_headers_write_get_object_response(
                         field: "content_type",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6649,7 +6649,7 @@ pub fn add_headers_write_get_object_response(
                         field: "checksum_crc32",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6666,7 +6666,7 @@ pub fn add_headers_write_get_object_response(
                         field: "checksum_crc32_c",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6683,7 +6683,7 @@ pub fn add_headers_write_get_object_response(
                         field: "checksum_sha1",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6700,7 +6700,7 @@ pub fn add_headers_write_get_object_response(
                         field: "checksum_sha256",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6718,7 +6718,7 @@ pub fn add_headers_write_get_object_response(
                         field: "delete_marker",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6735,7 +6735,7 @@ pub fn add_headers_write_get_object_response(
                         field: "e_tag",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6752,7 +6752,7 @@ pub fn add_headers_write_get_object_response(
                         field: "expires",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6769,7 +6769,7 @@ pub fn add_headers_write_get_object_response(
                         field: "expiration",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6786,7 +6786,7 @@ pub fn add_headers_write_get_object_response(
                         field: "last_modified",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6804,7 +6804,7 @@ pub fn add_headers_write_get_object_response(
                         field: "missing_meta",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6821,7 +6821,7 @@ pub fn add_headers_write_get_object_response(
                         field: "object_lock_mode",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6838,7 +6838,7 @@ pub fn add_headers_write_get_object_response(
                         field: "object_lock_legal_hold_status",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6858,7 +6858,7 @@ pub fn add_headers_write_get_object_response(
                         field: "object_lock_retain_until_date",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6879,7 +6879,7 @@ pub fn add_headers_write_get_object_response(
                         field: "parts_count",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6896,7 +6896,7 @@ pub fn add_headers_write_get_object_response(
                         field: "replication_status",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6913,7 +6913,7 @@ pub fn add_headers_write_get_object_response(
                         field: "request_charged",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6930,7 +6930,7 @@ pub fn add_headers_write_get_object_response(
                         field: "restore",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6947,7 +6947,7 @@ pub fn add_headers_write_get_object_response(
                         field: "server_side_encryption",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6967,7 +6967,7 @@ pub fn add_headers_write_get_object_response(
                         field: "sse_customer_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -6987,7 +6987,7 @@ pub fn add_headers_write_get_object_response(
                         field: "ssekms_key_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
+                            &"*** Sensitive Data Redacted ***", err,
                         ),
                     }
                 })?;
@@ -7007,7 +7007,7 @@ pub fn add_headers_write_get_object_response(
                         field: "sse_customer_key_md5",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -7027,7 +7027,7 @@ pub fn add_headers_write_get_object_response(
                         field: "storage_class",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -7045,7 +7045,7 @@ pub fn add_headers_write_get_object_response(
                         field: "tag_count",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -7062,7 +7062,7 @@ pub fn add_headers_write_get_object_response(
                         field: "version_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -7080,7 +7080,7 @@ pub fn add_headers_write_get_object_response(
                         field: "bucket_key_enabled",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -7105,7 +7105,7 @@ pub fn add_headers_write_get_object_response(
                 http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
                     aws_smithy_http::operation::BuildError::InvalidField {
                         field: "metadata",
-                        details: format!("`{}` cannot be used as a header value: {}", v, err),
+                        details: format!("`{}` cannot be used as a header value: {}", v, err,),
                     }
                 })?;
             builder = builder.header(header_name, header_value);

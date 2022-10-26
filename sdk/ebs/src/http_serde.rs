@@ -14,7 +14,7 @@ pub fn add_headers_complete_snapshot(
                         field: "changed_blocks_count",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -31,7 +31,7 @@ pub fn add_headers_complete_snapshot(
                         field: "checksum",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -48,7 +48,7 @@ pub fn add_headers_complete_snapshot(
                         field: "checksum_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -65,7 +65,7 @@ pub fn add_headers_complete_snapshot(
                         field: "checksum_aggregation_method",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -90,7 +90,7 @@ pub fn add_headers_put_snapshot_block(
                         field: "data_length",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -108,7 +108,7 @@ pub fn add_headers_put_snapshot_block(
                         field: "progress",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -125,7 +125,7 @@ pub fn add_headers_put_snapshot_block(
                         field: "checksum",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -142,7 +142,7 @@ pub fn add_headers_put_snapshot_block(
                         field: "checksum_algorithm",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;

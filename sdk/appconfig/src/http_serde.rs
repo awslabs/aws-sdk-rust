@@ -14,7 +14,7 @@ pub fn add_headers_create_extension(
                         field: "latest_version_number",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -38,7 +38,7 @@ pub fn add_headers_create_hosted_configuration_version(
                         field: "description",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -55,7 +55,7 @@ pub fn add_headers_create_hosted_configuration_version(
                         field: "content_type",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -73,7 +73,7 @@ pub fn add_headers_create_hosted_configuration_version(
                         field: "latest_version_number",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;

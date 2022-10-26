@@ -13,7 +13,7 @@ pub fn add_headers_invoke_endpoint(
                         field: "content_type",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -30,7 +30,7 @@ pub fn add_headers_invoke_endpoint(
                         field: "accept",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -47,7 +47,7 @@ pub fn add_headers_invoke_endpoint(
                         field: "custom_attributes",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
+                            &"*** Sensitive Data Redacted ***", err,
                         ),
                     }
                 })?;
@@ -64,7 +64,7 @@ pub fn add_headers_invoke_endpoint(
                         field: "target_model",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -81,7 +81,7 @@ pub fn add_headers_invoke_endpoint(
                         field: "target_variant",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -98,7 +98,7 @@ pub fn add_headers_invoke_endpoint(
                         field: "target_container_hostname",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -115,7 +115,7 @@ pub fn add_headers_invoke_endpoint(
                         field: "inference_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -132,7 +132,7 @@ pub fn add_headers_invoke_endpoint(
                         field: "enable_explanations",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -156,7 +156,7 @@ pub fn add_headers_invoke_endpoint_async(
                         field: "content_type",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -173,7 +173,7 @@ pub fn add_headers_invoke_endpoint_async(
                         field: "accept",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -190,7 +190,7 @@ pub fn add_headers_invoke_endpoint_async(
                         field: "custom_attributes",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
+                            &"*** Sensitive Data Redacted ***", err,
                         ),
                     }
                 })?;
@@ -207,7 +207,7 @@ pub fn add_headers_invoke_endpoint_async(
                         field: "inference_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -224,7 +224,7 @@ pub fn add_headers_invoke_endpoint_async(
                         field: "input_location",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -242,7 +242,7 @@ pub fn add_headers_invoke_endpoint_async(
                         field: "request_ttl_seconds",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;

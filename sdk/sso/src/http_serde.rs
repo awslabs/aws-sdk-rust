@@ -13,7 +13,7 @@ pub fn add_headers_get_role_credentials(
                         field: "access_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
+                            &"*** Sensitive Data Redacted ***", err,
                         ),
                     }
                 })?;
@@ -37,7 +37,7 @@ pub fn add_headers_list_account_roles(
                         field: "access_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
+                            &"*** Sensitive Data Redacted ***", err,
                         ),
                     }
                 })?;
@@ -61,7 +61,7 @@ pub fn add_headers_list_accounts(
                         field: "access_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
+                            &"*** Sensitive Data Redacted ***", err,
                         ),
                     }
                 })?;
@@ -85,7 +85,7 @@ pub fn add_headers_logout(
                         field: "access_token",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
+                            &"*** Sensitive Data Redacted ***", err,
                         ),
                     }
                 })?;

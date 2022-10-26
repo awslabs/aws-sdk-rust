@@ -13,7 +13,7 @@ pub fn add_headers_put_session(
                         field: "response_content_type",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -37,7 +37,7 @@ pub fn add_headers_recognize_utterance(
                         field: "session_state",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
+                            &"*** Sensitive Data Redacted ***", err,
                         ),
                     }
                 })?;
@@ -54,7 +54,7 @@ pub fn add_headers_recognize_utterance(
                         field: "request_attributes",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &"*** Sensitive Data Redacted ***", err
+                            &"*** Sensitive Data Redacted ***", err,
                         ),
                     }
                 })?;
@@ -71,7 +71,7 @@ pub fn add_headers_recognize_utterance(
                         field: "request_content_type",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -88,7 +88,7 @@ pub fn add_headers_recognize_utterance(
                         field: "response_content_type",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;

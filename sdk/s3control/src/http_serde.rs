@@ -13,7 +13,7 @@ pub fn add_headers_create_access_point(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -37,7 +37,7 @@ pub fn add_headers_create_access_point_for_object_lambda(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -61,7 +61,7 @@ pub fn add_headers_create_bucket(
                         field: "acl",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -78,7 +78,7 @@ pub fn add_headers_create_bucket(
                         field: "grant_full_control",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -95,7 +95,7 @@ pub fn add_headers_create_bucket(
                         field: "grant_read",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -112,7 +112,7 @@ pub fn add_headers_create_bucket(
                         field: "grant_read_acp",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -129,7 +129,7 @@ pub fn add_headers_create_bucket(
                         field: "grant_write",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -146,7 +146,7 @@ pub fn add_headers_create_bucket(
                         field: "grant_write_acp",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -165,7 +165,7 @@ pub fn add_headers_create_bucket(
                         field: "object_lock_enabled_for_bucket",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -182,7 +182,7 @@ pub fn add_headers_create_bucket(
                         field: "outpost_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -206,7 +206,7 @@ pub fn add_headers_create_job(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -230,7 +230,7 @@ pub fn add_headers_create_multi_region_access_point(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -254,7 +254,7 @@ pub fn add_headers_delete_access_point(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -278,7 +278,7 @@ pub fn add_headers_delete_access_point_for_object_lambda(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -302,7 +302,7 @@ pub fn add_headers_delete_access_point_policy(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -326,7 +326,7 @@ pub fn add_headers_delete_access_point_policy_for_object_lambda(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -350,7 +350,7 @@ pub fn add_headers_delete_bucket(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -374,7 +374,7 @@ pub fn add_headers_delete_bucket_lifecycle_configuration(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -398,7 +398,7 @@ pub fn add_headers_delete_bucket_policy(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -422,7 +422,7 @@ pub fn add_headers_delete_bucket_tagging(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -446,7 +446,7 @@ pub fn add_headers_delete_job_tagging(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -470,7 +470,7 @@ pub fn add_headers_delete_multi_region_access_point(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -494,7 +494,7 @@ pub fn add_headers_delete_public_access_block(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -518,7 +518,7 @@ pub fn add_headers_delete_storage_lens_configuration(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -542,7 +542,7 @@ pub fn add_headers_delete_storage_lens_configuration_tagging(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -566,7 +566,7 @@ pub fn add_headers_describe_job(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -590,7 +590,7 @@ pub fn add_headers_describe_multi_region_access_point_operation(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -614,7 +614,7 @@ pub fn add_headers_get_access_point(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -638,7 +638,7 @@ pub fn add_headers_get_access_point_configuration_for_object_lambda(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -662,7 +662,7 @@ pub fn add_headers_get_access_point_for_object_lambda(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -686,7 +686,7 @@ pub fn add_headers_get_access_point_policy(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -710,7 +710,7 @@ pub fn add_headers_get_access_point_policy_for_object_lambda(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -734,7 +734,7 @@ pub fn add_headers_get_access_point_policy_status(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -758,7 +758,7 @@ pub fn add_headers_get_access_point_policy_status_for_object_lambda(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -782,7 +782,7 @@ pub fn add_headers_get_bucket(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -806,7 +806,7 @@ pub fn add_headers_get_bucket_lifecycle_configuration(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -830,7 +830,7 @@ pub fn add_headers_get_bucket_policy(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -854,7 +854,7 @@ pub fn add_headers_get_bucket_tagging(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -878,7 +878,7 @@ pub fn add_headers_get_bucket_versioning(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -902,7 +902,7 @@ pub fn add_headers_get_job_tagging(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -926,7 +926,7 @@ pub fn add_headers_get_multi_region_access_point(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -950,7 +950,7 @@ pub fn add_headers_get_multi_region_access_point_policy(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -974,7 +974,7 @@ pub fn add_headers_get_multi_region_access_point_policy_status(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -998,7 +998,7 @@ pub fn add_headers_get_public_access_block(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1022,7 +1022,7 @@ pub fn add_headers_get_storage_lens_configuration(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1046,7 +1046,7 @@ pub fn add_headers_get_storage_lens_configuration_tagging(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1070,7 +1070,7 @@ pub fn add_headers_list_access_points(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1094,7 +1094,7 @@ pub fn add_headers_list_access_points_for_object_lambda(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1118,7 +1118,7 @@ pub fn add_headers_list_jobs(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1142,7 +1142,7 @@ pub fn add_headers_list_multi_region_access_points(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1166,7 +1166,7 @@ pub fn add_headers_list_regional_buckets(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1183,7 +1183,7 @@ pub fn add_headers_list_regional_buckets(
                         field: "outpost_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1207,7 +1207,7 @@ pub fn add_headers_list_storage_lens_configurations(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1231,7 +1231,7 @@ pub fn add_headers_put_access_point_configuration_for_object_lambda(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1255,7 +1255,7 @@ pub fn add_headers_put_access_point_policy(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1279,7 +1279,7 @@ pub fn add_headers_put_access_point_policy_for_object_lambda(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1303,7 +1303,7 @@ pub fn add_headers_put_bucket_lifecycle_configuration(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1327,7 +1327,7 @@ pub fn add_headers_put_bucket_policy(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1346,7 +1346,7 @@ pub fn add_headers_put_bucket_policy(
                         field: "confirm_remove_self_bucket_access",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1370,7 +1370,7 @@ pub fn add_headers_put_bucket_tagging(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1394,7 +1394,7 @@ pub fn add_headers_put_bucket_versioning(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1411,7 +1411,7 @@ pub fn add_headers_put_bucket_versioning(
                         field: "mfa",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1435,7 +1435,7 @@ pub fn add_headers_put_job_tagging(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1459,7 +1459,7 @@ pub fn add_headers_put_multi_region_access_point_policy(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1483,7 +1483,7 @@ pub fn add_headers_put_public_access_block(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1507,7 +1507,7 @@ pub fn add_headers_put_storage_lens_configuration(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1531,7 +1531,7 @@ pub fn add_headers_put_storage_lens_configuration_tagging(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1555,7 +1555,7 @@ pub fn add_headers_update_job_priority(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1579,7 +1579,7 @@ pub fn add_headers_update_job_status(
                         field: "account_id",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;

@@ -13,7 +13,7 @@ pub fn add_headers_add_facet_to_object(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -37,7 +37,7 @@ pub fn add_headers_apply_schema(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -61,7 +61,7 @@ pub fn add_headers_attach_object(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -85,7 +85,7 @@ pub fn add_headers_attach_policy(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -109,7 +109,7 @@ pub fn add_headers_attach_to_index(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -133,7 +133,7 @@ pub fn add_headers_attach_typed_link(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -157,7 +157,7 @@ pub fn add_headers_batch_read(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -174,7 +174,7 @@ pub fn add_headers_batch_read(
                         field: "consistency_level",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -198,7 +198,7 @@ pub fn add_headers_batch_write(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -222,7 +222,7 @@ pub fn add_headers_create_directory(
                         field: "schema_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -246,7 +246,7 @@ pub fn add_headers_create_facet(
                         field: "schema_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -270,7 +270,7 @@ pub fn add_headers_create_index(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -294,7 +294,7 @@ pub fn add_headers_create_object(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -318,7 +318,7 @@ pub fn add_headers_create_typed_link_facet(
                         field: "schema_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -342,7 +342,7 @@ pub fn add_headers_delete_directory(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -366,7 +366,7 @@ pub fn add_headers_delete_facet(
                         field: "schema_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -390,7 +390,7 @@ pub fn add_headers_delete_object(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -414,7 +414,7 @@ pub fn add_headers_delete_schema(
                         field: "schema_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -438,7 +438,7 @@ pub fn add_headers_delete_typed_link_facet(
                         field: "schema_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -462,7 +462,7 @@ pub fn add_headers_detach_from_index(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -486,7 +486,7 @@ pub fn add_headers_detach_object(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -510,7 +510,7 @@ pub fn add_headers_detach_policy(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -534,7 +534,7 @@ pub fn add_headers_detach_typed_link(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -558,7 +558,7 @@ pub fn add_headers_disable_directory(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -582,7 +582,7 @@ pub fn add_headers_enable_directory(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -606,7 +606,7 @@ pub fn add_headers_get_directory(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -630,7 +630,7 @@ pub fn add_headers_get_facet(
                         field: "schema_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -654,7 +654,7 @@ pub fn add_headers_get_link_attributes(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -678,7 +678,7 @@ pub fn add_headers_get_object_attributes(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -695,7 +695,7 @@ pub fn add_headers_get_object_attributes(
                         field: "consistency_level",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -719,7 +719,7 @@ pub fn add_headers_get_object_information(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -736,7 +736,7 @@ pub fn add_headers_get_object_information(
                         field: "consistency_level",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -760,7 +760,7 @@ pub fn add_headers_get_schema_as_json(
                         field: "schema_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -784,7 +784,7 @@ pub fn add_headers_get_typed_link_facet_information(
                         field: "schema_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -808,7 +808,7 @@ pub fn add_headers_list_attached_indices(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -825,7 +825,7 @@ pub fn add_headers_list_attached_indices(
                         field: "consistency_level",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -849,7 +849,7 @@ pub fn add_headers_list_facet_attributes(
                         field: "schema_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -873,7 +873,7 @@ pub fn add_headers_list_facet_names(
                         field: "schema_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -897,7 +897,7 @@ pub fn add_headers_list_incoming_typed_links(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -921,7 +921,7 @@ pub fn add_headers_list_index(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -938,7 +938,7 @@ pub fn add_headers_list_index(
                         field: "consistency_level",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -962,7 +962,7 @@ pub fn add_headers_list_object_attributes(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -979,7 +979,7 @@ pub fn add_headers_list_object_attributes(
                         field: "consistency_level",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1003,7 +1003,7 @@ pub fn add_headers_list_object_children(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1020,7 +1020,7 @@ pub fn add_headers_list_object_children(
                         field: "consistency_level",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1044,7 +1044,7 @@ pub fn add_headers_list_object_parent_paths(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1068,7 +1068,7 @@ pub fn add_headers_list_object_parents(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1085,7 +1085,7 @@ pub fn add_headers_list_object_parents(
                         field: "consistency_level",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1109,7 +1109,7 @@ pub fn add_headers_list_object_policies(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1126,7 +1126,7 @@ pub fn add_headers_list_object_policies(
                         field: "consistency_level",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1150,7 +1150,7 @@ pub fn add_headers_list_outgoing_typed_links(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1174,7 +1174,7 @@ pub fn add_headers_list_policy_attachments(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1191,7 +1191,7 @@ pub fn add_headers_list_policy_attachments(
                         field: "consistency_level",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1215,7 +1215,7 @@ pub fn add_headers_list_typed_link_facet_attributes(
                         field: "schema_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1239,7 +1239,7 @@ pub fn add_headers_list_typed_link_facet_names(
                         field: "schema_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1263,7 +1263,7 @@ pub fn add_headers_lookup_policy(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1287,7 +1287,7 @@ pub fn add_headers_publish_schema(
                         field: "development_schema_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1311,7 +1311,7 @@ pub fn add_headers_put_schema_from_json(
                         field: "schema_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1335,7 +1335,7 @@ pub fn add_headers_remove_facet_from_object(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1359,7 +1359,7 @@ pub fn add_headers_update_facet(
                         field: "schema_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1383,7 +1383,7 @@ pub fn add_headers_update_link_attributes(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1407,7 +1407,7 @@ pub fn add_headers_update_object_attributes(
                         field: "directory_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1431,7 +1431,7 @@ pub fn add_headers_update_schema(
                         field: "schema_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -1455,7 +1455,7 @@ pub fn add_headers_update_typed_link_facet(
                         field: "schema_arn",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;

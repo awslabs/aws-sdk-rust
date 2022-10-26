@@ -13,7 +13,7 @@ pub fn add_headers_invoke(
                         field: "invocation_type",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -30,7 +30,7 @@ pub fn add_headers_invoke(
                         field: "log_type",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
@@ -47,7 +47,7 @@ pub fn add_headers_invoke(
                         field: "client_context",
                         details: format!(
                             "`{}` cannot be used as a header value: {}",
-                            &header_value, err
+                            &header_value, err,
                         ),
                     }
                 })?;
