@@ -10,11 +10,11 @@
 
 use crate::body::SdkBody;
 use crate::operation;
-use crate::pin_mut;
 use crate::response::ParseHttpResponse;
 use crate::result::{SdkError, SdkSuccess};
 use bytes::{Buf, Bytes};
 use http_body::Body;
+use pin_utils::pin_mut;
 use std::error::Error;
 use std::future::Future;
 use tracing::trace;

@@ -544,7 +544,7 @@ impl<B> Inner<B> {
     {
         let mut output = SegmentedBuf::new();
         let body = self.body;
-        crate::pin_mut!(body);
+        pin_utils::pin_mut!(body);
         while let Some(buf) = body.data().await {
             output.push(buf?);
         }

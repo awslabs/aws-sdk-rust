@@ -36,5 +36,4 @@ pub mod event_stream;
 
 pub mod byte_stream;
 
-mod pin_util;
 mod urlencode;
