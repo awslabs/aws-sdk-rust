@@ -301,7 +301,7 @@ pub use value::HeaderValue;
 /// Event Stream header.
 #[non_exhaustive]
 #[derive(Clone, Debug, PartialEq)]
-#[cfg_attr(feature = "derive-arbitrary", derive(arbitrary::Arbitrary))]
+#[cfg_attr(feature = "derive-arbitrary", derive(derive_arbitrary::Arbitrary))]
 pub struct Header {
     name: StrBytes,
     value: HeaderValue,
