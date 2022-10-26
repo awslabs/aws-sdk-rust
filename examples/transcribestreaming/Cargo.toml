@@ -12,7 +12,7 @@ hound = "3.4"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.50.0"
+version = "0.51.0"
 
 [dependencies.aws-sdk-transcribestreaming]
 path = "../../sdk/transcribestreaming"

@@ -8,7 +8,7 @@ publish = false
 features = ["native-tls", "rt-tokio"]
 default-features = false
 path = "../../sdk/aws-config"
-version = "0.50.0"
+version = "0.51.0"
 
 [dependencies.aws-sdk-s3]
 features = ["native-tls"]

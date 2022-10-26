@@ -6,7 +6,7 @@ edition = "2021"
 publish = false
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.50.0"
+version = "0.51.0"
 
 [dependencies.aws-sdk-eks]
 path = "../../sdk/eks"
@@ -14,7 +14,7 @@ version = "0.21.0"
 
 [dependencies.aws-types]
 path = "../../sdk/aws-types"
-version = "0.50.0"
+version = "0.51.0"
 
 [dependencies.tokio]
 version = "1.20.1"
