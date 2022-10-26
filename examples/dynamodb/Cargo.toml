@@ -17,7 +17,7 @@ version = "0.50.0"
 
 [dependencies.aws-sdk-dynamodb]
 path = "../../sdk/dynamodb"
-version = "0.20.0"
+version = "0.21.0"
 
 [dependencies.aws-http]
 path = "../../sdk/aws-http"
