@@ -40,7 +40,7 @@ mod complete_snapshot_request_test {
     #[tokio::test]
     async fn lowercase_message_response() {
         let expected_output = crate::error::ValidationException::builder()
-            .set_message(Some("1 validation error detected".to_string()))
+            .set_message(Some("1 validation error detected".to_owned()))
             .build();
         let http_response = http::response::Builder::new()
             .header("content-length", "77")
@@ -82,7 +82,7 @@ mod complete_snapshot_request_test {
     #[tokio::test]
     async fn uppercase_message_response() {
         let expected_output = crate::error::ValidationException::builder()
-            .set_message(Some("Invalid volume size: 99999999999".to_string()))
+            .set_message(Some("Invalid volume size: 99999999999".to_owned()))
             .set_reason(Some(crate::model::ValidationExceptionReason::from(
                 "INVALID_VOLUME_SIZE",
             )))
@@ -167,7 +167,7 @@ mod get_snapshot_block_request_test {
     #[tokio::test]
     async fn lowercase_message_response() {
         let expected_output = crate::error::ValidationException::builder()
-            .set_message(Some("1 validation error detected".to_string()))
+            .set_message(Some("1 validation error detected".to_owned()))
             .build();
         let http_response = http::response::Builder::new()
             .header("content-length", "77")
@@ -209,7 +209,7 @@ mod get_snapshot_block_request_test {
     #[tokio::test]
     async fn uppercase_message_response() {
         let expected_output = crate::error::ValidationException::builder()
-            .set_message(Some("Invalid volume size: 99999999999".to_string()))
+            .set_message(Some("Invalid volume size: 99999999999".to_owned()))
             .set_reason(Some(crate::model::ValidationExceptionReason::from(
                 "INVALID_VOLUME_SIZE",
             )))
@@ -287,7 +287,7 @@ mod list_changed_blocks_request_test {
     #[tokio::test]
     async fn lowercase_message_response() {
         let expected_output = crate::error::ValidationException::builder()
-            .set_message(Some("1 validation error detected".to_string()))
+            .set_message(Some("1 validation error detected".to_owned()))
             .build();
         let http_response = http::response::Builder::new()
             .header("content-length", "77")
@@ -329,7 +329,7 @@ mod list_changed_blocks_request_test {
     #[tokio::test]
     async fn uppercase_message_response() {
         let expected_output = crate::error::ValidationException::builder()
-            .set_message(Some("Invalid volume size: 99999999999".to_string()))
+            .set_message(Some("Invalid volume size: 99999999999".to_owned()))
             .set_reason(Some(crate::model::ValidationExceptionReason::from(
                 "INVALID_VOLUME_SIZE",
             )))
@@ -407,7 +407,7 @@ mod list_snapshot_blocks_request_test {
     #[tokio::test]
     async fn lowercase_message_response() {
         let expected_output = crate::error::ValidationException::builder()
-            .set_message(Some("1 validation error detected".to_string()))
+            .set_message(Some("1 validation error detected".to_owned()))
             .build();
         let http_response = http::response::Builder::new()
             .header("content-length", "77")
@@ -449,7 +449,7 @@ mod list_snapshot_blocks_request_test {
     #[tokio::test]
     async fn uppercase_message_response() {
         let expected_output = crate::error::ValidationException::builder()
-            .set_message(Some("Invalid volume size: 99999999999".to_string()))
+            .set_message(Some("Invalid volume size: 99999999999".to_owned()))
             .set_reason(Some(crate::model::ValidationExceptionReason::from(
                 "INVALID_VOLUME_SIZE",
             )))
@@ -527,7 +527,7 @@ mod put_snapshot_block_request_test {
     #[tokio::test]
     async fn lowercase_message_response() {
         let expected_output = crate::error::ValidationException::builder()
-            .set_message(Some("1 validation error detected".to_string()))
+            .set_message(Some("1 validation error detected".to_owned()))
             .build();
         let http_response = http::response::Builder::new()
             .header("content-length", "77")
@@ -569,7 +569,7 @@ mod put_snapshot_block_request_test {
     #[tokio::test]
     async fn uppercase_message_response() {
         let expected_output = crate::error::ValidationException::builder()
-            .set_message(Some("Invalid volume size: 99999999999".to_string()))
+            .set_message(Some("Invalid volume size: 99999999999".to_owned()))
             .set_reason(Some(crate::model::ValidationExceptionReason::from(
                 "INVALID_VOLUME_SIZE",
             )))
@@ -645,7 +645,7 @@ mod start_snapshot_request_test {
     #[tokio::test]
     async fn lowercase_message_response() {
         let expected_output = crate::error::ValidationException::builder()
-            .set_message(Some("1 validation error detected".to_string()))
+            .set_message(Some("1 validation error detected".to_owned()))
             .build();
         let http_response = http::response::Builder::new()
             .header("content-length", "77")
@@ -686,7 +686,7 @@ mod start_snapshot_request_test {
     #[tokio::test]
     async fn uppercase_message_response() {
         let expected_output = crate::error::ValidationException::builder()
-            .set_message(Some("Invalid volume size: 99999999999".to_string()))
+            .set_message(Some("Invalid volume size: 99999999999".to_owned()))
             .set_reason(Some(crate::model::ValidationExceptionReason::from(
                 "INVALID_VOLUME_SIZE",
             )))

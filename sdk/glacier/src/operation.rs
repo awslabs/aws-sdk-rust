@@ -1072,8 +1072,8 @@ mod upload_archive_request_test {
     async fn glacier_version_header_request() {
         let config = crate::config::Config::builder().build();
         let input = crate::input::UploadArchiveInput::builder()
-            .set_account_id(Some("foo".to_string()))
-            .set_vault_name(Some("bar".to_string()))
+            .set_account_id(Some("foo".to_owned()))
+            .set_vault_name(Some("bar".to_owned()))
             .build()
             .unwrap()
             .make_operation(&config)
@@ -1097,8 +1097,8 @@ mod upload_archive_request_test {
     async fn glacier_checksums_request() {
         let config = crate::config::Config::builder().build();
         let input = crate::input::UploadArchiveInput::builder()
-            .set_account_id(Some("foo".to_string()))
-            .set_vault_name(Some("bar".to_string()))
+            .set_account_id(Some("foo".to_owned()))
+            .set_vault_name(Some("bar".to_owned()))
             .set_body(Some(aws_smithy_http::byte_stream::ByteStream::from_static(
                 b"hello world",
             )))
@@ -1140,8 +1140,8 @@ mod upload_archive_request_test {
     async fn glacier_account_id_empty_request() {
         let config = crate::config::Config::builder().build();
         let input = crate::input::UploadArchiveInput::builder()
-            .set_account_id(Some("".to_string()))
-            .set_vault_name(Some("bar".to_string()))
+            .set_account_id(Some("".to_owned()))
+            .set_vault_name(Some("bar".to_owned()))
             .build()
             .unwrap()
             .make_operation(&config)
@@ -1167,7 +1167,7 @@ mod upload_archive_request_test {
     async fn glacier_account_id_unset_request() {
         let config = crate::config::Config::builder().build();
         let input = crate::input::UploadArchiveInput::builder()
-            .set_vault_name(Some("bar".to_string()))
+            .set_vault_name(Some("bar".to_owned()))
             .set_account_id(None)
             .build()
             .unwrap()
@@ -1230,9 +1230,9 @@ mod upload_multipart_part_request_test {
     async fn glacier_multipart_checksums_request() {
         let config = crate::config::Config::builder().build();
         let input = crate::input::UploadMultipartPartInput::builder()
-            .set_account_id(Some("foo".to_string()))
-            .set_vault_name(Some("bar".to_string()))
-            .set_upload_id(Some("baz".to_string()))
+            .set_account_id(Some("foo".to_owned()))
+            .set_vault_name(Some("bar".to_owned()))
+            .set_upload_id(Some("baz".to_owned()))
             .set_body(Some(aws_smithy_http::byte_stream::ByteStream::from_static(
                 b"hello world",
             )))

@@ -173,8 +173,8 @@ mod create_multipart_upload_request_test {
     async fn create_multipart_upload_uri_construction_request() {
         let config = crate::config::Config::builder().build();
         let input = crate::input::CreateMultipartUploadInput::builder()
-            .set_bucket(Some("test-bucket".to_string()))
-            .set_key(Some("object.txt".to_string()))
+            .set_bucket(Some("test-bucket".to_owned()))
+            .set_key(Some("object.txt".to_owned()))
             .build()
             .unwrap()
             .make_operation(&config)
@@ -1910,8 +1910,8 @@ mod head_object_request_test {
     async fn head_object_uri_encoding_request() {
         let config = crate::config::Config::builder().build();
         let input = crate::input::HeadObjectInput::builder()
-            .set_bucket(Some("test-bucket".to_string()))
-            .set_key(Some("<> `?🐱".to_string()))
+            .set_bucket(Some("test-bucket".to_owned()))
+            .set_key(Some("<> `?🐱".to_owned()))
             .build()
             .unwrap()
             .make_operation(&config)
@@ -2210,30 +2210,30 @@ mod list_objects_request_test {
         let expected_output = crate::output::ListObjectsOutput::builder()
             .set_max_keys(Some(1000))
             .set_is_truncated(Some(false))
-            .set_marker(Some("".to_string()))
-            .set_name(Some("bucketname".to_string()))
-            .set_prefix(Some("".to_string()))
+            .set_marker(Some("".to_owned()))
+            .set_name(Some("bucketname".to_owned()))
+            .set_prefix(Some("".to_owned()))
             .set_contents(Some(vec![
                 crate::model::Object::builder()
-                    .set_key(Some("    ".to_string()))
+                    .set_key(Some("    ".to_owned()))
                     .set_last_modified(Some(aws_smithy_types::DateTime::from_secs(1626452453)))
-                    .set_e_tag(Some("\"etag123\"".to_string()))
+                    .set_e_tag(Some("\"etag123\"".to_owned()))
                     .set_size(Some(0))
                     .set_owner(Some(
                         crate::model::Owner::builder()
-                            .set_id(Some("owner".to_string()))
+                            .set_id(Some("owner".to_owned()))
                             .build(),
                     ))
                     .set_storage_class(Some(crate::model::ObjectStorageClass::from("STANDARD")))
                     .build(),
                 crate::model::Object::builder()
-                    .set_key(Some(" a ".to_string()))
+                    .set_key(Some(" a ".to_owned()))
                     .set_last_modified(Some(aws_smithy_types::DateTime::from_secs(1626451330)))
-                    .set_e_tag(Some("\"etag123\"".to_string()))
+                    .set_e_tag(Some("\"etag123\"".to_owned()))
                     .set_size(Some(0))
                     .set_owner(Some(
                         crate::model::Owner::builder()
-                            .set_id(Some("owner".to_string()))
+                            .set_id(Some("owner".to_owned()))
                             .build(),
                     ))
                     .set_storage_class(Some(crate::model::ObjectStorageClass::from("STANDARD")))
@@ -2684,7 +2684,7 @@ mod put_bucket_lifecycle_configuration_request_test {
     async fn put_bucket_lifecycle_configuration_request() {
         let config = crate::config::Config::builder().build();
         let input = crate::input::PutBucketLifecycleConfigurationInput::builder()
-            .set_bucket(Some("test-bucket".to_string()))
+            .set_bucket(Some("test-bucket".to_owned()))
             .set_lifecycle_configuration(Some(
                 crate::model::BucketLifecycleConfiguration::builder()
                     .set_rules(Some(vec![crate::model::LifecycleRule::builder()
@@ -2694,7 +2694,7 @@ mod put_bucket_lifecycle_configuration_request_test {
                                 .build(),
                         ))
                         .set_status(Some(crate::model::ExpirationStatus::from("Enabled")))
-                        .set_id(Some("Expire".to_string()))
+                        .set_id(Some("Expire".to_owned()))
                         .build()]))
                     .build(),
             ))
@@ -3097,9 +3097,9 @@ mod put_object_request_test {
     async fn dont_send_duplicate_content_type_request() {
         let config = crate::config::Config::builder().build();
         let input = crate::input::PutObjectInput::builder()
-            .set_bucket(Some("test-bucket".to_string()))
-            .set_key(Some("test-key".to_string()))
-            .set_content_type(Some("text/html".to_string()))
+            .set_bucket(Some("test-bucket".to_owned()))
+            .set_key(Some("test-key".to_owned()))
+            .set_content_type(Some("text/html".to_owned()))
             .build()
             .unwrap()
             .make_operation(&config)
@@ -3120,8 +3120,8 @@ mod put_object_request_test {
     async fn dont_send_duplicate_content_length_request() {
         let config = crate::config::Config::builder().build();
         let input = crate::input::PutObjectInput::builder()
-            .set_bucket(Some("test-bucket".to_string()))
-            .set_key(Some("test-key".to_string()))
+            .set_bucket(Some("test-bucket".to_owned()))
+            .set_key(Some("test-key".to_owned()))
             .set_content_length(Some(2))
             .set_body(Some(aws_smithy_http::byte_stream::ByteStream::from_static(
                 b"ab",

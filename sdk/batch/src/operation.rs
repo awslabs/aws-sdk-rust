@@ -307,43 +307,43 @@ mod describe_compute_environments_request_test {
         let expected_output = crate::output::DescribeComputeEnvironmentsOutput::builder()
             .set_compute_environments(Some(vec![crate::model::ComputeEnvironmentDetail::builder(
             )
-            .set_compute_environment_name(Some("test-batch-compute".to_string()))
-            .set_compute_environment_arn(Some("arn".to_string()))
-            .set_ecs_cluster_arn(Some("clusteran".to_string()))
+            .set_compute_environment_name(Some("test-batch-compute".to_owned()))
+            .set_compute_environment_arn(Some("arn".to_owned()))
+            .set_ecs_cluster_arn(Some("clusteran".to_owned()))
             .set_tags(Some({
                 let mut ret = std::collections::HashMap::new();
-                ret.insert("foo".to_string(), "bar".to_string());
+                ret.insert("foo".to_owned(), "bar".to_owned());
                 ret
             }))
             .set_type(Some(crate::model::CeType::from("MANAGED")))
             .set_state(Some(crate::model::CeState::from("ENABLED")))
             .set_status(Some(crate::model::CeStatus::from("VALID")))
-            .set_status_reason(Some("ComputeEnvironment Healthy".to_string()))
+            .set_status_reason(Some("ComputeEnvironment Healthy".to_owned()))
             .set_compute_resources(Some(
                 crate::model::ComputeResource::builder()
                     .set_type(Some(crate::model::CrType::from("EC2")))
                     .set_minv_cpus(Some(0))
                     .set_maxv_cpus(Some(256))
                     .set_desiredv_cpus(Some(0))
-                    .set_instance_types(Some(vec!["optimal".to_string()]))
+                    .set_instance_types(Some(vec!["optimal".to_owned()]))
                     .set_subnets(Some(vec![
-                        "subnet-c745b79c".to_string(),
-                        "subnet-d4e24fe8".to_string(),
+                        "subnet-c745b79c".to_owned(),
+                        "subnet-d4e24fe8".to_owned(),
                     ]))
-                    .set_security_group_ids(Some(vec!["sg-06a55e7b".to_string()]))
-                    .set_instance_role(Some("instancerole".to_string()))
+                    .set_security_group_ids(Some(vec!["sg-06a55e7b".to_owned()]))
+                    .set_instance_role(Some("instancerole".to_owned()))
                     .set_tags(Some({
                         let mut ret = std::collections::HashMap::new();
-                        ret.insert("Name".to_string(), "batch-compute".to_string());
+                        ret.insert("Name".to_owned(), "batch-compute".to_owned());
                         ret
                     }))
                     .set_ec2_configuration(Some(vec![crate::model::Ec2Configuration::builder()
-                        .set_image_type(Some("ECS_AL1".to_string()))
+                        .set_image_type(Some("ECS_AL1".to_owned()))
                         .build()]))
                     .build(),
             ))
             .set_service_role(Some(
-                "arn:aws:iam::432762038596:role/service-role/AWSBatchServiceRole".to_string(),
+                "arn:aws:iam::432762038596:role/service-role/AWSBatchServiceRole".to_owned(),
             ))
             .build()]))
             .build();

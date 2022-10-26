@@ -73,8 +73,8 @@ mod change_message_visibility_request_test {
     async fn sqs_set_visibility_zero_request() {
         let config = crate::config::Config::builder().build();
         let input = crate::input::ChangeMessageVisibilityInput::builder()
-            .set_queue_url(Some("http://somequeue.amazon.com".to_string()))
-            .set_receipt_handle(Some("handlehandle".to_string()))
+            .set_queue_url(Some("http://somequeue.amazon.com".to_owned()))
+            .set_receipt_handle(Some("handlehandle".to_owned()))
             .set_visibility_timeout(Some(0))
             .build()
             .unwrap()
