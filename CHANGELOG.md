@@ -1,4 +1,51 @@
 <!-- Do not manually edit this file. Use the `changelogger` tool. -->
+October 26th, 2022
+==================
+**Breaking Changes:**
+- ⚠ ([smithy-rs#1825](https://github.com/awslabs/smithy-rs/issues/1825)) Bump MSRV to be 1.62.0.
+- ⚠ ([smithy-rs#1740](https://github.com/awslabs/smithy-rs/issues/1740), [smithy-rs#256](https://github.com/awslabs/smithy-rs/issues/256)) The SDK, by default, now times out if socket connect or time to first byte read takes longer than
+    3.1 seconds. There are a large number of breaking changes that come with this change that may
+    affect you if you customize the client configuration at all.
+    See [the upgrade guide](https://github.com/awslabs/aws-sdk-rust/issues/622) for information
+    on how to configure timeouts, and how to resolve compilation issues after upgrading.
+
+**New this release:**
+- 🎉 ([aws-sdk-rust#237](https://github.com/awslabs/aws-sdk-rust/issues/237), [smithy-rs#1770](https://github.com/awslabs/smithy-rs/issues/1770)) It is now possible to programmatically customize the locations of the profile config/credentials files in `aws-config`:
+    ```rust
+    use aws_config::profile::{ProfileFileCredentialsProvider, ProfileFileRegionProvider};
+    use aws_config::profile::profile_file::{ProfileFiles, ProfileFileKind};
+
+    let profile_files = ProfileFiles::builder()
+        .with_file(ProfileFileKind::Credentials, "some/path/to/credentials-file")
+        .build();
+    let credentials_provider = ProfileFileCredentialsProvider::builder()
+        .profile_files(profile_files.clone())
+        .build();
+    let region_provider = ProfileFileRegionProvider::builder()
+        .profile_files(profile_files)
+        .build();
+
+    let sdk_config = aws_config::from_env()
+        .credentials_provider(credentials_provider)
+        .region(region_provider)
+        .load()
+        .await;
+    ```
+- 🐛 ([smithy-rs#1740](https://github.com/awslabs/smithy-rs/issues/1740), [smithy-rs#256](https://github.com/awslabs/smithy-rs/issues/256)) Setting connect/read timeouts with `SdkConfig` now works. Previously, these timeout config values
+    were lost during connector creation, so the only reliable way to set them was to manually override
+    the HTTP connector.
+- 🐛 ([aws-sdk-rust#620](https://github.com/awslabs/aws-sdk-rust/issues/620), [smithy-rs#1748](https://github.com/awslabs/smithy-rs/issues/1748)) Paginators now stop on encountering a duplicate token by default rather than panic. This behavior can be customized by toggling the `stop_on_duplicate_token` property on the paginator before calling `send`.
+- 🐛 ([smithy-rs#1747](https://github.com/awslabs/smithy-rs/issues/1747), @kastolars) The client Config now has getters for every value that it holds.
+- 🐛 ([smithy-rs#1822](https://github.com/awslabs/smithy-rs/issues/1822), @kevinpark1217) Fix regression where `connect_timeout` and `read_timeout` fields are unused in the IMDS client
+- ([aws-sdk-rust#625](https://github.com/awslabs/aws-sdk-rust/issues/625), @kevinpark1217) Ability to override the IMDS client in `DefaultCredentialsChain`
+- 🐛 ([smithy-rs#1656](https://github.com/awslabs/smithy-rs/issues/1656)) Fix aws-sigv4 canonical request formatting fallibility.
+- ([smithy-rs#1890](https://github.com/awslabs/smithy-rs/issues/1890)) Add test to exercise excluded headers in aws-sigv4.
+
+**Contributors**
+Thank you for your contributions! ❤
+- @kastolars ([smithy-rs#1747](https://github.com/awslabs/smithy-rs/issues/1747))
+- @kevinpark1217 ([aws-sdk-rust#625](https://github.com/awslabs/aws-sdk-rust/issues/625), [smithy-rs#1822](https://github.com/awslabs/smithy-rs/issues/1822))
+
 October 13th, 2022
 ==================
 
