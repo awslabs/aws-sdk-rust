@@ -7,6 +7,7 @@
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
 #![allow(clippy::type_complexity)]
+#![allow(clippy::needless_return)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
 //! <p>This is the API Reference for <a href="https://docs.aws.amazon.com/rekognition/latest/dg/images.html">Amazon Rekognition Image</a>,

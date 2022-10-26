@@ -26,7 +26,7 @@ pub fn parse_describe_entities_detection_v2_job_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEntitiesDetectionV2JobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -43,7 +43,7 @@ pub fn parse_describe_entities_detection_v2_job_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEntitiesDetectionV2JobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -62,7 +62,7 @@ pub fn parse_describe_entities_detection_v2_job_error(
                         output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEntitiesDetectionV2JobError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -82,7 +82,7 @@ pub fn parse_describe_entities_detection_v2_job_error(
                         output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEntitiesDetectionV2JobError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -146,7 +146,7 @@ pub fn parse_describe_icd10_cm_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeICD10CMInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -163,7 +163,7 @@ pub fn parse_describe_icd10_cm_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeICD10CMInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -180,7 +180,7 @@ pub fn parse_describe_icd10_cm_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeICD10CMInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -197,7 +197,7 @@ pub fn parse_describe_icd10_cm_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeICD10CMInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -259,7 +259,7 @@ pub fn parse_describe_phi_detection_job_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePHIDetectionJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -276,7 +276,7 @@ pub fn parse_describe_phi_detection_job_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePHIDetectionJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -293,7 +293,7 @@ pub fn parse_describe_phi_detection_job_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePHIDetectionJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -310,7 +310,7 @@ pub fn parse_describe_phi_detection_job_error(
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribePHIDetectionJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -371,7 +371,7 @@ pub fn parse_describe_rx_norm_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRxNormInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -388,7 +388,7 @@ pub fn parse_describe_rx_norm_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRxNormInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -405,7 +405,7 @@ pub fn parse_describe_rx_norm_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRxNormInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -422,7 +422,7 @@ pub fn parse_describe_rx_norm_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRxNormInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -483,7 +483,7 @@ pub fn parse_describe_snomedct_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSNOMEDCTInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -500,7 +500,7 @@ pub fn parse_describe_snomedct_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSNOMEDCTInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -517,7 +517,7 @@ pub fn parse_describe_snomedct_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSNOMEDCTInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -534,7 +534,7 @@ pub fn parse_describe_snomedct_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSNOMEDCTInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -589,7 +589,7 @@ pub fn parse_detect_entities_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectEntitiesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -606,7 +606,7 @@ pub fn parse_detect_entities_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_encoding_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectEntitiesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -623,7 +623,7 @@ pub fn parse_detect_entities_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectEntitiesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -641,7 +641,7 @@ pub fn parse_detect_entities_error(
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectEntitiesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -659,7 +659,7 @@ pub fn parse_detect_entities_error(
                     output = crate::json_deser::deser_structure_crate_error_text_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectEntitiesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -676,7 +676,7 @@ pub fn parse_detect_entities_error(
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectEntitiesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -728,7 +728,7 @@ pub fn parse_detect_entities_v2_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectEntitiesV2Error::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -745,7 +745,7 @@ pub fn parse_detect_entities_v2_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_encoding_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectEntitiesV2Error::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -762,7 +762,7 @@ pub fn parse_detect_entities_v2_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectEntitiesV2Error::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -780,7 +780,7 @@ pub fn parse_detect_entities_v2_error(
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectEntitiesV2Error::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -798,7 +798,7 @@ pub fn parse_detect_entities_v2_error(
                     output = crate::json_deser::deser_structure_crate_error_text_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectEntitiesV2Error::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -815,7 +815,7 @@ pub fn parse_detect_entities_v2_error(
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectEntitiesV2Error::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -867,7 +867,7 @@ pub fn parse_detect_phi_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectPHIError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -884,7 +884,7 @@ pub fn parse_detect_phi_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_encoding_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectPHIError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -901,7 +901,7 @@ pub fn parse_detect_phi_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectPHIError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -919,7 +919,7 @@ pub fn parse_detect_phi_error(
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectPHIError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -937,7 +937,7 @@ pub fn parse_detect_phi_error(
                     output = crate::json_deser::deser_structure_crate_error_text_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectPHIError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -954,7 +954,7 @@ pub fn parse_detect_phi_error(
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetectPHIError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1005,7 +1005,7 @@ pub fn parse_infer_icd10_cm_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InferICD10CMError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1022,7 +1022,7 @@ pub fn parse_infer_icd10_cm_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_encoding_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InferICD10CMError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1039,7 +1039,7 @@ pub fn parse_infer_icd10_cm_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InferICD10CMError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1057,7 +1057,7 @@ pub fn parse_infer_icd10_cm_error(
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InferICD10CMError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1075,7 +1075,7 @@ pub fn parse_infer_icd10_cm_error(
                     output = crate::json_deser::deser_structure_crate_error_text_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InferICD10CMError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1092,7 +1092,7 @@ pub fn parse_infer_icd10_cm_error(
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InferICD10CMError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1143,7 +1143,7 @@ pub fn parse_infer_rx_norm_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InferRxNormError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1160,7 +1160,7 @@ pub fn parse_infer_rx_norm_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_encoding_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InferRxNormError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1177,7 +1177,7 @@ pub fn parse_infer_rx_norm_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InferRxNormError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1195,7 +1195,7 @@ pub fn parse_infer_rx_norm_error(
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InferRxNormError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1213,7 +1213,7 @@ pub fn parse_infer_rx_norm_error(
                     output = crate::json_deser::deser_structure_crate_error_text_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InferRxNormError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1230,7 +1230,7 @@ pub fn parse_infer_rx_norm_error(
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InferRxNormError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1281,7 +1281,7 @@ pub fn parse_infer_snomedct_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InferSNOMEDCTError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1298,7 +1298,7 @@ pub fn parse_infer_snomedct_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_encoding_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InferSNOMEDCTError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1315,7 +1315,7 @@ pub fn parse_infer_snomedct_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InferSNOMEDCTError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1333,7 +1333,7 @@ pub fn parse_infer_snomedct_error(
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InferSNOMEDCTError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1351,7 +1351,7 @@ pub fn parse_infer_snomedct_error(
                     output = crate::json_deser::deser_structure_crate_error_text_size_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InferSNOMEDCTError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1368,7 +1368,7 @@ pub fn parse_infer_snomedct_error(
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InferSNOMEDCTError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1426,7 +1426,7 @@ pub fn parse_list_entities_detection_v2_jobs_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEntitiesDetectionV2JobsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1443,7 +1443,7 @@ pub fn parse_list_entities_detection_v2_jobs_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEntitiesDetectionV2JobsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1460,7 +1460,7 @@ pub fn parse_list_entities_detection_v2_jobs_error(
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEntitiesDetectionV2JobsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1477,7 +1477,7 @@ pub fn parse_list_entities_detection_v2_jobs_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEntitiesDetectionV2JobsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1539,7 +1539,7 @@ pub fn parse_list_icd10_cm_inference_jobs_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListICD10CMInferenceJobsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1556,7 +1556,7 @@ pub fn parse_list_icd10_cm_inference_jobs_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListICD10CMInferenceJobsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1573,7 +1573,7 @@ pub fn parse_list_icd10_cm_inference_jobs_error(
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListICD10CMInferenceJobsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1590,7 +1590,7 @@ pub fn parse_list_icd10_cm_inference_jobs_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListICD10CMInferenceJobsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1647,7 +1647,7 @@ pub fn parse_list_phi_detection_jobs_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPHIDetectionJobsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1664,7 +1664,7 @@ pub fn parse_list_phi_detection_jobs_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPHIDetectionJobsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1681,7 +1681,7 @@ pub fn parse_list_phi_detection_jobs_error(
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPHIDetectionJobsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1698,7 +1698,7 @@ pub fn parse_list_phi_detection_jobs_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPHIDetectionJobsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1759,7 +1759,7 @@ pub fn parse_list_rx_norm_inference_jobs_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRxNormInferenceJobsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1776,7 +1776,7 @@ pub fn parse_list_rx_norm_inference_jobs_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRxNormInferenceJobsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1793,7 +1793,7 @@ pub fn parse_list_rx_norm_inference_jobs_error(
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRxNormInferenceJobsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1810,7 +1810,7 @@ pub fn parse_list_rx_norm_inference_jobs_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRxNormInferenceJobsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1871,7 +1871,7 @@ pub fn parse_list_snomedct_inference_jobs_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSNOMEDCTInferenceJobsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1888,7 +1888,7 @@ pub fn parse_list_snomedct_inference_jobs_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSNOMEDCTInferenceJobsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1905,7 +1905,7 @@ pub fn parse_list_snomedct_inference_jobs_error(
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSNOMEDCTInferenceJobsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1922,7 +1922,7 @@ pub fn parse_list_snomedct_inference_jobs_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSNOMEDCTInferenceJobsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1983,7 +1983,7 @@ pub fn parse_start_entities_detection_v2_job_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartEntitiesDetectionV2JobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2000,7 +2000,7 @@ pub fn parse_start_entities_detection_v2_job_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartEntitiesDetectionV2JobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2017,7 +2017,7 @@ pub fn parse_start_entities_detection_v2_job_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartEntitiesDetectionV2JobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2034,7 +2034,7 @@ pub fn parse_start_entities_detection_v2_job_error(
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartEntitiesDetectionV2JobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2096,7 +2096,7 @@ pub fn parse_start_icd10_cm_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartICD10CMInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2113,7 +2113,7 @@ pub fn parse_start_icd10_cm_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartICD10CMInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2130,7 +2130,7 @@ pub fn parse_start_icd10_cm_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartICD10CMInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2147,7 +2147,7 @@ pub fn parse_start_icd10_cm_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartICD10CMInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2204,7 +2204,7 @@ pub fn parse_start_phi_detection_job_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartPHIDetectionJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2221,7 +2221,7 @@ pub fn parse_start_phi_detection_job_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartPHIDetectionJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2238,7 +2238,7 @@ pub fn parse_start_phi_detection_job_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartPHIDetectionJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2255,7 +2255,7 @@ pub fn parse_start_phi_detection_job_error(
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartPHIDetectionJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2316,7 +2316,7 @@ pub fn parse_start_rx_norm_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartRxNormInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2333,7 +2333,7 @@ pub fn parse_start_rx_norm_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartRxNormInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2350,7 +2350,7 @@ pub fn parse_start_rx_norm_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartRxNormInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2367,7 +2367,7 @@ pub fn parse_start_rx_norm_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartRxNormInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2428,7 +2428,7 @@ pub fn parse_start_snomedct_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartSNOMEDCTInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2445,7 +2445,7 @@ pub fn parse_start_snomedct_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartSNOMEDCTInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2462,7 +2462,7 @@ pub fn parse_start_snomedct_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartSNOMEDCTInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2479,7 +2479,7 @@ pub fn parse_start_snomedct_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartSNOMEDCTInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2540,7 +2540,7 @@ pub fn parse_stop_entities_detection_v2_job_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopEntitiesDetectionV2JobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2557,7 +2557,7 @@ pub fn parse_stop_entities_detection_v2_job_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopEntitiesDetectionV2JobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2574,7 +2574,7 @@ pub fn parse_stop_entities_detection_v2_job_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopEntitiesDetectionV2JobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2635,7 +2635,7 @@ pub fn parse_stop_icd10_cm_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopICD10CMInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2652,7 +2652,7 @@ pub fn parse_stop_icd10_cm_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopICD10CMInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2669,7 +2669,7 @@ pub fn parse_stop_icd10_cm_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopICD10CMInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2726,7 +2726,7 @@ pub fn parse_stop_phi_detection_job_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopPHIDetectionJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2743,7 +2743,7 @@ pub fn parse_stop_phi_detection_job_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopPHIDetectionJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2760,7 +2760,7 @@ pub fn parse_stop_phi_detection_job_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopPHIDetectionJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2821,7 +2821,7 @@ pub fn parse_stop_rx_norm_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopRxNormInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2838,7 +2838,7 @@ pub fn parse_stop_rx_norm_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopRxNormInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2855,7 +2855,7 @@ pub fn parse_stop_rx_norm_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopRxNormInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2916,7 +2916,7 @@ pub fn parse_stop_snomedct_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopSNOMEDCTInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2933,7 +2933,7 @@ pub fn parse_stop_snomedct_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopSNOMEDCTInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2950,7 +2950,7 @@ pub fn parse_stop_snomedct_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopSNOMEDCTInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2967,7 +2967,7 @@ pub fn parse_stop_snomedct_inference_job_error(
                     output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopSNOMEDCTInferenceJobError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp

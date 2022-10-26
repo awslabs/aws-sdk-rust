@@ -7,6 +7,7 @@
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
 #![allow(clippy::type_complexity)]
+#![allow(clippy::needless_return)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
 //! <p>AWS Data Exchange is a service that makes it easy for AWS customers to exchange data in the cloud. You can use the AWS Data Exchange APIs to create, update, manage, and access file-based data set in the AWS Cloud.</p>

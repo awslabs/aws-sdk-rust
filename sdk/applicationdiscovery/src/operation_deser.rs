@@ -28,7 +28,7 @@ pub fn parse_associate_configuration_items_to_application_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -42,7 +42,7 @@ pub fn parse_associate_configuration_items_to_application_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -56,7 +56,7 @@ pub fn parse_associate_configuration_items_to_application_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -70,7 +70,7 @@ pub fn parse_associate_configuration_items_to_application_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -84,7 +84,7 @@ pub fn parse_associate_configuration_items_to_application_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -137,7 +137,7 @@ pub fn parse_batch_delete_import_data_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDeleteImportDataError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -155,7 +155,7 @@ pub fn parse_batch_delete_import_data_error(
                     output = crate::json_deser::deser_structure_crate_error_home_region_not_set_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDeleteImportDataError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -172,7 +172,7 @@ pub fn parse_batch_delete_import_data_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDeleteImportDataError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -190,7 +190,7 @@ pub fn parse_batch_delete_import_data_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDeleteImportDataError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -208,7 +208,7 @@ pub fn parse_batch_delete_import_data_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDeleteImportDataError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -264,7 +264,7 @@ pub fn parse_create_application_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -282,7 +282,7 @@ pub fn parse_create_application_error(
                     output = crate::json_deser::deser_structure_crate_error_home_region_not_set_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -299,7 +299,7 @@ pub fn parse_create_application_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -317,7 +317,7 @@ pub fn parse_create_application_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -335,7 +335,7 @@ pub fn parse_create_application_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -388,7 +388,7 @@ pub fn parse_create_tags_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -406,7 +406,7 @@ pub fn parse_create_tags_error(
                     output = crate::json_deser::deser_structure_crate_error_home_region_not_set_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -423,7 +423,7 @@ pub fn parse_create_tags_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -441,7 +441,7 @@ pub fn parse_create_tags_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -458,7 +458,7 @@ pub fn parse_create_tags_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -476,7 +476,7 @@ pub fn parse_create_tags_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -526,7 +526,7 @@ pub fn parse_delete_applications_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -544,7 +544,7 @@ pub fn parse_delete_applications_error(
                     output = crate::json_deser::deser_structure_crate_error_home_region_not_set_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -561,7 +561,7 @@ pub fn parse_delete_applications_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -579,7 +579,7 @@ pub fn parse_delete_applications_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -597,7 +597,7 @@ pub fn parse_delete_applications_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -647,7 +647,7 @@ pub fn parse_delete_tags_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -665,7 +665,7 @@ pub fn parse_delete_tags_error(
                     output = crate::json_deser::deser_structure_crate_error_home_region_not_set_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -682,7 +682,7 @@ pub fn parse_delete_tags_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -700,7 +700,7 @@ pub fn parse_delete_tags_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -717,7 +717,7 @@ pub fn parse_delete_tags_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -735,7 +735,7 @@ pub fn parse_delete_tags_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -782,7 +782,7 @@ pub fn parse_describe_agents_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAgentsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -800,7 +800,7 @@ pub fn parse_describe_agents_error(
                     output = crate::json_deser::deser_structure_crate_error_home_region_not_set_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAgentsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -817,7 +817,7 @@ pub fn parse_describe_agents_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAgentsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -835,7 +835,7 @@ pub fn parse_describe_agents_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAgentsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -853,7 +853,7 @@ pub fn parse_describe_agents_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAgentsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -912,7 +912,7 @@ pub fn parse_describe_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -930,7 +930,7 @@ pub fn parse_describe_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_home_region_not_set_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -947,7 +947,7 @@ pub fn parse_describe_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -965,7 +965,7 @@ pub fn parse_describe_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -983,7 +983,7 @@ pub fn parse_describe_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1045,7 +1045,7 @@ pub fn parse_describe_continuous_exports_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeContinuousExportsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1063,7 +1063,7 @@ pub fn parse_describe_continuous_exports_error(
                     output = crate::json_deser::deser_structure_crate_error_home_region_not_set_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeContinuousExportsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1080,7 +1080,7 @@ pub fn parse_describe_continuous_exports_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeContinuousExportsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1099,7 +1099,7 @@ pub fn parse_describe_continuous_exports_error(
                         output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeContinuousExportsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1119,7 +1119,7 @@ pub fn parse_describe_continuous_exports_error(
                         output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeContinuousExportsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1137,7 +1137,7 @@ pub fn parse_describe_continuous_exports_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeContinuousExportsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1155,7 +1155,7 @@ pub fn parse_describe_continuous_exports_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeContinuousExportsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1218,7 +1218,7 @@ pub fn parse_describe_export_configurations_error(
                         output = crate::json_deser::deser_structure_crate_error_authorization_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeExportConfigurationsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1237,7 +1237,7 @@ pub fn parse_describe_export_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_home_region_not_set_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeExportConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1254,7 +1254,7 @@ pub fn parse_describe_export_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeExportConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1274,7 +1274,7 @@ pub fn parse_describe_export_configurations_error(
                             output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeExportConfigurationsError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -1292,7 +1292,7 @@ pub fn parse_describe_export_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeExportConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1311,7 +1311,7 @@ pub fn parse_describe_export_configurations_error(
                         output = crate::json_deser::deser_structure_crate_error_server_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeExportConfigurationsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1370,7 +1370,7 @@ pub fn parse_describe_export_tasks_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeExportTasksError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1388,7 +1388,7 @@ pub fn parse_describe_export_tasks_error(
                     output = crate::json_deser::deser_structure_crate_error_home_region_not_set_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeExportTasksError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1405,7 +1405,7 @@ pub fn parse_describe_export_tasks_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeExportTasksError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1423,7 +1423,7 @@ pub fn parse_describe_export_tasks_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeExportTasksError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1441,7 +1441,7 @@ pub fn parse_describe_export_tasks_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeExportTasksError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1499,7 +1499,7 @@ pub fn parse_describe_import_tasks_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeImportTasksError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1517,7 +1517,7 @@ pub fn parse_describe_import_tasks_error(
                     output = crate::json_deser::deser_structure_crate_error_home_region_not_set_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeImportTasksError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1534,7 +1534,7 @@ pub fn parse_describe_import_tasks_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeImportTasksError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1552,7 +1552,7 @@ pub fn parse_describe_import_tasks_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeImportTasksError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1570,7 +1570,7 @@ pub fn parse_describe_import_tasks_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeImportTasksError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1625,7 +1625,7 @@ pub fn parse_describe_tags_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1643,7 +1643,7 @@ pub fn parse_describe_tags_error(
                     output = crate::json_deser::deser_structure_crate_error_home_region_not_set_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1660,7 +1660,7 @@ pub fn parse_describe_tags_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1678,7 +1678,7 @@ pub fn parse_describe_tags_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1695,7 +1695,7 @@ pub fn parse_describe_tags_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1713,7 +1713,7 @@ pub fn parse_describe_tags_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1771,7 +1771,7 @@ pub fn parse_disassociate_configuration_items_from_application_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1785,7 +1785,7 @@ pub fn parse_disassociate_configuration_items_from_application_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1799,7 +1799,7 @@ pub fn parse_disassociate_configuration_items_from_application_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1813,7 +1813,7 @@ pub fn parse_disassociate_configuration_items_from_application_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1827,7 +1827,7 @@ pub fn parse_disassociate_configuration_items_from_application_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1878,7 +1878,7 @@ pub fn parse_export_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1896,7 +1896,7 @@ pub fn parse_export_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_home_region_not_set_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1913,7 +1913,7 @@ pub fn parse_export_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1931,7 +1931,7 @@ pub fn parse_export_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1949,7 +1949,7 @@ pub fn parse_export_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1967,7 +1967,7 @@ pub fn parse_export_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2025,7 +2025,7 @@ pub fn parse_get_discovery_summary_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDiscoverySummaryError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2043,7 +2043,7 @@ pub fn parse_get_discovery_summary_error(
                     output = crate::json_deser::deser_structure_crate_error_home_region_not_set_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDiscoverySummaryError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2060,7 +2060,7 @@ pub fn parse_get_discovery_summary_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDiscoverySummaryError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2078,7 +2078,7 @@ pub fn parse_get_discovery_summary_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDiscoverySummaryError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2096,7 +2096,7 @@ pub fn parse_get_discovery_summary_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDiscoverySummaryError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2154,7 +2154,7 @@ pub fn parse_list_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2172,7 +2172,7 @@ pub fn parse_list_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_home_region_not_set_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2189,7 +2189,7 @@ pub fn parse_list_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2207,7 +2207,7 @@ pub fn parse_list_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2224,7 +2224,7 @@ pub fn parse_list_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2242,7 +2242,7 @@ pub fn parse_list_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2300,7 +2300,7 @@ pub fn parse_list_server_neighbors_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServerNeighborsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2318,7 +2318,7 @@ pub fn parse_list_server_neighbors_error(
                     output = crate::json_deser::deser_structure_crate_error_home_region_not_set_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServerNeighborsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2335,7 +2335,7 @@ pub fn parse_list_server_neighbors_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServerNeighborsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2353,7 +2353,7 @@ pub fn parse_list_server_neighbors_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServerNeighborsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2371,7 +2371,7 @@ pub fn parse_list_server_neighbors_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServerNeighborsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2429,7 +2429,7 @@ pub fn parse_start_continuous_export_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartContinuousExportError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2446,7 +2446,7 @@ pub fn parse_start_continuous_export_error(
                     output = crate::json_deser::deser_structure_crate_error_conflict_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartContinuousExportError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2464,7 +2464,7 @@ pub fn parse_start_continuous_export_error(
                     output = crate::json_deser::deser_structure_crate_error_home_region_not_set_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartContinuousExportError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2481,7 +2481,7 @@ pub fn parse_start_continuous_export_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartContinuousExportError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2499,7 +2499,7 @@ pub fn parse_start_continuous_export_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartContinuousExportError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2517,7 +2517,7 @@ pub fn parse_start_continuous_export_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartContinuousExportError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2534,7 +2534,7 @@ pub fn parse_start_continuous_export_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartContinuousExportError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2552,7 +2552,7 @@ pub fn parse_start_continuous_export_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartContinuousExportError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2615,7 +2615,7 @@ pub fn parse_start_data_collection_by_agent_ids_error(
                         output = crate::json_deser::deser_structure_crate_error_authorization_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDataCollectionByAgentIdsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2635,7 +2635,7 @@ pub fn parse_start_data_collection_by_agent_ids_error(
                         output = crate::json_deser::deser_structure_crate_error_home_region_not_set_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDataCollectionByAgentIdsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2655,7 +2655,7 @@ pub fn parse_start_data_collection_by_agent_ids_error(
                         output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDataCollectionByAgentIdsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2676,7 +2676,7 @@ pub fn parse_start_data_collection_by_agent_ids_error(
                             output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDataCollectionByAgentIdsError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -2697,7 +2697,7 @@ pub fn parse_start_data_collection_by_agent_ids_error(
                             output = crate::json_deser::deser_structure_crate_error_server_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartDataCollectionByAgentIdsError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -2755,7 +2755,7 @@ pub fn parse_start_export_task_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartExportTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2773,7 +2773,7 @@ pub fn parse_start_export_task_error(
                     output = crate::json_deser::deser_structure_crate_error_home_region_not_set_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartExportTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2790,7 +2790,7 @@ pub fn parse_start_export_task_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartExportTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2808,7 +2808,7 @@ pub fn parse_start_export_task_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartExportTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2826,7 +2826,7 @@ pub fn parse_start_export_task_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartExportTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2844,7 +2844,7 @@ pub fn parse_start_export_task_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartExportTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2896,7 +2896,7 @@ pub fn parse_start_import_task_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartImportTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2914,7 +2914,7 @@ pub fn parse_start_import_task_error(
                     output = crate::json_deser::deser_structure_crate_error_home_region_not_set_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartImportTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2931,7 +2931,7 @@ pub fn parse_start_import_task_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartImportTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2949,7 +2949,7 @@ pub fn parse_start_import_task_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartImportTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2966,7 +2966,7 @@ pub fn parse_start_import_task_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartImportTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2984,7 +2984,7 @@ pub fn parse_start_import_task_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartImportTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3039,7 +3039,7 @@ pub fn parse_stop_continuous_export_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopContinuousExportError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3057,7 +3057,7 @@ pub fn parse_stop_continuous_export_error(
                     output = crate::json_deser::deser_structure_crate_error_home_region_not_set_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopContinuousExportError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3074,7 +3074,7 @@ pub fn parse_stop_continuous_export_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopContinuousExportError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3092,7 +3092,7 @@ pub fn parse_stop_continuous_export_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopContinuousExportError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3110,7 +3110,7 @@ pub fn parse_stop_continuous_export_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopContinuousExportError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3127,7 +3127,7 @@ pub fn parse_stop_continuous_export_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopContinuousExportError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3144,7 +3144,7 @@ pub fn parse_stop_continuous_export_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopContinuousExportError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3162,7 +3162,7 @@ pub fn parse_stop_continuous_export_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopContinuousExportError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3225,7 +3225,7 @@ pub fn parse_stop_data_collection_by_agent_ids_error(
                         output = crate::json_deser::deser_structure_crate_error_authorization_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopDataCollectionByAgentIdsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3244,7 +3244,7 @@ pub fn parse_stop_data_collection_by_agent_ids_error(
                     output = crate::json_deser::deser_structure_crate_error_home_region_not_set_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopDataCollectionByAgentIdsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3261,7 +3261,7 @@ pub fn parse_stop_data_collection_by_agent_ids_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopDataCollectionByAgentIdsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3281,7 +3281,7 @@ pub fn parse_stop_data_collection_by_agent_ids_error(
                             output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopDataCollectionByAgentIdsError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -3301,7 +3301,7 @@ pub fn parse_stop_data_collection_by_agent_ids_error(
                         output = crate::json_deser::deser_structure_crate_error_server_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopDataCollectionByAgentIdsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3360,7 +3360,7 @@ pub fn parse_update_application_error(
                     output = crate::json_deser::deser_structure_crate_error_authorization_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApplicationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3378,7 +3378,7 @@ pub fn parse_update_application_error(
                     output = crate::json_deser::deser_structure_crate_error_home_region_not_set_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApplicationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3395,7 +3395,7 @@ pub fn parse_update_application_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApplicationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3413,7 +3413,7 @@ pub fn parse_update_application_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApplicationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3431,7 +3431,7 @@ pub fn parse_update_application_error(
                     output = crate::json_deser::deser_structure_crate_error_server_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateApplicationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp

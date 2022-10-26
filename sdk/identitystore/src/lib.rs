@@ -7,6 +7,7 @@
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
 #![allow(clippy::type_complexity)]
+#![allow(clippy::needless_return)]
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
 //! <p>The Identity Store service used by AWS IAM Identity Center (successor to AWS Single Sign-On) provides a single place to retrieve all of

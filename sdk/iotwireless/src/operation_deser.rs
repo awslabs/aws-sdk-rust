@@ -28,7 +28,7 @@ pub fn parse_associate_aws_account_with_partner_account_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -42,7 +42,7 @@ pub fn parse_associate_aws_account_with_partner_account_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -56,7 +56,7 @@ pub fn parse_associate_aws_account_with_partner_account_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -70,7 +70,7 @@ pub fn parse_associate_aws_account_with_partner_account_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -84,7 +84,7 @@ pub fn parse_associate_aws_account_with_partner_account_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -98,7 +98,7 @@ pub fn parse_associate_aws_account_with_partner_account_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -151,7 +151,7 @@ pub fn parse_associate_multicast_group_with_fuota_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -165,7 +165,7 @@ pub fn parse_associate_multicast_group_with_fuota_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -179,7 +179,7 @@ pub fn parse_associate_multicast_group_with_fuota_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -193,7 +193,7 @@ pub fn parse_associate_multicast_group_with_fuota_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -207,7 +207,7 @@ pub fn parse_associate_multicast_group_with_fuota_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -221,7 +221,7 @@ pub fn parse_associate_multicast_group_with_fuota_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -273,7 +273,7 @@ pub fn parse_associate_wireless_device_with_fuota_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -287,7 +287,7 @@ pub fn parse_associate_wireless_device_with_fuota_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -301,7 +301,7 @@ pub fn parse_associate_wireless_device_with_fuota_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -315,7 +315,7 @@ pub fn parse_associate_wireless_device_with_fuota_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -329,7 +329,7 @@ pub fn parse_associate_wireless_device_with_fuota_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -343,7 +343,7 @@ pub fn parse_associate_wireless_device_with_fuota_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -397,7 +397,7 @@ pub fn parse_associate_wireless_device_with_multicast_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -411,7 +411,7 @@ pub fn parse_associate_wireless_device_with_multicast_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -425,7 +425,7 @@ pub fn parse_associate_wireless_device_with_multicast_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -439,7 +439,7 @@ pub fn parse_associate_wireless_device_with_multicast_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -453,7 +453,7 @@ pub fn parse_associate_wireless_device_with_multicast_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -467,7 +467,7 @@ pub fn parse_associate_wireless_device_with_multicast_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -522,7 +522,7 @@ pub fn parse_associate_wireless_device_with_thing_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWirelessDeviceWithThingError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -540,7 +540,7 @@ pub fn parse_associate_wireless_device_with_thing_error(
                         output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWirelessDeviceWithThingError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -560,7 +560,7 @@ pub fn parse_associate_wireless_device_with_thing_error(
                         output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWirelessDeviceWithThingError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -581,7 +581,7 @@ pub fn parse_associate_wireless_device_with_thing_error(
                             output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWirelessDeviceWithThingError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -599,7 +599,7 @@ pub fn parse_associate_wireless_device_with_thing_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWirelessDeviceWithThingError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -616,7 +616,7 @@ pub fn parse_associate_wireless_device_with_thing_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWirelessDeviceWithThingError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -671,7 +671,7 @@ pub fn parse_associate_wireless_gateway_with_certificate_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -685,7 +685,7 @@ pub fn parse_associate_wireless_gateway_with_certificate_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -699,7 +699,7 @@ pub fn parse_associate_wireless_gateway_with_certificate_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -713,7 +713,7 @@ pub fn parse_associate_wireless_gateway_with_certificate_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -727,7 +727,7 @@ pub fn parse_associate_wireless_gateway_with_certificate_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -741,7 +741,7 @@ pub fn parse_associate_wireless_gateway_with_certificate_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -797,7 +797,7 @@ pub fn parse_associate_wireless_gateway_with_thing_error(
                         output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWirelessGatewayWithThingError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -817,7 +817,7 @@ pub fn parse_associate_wireless_gateway_with_thing_error(
                             output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWirelessGatewayWithThingError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -838,7 +838,7 @@ pub fn parse_associate_wireless_gateway_with_thing_error(
                         output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWirelessGatewayWithThingError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -859,7 +859,7 @@ pub fn parse_associate_wireless_gateway_with_thing_error(
                             output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWirelessGatewayWithThingError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -877,7 +877,7 @@ pub fn parse_associate_wireless_gateway_with_thing_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWirelessGatewayWithThingError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -894,7 +894,7 @@ pub fn parse_associate_wireless_gateway_with_thing_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateWirelessGatewayWithThingError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -951,7 +951,7 @@ pub fn parse_cancel_multicast_group_session_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelMulticastGroupSessionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -969,7 +969,7 @@ pub fn parse_cancel_multicast_group_session_error(
                         output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelMulticastGroupSessionError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -987,7 +987,7 @@ pub fn parse_cancel_multicast_group_session_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelMulticastGroupSessionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1004,7 +1004,7 @@ pub fn parse_cancel_multicast_group_session_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelMulticastGroupSessionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1021,7 +1021,7 @@ pub fn parse_cancel_multicast_group_session_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelMulticastGroupSessionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1038,7 +1038,7 @@ pub fn parse_cancel_multicast_group_session_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelMulticastGroupSessionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1088,7 +1088,7 @@ pub fn parse_create_destination_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDestinationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1106,7 +1106,7 @@ pub fn parse_create_destination_error(
                         output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDestinationError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1124,7 +1124,7 @@ pub fn parse_create_destination_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDestinationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1141,7 +1141,7 @@ pub fn parse_create_destination_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDestinationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1158,7 +1158,7 @@ pub fn parse_create_destination_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDestinationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1175,7 +1175,7 @@ pub fn parse_create_destination_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDestinationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1230,7 +1230,7 @@ pub fn parse_create_device_profile_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDeviceProfileError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1248,7 +1248,7 @@ pub fn parse_create_device_profile_error(
                         output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDeviceProfileError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1266,7 +1266,7 @@ pub fn parse_create_device_profile_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDeviceProfileError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1283,7 +1283,7 @@ pub fn parse_create_device_profile_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDeviceProfileError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1300,7 +1300,7 @@ pub fn parse_create_device_profile_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDeviceProfileError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1354,7 +1354,7 @@ pub fn parse_create_fuota_task_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFuotaTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1372,7 +1372,7 @@ pub fn parse_create_fuota_task_error(
                         output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFuotaTaskError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1390,7 +1390,7 @@ pub fn parse_create_fuota_task_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFuotaTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1407,7 +1407,7 @@ pub fn parse_create_fuota_task_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFuotaTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1424,7 +1424,7 @@ pub fn parse_create_fuota_task_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFuotaTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1441,7 +1441,7 @@ pub fn parse_create_fuota_task_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFuotaTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1495,7 +1495,7 @@ pub fn parse_create_multicast_group_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMulticastGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1513,7 +1513,7 @@ pub fn parse_create_multicast_group_error(
                         output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMulticastGroupError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1531,7 +1531,7 @@ pub fn parse_create_multicast_group_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMulticastGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1548,7 +1548,7 @@ pub fn parse_create_multicast_group_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMulticastGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1565,7 +1565,7 @@ pub fn parse_create_multicast_group_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMulticastGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1582,7 +1582,7 @@ pub fn parse_create_multicast_group_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateMulticastGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1642,7 +1642,7 @@ pub fn parse_create_network_analyzer_configuration_error(
                         output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateNetworkAnalyzerConfigurationError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1662,7 +1662,7 @@ pub fn parse_create_network_analyzer_configuration_error(
                             output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateNetworkAnalyzerConfigurationError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -1684,7 +1684,7 @@ pub fn parse_create_network_analyzer_configuration_error(
                             output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateNetworkAnalyzerConfigurationError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -1705,7 +1705,7 @@ pub fn parse_create_network_analyzer_configuration_error(
                             output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateNetworkAnalyzerConfigurationError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -1723,7 +1723,7 @@ pub fn parse_create_network_analyzer_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateNetworkAnalyzerConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1740,7 +1740,7 @@ pub fn parse_create_network_analyzer_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateNetworkAnalyzerConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1794,7 +1794,7 @@ pub fn parse_create_service_profile_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateServiceProfileError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1812,7 +1812,7 @@ pub fn parse_create_service_profile_error(
                         output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateServiceProfileError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1830,7 +1830,7 @@ pub fn parse_create_service_profile_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateServiceProfileError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1847,7 +1847,7 @@ pub fn parse_create_service_profile_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateServiceProfileError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1864,7 +1864,7 @@ pub fn parse_create_service_profile_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateServiceProfileError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1921,7 +1921,7 @@ pub fn parse_create_wireless_device_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWirelessDeviceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1939,7 +1939,7 @@ pub fn parse_create_wireless_device_error(
                         output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWirelessDeviceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1957,7 +1957,7 @@ pub fn parse_create_wireless_device_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWirelessDeviceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1974,7 +1974,7 @@ pub fn parse_create_wireless_device_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWirelessDeviceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1991,7 +1991,7 @@ pub fn parse_create_wireless_device_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWirelessDeviceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2008,7 +2008,7 @@ pub fn parse_create_wireless_device_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWirelessDeviceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2065,7 +2065,7 @@ pub fn parse_create_wireless_gateway_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWirelessGatewayError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2083,7 +2083,7 @@ pub fn parse_create_wireless_gateway_error(
                         output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWirelessGatewayError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2101,7 +2101,7 @@ pub fn parse_create_wireless_gateway_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWirelessGatewayError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2118,7 +2118,7 @@ pub fn parse_create_wireless_gateway_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWirelessGatewayError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2135,7 +2135,7 @@ pub fn parse_create_wireless_gateway_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWirelessGatewayError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2196,7 +2196,7 @@ pub fn parse_create_wireless_gateway_task_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWirelessGatewayTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2214,7 +2214,7 @@ pub fn parse_create_wireless_gateway_task_error(
                         output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWirelessGatewayTaskError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2232,7 +2232,7 @@ pub fn parse_create_wireless_gateway_task_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWirelessGatewayTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2249,7 +2249,7 @@ pub fn parse_create_wireless_gateway_task_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWirelessGatewayTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2266,7 +2266,7 @@ pub fn parse_create_wireless_gateway_task_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWirelessGatewayTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2283,7 +2283,7 @@ pub fn parse_create_wireless_gateway_task_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWirelessGatewayTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2340,7 +2340,7 @@ pub fn parse_create_wireless_gateway_task_definition_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2354,7 +2354,7 @@ pub fn parse_create_wireless_gateway_task_definition_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2368,7 +2368,7 @@ pub fn parse_create_wireless_gateway_task_definition_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2382,7 +2382,7 @@ pub fn parse_create_wireless_gateway_task_definition_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2396,7 +2396,7 @@ pub fn parse_create_wireless_gateway_task_definition_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2410,7 +2410,7 @@ pub fn parse_create_wireless_gateway_task_definition_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2461,7 +2461,7 @@ pub fn parse_delete_destination_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDestinationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2479,7 +2479,7 @@ pub fn parse_delete_destination_error(
                         output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDestinationError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2497,7 +2497,7 @@ pub fn parse_delete_destination_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDestinationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2514,7 +2514,7 @@ pub fn parse_delete_destination_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDestinationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2531,7 +2531,7 @@ pub fn parse_delete_destination_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDestinationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2548,7 +2548,7 @@ pub fn parse_delete_destination_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDestinationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2598,7 +2598,7 @@ pub fn parse_delete_device_profile_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDeviceProfileError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2616,7 +2616,7 @@ pub fn parse_delete_device_profile_error(
                         output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDeviceProfileError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2634,7 +2634,7 @@ pub fn parse_delete_device_profile_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDeviceProfileError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2651,7 +2651,7 @@ pub fn parse_delete_device_profile_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDeviceProfileError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2668,7 +2668,7 @@ pub fn parse_delete_device_profile_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDeviceProfileError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2685,7 +2685,7 @@ pub fn parse_delete_device_profile_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDeviceProfileError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2734,7 +2734,7 @@ pub fn parse_delete_fuota_task_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFuotaTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2751,7 +2751,7 @@ pub fn parse_delete_fuota_task_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFuotaTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2768,7 +2768,7 @@ pub fn parse_delete_fuota_task_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFuotaTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2785,7 +2785,7 @@ pub fn parse_delete_fuota_task_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFuotaTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2802,7 +2802,7 @@ pub fn parse_delete_fuota_task_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFuotaTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2851,7 +2851,7 @@ pub fn parse_delete_multicast_group_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteMulticastGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2869,7 +2869,7 @@ pub fn parse_delete_multicast_group_error(
                         output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteMulticastGroupError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2887,7 +2887,7 @@ pub fn parse_delete_multicast_group_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteMulticastGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2904,7 +2904,7 @@ pub fn parse_delete_multicast_group_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteMulticastGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2921,7 +2921,7 @@ pub fn parse_delete_multicast_group_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteMulticastGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2938,7 +2938,7 @@ pub fn parse_delete_multicast_group_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteMulticastGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2993,7 +2993,7 @@ pub fn parse_delete_network_analyzer_configuration_error(
                         output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteNetworkAnalyzerConfigurationError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3013,7 +3013,7 @@ pub fn parse_delete_network_analyzer_configuration_error(
                             output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteNetworkAnalyzerConfigurationError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -3035,7 +3035,7 @@ pub fn parse_delete_network_analyzer_configuration_error(
                             output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteNetworkAnalyzerConfigurationError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -3056,7 +3056,7 @@ pub fn parse_delete_network_analyzer_configuration_error(
                             output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteNetworkAnalyzerConfigurationError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -3074,7 +3074,7 @@ pub fn parse_delete_network_analyzer_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteNetworkAnalyzerConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3091,7 +3091,7 @@ pub fn parse_delete_network_analyzer_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteNetworkAnalyzerConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3144,7 +3144,7 @@ pub fn parse_delete_queued_messages_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteQueuedMessagesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3161,7 +3161,7 @@ pub fn parse_delete_queued_messages_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteQueuedMessagesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3178,7 +3178,7 @@ pub fn parse_delete_queued_messages_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteQueuedMessagesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3195,7 +3195,7 @@ pub fn parse_delete_queued_messages_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteQueuedMessagesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3212,7 +3212,7 @@ pub fn parse_delete_queued_messages_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteQueuedMessagesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3264,7 +3264,7 @@ pub fn parse_delete_service_profile_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteServiceProfileError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3282,7 +3282,7 @@ pub fn parse_delete_service_profile_error(
                         output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteServiceProfileError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3300,7 +3300,7 @@ pub fn parse_delete_service_profile_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteServiceProfileError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3317,7 +3317,7 @@ pub fn parse_delete_service_profile_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteServiceProfileError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3334,7 +3334,7 @@ pub fn parse_delete_service_profile_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteServiceProfileError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3351,7 +3351,7 @@ pub fn parse_delete_service_profile_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteServiceProfileError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3403,7 +3403,7 @@ pub fn parse_delete_wireless_device_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWirelessDeviceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3420,7 +3420,7 @@ pub fn parse_delete_wireless_device_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWirelessDeviceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3437,7 +3437,7 @@ pub fn parse_delete_wireless_device_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWirelessDeviceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3454,7 +3454,7 @@ pub fn parse_delete_wireless_device_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWirelessDeviceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3471,7 +3471,7 @@ pub fn parse_delete_wireless_device_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWirelessDeviceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3523,7 +3523,7 @@ pub fn parse_delete_wireless_gateway_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWirelessGatewayError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3540,7 +3540,7 @@ pub fn parse_delete_wireless_gateway_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWirelessGatewayError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3557,7 +3557,7 @@ pub fn parse_delete_wireless_gateway_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWirelessGatewayError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3574,7 +3574,7 @@ pub fn parse_delete_wireless_gateway_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWirelessGatewayError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3591,7 +3591,7 @@ pub fn parse_delete_wireless_gateway_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWirelessGatewayError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3647,7 +3647,7 @@ pub fn parse_delete_wireless_gateway_task_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWirelessGatewayTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3664,7 +3664,7 @@ pub fn parse_delete_wireless_gateway_task_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWirelessGatewayTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3681,7 +3681,7 @@ pub fn parse_delete_wireless_gateway_task_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWirelessGatewayTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3698,7 +3698,7 @@ pub fn parse_delete_wireless_gateway_task_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWirelessGatewayTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3715,7 +3715,7 @@ pub fn parse_delete_wireless_gateway_task_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWirelessGatewayTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3767,7 +3767,7 @@ pub fn parse_delete_wireless_gateway_task_definition_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3781,7 +3781,7 @@ pub fn parse_delete_wireless_gateway_task_definition_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3795,7 +3795,7 @@ pub fn parse_delete_wireless_gateway_task_definition_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3809,7 +3809,7 @@ pub fn parse_delete_wireless_gateway_task_definition_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3823,7 +3823,7 @@ pub fn parse_delete_wireless_gateway_task_definition_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3877,7 +3877,7 @@ pub fn parse_disassociate_aws_account_from_partner_account_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3891,7 +3891,7 @@ pub fn parse_disassociate_aws_account_from_partner_account_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3905,7 +3905,7 @@ pub fn parse_disassociate_aws_account_from_partner_account_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3919,7 +3919,7 @@ pub fn parse_disassociate_aws_account_from_partner_account_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3973,7 +3973,7 @@ pub fn parse_disassociate_multicast_group_from_fuota_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -3987,7 +3987,7 @@ pub fn parse_disassociate_multicast_group_from_fuota_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4001,7 +4001,7 @@ pub fn parse_disassociate_multicast_group_from_fuota_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4015,7 +4015,7 @@ pub fn parse_disassociate_multicast_group_from_fuota_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4029,7 +4029,7 @@ pub fn parse_disassociate_multicast_group_from_fuota_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4083,7 +4083,7 @@ pub fn parse_disassociate_wireless_device_from_fuota_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4097,7 +4097,7 @@ pub fn parse_disassociate_wireless_device_from_fuota_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4111,7 +4111,7 @@ pub fn parse_disassociate_wireless_device_from_fuota_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4125,7 +4125,7 @@ pub fn parse_disassociate_wireless_device_from_fuota_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4139,7 +4139,7 @@ pub fn parse_disassociate_wireless_device_from_fuota_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4153,7 +4153,7 @@ pub fn parse_disassociate_wireless_device_from_fuota_task_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4207,7 +4207,7 @@ pub fn parse_disassociate_wireless_device_from_multicast_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4221,7 +4221,7 @@ pub fn parse_disassociate_wireless_device_from_multicast_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4235,7 +4235,7 @@ pub fn parse_disassociate_wireless_device_from_multicast_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4249,7 +4249,7 @@ pub fn parse_disassociate_wireless_device_from_multicast_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4263,7 +4263,7 @@ pub fn parse_disassociate_wireless_device_from_multicast_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4313,7 +4313,7 @@ pub fn parse_disassociate_wireless_device_from_thing_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4327,7 +4327,7 @@ pub fn parse_disassociate_wireless_device_from_thing_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4341,7 +4341,7 @@ pub fn parse_disassociate_wireless_device_from_thing_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4355,7 +4355,7 @@ pub fn parse_disassociate_wireless_device_from_thing_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4369,7 +4369,7 @@ pub fn parse_disassociate_wireless_device_from_thing_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4383,7 +4383,7 @@ pub fn parse_disassociate_wireless_device_from_thing_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4437,7 +4437,7 @@ pub fn parse_disassociate_wireless_gateway_from_certificate_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4451,7 +4451,7 @@ pub fn parse_disassociate_wireless_gateway_from_certificate_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4465,7 +4465,7 @@ pub fn parse_disassociate_wireless_gateway_from_certificate_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4479,7 +4479,7 @@ pub fn parse_disassociate_wireless_gateway_from_certificate_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4493,7 +4493,7 @@ pub fn parse_disassociate_wireless_gateway_from_certificate_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4546,7 +4546,7 @@ pub fn parse_disassociate_wireless_gateway_from_thing_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4560,7 +4560,7 @@ pub fn parse_disassociate_wireless_gateway_from_thing_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4574,7 +4574,7 @@ pub fn parse_disassociate_wireless_gateway_from_thing_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4588,7 +4588,7 @@ pub fn parse_disassociate_wireless_gateway_from_thing_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4602,7 +4602,7 @@ pub fn parse_disassociate_wireless_gateway_from_thing_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4616,7 +4616,7 @@ pub fn parse_disassociate_wireless_gateway_from_thing_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4665,7 +4665,7 @@ pub fn parse_get_destination_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDestinationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4682,7 +4682,7 @@ pub fn parse_get_destination_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDestinationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4699,7 +4699,7 @@ pub fn parse_get_destination_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDestinationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4716,7 +4716,7 @@ pub fn parse_get_destination_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDestinationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4733,7 +4733,7 @@ pub fn parse_get_destination_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDestinationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4785,7 +4785,7 @@ pub fn parse_get_device_profile_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeviceProfileError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4802,7 +4802,7 @@ pub fn parse_get_device_profile_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeviceProfileError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4819,7 +4819,7 @@ pub fn parse_get_device_profile_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeviceProfileError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4836,7 +4836,7 @@ pub fn parse_get_device_profile_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeviceProfileError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4853,7 +4853,7 @@ pub fn parse_get_device_profile_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeviceProfileError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4913,7 +4913,7 @@ pub fn parse_get_event_configuration_by_resource_types_error(
                             output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEventConfigurationByResourceTypesError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -4934,7 +4934,7 @@ pub fn parse_get_event_configuration_by_resource_types_error(
                             output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEventConfigurationByResourceTypesError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -4953,7 +4953,7 @@ pub fn parse_get_event_configuration_by_resource_types_error(
                         output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEventConfigurationByResourceTypesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -5005,7 +5005,7 @@ pub fn parse_get_fuota_task_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFuotaTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5022,7 +5022,7 @@ pub fn parse_get_fuota_task_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFuotaTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5039,7 +5039,7 @@ pub fn parse_get_fuota_task_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFuotaTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5056,7 +5056,7 @@ pub fn parse_get_fuota_task_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFuotaTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5073,7 +5073,7 @@ pub fn parse_get_fuota_task_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFuotaTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5131,7 +5131,7 @@ pub fn parse_get_log_levels_by_resource_types_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLogLevelsByResourceTypesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5148,7 +5148,7 @@ pub fn parse_get_log_levels_by_resource_types_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLogLevelsByResourceTypesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5165,7 +5165,7 @@ pub fn parse_get_log_levels_by_resource_types_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLogLevelsByResourceTypesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5182,7 +5182,7 @@ pub fn parse_get_log_levels_by_resource_types_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLogLevelsByResourceTypesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5199,7 +5199,7 @@ pub fn parse_get_log_levels_by_resource_types_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLogLevelsByResourceTypesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5255,7 +5255,7 @@ pub fn parse_get_multicast_group_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMulticastGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5272,7 +5272,7 @@ pub fn parse_get_multicast_group_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMulticastGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5289,7 +5289,7 @@ pub fn parse_get_multicast_group_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMulticastGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5306,7 +5306,7 @@ pub fn parse_get_multicast_group_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMulticastGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5323,7 +5323,7 @@ pub fn parse_get_multicast_group_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMulticastGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5382,7 +5382,7 @@ pub fn parse_get_multicast_group_session_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMulticastGroupSessionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5399,7 +5399,7 @@ pub fn parse_get_multicast_group_session_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMulticastGroupSessionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5416,7 +5416,7 @@ pub fn parse_get_multicast_group_session_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMulticastGroupSessionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5433,7 +5433,7 @@ pub fn parse_get_multicast_group_session_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMulticastGroupSessionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5450,7 +5450,7 @@ pub fn parse_get_multicast_group_session_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMulticastGroupSessionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5507,7 +5507,7 @@ pub fn parse_get_network_analyzer_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetNetworkAnalyzerConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5526,7 +5526,7 @@ pub fn parse_get_network_analyzer_configuration_error(
                         output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetNetworkAnalyzerConfigurationError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -5546,7 +5546,7 @@ pub fn parse_get_network_analyzer_configuration_error(
                         output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetNetworkAnalyzerConfigurationError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -5564,7 +5564,7 @@ pub fn parse_get_network_analyzer_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetNetworkAnalyzerConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5581,7 +5581,7 @@ pub fn parse_get_network_analyzer_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetNetworkAnalyzerConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5638,7 +5638,7 @@ pub fn parse_get_partner_account_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPartnerAccountError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5655,7 +5655,7 @@ pub fn parse_get_partner_account_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPartnerAccountError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5672,7 +5672,7 @@ pub fn parse_get_partner_account_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPartnerAccountError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5689,7 +5689,7 @@ pub fn parse_get_partner_account_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPartnerAccountError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5741,7 +5741,7 @@ pub fn parse_get_position_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPositionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5758,7 +5758,7 @@ pub fn parse_get_position_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPositionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5775,7 +5775,7 @@ pub fn parse_get_position_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPositionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5792,7 +5792,7 @@ pub fn parse_get_position_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPositionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5809,7 +5809,7 @@ pub fn parse_get_position_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPositionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5867,7 +5867,7 @@ pub fn parse_get_position_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPositionConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5884,7 +5884,7 @@ pub fn parse_get_position_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPositionConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5901,7 +5901,7 @@ pub fn parse_get_position_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPositionConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5918,7 +5918,7 @@ pub fn parse_get_position_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPositionConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5935,7 +5935,7 @@ pub fn parse_get_position_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPositionConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -5996,7 +5996,7 @@ pub fn parse_get_resource_event_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetResourceEventConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6013,7 +6013,7 @@ pub fn parse_get_resource_event_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetResourceEventConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6032,7 +6032,7 @@ pub fn parse_get_resource_event_configuration_error(
                         output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetResourceEventConfigurationError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -6050,7 +6050,7 @@ pub fn parse_get_resource_event_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetResourceEventConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6067,7 +6067,7 @@ pub fn parse_get_resource_event_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetResourceEventConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6125,7 +6125,7 @@ pub fn parse_get_resource_log_level_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetResourceLogLevelError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6142,7 +6142,7 @@ pub fn parse_get_resource_log_level_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetResourceLogLevelError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6159,7 +6159,7 @@ pub fn parse_get_resource_log_level_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetResourceLogLevelError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6176,7 +6176,7 @@ pub fn parse_get_resource_log_level_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetResourceLogLevelError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6193,7 +6193,7 @@ pub fn parse_get_resource_log_level_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetResourceLogLevelError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6250,7 +6250,7 @@ pub fn parse_get_service_endpoint_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetServiceEndpointError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6267,7 +6267,7 @@ pub fn parse_get_service_endpoint_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetServiceEndpointError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6284,7 +6284,7 @@ pub fn parse_get_service_endpoint_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetServiceEndpointError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6301,7 +6301,7 @@ pub fn parse_get_service_endpoint_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetServiceEndpointError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6356,7 +6356,7 @@ pub fn parse_get_service_profile_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetServiceProfileError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6373,7 +6373,7 @@ pub fn parse_get_service_profile_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetServiceProfileError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6390,7 +6390,7 @@ pub fn parse_get_service_profile_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetServiceProfileError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6407,7 +6407,7 @@ pub fn parse_get_service_profile_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetServiceProfileError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6424,7 +6424,7 @@ pub fn parse_get_service_profile_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetServiceProfileError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6477,7 +6477,7 @@ pub fn parse_get_wireless_device_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessDeviceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6494,7 +6494,7 @@ pub fn parse_get_wireless_device_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessDeviceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6511,7 +6511,7 @@ pub fn parse_get_wireless_device_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessDeviceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6528,7 +6528,7 @@ pub fn parse_get_wireless_device_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessDeviceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6545,7 +6545,7 @@ pub fn parse_get_wireless_device_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessDeviceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6604,7 +6604,7 @@ pub fn parse_get_wireless_device_statistics_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessDeviceStatisticsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6621,7 +6621,7 @@ pub fn parse_get_wireless_device_statistics_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessDeviceStatisticsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6638,7 +6638,7 @@ pub fn parse_get_wireless_device_statistics_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessDeviceStatisticsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6655,7 +6655,7 @@ pub fn parse_get_wireless_device_statistics_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessDeviceStatisticsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6672,7 +6672,7 @@ pub fn parse_get_wireless_device_statistics_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessDeviceStatisticsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6729,7 +6729,7 @@ pub fn parse_get_wireless_gateway_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessGatewayError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6746,7 +6746,7 @@ pub fn parse_get_wireless_gateway_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessGatewayError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6763,7 +6763,7 @@ pub fn parse_get_wireless_gateway_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessGatewayError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6780,7 +6780,7 @@ pub fn parse_get_wireless_gateway_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessGatewayError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6797,7 +6797,7 @@ pub fn parse_get_wireless_gateway_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessGatewayError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6858,7 +6858,7 @@ pub fn parse_get_wireless_gateway_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessGatewayCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6875,7 +6875,7 @@ pub fn parse_get_wireless_gateway_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessGatewayCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6894,7 +6894,7 @@ pub fn parse_get_wireless_gateway_certificate_error(
                         output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessGatewayCertificateError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -6912,7 +6912,7 @@ pub fn parse_get_wireless_gateway_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessGatewayCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6929,7 +6929,7 @@ pub fn parse_get_wireless_gateway_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessGatewayCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -6989,7 +6989,7 @@ pub fn parse_get_wireless_gateway_firmware_information_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7003,7 +7003,7 @@ pub fn parse_get_wireless_gateway_firmware_information_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7017,7 +7017,7 @@ pub fn parse_get_wireless_gateway_firmware_information_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7031,7 +7031,7 @@ pub fn parse_get_wireless_gateway_firmware_information_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7045,7 +7045,7 @@ pub fn parse_get_wireless_gateway_firmware_information_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -7102,7 +7102,7 @@ pub fn parse_get_wireless_gateway_statistics_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessGatewayStatisticsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7119,7 +7119,7 @@ pub fn parse_get_wireless_gateway_statistics_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessGatewayStatisticsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7136,7 +7136,7 @@ pub fn parse_get_wireless_gateway_statistics_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessGatewayStatisticsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7153,7 +7153,7 @@ pub fn parse_get_wireless_gateway_statistics_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessGatewayStatisticsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7170,7 +7170,7 @@ pub fn parse_get_wireless_gateway_statistics_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessGatewayStatisticsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7232,7 +7232,7 @@ pub fn parse_get_wireless_gateway_task_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessGatewayTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7249,7 +7249,7 @@ pub fn parse_get_wireless_gateway_task_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessGatewayTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7266,7 +7266,7 @@ pub fn parse_get_wireless_gateway_task_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessGatewayTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7283,7 +7283,7 @@ pub fn parse_get_wireless_gateway_task_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessGatewayTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7300,7 +7300,7 @@ pub fn parse_get_wireless_gateway_task_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessGatewayTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7359,7 +7359,7 @@ pub fn parse_get_wireless_gateway_task_definition_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessGatewayTaskDefinitionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7378,7 +7378,7 @@ pub fn parse_get_wireless_gateway_task_definition_error(
                         output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessGatewayTaskDefinitionError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -7399,7 +7399,7 @@ pub fn parse_get_wireless_gateway_task_definition_error(
                             output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessGatewayTaskDefinitionError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -7417,7 +7417,7 @@ pub fn parse_get_wireless_gateway_task_definition_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessGatewayTaskDefinitionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7434,7 +7434,7 @@ pub fn parse_get_wireless_gateway_task_definition_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWirelessGatewayTaskDefinitionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7486,7 +7486,7 @@ pub fn parse_list_destinations_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDestinationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7503,7 +7503,7 @@ pub fn parse_list_destinations_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDestinationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7520,7 +7520,7 @@ pub fn parse_list_destinations_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDestinationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7537,7 +7537,7 @@ pub fn parse_list_destinations_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDestinationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7592,7 +7592,7 @@ pub fn parse_list_device_profiles_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDeviceProfilesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7609,7 +7609,7 @@ pub fn parse_list_device_profiles_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDeviceProfilesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7626,7 +7626,7 @@ pub fn parse_list_device_profiles_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDeviceProfilesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7643,7 +7643,7 @@ pub fn parse_list_device_profiles_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListDeviceProfilesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7704,7 +7704,7 @@ pub fn parse_list_event_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEventConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7721,7 +7721,7 @@ pub fn parse_list_event_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEventConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7738,7 +7738,7 @@ pub fn parse_list_event_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEventConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7755,7 +7755,7 @@ pub fn parse_list_event_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEventConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7809,7 +7809,7 @@ pub fn parse_list_fuota_tasks_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFuotaTasksError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7826,7 +7826,7 @@ pub fn parse_list_fuota_tasks_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFuotaTasksError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7843,7 +7843,7 @@ pub fn parse_list_fuota_tasks_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFuotaTasksError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7860,7 +7860,7 @@ pub fn parse_list_fuota_tasks_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFuotaTasksError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7914,7 +7914,7 @@ pub fn parse_list_multicast_groups_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListMulticastGroupsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7931,7 +7931,7 @@ pub fn parse_list_multicast_groups_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListMulticastGroupsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7948,7 +7948,7 @@ pub fn parse_list_multicast_groups_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListMulticastGroupsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -7965,7 +7965,7 @@ pub fn parse_list_multicast_groups_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListMulticastGroupsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8022,7 +8022,7 @@ pub fn parse_list_multicast_groups_by_fuota_task_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListMulticastGroupsByFuotaTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8039,7 +8039,7 @@ pub fn parse_list_multicast_groups_by_fuota_task_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListMulticastGroupsByFuotaTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8058,7 +8058,7 @@ pub fn parse_list_multicast_groups_by_fuota_task_error(
                         output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListMulticastGroupsByFuotaTaskError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -8076,7 +8076,7 @@ pub fn parse_list_multicast_groups_by_fuota_task_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListMulticastGroupsByFuotaTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8093,7 +8093,7 @@ pub fn parse_list_multicast_groups_by_fuota_task_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListMulticastGroupsByFuotaTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8155,7 +8155,7 @@ pub fn parse_list_network_analyzer_configurations_error(
                         output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListNetworkAnalyzerConfigurationsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -8175,7 +8175,7 @@ pub fn parse_list_network_analyzer_configurations_error(
                         output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListNetworkAnalyzerConfigurationsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -8193,7 +8193,7 @@ pub fn parse_list_network_analyzer_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListNetworkAnalyzerConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8210,7 +8210,7 @@ pub fn parse_list_network_analyzer_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListNetworkAnalyzerConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8264,7 +8264,7 @@ pub fn parse_list_partner_accounts_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPartnerAccountsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8281,7 +8281,7 @@ pub fn parse_list_partner_accounts_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPartnerAccountsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8298,7 +8298,7 @@ pub fn parse_list_partner_accounts_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPartnerAccountsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8315,7 +8315,7 @@ pub fn parse_list_partner_accounts_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPartnerAccountsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8376,7 +8376,7 @@ pub fn parse_list_position_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPositionConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8393,7 +8393,7 @@ pub fn parse_list_position_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPositionConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8410,7 +8410,7 @@ pub fn parse_list_position_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPositionConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8427,7 +8427,7 @@ pub fn parse_list_position_configurations_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPositionConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8484,7 +8484,7 @@ pub fn parse_list_queued_messages_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListQueuedMessagesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8501,7 +8501,7 @@ pub fn parse_list_queued_messages_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListQueuedMessagesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8518,7 +8518,7 @@ pub fn parse_list_queued_messages_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListQueuedMessagesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8535,7 +8535,7 @@ pub fn parse_list_queued_messages_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListQueuedMessagesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8552,7 +8552,7 @@ pub fn parse_list_queued_messages_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListQueuedMessagesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8609,7 +8609,7 @@ pub fn parse_list_service_profiles_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServiceProfilesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8626,7 +8626,7 @@ pub fn parse_list_service_profiles_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServiceProfilesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8643,7 +8643,7 @@ pub fn parse_list_service_profiles_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServiceProfilesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8660,7 +8660,7 @@ pub fn parse_list_service_profiles_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServiceProfilesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8718,7 +8718,7 @@ pub fn parse_list_tags_for_resource_error(
                         output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -8736,7 +8736,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8753,7 +8753,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8770,7 +8770,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8787,7 +8787,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8844,7 +8844,7 @@ pub fn parse_list_wireless_devices_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListWirelessDevicesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8861,7 +8861,7 @@ pub fn parse_list_wireless_devices_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListWirelessDevicesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8878,7 +8878,7 @@ pub fn parse_list_wireless_devices_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListWirelessDevicesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8895,7 +8895,7 @@ pub fn parse_list_wireless_devices_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListWirelessDevicesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8952,7 +8952,7 @@ pub fn parse_list_wireless_gateways_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListWirelessGatewaysError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8969,7 +8969,7 @@ pub fn parse_list_wireless_gateways_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListWirelessGatewaysError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -8986,7 +8986,7 @@ pub fn parse_list_wireless_gateways_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListWirelessGatewaysError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9003,7 +9003,7 @@ pub fn parse_list_wireless_gateways_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListWirelessGatewaysError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9063,7 +9063,7 @@ pub fn parse_list_wireless_gateway_task_definitions_error(
                         output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListWirelessGatewayTaskDefinitionsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -9084,7 +9084,7 @@ pub fn parse_list_wireless_gateway_task_definitions_error(
                             output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListWirelessGatewayTaskDefinitionsError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -9102,7 +9102,7 @@ pub fn parse_list_wireless_gateway_task_definitions_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListWirelessGatewayTaskDefinitionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9119,7 +9119,7 @@ pub fn parse_list_wireless_gateway_task_definitions_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListWirelessGatewayTaskDefinitionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9177,7 +9177,7 @@ pub fn parse_put_position_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutPositionConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9194,7 +9194,7 @@ pub fn parse_put_position_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutPositionConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9211,7 +9211,7 @@ pub fn parse_put_position_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutPositionConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9228,7 +9228,7 @@ pub fn parse_put_position_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutPositionConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9245,7 +9245,7 @@ pub fn parse_put_position_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutPositionConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9297,7 +9297,7 @@ pub fn parse_put_resource_log_level_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutResourceLogLevelError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9314,7 +9314,7 @@ pub fn parse_put_resource_log_level_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutResourceLogLevelError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9331,7 +9331,7 @@ pub fn parse_put_resource_log_level_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutResourceLogLevelError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9348,7 +9348,7 @@ pub fn parse_put_resource_log_level_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutResourceLogLevelError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9365,7 +9365,7 @@ pub fn parse_put_resource_log_level_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutResourceLogLevelError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9421,7 +9421,7 @@ pub fn parse_reset_all_resource_log_levels_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResetAllResourceLogLevelsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9438,7 +9438,7 @@ pub fn parse_reset_all_resource_log_levels_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResetAllResourceLogLevelsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9455,7 +9455,7 @@ pub fn parse_reset_all_resource_log_levels_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResetAllResourceLogLevelsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9472,7 +9472,7 @@ pub fn parse_reset_all_resource_log_levels_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResetAllResourceLogLevelsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9489,7 +9489,7 @@ pub fn parse_reset_all_resource_log_levels_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResetAllResourceLogLevelsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9541,7 +9541,7 @@ pub fn parse_reset_resource_log_level_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResetResourceLogLevelError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9558,7 +9558,7 @@ pub fn parse_reset_resource_log_level_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResetResourceLogLevelError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9575,7 +9575,7 @@ pub fn parse_reset_resource_log_level_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResetResourceLogLevelError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9592,7 +9592,7 @@ pub fn parse_reset_resource_log_level_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResetResourceLogLevelError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9609,7 +9609,7 @@ pub fn parse_reset_resource_log_level_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResetResourceLogLevelError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9665,7 +9665,7 @@ pub fn parse_send_data_to_multicast_group_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendDataToMulticastGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9683,7 +9683,7 @@ pub fn parse_send_data_to_multicast_group_error(
                         output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendDataToMulticastGroupError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -9701,7 +9701,7 @@ pub fn parse_send_data_to_multicast_group_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendDataToMulticastGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9718,7 +9718,7 @@ pub fn parse_send_data_to_multicast_group_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendDataToMulticastGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9735,7 +9735,7 @@ pub fn parse_send_data_to_multicast_group_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendDataToMulticastGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9752,7 +9752,7 @@ pub fn parse_send_data_to_multicast_group_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendDataToMulticastGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9813,7 +9813,7 @@ pub fn parse_send_data_to_wireless_device_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendDataToWirelessDeviceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9830,7 +9830,7 @@ pub fn parse_send_data_to_wireless_device_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendDataToWirelessDeviceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9847,7 +9847,7 @@ pub fn parse_send_data_to_wireless_device_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendDataToWirelessDeviceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9864,7 +9864,7 @@ pub fn parse_send_data_to_wireless_device_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendDataToWirelessDeviceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -9925,7 +9925,7 @@ pub fn parse_start_bulk_associate_wireless_device_with_multicast_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -9939,7 +9939,7 @@ pub fn parse_start_bulk_associate_wireless_device_with_multicast_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -9953,7 +9953,7 @@ pub fn parse_start_bulk_associate_wireless_device_with_multicast_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -9967,7 +9967,7 @@ pub fn parse_start_bulk_associate_wireless_device_with_multicast_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -9981,7 +9981,7 @@ pub fn parse_start_bulk_associate_wireless_device_with_multicast_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -10035,7 +10035,7 @@ pub fn parse_start_bulk_disassociate_wireless_device_from_multicast_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -10049,7 +10049,7 @@ pub fn parse_start_bulk_disassociate_wireless_device_from_multicast_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -10063,7 +10063,7 @@ pub fn parse_start_bulk_disassociate_wireless_device_from_multicast_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -10077,7 +10077,7 @@ pub fn parse_start_bulk_disassociate_wireless_device_from_multicast_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -10091,7 +10091,7 @@ pub fn parse_start_bulk_disassociate_wireless_device_from_multicast_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -10138,7 +10138,7 @@ pub fn parse_start_fuota_task_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartFuotaTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10156,7 +10156,7 @@ pub fn parse_start_fuota_task_error(
                         output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartFuotaTaskError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -10174,7 +10174,7 @@ pub fn parse_start_fuota_task_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartFuotaTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10191,7 +10191,7 @@ pub fn parse_start_fuota_task_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartFuotaTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10208,7 +10208,7 @@ pub fn parse_start_fuota_task_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartFuotaTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10225,7 +10225,7 @@ pub fn parse_start_fuota_task_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartFuotaTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10278,7 +10278,7 @@ pub fn parse_start_multicast_group_session_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartMulticastGroupSessionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10296,7 +10296,7 @@ pub fn parse_start_multicast_group_session_error(
                         output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartMulticastGroupSessionError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -10314,7 +10314,7 @@ pub fn parse_start_multicast_group_session_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartMulticastGroupSessionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10331,7 +10331,7 @@ pub fn parse_start_multicast_group_session_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartMulticastGroupSessionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10348,7 +10348,7 @@ pub fn parse_start_multicast_group_session_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartMulticastGroupSessionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10365,7 +10365,7 @@ pub fn parse_start_multicast_group_session_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartMulticastGroupSessionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10415,7 +10415,7 @@ pub fn parse_tag_resource_error(
                         output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -10433,7 +10433,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10450,7 +10450,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10467,7 +10467,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10484,7 +10484,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10501,7 +10501,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10550,7 +10550,7 @@ pub fn parse_test_wireless_device_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TestWirelessDeviceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10567,7 +10567,7 @@ pub fn parse_test_wireless_device_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TestWirelessDeviceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10584,7 +10584,7 @@ pub fn parse_test_wireless_device_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TestWirelessDeviceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10601,7 +10601,7 @@ pub fn parse_test_wireless_device_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TestWirelessDeviceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10656,7 +10656,7 @@ pub fn parse_untag_resource_error(
                         output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -10674,7 +10674,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10691,7 +10691,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10708,7 +10708,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10725,7 +10725,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10772,7 +10772,7 @@ pub fn parse_update_destination_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDestinationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10789,7 +10789,7 @@ pub fn parse_update_destination_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDestinationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10806,7 +10806,7 @@ pub fn parse_update_destination_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDestinationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10823,7 +10823,7 @@ pub fn parse_update_destination_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDestinationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10840,7 +10840,7 @@ pub fn parse_update_destination_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDestinationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -10892,7 +10892,7 @@ pub fn parse_update_event_configuration_by_resource_types_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -10906,7 +10906,7 @@ pub fn parse_update_event_configuration_by_resource_types_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -10920,7 +10920,7 @@ pub fn parse_update_event_configuration_by_resource_types_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -10934,7 +10934,7 @@ pub fn parse_update_event_configuration_by_resource_types_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -10983,7 +10983,7 @@ pub fn parse_update_fuota_task_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFuotaTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11001,7 +11001,7 @@ pub fn parse_update_fuota_task_error(
                         output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFuotaTaskError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -11019,7 +11019,7 @@ pub fn parse_update_fuota_task_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFuotaTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11036,7 +11036,7 @@ pub fn parse_update_fuota_task_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFuotaTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11053,7 +11053,7 @@ pub fn parse_update_fuota_task_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFuotaTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11070,7 +11070,7 @@ pub fn parse_update_fuota_task_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFuotaTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11119,7 +11119,7 @@ pub fn parse_update_log_levels_by_resource_types_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateLogLevelsByResourceTypesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11137,7 +11137,7 @@ pub fn parse_update_log_levels_by_resource_types_error(
                         output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateLogLevelsByResourceTypesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -11155,7 +11155,7 @@ pub fn parse_update_log_levels_by_resource_types_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateLogLevelsByResourceTypesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11174,7 +11174,7 @@ pub fn parse_update_log_levels_by_resource_types_error(
                         output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateLogLevelsByResourceTypesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -11192,7 +11192,7 @@ pub fn parse_update_log_levels_by_resource_types_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateLogLevelsByResourceTypesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11209,7 +11209,7 @@ pub fn parse_update_log_levels_by_resource_types_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateLogLevelsByResourceTypesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11262,7 +11262,7 @@ pub fn parse_update_multicast_group_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateMulticastGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11280,7 +11280,7 @@ pub fn parse_update_multicast_group_error(
                         output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateMulticastGroupError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -11298,7 +11298,7 @@ pub fn parse_update_multicast_group_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateMulticastGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11315,7 +11315,7 @@ pub fn parse_update_multicast_group_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateMulticastGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11332,7 +11332,7 @@ pub fn parse_update_multicast_group_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateMulticastGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11349,7 +11349,7 @@ pub fn parse_update_multicast_group_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateMulticastGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11404,7 +11404,7 @@ pub fn parse_update_network_analyzer_configuration_error(
                         output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateNetworkAnalyzerConfigurationError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -11425,7 +11425,7 @@ pub fn parse_update_network_analyzer_configuration_error(
                             output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateNetworkAnalyzerConfigurationError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -11446,7 +11446,7 @@ pub fn parse_update_network_analyzer_configuration_error(
                             output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateNetworkAnalyzerConfigurationError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -11464,7 +11464,7 @@ pub fn parse_update_network_analyzer_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateNetworkAnalyzerConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11481,7 +11481,7 @@ pub fn parse_update_network_analyzer_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateNetworkAnalyzerConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11534,7 +11534,7 @@ pub fn parse_update_partner_account_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePartnerAccountError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11551,7 +11551,7 @@ pub fn parse_update_partner_account_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePartnerAccountError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11568,7 +11568,7 @@ pub fn parse_update_partner_account_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePartnerAccountError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11585,7 +11585,7 @@ pub fn parse_update_partner_account_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePartnerAccountError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11634,7 +11634,7 @@ pub fn parse_update_position_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePositionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11651,7 +11651,7 @@ pub fn parse_update_position_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePositionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11668,7 +11668,7 @@ pub fn parse_update_position_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePositionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11685,7 +11685,7 @@ pub fn parse_update_position_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePositionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11702,7 +11702,7 @@ pub fn parse_update_position_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePositionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11753,7 +11753,7 @@ pub fn parse_update_resource_event_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateResourceEventConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11771,7 +11771,7 @@ pub fn parse_update_resource_event_configuration_error(
                         output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateResourceEventConfigurationError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -11791,7 +11791,7 @@ pub fn parse_update_resource_event_configuration_error(
                         output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateResourceEventConfigurationError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -11812,7 +11812,7 @@ pub fn parse_update_resource_event_configuration_error(
                             output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateResourceEventConfigurationError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -11830,7 +11830,7 @@ pub fn parse_update_resource_event_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateResourceEventConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11847,7 +11847,7 @@ pub fn parse_update_resource_event_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateResourceEventConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11900,7 +11900,7 @@ pub fn parse_update_wireless_device_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateWirelessDeviceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11917,7 +11917,7 @@ pub fn parse_update_wireless_device_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateWirelessDeviceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11934,7 +11934,7 @@ pub fn parse_update_wireless_device_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateWirelessDeviceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11951,7 +11951,7 @@ pub fn parse_update_wireless_device_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateWirelessDeviceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -11968,7 +11968,7 @@ pub fn parse_update_wireless_device_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateWirelessDeviceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -12020,7 +12020,7 @@ pub fn parse_update_wireless_gateway_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateWirelessGatewayError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -12037,7 +12037,7 @@ pub fn parse_update_wireless_gateway_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateWirelessGatewayError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -12054,7 +12054,7 @@ pub fn parse_update_wireless_gateway_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateWirelessGatewayError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -12071,7 +12071,7 @@ pub fn parse_update_wireless_gateway_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateWirelessGatewayError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -12088,7 +12088,7 @@ pub fn parse_update_wireless_gateway_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateWirelessGatewayError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp

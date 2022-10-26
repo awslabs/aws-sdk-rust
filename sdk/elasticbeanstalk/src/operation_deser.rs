@@ -31,7 +31,7 @@ pub fn parse_abort_environment_update_error(
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AbortEnvironmentUpdateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -85,7 +85,7 @@ pub fn parse_apply_environment_managed_action_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -99,7 +99,7 @@ pub fn parse_apply_environment_managed_action_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -156,7 +156,7 @@ pub fn parse_associate_environment_operations_role_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -241,7 +241,7 @@ pub fn parse_compose_environments_error(
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ComposeEnvironmentsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -259,7 +259,7 @@ pub fn parse_compose_environments_error(
                     output = crate::xml_deser::deser_structure_crate_error_too_many_environments_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ComposeEnvironmentsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -315,7 +315,7 @@ pub fn parse_create_application_error(
                     output = crate::xml_deser::deser_structure_crate_error_too_many_applications_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -372,7 +372,7 @@ pub fn parse_create_application_version_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -386,7 +386,7 @@ pub fn parse_create_application_version_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -400,7 +400,7 @@ pub fn parse_create_application_version_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -414,7 +414,7 @@ pub fn parse_create_application_version_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -428,7 +428,7 @@ pub fn parse_create_application_version_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -486,7 +486,7 @@ pub fn parse_create_configuration_template_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -500,7 +500,7 @@ pub fn parse_create_configuration_template_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -514,7 +514,7 @@ pub fn parse_create_configuration_template_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -569,7 +569,7 @@ pub fn parse_create_environment_error(
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateEnvironmentError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -587,7 +587,7 @@ pub fn parse_create_environment_error(
                     output = crate::xml_deser::deser_structure_crate_error_too_many_environments_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateEnvironmentError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -643,7 +643,7 @@ pub fn parse_create_platform_version_error(
                     output = crate::xml_deser::deser_structure_crate_error_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePlatformVersionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -661,7 +661,7 @@ pub fn parse_create_platform_version_error(
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePlatformVersionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -678,7 +678,7 @@ pub fn parse_create_platform_version_error(
                     output = crate::xml_deser::deser_structure_crate_error_too_many_platforms_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePlatformVersionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -736,7 +736,7 @@ pub fn parse_create_storage_location_error(
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStorageLocationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -754,7 +754,7 @@ pub fn parse_create_storage_location_error(
                     output = crate::xml_deser::deser_structure_crate_error_s3_subscription_required_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStorageLocationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -771,7 +771,7 @@ pub fn parse_create_storage_location_error(
                     output = crate::xml_deser::deser_structure_crate_error_too_many_buckets_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStorageLocationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -827,7 +827,7 @@ pub fn parse_delete_application_error(
                     output = crate::xml_deser::deser_structure_crate_error_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -879,7 +879,7 @@ pub fn parse_delete_application_version_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -893,7 +893,7 @@ pub fn parse_delete_application_version_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -907,7 +907,7 @@ pub fn parse_delete_application_version_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -921,7 +921,7 @@ pub fn parse_delete_application_version_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -978,7 +978,7 @@ pub fn parse_delete_configuration_template_error(
                         output = crate::xml_deser::deser_structure_crate_error_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteConfigurationTemplateError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1058,7 +1058,7 @@ pub fn parse_delete_platform_version_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1072,7 +1072,7 @@ pub fn parse_delete_platform_version_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1086,7 +1086,7 @@ pub fn parse_delete_platform_version_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1100,7 +1100,7 @@ pub fn parse_delete_platform_version_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1162,7 +1162,7 @@ pub fn parse_describe_account_attributes_error(
                         output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAccountAttributesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1290,7 +1290,7 @@ pub fn parse_describe_configuration_options_error(
                     output = crate::xml_deser::deser_structure_crate_error_too_many_buckets_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeConfigurationOptionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1351,7 +1351,7 @@ pub fn parse_describe_configuration_settings_error(
                     output = crate::xml_deser::deser_structure_crate_error_too_many_buckets_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeConfigurationSettingsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1416,7 +1416,7 @@ pub fn parse_describe_environment_health_error(
                             output = crate::xml_deser::deser_structure_crate_error_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEnvironmentHealthError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -1434,7 +1434,7 @@ pub fn parse_describe_environment_health_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEnvironmentHealthError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1493,7 +1493,7 @@ pub fn parse_describe_environment_managed_action_history_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1546,7 +1546,7 @@ pub fn parse_describe_environment_managed_actions_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1611,7 +1611,7 @@ pub fn parse_describe_environment_resources_error(
                             output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEnvironmentResourcesError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -1733,7 +1733,7 @@ pub fn parse_describe_instances_health_error(
                         output = crate::xml_deser::deser_structure_crate_error_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeInstancesHealthError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1751,7 +1751,7 @@ pub fn parse_describe_instances_health_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeInstancesHealthError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1814,7 +1814,7 @@ pub fn parse_describe_platform_version_error(
                         output = crate::xml_deser::deser_structure_crate_error_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribePlatformVersionError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1834,7 +1834,7 @@ pub fn parse_describe_platform_version_error(
                         output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribePlatformVersionError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1894,7 +1894,7 @@ pub fn parse_disassociate_environment_operations_role_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2013,7 +2013,7 @@ pub fn parse_list_platform_versions_error(
                     output = crate::xml_deser::deser_structure_crate_error_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPlatformVersionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2031,7 +2031,7 @@ pub fn parse_list_platform_versions_error(
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPlatformVersionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2089,7 +2089,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2106,7 +2106,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2124,7 +2124,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_type_not_supported_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2182,7 +2182,7 @@ pub fn parse_rebuild_environment_error(
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RebuildEnvironmentError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2344,7 +2344,7 @@ pub fn parse_terminate_environment_error(
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TerminateEnvironmentError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2429,7 +2429,7 @@ pub fn parse_update_application_resource_lifecycle_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2523,7 +2523,7 @@ pub fn parse_update_configuration_template_error(
                             output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateConfigurationTemplateError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -2541,7 +2541,7 @@ pub fn parse_update_configuration_template_error(
                     output = crate::xml_deser::deser_structure_crate_error_too_many_buckets_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateConfigurationTemplateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2597,7 +2597,7 @@ pub fn parse_update_environment_error(
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateEnvironmentError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2614,7 +2614,7 @@ pub fn parse_update_environment_error(
                     output = crate::xml_deser::deser_structure_crate_error_too_many_buckets_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateEnvironmentError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2670,7 +2670,7 @@ pub fn parse_update_tags_for_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2688,7 +2688,7 @@ pub fn parse_update_tags_for_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2705,7 +2705,7 @@ pub fn parse_update_tags_for_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2724,7 +2724,7 @@ pub fn parse_update_tags_for_resource_error(
                         output = crate::xml_deser::deser_structure_crate_error_resource_type_not_supported_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateTagsForResourceError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2742,7 +2742,7 @@ pub fn parse_update_tags_for_resource_error(
                     output = crate::xml_deser::deser_structure_crate_error_too_many_tags_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2796,7 +2796,7 @@ pub fn parse_validate_configuration_settings_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2810,7 +2810,7 @@ pub fn parse_validate_configuration_settings_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp

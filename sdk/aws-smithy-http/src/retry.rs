@@ -124,7 +124,7 @@ mod test {
     ) -> Result<SdkSuccess<()>, SdkError<E>> {
         Err(SdkError::ServiceError {
             err,
-            raw: operation::Response::new(raw.map(|b| SdkBody::from(b))),
+            raw: operation::Response::new(raw.map(SdkBody::from)),
         })
     }
 
@@ -194,9 +194,7 @@ mod test {
             policy.classify_retry(
                 Result::<SdkSuccess<()>, SdkError<UnmodeledError>>::Err(SdkError::ResponseError {
                     err: Box::new(UnmodeledError),
-                    raw: operation::Response::new(
-                        http::Response::new("OK").map(|b| SdkBody::from(b))
-                    ),
+                    raw: operation::Response::new(http::Response::new("OK").map(SdkBody::from)),
                 })
                 .as_ref()
             ),

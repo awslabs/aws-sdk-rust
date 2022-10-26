@@ -27,7 +27,7 @@ pub fn parse_build_suggesters_error(
                     .map_err(crate::error::BuildSuggestersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -45,7 +45,7 @@ pub fn parse_build_suggesters_error(
                         output = crate::xml_deser::deser_structure_crate_error_internal_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::BuildSuggestersError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -63,7 +63,7 @@ pub fn parse_build_suggesters_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::BuildSuggestersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -81,7 +81,7 @@ pub fn parse_build_suggesters_error(
                         output = crate::xml_deser::deser_structure_crate_error_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::BuildSuggestersError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -137,7 +137,7 @@ pub fn parse_create_domain_error(
                     .map_err(crate::error::CreateDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -155,7 +155,7 @@ pub fn parse_create_domain_error(
                         output = crate::xml_deser::deser_structure_crate_error_internal_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDomainError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -173,7 +173,7 @@ pub fn parse_create_domain_error(
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -191,7 +191,7 @@ pub fn parse_create_domain_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -209,7 +209,7 @@ pub fn parse_create_domain_error(
                         output = crate::xml_deser::deser_structure_crate_error_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDomainError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -268,7 +268,7 @@ pub fn parse_define_analysis_scheme_error(
                     .map_err(crate::error::DefineAnalysisSchemeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -286,7 +286,7 @@ pub fn parse_define_analysis_scheme_error(
                         output = crate::xml_deser::deser_structure_crate_error_internal_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DefineAnalysisSchemeError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -304,7 +304,7 @@ pub fn parse_define_analysis_scheme_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_type_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DefineAnalysisSchemeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -321,7 +321,7 @@ pub fn parse_define_analysis_scheme_error(
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DefineAnalysisSchemeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -338,7 +338,7 @@ pub fn parse_define_analysis_scheme_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DefineAnalysisSchemeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -356,7 +356,7 @@ pub fn parse_define_analysis_scheme_error(
                         output = crate::xml_deser::deser_structure_crate_error_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DefineAnalysisSchemeError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -416,7 +416,7 @@ pub fn parse_define_expression_error(
                     .map_err(crate::error::DefineExpressionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -434,7 +434,7 @@ pub fn parse_define_expression_error(
                         output = crate::xml_deser::deser_structure_crate_error_internal_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DefineExpressionError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -452,7 +452,7 @@ pub fn parse_define_expression_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_type_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DefineExpressionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -469,7 +469,7 @@ pub fn parse_define_expression_error(
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DefineExpressionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -486,7 +486,7 @@ pub fn parse_define_expression_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DefineExpressionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -504,7 +504,7 @@ pub fn parse_define_expression_error(
                         output = crate::xml_deser::deser_structure_crate_error_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DefineExpressionError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -562,7 +562,7 @@ pub fn parse_define_index_field_error(
                     .map_err(crate::error::DefineIndexFieldError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -580,7 +580,7 @@ pub fn parse_define_index_field_error(
                         output = crate::xml_deser::deser_structure_crate_error_internal_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DefineIndexFieldError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -598,7 +598,7 @@ pub fn parse_define_index_field_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_type_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DefineIndexFieldError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -615,7 +615,7 @@ pub fn parse_define_index_field_error(
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DefineIndexFieldError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -632,7 +632,7 @@ pub fn parse_define_index_field_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DefineIndexFieldError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -650,7 +650,7 @@ pub fn parse_define_index_field_error(
                         output = crate::xml_deser::deser_structure_crate_error_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DefineIndexFieldError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -707,7 +707,7 @@ pub fn parse_define_suggester_error(
                     .map_err(crate::error::DefineSuggesterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -725,7 +725,7 @@ pub fn parse_define_suggester_error(
                         output = crate::xml_deser::deser_structure_crate_error_internal_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DefineSuggesterError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -743,7 +743,7 @@ pub fn parse_define_suggester_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_type_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DefineSuggesterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -760,7 +760,7 @@ pub fn parse_define_suggester_error(
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DefineSuggesterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -777,7 +777,7 @@ pub fn parse_define_suggester_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DefineSuggesterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -795,7 +795,7 @@ pub fn parse_define_suggester_error(
                         output = crate::xml_deser::deser_structure_crate_error_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DefineSuggesterError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -854,7 +854,7 @@ pub fn parse_delete_analysis_scheme_error(
                     .map_err(crate::error::DeleteAnalysisSchemeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -872,7 +872,7 @@ pub fn parse_delete_analysis_scheme_error(
                         output = crate::xml_deser::deser_structure_crate_error_internal_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAnalysisSchemeError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -890,7 +890,7 @@ pub fn parse_delete_analysis_scheme_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_type_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAnalysisSchemeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -907,7 +907,7 @@ pub fn parse_delete_analysis_scheme_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAnalysisSchemeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -925,7 +925,7 @@ pub fn parse_delete_analysis_scheme_error(
                         output = crate::xml_deser::deser_structure_crate_error_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAnalysisSchemeError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -984,7 +984,7 @@ pub fn parse_delete_domain_error(
                     .map_err(crate::error::DeleteDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1002,7 +1002,7 @@ pub fn parse_delete_domain_error(
                         output = crate::xml_deser::deser_structure_crate_error_internal_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDomainError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1059,7 +1059,7 @@ pub fn parse_delete_expression_error(
                     .map_err(crate::error::DeleteExpressionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1077,7 +1077,7 @@ pub fn parse_delete_expression_error(
                         output = crate::xml_deser::deser_structure_crate_error_internal_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteExpressionError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1095,7 +1095,7 @@ pub fn parse_delete_expression_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_type_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteExpressionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1112,7 +1112,7 @@ pub fn parse_delete_expression_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteExpressionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1130,7 +1130,7 @@ pub fn parse_delete_expression_error(
                         output = crate::xml_deser::deser_structure_crate_error_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteExpressionError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1188,7 +1188,7 @@ pub fn parse_delete_index_field_error(
                     .map_err(crate::error::DeleteIndexFieldError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1206,7 +1206,7 @@ pub fn parse_delete_index_field_error(
                         output = crate::xml_deser::deser_structure_crate_error_internal_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteIndexFieldError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1224,7 +1224,7 @@ pub fn parse_delete_index_field_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_type_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteIndexFieldError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1241,7 +1241,7 @@ pub fn parse_delete_index_field_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteIndexFieldError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1259,7 +1259,7 @@ pub fn parse_delete_index_field_error(
                         output = crate::xml_deser::deser_structure_crate_error_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteIndexFieldError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1316,7 +1316,7 @@ pub fn parse_delete_suggester_error(
                     .map_err(crate::error::DeleteSuggesterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1334,7 +1334,7 @@ pub fn parse_delete_suggester_error(
                         output = crate::xml_deser::deser_structure_crate_error_internal_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSuggesterError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1352,7 +1352,7 @@ pub fn parse_delete_suggester_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_type_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSuggesterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1369,7 +1369,7 @@ pub fn parse_delete_suggester_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSuggesterError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1387,7 +1387,7 @@ pub fn parse_delete_suggester_error(
                         output = crate::xml_deser::deser_structure_crate_error_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSuggesterError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1450,7 +1450,7 @@ pub fn parse_describe_analysis_schemes_error(
                     .map_err(crate::error::DescribeAnalysisSchemesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1468,7 +1468,7 @@ pub fn parse_describe_analysis_schemes_error(
                         output = crate::xml_deser::deser_structure_crate_error_internal_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAnalysisSchemesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1486,7 +1486,7 @@ pub fn parse_describe_analysis_schemes_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAnalysisSchemesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1551,7 +1551,7 @@ pub fn parse_describe_availability_options_error(
                     .map_err(crate::error::DescribeAvailabilityOptionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1568,7 +1568,7 @@ pub fn parse_describe_availability_options_error(
                     output = crate::xml_deser::deser_structure_crate_error_disabled_operation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAvailabilityOptionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1586,7 +1586,7 @@ pub fn parse_describe_availability_options_error(
                         output = crate::xml_deser::deser_structure_crate_error_internal_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAvailabilityOptionsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1604,7 +1604,7 @@ pub fn parse_describe_availability_options_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_type_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAvailabilityOptionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1621,7 +1621,7 @@ pub fn parse_describe_availability_options_error(
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAvailabilityOptionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1638,7 +1638,7 @@ pub fn parse_describe_availability_options_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAvailabilityOptionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1703,7 +1703,7 @@ pub fn parse_describe_domain_endpoint_options_error(
                     .map_err(crate::error::DescribeDomainEndpointOptionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1722,7 +1722,7 @@ pub fn parse_describe_domain_endpoint_options_error(
                         output = crate::xml_deser::deser_structure_crate_error_disabled_operation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeDomainEndpointOptionsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1741,7 +1741,7 @@ pub fn parse_describe_domain_endpoint_options_error(
                         output = crate::xml_deser::deser_structure_crate_error_internal_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeDomainEndpointOptionsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1759,7 +1759,7 @@ pub fn parse_describe_domain_endpoint_options_error(
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeDomainEndpointOptionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1778,7 +1778,7 @@ pub fn parse_describe_domain_endpoint_options_error(
                         output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeDomainEndpointOptionsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1838,7 +1838,7 @@ pub fn parse_describe_domains_error(
                     .map_err(crate::error::DescribeDomainsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1856,7 +1856,7 @@ pub fn parse_describe_domains_error(
                         output = crate::xml_deser::deser_structure_crate_error_internal_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeDomainsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1915,7 +1915,7 @@ pub fn parse_describe_expressions_error(
                     .map_err(crate::error::DescribeExpressionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1933,7 +1933,7 @@ pub fn parse_describe_expressions_error(
                         output = crate::xml_deser::deser_structure_crate_error_internal_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeExpressionsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1951,7 +1951,7 @@ pub fn parse_describe_expressions_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeExpressionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2012,7 +2012,7 @@ pub fn parse_describe_index_fields_error(
                     .map_err(crate::error::DescribeIndexFieldsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2030,7 +2030,7 @@ pub fn parse_describe_index_fields_error(
                         output = crate::xml_deser::deser_structure_crate_error_internal_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeIndexFieldsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2048,7 +2048,7 @@ pub fn parse_describe_index_fields_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeIndexFieldsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2113,7 +2113,7 @@ pub fn parse_describe_scaling_parameters_error(
                     .map_err(crate::error::DescribeScalingParametersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2131,7 +2131,7 @@ pub fn parse_describe_scaling_parameters_error(
                         output = crate::xml_deser::deser_structure_crate_error_internal_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingParametersError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2149,7 +2149,7 @@ pub fn parse_describe_scaling_parameters_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingParametersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2214,7 +2214,7 @@ pub fn parse_describe_service_access_policies_error(
                     .map_err(crate::error::DescribeServiceAccessPoliciesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2232,7 +2232,7 @@ pub fn parse_describe_service_access_policies_error(
                         output = crate::xml_deser::deser_structure_crate_error_internal_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeServiceAccessPoliciesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2252,7 +2252,7 @@ pub fn parse_describe_service_access_policies_error(
                         output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeServiceAccessPoliciesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2315,7 +2315,7 @@ pub fn parse_describe_suggesters_error(
                     .map_err(crate::error::DescribeSuggestersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2333,7 +2333,7 @@ pub fn parse_describe_suggesters_error(
                         output = crate::xml_deser::deser_structure_crate_error_internal_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeSuggestersError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2351,7 +2351,7 @@ pub fn parse_describe_suggesters_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeSuggestersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2409,7 +2409,7 @@ pub fn parse_index_documents_error(
                     .map_err(crate::error::IndexDocumentsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2427,7 +2427,7 @@ pub fn parse_index_documents_error(
                         output = crate::xml_deser::deser_structure_crate_error_internal_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::IndexDocumentsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2445,7 +2445,7 @@ pub fn parse_index_documents_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::IndexDocumentsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2463,7 +2463,7 @@ pub fn parse_index_documents_error(
                         output = crate::xml_deser::deser_structure_crate_error_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::IndexDocumentsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2519,7 +2519,7 @@ pub fn parse_list_domain_names_error(
                     .map_err(crate::error::ListDomainNamesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2581,7 +2581,7 @@ pub fn parse_update_availability_options_error(
                     .map_err(crate::error::UpdateAvailabilityOptionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2598,7 +2598,7 @@ pub fn parse_update_availability_options_error(
                     output = crate::xml_deser::deser_structure_crate_error_disabled_operation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAvailabilityOptionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2616,7 +2616,7 @@ pub fn parse_update_availability_options_error(
                         output = crate::xml_deser::deser_structure_crate_error_internal_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAvailabilityOptionsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2634,7 +2634,7 @@ pub fn parse_update_availability_options_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_type_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAvailabilityOptionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2651,7 +2651,7 @@ pub fn parse_update_availability_options_error(
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAvailabilityOptionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2668,7 +2668,7 @@ pub fn parse_update_availability_options_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAvailabilityOptionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2686,7 +2686,7 @@ pub fn parse_update_availability_options_error(
                         output = crate::xml_deser::deser_structure_crate_error_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAvailabilityOptionsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2752,7 +2752,7 @@ pub fn parse_update_domain_endpoint_options_error(
                     .map_err(crate::error::UpdateDomainEndpointOptionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2769,7 +2769,7 @@ pub fn parse_update_domain_endpoint_options_error(
                     output = crate::xml_deser::deser_structure_crate_error_disabled_operation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDomainEndpointOptionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2787,7 +2787,7 @@ pub fn parse_update_domain_endpoint_options_error(
                         output = crate::xml_deser::deser_structure_crate_error_internal_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDomainEndpointOptionsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2805,7 +2805,7 @@ pub fn parse_update_domain_endpoint_options_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_type_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDomainEndpointOptionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2822,7 +2822,7 @@ pub fn parse_update_domain_endpoint_options_error(
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDomainEndpointOptionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2839,7 +2839,7 @@ pub fn parse_update_domain_endpoint_options_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDomainEndpointOptionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2857,7 +2857,7 @@ pub fn parse_update_domain_endpoint_options_error(
                         output = crate::xml_deser::deser_structure_crate_error_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateDomainEndpointOptionsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2923,7 +2923,7 @@ pub fn parse_update_scaling_parameters_error(
                     .map_err(crate::error::UpdateScalingParametersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2941,7 +2941,7 @@ pub fn parse_update_scaling_parameters_error(
                         output = crate::xml_deser::deser_structure_crate_error_internal_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateScalingParametersError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2959,7 +2959,7 @@ pub fn parse_update_scaling_parameters_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_type_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateScalingParametersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2976,7 +2976,7 @@ pub fn parse_update_scaling_parameters_error(
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateScalingParametersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2993,7 +2993,7 @@ pub fn parse_update_scaling_parameters_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateScalingParametersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3011,7 +3011,7 @@ pub fn parse_update_scaling_parameters_error(
                         output = crate::xml_deser::deser_structure_crate_error_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateScalingParametersError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3077,7 +3077,7 @@ pub fn parse_update_service_access_policies_error(
                     .map_err(crate::error::UpdateServiceAccessPoliciesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3095,7 +3095,7 @@ pub fn parse_update_service_access_policies_error(
                         output = crate::xml_deser::deser_structure_crate_error_internal_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateServiceAccessPoliciesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3113,7 +3113,7 @@ pub fn parse_update_service_access_policies_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_type_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateServiceAccessPoliciesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3130,7 +3130,7 @@ pub fn parse_update_service_access_policies_error(
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateServiceAccessPoliciesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3147,7 +3147,7 @@ pub fn parse_update_service_access_policies_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateServiceAccessPoliciesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3165,7 +3165,7 @@ pub fn parse_update_service_access_policies_error(
                         output = crate::xml_deser::deser_structure_crate_error_validation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateServiceAccessPoliciesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp

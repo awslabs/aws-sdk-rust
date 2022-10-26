@@ -24,7 +24,7 @@ pub fn parse_delete_object_error(
                     output = crate::json_deser::deser_structure_crate_error_container_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteObjectError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -41,7 +41,7 @@ pub fn parse_delete_object_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteObjectError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -58,7 +58,7 @@ pub fn parse_delete_object_error(
                     output = crate::json_deser::deser_structure_crate_error_object_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteObjectError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -105,7 +105,7 @@ pub fn parse_describe_object_error(
                     output = crate::json_deser::deser_structure_crate_error_container_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeObjectError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -122,7 +122,7 @@ pub fn parse_describe_object_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeObjectError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -139,7 +139,7 @@ pub fn parse_describe_object_error(
                     output = crate::json_deser::deser_structure_crate_error_object_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeObjectError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -314,7 +314,7 @@ pub fn parse_get_object_error(
                     output = crate::json_deser::deser_structure_crate_error_container_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetObjectError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -331,7 +331,7 @@ pub fn parse_get_object_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::GetObjectError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -348,7 +348,7 @@ pub fn parse_get_object_error(
                     output = crate::json_deser::deser_structure_crate_error_object_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetObjectError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -365,7 +365,7 @@ pub fn parse_get_object_error(
                         output = crate::json_deser::deser_structure_crate_error_requested_range_not_satisfiable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetObjectError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -401,7 +401,7 @@ pub fn parse_list_items_error(
                     output = crate::json_deser::deser_structure_crate_error_container_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListItemsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -418,7 +418,7 @@ pub fn parse_list_items_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::ListItemsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -470,7 +470,7 @@ pub fn parse_put_object_error(
                     output = crate::json_deser::deser_structure_crate_error_container_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutObjectError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -487,7 +487,7 @@ pub fn parse_put_object_error(
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::PutObjectError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp

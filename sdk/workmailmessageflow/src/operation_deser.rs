@@ -46,7 +46,7 @@ pub fn parse_get_raw_message_content_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRawMessageContentError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -83,7 +83,7 @@ pub fn parse_put_raw_message_content_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_content_location_json_err(response.body().as_ref(), output).map_err(crate::error::PutRawMessageContentError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -105,7 +105,7 @@ pub fn parse_put_raw_message_content_error(
                         .map_err(crate::error::PutRawMessageContentError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -123,7 +123,7 @@ pub fn parse_put_raw_message_content_error(
                         output = crate::json_deser::deser_structure_crate_error_message_rejected_json_err(response.body().as_ref(), output).map_err(crate::error::PutRawMessageContentError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -141,7 +141,7 @@ pub fn parse_put_raw_message_content_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRawMessageContentError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp

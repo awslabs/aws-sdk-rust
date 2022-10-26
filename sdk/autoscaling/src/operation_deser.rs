@@ -23,7 +23,7 @@ pub fn parse_attach_instances_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachInstancesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -40,7 +40,7 @@ pub fn parse_attach_instances_error(
                     output = crate::xml_deser::deser_structure_crate_error_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachInstancesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -89,7 +89,7 @@ pub fn parse_attach_load_balancers_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachLoadBalancersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -106,7 +106,7 @@ pub fn parse_attach_load_balancers_error(
                     output = crate::xml_deser::deser_structure_crate_error_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachLoadBalancersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -158,7 +158,7 @@ pub fn parse_attach_load_balancer_target_groups_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachLoadBalancerTargetGroupsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -177,7 +177,7 @@ pub fn parse_attach_load_balancer_target_groups_error(
                         output = crate::xml_deser::deser_structure_crate_error_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachLoadBalancerTargetGroupsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -235,7 +235,7 @@ pub fn parse_batch_delete_scheduled_action_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchDeleteScheduledActionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -296,7 +296,7 @@ pub fn parse_batch_put_scheduled_update_group_action_error(
                             output = crate::xml_deser::deser_structure_crate_error_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchPutScheduledUpdateGroupActionError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -317,7 +317,7 @@ pub fn parse_batch_put_scheduled_update_group_action_error(
                             output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchPutScheduledUpdateGroupActionError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -339,7 +339,7 @@ pub fn parse_batch_put_scheduled_update_group_action_error(
                             output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchPutScheduledUpdateGroupActionError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -396,7 +396,7 @@ pub fn parse_cancel_instance_refresh_error(
                                 output = crate::xml_deser::deser_structure_crate_error_active_instance_refresh_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CancelInstanceRefreshError::unhandled)?;
                                 output.build()
                             };
-                            if (&tmp.message).is_none() {
+                            if tmp.message.is_none() {
                                 tmp.message = _error_message;
                             }
                             tmp
@@ -416,7 +416,7 @@ pub fn parse_cancel_instance_refresh_error(
                         output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CancelInstanceRefreshError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -434,7 +434,7 @@ pub fn parse_cancel_instance_refresh_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CancelInstanceRefreshError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -495,7 +495,7 @@ pub fn parse_complete_lifecycle_action_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CompleteLifecycleActionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -552,7 +552,7 @@ pub fn parse_create_auto_scaling_group_error(
                         output = crate::xml_deser::deser_structure_crate_error_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAutoScalingGroupError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -571,7 +571,7 @@ pub fn parse_create_auto_scaling_group_error(
                         output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAutoScalingGroupError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -589,7 +589,7 @@ pub fn parse_create_auto_scaling_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAutoScalingGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -606,7 +606,7 @@ pub fn parse_create_auto_scaling_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAutoScalingGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -663,7 +663,7 @@ pub fn parse_create_launch_configuration_error(
                         output = crate::xml_deser::deser_structure_crate_error_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLaunchConfigurationError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -682,7 +682,7 @@ pub fn parse_create_launch_configuration_error(
                         output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLaunchConfigurationError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -700,7 +700,7 @@ pub fn parse_create_launch_configuration_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLaunchConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -753,7 +753,7 @@ pub fn parse_create_or_update_tags_error(
                         output = crate::xml_deser::deser_structure_crate_error_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOrUpdateTagsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -772,7 +772,7 @@ pub fn parse_create_or_update_tags_error(
                         output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOrUpdateTagsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -790,7 +790,7 @@ pub fn parse_create_or_update_tags_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOrUpdateTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -807,7 +807,7 @@ pub fn parse_create_or_update_tags_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_in_use_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOrUpdateTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -863,7 +863,7 @@ pub fn parse_delete_auto_scaling_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAutoScalingGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -880,7 +880,7 @@ pub fn parse_delete_auto_scaling_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_in_use_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAutoScalingGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -898,7 +898,7 @@ pub fn parse_delete_auto_scaling_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_scaling_activity_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAutoScalingGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -954,7 +954,7 @@ pub fn parse_delete_launch_configuration_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLaunchConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -971,7 +971,7 @@ pub fn parse_delete_launch_configuration_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_in_use_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLaunchConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1023,7 +1023,7 @@ pub fn parse_delete_lifecycle_hook_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLifecycleHookError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1077,7 +1077,7 @@ pub fn parse_delete_notification_configuration_error(
                         output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteNotificationConfigurationError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1128,7 +1128,7 @@ pub fn parse_delete_policy_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePolicyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1145,7 +1145,7 @@ pub fn parse_delete_policy_error(
                     output = crate::xml_deser::deser_structure_crate_error_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePolicyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1194,7 +1194,7 @@ pub fn parse_delete_scheduled_action_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteScheduledActionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1243,7 +1243,7 @@ pub fn parse_delete_tags_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1260,7 +1260,7 @@ pub fn parse_delete_tags_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_in_use_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1307,7 +1307,7 @@ pub fn parse_delete_warm_pool_error(
                         output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteWarmPoolError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1325,7 +1325,7 @@ pub fn parse_delete_warm_pool_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteWarmPoolError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1342,7 +1342,7 @@ pub fn parse_delete_warm_pool_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_in_use_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteWarmPoolError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1360,7 +1360,7 @@ pub fn parse_delete_warm_pool_error(
                     output = crate::xml_deser::deser_structure_crate_error_scaling_activity_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteWarmPoolError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1409,7 +1409,7 @@ pub fn parse_describe_account_limits_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAccountLimitsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1470,7 +1470,7 @@ pub fn parse_describe_adjustment_types_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAdjustmentTypesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1532,7 +1532,7 @@ pub fn parse_describe_auto_scaling_groups_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAutoScalingGroupsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1550,7 +1550,7 @@ pub fn parse_describe_auto_scaling_groups_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAutoScalingGroupsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1612,7 +1612,7 @@ pub fn parse_describe_auto_scaling_instances_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAutoScalingInstancesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1630,7 +1630,7 @@ pub fn parse_describe_auto_scaling_instances_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAutoScalingInstancesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1692,7 +1692,7 @@ pub fn parse_describe_auto_scaling_notification_types_error(
                             output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAutoScalingNotificationTypesError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -1752,7 +1752,7 @@ pub fn parse_describe_instance_refreshes_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeInstanceRefreshesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1770,7 +1770,7 @@ pub fn parse_describe_instance_refreshes_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeInstanceRefreshesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1832,7 +1832,7 @@ pub fn parse_describe_launch_configurations_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLaunchConfigurationsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1850,7 +1850,7 @@ pub fn parse_describe_launch_configurations_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLaunchConfigurationsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1911,7 +1911,7 @@ pub fn parse_describe_lifecycle_hooks_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLifecycleHooksError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1972,7 +1972,7 @@ pub fn parse_describe_lifecycle_hook_types_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLifecycleHookTypesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2030,7 +2030,7 @@ pub fn parse_describe_load_balancers_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancersError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2048,7 +2048,7 @@ pub fn parse_describe_load_balancers_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2108,7 +2108,7 @@ pub fn parse_describe_load_balancer_target_groups_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancerTargetGroupsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2128,7 +2128,7 @@ pub fn parse_describe_load_balancer_target_groups_error(
                         output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancerTargetGroupsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2192,7 +2192,7 @@ pub fn parse_describe_metric_collection_types_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeMetricCollectionTypesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2254,7 +2254,7 @@ pub fn parse_describe_notification_configurations_error(
                             output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeNotificationConfigurationsError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -2276,7 +2276,7 @@ pub fn parse_describe_notification_configurations_error(
                             output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeNotificationConfigurationsError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -2335,7 +2335,7 @@ pub fn parse_describe_policies_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribePoliciesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2353,7 +2353,7 @@ pub fn parse_describe_policies_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribePoliciesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2370,7 +2370,7 @@ pub fn parse_describe_policies_error(
                     output = crate::xml_deser::deser_structure_crate_error_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribePoliciesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2430,7 +2430,7 @@ pub fn parse_describe_scaling_activities_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingActivitiesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2448,7 +2448,7 @@ pub fn parse_describe_scaling_activities_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingActivitiesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2509,7 +2509,7 @@ pub fn parse_describe_scaling_process_types_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingProcessTypesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2571,7 +2571,7 @@ pub fn parse_describe_scheduled_actions_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeScheduledActionsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2589,7 +2589,7 @@ pub fn parse_describe_scheduled_actions_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeScheduledActionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2644,7 +2644,7 @@ pub fn parse_describe_tags_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTagsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2662,7 +2662,7 @@ pub fn parse_describe_tags_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2716,7 +2716,7 @@ pub fn parse_describe_termination_policy_types_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTerminationPolicyTypesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2774,7 +2774,7 @@ pub fn parse_describe_warm_pool_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeWarmPoolError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2793,7 +2793,7 @@ pub fn parse_describe_warm_pool_error(
                         output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeWarmPoolError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2811,7 +2811,7 @@ pub fn parse_describe_warm_pool_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeWarmPoolError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2863,7 +2863,7 @@ pub fn parse_detach_instances_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachInstancesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2917,7 +2917,7 @@ pub fn parse_detach_load_balancers_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachLoadBalancersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2969,7 +2969,7 @@ pub fn parse_detach_load_balancer_target_groups_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachLoadBalancerTargetGroupsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3026,7 +3026,7 @@ pub fn parse_disable_metrics_collection_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DisableMetricsCollectionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3082,7 +3082,7 @@ pub fn parse_enable_metrics_collection_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableMetricsCollectionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3131,7 +3131,7 @@ pub fn parse_enter_standby_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::EnterStandbyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3182,7 +3182,7 @@ pub fn parse_execute_policy_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ExecutePolicyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3200,7 +3200,7 @@ pub fn parse_execute_policy_error(
                     output = crate::xml_deser::deser_structure_crate_error_scaling_activity_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ExecutePolicyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3246,7 +3246,7 @@ pub fn parse_exit_standby_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ExitStandbyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3304,7 +3304,7 @@ pub fn parse_get_predictive_scaling_forecast_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::GetPredictiveScalingForecastError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3360,7 +3360,7 @@ pub fn parse_put_lifecycle_hook_error(
                         output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutLifecycleHookError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3378,7 +3378,7 @@ pub fn parse_put_lifecycle_hook_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutLifecycleHookError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3433,7 +3433,7 @@ pub fn parse_put_notification_configuration_error(
                         output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutNotificationConfigurationError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3451,7 +3451,7 @@ pub fn parse_put_notification_configuration_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutNotificationConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3468,7 +3468,7 @@ pub fn parse_put_notification_configuration_error(
                     output = crate::xml_deser::deser_structure_crate_error_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::PutNotificationConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3519,7 +3519,7 @@ pub fn parse_put_scaling_policy_error(
                         output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutScalingPolicyError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3537,7 +3537,7 @@ pub fn parse_put_scaling_policy_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutScalingPolicyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3554,7 +3554,7 @@ pub fn parse_put_scaling_policy_error(
                     output = crate::xml_deser::deser_structure_crate_error_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::PutScalingPolicyError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3614,7 +3614,7 @@ pub fn parse_put_scheduled_update_group_action_error(
                         output = crate::xml_deser::deser_structure_crate_error_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutScheduledUpdateGroupActionError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3633,7 +3633,7 @@ pub fn parse_put_scheduled_update_group_action_error(
                         output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutScheduledUpdateGroupActionError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3651,7 +3651,7 @@ pub fn parse_put_scheduled_update_group_action_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutScheduledUpdateGroupActionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3702,7 +3702,7 @@ pub fn parse_put_warm_pool_error(
                         output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutWarmPoolError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -3720,7 +3720,7 @@ pub fn parse_put_warm_pool_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutWarmPoolError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3769,7 +3769,7 @@ pub fn parse_record_lifecycle_action_heartbeat_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RecordLifecycleActionHeartbeatError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3819,7 +3819,7 @@ pub fn parse_resume_processes_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResumeProcessesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3836,7 +3836,7 @@ pub fn parse_resume_processes_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_in_use_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResumeProcessesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3885,7 +3885,7 @@ pub fn parse_set_desired_capacity_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SetDesiredCapacityError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3903,7 +3903,7 @@ pub fn parse_set_desired_capacity_error(
                     output = crate::xml_deser::deser_structure_crate_error_scaling_activity_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SetDesiredCapacityError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3953,7 +3953,7 @@ pub fn parse_set_instance_health_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SetInstanceHealthError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4004,7 +4004,7 @@ pub fn parse_set_instance_protection_error(
                         output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SetInstanceProtectionError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -4022,7 +4022,7 @@ pub fn parse_set_instance_protection_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SetInstanceProtectionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4075,7 +4075,7 @@ pub fn parse_start_instance_refresh_error(
                     output = crate::xml_deser::deser_structure_crate_error_instance_refresh_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartInstanceRefreshError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4093,7 +4093,7 @@ pub fn parse_start_instance_refresh_error(
                         output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartInstanceRefreshError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -4111,7 +4111,7 @@ pub fn parse_start_instance_refresh_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartInstanceRefreshError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4166,7 +4166,7 @@ pub fn parse_suspend_processes_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SuspendProcessesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4183,7 +4183,7 @@ pub fn parse_suspend_processes_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_in_use_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SuspendProcessesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4233,7 +4233,7 @@ pub fn parse_terminate_instance_in_auto_scaling_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4247,7 +4247,7 @@ pub fn parse_terminate_instance_in_auto_scaling_group_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -4304,7 +4304,7 @@ pub fn parse_update_auto_scaling_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAutoScalingGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4322,7 +4322,7 @@ pub fn parse_update_auto_scaling_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_scaling_activity_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAutoScalingGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -4339,7 +4339,7 @@ pub fn parse_update_auto_scaling_group_error(
                     output = crate::xml_deser::deser_structure_crate_error_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAutoScalingGroupError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp

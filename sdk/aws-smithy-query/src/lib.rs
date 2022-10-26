@@ -9,6 +9,7 @@ use aws_smithy_types::date_time::{DateTimeFormatError, Format};
 use aws_smithy_types::primitive::Encoder;
 use aws_smithy_types::{DateTime, Number};
 use std::borrow::Cow;
+use std::fmt::Write;
 use urlencoding::encode;
 
 pub struct QueryWriter<'a> {
@@ -62,14 +63,18 @@ impl<'a> QueryMapWriter<'a> {
 
     pub fn entry(&mut self, key: &str) -> QueryValueWriter {
         let entry = if self.flatten { "" } else { ".entry" };
-        self.output.push_str(&format!(
+        write!(
+            &mut self.output,
             "&{}{}.{}.{}={}",
             self.prefix,
             entry,
             self.next_index,
             self.key_name,
             encode(key)
-        ));
+        )
+        // The `Write` implementation for `String` is infallible,
+        // see https://doc.rust-lang.org/src/alloc/string.rs.html#2815
+        .unwrap();
         let value_name = format!(
             "{}{}.{}.{}",
             self.prefix, entry, self.next_index, self.value_name

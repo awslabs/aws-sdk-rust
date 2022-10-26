@@ -601,7 +601,7 @@ mod message_tests {
             0x36,
         ];
 
-        let result = Message::read_from(&mut Bytes::from_static(&data)).unwrap();
+        let result = Message::read_from(&mut Bytes::from_static(data)).unwrap();
         assert_eq!(result.headers(), Vec::new());
 
         let expected_payload = b"{'foo':'bar'}";
@@ -620,7 +620,7 @@ mod message_tests {
             0x7d, 0x8D, 0x9C, 0x08, 0xB1,
         ];
 
-        let result = Message::read_from(&mut Bytes::from_static(&data)).unwrap();
+        let result = Message::read_from(&mut Bytes::from_static(data)).unwrap();
         assert_eq!(
             result.headers(),
             vec![Header::new(

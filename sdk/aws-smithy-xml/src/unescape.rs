@@ -150,7 +150,7 @@ mod test {
         fn no_panics(s: String) {
             let unescaped = unescape(&s);
             // if the string needed to be escaped, we
-            if s.contains("&") {
+            if s.contains('&') {
                 assert!(
                     matches!(unescaped, Ok(Cow::Owned(_)) | Err(_))
                 );

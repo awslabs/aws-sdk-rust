@@ -24,7 +24,7 @@ pub fn parse_add_tags_error(
                     output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -41,7 +41,7 @@ pub fn parse_add_tags_error(
                     output = crate::xml_deser::deser_structure_crate_error_duplicate_tag_keys_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -58,7 +58,7 @@ pub fn parse_add_tags_error(
                     output = crate::xml_deser::deser_structure_crate_error_too_many_tags_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -107,7 +107,7 @@ pub fn parse_apply_security_groups_to_load_balancer_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -121,7 +121,7 @@ pub fn parse_apply_security_groups_to_load_balancer_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -135,7 +135,7 @@ pub fn parse_apply_security_groups_to_load_balancer_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -190,7 +190,7 @@ pub fn parse_attach_load_balancer_to_subnets_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -204,7 +204,7 @@ pub fn parse_attach_load_balancer_to_subnets_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -218,7 +218,7 @@ pub fn parse_attach_load_balancer_to_subnets_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -232,7 +232,7 @@ pub fn parse_attach_load_balancer_to_subnets_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -289,7 +289,7 @@ pub fn parse_configure_health_check_error(
                     output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ConfigureHealthCheckError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -344,7 +344,7 @@ pub fn parse_create_app_cookie_stickiness_policy_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -358,7 +358,7 @@ pub fn parse_create_app_cookie_stickiness_policy_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -372,7 +372,7 @@ pub fn parse_create_app_cookie_stickiness_policy_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -386,7 +386,7 @@ pub fn parse_create_app_cookie_stickiness_policy_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -436,7 +436,7 @@ pub fn parse_create_lb_cookie_stickiness_policy_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -450,7 +450,7 @@ pub fn parse_create_lb_cookie_stickiness_policy_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -464,7 +464,7 @@ pub fn parse_create_lb_cookie_stickiness_policy_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -478,7 +478,7 @@ pub fn parse_create_lb_cookie_stickiness_policy_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -531,7 +531,7 @@ pub fn parse_create_load_balancer_error(
                     output = crate::xml_deser::deser_structure_crate_error_certificate_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -549,7 +549,7 @@ pub fn parse_create_load_balancer_error(
                     output = crate::xml_deser::deser_structure_crate_error_duplicate_access_point_name_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -566,7 +566,7 @@ pub fn parse_create_load_balancer_error(
                     output = crate::xml_deser::deser_structure_crate_error_duplicate_tag_keys_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -585,7 +585,7 @@ pub fn parse_create_load_balancer_error(
                                 output = crate::xml_deser::deser_structure_crate_error_invalid_configuration_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
                                 output.build()
                             };
-                            if (&tmp.message).is_none() {
+                            if tmp.message.is_none() {
                                 tmp.message = _error_message;
                             }
                             tmp
@@ -604,7 +604,7 @@ pub fn parse_create_load_balancer_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_scheme_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -622,7 +622,7 @@ pub fn parse_create_load_balancer_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_security_group_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -639,7 +639,7 @@ pub fn parse_create_load_balancer_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_subnet_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -657,7 +657,7 @@ pub fn parse_create_load_balancer_error(
                     output = crate::xml_deser::deser_structure_crate_error_operation_not_permitted_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -674,7 +674,7 @@ pub fn parse_create_load_balancer_error(
                     output = crate::xml_deser::deser_structure_crate_error_subnet_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -692,7 +692,7 @@ pub fn parse_create_load_balancer_error(
                     output = crate::xml_deser::deser_structure_crate_error_too_many_access_points_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -709,7 +709,7 @@ pub fn parse_create_load_balancer_error(
                     output = crate::xml_deser::deser_structure_crate_error_too_many_tags_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -727,7 +727,7 @@ pub fn parse_create_load_balancer_error(
                     output = crate::xml_deser::deser_structure_crate_error_unsupported_protocol_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoadBalancerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -786,7 +786,7 @@ pub fn parse_create_load_balancer_listeners_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -800,7 +800,7 @@ pub fn parse_create_load_balancer_listeners_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -814,7 +814,7 @@ pub fn parse_create_load_balancer_listeners_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -828,7 +828,7 @@ pub fn parse_create_load_balancer_listeners_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -842,7 +842,7 @@ pub fn parse_create_load_balancer_listeners_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -895,7 +895,7 @@ pub fn parse_create_load_balancer_policy_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -909,7 +909,7 @@ pub fn parse_create_load_balancer_policy_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -923,7 +923,7 @@ pub fn parse_create_load_balancer_policy_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -937,7 +937,7 @@ pub fn parse_create_load_balancer_policy_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -951,7 +951,7 @@ pub fn parse_create_load_balancer_policy_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1035,7 +1035,7 @@ pub fn parse_delete_load_balancer_listeners_error(
                         output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLoadBalancerListenersError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1090,7 +1090,7 @@ pub fn parse_delete_load_balancer_policy_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1104,7 +1104,7 @@ pub fn parse_delete_load_balancer_policy_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1155,7 +1155,7 @@ pub fn parse_deregister_instances_from_load_balancer_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1169,7 +1169,7 @@ pub fn parse_deregister_instances_from_load_balancer_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1259,7 +1259,7 @@ pub fn parse_describe_instance_health_error(
                     output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeInstanceHealthError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1276,7 +1276,7 @@ pub fn parse_describe_instance_health_error(
                     output = crate::xml_deser::deser_structure_crate_error_invalid_end_point_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeInstanceHealthError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1331,7 +1331,7 @@ pub fn parse_describe_load_balancer_attributes_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1345,7 +1345,7 @@ pub fn parse_describe_load_balancer_attributes_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1409,7 +1409,7 @@ pub fn parse_describe_load_balancer_policies_error(
                         output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancerPoliciesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1427,7 +1427,7 @@ pub fn parse_describe_load_balancer_policies_error(
                     output = crate::xml_deser::deser_structure_crate_error_policy_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancerPoliciesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1487,7 +1487,7 @@ pub fn parse_describe_load_balancer_policy_types_error(
                             output = crate::xml_deser::deser_structure_crate_error_policy_type_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancerPolicyTypesError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -1548,7 +1548,7 @@ pub fn parse_describe_load_balancers_error(
                     output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1566,7 +1566,7 @@ pub fn parse_describe_load_balancers_error(
                     output = crate::xml_deser::deser_structure_crate_error_dependency_throttle_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1621,7 +1621,7 @@ pub fn parse_describe_tags_error(
                     output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1677,7 +1677,7 @@ pub fn parse_detach_load_balancer_from_subnets_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1691,7 +1691,7 @@ pub fn parse_detach_load_balancer_from_subnets_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1751,7 +1751,7 @@ pub fn parse_disable_availability_zones_for_load_balancer_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1765,7 +1765,7 @@ pub fn parse_disable_availability_zones_for_load_balancer_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1820,7 +1820,7 @@ pub fn parse_enable_availability_zones_for_load_balancer_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1875,7 +1875,7 @@ pub fn parse_modify_load_balancer_attributes_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1889,7 +1889,7 @@ pub fn parse_modify_load_balancer_attributes_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1903,7 +1903,7 @@ pub fn parse_modify_load_balancer_attributes_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1959,7 +1959,7 @@ pub fn parse_register_instances_with_load_balancer_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1973,7 +1973,7 @@ pub fn parse_register_instances_with_load_balancer_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2024,7 +2024,7 @@ pub fn parse_remove_tags_error(
                     output = crate::xml_deser::deser_structure_crate_error_access_point_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2075,7 +2075,7 @@ pub fn parse_set_load_balancer_listener_ssl_certificate_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2089,7 +2089,7 @@ pub fn parse_set_load_balancer_listener_ssl_certificate_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2103,7 +2103,7 @@ pub fn parse_set_load_balancer_listener_ssl_certificate_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2117,7 +2117,7 @@ pub fn parse_set_load_balancer_listener_ssl_certificate_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2131,7 +2131,7 @@ pub fn parse_set_load_balancer_listener_ssl_certificate_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2185,7 +2185,7 @@ pub fn parse_set_load_balancer_policies_for_backend_server_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2199,7 +2199,7 @@ pub fn parse_set_load_balancer_policies_for_backend_server_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2213,7 +2213,7 @@ pub fn parse_set_load_balancer_policies_for_backend_server_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2265,7 +2265,7 @@ pub fn parse_set_load_balancer_policies_of_listener_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2279,7 +2279,7 @@ pub fn parse_set_load_balancer_policies_of_listener_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2293,7 +2293,7 @@ pub fn parse_set_load_balancer_policies_of_listener_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -2307,7 +2307,7 @@ pub fn parse_set_load_balancer_policies_of_listener_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp

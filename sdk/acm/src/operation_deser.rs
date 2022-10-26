@@ -26,7 +26,7 @@ pub fn parse_add_tags_to_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -43,7 +43,7 @@ pub fn parse_add_tags_to_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -60,7 +60,7 @@ pub fn parse_add_tags_to_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_tag_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -77,7 +77,7 @@ pub fn parse_add_tags_to_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -94,7 +94,7 @@ pub fn parse_add_tags_to_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_tag_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -111,7 +111,7 @@ pub fn parse_add_tags_to_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -128,7 +128,7 @@ pub fn parse_add_tags_to_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -178,7 +178,7 @@ pub fn parse_delete_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -195,7 +195,7 @@ pub fn parse_delete_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -212,7 +212,7 @@ pub fn parse_delete_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -262,7 +262,7 @@ pub fn parse_describe_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -279,7 +279,7 @@ pub fn parse_describe_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -334,7 +334,7 @@ pub fn parse_export_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -352,7 +352,7 @@ pub fn parse_export_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_request_in_progress_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -369,7 +369,7 @@ pub fn parse_export_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -428,7 +428,7 @@ pub fn parse_get_account_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAccountConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -445,7 +445,7 @@ pub fn parse_get_account_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAccountConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -499,7 +499,7 @@ pub fn parse_get_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -517,7 +517,7 @@ pub fn parse_get_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_request_in_progress_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -534,7 +534,7 @@ pub fn parse_get_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -586,7 +586,7 @@ pub fn parse_import_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ImportCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -603,7 +603,7 @@ pub fn parse_import_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ImportCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -620,7 +620,7 @@ pub fn parse_import_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_tag_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ImportCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -637,7 +637,7 @@ pub fn parse_import_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ImportCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -654,7 +654,7 @@ pub fn parse_import_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ImportCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -671,7 +671,7 @@ pub fn parse_import_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_tag_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ImportCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -688,7 +688,7 @@ pub fn parse_import_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ImportCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -741,7 +741,7 @@ pub fn parse_list_certificates_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_args_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCertificatesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -800,7 +800,7 @@ pub fn parse_list_tags_for_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -817,7 +817,7 @@ pub fn parse_list_tags_for_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -878,7 +878,7 @@ pub fn parse_put_account_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutAccountConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -896,7 +896,7 @@ pub fn parse_put_account_configuration_error(
                         output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutAccountConfigurationError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -914,7 +914,7 @@ pub fn parse_put_account_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutAccountConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -931,7 +931,7 @@ pub fn parse_put_account_configuration_error(
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutAccountConfigurationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -987,7 +987,7 @@ pub fn parse_remove_tags_from_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1004,7 +1004,7 @@ pub fn parse_remove_tags_from_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1021,7 +1021,7 @@ pub fn parse_remove_tags_from_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_tag_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1038,7 +1038,7 @@ pub fn parse_remove_tags_from_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1055,7 +1055,7 @@ pub fn parse_remove_tags_from_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_tag_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1072,7 +1072,7 @@ pub fn parse_remove_tags_from_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1122,7 +1122,7 @@ pub fn parse_renew_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RenewCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1139,7 +1139,7 @@ pub fn parse_renew_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RenewCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1189,7 +1189,7 @@ pub fn parse_request_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RequestCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1207,7 +1207,7 @@ pub fn parse_request_certificate_error(
                             output = crate::json_deser::deser_structure_crate_error_invalid_domain_validation_options_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RequestCertificateError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -1225,7 +1225,7 @@ pub fn parse_request_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RequestCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1242,7 +1242,7 @@ pub fn parse_request_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_tag_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RequestCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1259,7 +1259,7 @@ pub fn parse_request_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RequestCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1276,7 +1276,7 @@ pub fn parse_request_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_tag_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RequestCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1293,7 +1293,7 @@ pub fn parse_request_certificate_error(
                     output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RequestCertificateError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1348,7 +1348,7 @@ pub fn parse_resend_validation_email_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1362,7 +1362,7 @@ pub fn parse_resend_validation_email_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1376,7 +1376,7 @@ pub fn parse_resend_validation_email_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1390,7 +1390,7 @@ pub fn parse_resend_validation_email_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -1445,7 +1445,7 @@ pub fn parse_update_certificate_options_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCertificateOptionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1462,7 +1462,7 @@ pub fn parse_update_certificate_options_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCertificateOptionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1479,7 +1479,7 @@ pub fn parse_update_certificate_options_error(
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCertificateOptionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1496,7 +1496,7 @@ pub fn parse_update_certificate_options_error(
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCertificateOptionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp

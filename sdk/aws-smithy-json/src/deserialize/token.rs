@@ -600,7 +600,7 @@ pub mod test {
                 Err(Error::new(
                     ErrorReason::Custom(Cow::Owned(format!(
                         "{} is not a valid epoch",
-                        invalid.replace("-", "")
+                        invalid.replace('-', "")
                     ))),
                     None,
                 )),

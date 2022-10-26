@@ -283,8 +283,7 @@ mod test {
             props.insert(region.clone());
             props.insert(SigningService::from_static("qldb"));
             props.insert(
-                EndpointShim::from_arc(provider)
-                    .resolve_endpoint(&Params::new(Some(region.clone()))),
+                EndpointShim::from_arc(provider).resolve_endpoint(&Params::new(Some(region))),
             );
         };
         let req = AwsEndpointStage.apply(req).expect("should succeed");
@@ -314,8 +313,7 @@ mod test {
             props.insert(region.clone());
             props.insert(SigningService::from_static("qldb"));
             props.insert(
-                EndpointShim::from_arc(provider)
-                    .resolve_endpoint(&Params::new(Some(region.clone()))),
+                EndpointShim::from_arc(provider).resolve_endpoint(&Params::new(Some(region))),
             );
         };
         let req = AwsEndpointStage.apply(req).expect("should succeed");

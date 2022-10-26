@@ -200,7 +200,7 @@ mod test {
             Box::pin(async move {
                 for i in 0..5 {
                     if i != 2 {
-                        if let Err(_) = tx.send(Ok(i)).await {
+                        if tx.send(Ok(i)).await.is_err() {
                             return;
                         }
                     } else {

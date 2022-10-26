@@ -386,9 +386,7 @@ mod tests {
     fn test_validate_empty_query_string() {
         let request = Request::builder().uri("/foo").body(()).unwrap();
         validate_query_string(&request, &[]).expect("no required params should pass");
-        validate_query_string(&request, &["a"])
-            .err()
-            .expect("no params provided");
+        validate_query_string(&request, &["a"]).expect_err("no params provided");
     }
 
     #[test]

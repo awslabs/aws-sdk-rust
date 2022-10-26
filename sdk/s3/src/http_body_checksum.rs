@@ -266,7 +266,7 @@ mod tests {
         for i in 0..10000 {
             let line = format!("This is a large file created for testing purposes {}", i);
             file.as_file_mut().write(line.as_bytes()).unwrap();
-            crc32c_checksum.update(&line.as_bytes());
+            crc32c_checksum.update(line.as_bytes());
         }
 
         let body = ByteStream::read_from()

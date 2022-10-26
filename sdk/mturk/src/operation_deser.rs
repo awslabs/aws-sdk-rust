@@ -34,7 +34,7 @@ pub fn parse_accept_qualification_request_error(
                     .map_err(crate::error::AcceptQualificationRequestError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -55,7 +55,7 @@ pub fn parse_accept_qualification_request_error(
                     .map_err(crate::error::AcceptQualificationRequestError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -109,7 +109,7 @@ pub fn parse_approve_assignment_error(
                     .map_err(crate::error::ApproveAssignmentError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -130,7 +130,7 @@ pub fn parse_approve_assignment_error(
                     .map_err(crate::error::ApproveAssignmentError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -186,7 +186,7 @@ pub fn parse_associate_qualification_with_worker_error(
                     .map_err(crate::error::AssociateQualificationWithWorkerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -207,7 +207,7 @@ pub fn parse_associate_qualification_with_worker_error(
                     .map_err(crate::error::AssociateQualificationWithWorkerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -266,7 +266,7 @@ pub fn parse_create_additional_assignments_for_hit_error(
                     .map_err(crate::error::CreateAdditionalAssignmentsForHITError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -287,7 +287,7 @@ pub fn parse_create_additional_assignments_for_hit_error(
                     .map_err(crate::error::CreateAdditionalAssignmentsForHITError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -341,7 +341,7 @@ pub fn parse_create_hit_error(
                     .map_err(crate::error::CreateHITError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -362,7 +362,7 @@ pub fn parse_create_hit_error(
                     .map_err(crate::error::CreateHITError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -417,7 +417,7 @@ pub fn parse_create_hit_type_error(
                     .map_err(crate::error::CreateHITTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -438,7 +438,7 @@ pub fn parse_create_hit_type_error(
                     .map_err(crate::error::CreateHITTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -496,7 +496,7 @@ pub fn parse_create_hit_with_hit_type_error(
                     .map_err(crate::error::CreateHITWithHITTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -517,7 +517,7 @@ pub fn parse_create_hit_with_hit_type_error(
                     .map_err(crate::error::CreateHITWithHITTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -582,7 +582,7 @@ pub fn parse_create_qualification_type_error(
                     .map_err(crate::error::CreateQualificationTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -603,7 +603,7 @@ pub fn parse_create_qualification_type_error(
                     .map_err(crate::error::CreateQualificationTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -662,7 +662,7 @@ pub fn parse_create_worker_block_error(
                     .map_err(crate::error::CreateWorkerBlockError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -683,7 +683,7 @@ pub fn parse_create_worker_block_error(
                     .map_err(crate::error::CreateWorkerBlockError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -734,7 +734,7 @@ pub fn parse_delete_hit_error(
                     .map_err(crate::error::DeleteHITError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -755,7 +755,7 @@ pub fn parse_delete_hit_error(
                     .map_err(crate::error::DeleteHITError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -812,7 +812,7 @@ pub fn parse_delete_qualification_type_error(
                     .map_err(crate::error::DeleteQualificationTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -833,7 +833,7 @@ pub fn parse_delete_qualification_type_error(
                     .map_err(crate::error::DeleteQualificationTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -887,7 +887,7 @@ pub fn parse_delete_worker_block_error(
                     .map_err(crate::error::DeleteWorkerBlockError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -908,7 +908,7 @@ pub fn parse_delete_worker_block_error(
                     .map_err(crate::error::DeleteWorkerBlockError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -964,7 +964,7 @@ pub fn parse_disassociate_qualification_from_worker_error(
                     .map_err(crate::error::DisassociateQualificationFromWorkerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -985,7 +985,7 @@ pub fn parse_disassociate_qualification_from_worker_error(
                     .map_err(crate::error::DisassociateQualificationFromWorkerError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1040,7 +1040,7 @@ pub fn parse_get_account_balance_error(
                     .map_err(crate::error::GetAccountBalanceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1061,7 +1061,7 @@ pub fn parse_get_account_balance_error(
                     .map_err(crate::error::GetAccountBalanceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1117,7 +1117,7 @@ pub fn parse_get_assignment_error(
                     .map_err(crate::error::GetAssignmentError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1138,7 +1138,7 @@ pub fn parse_get_assignment_error(
                     .map_err(crate::error::GetAssignmentError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1194,7 +1194,7 @@ pub fn parse_get_file_upload_url_error(
                     .map_err(crate::error::GetFileUploadURLError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1215,7 +1215,7 @@ pub fn parse_get_file_upload_url_error(
                     .map_err(crate::error::GetFileUploadURLError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1271,7 +1271,7 @@ pub fn parse_get_hit_error(
                     .map_err(crate::error::GetHITError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1292,7 +1292,7 @@ pub fn parse_get_hit_error(
                     .map_err(crate::error::GetHITError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1350,7 +1350,7 @@ pub fn parse_get_qualification_score_error(
                     .map_err(crate::error::GetQualificationScoreError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1371,7 +1371,7 @@ pub fn parse_get_qualification_score_error(
                     .map_err(crate::error::GetQualificationScoreError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1432,7 +1432,7 @@ pub fn parse_get_qualification_type_error(
                     .map_err(crate::error::GetQualificationTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1453,7 +1453,7 @@ pub fn parse_get_qualification_type_error(
                     .map_err(crate::error::GetQualificationTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1514,7 +1514,7 @@ pub fn parse_list_assignments_for_hit_error(
                     .map_err(crate::error::ListAssignmentsForHITError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1535,7 +1535,7 @@ pub fn parse_list_assignments_for_hit_error(
                     .map_err(crate::error::ListAssignmentsForHITError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1594,7 +1594,7 @@ pub fn parse_list_bonus_payments_error(
                     .map_err(crate::error::ListBonusPaymentsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1615,7 +1615,7 @@ pub fn parse_list_bonus_payments_error(
                     .map_err(crate::error::ListBonusPaymentsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1671,7 +1671,7 @@ pub fn parse_list_hi_ts_error(
                     .map_err(crate::error::ListHITsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1692,7 +1692,7 @@ pub fn parse_list_hi_ts_error(
                     .map_err(crate::error::ListHITsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1754,7 +1754,7 @@ pub fn parse_list_hi_ts_for_qualification_type_error(
                     .map_err(crate::error::ListHITsForQualificationTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1775,7 +1775,7 @@ pub fn parse_list_hi_ts_for_qualification_type_error(
                     .map_err(crate::error::ListHITsForQualificationTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1842,7 +1842,7 @@ pub fn parse_list_qualification_requests_error(
                     .map_err(crate::error::ListQualificationRequestsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1863,7 +1863,7 @@ pub fn parse_list_qualification_requests_error(
                     .map_err(crate::error::ListQualificationRequestsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1928,7 +1928,7 @@ pub fn parse_list_qualification_types_error(
                     .map_err(crate::error::ListQualificationTypesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1949,7 +1949,7 @@ pub fn parse_list_qualification_types_error(
                     .map_err(crate::error::ListQualificationTypesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2010,7 +2010,7 @@ pub fn parse_list_reviewable_hi_ts_error(
                     .map_err(crate::error::ListReviewableHITsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2031,7 +2031,7 @@ pub fn parse_list_reviewable_hi_ts_error(
                     .map_err(crate::error::ListReviewableHITsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2096,7 +2096,7 @@ pub fn parse_list_review_policy_results_for_hit_error(
                     .map_err(crate::error::ListReviewPolicyResultsForHITError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2117,7 +2117,7 @@ pub fn parse_list_review_policy_results_for_hit_error(
                     .map_err(crate::error::ListReviewPolicyResultsForHITError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2178,7 +2178,7 @@ pub fn parse_list_worker_blocks_error(
                     .map_err(crate::error::ListWorkerBlocksError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2199,7 +2199,7 @@ pub fn parse_list_worker_blocks_error(
                     .map_err(crate::error::ListWorkerBlocksError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2260,7 +2260,7 @@ pub fn parse_list_workers_with_qualification_type_error(
                     .map_err(crate::error::ListWorkersWithQualificationTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2281,7 +2281,7 @@ pub fn parse_list_workers_with_qualification_type_error(
                     .map_err(crate::error::ListWorkersWithQualificationTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2336,7 +2336,7 @@ pub fn parse_notify_workers_error(
                     .map_err(crate::error::NotifyWorkersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2357,7 +2357,7 @@ pub fn parse_notify_workers_error(
                     .map_err(crate::error::NotifyWorkersError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2413,7 +2413,7 @@ pub fn parse_reject_assignment_error(
                     .map_err(crate::error::RejectAssignmentError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2434,7 +2434,7 @@ pub fn parse_reject_assignment_error(
                     .map_err(crate::error::RejectAssignmentError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2492,7 +2492,7 @@ pub fn parse_reject_qualification_request_error(
                     .map_err(crate::error::RejectQualificationRequestError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2513,7 +2513,7 @@ pub fn parse_reject_qualification_request_error(
                     .map_err(crate::error::RejectQualificationRequestError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2566,7 +2566,7 @@ pub fn parse_send_bonus_error(
                     .map_err(crate::error::SendBonusError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2587,7 +2587,7 @@ pub fn parse_send_bonus_error(
                     .map_err(crate::error::SendBonusError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2644,7 +2644,7 @@ pub fn parse_send_test_event_notification_error(
                     .map_err(crate::error::SendTestEventNotificationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2665,7 +2665,7 @@ pub fn parse_send_test_event_notification_error(
                     .map_err(crate::error::SendTestEventNotificationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2725,7 +2725,7 @@ pub fn parse_update_expiration_for_hit_error(
                     .map_err(crate::error::UpdateExpirationForHITError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2746,7 +2746,7 @@ pub fn parse_update_expiration_for_hit_error(
                     .map_err(crate::error::UpdateExpirationForHITError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2802,7 +2802,7 @@ pub fn parse_update_hit_review_status_error(
                     .map_err(crate::error::UpdateHITReviewStatusError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2823,7 +2823,7 @@ pub fn parse_update_hit_review_status_error(
                     .map_err(crate::error::UpdateHITReviewStatusError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2879,7 +2879,7 @@ pub fn parse_update_hit_type_of_hit_error(
                     .map_err(crate::error::UpdateHITTypeOfHITError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2900,7 +2900,7 @@ pub fn parse_update_hit_type_of_hit_error(
                     .map_err(crate::error::UpdateHITTypeOfHITError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2960,7 +2960,7 @@ pub fn parse_update_notification_settings_error(
                     .map_err(crate::error::UpdateNotificationSettingsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2981,7 +2981,7 @@ pub fn parse_update_notification_settings_error(
                     .map_err(crate::error::UpdateNotificationSettingsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3041,7 +3041,7 @@ pub fn parse_update_qualification_type_error(
                     .map_err(crate::error::UpdateQualificationTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3062,7 +3062,7 @@ pub fn parse_update_qualification_type_error(
                     .map_err(crate::error::UpdateQualificationTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp

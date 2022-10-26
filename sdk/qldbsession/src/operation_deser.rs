@@ -23,7 +23,7 @@ pub fn parse_send_command_error(
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendCommandError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -40,7 +40,7 @@ pub fn parse_send_command_error(
                     output = crate::json_deser::deser_structure_crate_error_capacity_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendCommandError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -57,7 +57,7 @@ pub fn parse_send_command_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_session_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendCommandError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -74,7 +74,7 @@ pub fn parse_send_command_error(
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendCommandError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -91,7 +91,7 @@ pub fn parse_send_command_error(
                     output = crate::json_deser::deser_structure_crate_error_occ_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendCommandError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -108,7 +108,7 @@ pub fn parse_send_command_error(
                     output = crate::json_deser::deser_structure_crate_error_rate_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendCommandError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp

@@ -32,7 +32,7 @@ pub fn parse_count_closed_workflow_executions_error(
                         output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CountClosedWorkflowExecutionsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -50,7 +50,7 @@ pub fn parse_count_closed_workflow_executions_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CountClosedWorkflowExecutionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -113,7 +113,7 @@ pub fn parse_count_open_workflow_executions_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CountOpenWorkflowExecutionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -130,7 +130,7 @@ pub fn parse_count_open_workflow_executions_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CountOpenWorkflowExecutionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -192,7 +192,7 @@ pub fn parse_count_pending_activity_tasks_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CountPendingActivityTasksError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -209,7 +209,7 @@ pub fn parse_count_pending_activity_tasks_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CountPendingActivityTasksError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -271,7 +271,7 @@ pub fn parse_count_pending_decision_tasks_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CountPendingDecisionTasksError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -288,7 +288,7 @@ pub fn parse_count_pending_decision_tasks_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CountPendingDecisionTasksError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -346,7 +346,7 @@ pub fn parse_deprecate_activity_type_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DeprecateActivityTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -363,7 +363,7 @@ pub fn parse_deprecate_activity_type_error(
                     output = crate::json_deser::deser_structure_crate_error_type_deprecated_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DeprecateActivityTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -380,7 +380,7 @@ pub fn parse_deprecate_activity_type_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DeprecateActivityTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -429,7 +429,7 @@ pub fn parse_deprecate_domain_error(
                     output = crate::json_deser::deser_structure_crate_error_domain_deprecated_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DeprecateDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -447,7 +447,7 @@ pub fn parse_deprecate_domain_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DeprecateDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -464,7 +464,7 @@ pub fn parse_deprecate_domain_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DeprecateDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -514,7 +514,7 @@ pub fn parse_deprecate_workflow_type_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DeprecateWorkflowTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -531,7 +531,7 @@ pub fn parse_deprecate_workflow_type_error(
                     output = crate::json_deser::deser_structure_crate_error_type_deprecated_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DeprecateWorkflowTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -548,7 +548,7 @@ pub fn parse_deprecate_workflow_type_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DeprecateWorkflowTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -601,7 +601,7 @@ pub fn parse_describe_activity_type_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeActivityTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -618,7 +618,7 @@ pub fn parse_describe_activity_type_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeActivityTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -673,7 +673,7 @@ pub fn parse_describe_domain_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -690,7 +690,7 @@ pub fn parse_describe_domain_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -749,7 +749,7 @@ pub fn parse_describe_workflow_execution_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeWorkflowExecutionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -766,7 +766,7 @@ pub fn parse_describe_workflow_execution_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeWorkflowExecutionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -824,7 +824,7 @@ pub fn parse_describe_workflow_type_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeWorkflowTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -841,7 +841,7 @@ pub fn parse_describe_workflow_type_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeWorkflowTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -903,7 +903,7 @@ pub fn parse_get_workflow_execution_history_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::GetWorkflowExecutionHistoryError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -920,7 +920,7 @@ pub fn parse_get_workflow_execution_history_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::GetWorkflowExecutionHistoryError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -976,7 +976,7 @@ pub fn parse_list_activity_types_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::ListActivityTypesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -993,7 +993,7 @@ pub fn parse_list_activity_types_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::ListActivityTypesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1054,7 +1054,7 @@ pub fn parse_list_closed_workflow_executions_error(
                         output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::ListClosedWorkflowExecutionsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1072,7 +1072,7 @@ pub fn parse_list_closed_workflow_executions_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::ListClosedWorkflowExecutionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1128,7 +1128,7 @@ pub fn parse_list_domains_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::ListDomainsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1187,7 +1187,7 @@ pub fn parse_list_open_workflow_executions_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::ListOpenWorkflowExecutionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1204,7 +1204,7 @@ pub fn parse_list_open_workflow_executions_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::ListOpenWorkflowExecutionsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1261,7 +1261,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1279,7 +1279,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1296,7 +1296,7 @@ pub fn parse_list_tags_for_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1352,7 +1352,7 @@ pub fn parse_list_workflow_types_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::ListWorkflowTypesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1369,7 +1369,7 @@ pub fn parse_list_workflow_types_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::ListWorkflowTypesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1424,7 +1424,7 @@ pub fn parse_poll_for_activity_task_error(
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::PollForActivityTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1442,7 +1442,7 @@ pub fn parse_poll_for_activity_task_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::PollForActivityTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1459,7 +1459,7 @@ pub fn parse_poll_for_activity_task_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::PollForActivityTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1516,7 +1516,7 @@ pub fn parse_poll_for_decision_task_error(
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::PollForDecisionTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1534,7 +1534,7 @@ pub fn parse_poll_for_decision_task_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::PollForDecisionTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1551,7 +1551,7 @@ pub fn parse_poll_for_decision_task_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::PollForDecisionTaskError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1613,7 +1613,7 @@ pub fn parse_record_activity_task_heartbeat_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RecordActivityTaskHeartbeatError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1630,7 +1630,7 @@ pub fn parse_record_activity_task_heartbeat_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RecordActivityTaskHeartbeatError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1687,7 +1687,7 @@ pub fn parse_register_activity_type_error(
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterActivityTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1705,7 +1705,7 @@ pub fn parse_register_activity_type_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterActivityTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1722,7 +1722,7 @@ pub fn parse_register_activity_type_error(
                     output = crate::json_deser::deser_structure_crate_error_type_already_exists_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterActivityTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1739,7 +1739,7 @@ pub fn parse_register_activity_type_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterActivityTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1788,7 +1788,7 @@ pub fn parse_register_domain_error(
                     output = crate::json_deser::deser_structure_crate_error_domain_already_exists_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1805,7 +1805,7 @@ pub fn parse_register_domain_error(
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1823,7 +1823,7 @@ pub fn parse_register_domain_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1840,7 +1840,7 @@ pub fn parse_register_domain_error(
                     output = crate::json_deser::deser_structure_crate_error_too_many_tags_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1889,7 +1889,7 @@ pub fn parse_register_workflow_type_error(
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterWorkflowTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1907,7 +1907,7 @@ pub fn parse_register_workflow_type_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterWorkflowTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1924,7 +1924,7 @@ pub fn parse_register_workflow_type_error(
                     output = crate::json_deser::deser_structure_crate_error_type_already_exists_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterWorkflowTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1941,7 +1941,7 @@ pub fn parse_register_workflow_type_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterWorkflowTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1995,7 +1995,7 @@ pub fn parse_request_cancel_workflow_execution_error(
                         output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RequestCancelWorkflowExecutionError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2013,7 +2013,7 @@ pub fn parse_request_cancel_workflow_execution_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RequestCancelWorkflowExecutionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2071,7 +2071,7 @@ pub fn parse_respond_activity_task_canceled_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RespondActivityTaskCanceledError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2088,7 +2088,7 @@ pub fn parse_respond_activity_task_canceled_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RespondActivityTaskCanceledError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2146,7 +2146,7 @@ pub fn parse_respond_activity_task_completed_error(
                         output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RespondActivityTaskCompletedError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2164,7 +2164,7 @@ pub fn parse_respond_activity_task_completed_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RespondActivityTaskCompletedError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2221,7 +2221,7 @@ pub fn parse_respond_activity_task_failed_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RespondActivityTaskFailedError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2238,7 +2238,7 @@ pub fn parse_respond_activity_task_failed_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RespondActivityTaskFailedError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2296,7 +2296,7 @@ pub fn parse_respond_decision_task_completed_error(
                         output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RespondDecisionTaskCompletedError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -2314,7 +2314,7 @@ pub fn parse_respond_decision_task_completed_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RespondDecisionTaskCompletedError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2371,7 +2371,7 @@ pub fn parse_signal_workflow_execution_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::SignalWorkflowExecutionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2388,7 +2388,7 @@ pub fn parse_signal_workflow_execution_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::SignalWorkflowExecutionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2444,7 +2444,7 @@ pub fn parse_start_workflow_execution_error(
                     output = crate::json_deser::deser_structure_crate_error_default_undefined_fault_json_err(response.body().as_ref(), output).map_err(crate::error::StartWorkflowExecutionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2461,7 +2461,7 @@ pub fn parse_start_workflow_execution_error(
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::StartWorkflowExecutionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2479,7 +2479,7 @@ pub fn parse_start_workflow_execution_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::StartWorkflowExecutionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2496,7 +2496,7 @@ pub fn parse_start_workflow_execution_error(
                     output = crate::json_deser::deser_structure_crate_error_type_deprecated_fault_json_err(response.body().as_ref(), output).map_err(crate::error::StartWorkflowExecutionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2513,7 +2513,7 @@ pub fn parse_start_workflow_execution_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::StartWorkflowExecutionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2531,7 +2531,7 @@ pub fn parse_start_workflow_execution_error(
                             output = crate::json_deser::deser_structure_crate_error_workflow_execution_already_started_fault_json_err(response.body().as_ref(), output).map_err(crate::error::StartWorkflowExecutionError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -2586,7 +2586,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2604,7 +2604,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2621,7 +2621,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_too_many_tags_fault_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2638,7 +2638,7 @@ pub fn parse_tag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2692,7 +2692,7 @@ pub fn parse_terminate_workflow_execution_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::TerminateWorkflowExecutionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2709,7 +2709,7 @@ pub fn parse_terminate_workflow_execution_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::TerminateWorkflowExecutionError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2766,7 +2766,7 @@ pub fn parse_undeprecate_activity_type_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::UndeprecateActivityTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2783,7 +2783,7 @@ pub fn parse_undeprecate_activity_type_error(
                     output = crate::json_deser::deser_structure_crate_error_type_already_exists_fault_json_err(response.body().as_ref(), output).map_err(crate::error::UndeprecateActivityTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2800,7 +2800,7 @@ pub fn parse_undeprecate_activity_type_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::UndeprecateActivityTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2850,7 +2850,7 @@ pub fn parse_undeprecate_domain_error(
                     output = crate::json_deser::deser_structure_crate_error_domain_already_exists_fault_json_err(response.body().as_ref(), output).map_err(crate::error::UndeprecateDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2868,7 +2868,7 @@ pub fn parse_undeprecate_domain_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::UndeprecateDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2885,7 +2885,7 @@ pub fn parse_undeprecate_domain_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::UndeprecateDomainError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2940,7 +2940,7 @@ pub fn parse_undeprecate_workflow_type_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::UndeprecateWorkflowTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2957,7 +2957,7 @@ pub fn parse_undeprecate_workflow_type_error(
                     output = crate::json_deser::deser_structure_crate_error_type_already_exists_fault_json_err(response.body().as_ref(), output).map_err(crate::error::UndeprecateWorkflowTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2974,7 +2974,7 @@ pub fn parse_undeprecate_workflow_type_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::UndeprecateWorkflowTypeError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3023,7 +3023,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3041,7 +3041,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3058,7 +3058,7 @@ pub fn parse_untag_resource_error(
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp

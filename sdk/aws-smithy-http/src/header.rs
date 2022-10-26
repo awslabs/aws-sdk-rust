@@ -604,10 +604,8 @@ mod test {
 
         let merged_header_map =
             append_merge_header_maps(left_hand_side_headers, right_hand_side_headers);
-        let actual_merged_values: Vec<_> = merged_header_map
-            .get_all(header_name.clone())
-            .into_iter()
-            .collect();
+        let actual_merged_values: Vec<_> =
+            merged_header_map.get_all(header_name).into_iter().collect();
 
         let expected_merged_values = vec![left_header_value, right_header_value];
 
@@ -630,10 +628,8 @@ mod test {
 
         let merged_header_map =
             append_merge_header_maps(left_hand_side_headers, right_hand_side_headers);
-        let actual_merged_values: Vec<_> = merged_header_map
-            .get_all(header_name.clone())
-            .into_iter()
-            .collect();
+        let actual_merged_values: Vec<_> =
+            merged_header_map.get_all(header_name).into_iter().collect();
 
         let expected_merged_values =
             vec![left_header_value_1, left_header_value_2, right_header_value];
@@ -655,10 +651,8 @@ mod test {
 
         let merged_header_map =
             append_merge_header_maps(left_hand_side_headers, right_hand_side_headers);
-        let actual_merged_values: Vec<_> = merged_header_map
-            .get_all(header_name.clone())
-            .into_iter()
-            .collect();
+        let actual_merged_values: Vec<_> =
+            merged_header_map.get_all(header_name).into_iter().collect();
 
         let expected_merged_values = vec![right_header_value_1, right_header_value_2];
 

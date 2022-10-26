@@ -532,7 +532,7 @@ mod tests {
                 .smithy_format_value
                 .as_ref()
                 .expect("parse test cases should always have a formatted value");
-            let actual = parse(&to_parse);
+            let actual = parse(to_parse);
 
             assert!(
                 actual.is_ok(),

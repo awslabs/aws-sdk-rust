@@ -30,7 +30,7 @@ pub fn parse_abort_multipart_upload_error(
                     .map_err(crate::error::AbortMultipartUploadError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -140,7 +140,7 @@ pub fn parse_copy_object_error(
                     output = crate::xml_deser::deser_structure_crate_error_object_not_in_active_tier_error_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyObjectError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -255,7 +255,7 @@ pub fn parse_create_bucket_error(
                     output = crate::xml_deser::deser_structure_crate_error_bucket_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateBucketError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -272,7 +272,7 @@ pub fn parse_create_bucket_error(
                     output = crate::xml_deser::deser_structure_crate_error_bucket_already_owned_by_you_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateBucketError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1840,7 +1840,7 @@ pub fn parse_get_object_error(
                         output = crate::xml_deser::deser_structure_crate_error_invalid_object_state_xml_err(response.body().as_ref(), output).map_err(crate::error::GetObjectError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -1862,7 +1862,7 @@ pub fn parse_get_object_error(
                     .map_err(crate::error::GetObjectError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1900,7 +1900,7 @@ pub fn parse_get_object_acl_error(
                     .map_err(crate::error::GetObjectAclError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -1968,7 +1968,7 @@ pub fn parse_get_object_attributes_error(
                     .map_err(crate::error::GetObjectAttributesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2230,7 +2230,7 @@ pub fn parse_head_bucket_error(
                     .map_err(crate::error::HeadBucketError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2280,7 +2280,7 @@ pub fn parse_head_object_error(
                     .map_err(crate::error::HeadObjectError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2812,7 +2812,7 @@ pub fn parse_list_objects_error(
                     .map_err(crate::error::ListObjectsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -2867,7 +2867,7 @@ pub fn parse_list_objects_v2_error(
                     .map_err(crate::error::ListObjectsV2Error::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3605,7 +3605,7 @@ pub fn parse_put_object_acl_error(
                     .map_err(crate::error::PutObjectAclError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -3811,7 +3811,7 @@ pub fn parse_restore_object_error(
                     output = crate::xml_deser::deser_structure_crate_error_object_already_in_active_tier_error_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreObjectError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp

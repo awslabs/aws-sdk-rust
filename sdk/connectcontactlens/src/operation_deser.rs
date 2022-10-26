@@ -26,7 +26,7 @@ pub fn parse_list_realtime_contact_analysis_segments_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -40,7 +40,7 @@ pub fn parse_list_realtime_contact_analysis_segments_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -54,7 +54,7 @@ pub fn parse_list_realtime_contact_analysis_segments_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -68,7 +68,7 @@ pub fn parse_list_realtime_contact_analysis_segments_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -82,7 +82,7 @@ pub fn parse_list_realtime_contact_analysis_segments_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp

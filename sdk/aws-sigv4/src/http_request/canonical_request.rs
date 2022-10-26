@@ -597,7 +597,7 @@ mod tests {
             region: "us-east-1",
             service: "iam",
         };
-        assert_eq!(format!("{}\n", scope.to_string()), expected);
+        assert_eq!(format!("{}\n", scope), expected);
     }
 
     #[test]

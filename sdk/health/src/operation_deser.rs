@@ -28,7 +28,7 @@ pub fn parse_describe_affected_accounts_for_organization_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -85,7 +85,7 @@ pub fn parse_describe_affected_entities_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_pagination_token_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAffectedEntitiesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -103,7 +103,7 @@ pub fn parse_describe_affected_entities_error(
                         output = crate::json_deser::deser_structure_crate_error_unsupported_locale_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAffectedEntitiesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -163,7 +163,7 @@ pub fn parse_describe_affected_entities_for_organization_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -177,7 +177,7 @@ pub fn parse_describe_affected_entities_for_organization_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -268,7 +268,7 @@ pub fn parse_describe_event_aggregates_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_pagination_token_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventAggregatesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -326,7 +326,7 @@ pub fn parse_describe_event_details_error(
                         output = crate::json_deser::deser_structure_crate_error_unsupported_locale_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventDetailsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -388,7 +388,7 @@ pub fn parse_describe_event_details_for_organization_error(
                             output = crate::json_deser::deser_structure_crate_error_unsupported_locale_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventDetailsForOrganizationError::unhandled)?;
                             output.build()
                         };
-                        if (&tmp.message).is_none() {
+                        if tmp.message.is_none() {
                             tmp.message = _error_message;
                         }
                         tmp
@@ -441,7 +441,7 @@ pub fn parse_describe_events_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_pagination_token_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventsError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -459,7 +459,7 @@ pub fn parse_describe_events_error(
                         output = crate::json_deser::deser_structure_crate_error_unsupported_locale_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventsError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -518,7 +518,7 @@ pub fn parse_describe_events_for_organization_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_pagination_token_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventsForOrganizationError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -536,7 +536,7 @@ pub fn parse_describe_events_for_organization_error(
                         output = crate::json_deser::deser_structure_crate_error_unsupported_locale_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventsForOrganizationError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -595,7 +595,7 @@ pub fn parse_describe_event_types_error(
                     output = crate::json_deser::deser_structure_crate_error_invalid_pagination_token_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventTypesError::unhandled)?;
                     output.build()
                 };
-                if (&tmp.message).is_none() {
+                if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
@@ -613,7 +613,7 @@ pub fn parse_describe_event_types_error(
                         output = crate::json_deser::deser_structure_crate_error_unsupported_locale_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventTypesError::unhandled)?;
                         output.build()
                     };
-                    if (&tmp.message).is_none() {
+                    if tmp.message.is_none() {
                         tmp.message = _error_message;
                     }
                     tmp
@@ -703,7 +703,7 @@ pub fn parse_disable_health_service_access_for_organization_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
@@ -758,7 +758,7 @@ pub fn parse_enable_health_service_access_for_organization_error(
                     output.build()
                 }
             ;
-            if (&tmp.message).is_none() {
+            if tmp.message.is_none() {
                                                         tmp.message = _error_message;
                                                     }
             tmp
