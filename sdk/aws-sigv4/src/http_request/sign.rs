@@ -311,6 +311,7 @@ mod tests {
     use crate::http_request::{SignatureLocation, SigningParams, SigningSettings};
     use http::{HeaderMap, HeaderValue};
     use pretty_assertions::assert_eq;
+    use proptest::proptest;
     use std::borrow::Cow;
     use std::time::Duration;
 
@@ -513,6 +514,62 @@ mod tests {
             .body("")
             .unwrap();
         assert_req_eq!(expected, signed);
+    }
+
+    #[test]
+    fn test_sign_headers_returning_expected_error_on_invalid_utf8() {
+        let settings = SigningSettings::default();
+        let params = SigningParams {
+            access_key: "123",
+            secret_key: "asdf",
+            security_token: None,
+            region: "us-east-1",
+            service_name: "foo",
+            time: std::time::SystemTime::now(),
+            settings,
+        };
+
+        let req = http::Request::builder()
+            .uri("https://foo.com/")
+            .header("x-sign-me", HeaderValue::from_bytes(&[0xC0, 0xC1]).unwrap())
+            .body(&[])
+            .unwrap();
+
+        let creq = crate::http_request::sign(SignableRequest::from(&req), &params);
+        assert!(creq.is_err());
+    }
+
+    proptest! {
+        #[test]
+        // Only byte values between 32 and 255 (inclusive) are permitted, excluding byte 127, for
+        // [HeaderValue](https://docs.rs/http/latest/http/header/struct.HeaderValue.html#method.from_bytes).
+        fn test_sign_headers_no_panic(
+            left in proptest::collection::vec(32_u8..=126, 0..100),
+            right in proptest::collection::vec(128_u8..=255, 0..100),
+        ) {
+            let settings = SigningSettings::default();
+            let params = SigningParams {
+                access_key: "123",
+                secret_key: "asdf",
+                security_token: None,
+                region: "us-east-1",
+                service_name: "foo",
+                time: std::time::SystemTime::now(),
+                settings,
+            };
+
+            let bytes = left.iter().chain(right.iter()).cloned().collect::<Vec<_>>();
+            let req = http::Request::builder()
+                .uri("https://foo.com/")
+                .header("x-sign-me", HeaderValue::from_bytes(&bytes).unwrap())
+                .body(&[])
+                .unwrap();
+
+            // The test considered a pass if the creation of `creq` does not panic.
+            let _creq = crate::http_request::sign(
+                SignableRequest::from(&req),
+                &params);
+        }
     }
 
     #[test]
