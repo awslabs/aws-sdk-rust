@@ -507,10 +507,10 @@ mod tests {
     };
     use crate::http_request::{SignatureLocation, SigningParams};
     use crate::sign::sha256_hex_string;
-    use http::HeaderValue;
     use http::Uri;
+    use http::{header::HeaderName, HeaderValue};
     use pretty_assertions::assert_eq;
-    use proptest::proptest;
+    use proptest::{prelude::*, proptest};
     use std::time::Duration;
 
     fn signing_params(settings: SigningSettings) -> SigningParams<'static> {
@@ -705,6 +705,47 @@ mod tests {
             "content-length;content-type;host",
             values.signed_headers.as_str()
         );
+    }
+
+    proptest! {
+       #[test]
+       fn presigning_header_exclusion_with_explicit_exclusion_list_specified(
+           excluded_headers in prop::collection::vec("[a-z]{1,20}", 1..10),
+       ) {
+            let mut request_builder = http::Request::builder()
+                .uri("https://some-endpoint.some-region.amazonaws.com")
+                .header("content-type", "application/xml")
+                .header("content-length", "0");
+            for key in &excluded_headers {
+                request_builder = request_builder.header(key, "value");
+            }
+            let request = request_builder.body("").unwrap();
+
+            let request = SignableRequest::from(&request);
+
+            let settings = SigningSettings {
+                signature_location: SignatureLocation::QueryParams,
+                expires_in: Some(Duration::from_secs(30)),
+                excluded_headers: Some(
+                    excluded_headers
+                        .into_iter()
+                        .map(|header_string| {
+                            HeaderName::from_static(Box::leak(header_string.into_boxed_str()))
+                        })
+                        .collect(),
+                ),
+                ..Default::default()
+            };
+
+            let signing_params = signing_params(settings);
+            let canonical = CanonicalRequest::from(&request, &signing_params).unwrap();
+
+            let values = canonical.values.into_query_params().unwrap();
+            assert_eq!(
+                "content-length;content-type;host",
+                values.signed_headers.as_str()
+            );
+        }
     }
 
     #[test]
