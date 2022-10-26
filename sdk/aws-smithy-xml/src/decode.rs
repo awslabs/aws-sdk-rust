@@ -540,7 +540,7 @@ mod test {
     }
 
     #[test]
-    fn escape_data() {
+    fn unescape_data() {
         let xml = r#"<Response key="&quot;hey&quot;>">&gt;</Response>"#;
         let mut doc = Document::new(xml);
         let mut root = doc.root_element().unwrap();
