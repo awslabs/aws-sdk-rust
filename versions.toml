@@ -1,4 +1,4 @@
-smithy_rs_revision = '18d969e16000a4fa1283e0532f3cd71748ea67d7'
+smithy_rs_revision = '374a0a25f83f5bae92bfac785cf783891bbb1937'
 aws_doc_sdk_examples_revision = '663a48cc0c12a4d046f84fda52d04d0dadd0be5a'
 
 [manual_interventions]
@@ -6,7 +6,7 @@ crates_to_remove = []
 [crates.aws-config]
 category = 'AwsRuntime'
 version = '0.50.0'
-source_hash = '3f7a02d9e9800a6639b461f36aca47c798a8382c879849021a0b39757f761bb4'
+source_hash = 'be1ae7d3df91b70a8328060fe4f0ca73c2d72d6c09f99651b9e9034385c132b0'
 
 [crates.aws-endpoint]
 category = 'AwsRuntime'

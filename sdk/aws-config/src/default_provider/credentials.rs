@@ -212,6 +212,14 @@ impl Builder {
         self
     }
 
+    /// Override the IMDS client used for this provider
+    ///
+    /// When unset, the default IMDS client will be used.
+    pub fn imds_client(mut self, client: crate::imds::Client) -> Self {
+        self.imds_builder = self.imds_builder.imds_client(client);
+        self
+    }
+
     /// Override the configuration used for this provider
     pub fn configure(mut self, config: ProviderConfig) -> Self {
         self.region_chain = self.region_chain.configure(&config);
