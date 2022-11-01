@@ -7,10 +7,6 @@ on:
 env:
   rust_version: nightly-2022-07-25
 
-  # RUSTSEC-2021-0127
-  # serde_cbor is being imported by criterion, a benchmarking crate. More info here https://github.com/awslabs/smithy-rs/issues/1044
-  cargo_audit_flags: --ignore RUSTSEC-2021-0127
-
 jobs:
   audit-latest:
     name: Audit Latest Dependencies
@@ -25,7 +21,7 @@ jobs:
         run: cargo install cargo-audit
       - name: Run audit
         run: |
-          cargo audit ${{ env.cargo_audit_flags }}
+          cargo audit
 
   audit-minimal-versions:
     name: Audit Minimal Versions
@@ -65,4 +61,4 @@ jobs:
 
           # Generate a lockfile at the minimum possible versions
           cargo generate-lockfile -Zminimal-versions
-          cargo audit ${{ env.cargo_audit_flags }}
+          cargo audit
