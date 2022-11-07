@@ -83,4 +83,5 @@ jobs:
             run --sdk-release-tag ${SDK_RELEASE_TAG} \
                 --lambda-code-s3-bucket-name ${LAMBDA_CODE_S3_BUCKET_NAME} \
                 --lambda-test-s3-bucket-name ${LAMBDA_TEST_S3_BUCKET_NAME} \
-                --lambda-execution-role-arn ${LAMBDA_EXECUTION_ROLE_ARN}
+                --lambda-execution-role-arn ${LAMBDA_EXECUTION_ROLE_ARN} \
+                --musl
