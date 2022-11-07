@@ -60,6 +60,11 @@ jobs:
           path: smithy-rs
           # Fetch all history so that the runner can change to different commits
           fetch-depth: 0
+      # Each canary run uses a different Rust version, and the `rust-toolchain.toml`
+      # file interferes with that version selection.
+      - name: Delete `rust-toolchain.toml`
+        working-directory: smithy-rs
+        run: rm rust-toolchain.toml
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: ${{ matrix.rust_version }}
