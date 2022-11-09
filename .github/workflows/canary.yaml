@@ -4,7 +4,7 @@ on:
     - cron: "0 0 * * *"
   workflow_dispatch:
 env:
-  tool_rust_version: 1.61.0
+  tool_rust_version: 1.62.1
 
 jobs:
   generate-canary-matrix:
@@ -29,7 +29,7 @@ jobs:
         run: |
           cargo build
           # Rust versions should just be the MSRV and the latest stable compiler
-          echo "::set-output name=matrix::$(cargo run -- generate-matrix --sdk-versions 3 --rust-versions 1.61.0 stable)"
+          echo "::set-output name=matrix::$(cargo run -- generate-matrix --sdk-versions 3 --rust-versions 1.62.1 stable)"
     outputs:
       matrix: ${{ steps.generate-matrix.outputs.matrix }}
 
