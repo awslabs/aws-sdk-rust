@@ -92,6 +92,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p> Specifies whether Amazon AppFlow aggregates the flow records into a single file, or\n      leave them unaggregated. </p>"
                     }
+                },
+                "targetFileSize": {
+                    "target": "com.amazonaws.appflow#Long",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The desired file size, in MB, for each output file that Amazon AppFlow writes to the\n      flow destination. For each file, Amazon AppFlow attempts to achieve the size that you\n      specify. The actual file sizes might differ from this target based on the number and size of\n      the records that each file contains.</p>"
+                    }
                 }
             },
             "traits": {
@@ -483,6 +489,17 @@
                 "smithy.api#pattern": ".*"
             }
         },
+        "com.amazonaws.appflow#CatalogType": {
+            "type": "enum",
+            "members": {
+                "GLUE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "GLUE"
+                    }
+                }
+            }
+        },
         "com.amazonaws.appflow#ClientCredentialsArn": {
             "type": "string",
             "traits": {
@@ -523,6 +540,16 @@
                 },
                 "smithy.api#pattern": "^\\S+$",
                 "smithy.api#sensitive": {}
+            }
+        },
+        "com.amazonaws.appflow#ClusterIdentifier": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 512
+                },
+                "smithy.api#pattern": "^\\S+$"
             }
         },
         "com.amazonaws.appflow#ConflictException": {
@@ -1353,8 +1380,7 @@
                 "connectorProfileCredentials": {
                     "target": "com.amazonaws.appflow#ConnectorProfileCredentials",
                     "traits": {
-                        "smithy.api#documentation": "<p> The connector-specific credentials required by each connector. </p>",
-                        "smithy.api#required": {}
+                        "smithy.api#documentation": "<p> The connector-specific credentials required by each connector. </p>"
                     }
                 }
             },
@@ -2103,6 +2129,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p> The tags used to organize, track, or control access for your flow. </p>"
                     }
+                },
+                "metadataCatalogConfig": {
+                    "target": "com.amazonaws.appflow#MetadataCatalogConfig",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data\n      that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a\n      flow, it stores metadata in a data catalog.</p>"
+                    }
                 }
             }
         },
@@ -2406,6 +2438,16 @@
                 "smithy.api#documentation": "<p> The connector metadata specific to Amazon Connect Customer Profiles. </p>"
             }
         },
+        "com.amazonaws.appflow#DataApiRoleArn": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 512
+                },
+                "smithy.api#pattern": "^arn:aws:iam:.*:[0-9]+:"
+            }
+        },
         "com.amazonaws.appflow#DataPullMode": {
             "type": "enum",
             "members": {
@@ -2421,6 +2463,16 @@
                         "smithy.api#enumValue": "Complete"
                     }
                 }
+            }
+        },
+        "com.amazonaws.appflow#DatabaseName": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 512
+                },
+                "smithy.api#pattern": "^\\S+$"
             }
         },
         "com.amazonaws.appflow#DatabaseUrl": {
@@ -3202,6 +3254,24 @@
                     "traits": {
                         "smithy.api#documentation": "<p> The tags used to organize, track, or control access for your flow. </p>"
                     }
+                },
+                "metadataCatalogConfig": {
+                    "target": "com.amazonaws.appflow#MetadataCatalogConfig",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data\n      that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a\n      flow, it stores metadata in a data catalog.</p>"
+                    }
+                },
+                "lastRunMetadataCatalogDetails": {
+                    "target": "com.amazonaws.appflow#MetadataCatalogDetails",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>"
+                    }
+                },
+                "schemaVersion": {
+                    "target": "com.amazonaws.appflow#Long",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The version number of your data schema. Amazon AppFlow assigns this version number.\n      The version number increases by one when you change any of the following settings in your flow\n      configuration:</p>\n         <ul>\n            <li>\n               <p>Source-to-destination field mappings</p>\n            </li>\n            <li>\n               <p>Field data types</p>\n            </li>\n            <li>\n               <p>Partition keys</p>\n            </li>\n         </ul>"
+                    }
                 }
             }
         },
@@ -3765,6 +3835,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p> The timestamp that indicates the last new or updated record to be transferred in the flow\n      run. </p>"
                     }
+                },
+                "metadataCatalogDetails": {
+                    "target": "com.amazonaws.appflow#MetadataCatalogDetails",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>"
+                    }
                 }
             },
             "traits": {
@@ -4109,6 +4185,65 @@
                     "max": 2048
                 },
                 "smithy.api#pattern": "^[\\s\\w/!@#+=.-]*$"
+            }
+        },
+        "com.amazonaws.appflow#GlueDataCatalogConfig": {
+            "type": "structure",
+            "members": {
+                "roleArn": {
+                    "target": "com.amazonaws.appflow#GlueDataCatalogIAMRole",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of an IAM role that grants Amazon AppFlow the permissions it needs to create Data Catalog tables, databases, and\n      partitions.</p>\n         <p>For an example IAM policy that has the required permissions, see <a href=\"https://docs.aws.amazon.com/appflow/latest/userguide/security_iam_id-based-policy-examples.html\">Identity-based\n        policy examples for Amazon AppFlow</a>.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "databaseName": {
+                    "target": "com.amazonaws.appflow#GlueDataCatalogDatabaseName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the Data Catalog database that stores the metadata tables that\n        Amazon AppFlow creates in your Amazon Web Services account. These tables contain\n      metadata for the data that's transferred by the flow that you configure with this\n      parameter.</p>\n         <note>\n            <p>When you configure a new flow with this parameter, you must specify an existing\n        database.</p>\n         </note>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "tablePrefix": {
+                    "target": "com.amazonaws.appflow#GlueDataCatalogTablePrefix",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A naming prefix for each Data Catalog table that Amazon AppFlow creates for\n      the flow that you configure with this setting. Amazon AppFlow adds the prefix to the\n      beginning of the each table name.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Specifies the configuration that Amazon AppFlow uses when it catalogs your data with\n      the Glue Data Catalog. When Amazon AppFlow catalogs your data, it stores\n      metadata in Data Catalog tables. This metadata represents the data that's transferred\n      by the flow that you configure with these settings.</p>\n         <note>\n            <p>You can configure a flow with these settings only when the flow destination is Amazon S3.</p>\n         </note>"
+            }
+        },
+        "com.amazonaws.appflow#GlueDataCatalogDatabaseName": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 255
+                },
+                "smithy.api#pattern": "^[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\t]*$"
+            }
+        },
+        "com.amazonaws.appflow#GlueDataCatalogIAMRole": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 512
+                },
+                "smithy.api#pattern": "^arn:aws:iam:.*:[0-9]+:"
+            }
+        },
+        "com.amazonaws.appflow#GlueDataCatalogTablePrefix": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 128
+                },
+                "smithy.api#pattern": "^[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\t]*$"
             }
         },
         "com.amazonaws.appflow#GoogleAnalyticsConnectorOperator": {
@@ -5035,6 +5170,58 @@
                 }
             }
         },
+        "com.amazonaws.appflow#MetadataCatalogConfig": {
+            "type": "structure",
+            "members": {
+                "glueDataCatalog": {
+                    "target": "com.amazonaws.appflow#GlueDataCatalogConfig",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the configuration that Amazon AppFlow uses when it catalogs your data with\n      the Glue Data Catalog.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Specifies the configuration that Amazon AppFlow uses when it catalogs your data.\n      When Amazon AppFlow catalogs your data, it stores metadata in a data catalog.</p>"
+            }
+        },
+        "com.amazonaws.appflow#MetadataCatalogDetail": {
+            "type": "structure",
+            "members": {
+                "catalogType": {
+                    "target": "com.amazonaws.appflow#CatalogType",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The type of metadata catalog that Amazon AppFlow used for the associated flow run.\n      This parameter returns the following value:</p>\n         <dl>\n            <dt>GLUE</dt>\n            <dd>\n               <p>The metadata catalog is provided by the Glue Data Catalog. Glue includes the Glue Data Catalog as a component.</p>\n            </dd>\n         </dl>"
+                    }
+                },
+                "tableName": {
+                    "target": "com.amazonaws.appflow#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the table that stores the metadata for the associated flow run. The table\n      stores metadata that represents the data that the flow transferred. Amazon AppFlow\n      stores the table in the metadata catalog.</p>"
+                    }
+                },
+                "tableRegistrationOutput": {
+                    "target": "com.amazonaws.appflow#RegistrationOutput",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Describes the status of the attempt from Amazon AppFlow to register the metadata\n      table with the metadata catalog. Amazon AppFlow creates or updates this table for the\n      associated flow run.</p>"
+                    }
+                },
+                "partitionRegistrationOutput": {
+                    "target": "com.amazonaws.appflow#RegistrationOutput",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Describes the status of the attempt from Amazon AppFlow to register the data\n      partitions with the metadata catalog. The data partitions organize the flow output into a\n      hierarchical path, such as a folder path in an S3 bucket. Amazon AppFlow creates the\n      partitions (if they don't already exist) based on your flow configuration.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>"
+            }
+        },
+        "com.amazonaws.appflow#MetadataCatalogDetails": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.appflow#MetadataCatalogDetail"
+            }
+        },
         "com.amazonaws.appflow#MostRecentExecutionMessage": {
             "type": "string",
             "traits": {
@@ -5598,6 +5785,12 @@
                     "traits": {
                         "smithy.api#enumValue": "INCLUDE_NEW_FIELDS"
                     }
+                },
+                "ORDERED_PARTITION_KEYS_LIST": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ORDERED_PARTITION_KEYS_LIST"
+                    }
                 }
             }
         },
@@ -5743,6 +5936,29 @@
                 "smithy.api#sensitive": {}
             }
         },
+        "com.amazonaws.appflow#PathPrefix": {
+            "type": "enum",
+            "members": {
+                "EXECUTION_ID": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "EXECUTION_ID"
+                    }
+                },
+                "SCHEMA_VERSION": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "SCHEMA_VERSION"
+                    }
+                }
+            }
+        },
+        "com.amazonaws.appflow#PathPrefixHierarchy": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.appflow#PathPrefix"
+            }
+        },
         "com.amazonaws.appflow#PortNumber": {
             "type": "integer",
             "traits": {
@@ -5759,18 +5975,24 @@
                 "prefixType": {
                     "target": "com.amazonaws.appflow#PrefixType",
                     "traits": {
-                        "smithy.api#documentation": "<p> Determines the format of the prefix, and whether it applies to the file name, file path,\n      or both. </p>"
+                        "smithy.api#documentation": "<p>Determines the format of the prefix, and whether it applies to the file name, file path,\n      or both. </p>"
                     }
                 },
                 "prefixFormat": {
                     "target": "com.amazonaws.appflow#PrefixFormat",
                     "traits": {
-                        "smithy.api#documentation": "<p> Determines the level of granularity that's included in the prefix. </p>"
+                        "smithy.api#documentation": "<p>Determines the level of granularity for the date and time that's included in the prefix.\n    </p>"
+                    }
+                },
+                "pathPrefixHierarchy": {
+                    "target": "com.amazonaws.appflow#PathPrefixHierarchy",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies whether the destination file path includes either or both of the following\n      elements:</p>\n         <dl>\n            <dt>EXECUTION_ID</dt>\n            <dd>\n               <p>The ID that Amazon AppFlow assigns to the flow run.</p>\n            </dd>\n            <dt>SCHEMA_VERSION</dt>\n            <dd>\n               <p>The version number of your data schema. Amazon AppFlow assigns this version\n            number. The version number increases by one when you change any of the following\n            settings in your flow configuration:</p>\n               <ul>\n                  <li>\n                     <p>Source-to-destination field mappings</p>\n                  </li>\n                  <li>\n                     <p>Field data types</p>\n                  </li>\n                  <li>\n                     <p>Partition keys</p>\n                  </li>\n               </ul>\n            </dd>\n         </dl>"
                     }
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p> Determines the prefix that Amazon AppFlow applies to the destination folder name.\n      You can name your destination folders according to the flow frequency and date. </p>"
+                "smithy.api#documentation": "<p>Specifies elements that Amazon AppFlow includes in the file and folder names in the flow\n      destination.</p>"
             }
         },
         "com.amazonaws.appflow#PrefixFormat": {
@@ -6016,17 +6238,15 @@
             "type": "structure",
             "members": {
                 "username": {
-                    "target": "com.amazonaws.appflow#Username",
+                    "target": "com.amazonaws.appflow#String",
                     "traits": {
-                        "smithy.api#documentation": "<p> The name of the user. </p>",
-                        "smithy.api#required": {}
+                        "smithy.api#documentation": "<p> The name of the user. </p>"
                     }
                 },
                 "password": {
                     "target": "com.amazonaws.appflow#Password",
                     "traits": {
-                        "smithy.api#documentation": "<p> The password that corresponds to the user name. </p>",
-                        "smithy.api#required": {}
+                        "smithy.api#documentation": "<p> The password that corresponds to the user name. </p>"
                     }
                 }
             },
@@ -6040,8 +6260,7 @@
                 "databaseUrl": {
                     "target": "com.amazonaws.appflow#DatabaseUrl",
                     "traits": {
-                        "smithy.api#documentation": "<p> The JDBC URL of the Amazon Redshift cluster. </p>",
-                        "smithy.api#required": {}
+                        "smithy.api#documentation": "<p> The JDBC URL of the Amazon Redshift cluster. </p>"
                     }
                 },
                 "bucketName": {
@@ -6060,8 +6279,39 @@
                 "roleArn": {
                     "target": "com.amazonaws.appflow#RoleArn",
                     "traits": {
-                        "smithy.api#documentation": "<p> The Amazon Resource Name (ARN) of the IAM role. </p>",
+                        "smithy.api#documentation": "<p> The Amazon Resource Name (ARN) of IAM role that grants Amazon Redshift\n      read-only access to Amazon S3. For more information, and for the polices that you\n      attach to this role, see <a href=\"https://docs.aws.amazon.com/appflow/latest/userguide/security_iam_service-role-policies.html#redshift-access-s3\">Allow Amazon Redshift to access your Amazon AppFlow data in Amazon S3</a>.</p>",
                         "smithy.api#required": {}
+                    }
+                },
+                "dataApiRoleArn": {
+                    "target": "com.amazonaws.appflow#DataApiRoleArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of an IAM role that permits Amazon AppFlow to access your Amazon Redshift database through the Data API. For more\n      information, and for the polices that you attach to this role, see <a href=\"https://docs.aws.amazon.com/appflow/latest/userguide/security_iam_service-role-policies.html#access-redshift\">Allow Amazon AppFlow to access Amazon Redshift databases with the Data\n        API</a>.</p>"
+                    }
+                },
+                "isRedshiftServerless": {
+                    "target": "com.amazonaws.appflow#Boolean",
+                    "traits": {
+                        "smithy.api#default": false,
+                        "smithy.api#documentation": "<p>Indicates whether the connector profile defines a connection to an Amazon Redshift\n      Serverless data warehouse.</p>"
+                    }
+                },
+                "clusterIdentifier": {
+                    "target": "com.amazonaws.appflow#ClusterIdentifier",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The unique ID that's assigned to an Amazon Redshift cluster.</p>"
+                    }
+                },
+                "workgroupName": {
+                    "target": "com.amazonaws.appflow#WorkgroupName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of an Amazon Redshift workgroup.</p>"
+                    }
+                },
+                "databaseName": {
+                    "target": "com.amazonaws.appflow#DatabaseName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of an Amazon Redshift database.</p>"
                     }
                 }
             },
@@ -6174,7 +6424,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Registers a new connector with your Amazon Web Services account. Before you can register\n      the connector, you must deploy lambda in your account.</p>",
+                "smithy.api#documentation": "<p>Registers a new custom connector with your Amazon Web Services account. Before you can\n      register the connector, you must deploy the associated AWS lambda function in your\n      account.</p>",
                 "smithy.api#http": {
                     "method": "POST",
                     "uri": "/register-connector",
@@ -6230,6 +6480,32 @@
                     "max": 512
                 },
                 "smithy.api#pattern": "^\\S+$"
+            }
+        },
+        "com.amazonaws.appflow#RegistrationOutput": {
+            "type": "structure",
+            "members": {
+                "message": {
+                    "target": "com.amazonaws.appflow#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Explains the status of the registration attempt from Amazon AppFlow. If the attempt\n      fails, the message explains why.</p>"
+                    }
+                },
+                "result": {
+                    "target": "com.amazonaws.appflow#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Indicates the number of resources that Amazon AppFlow created or updated. Possible\n      resources include metadata tables and data partitions.</p>"
+                    }
+                },
+                "status": {
+                    "target": "com.amazonaws.appflow#ExecutionStatus",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Indicates the status of the registration attempt from Amazon AppFlow.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Describes the status of an attempt from Amazon AppFlow to register a\n      resource.</p>\n         <p>When you run a flow that you've configured to use a metadata catalog, Amazon AppFlow\n      registers a metadata table and data partitions with that catalog. This operation provides the\n      status of that registration attempt. The operation also indicates how many related resources\n        Amazon AppFlow created or updated.</p>"
             }
         },
         "com.amazonaws.appflow#ResourceNotFoundException": {
@@ -7051,7 +7327,7 @@
                 "dataTransferApi": {
                     "target": "com.amazonaws.appflow#SalesforceDataTransferApi",
                     "traits": {
-                        "smithy.api#documentation": "<p>Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers\n      data from Salesforce.</p>\n         <dl>\n            <dt>AUTOMATIC</dt>\n            <dd>\n               <p>The default. Amazon AppFlow selects which API to use based on the number of\n            records that your flow transfers from Salesforce. If your flow transfers fewer than\n            1,000,000 records, Amazon AppFlow uses Salesforce REST API. If your flow transfers\n            1,000,000 records or more, Amazon AppFlow uses Salesforce Bulk API 2.0.</p>\n               <p>Each of these Salesforce APIs structures data differently. If Amazon AppFlow\n            selects the API automatically, be aware that, for recurring flows, the data output might\n            vary from one flow run to the next. For example, if a flow runs daily, it might use REST\n            API on one day to transfer 900,000 records, and it might use Bulk API 2.0 on the next\n            day to transfer 1,100,000 records. For each of these flow runs, the respective\n            Salesforce API formats the data differently. Some of the differences include how dates\n            are formatted and null values are represented. Also, Bulk API 2.0 doesn't transfer\n            Salesforce compound fields.</p>\n               <p>By choosing this option, you optimize flow performance for both small and large data\n            transfers, but the tradeoff is inconsistent formatting in the output.</p>\n            </dd>\n            <dt>BULKV2</dt>\n            <dd>\n               <p>Amazon AppFlow uses only Salesforce Bulk API 2.0. This API runs asynchronous\n            data transfers, and it's optimal for large sets of data. By choosing this option, you\n            ensure that your flow writes consistent output, but you optimize performance only for\n            large data transfers.</p>\n               <p>Note that Bulk API 2.0 does not transfer Salesforce compound fields.</p>\n            </dd>\n            <dt>REST_SYNC</dt>\n            <dd>\n               <p>Amazon AppFlow uses only Salesforce REST API. By choosing this option, you\n            ensure that your flow writes consistent output, but you decrease performance for large\n            data transfers that are better suited for Bulk API 2.0. In some cases, if your flow\n            attempts to transfer a vary large set of data, it might fail with a timed out\n            error.</p>\n            </dd>\n         </dl>"
+                        "smithy.api#documentation": "<p>Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers\n      data from Salesforce.</p>\n         <dl>\n            <dt>AUTOMATIC</dt>\n            <dd>\n               <p>The default. Amazon AppFlow selects which API to use based on the number of\n            records that your flow transfers from Salesforce. If your flow transfers fewer than\n            1,000,000 records, Amazon AppFlow uses Salesforce REST API. If your flow transfers\n            1,000,000 records or more, Amazon AppFlow uses Salesforce Bulk API 2.0.</p>\n               <p>Each of these Salesforce APIs structures data differently. If Amazon AppFlow\n            selects the API automatically, be aware that, for recurring flows, the data output might\n            vary from one flow run to the next. For example, if a flow runs daily, it might use REST\n            API on one day to transfer 900,000 records, and it might use Bulk API 2.0 on the next\n            day to transfer 1,100,000 records. For each of these flow runs, the respective\n            Salesforce API formats the data differently. Some of the differences include how dates\n            are formatted and null values are represented. Also, Bulk API 2.0 doesn't transfer\n            Salesforce compound fields.</p>\n               <p>By choosing this option, you optimize flow performance for both small and large data\n            transfers, but the tradeoff is inconsistent formatting in the output.</p>\n            </dd>\n            <dt>BULKV2</dt>\n            <dd>\n               <p>Amazon AppFlow uses only Salesforce Bulk API 2.0. This API runs asynchronous\n            data transfers, and it's optimal for large sets of data. By choosing this option, you\n            ensure that your flow writes consistent output, but you optimize performance only for\n            large data transfers.</p>\n               <p>Note that Bulk API 2.0 does not transfer Salesforce compound fields.</p>\n            </dd>\n            <dt>REST_SYNC</dt>\n            <dd>\n               <p>Amazon AppFlow uses only Salesforce REST API. By choosing this option, you\n            ensure that your flow writes consistent output, but you decrease performance for large\n            data transfers that are better suited for Bulk API 2.0. In some cases, if your flow\n            attempts to transfer a vary large set of data, it might fail wituh a timed out\n            error.</p>\n            </dd>\n         </dl>"
                     }
                 }
             },
@@ -7127,6 +7403,9 @@
                     "target": "com.amazonaws.appflow#UpdateConnectorProfile"
                 },
                 {
+                    "target": "com.amazonaws.appflow#UpdateConnectorRegistration"
+                },
+                {
                     "target": "com.amazonaws.appflow#UpdateFlow"
                 }
             ],
@@ -7149,7 +7428,7 @@
                     "parameters": {
                         "Region": {
                             "builtIn": "AWS::Region",
-                            "required": false,
+                            "required": true,
                             "documentation": "The AWS region used to dispatch the request.",
                             "type": "String"
                         },
@@ -7469,8 +7748,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "ap-south-1",
                                 "UseDualStack": true,
+                                "Region": "ap-south-1",
                                 "UseFIPS": true
                             }
                         },
@@ -7482,8 +7761,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "ap-south-1",
                                 "UseDualStack": false,
+                                "Region": "ap-south-1",
                                 "UseFIPS": true
                             }
                         },
@@ -7495,8 +7774,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "ap-south-1",
                                 "UseDualStack": true,
+                                "Region": "ap-south-1",
                                 "UseFIPS": false
                             }
                         },
@@ -7508,8 +7787,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "ap-south-1",
                                 "UseDualStack": false,
+                                "Region": "ap-south-1",
                                 "UseFIPS": false
                             }
                         },
@@ -7521,8 +7800,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "ca-central-1",
                                 "UseDualStack": true,
+                                "Region": "ca-central-1",
                                 "UseFIPS": true
                             }
                         },
@@ -7534,8 +7813,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "ca-central-1",
                                 "UseDualStack": false,
+                                "Region": "ca-central-1",
                                 "UseFIPS": true
                             }
                         },
@@ -7547,8 +7826,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "ca-central-1",
                                 "UseDualStack": true,
+                                "Region": "ca-central-1",
                                 "UseFIPS": false
                             }
                         },
@@ -7560,8 +7839,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "ca-central-1",
                                 "UseDualStack": false,
+                                "Region": "ca-central-1",
                                 "UseFIPS": false
                             }
                         },
@@ -7573,8 +7852,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "eu-central-1",
                                 "UseDualStack": true,
+                                "Region": "eu-central-1",
                                 "UseFIPS": true
                             }
                         },
@@ -7586,8 +7865,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "eu-central-1",
                                 "UseDualStack": false,
+                                "Region": "eu-central-1",
                                 "UseFIPS": true
                             }
                         },
@@ -7599,8 +7878,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "eu-central-1",
                                 "UseDualStack": true,
+                                "Region": "eu-central-1",
                                 "UseFIPS": false
                             }
                         },
@@ -7612,8 +7891,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "eu-central-1",
                                 "UseDualStack": false,
+                                "Region": "eu-central-1",
                                 "UseFIPS": false
                             }
                         },
@@ -7625,8 +7904,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-west-1",
                                 "UseDualStack": true,
+                                "Region": "us-west-1",
                                 "UseFIPS": true
                             }
                         },
@@ -7638,8 +7917,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-west-1",
                                 "UseDualStack": false,
+                                "Region": "us-west-1",
                                 "UseFIPS": true
                             }
                         },
@@ -7651,8 +7930,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-west-1",
                                 "UseDualStack": true,
+                                "Region": "us-west-1",
                                 "UseFIPS": false
                             }
                         },
@@ -7664,8 +7943,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-west-1",
                                 "UseDualStack": false,
+                                "Region": "us-west-1",
                                 "UseFIPS": false
                             }
                         },
@@ -7677,8 +7956,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-west-2",
                                 "UseDualStack": true,
+                                "Region": "us-west-2",
                                 "UseFIPS": true
                             }
                         },
@@ -7690,8 +7969,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-west-2",
                                 "UseDualStack": false,
+                                "Region": "us-west-2",
                                 "UseFIPS": true
                             }
                         },
@@ -7703,8 +7982,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-west-2",
                                 "UseDualStack": true,
+                                "Region": "us-west-2",
                                 "UseFIPS": false
                             }
                         },
@@ -7716,8 +7995,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-west-2",
                                 "UseDualStack": false,
+                                "Region": "us-west-2",
                                 "UseFIPS": false
                             }
                         },
@@ -7729,8 +8008,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "af-south-1",
                                 "UseDualStack": true,
+                                "Region": "af-south-1",
                                 "UseFIPS": true
                             }
                         },
@@ -7742,8 +8021,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "af-south-1",
                                 "UseDualStack": false,
+                                "Region": "af-south-1",
                                 "UseFIPS": true
                             }
                         },
@@ -7755,8 +8034,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "af-south-1",
                                 "UseDualStack": true,
+                                "Region": "af-south-1",
                                 "UseFIPS": false
                             }
                         },
@@ -7768,8 +8047,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "af-south-1",
                                 "UseDualStack": false,
+                                "Region": "af-south-1",
                                 "UseFIPS": false
                             }
                         },
@@ -7781,8 +8060,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "eu-west-3",
                                 "UseDualStack": true,
+                                "Region": "eu-west-3",
                                 "UseFIPS": true
                             }
                         },
@@ -7794,8 +8073,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "eu-west-3",
                                 "UseDualStack": false,
+                                "Region": "eu-west-3",
                                 "UseFIPS": true
                             }
                         },
@@ -7807,8 +8086,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "eu-west-3",
                                 "UseDualStack": true,
+                                "Region": "eu-west-3",
                                 "UseFIPS": false
                             }
                         },
@@ -7820,8 +8099,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "eu-west-3",
                                 "UseDualStack": false,
+                                "Region": "eu-west-3",
                                 "UseFIPS": false
                             }
                         },
@@ -7833,8 +8112,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "eu-west-2",
                                 "UseDualStack": true,
+                                "Region": "eu-west-2",
                                 "UseFIPS": true
                             }
                         },
@@ -7846,8 +8125,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "eu-west-2",
                                 "UseDualStack": false,
+                                "Region": "eu-west-2",
                                 "UseFIPS": true
                             }
                         },
@@ -7859,8 +8138,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "eu-west-2",
                                 "UseDualStack": true,
+                                "Region": "eu-west-2",
                                 "UseFIPS": false
                             }
                         },
@@ -7872,8 +8151,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "eu-west-2",
                                 "UseDualStack": false,
+                                "Region": "eu-west-2",
                                 "UseFIPS": false
                             }
                         },
@@ -7885,8 +8164,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "eu-west-1",
                                 "UseDualStack": true,
+                                "Region": "eu-west-1",
                                 "UseFIPS": true
                             }
                         },
@@ -7898,8 +8177,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "eu-west-1",
                                 "UseDualStack": false,
+                                "Region": "eu-west-1",
                                 "UseFIPS": true
                             }
                         },
@@ -7911,8 +8190,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "eu-west-1",
                                 "UseDualStack": true,
+                                "Region": "eu-west-1",
                                 "UseFIPS": false
                             }
                         },
@@ -7924,8 +8203,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "eu-west-1",
                                 "UseDualStack": false,
+                                "Region": "eu-west-1",
                                 "UseFIPS": false
                             }
                         },
@@ -7937,8 +8216,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "ap-northeast-2",
                                 "UseDualStack": true,
+                                "Region": "ap-northeast-2",
                                 "UseFIPS": true
                             }
                         },
@@ -7950,8 +8229,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "ap-northeast-2",
                                 "UseDualStack": false,
+                                "Region": "ap-northeast-2",
                                 "UseFIPS": true
                             }
                         },
@@ -7963,8 +8242,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "ap-northeast-2",
                                 "UseDualStack": true,
+                                "Region": "ap-northeast-2",
                                 "UseFIPS": false
                             }
                         },
@@ -7976,8 +8255,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "ap-northeast-2",
                                 "UseDualStack": false,
+                                "Region": "ap-northeast-2",
                                 "UseFIPS": false
                             }
                         },
@@ -7989,8 +8268,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "ap-northeast-1",
                                 "UseDualStack": true,
+                                "Region": "ap-northeast-1",
                                 "UseFIPS": true
                             }
                         },
@@ -8002,8 +8281,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "ap-northeast-1",
                                 "UseDualStack": false,
+                                "Region": "ap-northeast-1",
                                 "UseFIPS": true
                             }
                         },
@@ -8015,8 +8294,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "ap-northeast-1",
                                 "UseDualStack": true,
+                                "Region": "ap-northeast-1",
                                 "UseFIPS": false
                             }
                         },
@@ -8028,8 +8307,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "ap-northeast-1",
                                 "UseDualStack": false,
+                                "Region": "ap-northeast-1",
                                 "UseFIPS": false
                             }
                         },
@@ -8041,8 +8320,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "sa-east-1",
                                 "UseDualStack": true,
+                                "Region": "sa-east-1",
                                 "UseFIPS": true
                             }
                         },
@@ -8054,8 +8333,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "sa-east-1",
                                 "UseDualStack": false,
+                                "Region": "sa-east-1",
                                 "UseFIPS": true
                             }
                         },
@@ -8067,8 +8346,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "sa-east-1",
                                 "UseDualStack": true,
+                                "Region": "sa-east-1",
                                 "UseFIPS": false
                             }
                         },
@@ -8080,8 +8359,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "sa-east-1",
                                 "UseDualStack": false,
+                                "Region": "sa-east-1",
                                 "UseFIPS": false
                             }
                         },
@@ -8093,8 +8372,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "ap-southeast-1",
                                 "UseDualStack": true,
+                                "Region": "ap-southeast-1",
                                 "UseFIPS": true
                             }
                         },
@@ -8106,8 +8385,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "ap-southeast-1",
                                 "UseDualStack": false,
+                                "Region": "ap-southeast-1",
                                 "UseFIPS": true
                             }
                         },
@@ -8119,8 +8398,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "ap-southeast-1",
                                 "UseDualStack": true,
+                                "Region": "ap-southeast-1",
                                 "UseFIPS": false
                             }
                         },
@@ -8132,8 +8411,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "ap-southeast-1",
                                 "UseDualStack": false,
+                                "Region": "ap-southeast-1",
                                 "UseFIPS": false
                             }
                         },
@@ -8145,8 +8424,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "ap-southeast-2",
                                 "UseDualStack": true,
+                                "Region": "ap-southeast-2",
                                 "UseFIPS": true
                             }
                         },
@@ -8158,8 +8437,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "ap-southeast-2",
                                 "UseDualStack": false,
+                                "Region": "ap-southeast-2",
                                 "UseFIPS": true
                             }
                         },
@@ -8171,8 +8450,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "ap-southeast-2",
                                 "UseDualStack": true,
+                                "Region": "ap-southeast-2",
                                 "UseFIPS": false
                             }
                         },
@@ -8184,8 +8463,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "ap-southeast-2",
                                 "UseDualStack": false,
+                                "Region": "ap-southeast-2",
                                 "UseFIPS": false
                             }
                         },
@@ -8197,8 +8476,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-east-1",
                                 "UseDualStack": true,
+                                "Region": "us-east-1",
                                 "UseFIPS": true
                             }
                         },
@@ -8210,8 +8489,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-east-1",
                                 "UseDualStack": false,
+                                "Region": "us-east-1",
                                 "UseFIPS": true
                             }
                         },
@@ -8223,8 +8502,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-east-1",
                                 "UseDualStack": true,
+                                "Region": "us-east-1",
                                 "UseFIPS": false
                             }
                         },
@@ -8236,8 +8515,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-east-1",
                                 "UseDualStack": false,
+                                "Region": "us-east-1",
                                 "UseFIPS": false
                             }
                         },
@@ -8249,8 +8528,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-east-2",
                                 "UseDualStack": true,
+                                "Region": "us-east-2",
                                 "UseFIPS": true
                             }
                         },
@@ -8262,8 +8541,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-east-2",
                                 "UseDualStack": false,
+                                "Region": "us-east-2",
                                 "UseFIPS": true
                             }
                         },
@@ -8275,8 +8554,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-east-2",
                                 "UseDualStack": true,
+                                "Region": "us-east-2",
                                 "UseFIPS": false
                             }
                         },
@@ -8288,8 +8567,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-east-2",
                                 "UseDualStack": false,
+                                "Region": "us-east-2",
                                 "UseFIPS": false
                             }
                         },
@@ -8301,8 +8580,8 @@
                                 }
                             },
                             "params": {
-                                "Region": "us-east-1",
                                 "UseDualStack": false,
+                                "Region": "us-east-1",
                                 "UseFIPS": false,
                                 "Endpoint": "https://example.com"
                             }
@@ -8313,8 +8592,8 @@
                                 "error": "Invalid Configuration: FIPS and custom endpoint are not supported"
                             },
                             "params": {
-                                "Region": "us-east-1",
                                 "UseDualStack": false,
+                                "Region": "us-east-1",
                                 "UseFIPS": true,
                                 "Endpoint": "https://example.com"
                             }
@@ -8325,8 +8604,8 @@
                                 "error": "Invalid Configuration: Dualstack and custom endpoint are not supported"
                             },
                             "params": {
-                                "Region": "us-east-1",
                                 "UseDualStack": true,
+                                "Region": "us-east-1",
                                 "UseFIPS": false,
                                 "Endpoint": "https://example.com"
                             }
@@ -9721,6 +10000,12 @@
                     "traits": {
                         "smithy.api#enumValue": "Validate"
                     }
+                },
+                "PARTITION": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Partition"
+                    }
                 }
             }
         },
@@ -10001,7 +10286,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Unregisters the custom connector registered in your account that matches the\n      connectorLabel provided in the request.</p>",
+                "smithy.api#documentation": "<p>Unregisters the custom connector registered in your account that matches the connector\n      label provided in the request.</p>",
                 "smithy.api#http": {
                     "method": "POST",
                     "uri": "/unregister-connector",
@@ -10169,6 +10454,84 @@
                 }
             }
         },
+        "com.amazonaws.appflow#UpdateConnectorRegistration": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.appflow#UpdateConnectorRegistrationRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.appflow#UpdateConnectorRegistrationResponse"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.appflow#AccessDeniedException"
+                },
+                {
+                    "target": "com.amazonaws.appflow#ConflictException"
+                },
+                {
+                    "target": "com.amazonaws.appflow#ConnectorAuthenticationException"
+                },
+                {
+                    "target": "com.amazonaws.appflow#ConnectorServerException"
+                },
+                {
+                    "target": "com.amazonaws.appflow#InternalServerException"
+                },
+                {
+                    "target": "com.amazonaws.appflow#ResourceNotFoundException"
+                },
+                {
+                    "target": "com.amazonaws.appflow#ServiceQuotaExceededException"
+                },
+                {
+                    "target": "com.amazonaws.appflow#ThrottlingException"
+                },
+                {
+                    "target": "com.amazonaws.appflow#ValidationException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Updates a custom connector that you've previously registered. This operation updates the\n      connector with one of the following:</p>\n         <ul>\n            <li>\n               <p>The latest version of the AWS Lambda function that's assigned to the connector</p>\n            </li>\n            <li>\n               <p>A new AWS Lambda function that you specify</p>\n            </li>\n         </ul>",
+                "smithy.api#http": {
+                    "method": "POST",
+                    "uri": "/update-connector-registration",
+                    "code": 200
+                }
+            }
+        },
+        "com.amazonaws.appflow#UpdateConnectorRegistrationRequest": {
+            "type": "structure",
+            "members": {
+                "connectorLabel": {
+                    "target": "com.amazonaws.appflow#ConnectorLabel",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the connector. The name is unique for each connector registration in your AWS\n      account.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "description": {
+                    "target": "com.amazonaws.appflow#Description",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A description about the update that you're applying to the connector.</p>"
+                    }
+                },
+                "connectorProvisioningConfig": {
+                    "target": "com.amazonaws.appflow#ConnectorProvisioningConfig"
+                }
+            }
+        },
+        "com.amazonaws.appflow#UpdateConnectorRegistrationResponse": {
+            "type": "structure",
+            "members": {
+                "connectorArn": {
+                    "target": "com.amazonaws.appflow#ARN",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ARN of the connector being updated.</p>"
+                    }
+                }
+            }
+        },
         "com.amazonaws.appflow#UpdateFlow": {
             "type": "operation",
             "input": {
@@ -10250,6 +10613,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p> A list of tasks that Amazon AppFlow performs while transferring the data in the\n      flow run. </p>",
                         "smithy.api#required": {}
+                    }
+                },
+                "metadataCatalogConfig": {
+                    "target": "com.amazonaws.appflow#MetadataCatalogConfig",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data\n      that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a\n      flow, it stores metadata in a data catalog.</p>"
                     }
                 }
             }
@@ -10601,6 +10970,16 @@
                     "max": 512
                 },
                 "smithy.api#pattern": "^[\\s\\w/!@#+=.-]*$"
+            }
+        },
+        "com.amazonaws.appflow#WorkgroupName": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 512
+                },
+                "smithy.api#pattern": "^\\S+$"
             }
         },
         "com.amazonaws.appflow#WriteOperationType": {

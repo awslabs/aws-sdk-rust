@@ -409,6 +409,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>A list of tags that you are adding to the response plan.</p>"
                     }
+                },
+                "integrations": {
+                    "target": "com.amazonaws.ssmincidents#Integrations",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Information about third-party services integrated into the response plan.</p>"
+                    }
                 }
             }
         },
@@ -510,6 +516,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>A short description of the event.</p>",
                         "smithy.api#required": {}
+                    }
+                },
+                "eventReferences": {
+                    "target": "com.amazonaws.ssmincidents#EventReferenceList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Adds one or more references to the <code>TimelineEvent</code>. A reference can be an\n                Amazon Web Services resource involved in the incident or in some way associated with\n            it. When you specify a reference, you enter the Amazon Resource Name (ARN) of the\n            resource. You can also specify a related item. As an example, you could specify the ARN\n            of an Amazon DynamoDB (DynamoDB) table. The table for this example is\n            the resource. You could also specify a Amazon CloudWatch metric for that table. The\n            metric is the related item.</p>"
                     }
                 }
             }
@@ -905,7 +917,44 @@
             "type": "string",
             "traits": {
                 "smithy.api#length": {
-                    "max": 6000
+                    "max": 12000
+                }
+            }
+        },
+        "com.amazonaws.ssmincidents#EventReference": {
+            "type": "union",
+            "members": {
+                "resource": {
+                    "target": "com.amazonaws.ssmincidents#Arn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of an Amazon Web Services resource referenced in a\n            <code>TimelineEvent</code>.</p>",
+                        "smithy.api#tags": [
+                            "logs_investigations"
+                        ]
+                    }
+                },
+                "relatedItemId": {
+                    "target": "com.amazonaws.ssmincidents#GeneratedId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ID of a <code>RelatedItem</code> referenced in a <code>TimelineEvent</code>.</p>",
+                        "smithy.api#tags": [
+                            "logs_investigations"
+                        ]
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>An item referenced in a <code>TimelineEvent</code> that is involved in or somehow\n         associated with an incident. You can specify an Amazon Resource Name (ARN) for an Amazon Web Services resource or a <code>RelatedItem</code> ID.</p>"
+            }
+        },
+        "com.amazonaws.ssmincidents#EventReferenceList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.ssmincidents#EventReference"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "max": 10
                 }
             }
         },
@@ -945,6 +994,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The type of event. The timeline event must be <code>Custom Event</code>.</p>",
                         "smithy.api#required": {}
+                    }
+                },
+                "eventReferences": {
+                    "target": "com.amazonaws.ssmincidents#EventReferenceList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A list of references in a <code>TimelineEvent</code>.</p>"
                     }
                 }
             },
@@ -1003,6 +1058,15 @@
                 "smithy.api#length": {
                     "max": 5
                 }
+            }
+        },
+        "com.amazonaws.ssmincidents#GeneratedId": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "max": 200
+                },
+                "smithy.api#pattern": "^related-item/(ANALYSIS|INCIDENT|METRIC|PARENT|ATTACHMENT|OTHER|AUTOMATION|INVOLVED_RESOURCE|TASK)/([0-9]|[A-F]){32}$"
             }
         },
         "com.amazonaws.ssmincidents#GetIncidentRecord": {
@@ -1404,6 +1468,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The actions that this response plan takes at the beginning of the incident.</p>"
                     }
+                },
+                "integrations": {
+                    "target": "com.amazonaws.ssmincidents#Integrations",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Information about third-party services integrated into the Incident Manager response\n            plan.</p>"
+                    }
                 }
             }
         },
@@ -1776,7 +1846,7 @@
                 "incidentTags": {
                     "target": "com.amazonaws.ssmincidents#TagMap",
                     "traits": {
-                        "smithy.api#documentation": "<p>Tags to assign to the template. When the <code>StartIncident</code> API action is\n         called, Incident Manager assigns the tags specified in the template to the\n         incident.</p>"
+                        "smithy.api#documentation": "<p>Tags to assign to the template. When the <code>StartIncident</code> API action is\n         called, Incident Manager assigns the tags specified in the template to the incident.</p>"
                     }
                 }
             },
@@ -1805,6 +1875,31 @@
             "traits": {
                 "smithy.api#length": {
                     "max": 100
+                }
+            }
+        },
+        "com.amazonaws.ssmincidents#Integration": {
+            "type": "union",
+            "members": {
+                "pagerDutyConfiguration": {
+                    "target": "com.amazonaws.ssmincidents#PagerDutyConfiguration",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Information about the PagerDuty service where the response plan creates an\n            incident.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Information about third-party services integrated into a response plan.</p>"
+            }
+        },
+        "com.amazonaws.ssmincidents#Integrations": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.ssmincidents#Integration"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "max": 1
                 }
             }
         },
@@ -1914,6 +2009,12 @@
                     "target": "com.amazonaws.ssmincidents#MetricDefinition",
                     "traits": {
                         "smithy.api#documentation": "<p>The metric definition, if the related item is a metric in Amazon CloudWatch.</p>"
+                    }
+                },
+                "pagerDutyIncidentDetail": {
+                    "target": "com.amazonaws.ssmincidents#PagerDutyIncidentDetail",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Details about an incident that is associated with a PagerDuty incident.</p>"
                     }
                 }
             },
@@ -2483,6 +2584,97 @@
                 }
             }
         },
+        "com.amazonaws.ssmincidents#PagerDutyConfiguration": {
+            "type": "structure",
+            "members": {
+                "name": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the PagerDuty configuration.</p>",
+                        "smithy.api#length": {
+                            "min": 1,
+                            "max": 200
+                        },
+                        "smithy.api#required": {}
+                    }
+                },
+                "secretId": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or\n            User Token REST API Key, and other user credentials.</p>",
+                        "smithy.api#length": {
+                            "min": 1,
+                            "max": 512
+                        },
+                        "smithy.api#required": {}
+                    }
+                },
+                "pagerDutyIncidentConfiguration": {
+                    "target": "com.amazonaws.ssmincidents#PagerDutyIncidentConfiguration",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Details about the PagerDuty service associated with the configuration.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Details about the PagerDuty configuration for a response plan.</p>"
+            }
+        },
+        "com.amazonaws.ssmincidents#PagerDutyIncidentConfiguration": {
+            "type": "structure",
+            "members": {
+                "serviceId": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ID of the PagerDuty service that the response plan associates with an incident\n            when it launches.</p>",
+                        "smithy.api#length": {
+                            "min": 1,
+                            "max": 200
+                        },
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Details about the PagerDuty service where the response plan creates an\n            incident.</p>"
+            }
+        },
+        "com.amazonaws.ssmincidents#PagerDutyIncidentDetail": {
+            "type": "structure",
+            "members": {
+                "id": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ID of the incident associated with the PagerDuty service for the response\n            plan.</p>",
+                        "smithy.api#length": {
+                            "min": 1,
+                            "max": 200
+                        },
+                        "smithy.api#required": {}
+                    }
+                },
+                "autoResolve": {
+                    "target": "smithy.api#Boolean",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Indicates whether to resolve the PagerDuty incident when you resolve the associated\n            Incident Manager incident.</p>"
+                    }
+                },
+                "secretId": {
+                    "target": "smithy.api#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ID of the Amazon Web Services Secrets Manager secret that stores your PagerDuty key, either a General Access REST API Key or\n            User Token REST API Key, and other user credentials.</p>",
+                        "smithy.api#length": {
+                            "min": 1,
+                            "max": 512
+                        }
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Details about the PagerDuty incident associated with an incident created by an\n            Incident Manager response plan.</p>"
+            }
+        },
         "com.amazonaws.ssmincidents#Policy": {
             "type": "string",
             "traits": {
@@ -2707,6 +2899,12 @@
                         "smithy.api#length": {
                             "max": 200
                         }
+                    }
+                },
+                "generatedId": {
+                    "target": "com.amazonaws.ssmincidents#GeneratedId",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A unique ID for a <code>RelatedItem</code>.</p>\n         <important>\n            <p>Don't specify this parameter when you add a <code>RelatedItem</code> by using the\n               <a>UpdateRelatedItems</a> API action.</p>\n         </important>"
                     }
                 }
             },
@@ -4875,6 +5073,12 @@
                         "smithy.api#documentation": "<p>A short description of the event.</p>",
                         "smithy.api#required": {}
                     }
+                },
+                "eventReferences": {
+                    "target": "com.amazonaws.ssmincidents#EventReferenceList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A list of references in a <code>TimelineEvent</code>.</p>"
+                    }
                 }
             },
             "traits": {
@@ -5496,6 +5700,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>Tags to assign to the template. When the <code>StartIncident</code> API action is\n            called, Incident Manager assigns the tags specified in the template to the\n            incident. To call this action, you must also have permission to call the\n                <code>TagResource</code> API action for the incident record resource.</p>"
                     }
+                },
+                "integrations": {
+                    "target": "com.amazonaws.ssmincidents#Integrations",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Information about third-party services integrated into the response plan.</p>"
+                    }
                 }
             }
         },
@@ -5596,6 +5806,12 @@
                     "target": "com.amazonaws.ssmincidents#EventData",
                     "traits": {
                         "smithy.api#documentation": "<p>A short description of the event.</p>"
+                    }
+                },
+                "eventReferences": {
+                    "target": "com.amazonaws.ssmincidents#EventReferenceList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Updates all existing references in a <code>TimelineEvent</code>. A reference can be an\n                Amazon Web Services resource involved in the incident or in some way associated with\n            it. When you specify a reference, you enter the Amazon Resource Name (ARN) of the\n            resource. You can also specify a related item. As an example, you could specify the ARN\n            of an Amazon DynamoDB (DynamoDB) table. The table for this example is\n            the resource. You could also specify a Amazon CloudWatch metric for that table. The\n            metric is the related item.</p>\n        <important>\n            <p>This update action overrides all existing references. If you want to keep existing\n                references, you must specify them in the call. If you don't, this action removes\n                them and enters only new references.</p>\n        </important>"
                     }
                 }
             }

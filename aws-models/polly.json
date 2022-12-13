@@ -641,6 +641,18 @@
                     "traits": {
                         "smithy.api#enumValue": "yue-CN"
                     }
+                },
+                "ar_AE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ar-AE"
+                    }
+                },
+                "fi_FI": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "fi-FI"
+                    }
                 }
             }
         },
@@ -1102,7 +1114,7 @@
                     "parameters": {
                         "Region": {
                             "builtIn": "AWS::Region",
-                            "required": false,
+                            "required": true,
                             "documentation": "The AWS region used to dispatch the request.",
                             "type": "String"
                         },
@@ -3712,6 +3724,18 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "Suvi"
+                    }
+                },
+                "Ola": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Ola"
+                    }
+                },
+                "Hala": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Hala"
                     }
                 }
             }
