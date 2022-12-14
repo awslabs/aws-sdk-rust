@@ -103,7 +103,7 @@ impl From<SigningError> for SigningStageError {
 impl Error for SigningStageError {
     fn source(&self) -> Option<&(dyn Error + 'static)> {
         match &self {
-            SigningStageError::SigningFailure(err) => Some(err.as_ref()),
+            SigningStageError::SigningFailure(err) => Some(err),
             _ => None,
         }
     }
@@ -160,7 +160,7 @@ impl MapRequest for SigV4SigningStage {
             let signature = self
                 .signer
                 .sign(operation_config, &request_config, &creds, &mut req)
-                .map_err(|err| SigningStageError::SigningFailure(err))?;
+                .map_err(SigningStageError::SigningFailure)?;
             config.insert(signature);
             Ok(req)
         })

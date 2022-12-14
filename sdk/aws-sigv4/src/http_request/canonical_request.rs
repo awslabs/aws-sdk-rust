@@ -3,12 +3,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use super::query_writer::QueryWriter;
-use super::{Error, PayloadChecksumKind, SignableBody, SignatureLocation, SigningParams};
 use crate::date_time::{format_date, format_date_time};
+use crate::http_request::error::CanonicalRequestError;
+use crate::http_request::query_writer::QueryWriter;
 use crate::http_request::sign::SignableRequest;
 use crate::http_request::url_escape::percent_encode_path;
 use crate::http_request::PercentEncodingMode;
+use crate::http_request::{PayloadChecksumKind, SignableBody, SignatureLocation, SigningParams};
 use crate::sign::sha256_hex_string;
 use http::header::{HeaderName, HOST};
 use http::{HeaderMap, HeaderValue, Method, Uri};
@@ -124,7 +125,7 @@ impl<'a> CanonicalRequest<'a> {
     pub(super) fn from<'b>(
         req: &'b SignableRequest<'b>,
         params: &'b SigningParams<'b>,
-    ) -> Result<CanonicalRequest<'b>, Error> {
+    ) -> Result<CanonicalRequest<'b>, CanonicalRequestError> {
         // Path encoding: if specified, re-encode % as %25
         // Set method and path into CanonicalRequest
         let path = req.uri().path();
@@ -182,7 +183,7 @@ impl<'a> CanonicalRequest<'a> {
         params: &SigningParams<'_>,
         payload_hash: &str,
         date_time: &str,
-    ) -> Result<(Vec<CanonicalHeaderName>, HeaderMap), Error> {
+    ) -> Result<(Vec<CanonicalHeaderName>, HeaderMap), CanonicalRequestError> {
         // Header computation:
         // The canonical request will include headers not present in the input. We need to clone and
         // normalize the headers from the original request and add:
@@ -375,9 +376,15 @@ fn trim_spaces_from_byte_string(bytes: &[u8]) -> &[u8] {
 
 /// Works just like [trim_all] but acts on HeaderValues instead of bytes.
 /// Will ensure that the underlying bytes are valid UTF-8.
-fn normalize_header_value(header_value: &HeaderValue) -> Result<HeaderValue, Error> {
+fn normalize_header_value(
+    header_value: &HeaderValue,
+) -> Result<HeaderValue, CanonicalRequestError> {
     let trimmed_value = trim_all(header_value.as_bytes());
-    HeaderValue::from_str(std::str::from_utf8(&trimmed_value)?).map_err(Error::from)
+    HeaderValue::from_str(
+        std::str::from_utf8(&trimmed_value)
+            .map_err(CanonicalRequestError::invalid_utf8_in_header_value)?,
+    )
+    .map_err(CanonicalRequestError::from)
 }
 
 #[derive(Debug, PartialEq, Default)]

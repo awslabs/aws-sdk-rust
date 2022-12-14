@@ -8,7 +8,7 @@
 //! # Example: Signing an HTTP request
 //!
 //! ```rust
-//! # fn test() -> Result<(), aws_sigv4::http_request::Error> {
+//! # fn test() -> Result<(), aws_sigv4::http_request::SigningError> {
 //! use aws_sigv4::http_request::{sign, SigningSettings, SigningParams, SignableRequest};
 //! use http;
 //! use std::time::SystemTime;
@@ -42,6 +42,7 @@
 //!
 
 mod canonical_request;
+mod error;
 mod query_writer;
 mod settings;
 mod sign;
@@ -50,7 +51,8 @@ mod url_escape;
 #[cfg(test)]
 pub(crate) mod test;
 
+pub use error::SigningError;
 pub use settings::{
     PayloadChecksumKind, PercentEncodingMode, SignatureLocation, SigningParams, SigningSettings,
 };
-pub use sign::{sign, Error, SignableBody, SignableRequest};
+pub use sign::{sign, SignableBody, SignableRequest};

@@ -12,11 +12,11 @@ use aws_smithy_http::body::SdkBody;
 use aws_types::region::SigningRegion;
 use aws_types::Credentials;
 use aws_types::SigningService;
-use std::error::Error;
 use std::fmt;
 use std::time::{Duration, SystemTime};
 
 pub use aws_sigv4::http_request::SignableBody;
+pub type SigningError = aws_sigv4::http_request::SigningError;
 
 const EXPIRATION_WARNING: &str = "Presigned request will expire before the given \
     `expires_in` duration because the credentials used to sign it will expire first.";
@@ -120,8 +120,6 @@ impl fmt::Debug for SigV4Signer {
         formatter.finish()
     }
 }
-
-pub type SigningError = Box<dyn Error + Send + Sync>;
 
 impl SigV4Signer {
     pub fn new() -> Self {
