@@ -5,10 +5,12 @@
 
 //! Checksum calculation and verification callbacks.
 
+use crate::error::UnknownChecksumAlgorithmError;
 use bytes::Bytes;
 use std::str::FromStr;
 
 pub mod body;
+pub mod error;
 pub mod http;
 
 // Valid checksum algorithm names
@@ -29,7 +31,7 @@ pub enum ChecksumAlgorithm {
 }
 
 impl FromStr for ChecksumAlgorithm {
-    type Err = Error;
+    type Err = UnknownChecksumAlgorithmError;
 
     /// Create a new `ChecksumAlgorithm` from an algorithm name. Valid algorithm names are:
     /// - "crc32"
@@ -51,9 +53,7 @@ impl FromStr for ChecksumAlgorithm {
         } else if checksum_algorithm.eq_ignore_ascii_case(MD5_NAME) {
             Ok(Self::Md5)
         } else {
-            Err(Error::UnknownChecksumAlgorithm(
-                checksum_algorithm.to_owned(),
-            ))
+            Err(UnknownChecksumAlgorithmError::new(checksum_algorithm))
         }
     }
 }
@@ -81,27 +81,6 @@ impl ChecksumAlgorithm {
         }
     }
 }
-
-#[derive(Debug, PartialEq)]
-pub enum Error {
-    UnknownChecksumAlgorithm(String),
-}
-
-impl std::fmt::Display for Error {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        match self {
-            Self::UnknownChecksumAlgorithm(algorithm) => {
-                write!(
-                    f,
-                    r#"unknown checksum algorithm "{}", please pass a known algorithm name ("crc32", "crc32c", "sha1", "sha256", "md5")"#,
-                    algorithm
-                )
-            }
-        }
-    }
-}
-
-impl std::error::Error for Error {}
 
 /// Types implementing this trait can calculate checksums.
 ///
@@ -397,10 +376,14 @@ mod tests {
     }
 
     #[test]
-    #[should_panic = "called `Result::unwrap()` on an `Err` value: UnknownChecksumAlgorithm(\"some invalid checksum algorithm\")"]
     fn test_checksum_algorithm_returns_error_for_unknown() {
-        "some invalid checksum algorithm"
+        let error = "some invalid checksum algorithm"
             .parse::<ChecksumAlgorithm>()
-            .unwrap();
+            .err()
+            .expect("it should error");
+        assert_eq!(
+            "some invalid checksum algorithm",
+            error.checksum_algorithm()
+        );
     }
 }
