@@ -118,7 +118,7 @@ async fn timeout_test(sleep_impl: Arc<dyn AsyncSleep>) -> Result<(), Box<dyn std
 
     assert_eq!("TimeoutError(TimeoutError { source: RequestTimeoutError { kind: \"operation timeout (all attempts including retries)\", duration: 500ms } })", format!("{:?}", err));
     // Assert 500ms have passed with a 10ms margin of error
-    assert_elapsed!(now, Duration::from_millis(500), Duration::from_millis(10));
+    assert_elapsed!(now, Duration::from_millis(500), Duration::from_millis(100));
 
     Ok(())
 }
