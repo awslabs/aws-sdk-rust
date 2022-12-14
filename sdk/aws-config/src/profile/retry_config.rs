@@ -7,8 +7,10 @@
 
 use crate::profile::profile_file::ProfileFiles;
 use crate::provider_config::ProviderConfig;
+use crate::retry::{
+    error::RetryConfigError, error::RetryConfigErrorKind, RetryConfigBuilder, RetryMode,
+};
 use aws_smithy_types::error::display::DisplayErrorContext;
-use aws_smithy_types::retry::{RetryConfigBuilder, RetryConfigErr, RetryMode};
 use aws_types::os_shim_internal::{Env, Fs};
 use std::str::FromStr;
 
@@ -101,7 +103,7 @@ impl ProfileFileRetryConfigProvider {
     }
 
     /// Attempt to create a new RetryConfigBuilder from a profile file.
-    pub async fn retry_config_builder(&self) -> Result<RetryConfigBuilder, RetryConfigErr> {
+    pub async fn retry_config_builder(&self) -> Result<RetryConfigBuilder, RetryConfigError> {
         let profile = match super::parser::load(&self.fs, &self.env, &self.profile_files).await {
             Ok(profile) => profile,
             Err(err) => {
@@ -130,16 +132,18 @@ impl ProfileFileRetryConfigProvider {
         let max_attempts = match selected_profile.get("max_attempts") {
             Some(max_attempts) => match max_attempts.parse::<u32>() {
                 Ok(max_attempts) if max_attempts == 0 => {
-                    return Err(RetryConfigErr::MaxAttemptsMustNotBeZero {
+                    return Err(RetryConfigErrorKind::MaxAttemptsMustNotBeZero {
                         set_by: "aws profile".into(),
-                    });
+                    }
+                    .into());
                 }
                 Ok(max_attempts) => Some(max_attempts),
                 Err(source) => {
-                    return Err(RetryConfigErr::FailedToParseMaxAttempts {
+                    return Err(RetryConfigErrorKind::FailedToParseMaxAttempts {
                         set_by: "aws profile".into(),
                         source,
-                    });
+                    }
+                    .into());
                 }
             },
             None => None,
@@ -149,10 +153,11 @@ impl ProfileFileRetryConfigProvider {
             Some(retry_mode) => match RetryMode::from_str(retry_mode) {
                 Ok(retry_mode) => Some(retry_mode),
                 Err(retry_mode_err) => {
-                    return Err(RetryConfigErr::InvalidRetryMode {
+                    return Err(RetryConfigErrorKind::InvalidRetryMode {
                         set_by: "aws profile".into(),
                         source: retry_mode_err,
-                    });
+                    }
+                    .into());
                 }
             },
             None => None,

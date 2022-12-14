@@ -11,7 +11,7 @@
     unreachable_pub
 )]
 
-//! `aws-config` provides implementations of region, credential resolution.
+//! `aws-config` provides implementations of region and credential resolution.
 //!
 //! These implementations can be used either via the default chain implementation
 //! [`from_env`]/[`ConfigLoader`] or ad-hoc individual credential and region providers.
@@ -92,9 +92,6 @@
 //! ```
 
 pub use aws_smithy_http::endpoint;
-// Re-export types from smithy-types
-pub use aws_smithy_types::retry;
-pub use aws_smithy_types::timeout;
 // Re-export types from aws-types
 pub use aws_types::{
     app_name::{AppName, InvalidAppName},
@@ -106,43 +103,28 @@ pub use loader::ConfigLoader;
 #[allow(dead_code)]
 const PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
 
-/// Providers that implement the default AWS provider chain
-pub mod default_provider;
-
-/// Providers that load configuration from environment variables
-pub mod environment;
-
-/// Meta-providers that augment existing providers with new behavior
-pub mod meta;
-
-pub mod profile;
-
-pub mod sts;
-
 #[cfg(test)]
 mod test_case;
 
-pub mod web_identity_token;
-
-pub mod ecs;
-
-pub mod provider_config;
-
 mod cache;
-
-pub mod imds;
-
+mod fs_util;
+mod http_credential_provider;
 mod json_credentials;
 
-mod fs_util;
-
-mod http_credential_provider;
-
-pub mod sso;
-
 pub mod connector;
-
 pub mod credential_process;
+pub mod default_provider;
+pub mod ecs;
+pub mod environment;
+pub mod imds;
+pub mod meta;
+pub mod profile;
+pub mod provider_config;
+pub mod retry;
+pub mod sso;
+pub mod sts;
+pub mod timeout;
+pub mod web_identity_token;
 
 /// Create an environment loader for AWS Configuration
 ///

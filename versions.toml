@@ -1,4 +1,4 @@
-smithy_rs_revision = '7b6d2d4b25765980e028fe44f7df6aa6fdaef6d3'
+smithy_rs_revision = 'e36d34692ab3a7b912d28c09577afcc1d05d9392'
 aws_doc_sdk_examples_revision = 'f88a0edba3961f9d978bf1727054c9414e4fca2b'
 
 [manual_interventions]
@@ -6,7 +6,7 @@ crates_to_remove = []
 [crates.aws-config]
 category = 'AwsRuntime'
 version = '0.51.0'
-source_hash = '3e96f71df2258db39237b11500b91412a48a52574f0ba413f0c61013d411962b'
+source_hash = 'c2518d5a864c1f8a49a5cd65b2bd7cfb6b2dbedc5198c6d4090579bd6bc868fe'
 
 [crates.aws-endpoint]
 category = 'AwsRuntime'
@@ -1926,7 +1926,7 @@ source_hash = 'b378c99b8b137404e6b895935bd8e9d5d2c88de744575b29f46c0149894142e8'
 [crates.aws-smithy-async]
 category = 'SmithyRuntime'
 version = '0.51.0'
-source_hash = 'f798b2061e81210d5f4b482312d50c757b9ced8cab5fa48e02e2d5caa1c2a4ff'
+source_hash = '4d9e3c1b825895a41f3fc8dd3b252f51437ab68ed7655ceff84ecd99fa3eb1e7'
 
 [crates.aws-smithy-checksums]
 category = 'SmithyRuntime'
@@ -1956,7 +1956,7 @@ source_hash = '0265c47f87a21f65958935ee6b2a90317dc4f4b03663d32aa6360cf199ade64b'
 [crates.aws-smithy-json]
 category = 'SmithyRuntime'
 version = '0.51.0'
-source_hash = 'a4c8995834c6d0e995acb5e371cc572ddb76eaac642ac58ec44fb64701e19487'
+source_hash = '1d417f0b86a72669c2b3965883fb6e45f53fff54e361c04a5ed06f39ca9259ed'
 
 [crates.aws-smithy-protocol-test]
 category = 'SmithyRuntime'
@@ -1971,7 +1971,7 @@ source_hash = 'c481d83046c2754ba3931b84d2d1677397a082f6b5d55fef82a4d1b594687147'
 [crates.aws-smithy-types]
 category = 'SmithyRuntime'
 version = '0.51.0'
-source_hash = 'f43706fc84d939b45770d8582f2678e0d5000ae6b14afefce250c30f16d6aae7'
+source_hash = '51a9641ea8d44336fbf72542d427a72ae26828ca543c5221a7a8a3b516a4572e'
 
 [crates.aws-smithy-types-convert]
 category = 'SmithyRuntime'
@@ -1986,7 +1986,7 @@ source_hash = '9dc30d3fab20f59b1de71ae69d65335f1366b63081c935b895d0cf87c6d57e72'
 [crates.aws-types]
 category = 'AwsRuntime'
 version = '0.51.0'
-source_hash = '612607c538c5fdbba293cfb90435601e5fe65f17123cd7602caa7c33247bb384'
+source_hash = 'cc62b5585f118e3ce4d4c51c82d0ac51b837f2159d4193ab7d61836c9ffc54ba'
 [release.crates]
 aws-sdk-accessanalyzer = '0.22.0'
 aws-sdk-account = '0.22.0'

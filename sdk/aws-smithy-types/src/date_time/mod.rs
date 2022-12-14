@@ -5,6 +5,7 @@
 
 //! DateTime type for representing Smithy timestamps.
 
+use crate::date_time::format::DateTimeParseErrorKind;
 use num_integer::div_mod_floor;
 use num_integer::Integer;
 use std::convert::TryFrom;
@@ -219,9 +220,7 @@ impl DateTime {
         } else if next.starts_with(delim) {
             Ok((inst, &next[1..]))
         } else {
-            Err(DateTimeParseError::Invalid(
-                "didn't find expected delimiter".into(),
-            ))
+            Err(DateTimeParseErrorKind::Invalid("didn't find expected delimiter".into()).into())
         }
     }
 

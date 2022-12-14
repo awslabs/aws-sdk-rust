@@ -9,50 +9,67 @@ use std::fmt;
 
 const NANOS_PER_SECOND: u32 = 1_000_000_000;
 
-/// Error returned when date-time parsing fails.
-#[non_exhaustive]
 #[derive(Debug)]
-pub enum DateTimeParseError {
+pub(super) enum DateTimeParseErrorKind {
     /// The given date-time string was invalid.
-    #[non_exhaustive]
     Invalid(Cow<'static, str>),
     /// Failed to parse an integer inside the given date-time string.
-    #[non_exhaustive]
     IntParseError,
+}
+
+/// Error returned when date-time parsing fails.
+#[derive(Debug)]
+pub struct DateTimeParseError {
+    kind: DateTimeParseErrorKind,
 }
 
 impl Error for DateTimeParseError {}
 
 impl fmt::Display for DateTimeParseError {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        use DateTimeParseError::*;
-        match self {
+        use DateTimeParseErrorKind::*;
+        match &self.kind {
             Invalid(msg) => write!(f, "invalid date-time: {}", msg),
             IntParseError => write!(f, "failed to parse int"),
         }
     }
 }
 
-/// Error returned when date-time formatting fails.
-#[non_exhaustive]
+impl From<DateTimeParseErrorKind> for DateTimeParseError {
+    fn from(kind: DateTimeParseErrorKind) -> Self {
+        Self { kind }
+    }
+}
+
 #[derive(Debug)]
-pub enum DateTimeFormatError {
+enum DateTimeFormatErrorKind {
     /// The given date-time cannot be represented in the requested date format.
-    #[non_exhaustive]
     OutOfRange(Cow<'static, str>),
+}
+
+/// Error returned when date-time formatting fails.
+#[derive(Debug)]
+pub struct DateTimeFormatError {
+    kind: DateTimeFormatErrorKind,
 }
 
 impl Error for DateTimeFormatError {}
 
 impl fmt::Display for DateTimeFormatError {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        match self {
-            Self::OutOfRange(msg) => write!(
+        match &self.kind {
+            DateTimeFormatErrorKind::OutOfRange(msg) => write!(
                 f,
                 "date-time cannot be formatted since it is out of range: {}",
                 msg
             ),
         }
+    }
+}
+
+impl From<DateTimeFormatErrorKind> for DateTimeFormatError {
+    fn from(kind: DateTimeFormatErrorKind) -> Self {
+        DateTimeFormatError { kind }
     }
 }
 
@@ -64,7 +81,7 @@ fn remove_trailing_zeros(string: &mut String) {
 
 pub(crate) mod epoch_seconds {
     use super::remove_trailing_zeros;
-    use super::DateTimeParseError;
+    use super::{DateTimeParseError, DateTimeParseErrorKind};
     use crate::DateTime;
     use std::str::FromStr;
 
@@ -84,22 +101,25 @@ pub(crate) mod epoch_seconds {
         let mut parts = value.splitn(2, '.');
         let (mut whole, mut decimal) = (0i64, 0u32);
         if let Some(whole_str) = parts.next() {
-            whole = <i64>::from_str(whole_str).map_err(|_| DateTimeParseError::IntParseError)?;
+            whole =
+                <i64>::from_str(whole_str).map_err(|_| DateTimeParseErrorKind::IntParseError)?;
         }
         if let Some(decimal_str) = parts.next() {
             if decimal_str.starts_with('+') || decimal_str.starts_with('-') {
-                return Err(DateTimeParseError::Invalid(
+                return Err(DateTimeParseErrorKind::Invalid(
                     "invalid epoch-seconds timestamp".into(),
-                ));
+                )
+                .into());
             }
             if decimal_str.len() > 9 {
-                return Err(DateTimeParseError::Invalid(
+                return Err(DateTimeParseErrorKind::Invalid(
                     "decimal is longer than 9 digits".into(),
-                ));
+                )
+                .into());
             }
             let missing_places = 9 - decimal_str.len() as isize;
             decimal =
-                <u32>::from_str(decimal_str).map_err(|_| DateTimeParseError::IntParseError)?;
+                <u32>::from_str(decimal_str).map_err(|_| DateTimeParseErrorKind::IntParseError)?;
             for _ in 0..missing_places {
                 decimal *= 10;
             }
@@ -110,7 +130,10 @@ pub(crate) mod epoch_seconds {
 
 pub(crate) mod http_date {
     use super::remove_trailing_zeros;
-    use crate::date_time::format::{DateTimeFormatError, DateTimeParseError, NANOS_PER_SECOND};
+    use crate::date_time::format::{
+        DateTimeFormatError, DateTimeFormatErrorKind, DateTimeParseError, DateTimeParseErrorKind,
+        NANOS_PER_SECOND,
+    };
     use crate::DateTime;
     use std::str::FromStr;
     use time::{Date, Month, OffsetDateTime, PrimitiveDateTime, Time, UtcOffset, Weekday};
@@ -132,7 +155,7 @@ pub(crate) mod http_date {
     /// - If subsecond nanos are nonzero, 3 digits of fractional seconds are added
     pub(crate) fn format(date_time: &DateTime) -> Result<String, DateTimeFormatError> {
         fn out_of_range<E: std::fmt::Display>(cause: E) -> DateTimeFormatError {
-            DateTimeFormatError::OutOfRange(
+            DateTimeFormatErrorKind::OutOfRange(
                 format!(
                     "HTTP dates support dates between Mon, 01 Jan 0001 00:00:00 GMT \
                             and Fri, 31 Dec 9999 23:59:59.999 GMT. {}",
@@ -140,6 +163,7 @@ pub(crate) mod http_date {
                 )
                 .into(),
             )
+            .into()
         }
         let structured = OffsetDateTime::from_unix_timestamp_nanos(date_time.as_nanos())
             .map_err(out_of_range)?;
@@ -244,9 +268,7 @@ pub(crate) mod http_date {
     /// Not Ok: "Mon, 16 Dec 2019 23:48:18.1234 GMT"
     pub(crate) fn parse(s: &str) -> Result<DateTime, DateTimeParseError> {
         if !s.is_ascii() {
-            return Err(DateTimeParseError::Invalid(
-                "date-time must be ASCII".into(),
-            ));
+            return Err(DateTimeParseErrorKind::Invalid("date-time must be ASCII".into()).into());
         }
         let x = s.trim().as_bytes();
         parse_imf_fixdate(x)
@@ -254,15 +276,15 @@ pub(crate) mod http_date {
 
     pub(crate) fn read(s: &str) -> Result<(DateTime, &str), DateTimeParseError> {
         if !s.is_ascii() {
-            return Err(DateTimeParseError::Invalid(
-                "date-time must be ASCII".into(),
-            ));
+            return Err(DateTimeParseErrorKind::Invalid("date-time must be ASCII".into()).into());
         }
         let (first_date, rest) = match find_subsequence(s.as_bytes(), b" GMT") {
             // split_at is correct because we asserted that this date is only valid ASCII so the byte index is
             // the same as the char index
             Some(idx) => s.split_at(idx),
-            None => return Err(DateTimeParseError::Invalid("date-time is not GMT".into())),
+            None => {
+                return Err(DateTimeParseErrorKind::Invalid("date-time is not GMT".into()).into())
+            }
         };
         Ok((parse(first_date)?, rest))
     }
@@ -283,9 +305,7 @@ pub(crate) mod http_date {
             || s[19] != b':'
             || s[22] != b':'
         {
-            return Err(DateTimeParseError::Invalid(
-                "incorrectly shaped string".into(),
-            ));
+            return Err(DateTimeParseErrorKind::Invalid("incorrectly shaped string".into()).into());
         }
         let nanos: u32 = match &s[25] {
             b'.' => {
@@ -294,9 +314,10 @@ pub(crate) mod http_date {
                 let fraction_slice = &s[26..s.len() - 4];
                 if fraction_slice.len() > 3 {
                     // Only thousandths are supported
-                    return Err(DateTimeParseError::Invalid(
+                    return Err(DateTimeParseErrorKind::Invalid(
                         "Smithy http-date only supports millisecond precision".into(),
-                    ));
+                    )
+                    .into());
                 }
                 let fraction: u32 = parse_slice(fraction_slice)?;
                 // We need to convert the fractional second to nanoseconds, so we need to scale
@@ -306,9 +327,9 @@ pub(crate) mod http_date {
             }
             b' ' => 0,
             _ => {
-                return Err(DateTimeParseError::Invalid(
-                    "incorrectly shaped string".into(),
-                ))
+                return Err(
+                    DateTimeParseErrorKind::Invalid("incorrectly shaped string".into()).into(),
+                )
             }
         };
 
@@ -316,7 +337,9 @@ pub(crate) mod http_date {
         let minutes = parse_slice(&s[20..22])?;
         let seconds = parse_slice(&s[23..25])?;
         let time = Time::from_hms_nano(hours, minutes, seconds, nanos).map_err(|err| {
-            DateTimeParseError::Invalid(format!("time components are out of range: {}", err).into())
+            DateTimeParseErrorKind::Invalid(
+                format!("time components are out of range: {}", err).into(),
+            )
         })?;
 
         let month = match &s[7..12] {
@@ -333,19 +356,22 @@ pub(crate) mod http_date {
             b" Nov " => Month::November,
             b" Dec " => Month::December,
             month => {
-                return Err(DateTimeParseError::Invalid(
+                return Err(DateTimeParseErrorKind::Invalid(
                     format!(
                         "invalid month: {}",
                         std::str::from_utf8(month).unwrap_or_default()
                     )
                     .into(),
-                ))
+                )
+                .into())
             }
         };
         let year = parse_slice(&s[12..16])?;
         let day = parse_slice(&s[5..7])?;
         let date = Date::from_calendar_date(year, month, day).map_err(|err| {
-            DateTimeParseError::Invalid(format!("date components are out of range: {}", err).into())
+            DateTimeParseErrorKind::Invalid(
+                format!("date components are out of range: {}", err).into(),
+            )
         })?;
         let date_time = PrimitiveDateTime::new(date, time).assume_offset(UtcOffset::UTC);
 
@@ -359,14 +385,16 @@ pub(crate) mod http_date {
     {
         let as_str =
             std::str::from_utf8(ascii_slice).expect("should only be called on ascii strings");
-        as_str
+        Ok(as_str
             .parse::<T>()
-            .map_err(|_| DateTimeParseError::IntParseError)
+            .map_err(|_| DateTimeParseErrorKind::IntParseError)?)
     }
 }
 
 pub(crate) mod rfc3339 {
-    use crate::date_time::format::{DateTimeFormatError, DateTimeParseError};
+    use crate::date_time::format::{
+        DateTimeFormatError, DateTimeFormatErrorKind, DateTimeParseError, DateTimeParseErrorKind,
+    };
     use crate::DateTime;
     use time::format_description::well_known::Rfc3339;
     use time::OffsetDateTime;
@@ -378,12 +406,13 @@ pub(crate) mod rfc3339 {
     // Not OK: 1985-04-12T23:20:50-02:00
     pub(crate) fn parse(s: &str) -> Result<DateTime, DateTimeParseError> {
         if !matches!(s.chars().last(), Some('Z')) {
-            return Err(DateTimeParseError::Invalid(
+            return Err(DateTimeParseErrorKind::Invalid(
                 "Smithy does not support timezone offsets in RFC-3339 date times".into(),
-            ));
+            )
+            .into());
         }
         let date_time = OffsetDateTime::parse(s, &Rfc3339).map_err(|err| {
-            DateTimeParseError::Invalid(format!("invalid RFC-3339 date-time: {}", err).into())
+            DateTimeParseErrorKind::Invalid(format!("invalid RFC-3339 date-time: {}", err).into())
         })?;
         Ok(DateTime::from_nanos(date_time.unix_timestamp_nanos())
             .expect("this date format cannot produce out of range date-times"))
@@ -400,7 +429,7 @@ pub(crate) mod rfc3339 {
     pub(crate) fn format(date_time: &DateTime) -> Result<String, DateTimeFormatError> {
         use std::fmt::Write;
         fn out_of_range<E: std::fmt::Display>(cause: E) -> DateTimeFormatError {
-            DateTimeFormatError::OutOfRange(
+            DateTimeFormatErrorKind::OutOfRange(
                 format!(
                     "RFC-3339 timestamps support dates between 0001-01-01T00:00:00.000Z \
                             and 9999-12-31T23:59:59.999Z. {}",
@@ -408,6 +437,7 @@ pub(crate) mod rfc3339 {
                 )
                 .into(),
             )
+            .into()
         }
         let (year, month, day, hour, minute, second, micros) = {
             let s = OffsetDateTime::from_unix_timestamp_nanos(date_time.as_nanos())
@@ -585,11 +615,15 @@ mod tests {
 
         assert!(matches!(
             rfc3339::format(&DateTime::from_secs(-62_135_596_800 - 1)),
-            Err(DateTimeFormatError::OutOfRange(_))
+            Err(DateTimeFormatError {
+                kind: DateTimeFormatErrorKind::OutOfRange(_)
+            })
         ));
         assert!(matches!(
             rfc3339::format(&DateTime::from_secs(253402300799 + 1)),
-            Err(DateTimeFormatError::OutOfRange(_))
+            Err(DateTimeFormatError {
+                kind: DateTimeFormatErrorKind::OutOfRange(_)
+            })
         ));
     }
 
@@ -634,7 +668,12 @@ mod tests {
     #[test]
     fn parse_rfc3339_timezone_forbidden() {
         let dt = rfc3339::parse("1985-04-12T23:20:50-02:00");
-        assert!(matches!(dt.unwrap_err(), DateTimeParseError::Invalid(_)));
+        assert!(matches!(
+            dt.unwrap_err(),
+            DateTimeParseError {
+                kind: DateTimeParseErrorKind::Invalid(_)
+            }
+        ));
     }
 
     #[test]
@@ -650,11 +689,15 @@ mod tests {
 
         assert!(matches!(
             http_date::format(&DateTime::from_secs(-62_135_596_800 - 1)),
-            Err(DateTimeFormatError::OutOfRange(_))
+            Err(DateTimeFormatError {
+                kind: DateTimeFormatErrorKind::OutOfRange(_)
+            })
         ));
         assert!(matches!(
             http_date::format(&DateTime::from_secs(253402300799 + 1)),
-            Err(DateTimeFormatError::OutOfRange(_))
+            Err(DateTimeFormatError {
+                kind: DateTimeFormatErrorKind::OutOfRange(_)
+            })
         ));
     }
 
@@ -663,7 +706,9 @@ mod tests {
         let fractional = "Mon, 16 Dec 2019 23:48:18.1212 GMT";
         assert!(matches!(
             http_date::parse(fractional),
-            Err(DateTimeParseError::Invalid(_))
+            Err(DateTimeParseError {
+                kind: DateTimeParseErrorKind::Invalid(_)
+            })
         ));
     }
 
@@ -672,7 +717,9 @@ mod tests {
         let fractional = "Mon, 16 Dec 2019 23:48:18. GMT";
         assert!(matches!(
             http_date::parse(fractional),
-            Err(DateTimeParseError::IntParseError)
+            Err(DateTimeParseError {
+                kind: DateTimeParseErrorKind::IntParseError
+            })
         ));
     }
 

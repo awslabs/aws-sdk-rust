@@ -5,11 +5,11 @@
 
 //! This module defines types that describe when to retry given a response.
 
-use std::borrow::Cow;
-use std::fmt::{Display, Formatter};
-use std::num::ParseIntError;
+use std::fmt;
 use std::str::FromStr;
 use std::time::Duration;
+
+const VALID_RETRY_MODES: &[RetryMode] = &[RetryMode::Standard];
 
 /// Type of error that occurred when making a request.
 #[derive(Clone, Copy, Eq, PartialEq, Debug)]
@@ -93,26 +93,8 @@ pub enum RetryMode {
     Adaptive,
 }
 
-const VALID_RETRY_MODES: &[RetryMode] = &[RetryMode::Standard];
-
-/// Failure to parse a `RetryMode` from string.
-#[derive(Debug)]
-pub struct RetryModeParseErr(String);
-
-impl Display for RetryModeParseErr {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "error parsing string '{}' as RetryMode, valid options are: {:#?}",
-            self.0, VALID_RETRY_MODES
-        )
-    }
-}
-
-impl std::error::Error for RetryModeParseErr {}
-
 impl FromStr for RetryMode {
-    type Err = RetryModeParseErr;
+    type Err = RetryModeParseError;
 
     fn from_str(string: &str) -> Result<Self, Self::Err> {
         let string = string.trim();
@@ -123,10 +105,36 @@ impl FromStr for RetryMode {
         // } else if string.eq_ignore_ascii_case("adaptive") {
         //     Ok(RetryMode::Adaptive)
         } else {
-            Err(RetryModeParseErr(string.to_owned()))
+            Err(RetryModeParseError::new(string))
         }
     }
 }
+
+/// Failure to parse a `RetryMode` from string.
+#[derive(Debug)]
+pub struct RetryModeParseError {
+    message: String,
+}
+
+impl RetryModeParseError {
+    pub(super) fn new(message: impl Into<String>) -> Self {
+        Self {
+            message: message.into(),
+        }
+    }
+}
+
+impl fmt::Display for RetryModeParseError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(
+            f,
+            "error parsing string '{}' as RetryMode, valid options are: {:#?}",
+            self.message, VALID_RETRY_MODES
+        )
+    }
+}
+
+impl std::error::Error for RetryModeParseError {}
 
 /// Builder for [`RetryConfig`].
 #[non_exhaustive]
@@ -292,71 +300,6 @@ impl RetryConfig {
     /// Returns true if retry is enabled with this config
     pub fn has_retry(&self) -> bool {
         self.max_attempts > 1
-    }
-}
-
-/// Failure to parse retry config from profile file or environment variable.
-#[non_exhaustive]
-#[derive(Debug)]
-pub enum RetryConfigErr {
-    /// The configured retry mode wasn't recognized.
-    InvalidRetryMode {
-        /// Cause of the error.
-        source: RetryModeParseErr,
-        /// Where the invalid retry mode value originated from.
-        set_by: Cow<'static, str>,
-    },
-    /// Max attempts must be greater than zero.
-    MaxAttemptsMustNotBeZero {
-        /// Where the invalid max attempts value originated from.
-        set_by: Cow<'static, str>,
-    },
-    /// The max attempts value couldn't be parsed to an integer.
-    FailedToParseMaxAttempts {
-        /// Cause of the error.
-        source: ParseIntError,
-        /// Where the invalid max attempts value originated from.
-        set_by: Cow<'static, str>,
-    },
-    /// The adaptive retry mode hasn't been implemented yet.
-    AdaptiveModeIsNotSupported {
-        /// Where the invalid retry mode value originated from.
-        set_by: Cow<'static, str>,
-    },
-}
-
-impl Display for RetryConfigErr {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        use RetryConfigErr::*;
-        match self {
-            InvalidRetryMode { set_by, source } => {
-                write!(f, "invalid configuration set by {}: {}", set_by, source)
-            }
-            MaxAttemptsMustNotBeZero { set_by } => {
-                write!(f, "invalid configuration set by {}: It is invalid to set max attempts to 0. Unset it or set it to an integer greater than or equal to one.", set_by)
-            }
-            FailedToParseMaxAttempts { set_by, source } => {
-                write!(
-                    f,
-                    "failed to parse max attempts set by {}: {}",
-                    set_by, source
-                )
-            }
-            AdaptiveModeIsNotSupported { set_by } => {
-                write!(f, "invalid configuration set by {}: Setting retry mode to 'adaptive' is not yet supported. Unset it or set it to 'standard' mode.", set_by)
-            }
-        }
-    }
-}
-
-impl std::error::Error for RetryConfigErr {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        use RetryConfigErr::*;
-        match self {
-            InvalidRetryMode { source, .. } => Some(source),
-            FailedToParseMaxAttempts { source, .. } => Some(source),
-            _ => None,
-        }
     }
 }
 

@@ -36,7 +36,7 @@ struct Location {
 }
 
 /// An error encountered while parsing a profile
-#[derive(Debug, Clone)]
+#[derive(Debug)]
 pub struct ProfileParseError {
     /// Location where this error occurred
     location: Location,

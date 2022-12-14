@@ -3,10 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use std::str::FromStr;
-
-use aws_smithy_types::retry::{RetryConfigBuilder, RetryConfigErr, RetryMode};
+use crate::retry::{
+    error::RetryConfigError, error::RetryConfigErrorKind, RetryConfigBuilder, RetryMode,
+};
 use aws_types::os_shim_internal::Env;
+use std::str::FromStr;
 
 const ENV_VAR_MAX_ATTEMPTS: &str = "AWS_MAX_ATTEMPTS";
 const ENV_VAR_RETRY_MODE: &str = "AWS_RETRY_MODE";
@@ -35,20 +36,22 @@ impl EnvironmentVariableRetryConfigProvider {
     }
 
     /// Attempt to create a new `RetryConfig` from environment variables
-    pub fn retry_config_builder(&self) -> Result<RetryConfigBuilder, RetryConfigErr> {
+    pub fn retry_config_builder(&self) -> Result<RetryConfigBuilder, RetryConfigError> {
         let max_attempts = match self.env.get(ENV_VAR_MAX_ATTEMPTS).ok() {
             Some(max_attempts) => match max_attempts.parse::<u32>() {
                 Ok(max_attempts) if max_attempts == 0 => {
-                    return Err(RetryConfigErr::MaxAttemptsMustNotBeZero {
+                    return Err(RetryConfigErrorKind::MaxAttemptsMustNotBeZero {
                         set_by: "environment variable".into(),
-                    });
+                    }
+                    .into());
                 }
                 Ok(max_attempts) => Some(max_attempts),
                 Err(source) => {
-                    return Err(RetryConfigErr::FailedToParseMaxAttempts {
+                    return Err(RetryConfigErrorKind::FailedToParseMaxAttempts {
                         set_by: "environment variable".into(),
                         source,
-                    });
+                    }
+                    .into());
                 }
             },
             None => None,
@@ -58,10 +61,11 @@ impl EnvironmentVariableRetryConfigProvider {
             Ok(retry_mode) => match RetryMode::from_str(&retry_mode) {
                 Ok(retry_mode) => Some(retry_mode),
                 Err(retry_mode_err) => {
-                    return Err(RetryConfigErr::InvalidRetryMode {
+                    return Err(RetryConfigErrorKind::InvalidRetryMode {
                         set_by: "environment variable".into(),
                         source: retry_mode_err,
-                    });
+                    }
+                    .into());
                 }
             },
             Err(_) => None,
@@ -78,10 +82,11 @@ impl EnvironmentVariableRetryConfigProvider {
 
 #[cfg(test)]
 mod test {
-    use aws_smithy_types::retry::{RetryConfig, RetryConfigErr, RetryMode};
-    use aws_types::os_shim_internal::Env;
-
     use super::{EnvironmentVariableRetryConfigProvider, ENV_VAR_MAX_ATTEMPTS, ENV_VAR_RETRY_MODE};
+    use crate::retry::{
+        error::RetryConfigError, error::RetryConfigErrorKind, RetryConfig, RetryMode,
+    };
+    use aws_types::os_shim_internal::Env;
 
     fn test_provider(vars: &[(&str, &str)]) -> EnvironmentVariableRetryConfigProvider {
         EnvironmentVariableRetryConfigProvider::new_with_env(Env::from_slice(vars))
@@ -112,7 +117,9 @@ mod test {
             test_provider(&[(ENV_VAR_MAX_ATTEMPTS, "not an integer")])
                 .retry_config_builder()
                 .unwrap_err(),
-            RetryConfigErr::FailedToParseMaxAttempts { .. }
+            RetryConfigError {
+                kind: RetryConfigErrorKind::FailedToParseMaxAttempts { .. }
+            }
         ));
     }
 
@@ -148,7 +155,9 @@ mod test {
             .unwrap_err();
         assert!(matches!(
             err,
-            RetryConfigErr::MaxAttemptsMustNotBeZero { .. }
+            RetryConfigError {
+                kind: RetryConfigErrorKind::MaxAttemptsMustNotBeZero { .. }
+            }
         ));
     }
 }

@@ -129,8 +129,8 @@ impl From<EscapeError> for DeserializeError {
     }
 }
 
-impl From<aws_smithy_types::TryFromNumberError> for DeserializeError {
-    fn from(_: aws_smithy_types::TryFromNumberError) -> Self {
+impl From<aws_smithy_types::error::TryFromNumberError> for DeserializeError {
+    fn from(_: aws_smithy_types::error::TryFromNumberError) -> Self {
         Self {
             kind: DeserializeErrorKind::InvalidNumber,
             offset: None,

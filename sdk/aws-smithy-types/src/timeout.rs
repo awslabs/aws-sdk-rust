@@ -3,6 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+//! This module defines types that describe timeouts that can be applied to various stages of the
+//! Smithy networking stack.
+
 use std::time::Duration;
 
 /// Builder for [`TimeoutConfig`].

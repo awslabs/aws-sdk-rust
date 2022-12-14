@@ -3,8 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-//! Default Provider chains for [`region`](default_provider::region), [`credentials`](default_provider::credentials),
-//! [retries](default_provider::retry_config), [timeouts](default_provider::timeout_config) and [app name](default_provider::app_name).
+//! Providers that implement the default AWS provider chain
+//!
+//! Default Provider chains for [`region`](crate::default_provider::region), [`credentials`](crate::default_provider::credentials),
+//! [retries](crate::default_provider::retry_config), [timeouts](crate::default_provider::timeout_config) and
+//! [app name](crate::default_provider::app_name).
 //!
 //! Typically, this module is used via [`load_from_env`](crate::load_from_env) or [`from_env`](crate::from_env). It should only be used directly
 //! if you need to set custom configuration options to override the default resolution chain.
