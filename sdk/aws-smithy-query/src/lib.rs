@@ -34,6 +34,7 @@ impl<'a> QueryWriter<'a> {
     }
 }
 
+#[must_use]
 pub struct QueryMapWriter<'a> {
     output: &'a mut String,
     prefix: Cow<'a, str>,
@@ -89,6 +90,7 @@ impl<'a> QueryMapWriter<'a> {
     }
 }
 
+#[must_use]
 pub struct QueryListWriter<'a> {
     output: &'a mut String,
     prefix: Cow<'a, str>,
@@ -132,10 +134,15 @@ impl<'a> QueryListWriter<'a> {
     }
 
     pub fn finish(self) {
-        // Calling this drops self
+        // https://github.com/awslabs/smithy/commit/715b1d94ab14764ad43496b016b0c2e85bcf1d1f
+        // If the list was empty, just serialize the parameter name
+        if self.next_index == 1 {
+            QueryValueWriter::new(self.output, self.prefix).write_param_name();
+        }
     }
 }
 
+#[must_use]
 pub struct QueryValueWriter<'a> {
     output: &'a mut String,
     prefix: Cow<'a, str>,
@@ -227,6 +234,15 @@ mod tests {
         let writer = QueryWriter::new(&mut out, "SomeAction", "1.0");
         writer.finish();
         assert_eq!("Action=SomeAction&Version=1.0", out);
+    }
+
+    #[test]
+    fn query_list_writer_empty_list() {
+        let mut out = String::new();
+        let mut writer = QueryWriter::new(&mut out, "SomeAction", "1.0");
+        writer.prefix("myList").start_list(false, None).finish();
+        writer.finish();
+        assert_eq!("Action=SomeAction&Version=1.0&myList=", out);
     }
 
     #[test]
