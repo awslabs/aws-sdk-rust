@@ -29,6 +29,9 @@ pub struct SigningSettings {
 
     /// Headers that should be excluded from the signing process
     pub excluded_headers: Option<Vec<HeaderName>>,
+
+    /// Specifies whether the absolute path component of the URI should be normalized during signing.
+    pub uri_path_normalization_mode: UriPathNormalizationMode,
 }
 
 /// HTTP payload checksum type
@@ -61,6 +64,20 @@ pub enum PercentEncodingMode {
     Single,
 }
 
+/// Config value to specify whether the canonical request's URI path should be normalized.
+/// <https://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html>
+///
+/// URI path normalization is performed based on <https://www.rfc-editor.org/rfc/rfc3986>.
+#[non_exhaustive]
+#[derive(Debug, Eq, PartialEq)]
+pub enum UriPathNormalizationMode {
+    /// Normalize the URI path according to RFC3986
+    Enabled,
+
+    /// Don't normalize the URI path (S3, for example, rejects normalized paths in some instances)
+    Disabled,
+}
+
 impl Default for SigningSettings {
     fn default() -> Self {
         // The user agent header should not be signed because it may be altered by proxies
@@ -72,6 +89,7 @@ impl Default for SigningSettings {
             signature_location: SignatureLocation::Headers,
             expires_in: None,
             excluded_headers: Some(EXCLUDED_HEADERS.to_vec()),
+            uri_path_normalization_mode: UriPathNormalizationMode::Enabled,
         }
     }
 }

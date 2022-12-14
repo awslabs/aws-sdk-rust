@@ -214,6 +214,7 @@ impl AbortMultipartUploadInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -604,6 +605,7 @@ impl CompleteMultipartUploadInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -1468,6 +1470,7 @@ impl CopyObjectInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -1775,6 +1778,7 @@ impl CreateBucketInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -2410,6 +2414,7 @@ impl CreateMultipartUploadInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -2573,6 +2578,7 @@ impl DeleteBucketInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -2777,6 +2783,7 @@ impl DeleteBucketAnalyticsConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -2951,6 +2958,7 @@ impl DeleteBucketCorsInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -3126,6 +3134,7 @@ impl DeleteBucketEncryptionInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -3314,6 +3323,7 @@ impl DeleteBucketIntelligentTieringConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -3519,6 +3529,7 @@ impl DeleteBucketInventoryConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -3694,6 +3705,7 @@ impl DeleteBucketLifecycleInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -3898,6 +3910,7 @@ impl DeleteBucketMetricsConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -4074,6 +4087,7 @@ impl DeleteBucketOwnershipControlsInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -4248,6 +4262,7 @@ impl DeleteBucketPolicyInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -4423,6 +4438,7 @@ impl DeleteBucketReplicationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -4597,6 +4613,7 @@ impl DeleteBucketTaggingInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -4771,6 +4788,7 @@ impl DeleteBucketWebsiteInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -5035,6 +5053,7 @@ impl DeleteObjectInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -5222,6 +5241,7 @@ impl DeleteObjectInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -5505,6 +5525,7 @@ impl DeleteObjectsInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -5732,6 +5753,7 @@ impl DeleteObjectTaggingInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -5907,6 +5929,7 @@ impl DeletePublicAccessBlockInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -6083,6 +6106,7 @@ impl GetBucketAccelerateConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -6255,6 +6279,7 @@ impl GetBucketAclInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -6460,6 +6485,7 @@ impl GetBucketAnalyticsConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -6632,6 +6658,7 @@ impl GetBucketCorsInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -6806,6 +6833,7 @@ impl GetBucketEncryptionInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -6995,6 +7023,7 @@ impl GetBucketIntelligentTieringConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -7200,6 +7229,7 @@ impl GetBucketInventoryConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -7376,6 +7406,7 @@ impl GetBucketLifecycleConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -7550,6 +7581,7 @@ impl GetBucketLocationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -7724,6 +7756,7 @@ impl GetBucketLoggingInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -7929,6 +7962,7 @@ impl GetBucketMetricsConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -8105,6 +8139,7 @@ impl GetBucketNotificationConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -8280,6 +8315,7 @@ impl GetBucketOwnershipControlsInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -8452,6 +8488,7 @@ impl GetBucketPolicyInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -8627,6 +8664,7 @@ impl GetBucketPolicyStatusInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -8802,6 +8840,7 @@ impl GetBucketReplicationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -8977,6 +9016,7 @@ impl GetBucketRequestPaymentInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -9151,6 +9191,7 @@ impl GetBucketTaggingInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -9325,6 +9366,7 @@ impl GetBucketVersioningInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -9499,6 +9541,7 @@ impl GetBucketWebsiteInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -10043,6 +10086,7 @@ impl GetObjectInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -10289,6 +10333,7 @@ impl GetObjectInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -10522,6 +10567,7 @@ impl GetObjectAclInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -10858,6 +10904,7 @@ impl GetObjectAttributesInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -11098,6 +11145,7 @@ impl GetObjectLegalHoldInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -11275,6 +11323,7 @@ impl GetObjectLockConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -11515,6 +11564,7 @@ impl GetObjectRetentionInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -11757,6 +11807,7 @@ impl GetObjectTaggingInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -11978,6 +12029,7 @@ impl GetObjectTorrentInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -12153,6 +12205,7 @@ impl GetPublicAccessBlockInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -12320,6 +12373,7 @@ impl HeadBucketInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -12708,6 +12762,7 @@ impl HeadObjectInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -12908,6 +12963,7 @@ impl ListBucketAnalyticsConfigurationsInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -13092,6 +13148,7 @@ impl ListBucketIntelligentTieringConfigurationsInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -13293,6 +13350,7 @@ impl ListBucketInventoryConfigurationsInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -13493,6 +13551,7 @@ impl ListBucketMetricsConfigurationsInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -13607,6 +13666,7 @@ impl ListBucketsInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -13910,6 +13970,7 @@ impl ListMultipartUploadsInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -14192,6 +14253,7 @@ impl ListObjectsInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -14519,6 +14581,7 @@ impl ListObjectsV2Input {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -14815,6 +14878,7 @@ impl ListObjectVersionsInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -15152,6 +15216,7 @@ impl ListPartsInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -15395,6 +15460,7 @@ impl PutBucketAccelerateConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -15737,6 +15803,7 @@ impl PutBucketAclInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -15976,6 +16043,7 @@ impl PutBucketAnalyticsConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -16232,6 +16300,7 @@ impl PutBucketCorsInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -16494,6 +16563,7 @@ impl PutBucketEncryptionInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -16714,6 +16784,7 @@ impl PutBucketIntelligentTieringConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -16953,6 +17024,7 @@ impl PutBucketInventoryConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -17203,6 +17275,7 @@ impl PutBucketLifecycleConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -17461,6 +17534,7 @@ impl PutBucketLoggingInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -17696,6 +17770,7 @@ impl PutBucketMetricsConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -17919,6 +17994,7 @@ impl PutBucketNotificationConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -18157,6 +18233,7 @@ impl PutBucketOwnershipControlsInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -18425,6 +18502,7 @@ impl PutBucketPolicyInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -18700,6 +18778,7 @@ impl PutBucketReplicationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -18963,6 +19042,7 @@ impl PutBucketRequestPaymentInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -19216,6 +19296,7 @@ impl PutBucketTaggingInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -19490,6 +19571,7 @@ impl PutBucketVersioningInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -19748,6 +19830,7 @@ impl PutBucketWebsiteInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -20512,6 +20595,7 @@ impl PutObjectInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -20723,6 +20807,7 @@ impl PutObjectInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -21138,6 +21223,7 @@ impl PutObjectAclInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -21460,6 +21546,7 @@ impl PutObjectLegalHoldInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -21750,6 +21837,7 @@ impl PutObjectLockConfigurationInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -22084,6 +22172,7 @@ impl PutObjectRetentionInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -22405,6 +22494,7 @@ impl PutObjectTaggingInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -22668,6 +22758,7 @@ impl PutPublicAccessBlockInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -22975,6 +23066,7 @@ impl RestoreObjectInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -23377,6 +23469,7 @@ impl SelectObjectContentInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -23830,6 +23923,7 @@ impl UploadPartInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -24067,6 +24161,7 @@ impl UploadPartInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -24598,6 +24693,7 @@ impl UploadPartCopyInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
@@ -25386,6 +25482,7 @@ impl WriteGetObjectResponseInput {
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
+        signing_config.signing_options.normalize_uri_path = false;
         signing_config.signing_options.content_sha256_header = true;
         request
             .properties_mut()

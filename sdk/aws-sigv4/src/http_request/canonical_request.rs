@@ -6,7 +6,9 @@
 use crate::date_time::{format_date, format_date_time};
 use crate::http_request::error::CanonicalRequestError;
 use crate::http_request::query_writer::QueryWriter;
+use crate::http_request::settings::UriPathNormalizationMode;
 use crate::http_request::sign::SignableRequest;
+use crate::http_request::uri_path_normalization::normalize_uri_path;
 use crate::http_request::url_escape::percent_encode_path;
 use crate::http_request::PercentEncodingMode;
 use crate::http_request::{PayloadChecksumKind, SignableBody, SignatureLocation, SigningParams};
@@ -129,10 +131,14 @@ impl<'a> CanonicalRequest<'a> {
         // Path encoding: if specified, re-encode % as %25
         // Set method and path into CanonicalRequest
         let path = req.uri().path();
+        let path = match params.settings.uri_path_normalization_mode {
+            UriPathNormalizationMode::Enabled => normalize_uri_path(path),
+            UriPathNormalizationMode::Disabled => Cow::Borrowed(path),
+        };
         let path = match params.settings.percent_encoding_mode {
             // The string is already URI encoded, we don't need to encode everything again, just `%`
-            PercentEncodingMode::Double => Cow::Owned(percent_encode_path(path)),
-            PercentEncodingMode::Single => Cow::Borrowed(path),
+            PercentEncodingMode::Double => Cow::Owned(percent_encode_path(&path)),
+            PercentEncodingMode::Single => path,
         };
         let payload_hash = Self::payload_hash(req.body());
 
