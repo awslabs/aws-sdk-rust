@@ -122,9 +122,6 @@ version = "3.2.0"
 version = "1"
 features = ["macros", "test-util", "rt"]
 
-[dev-dependencies.tracing]
-version = "0.1.0"
-
 [dev-dependencies.tracing-subscriber]
 version = "0.3.15"
 features = ["env-filter"]
