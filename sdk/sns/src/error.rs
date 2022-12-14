@@ -2131,7 +2131,14 @@ pub enum AddPermissionErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddPermissionError {
@@ -2264,7 +2271,14 @@ pub enum CheckIfPhoneNumberIsOptedOutErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CheckIfPhoneNumberIsOptedOutError {
@@ -2414,7 +2428,14 @@ pub enum ConfirmSubscriptionErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Indicates that the customer already owns the maximum allowed number of subscriptions.</p>
     SubscriptionLimitExceededException(crate::error::SubscriptionLimitExceededException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ConfirmSubscriptionError {
@@ -2574,7 +2595,14 @@ pub enum CreatePlatformApplicationErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreatePlatformApplicationError {
@@ -2705,7 +2733,14 @@ pub enum CreatePlatformEndpointErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreatePlatformEndpointError {
@@ -2849,7 +2884,14 @@ pub enum CreateSMSSandboxPhoneNumberErrorKind {
     ThrottledException(crate::error::ThrottledException),
     /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     UserErrorException(crate::error::UserErrorException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateSMSSandboxPhoneNumberError {
@@ -3021,7 +3063,14 @@ pub enum CreateTopicErrorKind {
     TagPolicyException(crate::error::TagPolicyException),
     /// <p>Indicates that the customer already owns the maximum allowed number of topics.</p>
     TopicLimitExceededException(crate::error::TopicLimitExceededException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateTopicError {
@@ -3189,7 +3238,14 @@ pub enum DeleteEndpointErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteEndpointError {
@@ -3314,7 +3370,14 @@ pub enum DeletePlatformApplicationErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeletePlatformApplicationError {
@@ -3451,7 +3514,14 @@ pub enum DeleteSMSSandboxPhoneNumberErrorKind {
     ThrottledException(crate::error::ThrottledException),
     /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     UserErrorException(crate::error::UserErrorException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteSMSSandboxPhoneNumberError {
@@ -3621,7 +3691,14 @@ pub enum DeleteTopicErrorKind {
     StaleTagException(crate::error::StaleTagException),
     /// <p>The request doesn't comply with the IAM tag policy. Correct your request and then retry it.</p>
     TagPolicyException(crate::error::TagPolicyException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteTopicError {
@@ -3772,7 +3849,14 @@ pub enum GetDataProtectionPolicyErrorKind {
     InvalidSecurityException(crate::error::InvalidSecurityException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDataProtectionPolicyError {
@@ -3919,7 +4003,14 @@ pub enum GetEndpointAttributesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetEndpointAttributesError {
@@ -4059,7 +4150,14 @@ pub enum GetPlatformApplicationAttributesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetPlatformApplicationAttributesError {
@@ -4212,7 +4310,14 @@ pub enum GetSMSAttributesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSMSAttributesError {
@@ -4343,7 +4448,14 @@ pub enum GetSMSSandboxAccountStatusErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSMSSandboxAccountStatusError {
@@ -4478,7 +4590,14 @@ pub enum GetSubscriptionAttributesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSubscriptionAttributesError {
@@ -4620,7 +4739,14 @@ pub enum GetTopicAttributesErrorKind {
     InvalidSecurityException(crate::error::InvalidSecurityException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetTopicAttributesError {
@@ -4765,7 +4891,14 @@ pub enum ListEndpointsByPlatformApplicationErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListEndpointsByPlatformApplicationError {
@@ -4920,7 +5053,14 @@ pub enum ListOriginationNumbersErrorKind {
     ThrottledException(crate::error::ThrottledException),
     /// <p>Indicates that a parameter in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListOriginationNumbersError {
@@ -5069,7 +5209,14 @@ pub enum ListPhoneNumbersOptedOutErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPhoneNumbersOptedOutError {
@@ -5207,7 +5354,14 @@ pub enum ListPlatformApplicationsErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListPlatformApplicationsError {
@@ -5340,7 +5494,14 @@ pub enum ListSMSSandboxPhoneNumbersErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSMSSandboxPhoneNumbersError {
@@ -5489,7 +5650,14 @@ pub enum ListSubscriptionsErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSubscriptionsError {
@@ -5616,7 +5784,14 @@ pub enum ListSubscriptionsByTopicErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSubscriptionsByTopicError {
@@ -5756,7 +5931,14 @@ pub enum ListTagsForResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request doesn't comply with the IAM tag policy. Correct your request and then retry it.</p>
     TagPolicyException(crate::error::TagPolicyException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -5897,7 +6079,14 @@ pub enum ListTopicsErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTopicsError {
@@ -6019,7 +6208,14 @@ pub enum OptInPhoneNumberErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for OptInPhoneNumberError {
@@ -6172,7 +6368,14 @@ pub enum PublishErrorKind {
     PlatformApplicationDisabledException(crate::error::PlatformApplicationDisabledException),
     /// <p>Indicates that a parameter in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PublishError {
@@ -6398,7 +6601,14 @@ pub enum PublishBatchErrorKind {
     TooManyEntriesInBatchRequestException(crate::error::TooManyEntriesInBatchRequestException),
     /// <p>Indicates that a parameter in the request is invalid.</p>
     ValidationException(crate::error::ValidationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PublishBatchError {
@@ -6657,7 +6867,14 @@ pub enum PutDataProtectionPolicyErrorKind {
     InvalidSecurityException(crate::error::InvalidSecurityException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutDataProtectionPolicyError {
@@ -6804,7 +7021,14 @@ pub enum RemovePermissionErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemovePermissionError {
@@ -6935,7 +7159,14 @@ pub enum SetEndpointAttributesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SetEndpointAttributesError {
@@ -7075,7 +7306,14 @@ pub enum SetPlatformApplicationAttributesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SetPlatformApplicationAttributesError {
@@ -7228,7 +7466,14 @@ pub enum SetSMSAttributesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SetSMSAttributesError {
@@ -7363,7 +7608,14 @@ pub enum SetSubscriptionAttributesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SetSubscriptionAttributesError {
@@ -7518,7 +7770,14 @@ pub enum SetTopicAttributesErrorKind {
     InvalidSecurityException(crate::error::InvalidSecurityException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SetTopicAttributesError {
@@ -7667,7 +7926,14 @@ pub enum SubscribeErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>Indicates that the customer already owns the maximum allowed number of subscriptions.</p>
     SubscriptionLimitExceededException(crate::error::SubscriptionLimitExceededException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SubscribeError {
@@ -7822,7 +8088,14 @@ pub enum TagResourceErrorKind {
     TagLimitExceededException(crate::error::TagLimitExceededException),
     /// <p>The request doesn't comply with the IAM tag policy. Correct your request and then retry it.</p>
     TagPolicyException(crate::error::TagPolicyException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
@@ -7979,7 +8252,14 @@ pub enum UnsubscribeErrorKind {
     InvalidSecurityException(crate::error::InvalidSecurityException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UnsubscribeError {
@@ -8122,7 +8402,14 @@ pub enum UntagResourceErrorKind {
     TagLimitExceededException(crate::error::TagLimitExceededException),
     /// <p>The request doesn't comply with the IAM tag policy. Correct your request and then retry it.</p>
     TagPolicyException(crate::error::TagPolicyException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -8283,7 +8570,14 @@ pub enum VerifySMSSandboxPhoneNumberErrorKind {
     ThrottledException(crate::error::ThrottledException),
     /// <p>Indicates that the one-time password (OTP) used for verification is invalid.</p>
     VerificationException(crate::error::VerificationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for VerifySMSSandboxPhoneNumberError {
@@ -8419,9 +8713,12 @@ impl std::error::Error for VerifySMSSandboxPhoneNumberError {
 }
 
 ///
-/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
 ///
-/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+/// When logging an error from the SDK, it is recommended that you either wrap the error in
+/// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+/// error reporter library that visits the error's cause/source chain, or call
+/// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
 ///
 #[derive(Debug)]
 pub struct Unhandled {

@@ -1639,7 +1639,14 @@ pub enum CreateActivityErrorKind {
     InvalidName(crate::error::InvalidName),
     /// <p>You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the AWS Step Functions Developer Guide.</p>
     TooManyTags(crate::error::TooManyTags),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateActivityError {
@@ -1770,7 +1777,14 @@ pub enum CreateStateMachineErrorKind {
     StateMachineTypeNotSupported(crate::error::StateMachineTypeNotSupported),
     /// <p>You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the AWS Step Functions Developer Guide.</p>
     TooManyTags(crate::error::TooManyTags),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateStateMachineError {
@@ -1943,7 +1957,14 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteActivityError {
 pub enum DeleteActivityErrorKind {
     /// <p>The provided Amazon Resource Name (ARN) is invalid.</p>
     InvalidArn(crate::error::InvalidArn),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteActivityError {
@@ -2041,7 +2062,14 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteStateMachineError {
 pub enum DeleteStateMachineErrorKind {
     /// <p>The provided Amazon Resource Name (ARN) is invalid.</p>
     InvalidArn(crate::error::InvalidArn),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteStateMachineError {
@@ -2141,7 +2169,14 @@ pub enum DescribeActivityErrorKind {
     ActivityDoesNotExist(crate::error::ActivityDoesNotExist),
     /// <p>The provided Amazon Resource Name (ARN) is invalid.</p>
     InvalidArn(crate::error::InvalidArn),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeActivityError {
@@ -2250,7 +2285,14 @@ pub enum DescribeExecutionErrorKind {
     ExecutionDoesNotExist(crate::error::ExecutionDoesNotExist),
     /// <p>The provided Amazon Resource Name (ARN) is invalid.</p>
     InvalidArn(crate::error::InvalidArn),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeExecutionError {
@@ -2359,7 +2401,14 @@ pub enum DescribeStateMachineErrorKind {
     InvalidArn(crate::error::InvalidArn),
     /// <p>The specified state machine does not exist.</p>
     StateMachineDoesNotExist(crate::error::StateMachineDoesNotExist),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeStateMachineError {
@@ -2474,7 +2523,14 @@ pub enum DescribeStateMachineForExecutionErrorKind {
     ExecutionDoesNotExist(crate::error::ExecutionDoesNotExist),
     /// <p>The provided Amazon Resource Name (ARN) is invalid.</p>
     InvalidArn(crate::error::InvalidArn),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeStateMachineForExecutionError {
@@ -2599,7 +2655,14 @@ pub enum GetActivityTaskErrorKind {
     ActivityWorkerLimitExceeded(crate::error::ActivityWorkerLimitExceeded),
     /// <p>The provided Amazon Resource Name (ARN) is invalid.</p>
     InvalidArn(crate::error::InvalidArn),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetActivityTaskError {
@@ -2719,7 +2782,14 @@ pub enum GetExecutionHistoryErrorKind {
     InvalidArn(crate::error::InvalidArn),
     /// <p>The provided token is invalid.</p>
     InvalidToken(crate::error::InvalidToken),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetExecutionHistoryError {
@@ -2832,7 +2902,14 @@ impl aws_smithy_http::result::CreateUnhandledError for ListActivitiesError {
 pub enum ListActivitiesErrorKind {
     /// <p>The provided token is invalid.</p>
     InvalidToken(crate::error::InvalidToken),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListActivitiesError {
@@ -2936,7 +3013,14 @@ pub enum ListExecutionsErrorKind {
     StateMachineDoesNotExist(crate::error::StateMachineDoesNotExist),
     /// <p></p>
     StateMachineTypeNotSupported(crate::error::StateMachineTypeNotSupported),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListExecutionsError {
@@ -3058,7 +3142,14 @@ impl aws_smithy_http::result::CreateUnhandledError for ListStateMachinesError {
 pub enum ListStateMachinesErrorKind {
     /// <p>The provided token is invalid.</p>
     InvalidToken(crate::error::InvalidToken),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListStateMachinesError {
@@ -3158,7 +3249,14 @@ pub enum ListTagsForResourceErrorKind {
     InvalidArn(crate::error::InvalidArn),
     /// <p>Could not find the referenced resource. Only state machine and activity ARNs are supported.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
@@ -3269,7 +3367,14 @@ pub enum SendTaskFailureErrorKind {
     TaskDoesNotExist(crate::error::TaskDoesNotExist),
     #[allow(missing_docs)] // documentation missing in model
     TaskTimedOut(crate::error::TaskTimedOut),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SendTaskFailureError {
@@ -3383,7 +3488,14 @@ pub enum SendTaskHeartbeatErrorKind {
     TaskDoesNotExist(crate::error::TaskDoesNotExist),
     #[allow(missing_docs)] // documentation missing in model
     TaskTimedOut(crate::error::TaskTimedOut),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SendTaskHeartbeatError {
@@ -3499,7 +3611,14 @@ pub enum SendTaskSuccessErrorKind {
     TaskDoesNotExist(crate::error::TaskDoesNotExist),
     #[allow(missing_docs)] // documentation missing in model
     TaskTimedOut(crate::error::TaskTimedOut),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SendTaskSuccessError {
@@ -3629,7 +3748,14 @@ pub enum StartExecutionErrorKind {
     StateMachineDeleting(crate::error::StateMachineDeleting),
     /// <p>The specified state machine does not exist.</p>
     StateMachineDoesNotExist(crate::error::StateMachineDoesNotExist),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartExecutionError {
@@ -3785,7 +3911,14 @@ pub enum StartSyncExecutionErrorKind {
     StateMachineDoesNotExist(crate::error::StateMachineDoesNotExist),
     /// <p></p>
     StateMachineTypeNotSupported(crate::error::StateMachineTypeNotSupported),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartSyncExecutionError {
@@ -3927,7 +4060,14 @@ pub enum StopExecutionErrorKind {
     ExecutionDoesNotExist(crate::error::ExecutionDoesNotExist),
     /// <p>The provided Amazon Resource Name (ARN) is invalid.</p>
     InvalidArn(crate::error::InvalidArn),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopExecutionError {
@@ -4035,7 +4175,14 @@ pub enum TagResourceErrorKind {
     ResourceNotFound(crate::error::ResourceNotFound),
     /// <p>You've exceeded the number of tags allowed for a resource. See the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the AWS Step Functions Developer Guide.</p>
     TooManyTags(crate::error::TooManyTags),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
@@ -4147,7 +4294,14 @@ pub enum UntagResourceErrorKind {
     InvalidArn(crate::error::InvalidArn),
     /// <p>Could not find the referenced resource. Only state machine and activity ARNs are supported.</p>
     ResourceNotFound(crate::error::ResourceNotFound),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -4263,7 +4417,14 @@ pub enum UpdateStateMachineErrorKind {
     StateMachineDeleting(crate::error::StateMachineDeleting),
     /// <p>The specified state machine does not exist.</p>
     StateMachineDoesNotExist(crate::error::StateMachineDoesNotExist),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateStateMachineError {
@@ -4393,9 +4554,12 @@ impl std::error::Error for UpdateStateMachineError {
 }
 
 ///
-/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
 ///
-/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+/// When logging an error from the SDK, it is recommended that you either wrap the error in
+/// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+/// error reporter library that visits the error's cause/source chain, or call
+/// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
 ///
 #[derive(Debug)]
 pub struct Unhandled {

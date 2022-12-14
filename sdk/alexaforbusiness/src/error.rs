@@ -1027,7 +1027,14 @@ pub enum ApproveSkillErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ApproveSkillError {
@@ -1142,7 +1149,14 @@ impl aws_smithy_http::result::CreateUnhandledError for AssociateContactWithAddre
 pub enum AssociateContactWithAddressBookErrorKind {
     /// <p>You are performing an action that would put you beyond your account's limits.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateContactWithAddressBookError {
@@ -1260,7 +1274,14 @@ pub enum AssociateDeviceWithNetworkProfileErrorKind {
     DeviceNotRegisteredException(crate::error::DeviceNotRegisteredException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateDeviceWithNetworkProfileError {
@@ -1398,7 +1419,14 @@ pub enum AssociateDeviceWithRoomErrorKind {
     DeviceNotRegisteredException(crate::error::DeviceNotRegisteredException),
     /// <p>You are performing an action that would put you beyond your account's limits.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateDeviceWithRoomError {
@@ -1527,7 +1555,14 @@ impl aws_smithy_http::result::CreateUnhandledError for AssociateSkillGroupWithRo
 pub enum AssociateSkillGroupWithRoomErrorKind {
     /// <p>There is a concurrent modification of resources.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateSkillGroupWithRoomError {
@@ -1642,7 +1677,14 @@ pub enum AssociateSkillWithSkillGroupErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The skill must be linked to a third-party account.</p>
     SkillNotLinkedException(crate::error::SkillNotLinkedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateSkillWithSkillGroupError {
@@ -1771,7 +1813,14 @@ pub enum AssociateSkillWithUsersErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateSkillWithUsersError {
@@ -1891,7 +1940,14 @@ pub enum CreateAddressBookErrorKind {
     AlreadyExistsException(crate::error::AlreadyExistsException),
     /// <p>You are performing an action that would put you beyond your account's limits.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAddressBookError {
@@ -2003,7 +2059,14 @@ impl aws_smithy_http::result::CreateUnhandledError for CreateBusinessReportSched
 pub enum CreateBusinessReportScheduleErrorKind {
     /// <p>The resource being created already exists.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateBusinessReportScheduleError {
@@ -2110,7 +2173,14 @@ impl aws_smithy_http::result::CreateUnhandledError for CreateConferenceProviderE
 pub enum CreateConferenceProviderErrorKind {
     /// <p>The resource being created already exists.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateConferenceProviderError {
@@ -2217,7 +2287,14 @@ pub enum CreateContactErrorKind {
     AlreadyExistsException(crate::error::AlreadyExistsException),
     /// <p>You are performing an action that would put you beyond your account's limits.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateContactError {
@@ -2329,7 +2406,14 @@ pub enum CreateGatewayGroupErrorKind {
     AlreadyExistsException(crate::error::AlreadyExistsException),
     /// <p>You are performing an action that would put you beyond your account's limits.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateGatewayGroupError {
@@ -2447,7 +2531,14 @@ pub enum CreateNetworkProfileErrorKind {
     InvalidServiceLinkedRoleStateException(crate::error::InvalidServiceLinkedRoleStateException),
     /// <p>You are performing an action that would put you beyond your account's limits.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateNetworkProfileError {
@@ -2600,7 +2691,14 @@ pub enum CreateProfileErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>You are performing an action that would put you beyond your account's limits.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateProfileError {
@@ -2721,7 +2819,14 @@ pub enum CreateRoomErrorKind {
     AlreadyExistsException(crate::error::AlreadyExistsException),
     /// <p>You are performing an action that would put you beyond your account's limits.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateRoomError {
@@ -2829,7 +2934,14 @@ pub enum CreateSkillGroupErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>You are performing an action that would put you beyond your account's limits.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateSkillGroupError {
@@ -2952,7 +3064,14 @@ pub enum CreateUserErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource in the request is already in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateUserError {
@@ -3067,7 +3186,14 @@ pub enum DeleteAddressBookErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAddressBookError {
@@ -3178,7 +3304,14 @@ pub enum DeleteBusinessReportScheduleErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteBusinessReportScheduleError {
@@ -3298,7 +3431,14 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteConferenceProviderE
 pub enum DeleteConferenceProviderErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteConferenceProviderError {
@@ -3405,7 +3545,14 @@ pub enum DeleteContactErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteContactError {
@@ -3516,7 +3663,14 @@ pub enum DeleteDeviceErrorKind {
     InvalidCertificateAuthorityException(crate::error::InvalidCertificateAuthorityException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDeviceError {
@@ -3636,7 +3790,14 @@ pub enum DeleteDeviceUsageDataErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDeviceUsageDataError {
@@ -3759,7 +3920,14 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteGatewayGroupError {
 pub enum DeleteGatewayGroupErrorKind {
     /// <p>Another resource is associated with the resource in the request.</p>
     ResourceAssociatedException(crate::error::ResourceAssociatedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteGatewayGroupError {
@@ -3864,7 +4032,14 @@ pub enum DeleteNetworkProfileErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The resource in the request is already in use.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteNetworkProfileError {
@@ -3989,7 +4164,14 @@ pub enum DeleteProfileErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteProfileError {
@@ -4098,7 +4280,14 @@ pub enum DeleteRoomErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteRoomError {
@@ -4207,7 +4396,14 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteRoomSkillParameterE
 pub enum DeleteRoomSkillParameterErrorKind {
     /// <p>There is a concurrent modification of resources.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteRoomSkillParameterError {
@@ -4320,7 +4516,14 @@ pub enum DeleteSkillAuthorizationErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteSkillAuthorizationError {
@@ -4440,7 +4643,14 @@ pub enum DeleteSkillGroupErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteSkillGroupError {
@@ -4549,7 +4759,14 @@ pub enum DeleteUserErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteUserError {
@@ -4656,7 +4873,14 @@ impl aws_smithy_http::result::CreateUnhandledError for DisassociateContactFromAd
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateContactFromAddressBookErrorKind {
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateContactFromAddressBookError {
@@ -4759,7 +4983,14 @@ pub enum DisassociateDeviceFromRoomErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The request failed because this device is no longer registered and therefore no longer managed by this account.</p>
     DeviceNotRegisteredException(crate::error::DeviceNotRegisteredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateDeviceFromRoomError {
@@ -4885,7 +5116,14 @@ pub enum DisassociateSkillFromSkillGroupErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateSkillFromSkillGroupError {
@@ -5010,7 +5248,14 @@ pub enum DisassociateSkillFromUsersErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateSkillFromUsersError {
@@ -5130,7 +5375,14 @@ impl aws_smithy_http::result::CreateUnhandledError for DisassociateSkillGroupFro
 pub enum DisassociateSkillGroupFromRoomErrorKind {
     /// <p>There is a concurrent modification of resources.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateSkillGroupFromRoomError {
@@ -5244,7 +5496,14 @@ impl aws_smithy_http::result::CreateUnhandledError for ForgetSmartHomeAppliances
 pub enum ForgetSmartHomeAppliancesErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ForgetSmartHomeAppliancesError {
@@ -5349,7 +5608,14 @@ impl aws_smithy_http::result::CreateUnhandledError for GetAddressBookError {
 pub enum GetAddressBookErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAddressBookError {
@@ -5447,7 +5713,14 @@ impl aws_smithy_http::result::CreateUnhandledError for GetConferencePreferenceEr
 pub enum GetConferencePreferenceErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetConferencePreferenceError {
@@ -5552,7 +5825,14 @@ impl aws_smithy_http::result::CreateUnhandledError for GetConferenceProviderErro
 pub enum GetConferenceProviderErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetConferenceProviderError {
@@ -5657,7 +5937,14 @@ impl aws_smithy_http::result::CreateUnhandledError for GetContactError {
 pub enum GetContactErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetContactError {
@@ -5755,7 +6042,14 @@ impl aws_smithy_http::result::CreateUnhandledError for GetDeviceError {
 pub enum GetDeviceErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetDeviceError {
@@ -5853,7 +6147,14 @@ impl aws_smithy_http::result::CreateUnhandledError for GetGatewayError {
 pub enum GetGatewayErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetGatewayError {
@@ -5951,7 +6252,14 @@ impl aws_smithy_http::result::CreateUnhandledError for GetGatewayGroupError {
 pub enum GetGatewayGroupErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetGatewayGroupError {
@@ -6051,7 +6359,14 @@ impl aws_smithy_http::result::CreateUnhandledError for GetInvitationConfiguratio
 pub enum GetInvitationConfigurationErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetInvitationConfigurationError {
@@ -6158,7 +6473,14 @@ pub enum GetNetworkProfileErrorKind {
     InvalidSecretsManagerResourceException(crate::error::InvalidSecretsManagerResourceException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetNetworkProfileError {
@@ -6269,7 +6591,14 @@ impl aws_smithy_http::result::CreateUnhandledError for GetProfileError {
 pub enum GetProfileErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetProfileError {
@@ -6367,7 +6696,14 @@ impl aws_smithy_http::result::CreateUnhandledError for GetRoomError {
 pub enum GetRoomErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRoomError {
@@ -6465,7 +6801,14 @@ impl aws_smithy_http::result::CreateUnhandledError for GetRoomSkillParameterErro
 pub enum GetRoomSkillParameterErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRoomSkillParameterError {
@@ -6570,7 +6913,14 @@ impl aws_smithy_http::result::CreateUnhandledError for GetSkillGroupError {
 pub enum GetSkillGroupErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSkillGroupError {
@@ -6668,7 +7018,14 @@ impl aws_smithy_http::result::CreateUnhandledError for ListBusinessReportSchedul
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListBusinessReportSchedulesErrorKind {
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListBusinessReportSchedulesError {
@@ -6762,7 +7119,14 @@ impl aws_smithy_http::result::CreateUnhandledError for ListConferenceProvidersEr
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListConferenceProvidersErrorKind {
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListConferenceProvidersError {
@@ -6858,7 +7222,14 @@ impl aws_smithy_http::result::CreateUnhandledError for ListDeviceEventsError {
 pub enum ListDeviceEventsErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDeviceEventsError {
@@ -6954,7 +7325,14 @@ impl aws_smithy_http::result::CreateUnhandledError for ListGatewayGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListGatewayGroupsErrorKind {
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListGatewayGroupsError {
@@ -7044,7 +7422,14 @@ impl aws_smithy_http::result::CreateUnhandledError for ListGatewaysError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListGatewaysErrorKind {
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListGatewaysError {
@@ -7134,7 +7519,14 @@ impl aws_smithy_http::result::CreateUnhandledError for ListSkillsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSkillsErrorKind {
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSkillsError {
@@ -7226,7 +7618,14 @@ impl aws_smithy_http::result::CreateUnhandledError for ListSkillsStoreCategories
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSkillsStoreCategoriesErrorKind {
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSkillsStoreCategoriesError {
@@ -7322,7 +7721,14 @@ impl aws_smithy_http::result::CreateUnhandledError for ListSkillsStoreSkillsByCa
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSkillsStoreSkillsByCategoryErrorKind {
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSkillsStoreSkillsByCategoryError {
@@ -7421,7 +7827,14 @@ impl aws_smithy_http::result::CreateUnhandledError for ListSmartHomeAppliancesEr
 pub enum ListSmartHomeAppliancesErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSmartHomeAppliancesError {
@@ -7526,7 +7939,14 @@ impl aws_smithy_http::result::CreateUnhandledError for ListTagsError {
 pub enum ListTagsErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsError {
@@ -7624,7 +8044,14 @@ impl aws_smithy_http::result::CreateUnhandledError for PutConferencePreferenceEr
 pub enum PutConferencePreferenceErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutConferencePreferenceError {
@@ -7733,7 +8160,14 @@ pub enum PutInvitationConfigurationErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutInvitationConfigurationError {
@@ -7851,7 +8285,14 @@ impl aws_smithy_http::result::CreateUnhandledError for PutRoomSkillParameterErro
 pub enum PutRoomSkillParameterErrorKind {
     /// <p>There is a concurrent modification of resources.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutRoomSkillParameterError {
@@ -7960,7 +8401,14 @@ pub enum PutSkillAuthorizationErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The caller has no permissions to operate on the resource involved in the API call.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutSkillAuthorizationError {
@@ -8082,7 +8530,14 @@ pub enum RegisterAVSDeviceErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RegisterAVSDeviceError {
@@ -8209,7 +8664,14 @@ pub enum RejectSkillErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RejectSkillError {
@@ -8316,7 +8778,14 @@ impl aws_smithy_http::result::CreateUnhandledError for ResolveRoomError {
 pub enum ResolveRoomErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ResolveRoomError {
@@ -8416,7 +8885,14 @@ pub enum RevokeInvitationErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RevokeInvitationError {
@@ -8521,7 +8997,14 @@ impl aws_smithy_http::result::CreateUnhandledError for SearchAddressBooksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SearchAddressBooksErrorKind {
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SearchAddressBooksError {
@@ -8611,7 +9094,14 @@ impl aws_smithy_http::result::CreateUnhandledError for SearchContactsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SearchContactsErrorKind {
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SearchContactsError {
@@ -8701,7 +9191,14 @@ impl aws_smithy_http::result::CreateUnhandledError for SearchDevicesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SearchDevicesErrorKind {
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SearchDevicesError {
@@ -8791,7 +9288,14 @@ impl aws_smithy_http::result::CreateUnhandledError for SearchNetworkProfilesErro
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SearchNetworkProfilesErrorKind {
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SearchNetworkProfilesError {
@@ -8885,7 +9389,14 @@ impl aws_smithy_http::result::CreateUnhandledError for SearchProfilesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SearchProfilesErrorKind {
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SearchProfilesError {
@@ -8975,7 +9486,14 @@ impl aws_smithy_http::result::CreateUnhandledError for SearchRoomsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SearchRoomsErrorKind {
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SearchRoomsError {
@@ -9065,7 +9583,14 @@ impl aws_smithy_http::result::CreateUnhandledError for SearchSkillGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SearchSkillGroupsErrorKind {
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SearchSkillGroupsError {
@@ -9155,7 +9680,14 @@ impl aws_smithy_http::result::CreateUnhandledError for SearchUsersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SearchUsersErrorKind {
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SearchUsersError {
@@ -9249,7 +9781,14 @@ pub enum SendAnnouncementErrorKind {
     AlreadyExistsException(crate::error::AlreadyExistsException),
     /// <p>You are performing an action that would put you beyond your account's limits.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SendAnnouncementError {
@@ -9363,7 +9902,14 @@ pub enum SendInvitationErrorKind {
     InvalidUserStatusException(crate::error::InvalidUserStatusException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SendInvitationError {
@@ -9479,7 +10025,14 @@ impl aws_smithy_http::result::CreateUnhandledError for StartDeviceSyncError {
 pub enum StartDeviceSyncErrorKind {
     /// <p>The request failed because this device is no longer registered and therefore no longer managed by this account.</p>
     DeviceNotRegisteredException(crate::error::DeviceNotRegisteredException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartDeviceSyncError {
@@ -9582,7 +10135,14 @@ impl aws_smithy_http::result::CreateUnhandledError for StartSmartHomeApplianceDi
 pub enum StartSmartHomeApplianceDiscoveryErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartSmartHomeApplianceDiscoveryError {
@@ -9690,7 +10250,14 @@ impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
 pub enum TagResourceErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
@@ -9788,7 +10355,14 @@ impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
@@ -9890,7 +10464,14 @@ pub enum UpdateAddressBookErrorKind {
     NameInUseException(crate::error::NameInUseException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAddressBookError {
@@ -10010,7 +10591,14 @@ pub enum UpdateBusinessReportScheduleErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateBusinessReportScheduleError {
@@ -10130,7 +10718,14 @@ impl aws_smithy_http::result::CreateUnhandledError for UpdateConferenceProviderE
 pub enum UpdateConferenceProviderErrorKind {
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateConferenceProviderError {
@@ -10237,7 +10832,14 @@ pub enum UpdateContactErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateContactError {
@@ -10348,7 +10950,14 @@ pub enum UpdateDeviceErrorKind {
     DeviceNotRegisteredException(crate::error::DeviceNotRegisteredException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDeviceError {
@@ -10466,7 +11075,14 @@ pub enum UpdateGatewayErrorKind {
     NameInUseException(crate::error::NameInUseException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateGatewayError {
@@ -10572,7 +11188,14 @@ pub enum UpdateGatewayGroupErrorKind {
     NameInUseException(crate::error::NameInUseException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateGatewayGroupError {
@@ -10690,7 +11313,14 @@ pub enum UpdateNetworkProfileErrorKind {
     NameInUseException(crate::error::NameInUseException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateNetworkProfileError {
@@ -10843,7 +11473,14 @@ pub enum UpdateProfileErrorKind {
     NameInUseException(crate::error::NameInUseException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateProfileError {
@@ -10958,7 +11595,14 @@ pub enum UpdateRoomErrorKind {
     NameInUseException(crate::error::NameInUseException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateRoomError {
@@ -11066,7 +11710,14 @@ pub enum UpdateSkillGroupErrorKind {
     NameInUseException(crate::error::NameInUseException),
     /// <p>The resource is not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
+    ///
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    ///
+    /// When logging an error from the SDK, it is recommended that you either wrap the error in
+    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+    /// error reporter library that visits the error's cause/source chain, or call
+    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+    ///
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateSkillGroupError {
@@ -11157,9 +11808,12 @@ impl std::error::Error for UpdateSkillGroupError {
 }
 
 ///
-/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code)
+/// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
 ///
-/// Call [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+/// When logging an error from the SDK, it is recommended that you either wrap the error in
+/// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
+/// error reporter library that visits the error's cause/source chain, or call
+/// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
 ///
 #[derive(Debug)]
 pub struct Unhandled {

@@ -14,6 +14,14 @@ use std::fmt;
 /// in the chain separated by ": ". At the end of the chain, it outputs a debug view
 /// of the entire error chain.
 ///
+/// # Example
+///
+/// ```no_run
+/// # let err: &dyn std::error::Error = unimplemented!();
+/// # use aws_smithy_types::error::display::DisplayErrorContext;
+/// println!("There was an unhandled error: {}", DisplayErrorContext(&err));
+/// ```
+///
 // Internally in the SDK, this is useful for emitting errors with `tracing` in cases
 // where the error is not returned back to the customer.
 #[derive(Debug)]

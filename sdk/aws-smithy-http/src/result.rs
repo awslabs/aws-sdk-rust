@@ -131,6 +131,11 @@ pub trait CreateUnhandledError {
 }
 
 /// Failed SDK Result
+///
+/// When logging an error from the SDK, it is recommended that you either wrap the error in
+/// [`DisplayErrorContext`](aws_smithy_types::error::display::DisplayErrorContext), use another
+/// error reporter library that visits the error's cause/source chain, or call
+/// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
 #[non_exhaustive]
 #[derive(Debug)]
 pub enum SdkError<E, R = operation::Response> {
