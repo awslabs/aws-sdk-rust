@@ -71,7 +71,9 @@ mod change_message_visibility_request_test {
     /// Test ID: SqsSetVisibilityZero
     #[tokio::test]
     async fn sqs_set_visibility_zero_request() {
-        let config = crate::config::Config::builder().build();
+        let builder = crate::config::Config::builder();
+
+        let config = builder.build();
         let input = crate::input::ChangeMessageVisibilityInput::builder()
             .set_queue_url(Some("http://somequeue.amazon.com".to_owned()))
             .set_receipt_handle(Some("handlehandle".to_owned()))

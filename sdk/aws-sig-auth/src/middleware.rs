@@ -187,7 +187,7 @@ mod test {
     };
     use crate::signer::{OperationSigningConfig, SigV4Signer};
     use aws_endpoint::partition::endpoint::{Protocol, SignatureVersion};
-    use aws_endpoint::{AwsEndpointStage, Params};
+    use aws_endpoint::{AwsAuthStage, Params};
     use aws_smithy_http::body::SdkBody;
     use aws_smithy_http::endpoint::ResolveEndpoint;
     use aws_smithy_http::middleware::MapRequest;
@@ -237,19 +237,26 @@ mod test {
                 signature_versions: SignatureVersion::V4,
             },
         );
-        let req = http::Request::new(SdkBody::from(""));
+        let req = http::Request::builder()
+            .uri("https://kinesis.us-east-1.amazonaws.com")
+            .body(SdkBody::from(""))
+            .unwrap();
         let region = Region::new("us-east-1");
         let req = operation::Request::new(req)
             .augment(|req, conf| {
                 conf.insert(region.clone());
                 conf.insert(UNIX_EPOCH + Duration::new(1611160427, 0));
                 conf.insert(SigningService::from_static("kinesis"));
-                conf.insert(provider.resolve_endpoint(&Params::new(Some(region.clone()))));
+                conf.insert(
+                    provider
+                        .resolve_endpoint(&Params::new(Some(region.clone())))
+                        .unwrap(),
+                );
                 Result::<_, Infallible>::Ok(req)
             })
             .expect("succeeds");
 
-        let endpoint = AwsEndpointStage;
+        let endpoint = AwsAuthStage;
         let signer = SigV4SigningStage::new(SigV4Signer::new());
         let mut req = endpoint.apply(req).expect("add endpoint should succeed");
         let mut errs = vec![signer

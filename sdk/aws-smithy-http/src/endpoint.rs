@@ -11,6 +11,8 @@ use std::result::Result as StdResult;
 use std::str::FromStr;
 
 pub mod error;
+pub mod middleware;
+
 pub use error::ResolveEndpointError;
 
 pub type Result = std::result::Result<aws_smithy_types::endpoint::Endpoint, ResolveEndpointError>;

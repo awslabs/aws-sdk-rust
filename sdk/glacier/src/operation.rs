@@ -1070,7 +1070,9 @@ mod upload_archive_request_test {
     /// Test ID: GlacierVersionHeader
     #[tokio::test]
     async fn glacier_version_header_request() {
-        let config = crate::config::Config::builder().build();
+        let builder = crate::config::Config::builder();
+
+        let config = builder.build();
         let input = crate::input::UploadArchiveInput::builder()
             .set_account_id(Some("foo".to_owned()))
             .set_vault_name(Some("bar".to_owned()))
@@ -1095,7 +1097,9 @@ mod upload_archive_request_test {
     /// Test ID: GlacierChecksums
     #[tokio::test]
     async fn glacier_checksums_request() {
-        let config = crate::config::Config::builder().build();
+        let builder = crate::config::Config::builder();
+
+        let config = builder.build();
         let input = crate::input::UploadArchiveInput::builder()
             .set_account_id(Some("foo".to_owned()))
             .set_vault_name(Some("bar".to_owned()))
@@ -1138,7 +1142,9 @@ mod upload_archive_request_test {
     /// Test ID: GlacierAccountIdEmpty
     #[tokio::test]
     async fn glacier_account_id_empty_request() {
-        let config = crate::config::Config::builder().build();
+        let builder = crate::config::Config::builder();
+
+        let config = builder.build();
         let input = crate::input::UploadArchiveInput::builder()
             .set_account_id(Some("".to_owned()))
             .set_vault_name(Some("bar".to_owned()))
@@ -1165,7 +1171,9 @@ mod upload_archive_request_test {
     /// Test ID: GlacierAccountIdUnset
     #[tokio::test]
     async fn glacier_account_id_unset_request() {
-        let config = crate::config::Config::builder().build();
+        let builder = crate::config::Config::builder();
+
+        let config = builder.build();
         let input = crate::input::UploadArchiveInput::builder()
             .set_vault_name(Some("bar".to_owned()))
             .set_account_id(None)
@@ -1228,7 +1236,9 @@ mod upload_multipart_part_request_test {
     /// Test ID: GlacierMultipartChecksums
     #[tokio::test]
     async fn glacier_multipart_checksums_request() {
-        let config = crate::config::Config::builder().build();
+        let builder = crate::config::Config::builder();
+
+        let config = builder.build();
         let input = crate::input::UploadMultipartPartInput::builder()
             .set_account_id(Some("foo".to_owned()))
             .set_vault_name(Some("bar".to_owned()))

@@ -171,7 +171,9 @@ mod create_multipart_upload_request_test {
     /// Test ID: CreateMultipartUploadUriConstruction
     #[tokio::test]
     async fn create_multipart_upload_uri_construction_request() {
-        let config = crate::config::Config::builder().build();
+        let builder = crate::config::Config::builder();
+
+        let config = builder.build();
         let input = crate::input::CreateMultipartUploadInput::builder()
             .set_bucket(Some("test-bucket".to_owned()))
             .set_key(Some("object.txt".to_owned()))
@@ -1908,7 +1910,9 @@ mod head_object_request_test {
     /// Test ID: HeadObjectUriEncoding
     #[tokio::test]
     async fn head_object_uri_encoding_request() {
-        let config = crate::config::Config::builder().build();
+        let builder = crate::config::Config::builder();
+
+        let config = builder.build();
         let input = crate::input::HeadObjectInput::builder()
             .set_bucket(Some("test-bucket".to_owned()))
             .set_key(Some("<> `?🐱".to_owned()))
@@ -2682,7 +2686,9 @@ mod put_bucket_lifecycle_configuration_request_test {
     /// Test ID: PutBucketLifecycleConfiguration
     #[tokio::test]
     async fn put_bucket_lifecycle_configuration_request() {
-        let config = crate::config::Config::builder().build();
+        let builder = crate::config::Config::builder();
+
+        let config = builder.build();
         let input = crate::input::PutBucketLifecycleConfigurationInput::builder()
             .set_bucket(Some("test-bucket".to_owned()))
             .set_lifecycle_configuration(Some(
@@ -3095,7 +3101,9 @@ mod put_object_request_test {
     /// Test ID: DontSendDuplicateContentType
     #[tokio::test]
     async fn dont_send_duplicate_content_type_request() {
-        let config = crate::config::Config::builder().build();
+        let builder = crate::config::Config::builder();
+
+        let config = builder.build();
         let input = crate::input::PutObjectInput::builder()
             .set_bucket(Some("test-bucket".to_owned()))
             .set_key(Some("test-key".to_owned()))
@@ -3118,7 +3126,9 @@ mod put_object_request_test {
     /// Test ID: DontSendDuplicateContentLength
     #[tokio::test]
     async fn dont_send_duplicate_content_length_request() {
-        let config = crate::config::Config::builder().build();
+        let builder = crate::config::Config::builder();
+
+        let config = builder.build();
         let input = crate::input::PutObjectInput::builder()
             .set_bucket(Some("test-bucket".to_owned()))
             .set_key(Some("test-key".to_owned()))
