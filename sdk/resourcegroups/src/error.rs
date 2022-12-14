@@ -464,6 +464,14 @@ pub struct CreateGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -594,6 +602,14 @@ pub struct DeleteGroupError {
     pub kind: DeleteGroupErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteGroup` operation.
 #[non_exhaustive]
@@ -734,6 +750,14 @@ pub struct GetGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -866,6 +890,14 @@ pub struct GetGroupConfigurationError {
     pub kind: GetGroupConfigurationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetGroupConfigurationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetGroupConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetGroupConfiguration` operation.
 #[non_exhaustive]
@@ -1019,6 +1051,14 @@ pub struct GetGroupQueryError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetGroupQueryError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetGroupQueryErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetGroupQuery` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1158,6 +1198,14 @@ pub struct GetTagsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetTagsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetTagsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetTags` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1290,6 +1338,14 @@ pub struct GroupResourcesError {
     pub kind: GroupResourcesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GroupResourcesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GroupResourcesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GroupResources` operation.
 #[non_exhaustive]
@@ -1429,6 +1485,14 @@ pub struct ListGroupResourcesError {
     pub kind: ListGroupResourcesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListGroupResourcesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListGroupResourcesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListGroupResources` operation.
 #[non_exhaustive]
@@ -1589,6 +1653,14 @@ pub struct ListGroupsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListGroupsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListGroupsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListGroups` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1716,6 +1788,14 @@ pub struct PutGroupConfigurationError {
     pub kind: PutGroupConfigurationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PutGroupConfigurationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutGroupConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `PutGroupConfiguration` operation.
 #[non_exhaustive]
@@ -1869,6 +1949,14 @@ pub struct SearchResourcesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for SearchResourcesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: SearchResourcesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `SearchResources` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2011,6 +2099,14 @@ pub struct TagError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for TagError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: TagErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `Tag` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2140,6 +2236,14 @@ pub struct UngroupResourcesError {
     pub kind: UngroupResourcesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UngroupResourcesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UngroupResourcesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UngroupResources` operation.
 #[non_exhaustive]
@@ -2283,6 +2387,14 @@ pub struct UntagError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UntagError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UntagErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `Untag` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2412,6 +2524,14 @@ pub struct UpdateGroupError {
     pub kind: UpdateGroupErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateGroup` operation.
 #[non_exhaustive]
@@ -2551,6 +2671,14 @@ pub struct UpdateGroupQueryError {
     pub kind: UpdateGroupQueryErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateGroupQueryError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateGroupQueryErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateGroupQuery` operation.
 #[non_exhaustive]

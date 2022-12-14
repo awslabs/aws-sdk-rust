@@ -792,6 +792,14 @@ pub struct AssociateChannelFlowError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AssociateChannelFlowError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AssociateChannelFlowErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AssociateChannelFlow` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -965,6 +973,16 @@ pub struct BatchCreateChannelMembershipError {
     pub kind: BatchCreateChannelMembershipErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for BatchCreateChannelMembershipError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: BatchCreateChannelMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `BatchCreateChannelMembership` operation.
 #[non_exhaustive]
@@ -1154,6 +1172,14 @@ pub struct ChannelFlowCallbackError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ChannelFlowCallbackError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ChannelFlowCallbackErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ChannelFlowCallback` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1312,6 +1338,14 @@ pub struct CreateChannelError {
     pub kind: CreateChannelErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateChannelError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateChannelErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateChannel` operation.
 #[non_exhaustive]
@@ -1473,6 +1507,14 @@ pub struct CreateChannelBanError {
     pub kind: CreateChannelBanErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateChannelBanError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateChannelBanErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateChannelBan` operation.
 #[non_exhaustive]
@@ -1637,6 +1679,14 @@ pub struct CreateChannelFlowError {
     pub kind: CreateChannelFlowErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateChannelFlowError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateChannelFlowErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateChannelFlow` operation.
 #[non_exhaustive]
@@ -1804,6 +1854,14 @@ pub struct CreateChannelMembershipError {
     pub kind: CreateChannelMembershipErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateChannelMembershipError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateChannelMembershipErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateChannelMembership` operation.
 #[non_exhaustive]
@@ -1994,6 +2052,14 @@ pub struct CreateChannelModeratorError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateChannelModeratorError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateChannelModeratorErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateChannelModerator` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2170,6 +2236,14 @@ pub struct DeleteChannelError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteChannelError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteChannelErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteChannel` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2311,6 +2385,14 @@ pub struct DeleteChannelBanError {
     pub kind: DeleteChannelBanErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteChannelBanError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteChannelBanErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteChannelBan` operation.
 #[non_exhaustive]
@@ -2456,6 +2538,14 @@ pub struct DeleteChannelFlowError {
     pub kind: DeleteChannelFlowErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteChannelFlowError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteChannelFlowErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteChannelFlow` operation.
 #[non_exhaustive]
@@ -2612,6 +2702,14 @@ pub struct DeleteChannelMembershipError {
     pub kind: DeleteChannelMembershipErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteChannelMembershipError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteChannelMembershipErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteChannelMembership` operation.
 #[non_exhaustive]
@@ -2776,6 +2874,14 @@ pub struct DeleteChannelMessageError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteChannelMessageError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteChannelMessageErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteChannelMessage` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2927,6 +3033,14 @@ pub struct DeleteChannelModeratorError {
     pub kind: DeleteChannelModeratorErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteChannelModeratorError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteChannelModeratorErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteChannelModerator` operation.
 #[non_exhaustive]
@@ -3080,6 +3194,14 @@ pub struct DescribeChannelError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeChannelError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeChannelErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeChannel` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3221,6 +3343,14 @@ pub struct DescribeChannelBanError {
     pub kind: DescribeChannelBanErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeChannelBanError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeChannelBanErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeChannelBan` operation.
 #[non_exhaustive]
@@ -3381,6 +3511,14 @@ pub struct DescribeChannelFlowError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeChannelFlowError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeChannelFlowErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeChannelFlow` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3528,6 +3666,16 @@ pub struct DescribeChannelMembershipError {
     pub kind: DescribeChannelMembershipErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeChannelMembershipError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeChannelMembershipErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeChannelMembership` operation.
 #[non_exhaustive]
@@ -3695,6 +3843,18 @@ pub struct DescribeChannelMembershipForAppInstanceUserError {
     pub kind: DescribeChannelMembershipForAppInstanceUserErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for DescribeChannelMembershipForAppInstanceUserError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeChannelMembershipForAppInstanceUserErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeChannelMembershipForAppInstanceUser` operation.
 #[non_exhaustive]
@@ -3879,6 +4039,18 @@ pub struct DescribeChannelModeratedByAppInstanceUserError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError
+    for DescribeChannelModeratedByAppInstanceUserError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeChannelModeratedByAppInstanceUserErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeChannelModeratedByAppInstanceUser` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4058,6 +4230,16 @@ pub struct DescribeChannelModeratorError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeChannelModeratorError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeChannelModeratorErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeChannelModerator` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4220,6 +4402,14 @@ pub struct DisassociateChannelFlowError {
     pub kind: DisassociateChannelFlowErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DisassociateChannelFlowError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DisassociateChannelFlowErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DisassociateChannelFlow` operation.
 #[non_exhaustive]
@@ -4395,6 +4585,16 @@ pub struct GetChannelMembershipPreferencesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetChannelMembershipPreferencesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetChannelMembershipPreferencesErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetChannelMembershipPreferences` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4566,6 +4766,14 @@ pub struct GetChannelMessageError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetChannelMessageError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetChannelMessageErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetChannelMessage` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4722,6 +4930,14 @@ pub struct GetChannelMessageStatusError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetChannelMessageStatusError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetChannelMessageStatusErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetChannelMessageStatus` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4874,6 +5090,16 @@ pub struct GetMessagingSessionEndpointError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetMessagingSessionEndpointError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetMessagingSessionEndpointErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetMessagingSessionEndpoint` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5023,6 +5249,14 @@ pub struct ListChannelBansError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListChannelBansError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListChannelBansErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListChannelBans` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5164,6 +5398,14 @@ pub struct ListChannelFlowsError {
     pub kind: ListChannelFlowsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListChannelFlowsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListChannelFlowsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListChannelFlows` operation.
 #[non_exhaustive]
@@ -5309,6 +5551,14 @@ pub struct ListChannelMembershipsError {
     pub kind: ListChannelMembershipsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListChannelMembershipsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListChannelMembershipsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListChannelMemberships` operation.
 #[non_exhaustive]
@@ -5461,6 +5711,18 @@ pub struct ListChannelMembershipsForAppInstanceUserError {
     pub kind: ListChannelMembershipsForAppInstanceUserErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for ListChannelMembershipsForAppInstanceUserError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListChannelMembershipsForAppInstanceUserErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListChannelMembershipsForAppInstanceUser` operation.
 #[non_exhaustive]
@@ -5641,6 +5903,14 @@ pub struct ListChannelMessagesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListChannelMessagesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListChannelMessagesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListChannelMessages` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5788,6 +6058,14 @@ pub struct ListChannelModeratorsError {
     pub kind: ListChannelModeratorsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListChannelModeratorsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListChannelModeratorsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListChannelModerators` operation.
 #[non_exhaustive]
@@ -5941,6 +6219,14 @@ pub struct ListChannelsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListChannelsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListChannelsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListChannels` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6082,6 +6368,16 @@ pub struct ListChannelsAssociatedWithChannelFlowError {
     pub kind: ListChannelsAssociatedWithChannelFlowErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListChannelsAssociatedWithChannelFlowError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListChannelsAssociatedWithChannelFlowErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListChannelsAssociatedWithChannelFlow` operation.
 #[non_exhaustive]
@@ -6262,6 +6558,16 @@ pub struct ListChannelsModeratedByAppInstanceUserError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListChannelsModeratedByAppInstanceUserError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListChannelsModeratedByAppInstanceUserErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListChannelsModeratedByAppInstanceUser` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6441,6 +6747,14 @@ pub struct ListSubChannelsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListSubChannelsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListSubChannelsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListSubChannels` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6582,6 +6896,14 @@ pub struct ListTagsForResourceError {
     pub kind: ListTagsForResourceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListTagsForResource` operation.
 #[non_exhaustive]
@@ -6730,6 +7052,16 @@ pub struct PutChannelMembershipPreferencesError {
     pub kind: PutChannelMembershipPreferencesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PutChannelMembershipPreferencesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutChannelMembershipPreferencesErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `PutChannelMembershipPreferences` operation.
 #[non_exhaustive]
@@ -6913,6 +7245,14 @@ pub struct RedactChannelMessageError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RedactChannelMessageError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RedactChannelMessageErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RedactChannelMessage` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7076,6 +7416,14 @@ pub struct SearchChannelsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for SearchChannelsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: SearchChannelsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `SearchChannels` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7217,6 +7565,14 @@ pub struct SendChannelMessageError {
     pub kind: SendChannelMessageErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for SendChannelMessageError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: SendChannelMessageErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `SendChannelMessage` operation.
 #[non_exhaustive]
@@ -7377,6 +7733,14 @@ pub struct TagResourceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `TagResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7527,6 +7891,14 @@ pub struct UntagResourceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UntagResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7668,6 +8040,14 @@ pub struct UpdateChannelError {
     pub kind: UpdateChannelErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateChannelError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateChannelErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateChannel` operation.
 #[non_exhaustive]
@@ -7818,6 +8198,14 @@ pub struct UpdateChannelFlowError {
     pub kind: UpdateChannelFlowErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateChannelFlowError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateChannelFlowErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateChannelFlow` operation.
 #[non_exhaustive]
@@ -7974,6 +8362,14 @@ pub struct UpdateChannelMessageError {
     pub kind: UpdateChannelMessageErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateChannelMessageError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateChannelMessageErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateChannelMessage` operation.
 #[non_exhaustive]
@@ -8137,6 +8533,14 @@ pub struct UpdateChannelReadMarkerError {
     pub kind: UpdateChannelReadMarkerErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateChannelReadMarkerError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateChannelReadMarkerErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateChannelReadMarker` operation.
 #[non_exhaustive]

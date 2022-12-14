@@ -8396,6 +8396,14 @@ pub struct AddTagsToResourceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AddTagsToResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AddTagsToResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AddTagsToResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8523,6 +8531,16 @@ pub struct AssociateOpsItemRelatedItemError {
     pub kind: AssociateOpsItemRelatedItemErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for AssociateOpsItemRelatedItemError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AssociateOpsItemRelatedItemErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `AssociateOpsItemRelatedItem` operation.
 #[non_exhaustive]
@@ -8679,6 +8697,14 @@ pub struct CancelCommandError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CancelCommandError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CancelCommandErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CancelCommand` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8799,6 +8825,16 @@ pub struct CancelMaintenanceWindowExecutionError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CancelMaintenanceWindowExecutionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CancelMaintenanceWindowExecutionErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CancelMaintenanceWindowExecution` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8915,6 +8951,14 @@ pub struct CreateActivationError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateActivationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateActivationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateActivation` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -9015,6 +9059,14 @@ pub struct CreateAssociationError {
     pub kind: CreateAssociationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateAssociationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateAssociationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateAssociation` operation.
 #[non_exhaustive]
@@ -9225,6 +9277,14 @@ pub struct CreateAssociationBatchError {
     pub kind: CreateAssociationBatchErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateAssociationBatchError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateAssociationBatchErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateAssociationBatch` operation.
 #[non_exhaustive]
@@ -9450,6 +9510,14 @@ pub struct CreateDocumentError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateDocumentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateDocumentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateDocument` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -9595,6 +9663,14 @@ pub struct CreateMaintenanceWindowError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateMaintenanceWindowError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateMaintenanceWindowErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateMaintenanceWindow` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -9719,6 +9795,14 @@ pub struct CreateOpsItemError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateOpsItemError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateOpsItemErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateOpsItem` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -9841,6 +9925,14 @@ pub struct CreateOpsMetadataError {
     pub kind: CreateOpsMetadataErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateOpsMetadataError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateOpsMetadataErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateOpsMetadata` operation.
 #[non_exhaustive]
@@ -9981,6 +10073,14 @@ pub struct CreatePatchBaselineError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreatePatchBaselineError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreatePatchBaselineErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreatePatchBaseline` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -10096,6 +10196,14 @@ pub struct CreateResourceDataSyncError {
     pub kind: CreateResourceDataSyncErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateResourceDataSyncError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateResourceDataSyncErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateResourceDataSync` operation.
 #[non_exhaustive]
@@ -10241,6 +10349,14 @@ pub struct DeleteActivationError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteActivationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteActivationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteActivation` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -10360,6 +10476,14 @@ pub struct DeleteAssociationError {
     pub kind: DeleteAssociationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteAssociationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteAssociationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteAssociation` operation.
 #[non_exhaustive]
@@ -10495,6 +10619,14 @@ pub struct DeleteDocumentError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDocumentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDocumentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteDocument` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -10611,6 +10743,14 @@ pub struct DeleteInventoryError {
     pub kind: DeleteInventoryErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteInventoryError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteInventoryErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteInventory` operation.
 #[non_exhaustive]
@@ -10752,6 +10892,14 @@ pub struct DeleteMaintenanceWindowError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteMaintenanceWindowError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteMaintenanceWindowErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteMaintenanceWindow` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -10848,6 +10996,14 @@ pub struct DeleteOpsMetadataError {
     pub kind: DeleteOpsMetadataErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteOpsMetadataError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteOpsMetadataErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteOpsMetadata` operation.
 #[non_exhaustive]
@@ -10966,6 +11122,14 @@ pub struct DeleteParameterError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteParameterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteParameterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteParameter` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -11064,6 +11228,14 @@ pub struct DeleteParametersError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteParametersError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteParametersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteParameters` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -11156,6 +11328,14 @@ pub struct DeletePatchBaselineError {
     pub kind: DeletePatchBaselineErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeletePatchBaselineError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeletePatchBaselineErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeletePatchBaseline` operation.
 #[non_exhaustive]
@@ -11260,6 +11440,14 @@ pub struct DeleteResourceDataSyncError {
     pub kind: DeleteResourceDataSyncErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteResourceDataSyncError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteResourceDataSyncErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteResourceDataSync` operation.
 #[non_exhaustive]
@@ -11390,6 +11578,16 @@ pub struct DeregisterManagedInstanceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeregisterManagedInstanceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeregisterManagedInstanceErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeregisterManagedInstance` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -11503,6 +11701,16 @@ pub struct DeregisterPatchBaselineForPatchGroupError {
     pub kind: DeregisterPatchBaselineForPatchGroupErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeregisterPatchBaselineForPatchGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeregisterPatchBaselineForPatchGroupErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeregisterPatchBaselineForPatchGroup` operation.
 #[non_exhaustive]
@@ -11622,6 +11830,16 @@ pub struct DeregisterTargetFromMaintenanceWindowError {
     pub kind: DeregisterTargetFromMaintenanceWindowErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeregisterTargetFromMaintenanceWindowError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeregisterTargetFromMaintenanceWindowErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeregisterTargetFromMaintenanceWindow` operation.
 #[non_exhaustive]
@@ -11758,6 +11976,16 @@ pub struct DeregisterTaskFromMaintenanceWindowError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeregisterTaskFromMaintenanceWindowError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeregisterTaskFromMaintenanceWindowErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeregisterTaskFromMaintenanceWindow` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -11878,6 +12106,14 @@ pub struct DescribeActivationsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeActivationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeActivationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeActivations` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -11989,6 +12225,14 @@ pub struct DescribeAssociationError {
     pub kind: DescribeAssociationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeAssociationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeAssociationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeAssociation` operation.
 #[non_exhaustive]
@@ -12130,6 +12374,16 @@ pub struct DescribeAssociationExecutionsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeAssociationExecutionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeAssociationExecutionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeAssociationExecutions` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -12253,6 +12507,16 @@ pub struct DescribeAssociationExecutionTargetsError {
     pub kind: DescribeAssociationExecutionTargetsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeAssociationExecutionTargetsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeAssociationExecutionTargetsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeAssociationExecutionTargets` operation.
 #[non_exhaustive]
@@ -12399,6 +12663,16 @@ pub struct DescribeAutomationExecutionsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeAutomationExecutionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeAutomationExecutionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeAutomationExecutions` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -12528,6 +12802,16 @@ pub struct DescribeAutomationStepExecutionsError {
     pub kind: DescribeAutomationStepExecutionsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeAutomationStepExecutionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeAutomationStepExecutionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeAutomationStepExecutions` operation.
 #[non_exhaustive]
@@ -12677,6 +12961,16 @@ pub struct DescribeAvailablePatchesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeAvailablePatchesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeAvailablePatchesErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeAvailablePatches` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -12773,6 +13067,14 @@ pub struct DescribeDocumentError {
     pub kind: DescribeDocumentErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDocumentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDocumentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeDocument` operation.
 #[non_exhaustive]
@@ -12885,6 +13187,16 @@ pub struct DescribeDocumentPermissionError {
     pub kind: DescribeDocumentPermissionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDocumentPermissionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDocumentPermissionErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeDocumentPermission` operation.
 #[non_exhaustive]
@@ -13027,6 +13339,16 @@ pub struct DescribeEffectiveInstanceAssociationsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeEffectiveInstanceAssociationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeEffectiveInstanceAssociationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeEffectiveInstanceAssociations` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -13166,6 +13488,18 @@ pub struct DescribeEffectivePatchesForPatchBaselineError {
     pub kind: DescribeEffectivePatchesForPatchBaselineErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for DescribeEffectivePatchesForPatchBaselineError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeEffectivePatchesForPatchBaselineErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeEffectivePatchesForPatchBaseline` operation.
 #[non_exhaustive]
@@ -13317,6 +13651,16 @@ pub struct DescribeInstanceAssociationsStatusError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeInstanceAssociationsStatusError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeInstanceAssociationsStatusErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeInstanceAssociationsStatus` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -13448,6 +13792,16 @@ pub struct DescribeInstanceInformationError {
     pub kind: DescribeInstanceInformationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeInstanceInformationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeInstanceInformationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeInstanceInformation` operation.
 #[non_exhaustive]
@@ -13600,6 +13954,14 @@ pub struct DescribeInstancePatchesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeInstancePatchesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeInstancePatchesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeInstancePatches` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -13736,6 +14098,16 @@ pub struct DescribeInstancePatchStatesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeInstancePatchStatesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeInstancePatchStatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeInstancePatchStates` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -13843,6 +14215,18 @@ pub struct DescribeInstancePatchStatesForPatchGroupError {
     pub kind: DescribeInstancePatchStatesForPatchGroupErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for DescribeInstancePatchStatesForPatchGroupError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeInstancePatchStatesForPatchGroupErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeInstancePatchStatesForPatchGroup` operation.
 #[non_exhaustive]
@@ -13978,6 +14362,16 @@ pub struct DescribeInventoryDeletionsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeInventoryDeletionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeInventoryDeletionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeInventoryDeletions` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -14099,6 +14493,16 @@ pub struct DescribeMaintenanceWindowExecutionsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeMaintenanceWindowExecutionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeMaintenanceWindowExecutionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeMaintenanceWindowExecutions` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -14202,6 +14606,18 @@ pub struct DescribeMaintenanceWindowExecutionTaskInvocationsError {
     pub kind: DescribeMaintenanceWindowExecutionTaskInvocationsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for DescribeMaintenanceWindowExecutionTaskInvocationsError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeMaintenanceWindowExecutionTaskInvocationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeMaintenanceWindowExecutionTaskInvocations` operation.
 #[non_exhaustive]
@@ -14329,6 +14745,18 @@ pub struct DescribeMaintenanceWindowExecutionTasksError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError
+    for DescribeMaintenanceWindowExecutionTasksError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeMaintenanceWindowExecutionTasksErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeMaintenanceWindowExecutionTasks` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -14449,6 +14877,16 @@ pub struct DescribeMaintenanceWindowsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeMaintenanceWindowsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeMaintenanceWindowsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeMaintenanceWindows` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -14545,6 +14983,16 @@ pub struct DescribeMaintenanceWindowScheduleError {
     pub kind: DescribeMaintenanceWindowScheduleErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeMaintenanceWindowScheduleError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeMaintenanceWindowScheduleErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeMaintenanceWindowSchedule` operation.
 #[non_exhaustive]
@@ -14664,6 +15112,16 @@ pub struct DescribeMaintenanceWindowsForTargetError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeMaintenanceWindowsForTargetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeMaintenanceWindowsForTargetErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeMaintenanceWindowsForTarget` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -14767,6 +15225,16 @@ pub struct DescribeMaintenanceWindowTargetsError {
     pub kind: DescribeMaintenanceWindowTargetsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeMaintenanceWindowTargetsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeMaintenanceWindowTargetsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeMaintenanceWindowTargets` operation.
 #[non_exhaustive]
@@ -14884,6 +15352,16 @@ pub struct DescribeMaintenanceWindowTasksError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeMaintenanceWindowTasksError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeMaintenanceWindowTasksErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeMaintenanceWindowTasks` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -14996,6 +15474,14 @@ pub struct DescribeOpsItemsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeOpsItemsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeOpsItemsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeOpsItems` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -15088,6 +15574,14 @@ pub struct DescribeParametersError {
     pub kind: DescribeParametersErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeParametersError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeParametersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeParameters` operation.
 #[non_exhaustive]
@@ -15220,6 +15714,14 @@ pub struct DescribePatchBaselinesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribePatchBaselinesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribePatchBaselinesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribePatchBaselines` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -15317,6 +15819,14 @@ pub struct DescribePatchGroupsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribePatchGroupsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribePatchGroupsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribePatchGroups` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -15409,6 +15919,14 @@ pub struct DescribePatchGroupStateError {
     pub kind: DescribePatchGroupStateErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribePatchGroupStateError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribePatchGroupStateErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribePatchGroupState` operation.
 #[non_exhaustive]
@@ -15518,6 +16036,14 @@ pub struct DescribePatchPropertiesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribePatchPropertiesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribePatchPropertiesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribePatchProperties` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -15614,6 +16140,14 @@ pub struct DescribeSessionsError {
     pub kind: DescribeSessionsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeSessionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeSessionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeSessions` operation.
 #[non_exhaustive]
@@ -15723,6 +16257,16 @@ pub struct DisassociateOpsItemRelatedItemError {
     pub kind: DisassociateOpsItemRelatedItemErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DisassociateOpsItemRelatedItemError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DisassociateOpsItemRelatedItemErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DisassociateOpsItemRelatedItem` operation.
 #[non_exhaustive]
@@ -15881,6 +16425,14 @@ pub struct GetAutomationExecutionError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetAutomationExecutionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetAutomationExecutionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetAutomationExecution` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -15992,6 +16544,14 @@ pub struct GetCalendarStateError {
     pub kind: GetCalendarStateErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetCalendarStateError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetCalendarStateErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetCalendarState` operation.
 #[non_exhaustive]
@@ -16115,6 +16675,14 @@ pub struct GetCommandInvocationError {
     pub kind: GetCommandInvocationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetCommandInvocationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetCommandInvocationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetCommandInvocation` operation.
 #[non_exhaustive]
@@ -16263,6 +16831,14 @@ pub struct GetConnectionStatusError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetConnectionStatusError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetConnectionStatusErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetConnectionStatus` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -16355,6 +16931,14 @@ pub struct GetDefaultPatchBaselineError {
     pub kind: GetDefaultPatchBaselineErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetDefaultPatchBaselineError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetDefaultPatchBaselineErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetDefaultPatchBaseline` operation.
 #[non_exhaustive]
@@ -16452,6 +17036,16 @@ pub struct GetDeployablePatchSnapshotForInstanceError {
     pub kind: GetDeployablePatchSnapshotForInstanceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetDeployablePatchSnapshotForInstanceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetDeployablePatchSnapshotForInstanceErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetDeployablePatchSnapshotForInstance` operation.
 #[non_exhaustive]
@@ -16587,6 +17181,14 @@ pub struct GetDocumentError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetDocumentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetDocumentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetDocument` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -16692,6 +17294,14 @@ pub struct GetInventoryError {
     pub kind: GetInventoryErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetInventoryError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetInventoryErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetInventory` operation.
 #[non_exhaustive]
@@ -16843,6 +17453,14 @@ pub struct GetInventorySchemaError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetInventorySchemaError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetInventorySchemaErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetInventorySchema` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -16955,6 +17573,14 @@ pub struct GetMaintenanceWindowError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetMaintenanceWindowError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetMaintenanceWindowErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetMaintenanceWindow` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -17063,6 +17689,16 @@ pub struct GetMaintenanceWindowExecutionError {
     pub kind: GetMaintenanceWindowExecutionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetMaintenanceWindowExecutionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetMaintenanceWindowExecutionErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetMaintenanceWindowExecution` operation.
 #[non_exhaustive]
@@ -17175,6 +17811,16 @@ pub struct GetMaintenanceWindowExecutionTaskError {
     pub kind: GetMaintenanceWindowExecutionTaskErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetMaintenanceWindowExecutionTaskError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetMaintenanceWindowExecutionTaskErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetMaintenanceWindowExecutionTask` operation.
 #[non_exhaustive]
@@ -17293,6 +17939,18 @@ pub struct GetMaintenanceWindowExecutionTaskInvocationError {
     pub kind: GetMaintenanceWindowExecutionTaskInvocationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for GetMaintenanceWindowExecutionTaskInvocationError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetMaintenanceWindowExecutionTaskInvocationErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetMaintenanceWindowExecutionTaskInvocation` operation.
 #[non_exhaustive]
@@ -17418,6 +18076,16 @@ pub struct GetMaintenanceWindowTaskError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetMaintenanceWindowTaskError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetMaintenanceWindowTaskErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetMaintenanceWindowTask` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -17527,6 +18195,14 @@ pub struct GetOpsItemError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetOpsItemError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetOpsItemErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetOpsItem` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -17624,6 +18300,14 @@ pub struct GetOpsMetadataError {
     pub kind: GetOpsMetadataErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetOpsMetadataError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetOpsMetadataErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetOpsMetadata` operation.
 #[non_exhaustive]
@@ -17736,6 +18420,14 @@ pub struct GetOpsSummaryError {
     pub kind: GetOpsSummaryErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetOpsSummaryError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetOpsSummaryErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetOpsSummary` operation.
 #[non_exhaustive]
@@ -17876,6 +18568,14 @@ pub struct GetParameterError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetParameterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetParameterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetParameter` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -17992,6 +18692,14 @@ pub struct GetParameterHistoryError {
     pub kind: GetParameterHistoryErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetParameterHistoryError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetParameterHistoryErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetParameterHistory` operation.
 #[non_exhaustive]
@@ -18116,6 +18824,14 @@ pub struct GetParametersError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetParametersError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetParametersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetParameters` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -18213,6 +18929,14 @@ pub struct GetParametersByPathError {
     pub kind: GetParametersByPathErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetParametersByPathError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetParametersByPathErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetParametersByPath` operation.
 #[non_exhaustive]
@@ -18359,6 +19083,14 @@ pub struct GetPatchBaselineError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetPatchBaselineError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetPatchBaselineErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetPatchBaseline` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -18472,6 +19204,16 @@ pub struct GetPatchBaselineForPatchGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetPatchBaselineForPatchGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetPatchBaselineForPatchGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetPatchBaselineForPatchGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -18571,6 +19313,14 @@ pub struct GetServiceSettingError {
     pub kind: GetServiceSettingErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetServiceSettingError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetServiceSettingErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetServiceSetting` operation.
 #[non_exhaustive]
@@ -18675,6 +19425,14 @@ pub struct LabelParameterVersionError {
     pub kind: LabelParameterVersionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for LabelParameterVersionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: LabelParameterVersionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `LabelParameterVersion` operation.
 #[non_exhaustive]
@@ -18821,6 +19579,14 @@ pub struct ListAssociationsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListAssociationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListAssociationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListAssociations` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -18921,6 +19687,14 @@ pub struct ListAssociationVersionsError {
     pub kind: ListAssociationVersionsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListAssociationVersionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListAssociationVersionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListAssociationVersions` operation.
 #[non_exhaustive]
@@ -19040,6 +19814,14 @@ pub struct ListCommandInvocationsError {
     pub kind: ListCommandInvocationsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListCommandInvocationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListCommandInvocationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListCommandInvocations` operation.
 #[non_exhaustive]
@@ -19188,6 +19970,14 @@ pub struct ListCommandsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListCommandsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListCommandsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListCommands` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -19315,6 +20105,14 @@ pub struct ListComplianceItemsError {
     pub kind: ListComplianceItemsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListComplianceItemsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListComplianceItemsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListComplianceItems` operation.
 #[non_exhaustive]
@@ -19450,6 +20248,14 @@ pub struct ListComplianceSummariesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListComplianceSummariesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListComplianceSummariesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListComplianceSummaries` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -19568,6 +20374,16 @@ pub struct ListDocumentMetadataHistoryError {
     pub kind: ListDocumentMetadataHistoryErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListDocumentMetadataHistoryError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListDocumentMetadataHistoryErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListDocumentMetadataHistory` operation.
 #[non_exhaustive]
@@ -19699,6 +20515,14 @@ pub struct ListDocumentsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListDocumentsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListDocumentsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListDocuments` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -19804,6 +20628,14 @@ pub struct ListDocumentVersionsError {
     pub kind: ListDocumentVersionsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListDocumentVersionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListDocumentVersionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListDocumentVersions` operation.
 #[non_exhaustive]
@@ -19923,6 +20755,14 @@ pub struct ListInventoryEntriesError {
     pub kind: ListInventoryEntriesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListInventoryEntriesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListInventoryEntriesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListInventoryEntries` operation.
 #[non_exhaustive]
@@ -20068,6 +20908,14 @@ pub struct ListOpsItemEventsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListOpsItemEventsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListOpsItemEventsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListOpsItemEvents` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -20194,6 +21042,14 @@ pub struct ListOpsItemRelatedItemsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListOpsItemRelatedItemsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListOpsItemRelatedItemsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListOpsItemRelatedItems` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -20306,6 +21162,14 @@ pub struct ListOpsMetadataError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListOpsMetadataError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListOpsMetadataErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListOpsMetadata` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -20406,6 +21270,16 @@ pub struct ListResourceComplianceSummariesError {
     pub kind: ListResourceComplianceSummariesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListResourceComplianceSummariesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListResourceComplianceSummariesErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListResourceComplianceSummaries` operation.
 #[non_exhaustive]
@@ -20528,6 +21402,14 @@ pub struct ListResourceDataSyncError {
     pub kind: ListResourceDataSyncErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListResourceDataSyncError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListResourceDataSyncErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListResourceDataSync` operation.
 #[non_exhaustive]
@@ -20654,6 +21536,14 @@ pub struct ListTagsForResourceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListTagsForResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -20768,6 +21658,16 @@ pub struct ModifyDocumentPermissionError {
     pub kind: ModifyDocumentPermissionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ModifyDocumentPermissionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyDocumentPermissionErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ModifyDocumentPermission` operation.
 #[non_exhaustive]
@@ -20909,6 +21809,14 @@ pub struct PutComplianceItemsError {
     pub kind: PutComplianceItemsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PutComplianceItemsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutComplianceItemsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `PutComplianceItems` operation.
 #[non_exhaustive]
@@ -21074,6 +21982,14 @@ pub struct PutInventoryError {
     pub kind: PutInventoryErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PutInventoryError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutInventoryErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `PutInventory` operation.
 #[non_exhaustive]
@@ -21298,6 +22214,14 @@ pub struct PutParameterError {
     pub kind: PutParameterErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PutParameterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutParameterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `PutParameter` operation.
 #[non_exhaustive]
@@ -21533,6 +22457,16 @@ pub struct RegisterDefaultPatchBaselineError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RegisterDefaultPatchBaselineError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RegisterDefaultPatchBaselineErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RegisterDefaultPatchBaseline` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -21652,6 +22586,16 @@ pub struct RegisterPatchBaselineForPatchGroupError {
     pub kind: RegisterPatchBaselineForPatchGroupErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RegisterPatchBaselineForPatchGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RegisterPatchBaselineForPatchGroupErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `RegisterPatchBaselineForPatchGroup` operation.
 #[non_exhaustive]
@@ -21815,6 +22759,16 @@ pub struct RegisterTargetWithMaintenanceWindowError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RegisterTargetWithMaintenanceWindowError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RegisterTargetWithMaintenanceWindowErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RegisterTargetWithMaintenanceWindow` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -21965,6 +22919,16 @@ pub struct RegisterTaskWithMaintenanceWindowError {
     pub kind: RegisterTaskWithMaintenanceWindowErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RegisterTaskWithMaintenanceWindowError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RegisterTaskWithMaintenanceWindowErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `RegisterTaskWithMaintenanceWindow` operation.
 #[non_exhaustive]
@@ -22130,6 +23094,14 @@ pub struct RemoveTagsFromResourceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RemoveTagsFromResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RemoveTagsFromResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RemoveTagsFromResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -22260,6 +23232,14 @@ pub struct ResetServiceSettingError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ResetServiceSettingError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ResetServiceSettingErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ResetServiceSetting` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -22372,6 +23352,14 @@ pub struct ResumeSessionError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ResumeSessionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ResumeSessionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ResumeSession` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -22470,6 +23458,14 @@ pub struct SendAutomationSignalError {
     pub kind: SendAutomationSignalErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for SendAutomationSignalError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: SendAutomationSignalErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `SendAutomationSignal` operation.
 #[non_exhaustive]
@@ -22606,6 +23602,14 @@ pub struct SendCommandError {
     pub kind: SendCommandErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for SendCommandError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: SendCommandErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `SendCommand` operation.
 #[non_exhaustive]
@@ -22786,6 +23790,14 @@ pub struct StartAssociationsOnceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for StartAssociationsOnceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StartAssociationsOnceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `StartAssociationsOnce` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -22893,6 +23905,16 @@ pub struct StartAutomationExecutionError {
     pub kind: StartAutomationExecutionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for StartAutomationExecutionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StartAutomationExecutionErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `StartAutomationExecution` operation.
 #[non_exhaustive]
@@ -23078,6 +24100,16 @@ pub struct StartChangeRequestExecutionError {
     pub kind: StartChangeRequestExecutionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for StartChangeRequestExecutionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StartChangeRequestExecutionErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `StartChangeRequestExecution` operation.
 #[non_exhaustive]
@@ -23274,6 +24306,14 @@ pub struct StartSessionError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for StartSessionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StartSessionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `StartSession` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -23379,6 +24419,14 @@ pub struct StopAutomationExecutionError {
     pub kind: StopAutomationExecutionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for StopAutomationExecutionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StopAutomationExecutionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `StopAutomationExecution` operation.
 #[non_exhaustive]
@@ -23507,6 +24555,14 @@ pub struct TerminateSessionError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for TerminateSessionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: TerminateSessionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `TerminateSession` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -23599,6 +24655,14 @@ pub struct UnlabelParameterVersionError {
     pub kind: UnlabelParameterVersionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UnlabelParameterVersionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UnlabelParameterVersionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UnlabelParameterVersion` operation.
 #[non_exhaustive]
@@ -23729,6 +24793,14 @@ pub struct UpdateAssociationError {
     pub kind: UpdateAssociationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateAssociationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateAssociationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateAssociation` operation.
 #[non_exhaustive]
@@ -23934,6 +25006,14 @@ pub struct UpdateAssociationStatusError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateAssociationStatusError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateAssociationStatusErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateAssociationStatus` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -24091,6 +25171,14 @@ pub struct UpdateDocumentError {
     pub kind: UpdateDocumentErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateDocumentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateDocumentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateDocument` operation.
 #[non_exhaustive]
@@ -24278,6 +25366,16 @@ pub struct UpdateDocumentDefaultVersionError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateDocumentDefaultVersionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateDocumentDefaultVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateDocumentDefaultVersion` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -24412,6 +25510,14 @@ pub struct UpdateDocumentMetadataError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateDocumentMetadataError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateDocumentMetadataErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateDocumentMetadata` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -24542,6 +25648,14 @@ pub struct UpdateMaintenanceWindowError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateMaintenanceWindowError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateMaintenanceWindowErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateMaintenanceWindow` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -24650,6 +25764,16 @@ pub struct UpdateMaintenanceWindowTargetError {
     pub kind: UpdateMaintenanceWindowTargetErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateMaintenanceWindowTargetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateMaintenanceWindowTargetErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateMaintenanceWindowTarget` operation.
 #[non_exhaustive]
@@ -24763,6 +25887,16 @@ pub struct UpdateMaintenanceWindowTaskError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateMaintenanceWindowTaskError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateMaintenanceWindowTaskErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateMaintenanceWindowTask` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -24871,6 +26005,16 @@ pub struct UpdateManagedInstanceRoleError {
     pub kind: UpdateManagedInstanceRoleErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateManagedInstanceRoleError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateManagedInstanceRoleErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateManagedInstanceRole` operation.
 #[non_exhaustive]
@@ -24985,6 +26129,14 @@ pub struct UpdateOpsItemError {
     pub kind: UpdateOpsItemErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateOpsItemError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateOpsItemErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateOpsItem` operation.
 #[non_exhaustive]
@@ -25119,6 +26271,14 @@ pub struct UpdateOpsMetadataError {
     pub kind: UpdateOpsMetadataErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateOpsMetadataError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateOpsMetadataErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateOpsMetadata` operation.
 #[non_exhaustive]
@@ -25263,6 +26423,14 @@ pub struct UpdatePatchBaselineError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdatePatchBaselineError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdatePatchBaselineErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdatePatchBaseline` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -25367,6 +26535,14 @@ pub struct UpdateResourceDataSyncError {
     pub kind: UpdateResourceDataSyncErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateResourceDataSyncError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateResourceDataSyncErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateResourceDataSync` operation.
 #[non_exhaustive]
@@ -25511,6 +26687,14 @@ pub struct UpdateServiceSettingError {
     pub kind: UpdateServiceSettingErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateServiceSettingError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateServiceSettingErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateServiceSetting` operation.
 #[non_exhaustive]

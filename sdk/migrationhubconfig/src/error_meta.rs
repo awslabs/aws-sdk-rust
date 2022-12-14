@@ -41,31 +41,36 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::CreateHomeRegionControlErrorKind::AccessDeniedException(
-                        inner,
-                    ) => Error::AccessDeniedException(inner),
-                    crate::error::CreateHomeRegionControlErrorKind::DryRunOperation(inner) => {
-                        Error::DryRunOperation(inner)
-                    }
-                    crate::error::CreateHomeRegionControlErrorKind::InternalServerError(inner) => {
-                        Error::InternalServerError(inner)
-                    }
-                    crate::error::CreateHomeRegionControlErrorKind::InvalidInputException(
-                        inner,
-                    ) => Error::InvalidInputException(inner),
-                    crate::error::CreateHomeRegionControlErrorKind::ServiceUnavailableException(
-                        inner,
-                    ) => Error::ServiceUnavailableException(inner),
-                    crate::error::CreateHomeRegionControlErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::CreateHomeRegionControlErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateHomeRegionControlError> for Error {
+    fn from(err: crate::error::CreateHomeRegionControlError) -> Self {
+        match err.kind {
+            crate::error::CreateHomeRegionControlErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::CreateHomeRegionControlErrorKind::DryRunOperation(inner) => {
+                Error::DryRunOperation(inner)
+            }
+            crate::error::CreateHomeRegionControlErrorKind::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::error::CreateHomeRegionControlErrorKind::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::error::CreateHomeRegionControlErrorKind::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::error::CreateHomeRegionControlErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::CreateHomeRegionControlErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -78,30 +83,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeHomeRegionControlsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::DescribeHomeRegionControlsErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
-                }
-                crate::error::DescribeHomeRegionControlsErrorKind::InternalServerError(inner) => {
-                    Error::InternalServerError(inner)
-                }
-                crate::error::DescribeHomeRegionControlsErrorKind::InvalidInputException(inner) => {
-                    Error::InvalidInputException(inner)
-                }
-                crate::error::DescribeHomeRegionControlsErrorKind::ServiceUnavailableException(
-                    inner,
-                ) => Error::ServiceUnavailableException(inner),
-                crate::error::DescribeHomeRegionControlsErrorKind::ThrottlingException(inner) => {
-                    Error::ThrottlingException(inner)
-                }
-                crate::error::DescribeHomeRegionControlsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeHomeRegionControlsError> for Error {
+    fn from(err: crate::error::DescribeHomeRegionControlsError) -> Self {
+        match err.kind {
+            crate::error::DescribeHomeRegionControlsErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::DescribeHomeRegionControlsErrorKind::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::error::DescribeHomeRegionControlsErrorKind::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::error::DescribeHomeRegionControlsErrorKind::ServiceUnavailableException(
+                inner,
+            ) => Error::ServiceUnavailableException(inner),
+            crate::error::DescribeHomeRegionControlsErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::DescribeHomeRegionControlsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -112,28 +121,33 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetHomeRegionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetHomeRegionErrorKind::AccessDeniedException(inner) => {
-                        Error::AccessDeniedException(inner)
-                    }
-                    crate::error::GetHomeRegionErrorKind::InternalServerError(inner) => {
-                        Error::InternalServerError(inner)
-                    }
-                    crate::error::GetHomeRegionErrorKind::InvalidInputException(inner) => {
-                        Error::InvalidInputException(inner)
-                    }
-                    crate::error::GetHomeRegionErrorKind::ServiceUnavailableException(inner) => {
-                        Error::ServiceUnavailableException(inner)
-                    }
-                    crate::error::GetHomeRegionErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::GetHomeRegionErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetHomeRegionError> for Error {
+    fn from(err: crate::error::GetHomeRegionError) -> Self {
+        match err.kind {
+            crate::error::GetHomeRegionErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::GetHomeRegionErrorKind::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::error::GetHomeRegionErrorKind::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::error::GetHomeRegionErrorKind::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::error::GetHomeRegionErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::GetHomeRegionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }

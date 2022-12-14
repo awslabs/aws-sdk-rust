@@ -45,15 +45,22 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::ListRealtimeContactAnalysisSegmentsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-                crate::error::ListRealtimeContactAnalysisSegmentsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
-                crate::error::ListRealtimeContactAnalysisSegmentsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-                crate::error::ListRealtimeContactAnalysisSegmentsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-                crate::error::ListRealtimeContactAnalysisSegmentsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-                crate::error::ListRealtimeContactAnalysisSegmentsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListRealtimeContactAnalysisSegmentsError> for Error {
+    fn from(err: crate::error::ListRealtimeContactAnalysisSegmentsError) -> Self {
+        match err.kind {
+            crate::error::ListRealtimeContactAnalysisSegmentsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::ListRealtimeContactAnalysisSegmentsErrorKind::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::error::ListRealtimeContactAnalysisSegmentsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::ListRealtimeContactAnalysisSegmentsErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::ListRealtimeContactAnalysisSegmentsErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::ListRealtimeContactAnalysisSegmentsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }

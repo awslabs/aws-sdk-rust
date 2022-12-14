@@ -87,19 +87,24 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ActivateTypeError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ActivateTypeErrorKind::CfnRegistryException(inner) => {
-                        Error::CfnRegistryException(inner)
-                    }
-                    crate::error::ActivateTypeErrorKind::TypeNotFoundException(inner) => {
-                        Error::TypeNotFoundException(inner)
-                    }
-                    crate::error::ActivateTypeErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ActivateTypeError> for Error {
+    fn from(err: crate::error::ActivateTypeError) -> Self {
+        match err.kind {
+            crate::error::ActivateTypeErrorKind::CfnRegistryException(inner) => {
+                Error::CfnRegistryException(inner)
+            }
+            crate::error::ActivateTypeErrorKind::TypeNotFoundException(inner) => {
+                Error::TypeNotFoundException(inner)
+            }
+            crate::error::ActivateTypeErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -116,12 +121,19 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::BatchDescribeTypeConfigurationsErrorKind::CfnRegistryException(inner) => Error::CfnRegistryException(inner),
-                crate::error::BatchDescribeTypeConfigurationsErrorKind::TypeConfigurationNotFoundException(inner) => Error::TypeConfigurationNotFoundException(inner),
-                crate::error::BatchDescribeTypeConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::BatchDescribeTypeConfigurationsError> for Error {
+    fn from(err: crate::error::BatchDescribeTypeConfigurationsError) -> Self {
+        match err.kind {
+            crate::error::BatchDescribeTypeConfigurationsErrorKind::CfnRegistryException(inner) => Error::CfnRegistryException(inner),
+            crate::error::BatchDescribeTypeConfigurationsErrorKind::TypeConfigurationNotFoundException(inner) => Error::TypeConfigurationNotFoundException(inner),
+            crate::error::BatchDescribeTypeConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -134,16 +146,21 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::CancelUpdateStackErrorKind::TokenAlreadyExistsException(
-                        inner,
-                    ) => Error::TokenAlreadyExistsException(inner),
-                    crate::error::CancelUpdateStackErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CancelUpdateStackError> for Error {
+    fn from(err: crate::error::CancelUpdateStackError) -> Self {
+        match err.kind {
+            crate::error::CancelUpdateStackErrorKind::TokenAlreadyExistsException(inner) => {
+                Error::TokenAlreadyExistsException(inner)
+            }
+            crate::error::CancelUpdateStackErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -157,16 +174,21 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ContinueUpdateRollbackErrorKind::TokenAlreadyExistsException(
-                        inner,
-                    ) => Error::TokenAlreadyExistsException(inner),
-                    crate::error::ContinueUpdateRollbackErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ContinueUpdateRollbackError> for Error {
+    fn from(err: crate::error::ContinueUpdateRollbackError) -> Self {
+        match err.kind {
+            crate::error::ContinueUpdateRollbackErrorKind::TokenAlreadyExistsException(inner) => {
+                Error::TokenAlreadyExistsException(inner)
+            }
+            crate::error::ContinueUpdateRollbackErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -177,22 +199,27 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateChangeSetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::CreateChangeSetErrorKind::AlreadyExistsException(inner) => {
-                        Error::AlreadyExistsException(inner)
-                    }
-                    crate::error::CreateChangeSetErrorKind::InsufficientCapabilitiesException(
-                        inner,
-                    ) => Error::InsufficientCapabilitiesException(inner),
-                    crate::error::CreateChangeSetErrorKind::LimitExceededException(inner) => {
-                        Error::LimitExceededException(inner)
-                    }
-                    crate::error::CreateChangeSetErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateChangeSetError> for Error {
+    fn from(err: crate::error::CreateChangeSetError) -> Self {
+        match err.kind {
+            crate::error::CreateChangeSetErrorKind::AlreadyExistsException(inner) => {
+                Error::AlreadyExistsException(inner)
+            }
+            crate::error::CreateChangeSetErrorKind::InsufficientCapabilitiesException(inner) => {
+                Error::InsufficientCapabilitiesException(inner)
+            }
+            crate::error::CreateChangeSetErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::CreateChangeSetErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -203,25 +230,30 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateStackError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::CreateStackErrorKind::AlreadyExistsException(inner) => {
-                        Error::AlreadyExistsException(inner)
-                    }
-                    crate::error::CreateStackErrorKind::InsufficientCapabilitiesException(
-                        inner,
-                    ) => Error::InsufficientCapabilitiesException(inner),
-                    crate::error::CreateStackErrorKind::LimitExceededException(inner) => {
-                        Error::LimitExceededException(inner)
-                    }
-                    crate::error::CreateStackErrorKind::TokenAlreadyExistsException(inner) => {
-                        Error::TokenAlreadyExistsException(inner)
-                    }
-                    crate::error::CreateStackErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateStackError> for Error {
+    fn from(err: crate::error::CreateStackError) -> Self {
+        match err.kind {
+            crate::error::CreateStackErrorKind::AlreadyExistsException(inner) => {
+                Error::AlreadyExistsException(inner)
+            }
+            crate::error::CreateStackErrorKind::InsufficientCapabilitiesException(inner) => {
+                Error::InsufficientCapabilitiesException(inner)
+            }
+            crate::error::CreateStackErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::CreateStackErrorKind::TokenAlreadyExistsException(inner) => {
+                Error::TokenAlreadyExistsException(inner)
+            }
+            crate::error::CreateStackErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -234,33 +266,37 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateStackInstancesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::CreateStackInstancesErrorKind::InvalidOperationException(inner) => {
-                    Error::InvalidOperationException(inner)
-                }
-                crate::error::CreateStackInstancesErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::CreateStackInstancesErrorKind::OperationIdAlreadyExistsException(
-                    inner,
-                ) => Error::OperationIdAlreadyExistsException(inner),
-                crate::error::CreateStackInstancesErrorKind::OperationInProgressException(
-                    inner,
-                ) => Error::OperationInProgressException(inner),
-                crate::error::CreateStackInstancesErrorKind::StackSetNotFoundException(inner) => {
-                    Error::StackSetNotFoundException(inner)
-                }
-                crate::error::CreateStackInstancesErrorKind::StaleRequestException(inner) => {
-                    Error::StaleRequestException(inner)
-                }
-                crate::error::CreateStackInstancesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateStackInstancesError> for Error {
+    fn from(err: crate::error::CreateStackInstancesError) -> Self {
+        match err.kind {
+            crate::error::CreateStackInstancesErrorKind::InvalidOperationException(inner) => {
+                Error::InvalidOperationException(inner)
+            }
+            crate::error::CreateStackInstancesErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::CreateStackInstancesErrorKind::OperationIdAlreadyExistsException(
+                inner,
+            ) => Error::OperationIdAlreadyExistsException(inner),
+            crate::error::CreateStackInstancesErrorKind::OperationInProgressException(inner) => {
+                Error::OperationInProgressException(inner)
+            }
+            crate::error::CreateStackInstancesErrorKind::StackSetNotFoundException(inner) => {
+                Error::StackSetNotFoundException(inner)
+            }
+            crate::error::CreateStackInstancesErrorKind::StaleRequestException(inner) => {
+                Error::StaleRequestException(inner)
+            }
+            crate::error::CreateStackInstancesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -271,22 +307,27 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateStackSetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::CreateStackSetErrorKind::CreatedButModifiedException(inner) => {
-                        Error::CreatedButModifiedException(inner)
-                    }
-                    crate::error::CreateStackSetErrorKind::LimitExceededException(inner) => {
-                        Error::LimitExceededException(inner)
-                    }
-                    crate::error::CreateStackSetErrorKind::NameAlreadyExistsException(inner) => {
-                        Error::NameAlreadyExistsException(inner)
-                    }
-                    crate::error::CreateStackSetErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateStackSetError> for Error {
+    fn from(err: crate::error::CreateStackSetError) -> Self {
+        match err.kind {
+            crate::error::CreateStackSetErrorKind::CreatedButModifiedException(inner) => {
+                Error::CreatedButModifiedException(inner)
+            }
+            crate::error::CreateStackSetErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::CreateStackSetErrorKind::NameAlreadyExistsException(inner) => {
+                Error::NameAlreadyExistsException(inner)
+            }
+            crate::error::CreateStackSetErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -297,19 +338,24 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeactivateTypeError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DeactivateTypeErrorKind::CfnRegistryException(inner) => {
-                        Error::CfnRegistryException(inner)
-                    }
-                    crate::error::DeactivateTypeErrorKind::TypeNotFoundException(inner) => {
-                        Error::TypeNotFoundException(inner)
-                    }
-                    crate::error::DeactivateTypeErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeactivateTypeError> for Error {
+    fn from(err: crate::error::DeactivateTypeError) -> Self {
+        match err.kind {
+            crate::error::DeactivateTypeErrorKind::CfnRegistryException(inner) => {
+                Error::CfnRegistryException(inner)
+            }
+            crate::error::DeactivateTypeErrorKind::TypeNotFoundException(inner) => {
+                Error::TypeNotFoundException(inner)
+            }
+            crate::error::DeactivateTypeErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -320,16 +366,21 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteChangeSetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DeleteChangeSetErrorKind::InvalidChangeSetStatusException(
-                        inner,
-                    ) => Error::InvalidChangeSetStatusException(inner),
-                    crate::error::DeleteChangeSetErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteChangeSetError> for Error {
+    fn from(err: crate::error::DeleteChangeSetError) -> Self {
+        match err.kind {
+            crate::error::DeleteChangeSetErrorKind::InvalidChangeSetStatusException(inner) => {
+                Error::InvalidChangeSetStatusException(inner)
+            }
+            crate::error::DeleteChangeSetErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -340,16 +391,21 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteStackError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DeleteStackErrorKind::TokenAlreadyExistsException(inner) => {
-                        Error::TokenAlreadyExistsException(inner)
-                    }
-                    crate::error::DeleteStackErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteStackError> for Error {
+    fn from(err: crate::error::DeleteStackError) -> Self {
+        match err.kind {
+            crate::error::DeleteStackErrorKind::TokenAlreadyExistsException(inner) => {
+                Error::TokenAlreadyExistsException(inner)
+            }
+            crate::error::DeleteStackErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -362,30 +418,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteStackInstancesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::DeleteStackInstancesErrorKind::InvalidOperationException(inner) => {
-                    Error::InvalidOperationException(inner)
-                }
-                crate::error::DeleteStackInstancesErrorKind::OperationIdAlreadyExistsException(
-                    inner,
-                ) => Error::OperationIdAlreadyExistsException(inner),
-                crate::error::DeleteStackInstancesErrorKind::OperationInProgressException(
-                    inner,
-                ) => Error::OperationInProgressException(inner),
-                crate::error::DeleteStackInstancesErrorKind::StackSetNotFoundException(inner) => {
-                    Error::StackSetNotFoundException(inner)
-                }
-                crate::error::DeleteStackInstancesErrorKind::StaleRequestException(inner) => {
-                    Error::StaleRequestException(inner)
-                }
-                crate::error::DeleteStackInstancesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteStackInstancesError> for Error {
+    fn from(err: crate::error::DeleteStackInstancesError) -> Self {
+        match err.kind {
+            crate::error::DeleteStackInstancesErrorKind::InvalidOperationException(inner) => {
+                Error::InvalidOperationException(inner)
+            }
+            crate::error::DeleteStackInstancesErrorKind::OperationIdAlreadyExistsException(
+                inner,
+            ) => Error::OperationIdAlreadyExistsException(inner),
+            crate::error::DeleteStackInstancesErrorKind::OperationInProgressException(inner) => {
+                Error::OperationInProgressException(inner)
+            }
+            crate::error::DeleteStackInstancesErrorKind::StackSetNotFoundException(inner) => {
+                Error::StackSetNotFoundException(inner)
+            }
+            crate::error::DeleteStackInstancesErrorKind::StaleRequestException(inner) => {
+                Error::StaleRequestException(inner)
+            }
+            crate::error::DeleteStackInstancesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -396,19 +456,24 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteStackSetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DeleteStackSetErrorKind::OperationInProgressException(inner) => {
-                        Error::OperationInProgressException(inner)
-                    }
-                    crate::error::DeleteStackSetErrorKind::StackSetNotEmptyException(inner) => {
-                        Error::StackSetNotEmptyException(inner)
-                    }
-                    crate::error::DeleteStackSetErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteStackSetError> for Error {
+    fn from(err: crate::error::DeleteStackSetError) -> Self {
+        match err.kind {
+            crate::error::DeleteStackSetErrorKind::OperationInProgressException(inner) => {
+                Error::OperationInProgressException(inner)
+            }
+            crate::error::DeleteStackSetErrorKind::StackSetNotEmptyException(inner) => {
+                Error::StackSetNotEmptyException(inner)
+            }
+            crate::error::DeleteStackSetErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -419,19 +484,24 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeregisterTypeError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DeregisterTypeErrorKind::CfnRegistryException(inner) => {
-                        Error::CfnRegistryException(inner)
-                    }
-                    crate::error::DeregisterTypeErrorKind::TypeNotFoundException(inner) => {
-                        Error::TypeNotFoundException(inner)
-                    }
-                    crate::error::DeregisterTypeErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeregisterTypeError> for Error {
+    fn from(err: crate::error::DeregisterTypeError) -> Self {
+        match err.kind {
+            crate::error::DeregisterTypeErrorKind::CfnRegistryException(inner) => {
+                Error::CfnRegistryException(inner)
+            }
+            crate::error::DeregisterTypeErrorKind::TypeNotFoundException(inner) => {
+                Error::TypeNotFoundException(inner)
+            }
+            crate::error::DeregisterTypeErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -445,13 +515,18 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DescribeAccountLimitsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeAccountLimitsError> for Error {
+    fn from(err: crate::error::DescribeAccountLimitsError) -> Self {
+        match err.kind {
+            crate::error::DescribeAccountLimitsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -464,16 +539,21 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DescribeChangeSetErrorKind::ChangeSetNotFoundException(inner) => {
-                        Error::ChangeSetNotFoundException(inner)
-                    }
-                    crate::error::DescribeChangeSetErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeChangeSetError> for Error {
+    fn from(err: crate::error::DescribeChangeSetError) -> Self {
+        match err.kind {
+            crate::error::DescribeChangeSetErrorKind::ChangeSetNotFoundException(inner) => {
+                Error::ChangeSetNotFoundException(inner)
+            }
+            crate::error::DescribeChangeSetErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -487,16 +567,21 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DescribeChangeSetHooksErrorKind::ChangeSetNotFoundException(
-                        inner,
-                    ) => Error::ChangeSetNotFoundException(inner),
-                    crate::error::DescribeChangeSetHooksErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeChangeSetHooksError> for Error {
+    fn from(err: crate::error::DescribeChangeSetHooksError) -> Self {
+        match err.kind {
+            crate::error::DescribeChangeSetHooksErrorKind::ChangeSetNotFoundException(inner) => {
+                Error::ChangeSetNotFoundException(inner)
+            }
+            crate::error::DescribeChangeSetHooksErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -509,16 +594,21 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DescribePublisherErrorKind::CfnRegistryException(inner) => {
-                        Error::CfnRegistryException(inner)
-                    }
-                    crate::error::DescribePublisherErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribePublisherError> for Error {
+    fn from(err: crate::error::DescribePublisherError) -> Self {
+        match err.kind {
+            crate::error::DescribePublisherErrorKind::CfnRegistryException(inner) => {
+                Error::CfnRegistryException(inner)
+            }
+            crate::error::DescribePublisherErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -536,13 +626,18 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DescribeStackDriftDetectionStatusErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeStackDriftDetectionStatusError> for Error {
+    fn from(err: crate::error::DescribeStackDriftDetectionStatusError) -> Self {
+        match err.kind {
+            crate::error::DescribeStackDriftDetectionStatusErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -555,13 +650,18 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DescribeStackEventsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeStackEventsError> for Error {
+    fn from(err: crate::error::DescribeStackEventsError) -> Self {
+        match err.kind {
+            crate::error::DescribeStackEventsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -574,21 +674,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeStackInstanceError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::DescribeStackInstanceErrorKind::StackInstanceNotFoundException(
-                    inner,
-                ) => Error::StackInstanceNotFoundException(inner),
-                crate::error::DescribeStackInstanceErrorKind::StackSetNotFoundException(inner) => {
-                    Error::StackSetNotFoundException(inner)
-                }
-                crate::error::DescribeStackInstanceErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeStackInstanceError> for Error {
+    fn from(err: crate::error::DescribeStackInstanceError) -> Self {
+        match err.kind {
+            crate::error::DescribeStackInstanceErrorKind::StackInstanceNotFoundException(inner) => {
+                Error::StackInstanceNotFoundException(inner)
+            }
+            crate::error::DescribeStackInstanceErrorKind::StackSetNotFoundException(inner) => {
+                Error::StackSetNotFoundException(inner)
+            }
+            crate::error::DescribeStackInstanceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -602,13 +706,18 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DescribeStackResourceErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeStackResourceError> for Error {
+    fn from(err: crate::error::DescribeStackResourceError) -> Self {
+        match err.kind {
+            crate::error::DescribeStackResourceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -622,13 +731,18 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DescribeStackResourceDriftsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeStackResourceDriftsError> for Error {
+    fn from(err: crate::error::DescribeStackResourceDriftsError) -> Self {
+        match err.kind {
+            crate::error::DescribeStackResourceDriftsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -642,13 +756,18 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DescribeStackResourcesErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeStackResourcesError> for Error {
+    fn from(err: crate::error::DescribeStackResourcesError) -> Self {
+        match err.kind {
+            crate::error::DescribeStackResourcesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -659,13 +778,18 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeStacksError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DescribeStacksErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeStacksError> for Error {
+    fn from(err: crate::error::DescribeStacksError) -> Self {
+        match err.kind {
+            crate::error::DescribeStacksErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -678,16 +802,21 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DescribeStackSetErrorKind::StackSetNotFoundException(inner) => {
-                        Error::StackSetNotFoundException(inner)
-                    }
-                    crate::error::DescribeStackSetErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeStackSetError> for Error {
+    fn from(err: crate::error::DescribeStackSetError) -> Self {
+        match err.kind {
+            crate::error::DescribeStackSetErrorKind::StackSetNotFoundException(inner) => {
+                Error::StackSetNotFoundException(inner)
+            }
+            crate::error::DescribeStackSetErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -700,21 +829,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeStackSetOperationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::DescribeStackSetOperationErrorKind::OperationNotFoundException(
-                    inner,
-                ) => Error::OperationNotFoundException(inner),
-                crate::error::DescribeStackSetOperationErrorKind::StackSetNotFoundException(
-                    inner,
-                ) => Error::StackSetNotFoundException(inner),
-                crate::error::DescribeStackSetOperationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeStackSetOperationError> for Error {
+    fn from(err: crate::error::DescribeStackSetOperationError) -> Self {
+        match err.kind {
+            crate::error::DescribeStackSetOperationErrorKind::OperationNotFoundException(inner) => {
+                Error::OperationNotFoundException(inner)
+            }
+            crate::error::DescribeStackSetOperationErrorKind::StackSetNotFoundException(inner) => {
+                Error::StackSetNotFoundException(inner)
+            }
+            crate::error::DescribeStackSetOperationErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -725,19 +858,24 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeTypeError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DescribeTypeErrorKind::CfnRegistryException(inner) => {
-                        Error::CfnRegistryException(inner)
-                    }
-                    crate::error::DescribeTypeErrorKind::TypeNotFoundException(inner) => {
-                        Error::TypeNotFoundException(inner)
-                    }
-                    crate::error::DescribeTypeErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeTypeError> for Error {
+    fn from(err: crate::error::DescribeTypeError) -> Self {
+        match err.kind {
+            crate::error::DescribeTypeErrorKind::CfnRegistryException(inner) => {
+                Error::CfnRegistryException(inner)
+            }
+            crate::error::DescribeTypeErrorKind::TypeNotFoundException(inner) => {
+                Error::TypeNotFoundException(inner)
+            }
+            crate::error::DescribeTypeErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -751,16 +889,21 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DescribeTypeRegistrationErrorKind::CfnRegistryException(
-                        inner,
-                    ) => Error::CfnRegistryException(inner),
-                    crate::error::DescribeTypeRegistrationErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeTypeRegistrationError> for Error {
+    fn from(err: crate::error::DescribeTypeRegistrationError) -> Self {
+        match err.kind {
+            crate::error::DescribeTypeRegistrationErrorKind::CfnRegistryException(inner) => {
+                Error::CfnRegistryException(inner)
+            }
+            crate::error::DescribeTypeRegistrationErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -773,13 +916,18 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DetectStackDriftErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DetectStackDriftError> for Error {
+    fn from(err: crate::error::DetectStackDriftError) -> Self {
+        match err.kind {
+            crate::error::DetectStackDriftErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -793,13 +941,18 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DetectStackResourceDriftErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DetectStackResourceDriftError> for Error {
+    fn from(err: crate::error::DetectStackResourceDriftError) -> Self {
+        match err.kind {
+            crate::error::DetectStackResourceDriftErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -812,22 +965,27 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DetectStackSetDriftErrorKind::InvalidOperationException(
-                        inner,
-                    ) => Error::InvalidOperationException(inner),
-                    crate::error::DetectStackSetDriftErrorKind::OperationInProgressException(
-                        inner,
-                    ) => Error::OperationInProgressException(inner),
-                    crate::error::DetectStackSetDriftErrorKind::StackSetNotFoundException(
-                        inner,
-                    ) => Error::StackSetNotFoundException(inner),
-                    crate::error::DetectStackSetDriftErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DetectStackSetDriftError> for Error {
+    fn from(err: crate::error::DetectStackSetDriftError) -> Self {
+        match err.kind {
+            crate::error::DetectStackSetDriftErrorKind::InvalidOperationException(inner) => {
+                Error::InvalidOperationException(inner)
+            }
+            crate::error::DetectStackSetDriftErrorKind::OperationInProgressException(inner) => {
+                Error::OperationInProgressException(inner)
+            }
+            crate::error::DetectStackSetDriftErrorKind::StackSetNotFoundException(inner) => {
+                Error::StackSetNotFoundException(inner)
+            }
+            crate::error::DetectStackSetDriftErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -841,13 +999,18 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::EstimateTemplateCostErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::EstimateTemplateCostError> for Error {
+    fn from(err: crate::error::EstimateTemplateCostError) -> Self {
+        match err.kind {
+            crate::error::EstimateTemplateCostErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -860,25 +1023,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ExecuteChangeSetErrorKind::ChangeSetNotFoundException(inner) => {
-                        Error::ChangeSetNotFoundException(inner)
-                    }
-                    crate::error::ExecuteChangeSetErrorKind::InsufficientCapabilitiesException(
-                        inner,
-                    ) => Error::InsufficientCapabilitiesException(inner),
-                    crate::error::ExecuteChangeSetErrorKind::InvalidChangeSetStatusException(
-                        inner,
-                    ) => Error::InvalidChangeSetStatusException(inner),
-                    crate::error::ExecuteChangeSetErrorKind::TokenAlreadyExistsException(inner) => {
-                        Error::TokenAlreadyExistsException(inner)
-                    }
-                    crate::error::ExecuteChangeSetErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ExecuteChangeSetError> for Error {
+    fn from(err: crate::error::ExecuteChangeSetError) -> Self {
+        match err.kind {
+            crate::error::ExecuteChangeSetErrorKind::ChangeSetNotFoundException(inner) => {
+                Error::ChangeSetNotFoundException(inner)
+            }
+            crate::error::ExecuteChangeSetErrorKind::InsufficientCapabilitiesException(inner) => {
+                Error::InsufficientCapabilitiesException(inner)
+            }
+            crate::error::ExecuteChangeSetErrorKind::InvalidChangeSetStatusException(inner) => {
+                Error::InvalidChangeSetStatusException(inner)
+            }
+            crate::error::ExecuteChangeSetErrorKind::TokenAlreadyExistsException(inner) => {
+                Error::TokenAlreadyExistsException(inner)
+            }
+            crate::error::ExecuteChangeSetErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -889,13 +1057,18 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetStackPolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetStackPolicyErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetStackPolicyError> for Error {
+    fn from(err: crate::error::GetStackPolicyError) -> Self {
+        match err.kind {
+            crate::error::GetStackPolicyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -906,16 +1079,21 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetTemplateError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetTemplateErrorKind::ChangeSetNotFoundException(inner) => {
-                        Error::ChangeSetNotFoundException(inner)
-                    }
-                    crate::error::GetTemplateErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetTemplateError> for Error {
+    fn from(err: crate::error::GetTemplateError) -> Self {
+        match err.kind {
+            crate::error::GetTemplateErrorKind::ChangeSetNotFoundException(inner) => {
+                Error::ChangeSetNotFoundException(inner)
+            }
+            crate::error::GetTemplateErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -928,16 +1106,21 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetTemplateSummaryErrorKind::StackSetNotFoundException(inner) => {
-                        Error::StackSetNotFoundException(inner)
-                    }
-                    crate::error::GetTemplateSummaryErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetTemplateSummaryError> for Error {
+    fn from(err: crate::error::GetTemplateSummaryError) -> Self {
+        match err.kind {
+            crate::error::GetTemplateSummaryErrorKind::StackSetNotFoundException(inner) => {
+                Error::StackSetNotFoundException(inner)
+            }
+            crate::error::GetTemplateSummaryErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -950,17 +1133,40 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ImportStacksToStackSetError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::ImportStacksToStackSetErrorKind::InvalidOperationException(inner) => Error::InvalidOperationException(inner),
-                crate::error::ImportStacksToStackSetErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-                crate::error::ImportStacksToStackSetErrorKind::OperationIdAlreadyExistsException(inner) => Error::OperationIdAlreadyExistsException(inner),
-                crate::error::ImportStacksToStackSetErrorKind::OperationInProgressException(inner) => Error::OperationInProgressException(inner),
-                crate::error::ImportStacksToStackSetErrorKind::StackNotFoundException(inner) => Error::StackNotFoundException(inner),
-                crate::error::ImportStacksToStackSetErrorKind::StackSetNotFoundException(inner) => Error::StackSetNotFoundException(inner),
-                crate::error::ImportStacksToStackSetErrorKind::StaleRequestException(inner) => Error::StaleRequestException(inner),
-                crate::error::ImportStacksToStackSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ImportStacksToStackSetError> for Error {
+    fn from(err: crate::error::ImportStacksToStackSetError) -> Self {
+        match err.kind {
+            crate::error::ImportStacksToStackSetErrorKind::InvalidOperationException(inner) => {
+                Error::InvalidOperationException(inner)
+            }
+            crate::error::ImportStacksToStackSetErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::ImportStacksToStackSetErrorKind::OperationIdAlreadyExistsException(
+                inner,
+            ) => Error::OperationIdAlreadyExistsException(inner),
+            crate::error::ImportStacksToStackSetErrorKind::OperationInProgressException(inner) => {
+                Error::OperationInProgressException(inner)
+            }
+            crate::error::ImportStacksToStackSetErrorKind::StackNotFoundException(inner) => {
+                Error::StackNotFoundException(inner)
+            }
+            crate::error::ImportStacksToStackSetErrorKind::StackSetNotFoundException(inner) => {
+                Error::StackSetNotFoundException(inner)
+            }
+            crate::error::ImportStacksToStackSetErrorKind::StaleRequestException(inner) => {
+                Error::StaleRequestException(inner)
+            }
+            crate::error::ImportStacksToStackSetErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -971,13 +1177,18 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListChangeSetsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListChangeSetsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListChangeSetsError> for Error {
+    fn from(err: crate::error::ListChangeSetsError) -> Self {
+        match err.kind {
+            crate::error::ListChangeSetsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -988,13 +1199,18 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListExportsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListExportsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListExportsError> for Error {
+    fn from(err: crate::error::ListExportsError) -> Self {
+        match err.kind {
+            crate::error::ListExportsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1005,13 +1221,18 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListImportsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListImportsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListImportsError> for Error {
+    fn from(err: crate::error::ListImportsError) -> Self {
+        match err.kind {
+            crate::error::ListImportsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1024,16 +1245,21 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListStackInstancesErrorKind::StackSetNotFoundException(inner) => {
-                        Error::StackSetNotFoundException(inner)
-                    }
-                    crate::error::ListStackInstancesErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListStackInstancesError> for Error {
+    fn from(err: crate::error::ListStackInstancesError) -> Self {
+        match err.kind {
+            crate::error::ListStackInstancesErrorKind::StackSetNotFoundException(inner) => {
+                Error::StackSetNotFoundException(inner)
+            }
+            crate::error::ListStackInstancesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1046,13 +1272,18 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListStackResourcesErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListStackResourcesError> for Error {
+    fn from(err: crate::error::ListStackResourcesError) -> Self {
+        match err.kind {
+            crate::error::ListStackResourcesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1063,13 +1294,18 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListStacksError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListStacksErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListStacksError> for Error {
+    fn from(err: crate::error::ListStacksError) -> Self {
+        match err.kind {
+            crate::error::ListStacksErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1082,21 +1318,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListStackSetOperationResultsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::ListStackSetOperationResultsErrorKind::OperationNotFoundException(
-                    inner,
-                ) => Error::OperationNotFoundException(inner),
-                crate::error::ListStackSetOperationResultsErrorKind::StackSetNotFoundException(
-                    inner,
-                ) => Error::StackSetNotFoundException(inner),
-                crate::error::ListStackSetOperationResultsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListStackSetOperationResultsError> for Error {
+    fn from(err: crate::error::ListStackSetOperationResultsError) -> Self {
+        match err.kind {
+            crate::error::ListStackSetOperationResultsErrorKind::OperationNotFoundException(
+                inner,
+            ) => Error::OperationNotFoundException(inner),
+            crate::error::ListStackSetOperationResultsErrorKind::StackSetNotFoundException(
+                inner,
+            ) => Error::StackSetNotFoundException(inner),
+            crate::error::ListStackSetOperationResultsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1110,16 +1350,21 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListStackSetOperationsErrorKind::StackSetNotFoundException(
-                        inner,
-                    ) => Error::StackSetNotFoundException(inner),
-                    crate::error::ListStackSetOperationsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListStackSetOperationsError> for Error {
+    fn from(err: crate::error::ListStackSetOperationsError) -> Self {
+        match err.kind {
+            crate::error::ListStackSetOperationsErrorKind::StackSetNotFoundException(inner) => {
+                Error::StackSetNotFoundException(inner)
+            }
+            crate::error::ListStackSetOperationsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1130,13 +1375,18 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListStackSetsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListStackSetsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListStackSetsError> for Error {
+    fn from(err: crate::error::ListStackSetsError) -> Self {
+        match err.kind {
+            crate::error::ListStackSetsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1150,16 +1400,21 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListTypeRegistrationsErrorKind::CfnRegistryException(inner) => {
-                        Error::CfnRegistryException(inner)
-                    }
-                    crate::error::ListTypeRegistrationsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListTypeRegistrationsError> for Error {
+    fn from(err: crate::error::ListTypeRegistrationsError) -> Self {
+        match err.kind {
+            crate::error::ListTypeRegistrationsErrorKind::CfnRegistryException(inner) => {
+                Error::CfnRegistryException(inner)
+            }
+            crate::error::ListTypeRegistrationsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1170,16 +1425,21 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTypesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListTypesErrorKind::CfnRegistryException(inner) => {
-                        Error::CfnRegistryException(inner)
-                    }
-                    crate::error::ListTypesErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListTypesError> for Error {
+    fn from(err: crate::error::ListTypesError) -> Self {
+        match err.kind {
+            crate::error::ListTypesErrorKind::CfnRegistryException(inner) => {
+                Error::CfnRegistryException(inner)
+            }
+            crate::error::ListTypesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1192,16 +1452,21 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListTypeVersionsErrorKind::CfnRegistryException(inner) => {
-                        Error::CfnRegistryException(inner)
-                    }
-                    crate::error::ListTypeVersionsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListTypeVersionsError> for Error {
+    fn from(err: crate::error::ListTypeVersionsError) -> Self {
+        match err.kind {
+            crate::error::ListTypeVersionsErrorKind::CfnRegistryException(inner) => {
+                Error::CfnRegistryException(inner)
+            }
+            crate::error::ListTypeVersionsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1212,19 +1477,24 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::PublishTypeError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::PublishTypeErrorKind::CfnRegistryException(inner) => {
-                        Error::CfnRegistryException(inner)
-                    }
-                    crate::error::PublishTypeErrorKind::TypeNotFoundException(inner) => {
-                        Error::TypeNotFoundException(inner)
-                    }
-                    crate::error::PublishTypeErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::PublishTypeError> for Error {
+    fn from(err: crate::error::PublishTypeError) -> Self {
+        match err.kind {
+            crate::error::PublishTypeErrorKind::CfnRegistryException(inner) => {
+                Error::CfnRegistryException(inner)
+            }
+            crate::error::PublishTypeErrorKind::TypeNotFoundException(inner) => {
+                Error::TypeNotFoundException(inner)
+            }
+            crate::error::PublishTypeErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1237,12 +1507,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::RecordHandlerProgressError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::RecordHandlerProgressErrorKind::InvalidStateTransitionException(inner) => Error::InvalidStateTransitionException(inner),
-                crate::error::RecordHandlerProgressErrorKind::OperationStatusCheckFailedException(inner) => Error::OperationStatusCheckFailedException(inner),
-                crate::error::RecordHandlerProgressErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::RecordHandlerProgressError> for Error {
+    fn from(err: crate::error::RecordHandlerProgressError) -> Self {
+        match err.kind {
+            crate::error::RecordHandlerProgressErrorKind::InvalidStateTransitionException(
+                inner,
+            ) => Error::InvalidStateTransitionException(inner),
+            crate::error::RecordHandlerProgressErrorKind::OperationStatusCheckFailedException(
+                inner,
+            ) => Error::OperationStatusCheckFailedException(inner),
+            crate::error::RecordHandlerProgressErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1255,16 +1538,21 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::RegisterPublisherErrorKind::CfnRegistryException(inner) => {
-                        Error::CfnRegistryException(inner)
-                    }
-                    crate::error::RegisterPublisherErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::RegisterPublisherError> for Error {
+    fn from(err: crate::error::RegisterPublisherError) -> Self {
+        match err.kind {
+            crate::error::RegisterPublisherErrorKind::CfnRegistryException(inner) => {
+                Error::CfnRegistryException(inner)
+            }
+            crate::error::RegisterPublisherErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1275,16 +1563,21 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::RegisterTypeError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::RegisterTypeErrorKind::CfnRegistryException(inner) => {
-                        Error::CfnRegistryException(inner)
-                    }
-                    crate::error::RegisterTypeErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::RegisterTypeError> for Error {
+    fn from(err: crate::error::RegisterTypeError) -> Self {
+        match err.kind {
+            crate::error::RegisterTypeErrorKind::CfnRegistryException(inner) => {
+                Error::CfnRegistryException(inner)
+            }
+            crate::error::RegisterTypeErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1295,16 +1588,21 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::RollbackStackError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::RollbackStackErrorKind::TokenAlreadyExistsException(inner) => {
-                        Error::TokenAlreadyExistsException(inner)
-                    }
-                    crate::error::RollbackStackErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::RollbackStackError> for Error {
+    fn from(err: crate::error::RollbackStackError) -> Self {
+        match err.kind {
+            crate::error::RollbackStackErrorKind::TokenAlreadyExistsException(inner) => {
+                Error::TokenAlreadyExistsException(inner)
+            }
+            crate::error::RollbackStackErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1315,13 +1613,18 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SetStackPolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::SetStackPolicyErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::SetStackPolicyError> for Error {
+    fn from(err: crate::error::SetStackPolicyError) -> Self {
+        match err.kind {
+            crate::error::SetStackPolicyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1335,19 +1638,24 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::SetTypeConfigurationErrorKind::CfnRegistryException(inner) => {
-                        Error::CfnRegistryException(inner)
-                    }
-                    crate::error::SetTypeConfigurationErrorKind::TypeNotFoundException(inner) => {
-                        Error::TypeNotFoundException(inner)
-                    }
-                    crate::error::SetTypeConfigurationErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::SetTypeConfigurationError> for Error {
+    fn from(err: crate::error::SetTypeConfigurationError) -> Self {
+        match err.kind {
+            crate::error::SetTypeConfigurationErrorKind::CfnRegistryException(inner) => {
+                Error::CfnRegistryException(inner)
+            }
+            crate::error::SetTypeConfigurationErrorKind::TypeNotFoundException(inner) => {
+                Error::TypeNotFoundException(inner)
+            }
+            crate::error::SetTypeConfigurationErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1361,19 +1669,24 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::SetTypeDefaultVersionErrorKind::CfnRegistryException(inner) => {
-                        Error::CfnRegistryException(inner)
-                    }
-                    crate::error::SetTypeDefaultVersionErrorKind::TypeNotFoundException(inner) => {
-                        Error::TypeNotFoundException(inner)
-                    }
-                    crate::error::SetTypeDefaultVersionErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::SetTypeDefaultVersionError> for Error {
+    fn from(err: crate::error::SetTypeDefaultVersionError) -> Self {
+        match err.kind {
+            crate::error::SetTypeDefaultVersionErrorKind::CfnRegistryException(inner) => {
+                Error::CfnRegistryException(inner)
+            }
+            crate::error::SetTypeDefaultVersionErrorKind::TypeNotFoundException(inner) => {
+                Error::TypeNotFoundException(inner)
+            }
+            crate::error::SetTypeDefaultVersionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1384,13 +1697,18 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SignalResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::SignalResourceErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::SignalResourceError> for Error {
+    fn from(err: crate::error::SignalResourceError) -> Self {
+        match err.kind {
+            crate::error::SignalResourceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1404,22 +1722,27 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::StopStackSetOperationErrorKind::InvalidOperationException(
-                        inner,
-                    ) => Error::InvalidOperationException(inner),
-                    crate::error::StopStackSetOperationErrorKind::OperationNotFoundException(
-                        inner,
-                    ) => Error::OperationNotFoundException(inner),
-                    crate::error::StopStackSetOperationErrorKind::StackSetNotFoundException(
-                        inner,
-                    ) => Error::StackSetNotFoundException(inner),
-                    crate::error::StopStackSetOperationErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::StopStackSetOperationError> for Error {
+    fn from(err: crate::error::StopStackSetOperationError) -> Self {
+        match err.kind {
+            crate::error::StopStackSetOperationErrorKind::InvalidOperationException(inner) => {
+                Error::InvalidOperationException(inner)
+            }
+            crate::error::StopStackSetOperationErrorKind::OperationNotFoundException(inner) => {
+                Error::OperationNotFoundException(inner)
+            }
+            crate::error::StopStackSetOperationErrorKind::StackSetNotFoundException(inner) => {
+                Error::StackSetNotFoundException(inner)
+            }
+            crate::error::StopStackSetOperationErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1430,19 +1753,24 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TestTypeError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::TestTypeErrorKind::CfnRegistryException(inner) => {
-                        Error::CfnRegistryException(inner)
-                    }
-                    crate::error::TestTypeErrorKind::TypeNotFoundException(inner) => {
-                        Error::TypeNotFoundException(inner)
-                    }
-                    crate::error::TestTypeErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::TestTypeError> for Error {
+    fn from(err: crate::error::TestTypeError) -> Self {
+        match err.kind {
+            crate::error::TestTypeErrorKind::CfnRegistryException(inner) => {
+                Error::CfnRegistryException(inner)
+            }
+            crate::error::TestTypeErrorKind::TypeNotFoundException(inner) => {
+                Error::TypeNotFoundException(inner)
+            }
+            crate::error::TestTypeErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1453,19 +1781,24 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateStackError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::UpdateStackErrorKind::InsufficientCapabilitiesException(
-                        inner,
-                    ) => Error::InsufficientCapabilitiesException(inner),
-                    crate::error::UpdateStackErrorKind::TokenAlreadyExistsException(inner) => {
-                        Error::TokenAlreadyExistsException(inner)
-                    }
-                    crate::error::UpdateStackErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateStackError> for Error {
+    fn from(err: crate::error::UpdateStackError) -> Self {
+        match err.kind {
+            crate::error::UpdateStackErrorKind::InsufficientCapabilitiesException(inner) => {
+                Error::InsufficientCapabilitiesException(inner)
+            }
+            crate::error::UpdateStackErrorKind::TokenAlreadyExistsException(inner) => {
+                Error::TokenAlreadyExistsException(inner)
+            }
+            crate::error::UpdateStackErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1478,33 +1811,37 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateStackInstancesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::UpdateStackInstancesErrorKind::InvalidOperationException(inner) => {
-                    Error::InvalidOperationException(inner)
-                }
-                crate::error::UpdateStackInstancesErrorKind::OperationIdAlreadyExistsException(
-                    inner,
-                ) => Error::OperationIdAlreadyExistsException(inner),
-                crate::error::UpdateStackInstancesErrorKind::OperationInProgressException(
-                    inner,
-                ) => Error::OperationInProgressException(inner),
-                crate::error::UpdateStackInstancesErrorKind::StackInstanceNotFoundException(
-                    inner,
-                ) => Error::StackInstanceNotFoundException(inner),
-                crate::error::UpdateStackInstancesErrorKind::StackSetNotFoundException(inner) => {
-                    Error::StackSetNotFoundException(inner)
-                }
-                crate::error::UpdateStackInstancesErrorKind::StaleRequestException(inner) => {
-                    Error::StaleRequestException(inner)
-                }
-                crate::error::UpdateStackInstancesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateStackInstancesError> for Error {
+    fn from(err: crate::error::UpdateStackInstancesError) -> Self {
+        match err.kind {
+            crate::error::UpdateStackInstancesErrorKind::InvalidOperationException(inner) => {
+                Error::InvalidOperationException(inner)
+            }
+            crate::error::UpdateStackInstancesErrorKind::OperationIdAlreadyExistsException(
+                inner,
+            ) => Error::OperationIdAlreadyExistsException(inner),
+            crate::error::UpdateStackInstancesErrorKind::OperationInProgressException(inner) => {
+                Error::OperationInProgressException(inner)
+            }
+            crate::error::UpdateStackInstancesErrorKind::StackInstanceNotFoundException(inner) => {
+                Error::StackInstanceNotFoundException(inner)
+            }
+            crate::error::UpdateStackInstancesErrorKind::StackSetNotFoundException(inner) => {
+                Error::StackSetNotFoundException(inner)
+            }
+            crate::error::UpdateStackInstancesErrorKind::StaleRequestException(inner) => {
+                Error::StaleRequestException(inner)
+            }
+            crate::error::UpdateStackInstancesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1515,31 +1852,36 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateStackSetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::UpdateStackSetErrorKind::InvalidOperationException(inner) => {
-                        Error::InvalidOperationException(inner)
-                    }
-                    crate::error::UpdateStackSetErrorKind::OperationIdAlreadyExistsException(
-                        inner,
-                    ) => Error::OperationIdAlreadyExistsException(inner),
-                    crate::error::UpdateStackSetErrorKind::OperationInProgressException(inner) => {
-                        Error::OperationInProgressException(inner)
-                    }
-                    crate::error::UpdateStackSetErrorKind::StackInstanceNotFoundException(
-                        inner,
-                    ) => Error::StackInstanceNotFoundException(inner),
-                    crate::error::UpdateStackSetErrorKind::StackSetNotFoundException(inner) => {
-                        Error::StackSetNotFoundException(inner)
-                    }
-                    crate::error::UpdateStackSetErrorKind::StaleRequestException(inner) => {
-                        Error::StaleRequestException(inner)
-                    }
-                    crate::error::UpdateStackSetErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateStackSetError> for Error {
+    fn from(err: crate::error::UpdateStackSetError) -> Self {
+        match err.kind {
+            crate::error::UpdateStackSetErrorKind::InvalidOperationException(inner) => {
+                Error::InvalidOperationException(inner)
+            }
+            crate::error::UpdateStackSetErrorKind::OperationIdAlreadyExistsException(inner) => {
+                Error::OperationIdAlreadyExistsException(inner)
+            }
+            crate::error::UpdateStackSetErrorKind::OperationInProgressException(inner) => {
+                Error::OperationInProgressException(inner)
+            }
+            crate::error::UpdateStackSetErrorKind::StackInstanceNotFoundException(inner) => {
+                Error::StackInstanceNotFoundException(inner)
+            }
+            crate::error::UpdateStackSetErrorKind::StackSetNotFoundException(inner) => {
+                Error::StackSetNotFoundException(inner)
+            }
+            crate::error::UpdateStackSetErrorKind::StaleRequestException(inner) => {
+                Error::StaleRequestException(inner)
+            }
+            crate::error::UpdateStackSetErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1553,13 +1895,18 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::UpdateTerminationProtectionErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateTerminationProtectionError> for Error {
+    fn from(err: crate::error::UpdateTerminationProtectionError) -> Self {
+        match err.kind {
+            crate::error::UpdateTerminationProtectionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1572,13 +1919,18 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ValidateTemplateErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ValidateTemplateError> for Error {
+    fn from(err: crate::error::ValidateTemplateError) -> Self {
+        match err.kind {
+            crate::error::ValidateTemplateErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }

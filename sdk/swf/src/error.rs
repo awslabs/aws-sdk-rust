@@ -662,6 +662,16 @@ pub struct CountClosedWorkflowExecutionsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CountClosedWorkflowExecutionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CountClosedWorkflowExecutionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CountClosedWorkflowExecutions` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -777,6 +787,16 @@ pub struct CountOpenWorkflowExecutionsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CountOpenWorkflowExecutionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CountOpenWorkflowExecutionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CountOpenWorkflowExecutions` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -889,6 +909,16 @@ pub struct CountPendingActivityTasksError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CountPendingActivityTasksError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CountPendingActivityTasksErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CountPendingActivityTasks` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -997,6 +1027,16 @@ pub struct CountPendingDecisionTasksError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CountPendingDecisionTasksError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CountPendingDecisionTasksErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CountPendingDecisionTasks` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1104,6 +1144,14 @@ pub struct DeprecateActivityTypeError {
     pub kind: DeprecateActivityTypeErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeprecateActivityTypeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeprecateActivityTypeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeprecateActivityType` operation.
 #[non_exhaustive]
@@ -1224,6 +1272,14 @@ pub struct DeprecateDomainError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeprecateDomainError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeprecateDomainErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeprecateDomain` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1338,6 +1394,14 @@ pub struct DeprecateWorkflowTypeError {
     pub kind: DeprecateWorkflowTypeErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeprecateWorkflowTypeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeprecateWorkflowTypeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeprecateWorkflowType` operation.
 #[non_exhaustive]
@@ -1458,6 +1522,14 @@ pub struct DescribeActivityTypeError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeActivityTypeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeActivityTypeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeActivityType` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1566,6 +1638,14 @@ pub struct DescribeDomainError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDomainError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDomainErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeDomain` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1666,6 +1746,16 @@ pub struct DescribeWorkflowExecutionError {
     pub kind: DescribeWorkflowExecutionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeWorkflowExecutionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeWorkflowExecutionErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeWorkflowExecution` operation.
 #[non_exhaustive]
@@ -1775,6 +1865,14 @@ pub struct DescribeWorkflowTypeError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeWorkflowTypeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeWorkflowTypeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeWorkflowType` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1882,6 +1980,16 @@ pub struct GetWorkflowExecutionHistoryError {
     pub kind: GetWorkflowExecutionHistoryErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetWorkflowExecutionHistoryError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetWorkflowExecutionHistoryErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetWorkflowExecutionHistory` operation.
 #[non_exhaustive]
@@ -1995,6 +2103,14 @@ pub struct ListActivityTypesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListActivityTypesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListActivityTypesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListActivityTypes` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2098,6 +2214,16 @@ pub struct ListClosedWorkflowExecutionsError {
     pub kind: ListClosedWorkflowExecutionsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListClosedWorkflowExecutionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListClosedWorkflowExecutionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListClosedWorkflowExecutions` operation.
 #[non_exhaustive]
@@ -2211,6 +2337,14 @@ pub struct ListDomainsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListDomainsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListDomainsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListDomains` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2303,6 +2437,16 @@ pub struct ListOpenWorkflowExecutionsError {
     pub kind: ListOpenWorkflowExecutionsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListOpenWorkflowExecutionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListOpenWorkflowExecutionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListOpenWorkflowExecutions` operation.
 #[non_exhaustive]
@@ -2413,6 +2557,14 @@ pub struct ListTagsForResourceError {
     pub kind: ListTagsForResourceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListTagsForResource` operation.
 #[non_exhaustive]
@@ -2529,6 +2681,14 @@ pub struct ListWorkflowTypesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListWorkflowTypesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListWorkflowTypesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListWorkflowTypes` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2632,6 +2792,14 @@ pub struct PollForActivityTaskError {
     pub kind: PollForActivityTaskErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PollForActivityTaskError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PollForActivityTaskErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `PollForActivityTask` operation.
 #[non_exhaustive]
@@ -2748,6 +2916,14 @@ pub struct PollForDecisionTaskError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for PollForDecisionTaskError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PollForDecisionTaskErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `PollForDecisionTask` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2863,6 +3039,16 @@ pub struct RecordActivityTaskHeartbeatError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RecordActivityTaskHeartbeatError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RecordActivityTaskHeartbeatErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RecordActivityTaskHeartbeat` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2974,6 +3160,14 @@ pub struct RegisterActivityTypeError {
     pub kind: RegisterActivityTypeErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RegisterActivityTypeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RegisterActivityTypeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `RegisterActivityType` operation.
 #[non_exhaustive]
@@ -3105,6 +3299,14 @@ pub struct RegisterDomainError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RegisterDomainError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RegisterDomainErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RegisterDomain` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3224,6 +3426,14 @@ pub struct RegisterWorkflowTypeError {
     pub kind: RegisterWorkflowTypeErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RegisterWorkflowTypeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RegisterWorkflowTypeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `RegisterWorkflowType` operation.
 #[non_exhaustive]
@@ -3355,6 +3565,16 @@ pub struct RequestCancelWorkflowExecutionError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RequestCancelWorkflowExecutionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RequestCancelWorkflowExecutionErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RequestCancelWorkflowExecution` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3470,6 +3690,16 @@ pub struct RespondActivityTaskCanceledError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RespondActivityTaskCanceledError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RespondActivityTaskCanceledErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RespondActivityTaskCanceled` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3581,6 +3811,16 @@ pub struct RespondActivityTaskCompletedError {
     pub kind: RespondActivityTaskCompletedErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RespondActivityTaskCompletedError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RespondActivityTaskCompletedErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `RespondActivityTaskCompleted` operation.
 #[non_exhaustive]
@@ -3694,6 +3934,16 @@ pub struct RespondActivityTaskFailedError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RespondActivityTaskFailedError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RespondActivityTaskFailedErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RespondActivityTaskFailed` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3801,6 +4051,16 @@ pub struct RespondDecisionTaskCompletedError {
     pub kind: RespondDecisionTaskCompletedErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RespondDecisionTaskCompletedError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RespondDecisionTaskCompletedErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `RespondDecisionTaskCompleted` operation.
 #[non_exhaustive]
@@ -3914,6 +4174,14 @@ pub struct SignalWorkflowExecutionError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for SignalWorkflowExecutionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: SignalWorkflowExecutionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `SignalWorkflowExecution` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4021,6 +4289,14 @@ pub struct StartWorkflowExecutionError {
     pub kind: StartWorkflowExecutionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for StartWorkflowExecutionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StartWorkflowExecutionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `StartWorkflowExecution` operation.
 #[non_exhaustive]
@@ -4181,6 +4457,14 @@ pub struct TagResourceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `TagResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4298,6 +4582,16 @@ pub struct TerminateWorkflowExecutionError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for TerminateWorkflowExecutionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: TerminateWorkflowExecutionErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `TerminateWorkflowExecution` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4407,6 +4701,14 @@ pub struct UndeprecateActivityTypeError {
     pub kind: UndeprecateActivityTypeErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UndeprecateActivityTypeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UndeprecateActivityTypeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UndeprecateActivityType` operation.
 #[non_exhaustive]
@@ -4527,6 +4829,14 @@ pub struct UndeprecateDomainError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UndeprecateDomainError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UndeprecateDomainErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UndeprecateDomain` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4641,6 +4951,14 @@ pub struct UndeprecateWorkflowTypeError {
     pub kind: UndeprecateWorkflowTypeErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UndeprecateWorkflowTypeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UndeprecateWorkflowTypeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UndeprecateWorkflowType` operation.
 #[non_exhaustive]
@@ -4760,6 +5078,14 @@ pub struct UntagResourceError {
     pub kind: UntagResourceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UntagResource` operation.
 #[non_exhaustive]

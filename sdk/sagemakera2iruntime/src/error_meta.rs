@@ -38,25 +38,30 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteHumanLoopError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DeleteHumanLoopErrorKind::InternalServerException(inner) => {
-                        Error::InternalServerException(inner)
-                    }
-                    crate::error::DeleteHumanLoopErrorKind::ResourceNotFoundException(inner) => {
-                        Error::ResourceNotFoundException(inner)
-                    }
-                    crate::error::DeleteHumanLoopErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::DeleteHumanLoopErrorKind::ValidationException(inner) => {
-                        Error::ValidationException(inner)
-                    }
-                    crate::error::DeleteHumanLoopErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteHumanLoopError> for Error {
+    fn from(err: crate::error::DeleteHumanLoopError) -> Self {
+        match err.kind {
+            crate::error::DeleteHumanLoopErrorKind::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::error::DeleteHumanLoopErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::DeleteHumanLoopErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::DeleteHumanLoopErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::DeleteHumanLoopErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -69,25 +74,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DescribeHumanLoopErrorKind::InternalServerException(inner) => {
-                        Error::InternalServerException(inner)
-                    }
-                    crate::error::DescribeHumanLoopErrorKind::ResourceNotFoundException(inner) => {
-                        Error::ResourceNotFoundException(inner)
-                    }
-                    crate::error::DescribeHumanLoopErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::DescribeHumanLoopErrorKind::ValidationException(inner) => {
-                        Error::ValidationException(inner)
-                    }
-                    crate::error::DescribeHumanLoopErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeHumanLoopError> for Error {
+    fn from(err: crate::error::DescribeHumanLoopError) -> Self {
+        match err.kind {
+            crate::error::DescribeHumanLoopErrorKind::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::error::DescribeHumanLoopErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::DescribeHumanLoopErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::DescribeHumanLoopErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::DescribeHumanLoopErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -98,25 +108,30 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListHumanLoopsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListHumanLoopsErrorKind::InternalServerException(inner) => {
-                        Error::InternalServerException(inner)
-                    }
-                    crate::error::ListHumanLoopsErrorKind::ResourceNotFoundException(inner) => {
-                        Error::ResourceNotFoundException(inner)
-                    }
-                    crate::error::ListHumanLoopsErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::ListHumanLoopsErrorKind::ValidationException(inner) => {
-                        Error::ValidationException(inner)
-                    }
-                    crate::error::ListHumanLoopsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListHumanLoopsError> for Error {
+    fn from(err: crate::error::ListHumanLoopsError) -> Self {
+        match err.kind {
+            crate::error::ListHumanLoopsErrorKind::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::error::ListHumanLoopsErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::ListHumanLoopsErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::ListHumanLoopsErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::ListHumanLoopsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -127,28 +142,33 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StartHumanLoopError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::StartHumanLoopErrorKind::ConflictException(inner) => {
-                        Error::ConflictException(inner)
-                    }
-                    crate::error::StartHumanLoopErrorKind::InternalServerException(inner) => {
-                        Error::InternalServerException(inner)
-                    }
-                    crate::error::StartHumanLoopErrorKind::ServiceQuotaExceededException(inner) => {
-                        Error::ServiceQuotaExceededException(inner)
-                    }
-                    crate::error::StartHumanLoopErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::StartHumanLoopErrorKind::ValidationException(inner) => {
-                        Error::ValidationException(inner)
-                    }
-                    crate::error::StartHumanLoopErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::StartHumanLoopError> for Error {
+    fn from(err: crate::error::StartHumanLoopError) -> Self {
+        match err.kind {
+            crate::error::StartHumanLoopErrorKind::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::error::StartHumanLoopErrorKind::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::error::StartHumanLoopErrorKind::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::error::StartHumanLoopErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::StartHumanLoopErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::StartHumanLoopErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -159,25 +179,30 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StopHumanLoopError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::StopHumanLoopErrorKind::InternalServerException(inner) => {
-                        Error::InternalServerException(inner)
-                    }
-                    crate::error::StopHumanLoopErrorKind::ResourceNotFoundException(inner) => {
-                        Error::ResourceNotFoundException(inner)
-                    }
-                    crate::error::StopHumanLoopErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::StopHumanLoopErrorKind::ValidationException(inner) => {
-                        Error::ValidationException(inner)
-                    }
-                    crate::error::StopHumanLoopErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::StopHumanLoopError> for Error {
+    fn from(err: crate::error::StopHumanLoopError) -> Self {
+        match err.kind {
+            crate::error::StopHumanLoopErrorKind::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::error::StopHumanLoopErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::StopHumanLoopErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::StopHumanLoopErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::StopHumanLoopErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }

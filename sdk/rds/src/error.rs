@@ -7846,6 +7846,14 @@ pub struct AddRoleToDBClusterError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AddRoleToDBClusterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AddRoleToDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AddRoleToDBCluster` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -7971,6 +7979,14 @@ pub struct AddRoleToDBInstanceError {
     pub kind: AddRoleToDBInstanceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for AddRoleToDBInstanceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AddRoleToDBInstanceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `AddRoleToDBInstance` operation.
 #[non_exhaustive]
@@ -8098,6 +8114,16 @@ pub struct AddSourceIdentifierToSubscriptionError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AddSourceIdentifierToSubscriptionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AddSourceIdentifierToSubscriptionErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AddSourceIdentifierToSubscription` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8214,6 +8240,14 @@ pub struct AddTagsToResourceError {
     pub kind: AddTagsToResourceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for AddTagsToResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AddTagsToResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `AddTagsToResource` operation.
 #[non_exhaustive]
@@ -8352,6 +8386,16 @@ pub struct ApplyPendingMaintenanceActionError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ApplyPendingMaintenanceActionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ApplyPendingMaintenanceActionErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ApplyPendingMaintenanceAction` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8481,6 +8525,16 @@ pub struct AuthorizeDBSecurityGroupIngressError {
     pub kind: AuthorizeDBSecurityGroupIngressErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for AuthorizeDBSecurityGroupIngressError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AuthorizeDBSecurityGroupIngressErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `AuthorizeDBSecurityGroupIngress` operation.
 #[non_exhaustive]
@@ -8631,6 +8685,14 @@ pub struct BacktrackDBClusterError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for BacktrackDBClusterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: BacktrackDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `BacktrackDBCluster` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8735,6 +8797,14 @@ pub struct CancelExportTaskError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CancelExportTaskError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CancelExportTaskErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CancelExportTask` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -8838,6 +8908,16 @@ pub struct CopyDBClusterParameterGroupError {
     pub kind: CopyDBClusterParameterGroupErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CopyDBClusterParameterGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CopyDBClusterParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CopyDBClusterParameterGroup` operation.
 #[non_exhaustive]
@@ -8969,6 +9049,14 @@ pub struct CopyDBClusterSnapshotError {
     pub kind: CopyDBClusterSnapshotErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CopyDBClusterSnapshotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CopyDBClusterSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CopyDBClusterSnapshot` operation.
 #[non_exhaustive]
@@ -9130,6 +9218,14 @@ pub struct CopyDBParameterGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CopyDBParameterGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CopyDBParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CopyDBParameterGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -9256,6 +9352,14 @@ pub struct CopyDBSnapshotError {
     pub kind: CopyDBSnapshotErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CopyDBSnapshotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CopyDBSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CopyDBSnapshot` operation.
 #[non_exhaustive]
@@ -9405,6 +9509,14 @@ pub struct CopyOptionGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CopyOptionGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CopyOptionGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CopyOptionGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -9519,6 +9631,16 @@ pub struct CreateCustomDBEngineVersionError {
     pub kind: CreateCustomDBEngineVersionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateCustomDBEngineVersionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateCustomDBEngineVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateCustomDBEngineVersion` operation.
 #[non_exhaustive]
@@ -9646,6 +9768,14 @@ pub struct CreateDBClusterError {
     pub kind: CreateDBClusterErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateDBClusterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateDBCluster` operation.
 #[non_exhaustive]
@@ -9925,6 +10055,14 @@ pub struct CreateDBClusterEndpointError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateDBClusterEndpointError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateDBClusterEndpointErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateDBClusterEndpoint` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -10085,6 +10223,16 @@ pub struct CreateDBClusterParameterGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateDBClusterParameterGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateDBClusterParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateDBClusterParameterGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -10203,6 +10351,14 @@ pub struct CreateDBClusterSnapshotError {
     pub kind: CreateDBClusterSnapshotErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateDBClusterSnapshotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateDBClusterSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateDBClusterSnapshot` operation.
 #[non_exhaustive]
@@ -10352,6 +10508,14 @@ pub struct CreateDBInstanceError {
     pub kind: CreateDBInstanceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateDBInstanceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateDBInstanceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateDBInstance` operation.
 #[non_exhaustive]
@@ -10655,6 +10819,16 @@ pub struct CreateDBInstanceReadReplicaError {
     pub kind: CreateDBInstanceReadReplicaErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateDBInstanceReadReplicaError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateDBInstanceReadReplicaErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateDBInstanceReadReplica` operation.
 #[non_exhaustive]
@@ -11014,6 +11188,14 @@ pub struct CreateDBParameterGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateDBParameterGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateDBParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateDBParameterGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -11130,6 +11312,14 @@ pub struct CreateDBProxyError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateDBProxyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateDBProxyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateDBProxy` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -11241,6 +11431,14 @@ pub struct CreateDBProxyEndpointError {
     pub kind: CreateDBProxyEndpointErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateDBProxyEndpointError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateDBProxyEndpointErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateDBProxyEndpoint` operation.
 #[non_exhaustive]
@@ -11388,6 +11586,14 @@ pub struct CreateDBSecurityGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateDBSecurityGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateDBSecurityGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateDBSecurityGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -11519,6 +11725,14 @@ pub struct CreateDBSnapshotError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateDBSnapshotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateDBSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateDBSnapshot` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -11644,6 +11858,14 @@ pub struct CreateDBSubnetGroupError {
     pub kind: CreateDBSubnetGroupErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateDBSubnetGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateDBSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateDBSubnetGroup` operation.
 #[non_exhaustive]
@@ -11782,6 +12004,14 @@ pub struct CreateEventSubscriptionError {
     pub kind: CreateEventSubscriptionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateEventSubscriptionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateEventSubscriptionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateEventSubscription` operation.
 #[non_exhaustive]
@@ -11956,6 +12186,14 @@ pub struct CreateGlobalClusterError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateGlobalClusterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateGlobalClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateGlobalCluster` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -12082,6 +12320,14 @@ pub struct CreateOptionGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateOptionGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateOptionGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateOptionGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -12185,6 +12431,16 @@ pub struct DeleteCustomDBEngineVersionError {
     pub kind: DeleteCustomDBEngineVersionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteCustomDBEngineVersionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteCustomDBEngineVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteCustomDBEngineVersion` operation.
 #[non_exhaustive]
@@ -12301,6 +12557,14 @@ pub struct DeleteDBClusterError {
     pub kind: DeleteDBClusterErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDBClusterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteDBCluster` operation.
 #[non_exhaustive]
@@ -12439,6 +12703,14 @@ pub struct DeleteDBClusterEndpointError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDBClusterEndpointError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDBClusterEndpointErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteDBClusterEndpoint` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -12566,6 +12838,16 @@ pub struct DeleteDBClusterParameterGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDBClusterParameterGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDBClusterParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteDBClusterParameterGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -12685,6 +12967,14 @@ pub struct DeleteDBClusterSnapshotError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDBClusterSnapshotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDBClusterSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteDBClusterSnapshot` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -12800,6 +13090,14 @@ pub struct DeleteDBInstanceError {
     pub kind: DeleteDBInstanceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDBInstanceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDBInstanceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteDBInstance` operation.
 #[non_exhaustive]
@@ -12955,6 +13253,16 @@ pub struct DeleteDBInstanceAutomatedBackupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDBInstanceAutomatedBackupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDBInstanceAutomatedBackupErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteDBInstanceAutomatedBackup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -13080,6 +13388,14 @@ pub struct DeleteDBParameterGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDBParameterGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDBParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteDBParameterGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -13192,6 +13508,14 @@ pub struct DeleteDBProxyError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDBProxyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDBProxyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteDBProxy` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -13292,6 +13616,14 @@ pub struct DeleteDBProxyEndpointError {
     pub kind: DeleteDBProxyEndpointErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDBProxyEndpointError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDBProxyEndpointErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteDBProxyEndpoint` operation.
 #[non_exhaustive]
@@ -13405,6 +13737,14 @@ pub struct DeleteDBSecurityGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDBSecurityGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDBSecurityGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteDBSecurityGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -13517,6 +13857,14 @@ pub struct DeleteDBSnapshotError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDBSnapshotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDBSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteDBSnapshot` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -13620,6 +13968,14 @@ pub struct DeleteDBSubnetGroupError {
     pub kind: DeleteDBSubnetGroupErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDBSubnetGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDBSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteDBSubnetGroup` operation.
 #[non_exhaustive]
@@ -13736,6 +14092,14 @@ pub struct DeleteEventSubscriptionError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteEventSubscriptionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteEventSubscriptionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteEventSubscription` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -13848,6 +14212,14 @@ pub struct DeleteGlobalClusterError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteGlobalClusterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteGlobalClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteGlobalCluster` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -13952,6 +14324,14 @@ pub struct DeleteOptionGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteOptionGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteOptionGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteOptionGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -14055,6 +14435,16 @@ pub struct DeregisterDBProxyTargetsError {
     pub kind: DeregisterDBProxyTargetsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeregisterDBProxyTargetsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeregisterDBProxyTargetsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeregisterDBProxyTargets` operation.
 #[non_exhaustive]
@@ -14190,6 +14580,16 @@ pub struct DescribeAccountAttributesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeAccountAttributesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeAccountAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeAccountAttributes` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -14275,6 +14675,14 @@ pub struct DescribeCertificatesError {
     pub kind: DescribeCertificatesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeCertificatesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeCertificates` operation.
 #[non_exhaustive]
@@ -14372,6 +14780,16 @@ pub struct DescribeDBClusterBacktracksError {
     pub kind: DescribeDBClusterBacktracksErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDBClusterBacktracksError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDBClusterBacktracksErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeDBClusterBacktracks` operation.
 #[non_exhaustive]
@@ -14485,6 +14903,16 @@ pub struct DescribeDBClusterEndpointsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDBClusterEndpointsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDBClusterEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeDBClusterEndpoints` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -14581,6 +15009,16 @@ pub struct DescribeDBClusterParameterGroupsError {
     pub kind: DescribeDBClusterParameterGroupsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDBClusterParameterGroupsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDBClusterParameterGroupsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeDBClusterParameterGroups` operation.
 #[non_exhaustive]
@@ -14686,6 +15124,16 @@ pub struct DescribeDBClusterParametersError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDBClusterParametersError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDBClusterParametersErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeDBClusterParameters` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -14787,6 +15235,14 @@ pub struct DescribeDBClustersError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDBClustersError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDBClustersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeDBClusters` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -14879,6 +15335,16 @@ pub struct DescribeDBClusterSnapshotAttributesError {
     pub kind: DescribeDBClusterSnapshotAttributesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDBClusterSnapshotAttributesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDBClusterSnapshotAttributesErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeDBClusterSnapshotAttributes` operation.
 #[non_exhaustive]
@@ -14984,6 +15450,16 @@ pub struct DescribeDBClusterSnapshotsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDBClusterSnapshotsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDBClusterSnapshotsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeDBClusterSnapshots` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -15085,6 +15561,16 @@ pub struct DescribeDBEngineVersionsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDBEngineVersionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDBEngineVersionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeDBEngineVersions` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -15170,6 +15656,16 @@ pub struct DescribeDBInstanceAutomatedBackupsError {
     pub kind: DescribeDBInstanceAutomatedBackupsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDBInstanceAutomatedBackupsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDBInstanceAutomatedBackupsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeDBInstanceAutomatedBackups` operation.
 #[non_exhaustive]
@@ -15275,6 +15771,14 @@ pub struct DescribeDBInstancesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDBInstancesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDBInstancesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeDBInstances` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -15368,6 +15872,14 @@ pub struct DescribeDBLogFilesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDBLogFilesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDBLogFilesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeDBLogFiles` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -15460,6 +15972,16 @@ pub struct DescribeDBParameterGroupsError {
     pub kind: DescribeDBParameterGroupsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDBParameterGroupsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDBParameterGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeDBParameterGroups` operation.
 #[non_exhaustive]
@@ -15562,6 +16084,14 @@ pub struct DescribeDBParametersError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDBParametersError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDBParametersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeDBParameters` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -15659,6 +16189,14 @@ pub struct DescribeDBProxiesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDBProxiesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDBProxiesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeDBProxies` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -15751,6 +16289,16 @@ pub struct DescribeDBProxyEndpointsError {
     pub kind: DescribeDBProxyEndpointsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDBProxyEndpointsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDBProxyEndpointsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeDBProxyEndpoints` operation.
 #[non_exhaustive]
@@ -15861,6 +16409,16 @@ pub struct DescribeDBProxyTargetGroupsError {
     pub kind: DescribeDBProxyTargetGroupsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDBProxyTargetGroupsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDBProxyTargetGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeDBProxyTargetGroups` operation.
 #[non_exhaustive]
@@ -15984,6 +16542,14 @@ pub struct DescribeDBProxyTargetsError {
     pub kind: DescribeDBProxyTargetsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDBProxyTargetsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDBProxyTargetsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeDBProxyTargets` operation.
 #[non_exhaustive]
@@ -16119,6 +16685,16 @@ pub struct DescribeDBSecurityGroupsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDBSecurityGroupsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDBSecurityGroupsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeDBSecurityGroups` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -16218,6 +16794,16 @@ pub struct DescribeDBSnapshotAttributesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDBSnapshotAttributesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDBSnapshotAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeDBSnapshotAttributes` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -16315,6 +16901,14 @@ pub struct DescribeDBSnapshotsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDBSnapshotsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDBSnapshotsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeDBSnapshots` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -16407,6 +17001,14 @@ pub struct DescribeDBSubnetGroupsError {
     pub kind: DescribeDBSubnetGroupsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDBSubnetGroupsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeDBSubnetGroupsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeDBSubnetGroups` operation.
 #[non_exhaustive]
@@ -16505,6 +17107,16 @@ pub struct DescribeEngineDefaultClusterParametersError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeEngineDefaultClusterParametersError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeEngineDefaultClusterParametersErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeEngineDefaultClusterParameters` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -16593,6 +17205,16 @@ pub struct DescribeEngineDefaultParametersError {
     pub kind: DescribeEngineDefaultParametersErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeEngineDefaultParametersError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeEngineDefaultParametersErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeEngineDefaultParameters` operation.
 #[non_exhaustive]
@@ -16683,6 +17305,14 @@ pub struct DescribeEventCategoriesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeEventCategoriesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeEventCategoriesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeEventCategories` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -16769,6 +17399,14 @@ pub struct DescribeEventsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeEventsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeEventsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeEvents` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -16850,6 +17488,16 @@ pub struct DescribeEventSubscriptionsError {
     pub kind: DescribeEventSubscriptionsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeEventSubscriptionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeEventSubscriptionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeEventSubscriptions` operation.
 #[non_exhaustive]
@@ -16948,6 +17596,14 @@ pub struct DescribeExportTasksError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeExportTasksError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeExportTasksErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeExportTasks` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -17040,6 +17696,14 @@ pub struct DescribeGlobalClustersError {
     pub kind: DescribeGlobalClustersErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeGlobalClustersError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeGlobalClustersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeGlobalClusters` operation.
 #[non_exhaustive]
@@ -17138,6 +17802,16 @@ pub struct DescribeOptionGroupOptionsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeOptionGroupOptionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeOptionGroupOptionsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeOptionGroupOptions` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -17223,6 +17897,14 @@ pub struct DescribeOptionGroupsError {
     pub kind: DescribeOptionGroupsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeOptionGroupsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeOptionGroupsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeOptionGroups` operation.
 #[non_exhaustive]
@@ -17321,6 +18003,16 @@ pub struct DescribeOrderableDBInstanceOptionsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeOrderableDBInstanceOptionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeOrderableDBInstanceOptionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeOrderableDBInstanceOptions` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -17409,6 +18101,16 @@ pub struct DescribePendingMaintenanceActionsError {
     pub kind: DescribePendingMaintenanceActionsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribePendingMaintenanceActionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribePendingMaintenanceActionsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribePendingMaintenanceActions` operation.
 #[non_exhaustive]
@@ -17514,6 +18216,16 @@ pub struct DescribeReservedDBInstancesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeReservedDBInstancesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeReservedDBInstancesErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeReservedDBInstances` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -17614,6 +18326,16 @@ pub struct DescribeReservedDBInstancesOfferingsError {
     pub kind: DescribeReservedDBInstancesOfferingsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeReservedDBInstancesOfferingsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeReservedDBInstancesOfferingsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeReservedDBInstancesOfferings` operation.
 #[non_exhaustive]
@@ -17727,6 +18449,14 @@ pub struct DescribeSourceRegionsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeSourceRegionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeSourceRegionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeSourceRegions` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -17812,6 +18542,16 @@ pub struct DescribeValidDBInstanceModificationsError {
     pub kind: DescribeValidDBInstanceModificationsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeValidDBInstanceModificationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeValidDBInstanceModificationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeValidDBInstanceModifications` operation.
 #[non_exhaustive]
@@ -17932,6 +18672,16 @@ pub struct DownloadDBLogFilePortionError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DownloadDBLogFilePortionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DownloadDBLogFilePortionErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DownloadDBLogFilePortion` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -18039,6 +18789,14 @@ pub struct FailoverDBClusterError {
     pub kind: FailoverDBClusterErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for FailoverDBClusterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: FailoverDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `FailoverDBCluster` operation.
 #[non_exhaustive]
@@ -18154,6 +18912,14 @@ pub struct FailoverGlobalClusterError {
     pub kind: FailoverGlobalClusterErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for FailoverGlobalClusterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: FailoverGlobalClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `FailoverGlobalCluster` operation.
 #[non_exhaustive]
@@ -18284,6 +19050,14 @@ pub struct ListTagsForResourceError {
     pub kind: ListTagsForResourceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListTagsForResource` operation.
 #[non_exhaustive]
@@ -18422,6 +19196,14 @@ pub struct ModifyActivityStreamError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ModifyActivityStreamError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyActivityStreamErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ModifyActivityStream` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -18541,6 +19323,14 @@ pub struct ModifyCertificatesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ModifyCertificatesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyCertificatesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ModifyCertificates` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -18633,6 +19423,16 @@ pub struct ModifyCurrentDBClusterCapacityError {
     pub kind: ModifyCurrentDBClusterCapacityErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ModifyCurrentDBClusterCapacityError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyCurrentDBClusterCapacityErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ModifyCurrentDBClusterCapacity` operation.
 #[non_exhaustive]
@@ -18766,6 +19566,16 @@ pub struct ModifyCustomDBEngineVersionError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ModifyCustomDBEngineVersionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyCustomDBEngineVersionErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ModifyCustomDBEngineVersion` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -18881,6 +19691,14 @@ pub struct ModifyDBClusterError {
     pub kind: ModifyDBClusterErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ModifyDBClusterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ModifyDBCluster` operation.
 #[non_exhaustive]
@@ -19090,6 +19908,14 @@ pub struct ModifyDBClusterEndpointError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ModifyDBClusterEndpointError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyDBClusterEndpointErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ModifyDBClusterEndpoint` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -19239,6 +20065,16 @@ pub struct ModifyDBClusterParameterGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ModifyDBClusterParameterGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyDBClusterParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ModifyDBClusterParameterGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -19357,6 +20193,16 @@ pub struct ModifyDBClusterSnapshotAttributeError {
     pub kind: ModifyDBClusterSnapshotAttributeErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ModifyDBClusterSnapshotAttributeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyDBClusterSnapshotAttributeErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ModifyDBClusterSnapshotAttribute` operation.
 #[non_exhaustive]
@@ -19491,6 +20337,14 @@ pub struct ModifyDBInstanceError {
     pub kind: ModifyDBInstanceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ModifyDBInstanceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyDBInstanceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ModifyDBInstance` operation.
 #[non_exhaustive]
@@ -19798,6 +20652,14 @@ pub struct ModifyDBParameterGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ModifyDBParameterGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyDBParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ModifyDBParameterGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -19910,6 +20772,14 @@ pub struct ModifyDBProxyError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ModifyDBProxyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyDBProxyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ModifyDBProxy` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -20021,6 +20891,14 @@ pub struct ModifyDBProxyEndpointError {
     pub kind: ModifyDBProxyEndpointErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ModifyDBProxyEndpointError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyDBProxyEndpointErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ModifyDBProxyEndpoint` operation.
 #[non_exhaustive]
@@ -20160,6 +21038,16 @@ pub struct ModifyDBProxyTargetGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ModifyDBProxyTargetGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyDBProxyTargetGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ModifyDBProxyTargetGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -20283,6 +21171,14 @@ pub struct ModifyDBSnapshotError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ModifyDBSnapshotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyDBSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ModifyDBSnapshot` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -20375,6 +21271,16 @@ pub struct ModifyDBSnapshotAttributeError {
     pub kind: ModifyDBSnapshotAttributeErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ModifyDBSnapshotAttributeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyDBSnapshotAttributeErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ModifyDBSnapshotAttribute` operation.
 #[non_exhaustive]
@@ -20500,6 +21406,14 @@ pub struct ModifyDBSubnetGroupError {
     pub kind: ModifyDBSubnetGroupErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ModifyDBSubnetGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyDBSubnetGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ModifyDBSubnetGroup` operation.
 #[non_exhaustive]
@@ -20638,6 +21552,14 @@ pub struct ModifyEventSubscriptionError {
     pub kind: ModifyEventSubscriptionErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ModifyEventSubscriptionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyEventSubscriptionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ModifyEventSubscription` operation.
 #[non_exhaustive]
@@ -20799,6 +21721,14 @@ pub struct ModifyGlobalClusterError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ModifyGlobalClusterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyGlobalClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ModifyGlobalCluster` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -20925,6 +21855,14 @@ pub struct ModifyOptionGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ModifyOptionGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ModifyOptionGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ModifyOptionGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -21029,6 +21967,14 @@ pub struct PromoteReadReplicaError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for PromoteReadReplicaError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PromoteReadReplicaErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `PromoteReadReplica` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -21132,6 +22078,16 @@ pub struct PromoteReadReplicaDBClusterError {
     pub kind: PromoteReadReplicaDBClusterErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PromoteReadReplicaDBClusterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PromoteReadReplicaDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `PromoteReadReplicaDBCluster` operation.
 #[non_exhaustive]
@@ -21244,6 +22200,16 @@ pub struct PurchaseReservedDBInstancesOfferingError {
     pub kind: PurchaseReservedDBInstancesOfferingErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PurchaseReservedDBInstancesOfferingError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PurchaseReservedDBInstancesOfferingErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `PurchaseReservedDBInstancesOffering` operation.
 #[non_exhaustive]
@@ -21387,6 +22353,14 @@ pub struct RebootDBClusterError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RebootDBClusterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RebootDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RebootDBCluster` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -21502,6 +22476,14 @@ pub struct RebootDBInstanceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RebootDBInstanceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RebootDBInstanceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RebootDBInstance` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -21605,6 +22587,14 @@ pub struct RegisterDBProxyTargetsError {
     pub kind: RegisterDBProxyTargetsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RegisterDBProxyTargetsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RegisterDBProxyTargetsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `RegisterDBProxyTargets` operation.
 #[non_exhaustive]
@@ -21803,6 +22793,14 @@ pub struct RemoveFromGlobalClusterError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RemoveFromGlobalClusterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RemoveFromGlobalClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RemoveFromGlobalCluster` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -21926,6 +22924,14 @@ pub struct RemoveRoleFromDBClusterError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RemoveRoleFromDBClusterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RemoveRoleFromDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RemoveRoleFromDBCluster` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -22044,6 +23050,16 @@ pub struct RemoveRoleFromDBInstanceError {
     pub kind: RemoveRoleFromDBInstanceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RemoveRoleFromDBInstanceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RemoveRoleFromDBInstanceErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `RemoveRoleFromDBInstance` operation.
 #[non_exhaustive]
@@ -22164,6 +23180,16 @@ pub struct RemoveSourceIdentifierFromSubscriptionError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RemoveSourceIdentifierFromSubscriptionError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RemoveSourceIdentifierFromSubscriptionErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RemoveSourceIdentifierFromSubscription` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -22282,6 +23308,14 @@ pub struct RemoveTagsFromResourceError {
     pub kind: RemoveTagsFromResourceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RemoveTagsFromResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RemoveTagsFromResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `RemoveTagsFromResource` operation.
 #[non_exhaustive]
@@ -22428,6 +23462,16 @@ pub struct ResetDBClusterParameterGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ResetDBClusterParameterGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ResetDBClusterParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ResetDBClusterParameterGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -22544,6 +23588,14 @@ pub struct ResetDBParameterGroupError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ResetDBParameterGroupError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ResetDBParameterGroupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ResetDBParameterGroup` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -22655,6 +23707,14 @@ pub struct RestoreDBClusterFromS3Error {
     pub kind: RestoreDBClusterFromS3ErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RestoreDBClusterFromS3Error {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RestoreDBClusterFromS3ErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `RestoreDBClusterFromS3` operation.
 #[non_exhaustive]
@@ -22905,6 +23965,16 @@ pub struct RestoreDBClusterFromSnapshotError {
     pub kind: RestoreDBClusterFromSnapshotErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RestoreDBClusterFromSnapshotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RestoreDBClusterFromSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `RestoreDBClusterFromSnapshot` operation.
 #[non_exhaustive]
@@ -23226,6 +24296,16 @@ pub struct RestoreDBClusterToPointInTimeError {
     pub kind: RestoreDBClusterToPointInTimeErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RestoreDBClusterToPointInTimeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RestoreDBClusterToPointInTimeErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `RestoreDBClusterToPointInTime` operation.
 #[non_exhaustive]
@@ -23569,6 +24649,16 @@ pub struct RestoreDBInstanceFromDBSnapshotError {
     pub kind: RestoreDBInstanceFromDBSnapshotErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RestoreDBInstanceFromDBSnapshotError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RestoreDBInstanceFromDBSnapshotErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `RestoreDBInstanceFromDBSnapshot` operation.
 #[non_exhaustive]
@@ -23964,6 +25054,14 @@ pub struct RestoreDBInstanceFromS3Error {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RestoreDBInstanceFromS3Error {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RestoreDBInstanceFromS3ErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RestoreDBInstanceFromS3` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -24263,6 +25361,16 @@ pub struct RestoreDBInstanceToPointInTimeError {
     pub kind: RestoreDBInstanceToPointInTimeErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RestoreDBInstanceToPointInTimeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RestoreDBInstanceToPointInTimeErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `RestoreDBInstanceToPointInTime` operation.
 #[non_exhaustive]
@@ -24688,6 +25796,16 @@ pub struct RevokeDBSecurityGroupIngressError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RevokeDBSecurityGroupIngressError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RevokeDBSecurityGroupIngressErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RevokeDBSecurityGroupIngress` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -24819,6 +25937,14 @@ pub struct StartActivityStreamError {
     pub kind: StartActivityStreamErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for StartActivityStreamError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StartActivityStreamErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `StartActivityStream` operation.
 #[non_exhaustive]
@@ -24968,6 +26094,14 @@ pub struct StartDBClusterError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for StartDBClusterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StartDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `StartDBCluster` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -25082,6 +26216,14 @@ pub struct StartDBInstanceError {
     pub kind: StartDBInstanceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for StartDBInstanceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StartDBInstanceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `StartDBInstance` operation.
 #[non_exhaustive]
@@ -25284,6 +26426,18 @@ pub struct StartDBInstanceAutomatedBackupsReplicationError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError
+    for StartDBInstanceAutomatedBackupsReplicationError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StartDBInstanceAutomatedBackupsReplicationErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `StartDBInstanceAutomatedBackupsReplication` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -25450,6 +26604,14 @@ pub struct StartExportTaskError {
     pub kind: StartExportTaskErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for StartExportTaskError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StartExportTaskErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `StartExportTask` operation.
 #[non_exhaustive]
@@ -25632,6 +26794,14 @@ pub struct StopActivityStreamError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for StopActivityStreamError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StopActivityStreamErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `StopActivityStream` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -25769,6 +26939,14 @@ pub struct StopDBClusterError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for StopDBClusterError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StopDBClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `StopDBCluster` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -25883,6 +27061,14 @@ pub struct StopDBInstanceError {
     pub kind: StopDBInstanceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for StopDBInstanceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StopDBInstanceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `StopDBInstance` operation.
 #[non_exhaustive]
@@ -26021,6 +27207,18 @@ pub struct StopDBInstanceAutomatedBackupsReplicationError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError
+    for StopDBInstanceAutomatedBackupsReplicationError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: StopDBInstanceAutomatedBackupsReplicationErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `StopDBInstanceAutomatedBackupsReplication` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -26139,6 +27337,14 @@ pub struct SwitchoverReadReplicaError {
     pub kind: SwitchoverReadReplicaErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for SwitchoverReadReplicaError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: SwitchoverReadReplicaErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `SwitchoverReadReplica` operation.
 #[non_exhaustive]

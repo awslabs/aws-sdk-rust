@@ -399,6 +399,18 @@ pub struct AcceptDomainTransferFromAnotherAwsAccountError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError
+    for AcceptDomainTransferFromAnotherAwsAccountError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AcceptDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AcceptDomainTransferFromAnotherAwsAccount` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -548,6 +560,18 @@ pub struct CancelDomainTransferToAnotherAwsAccountError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError
+    for CancelDomainTransferToAnotherAwsAccountError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CancelDomainTransferToAnotherAwsAccountErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CancelDomainTransferToAnotherAwsAccount` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -678,6 +702,14 @@ pub struct CheckDomainAvailabilityError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CheckDomainAvailabilityError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CheckDomainAvailabilityErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CheckDomainAvailability` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -786,6 +818,16 @@ pub struct CheckDomainTransferabilityError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CheckDomainTransferabilityError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CheckDomainTransferabilityErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CheckDomainTransferability` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -893,6 +935,14 @@ pub struct DeleteDomainError {
     pub kind: DeleteDomainErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDomainError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteDomainErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteDomain` operation.
 #[non_exhaustive]
@@ -1008,6 +1058,14 @@ pub struct DeleteTagsForDomainError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteTagsForDomainError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteTagsForDomainErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteTagsForDomain` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1117,6 +1175,14 @@ pub struct DisableDomainAutoRenewError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DisableDomainAutoRenewError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DisableDomainAutoRenewErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DisableDomainAutoRenew` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1221,6 +1287,16 @@ pub struct DisableDomainTransferLockError {
     pub kind: DisableDomainTransferLockErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DisableDomainTransferLockError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DisableDomainTransferLockErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DisableDomainTransferLock` operation.
 #[non_exhaustive]
@@ -1363,6 +1439,14 @@ pub struct EnableDomainAutoRenewError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for EnableDomainAutoRenewError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: EnableDomainAutoRenewErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `EnableDomainAutoRenew` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1478,6 +1562,16 @@ pub struct EnableDomainTransferLockError {
     pub kind: EnableDomainTransferLockErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for EnableDomainTransferLockError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: EnableDomainTransferLockErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `EnableDomainTransferLock` operation.
 #[non_exhaustive]
@@ -1620,6 +1714,16 @@ pub struct GetContactReachabilityStatusError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetContactReachabilityStatusError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetContactReachabilityStatusErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetContactReachabilityStatus` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1739,6 +1843,14 @@ pub struct GetDomainDetailError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetDomainDetailError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetDomainDetailErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetDomainDetail` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1836,6 +1948,14 @@ pub struct GetDomainSuggestionsError {
     pub kind: GetDomainSuggestionsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetDomainSuggestionsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetDomainSuggestionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetDomainSuggestions` operation.
 #[non_exhaustive]
@@ -1939,6 +2059,14 @@ pub struct GetOperationDetailError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetOperationDetailError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetOperationDetailErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetOperationDetail` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2028,6 +2156,14 @@ pub struct ListDomainsError {
     pub kind: ListDomainsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListDomainsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListDomainsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListDomains` operation.
 #[non_exhaustive]
@@ -2119,6 +2255,14 @@ pub struct ListOperationsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListOperationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListOperationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListOperations` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2208,6 +2352,14 @@ pub struct ListPricesError {
     pub kind: ListPricesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListPricesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListPricesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListPrices` operation.
 #[non_exhaustive]
@@ -2306,6 +2458,14 @@ pub struct ListTagsForDomainError {
     pub kind: ListTagsForDomainErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListTagsForDomainError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListTagsForDomainErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListTagsForDomain` operation.
 #[non_exhaustive]
@@ -2415,6 +2575,14 @@ pub struct RegisterDomainError {
     pub kind: RegisterDomainErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for RegisterDomainError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RegisterDomainErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `RegisterDomain` operation.
 #[non_exhaustive]
@@ -2548,6 +2716,18 @@ pub struct RejectDomainTransferFromAnotherAwsAccountError {
     pub kind: RejectDomainTransferFromAnotherAwsAccountErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for RejectDomainTransferFromAnotherAwsAccountError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RejectDomainTransferFromAnotherAwsAccountErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `RejectDomainTransferFromAnotherAwsAccount` operation.
 #[non_exhaustive]
@@ -2683,6 +2863,14 @@ pub struct RenewDomainError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RenewDomainError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RenewDomainErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RenewDomain` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2804,6 +2992,16 @@ pub struct ResendContactReachabilityEmailError {
     pub kind: ResendContactReachabilityEmailErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ResendContactReachabilityEmailError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ResendContactReachabilityEmailErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ResendContactReachabilityEmail` operation.
 #[non_exhaustive]
@@ -2929,6 +3127,14 @@ pub struct RetrieveDomainAuthCodeError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RetrieveDomainAuthCodeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RetrieveDomainAuthCodeErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RetrieveDomainAuthCode` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3033,6 +3239,14 @@ pub struct TransferDomainError {
     pub kind: TransferDomainErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for TransferDomainError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: TransferDomainErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `TransferDomain` operation.
 #[non_exhaustive]
@@ -3166,6 +3380,16 @@ pub struct TransferDomainToAnotherAwsAccountError {
     pub kind: TransferDomainToAnotherAwsAccountErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for TransferDomainToAnotherAwsAccountError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: TransferDomainToAnotherAwsAccountErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `TransferDomainToAnotherAwsAccount` operation.
 #[non_exhaustive]
@@ -3304,6 +3528,14 @@ pub struct UpdateDomainContactError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateDomainContactError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateDomainContactErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateDomainContact` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3434,6 +3666,16 @@ pub struct UpdateDomainContactPrivacyError {
     pub kind: UpdateDomainContactPrivacyErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateDomainContactPrivacyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateDomainContactPrivacyErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateDomainContactPrivacy` operation.
 #[non_exhaustive]
@@ -3576,6 +3818,14 @@ pub struct UpdateDomainNameserversError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateDomainNameserversError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateDomainNameserversErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateDomainNameservers` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3717,6 +3967,14 @@ pub struct UpdateTagsForDomainError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UpdateTagsForDomainError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateTagsForDomainErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UpdateTagsForDomain` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3825,6 +4083,14 @@ pub struct ViewBillingError {
     pub kind: ViewBillingErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ViewBillingError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ViewBillingErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ViewBilling` operation.
 #[non_exhaustive]

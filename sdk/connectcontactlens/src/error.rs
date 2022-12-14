@@ -334,6 +334,16 @@ pub struct ListRealtimeContactAnalysisSegmentsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListRealtimeContactAnalysisSegmentsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListRealtimeContactAnalysisSegmentsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListRealtimeContactAnalysisSegments` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]

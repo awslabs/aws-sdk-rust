@@ -122,6 +122,14 @@ impl<E, R> ServiceError<E, R> {
     }
 }
 
+/// Constructs the unhandled variant of a code generated error.
+///
+/// This trait exists so that [`SdkError::into_service_error`] can be infallible.
+pub trait CreateUnhandledError {
+    /// Creates an unhandled error variant with the given `source`.
+    fn create_unhandled_error(source: Box<dyn Error + Send + Sync + 'static>) -> Self;
+}
+
 /// Failed SDK Result
 #[non_exhaustive]
 #[derive(Debug)]
@@ -179,34 +187,42 @@ impl<E, R> SdkError<E, R> {
 
     /// Returns the underlying service error `E` if there is one
     ///
-    /// If a service error is not available (for example, the error is a network timeout),
-    /// then the full `SdkError` is returned. This makes it easy to match on the service's
-    /// error response while simultaneously bubbling up transient failures. For example,
-    /// handling the `NoSuchKey` error for S3's `GetObject` operation may look as follows:
+    /// If the `SdkError` is not a `ServiceError` (for example, the error is a network timeout),
+    /// then it will be converted into an unhandled variant of `E`. This makes it easy to match
+    /// on the service's error response while simultaneously bubbling up transient failures.
+    /// For example, handling the `NoSuchKey` error for S3's `GetObject` operation may look as
+    /// follows:
     ///
     /// ```no_run
-    /// # use aws_smithy_http::result::SdkError;
+    /// # use aws_smithy_http::result::{SdkError, CreateUnhandledError};
     /// # #[derive(Debug)] enum GetObjectErrorKind { NoSuchKey(()), Other(()) }
     /// # #[derive(Debug)] struct GetObjectError { kind: GetObjectErrorKind }
     /// # impl std::fmt::Display for GetObjectError {
     /// #     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result { unimplemented!() }
     /// # }
     /// # impl std::error::Error for GetObjectError {}
-    /// # fn example() -> Result<(), Box<dyn std::error::Error>> {
+    /// # impl CreateUnhandledError for GetObjectError {
+    /// #     fn create_unhandled_error(_: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self { unimplemented!() }
+    /// # }
+    /// # fn example() -> Result<(), GetObjectError> {
     /// # let sdk_err = SdkError::service_error(GetObjectError { kind: GetObjectErrorKind::NoSuchKey(()) }, ());
-    /// match sdk_err.into_service_error()? {
+    /// match sdk_err.into_service_error() {
     ///     GetObjectError { kind: GetObjectErrorKind::NoSuchKey(_) } => {
     ///         // handle NoSuchKey
     ///     }
-    ///     err @ _ => return Err(err.into()),
+    ///     err @ _ => return Err(err),
     /// }
     /// # Ok(())
     /// # }
     /// ```
-    pub fn into_service_error(self) -> Result<E, Self> {
+    pub fn into_service_error(self) -> E
+    where
+        E: std::error::Error + Send + Sync + CreateUnhandledError + 'static,
+        R: Debug + Send + Sync + 'static,
+    {
         match self {
-            Self::ServiceError(context) => Ok(context.source),
-            _ => Err(self),
+            Self::ServiceError(context) => context.source,
+            _ => E::create_unhandled_error(self.into()),
         }
     }
 

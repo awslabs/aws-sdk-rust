@@ -43,19 +43,24 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeStreamError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DescribeStreamErrorKind::InternalServerError(inner) => {
-                        Error::InternalServerError(inner)
-                    }
-                    crate::error::DescribeStreamErrorKind::ResourceNotFoundException(inner) => {
-                        Error::ResourceNotFoundException(inner)
-                    }
-                    crate::error::DescribeStreamErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeStreamError> for Error {
+    fn from(err: crate::error::DescribeStreamError) -> Self {
+        match err.kind {
+            crate::error::DescribeStreamErrorKind::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::error::DescribeStreamErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::DescribeStreamErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -66,28 +71,33 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetRecordsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetRecordsErrorKind::ExpiredIteratorException(inner) => {
-                        Error::ExpiredIteratorException(inner)
-                    }
-                    crate::error::GetRecordsErrorKind::InternalServerError(inner) => {
-                        Error::InternalServerError(inner)
-                    }
-                    crate::error::GetRecordsErrorKind::LimitExceededException(inner) => {
-                        Error::LimitExceededException(inner)
-                    }
-                    crate::error::GetRecordsErrorKind::ResourceNotFoundException(inner) => {
-                        Error::ResourceNotFoundException(inner)
-                    }
-                    crate::error::GetRecordsErrorKind::TrimmedDataAccessException(inner) => {
-                        Error::TrimmedDataAccessException(inner)
-                    }
-                    crate::error::GetRecordsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetRecordsError> for Error {
+    fn from(err: crate::error::GetRecordsError) -> Self {
+        match err.kind {
+            crate::error::GetRecordsErrorKind::ExpiredIteratorException(inner) => {
+                Error::ExpiredIteratorException(inner)
+            }
+            crate::error::GetRecordsErrorKind::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::error::GetRecordsErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::GetRecordsErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::GetRecordsErrorKind::TrimmedDataAccessException(inner) => {
+                Error::TrimmedDataAccessException(inner)
+            }
+            crate::error::GetRecordsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -100,22 +110,27 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetShardIteratorErrorKind::InternalServerError(inner) => {
-                        Error::InternalServerError(inner)
-                    }
-                    crate::error::GetShardIteratorErrorKind::ResourceNotFoundException(inner) => {
-                        Error::ResourceNotFoundException(inner)
-                    }
-                    crate::error::GetShardIteratorErrorKind::TrimmedDataAccessException(inner) => {
-                        Error::TrimmedDataAccessException(inner)
-                    }
-                    crate::error::GetShardIteratorErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetShardIteratorError> for Error {
+    fn from(err: crate::error::GetShardIteratorError) -> Self {
+        match err.kind {
+            crate::error::GetShardIteratorErrorKind::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::error::GetShardIteratorErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::GetShardIteratorErrorKind::TrimmedDataAccessException(inner) => {
+                Error::TrimmedDataAccessException(inner)
+            }
+            crate::error::GetShardIteratorErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -126,19 +141,24 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListStreamsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListStreamsErrorKind::InternalServerError(inner) => {
-                        Error::InternalServerError(inner)
-                    }
-                    crate::error::ListStreamsErrorKind::ResourceNotFoundException(inner) => {
-                        Error::ResourceNotFoundException(inner)
-                    }
-                    crate::error::ListStreamsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListStreamsError> for Error {
+    fn from(err: crate::error::ListStreamsError) -> Self {
+        match err.kind {
+            crate::error::ListStreamsErrorKind::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::error::ListStreamsErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::ListStreamsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }

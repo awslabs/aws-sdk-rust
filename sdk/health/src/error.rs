@@ -204,6 +204,18 @@ pub struct DescribeAffectedAccountsForOrganizationError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError
+    for DescribeAffectedAccountsForOrganizationError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeAffectedAccountsForOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeAffectedAccountsForOrganization` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -307,6 +319,16 @@ pub struct DescribeAffectedEntitiesError {
     pub kind: DescribeAffectedEntitiesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeAffectedEntitiesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeAffectedEntitiesErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeAffectedEntities` operation.
 #[non_exhaustive]
@@ -415,6 +437,18 @@ pub struct DescribeAffectedEntitiesForOrganizationError {
     pub kind: DescribeAffectedEntitiesForOrganizationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for DescribeAffectedEntitiesForOrganizationError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeAffectedEntitiesForOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeAffectedEntitiesForOrganization` operation.
 #[non_exhaustive]
@@ -535,6 +569,16 @@ pub struct DescribeEntityAggregatesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeEntityAggregatesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeEntityAggregatesErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeEntityAggregates` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -620,6 +664,14 @@ pub struct DescribeEventAggregatesError {
     pub kind: DescribeEventAggregatesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeEventAggregatesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeEventAggregatesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeEventAggregates` operation.
 #[non_exhaustive]
@@ -718,6 +770,14 @@ pub struct DescribeEventDetailsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeEventDetailsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeEventDetailsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeEventDetails` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -814,6 +874,16 @@ pub struct DescribeEventDetailsForOrganizationError {
     pub kind: DescribeEventDetailsForOrganizationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeEventDetailsForOrganizationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeEventDetailsForOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeEventDetailsForOrganization` operation.
 #[non_exhaustive]
@@ -917,6 +987,14 @@ pub struct DescribeEventsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeEventsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeEventsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeEvents` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1017,6 +1095,16 @@ pub struct DescribeEventsForOrganizationError {
     pub kind: DescribeEventsForOrganizationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeEventsForOrganizationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeEventsForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeEventsForOrganization` operation.
 #[non_exhaustive]
@@ -1129,6 +1217,14 @@ pub struct DescribeEventTypesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribeEventTypesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeEventTypesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeEventTypes` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1233,6 +1329,18 @@ pub struct DescribeHealthServiceStatusForOrganizationError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError
+    for DescribeHealthServiceStatusForOrganizationError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeHealthServiceStatusForOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeHealthServiceStatusForOrganization` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1321,6 +1429,18 @@ pub struct DisableHealthServiceAccessForOrganizationError {
     pub kind: DisableHealthServiceAccessForOrganizationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for DisableHealthServiceAccessForOrganizationError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DisableHealthServiceAccessForOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DisableHealthServiceAccessForOrganization` operation.
 #[non_exhaustive]
@@ -1425,6 +1545,18 @@ pub struct EnableHealthServiceAccessForOrganizationError {
     pub kind: EnableHealthServiceAccessForOrganizationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for EnableHealthServiceAccessForOrganizationError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: EnableHealthServiceAccessForOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `EnableHealthServiceAccessForOrganization` operation.
 #[non_exhaustive]

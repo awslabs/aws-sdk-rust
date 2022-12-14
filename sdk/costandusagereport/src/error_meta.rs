@@ -35,19 +35,24 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DeleteReportDefinitionErrorKind::InternalErrorException(
-                        inner,
-                    ) => Error::InternalErrorException(inner),
-                    crate::error::DeleteReportDefinitionErrorKind::ValidationException(inner) => {
-                        Error::ValidationException(inner)
-                    }
-                    crate::error::DeleteReportDefinitionErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteReportDefinitionError> for Error {
+    fn from(err: crate::error::DeleteReportDefinitionError) -> Self {
+        match err.kind {
+            crate::error::DeleteReportDefinitionErrorKind::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::error::DeleteReportDefinitionErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::DeleteReportDefinitionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -61,16 +66,21 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DescribeReportDefinitionsErrorKind::InternalErrorException(
-                        inner,
-                    ) => Error::InternalErrorException(inner),
-                    crate::error::DescribeReportDefinitionsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeReportDefinitionsError> for Error {
+    fn from(err: crate::error::DescribeReportDefinitionsError) -> Self {
+        match err.kind {
+            crate::error::DescribeReportDefinitionsErrorKind::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::error::DescribeReportDefinitionsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -84,19 +94,24 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ModifyReportDefinitionErrorKind::InternalErrorException(
-                        inner,
-                    ) => Error::InternalErrorException(inner),
-                    crate::error::ModifyReportDefinitionErrorKind::ValidationException(inner) => {
-                        Error::ValidationException(inner)
-                    }
-                    crate::error::ModifyReportDefinitionErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ModifyReportDefinitionError> for Error {
+    fn from(err: crate::error::ModifyReportDefinitionError) -> Self {
+        match err.kind {
+            crate::error::ModifyReportDefinitionErrorKind::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::error::ModifyReportDefinitionErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::ModifyReportDefinitionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -109,25 +124,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::PutReportDefinitionErrorKind::DuplicateReportNameException(
-                        inner,
-                    ) => Error::DuplicateReportNameException(inner),
-                    crate::error::PutReportDefinitionErrorKind::InternalErrorException(inner) => {
-                        Error::InternalErrorException(inner)
-                    }
-                    crate::error::PutReportDefinitionErrorKind::ReportLimitReachedException(
-                        inner,
-                    ) => Error::ReportLimitReachedException(inner),
-                    crate::error::PutReportDefinitionErrorKind::ValidationException(inner) => {
-                        Error::ValidationException(inner)
-                    }
-                    crate::error::PutReportDefinitionErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::PutReportDefinitionError> for Error {
+    fn from(err: crate::error::PutReportDefinitionError) -> Self {
+        match err.kind {
+            crate::error::PutReportDefinitionErrorKind::DuplicateReportNameException(inner) => {
+                Error::DuplicateReportNameException(inner)
+            }
+            crate::error::PutReportDefinitionErrorKind::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::error::PutReportDefinitionErrorKind::ReportLimitReachedException(inner) => {
+                Error::ReportLimitReachedException(inner)
+            }
+            crate::error::PutReportDefinitionErrorKind::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::PutReportDefinitionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }

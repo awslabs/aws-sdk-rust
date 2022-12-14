@@ -399,6 +399,14 @@ pub struct CreateConfigurationSetError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateConfigurationSetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateConfigurationSetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateConfigurationSet` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -539,6 +547,16 @@ pub struct CreateConfigurationSetEventDestinationError {
     pub kind: CreateConfigurationSetEventDestinationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for CreateConfigurationSetEventDestinationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateConfigurationSetEventDestinationErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateConfigurationSetEventDestination` operation.
 #[non_exhaustive]
@@ -719,6 +737,14 @@ pub struct DeleteConfigurationSetError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteConfigurationSetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteConfigurationSetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteConfigurationSet` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -848,6 +874,16 @@ pub struct DeleteConfigurationSetEventDestinationError {
     pub kind: DeleteConfigurationSetEventDestinationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteConfigurationSetEventDestinationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteConfigurationSetEventDestinationErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteConfigurationSetEventDestination` operation.
 #[non_exhaustive]
@@ -998,6 +1034,16 @@ pub struct GetConfigurationSetEventDestinationsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetConfigurationSetEventDestinationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetConfigurationSetEventDestinationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetConfigurationSetEventDestinations` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1147,6 +1193,14 @@ pub struct ListConfigurationSetsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListConfigurationSetsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListConfigurationSetsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListConfigurationSets` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1266,6 +1320,14 @@ pub struct SendVoiceMessageError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for SendVoiceMessageError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: SendVoiceMessageErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `SendVoiceMessage` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1380,6 +1442,16 @@ pub struct UpdateConfigurationSetEventDestinationError {
     pub kind: UpdateConfigurationSetEventDestinationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateConfigurationSetEventDestinationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateConfigurationSetEventDestinationErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateConfigurationSetEventDestination` operation.
 #[non_exhaustive]

@@ -34,22 +34,27 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DeleteConnectionErrorKind::ForbiddenException(inner) => {
-                        Error::ForbiddenException(inner)
-                    }
-                    crate::error::DeleteConnectionErrorKind::GoneException(inner) => {
-                        Error::GoneException(inner)
-                    }
-                    crate::error::DeleteConnectionErrorKind::LimitExceededException(inner) => {
-                        Error::LimitExceededException(inner)
-                    }
-                    crate::error::DeleteConnectionErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteConnectionError> for Error {
+    fn from(err: crate::error::DeleteConnectionError) -> Self {
+        match err.kind {
+            crate::error::DeleteConnectionErrorKind::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::error::DeleteConnectionErrorKind::GoneException(inner) => {
+                Error::GoneException(inner)
+            }
+            crate::error::DeleteConnectionErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::DeleteConnectionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -60,22 +65,27 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetConnectionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetConnectionErrorKind::ForbiddenException(inner) => {
-                        Error::ForbiddenException(inner)
-                    }
-                    crate::error::GetConnectionErrorKind::GoneException(inner) => {
-                        Error::GoneException(inner)
-                    }
-                    crate::error::GetConnectionErrorKind::LimitExceededException(inner) => {
-                        Error::LimitExceededException(inner)
-                    }
-                    crate::error::GetConnectionErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetConnectionError> for Error {
+    fn from(err: crate::error::GetConnectionError) -> Self {
+        match err.kind {
+            crate::error::GetConnectionErrorKind::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::error::GetConnectionErrorKind::GoneException(inner) => {
+                Error::GoneException(inner)
+            }
+            crate::error::GetConnectionErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::GetConnectionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -88,25 +98,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::PostToConnectionErrorKind::ForbiddenException(inner) => {
-                        Error::ForbiddenException(inner)
-                    }
-                    crate::error::PostToConnectionErrorKind::GoneException(inner) => {
-                        Error::GoneException(inner)
-                    }
-                    crate::error::PostToConnectionErrorKind::LimitExceededException(inner) => {
-                        Error::LimitExceededException(inner)
-                    }
-                    crate::error::PostToConnectionErrorKind::PayloadTooLargeException(inner) => {
-                        Error::PayloadTooLargeException(inner)
-                    }
-                    crate::error::PostToConnectionErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::PostToConnectionError> for Error {
+    fn from(err: crate::error::PostToConnectionError) -> Self {
+        match err.kind {
+            crate::error::PostToConnectionErrorKind::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::error::PostToConnectionErrorKind::GoneException(inner) => {
+                Error::GoneException(inner)
+            }
+            crate::error::PostToConnectionErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::PostToConnectionErrorKind::PayloadTooLargeException(inner) => {
+                Error::PayloadTooLargeException(inner)
+            }
+            crate::error::PostToConnectionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }

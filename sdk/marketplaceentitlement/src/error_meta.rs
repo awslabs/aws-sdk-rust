@@ -29,22 +29,27 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetEntitlementsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetEntitlementsErrorKind::InternalServiceErrorException(
-                        inner,
-                    ) => Error::InternalServiceErrorException(inner),
-                    crate::error::GetEntitlementsErrorKind::InvalidParameterException(inner) => {
-                        Error::InvalidParameterException(inner)
-                    }
-                    crate::error::GetEntitlementsErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::GetEntitlementsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetEntitlementsError> for Error {
+    fn from(err: crate::error::GetEntitlementsError) -> Self {
+        match err.kind {
+            crate::error::GetEntitlementsErrorKind::InternalServiceErrorException(inner) => {
+                Error::InternalServiceErrorException(inner)
+            }
+            crate::error::GetEntitlementsErrorKind::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::error::GetEntitlementsErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::GetEntitlementsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }

@@ -38,31 +38,34 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::InvokeEndpointError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::InvokeEndpointErrorKind::InternalDependencyException(inner) => {
-                        Error::InternalDependencyException(inner)
-                    }
-                    crate::error::InvokeEndpointErrorKind::InternalFailure(inner) => {
-                        Error::InternalFailure(inner)
-                    }
-                    crate::error::InvokeEndpointErrorKind::ModelError(inner) => {
-                        Error::ModelError(inner)
-                    }
-                    crate::error::InvokeEndpointErrorKind::ModelNotReadyException(inner) => {
-                        Error::ModelNotReadyException(inner)
-                    }
-                    crate::error::InvokeEndpointErrorKind::ServiceUnavailable(inner) => {
-                        Error::ServiceUnavailable(inner)
-                    }
-                    crate::error::InvokeEndpointErrorKind::ValidationError(inner) => {
-                        Error::ValidationError(inner)
-                    }
-                    crate::error::InvokeEndpointErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::InvokeEndpointError> for Error {
+    fn from(err: crate::error::InvokeEndpointError) -> Self {
+        match err.kind {
+            crate::error::InvokeEndpointErrorKind::InternalDependencyException(inner) => {
+                Error::InternalDependencyException(inner)
+            }
+            crate::error::InvokeEndpointErrorKind::InternalFailure(inner) => {
+                Error::InternalFailure(inner)
+            }
+            crate::error::InvokeEndpointErrorKind::ModelError(inner) => Error::ModelError(inner),
+            crate::error::InvokeEndpointErrorKind::ModelNotReadyException(inner) => {
+                Error::ModelNotReadyException(inner)
+            }
+            crate::error::InvokeEndpointErrorKind::ServiceUnavailable(inner) => {
+                Error::ServiceUnavailable(inner)
+            }
+            crate::error::InvokeEndpointErrorKind::ValidationError(inner) => {
+                Error::ValidationError(inner)
+            }
+            crate::error::InvokeEndpointErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -75,22 +78,27 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::InvokeEndpointAsyncErrorKind::InternalFailure(inner) => {
-                        Error::InternalFailure(inner)
-                    }
-                    crate::error::InvokeEndpointAsyncErrorKind::ServiceUnavailable(inner) => {
-                        Error::ServiceUnavailable(inner)
-                    }
-                    crate::error::InvokeEndpointAsyncErrorKind::ValidationError(inner) => {
-                        Error::ValidationError(inner)
-                    }
-                    crate::error::InvokeEndpointAsyncErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::InvokeEndpointAsyncError> for Error {
+    fn from(err: crate::error::InvokeEndpointAsyncError) -> Self {
+        match err.kind {
+            crate::error::InvokeEndpointAsyncErrorKind::InternalFailure(inner) => {
+                Error::InternalFailure(inner)
+            }
+            crate::error::InvokeEndpointAsyncErrorKind::ServiceUnavailable(inner) => {
+                Error::ServiceUnavailable(inner)
+            }
+            crate::error::InvokeEndpointAsyncErrorKind::ValidationError(inner) => {
+                Error::ValidationError(inner)
+            }
+            crate::error::InvokeEndpointAsyncErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }

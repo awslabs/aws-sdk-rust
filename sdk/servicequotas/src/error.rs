@@ -1117,6 +1117,16 @@ pub struct AssociateServiceQuotaTemplateError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AssociateServiceQuotaTemplateError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AssociateServiceQuotaTemplateErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AssociateServiceQuotaTemplate` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1319,6 +1329,18 @@ pub struct DeleteServiceQuotaIncreaseRequestFromTemplateError {
     pub kind: DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for DeleteServiceQuotaIncreaseRequestFromTemplateError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteServiceQuotaIncreaseRequestFromTemplate` operation.
 #[non_exhaustive]
@@ -1543,6 +1565,16 @@ pub struct DisassociateServiceQuotaTemplateError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DisassociateServiceQuotaTemplateError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DisassociateServiceQuotaTemplateErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DisassociateServiceQuotaTemplate` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1747,6 +1779,16 @@ pub struct GetAssociationForServiceQuotaTemplateError {
     pub kind: GetAssociationForServiceQuotaTemplateErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetAssociationForServiceQuotaTemplateError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetAssociationForServiceQuotaTemplateErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetAssociationForServiceQuotaTemplate` operation.
 #[non_exhaustive]
@@ -1965,6 +2007,16 @@ pub struct GetAWSDefaultServiceQuotaError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetAWSDefaultServiceQuotaError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetAWSDefaultServiceQuotaErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetAWSDefaultServiceQuota` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2105,6 +2157,16 @@ pub struct GetRequestedServiceQuotaChangeError {
     pub kind: GetRequestedServiceQuotaChangeErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetRequestedServiceQuotaChangeError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetRequestedServiceQuotaChangeErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetRequestedServiceQuotaChange` operation.
 #[non_exhaustive]
@@ -2262,6 +2324,14 @@ pub struct GetServiceQuotaError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetServiceQuotaError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetServiceQuotaErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetServiceQuota` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2395,6 +2465,18 @@ pub struct GetServiceQuotaIncreaseRequestFromTemplateError {
     pub kind: GetServiceQuotaIncreaseRequestFromTemplateErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for GetServiceQuotaIncreaseRequestFromTemplateError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetServiceQuotaIncreaseRequestFromTemplateErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetServiceQuotaIncreaseRequestFromTemplate` operation.
 #[non_exhaustive]
@@ -2620,6 +2702,16 @@ pub struct ListAWSDefaultServiceQuotasError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListAWSDefaultServiceQuotasError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListAWSDefaultServiceQuotasErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListAWSDefaultServiceQuotas` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2775,6 +2867,16 @@ pub struct ListRequestedServiceQuotaChangeHistoryError {
     pub kind: ListRequestedServiceQuotaChangeHistoryErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListRequestedServiceQuotaChangeHistoryError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListRequestedServiceQuotaChangeHistoryErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListRequestedServiceQuotaChangeHistory` operation.
 #[non_exhaustive]
@@ -2954,6 +3056,18 @@ pub struct ListRequestedServiceQuotaChangeHistoryByQuotaError {
     pub kind: ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for ListRequestedServiceQuotaChangeHistoryByQuotaError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListRequestedServiceQuotaChangeHistoryByQuota` operation.
 #[non_exhaustive]
@@ -3141,6 +3255,18 @@ pub struct ListServiceQuotaIncreaseRequestsInTemplateError {
     pub kind: ListServiceQuotaIncreaseRequestsInTemplateErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for ListServiceQuotaIncreaseRequestsInTemplateError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListServiceQuotaIncreaseRequestsInTemplateErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListServiceQuotaIncreaseRequestsInTemplate` operation.
 #[non_exhaustive]
@@ -3351,6 +3477,14 @@ pub struct ListServiceQuotasError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListServiceQuotasError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListServiceQuotasErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListServiceQuotas` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3496,6 +3630,14 @@ pub struct ListServicesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListServicesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListServicesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListServices` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3626,6 +3768,14 @@ pub struct ListTagsForResourceError {
     pub kind: ListTagsForResourceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListTagsForResource` operation.
 #[non_exhaustive]
@@ -3763,6 +3913,18 @@ pub struct PutServiceQuotaIncreaseRequestIntoTemplateError {
     pub kind: PutServiceQuotaIncreaseRequestIntoTemplateErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for PutServiceQuotaIncreaseRequestIntoTemplateError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutServiceQuotaIncreaseRequestIntoTemplateErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `PutServiceQuotaIncreaseRequestIntoTemplate` operation.
 #[non_exhaustive]
@@ -4003,6 +4165,16 @@ pub struct RequestServiceQuotaIncreaseError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for RequestServiceQuotaIncreaseError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: RequestServiceQuotaIncreaseErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `RequestServiceQuotaIncrease` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4200,6 +4372,14 @@ pub struct TagResourceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `TagResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4346,6 +4526,14 @@ pub struct UntagResourceError {
     pub kind: UntagResourceErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UntagResource` operation.
 #[non_exhaustive]

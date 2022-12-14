@@ -38,25 +38,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::BatchAcknowledgeAlarmErrorKind::InternalFailureException(
-                        inner,
-                    ) => Error::InternalFailureException(inner),
-                    crate::error::BatchAcknowledgeAlarmErrorKind::InvalidRequestException(
-                        inner,
-                    ) => Error::InvalidRequestException(inner),
-                    crate::error::BatchAcknowledgeAlarmErrorKind::ServiceUnavailableException(
-                        inner,
-                    ) => Error::ServiceUnavailableException(inner),
-                    crate::error::BatchAcknowledgeAlarmErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::BatchAcknowledgeAlarmErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::BatchAcknowledgeAlarmError> for Error {
+    fn from(err: crate::error::BatchAcknowledgeAlarmError) -> Self {
+        match err.kind {
+            crate::error::BatchAcknowledgeAlarmErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::BatchAcknowledgeAlarmErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::BatchAcknowledgeAlarmErrorKind::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::error::BatchAcknowledgeAlarmErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::BatchAcknowledgeAlarmErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -69,25 +74,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::BatchDeleteDetectorErrorKind::InternalFailureException(inner) => {
-                        Error::InternalFailureException(inner)
-                    }
-                    crate::error::BatchDeleteDetectorErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::BatchDeleteDetectorErrorKind::ServiceUnavailableException(
-                        inner,
-                    ) => Error::ServiceUnavailableException(inner),
-                    crate::error::BatchDeleteDetectorErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::BatchDeleteDetectorErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::BatchDeleteDetectorError> for Error {
+    fn from(err: crate::error::BatchDeleteDetectorError) -> Self {
+        match err.kind {
+            crate::error::BatchDeleteDetectorErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::BatchDeleteDetectorErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::BatchDeleteDetectorErrorKind::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::error::BatchDeleteDetectorErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::BatchDeleteDetectorErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -100,25 +110,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::BatchDisableAlarmErrorKind::InternalFailureException(inner) => {
-                        Error::InternalFailureException(inner)
-                    }
-                    crate::error::BatchDisableAlarmErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::BatchDisableAlarmErrorKind::ServiceUnavailableException(
-                        inner,
-                    ) => Error::ServiceUnavailableException(inner),
-                    crate::error::BatchDisableAlarmErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::BatchDisableAlarmErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::BatchDisableAlarmError> for Error {
+    fn from(err: crate::error::BatchDisableAlarmError) -> Self {
+        match err.kind {
+            crate::error::BatchDisableAlarmErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::BatchDisableAlarmErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::BatchDisableAlarmErrorKind::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::error::BatchDisableAlarmErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::BatchDisableAlarmErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -131,25 +146,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::BatchEnableAlarmErrorKind::InternalFailureException(inner) => {
-                        Error::InternalFailureException(inner)
-                    }
-                    crate::error::BatchEnableAlarmErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::BatchEnableAlarmErrorKind::ServiceUnavailableException(inner) => {
-                        Error::ServiceUnavailableException(inner)
-                    }
-                    crate::error::BatchEnableAlarmErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::BatchEnableAlarmErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::BatchEnableAlarmError> for Error {
+    fn from(err: crate::error::BatchEnableAlarmError) -> Self {
+        match err.kind {
+            crate::error::BatchEnableAlarmErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::BatchEnableAlarmErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::BatchEnableAlarmErrorKind::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::error::BatchEnableAlarmErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::BatchEnableAlarmErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -160,25 +180,30 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::BatchPutMessageError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::BatchPutMessageErrorKind::InternalFailureException(inner) => {
-                        Error::InternalFailureException(inner)
-                    }
-                    crate::error::BatchPutMessageErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::BatchPutMessageErrorKind::ServiceUnavailableException(inner) => {
-                        Error::ServiceUnavailableException(inner)
-                    }
-                    crate::error::BatchPutMessageErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::BatchPutMessageErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::BatchPutMessageError> for Error {
+    fn from(err: crate::error::BatchPutMessageError) -> Self {
+        match err.kind {
+            crate::error::BatchPutMessageErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::BatchPutMessageErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::BatchPutMessageErrorKind::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::error::BatchPutMessageErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::BatchPutMessageErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -189,25 +214,30 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::BatchResetAlarmError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::BatchResetAlarmErrorKind::InternalFailureException(inner) => {
-                        Error::InternalFailureException(inner)
-                    }
-                    crate::error::BatchResetAlarmErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::BatchResetAlarmErrorKind::ServiceUnavailableException(inner) => {
-                        Error::ServiceUnavailableException(inner)
-                    }
-                    crate::error::BatchResetAlarmErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::BatchResetAlarmErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::BatchResetAlarmError> for Error {
+    fn from(err: crate::error::BatchResetAlarmError) -> Self {
+        match err.kind {
+            crate::error::BatchResetAlarmErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::BatchResetAlarmErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::BatchResetAlarmErrorKind::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::error::BatchResetAlarmErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::BatchResetAlarmErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -220,25 +250,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::BatchSnoozeAlarmErrorKind::InternalFailureException(inner) => {
-                        Error::InternalFailureException(inner)
-                    }
-                    crate::error::BatchSnoozeAlarmErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::BatchSnoozeAlarmErrorKind::ServiceUnavailableException(inner) => {
-                        Error::ServiceUnavailableException(inner)
-                    }
-                    crate::error::BatchSnoozeAlarmErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::BatchSnoozeAlarmErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::BatchSnoozeAlarmError> for Error {
+    fn from(err: crate::error::BatchSnoozeAlarmError) -> Self {
+        match err.kind {
+            crate::error::BatchSnoozeAlarmErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::BatchSnoozeAlarmErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::BatchSnoozeAlarmErrorKind::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::error::BatchSnoozeAlarmErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::BatchSnoozeAlarmErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -251,25 +286,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::BatchUpdateDetectorErrorKind::InternalFailureException(inner) => {
-                        Error::InternalFailureException(inner)
-                    }
-                    crate::error::BatchUpdateDetectorErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::BatchUpdateDetectorErrorKind::ServiceUnavailableException(
-                        inner,
-                    ) => Error::ServiceUnavailableException(inner),
-                    crate::error::BatchUpdateDetectorErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::BatchUpdateDetectorErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::BatchUpdateDetectorError> for Error {
+    fn from(err: crate::error::BatchUpdateDetectorError) -> Self {
+        match err.kind {
+            crate::error::BatchUpdateDetectorErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::BatchUpdateDetectorErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::BatchUpdateDetectorErrorKind::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::error::BatchUpdateDetectorErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::BatchUpdateDetectorErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -280,28 +320,33 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeAlarmError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DescribeAlarmErrorKind::InternalFailureException(inner) => {
-                        Error::InternalFailureException(inner)
-                    }
-                    crate::error::DescribeAlarmErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::DescribeAlarmErrorKind::ResourceNotFoundException(inner) => {
-                        Error::ResourceNotFoundException(inner)
-                    }
-                    crate::error::DescribeAlarmErrorKind::ServiceUnavailableException(inner) => {
-                        Error::ServiceUnavailableException(inner)
-                    }
-                    crate::error::DescribeAlarmErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::DescribeAlarmErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeAlarmError> for Error {
+    fn from(err: crate::error::DescribeAlarmError) -> Self {
+        match err.kind {
+            crate::error::DescribeAlarmErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::DescribeAlarmErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::DescribeAlarmErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::DescribeAlarmErrorKind::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::error::DescribeAlarmErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::DescribeAlarmErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -314,28 +359,33 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DescribeDetectorErrorKind::InternalFailureException(inner) => {
-                        Error::InternalFailureException(inner)
-                    }
-                    crate::error::DescribeDetectorErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::DescribeDetectorErrorKind::ResourceNotFoundException(inner) => {
-                        Error::ResourceNotFoundException(inner)
-                    }
-                    crate::error::DescribeDetectorErrorKind::ServiceUnavailableException(inner) => {
-                        Error::ServiceUnavailableException(inner)
-                    }
-                    crate::error::DescribeDetectorErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::DescribeDetectorErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeDetectorError> for Error {
+    fn from(err: crate::error::DescribeDetectorError) -> Self {
+        match err.kind {
+            crate::error::DescribeDetectorErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::DescribeDetectorErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::DescribeDetectorErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::DescribeDetectorErrorKind::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::error::DescribeDetectorErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::DescribeDetectorErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -346,28 +396,33 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListAlarmsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListAlarmsErrorKind::InternalFailureException(inner) => {
-                        Error::InternalFailureException(inner)
-                    }
-                    crate::error::ListAlarmsErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::ListAlarmsErrorKind::ResourceNotFoundException(inner) => {
-                        Error::ResourceNotFoundException(inner)
-                    }
-                    crate::error::ListAlarmsErrorKind::ServiceUnavailableException(inner) => {
-                        Error::ServiceUnavailableException(inner)
-                    }
-                    crate::error::ListAlarmsErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::ListAlarmsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListAlarmsError> for Error {
+    fn from(err: crate::error::ListAlarmsError) -> Self {
+        match err.kind {
+            crate::error::ListAlarmsErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::ListAlarmsErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::ListAlarmsErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::ListAlarmsErrorKind::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::error::ListAlarmsErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::ListAlarmsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -378,28 +433,33 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListDetectorsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListDetectorsErrorKind::InternalFailureException(inner) => {
-                        Error::InternalFailureException(inner)
-                    }
-                    crate::error::ListDetectorsErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::ListDetectorsErrorKind::ResourceNotFoundException(inner) => {
-                        Error::ResourceNotFoundException(inner)
-                    }
-                    crate::error::ListDetectorsErrorKind::ServiceUnavailableException(inner) => {
-                        Error::ServiceUnavailableException(inner)
-                    }
-                    crate::error::ListDetectorsErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::ListDetectorsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListDetectorsError> for Error {
+    fn from(err: crate::error::ListDetectorsError) -> Self {
+        match err.kind {
+            crate::error::ListDetectorsErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::ListDetectorsErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::ListDetectorsErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::ListDetectorsErrorKind::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::error::ListDetectorsErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::ListDetectorsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }

@@ -594,6 +594,16 @@ pub struct DeleteRecommendationPreferencesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteRecommendationPreferencesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteRecommendationPreferencesErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteRecommendationPreferences` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -796,6 +806,16 @@ pub struct DescribeRecommendationExportJobsError {
     pub kind: DescribeRecommendationExportJobsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DescribeRecommendationExportJobsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeRecommendationExportJobsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeRecommendationExportJobs` operation.
 #[non_exhaustive]
@@ -1001,6 +1021,16 @@ pub struct ExportAutoScalingGroupRecommendationsError {
     pub kind: ExportAutoScalingGroupRecommendationsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ExportAutoScalingGroupRecommendationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ExportAutoScalingGroupRecommendationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ExportAutoScalingGroupRecommendations` operation.
 #[non_exhaustive]
@@ -1211,6 +1241,16 @@ pub struct ExportEBSVolumeRecommendationsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ExportEBSVolumeRecommendationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ExportEBSVolumeRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ExportEBSVolumeRecommendations` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1407,6 +1447,16 @@ pub struct ExportEC2InstanceRecommendationsError {
     pub kind: ExportEC2InstanceRecommendationsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ExportEC2InstanceRecommendationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ExportEC2InstanceRecommendationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ExportEC2InstanceRecommendations` operation.
 #[non_exhaustive]
@@ -1612,6 +1662,16 @@ pub struct ExportLambdaFunctionRecommendationsError {
     pub kind: ExportLambdaFunctionRecommendationsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ExportLambdaFunctionRecommendationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ExportLambdaFunctionRecommendationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ExportLambdaFunctionRecommendations` operation.
 #[non_exhaustive]
@@ -1822,6 +1882,16 @@ pub struct GetAutoScalingGroupRecommendationsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetAutoScalingGroupRecommendationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetAutoScalingGroupRecommendationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetAutoScalingGroupRecommendations` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2031,6 +2101,16 @@ pub struct GetEBSVolumeRecommendationsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetEBSVolumeRecommendationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetEBSVolumeRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetEBSVolumeRecommendations` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2218,6 +2298,16 @@ pub struct GetEC2InstanceRecommendationsError {
     pub kind: GetEC2InstanceRecommendationsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetEC2InstanceRecommendationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetEC2InstanceRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetEC2InstanceRecommendations` operation.
 #[non_exhaustive]
@@ -2413,6 +2503,16 @@ pub struct GetEC2RecommendationProjectedMetricsError {
     pub kind: GetEC2RecommendationProjectedMetricsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetEC2RecommendationProjectedMetricsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetEC2RecommendationProjectedMetricsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetEC2RecommendationProjectedMetrics` operation.
 #[non_exhaustive]
@@ -2623,6 +2723,16 @@ pub struct GetEffectiveRecommendationPreferencesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetEffectiveRecommendationPreferencesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetEffectiveRecommendationPreferencesErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetEffectiveRecommendationPreferences` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2832,6 +2942,14 @@ pub struct GetEnrollmentStatusError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetEnrollmentStatusError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetEnrollmentStatusErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetEnrollmentStatus` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2979,6 +3097,16 @@ pub struct GetEnrollmentStatusesForOrganizationError {
     pub kind: GetEnrollmentStatusesForOrganizationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetEnrollmentStatusesForOrganizationError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetEnrollmentStatusesForOrganizationErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetEnrollmentStatusesForOrganization` operation.
 #[non_exhaustive]
@@ -3158,6 +3286,16 @@ pub struct GetLambdaFunctionRecommendationsError {
     pub kind: GetLambdaFunctionRecommendationsErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetLambdaFunctionRecommendationsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetLambdaFunctionRecommendationsErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetLambdaFunctionRecommendations` operation.
 #[non_exhaustive]
@@ -3364,6 +3502,16 @@ pub struct GetRecommendationPreferencesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetRecommendationPreferencesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetRecommendationPreferencesErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetRecommendationPreferences` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3554,6 +3702,16 @@ pub struct GetRecommendationSummariesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetRecommendationSummariesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetRecommendationSummariesErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetRecommendationSummaries` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3726,6 +3884,16 @@ pub struct PutRecommendationPreferencesError {
     pub kind: PutRecommendationPreferencesErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PutRecommendationPreferencesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutRecommendationPreferencesErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `PutRecommendationPreferences` operation.
 #[non_exhaustive]
@@ -3916,6 +4084,14 @@ pub struct UpdateEnrollmentStatusError {
     pub kind: UpdateEnrollmentStatusErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdateEnrollmentStatusError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateEnrollmentStatusErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateEnrollmentStatus` operation.
 #[non_exhaustive]

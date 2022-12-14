@@ -22,18 +22,22 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GenerateDataSetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::GenerateDataSetErrorKind::MarketplaceCommerceAnalyticsException(
-                    inner,
-                ) => Error::MarketplaceCommerceAnalyticsException(inner),
-                crate::error::GenerateDataSetErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GenerateDataSetError> for Error {
+    fn from(err: crate::error::GenerateDataSetError) -> Self {
+        match err.kind {
+            crate::error::GenerateDataSetErrorKind::MarketplaceCommerceAnalyticsException(
+                inner,
+            ) => Error::MarketplaceCommerceAnalyticsException(inner),
+            crate::error::GenerateDataSetErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -46,11 +50,18 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StartSupportDataExportError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::StartSupportDataExportErrorKind::MarketplaceCommerceAnalyticsException(inner) => Error::MarketplaceCommerceAnalyticsException(inner),
-                crate::error::StartSupportDataExportErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::StartSupportDataExportError> for Error {
+    fn from(err: crate::error::StartSupportDataExportError) -> Self {
+        match err.kind {
+            crate::error::StartSupportDataExportErrorKind::MarketplaceCommerceAnalyticsException(inner) => Error::MarketplaceCommerceAnalyticsException(inner),
+            crate::error::StartSupportDataExportErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }

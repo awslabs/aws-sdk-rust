@@ -37,28 +37,33 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DescribeServicesErrorKind::ExpiredNextTokenException(inner) => {
-                        Error::ExpiredNextTokenException(inner)
-                    }
-                    crate::error::DescribeServicesErrorKind::InternalErrorException(inner) => {
-                        Error::InternalErrorException(inner)
-                    }
-                    crate::error::DescribeServicesErrorKind::InvalidNextTokenException(inner) => {
-                        Error::InvalidNextTokenException(inner)
-                    }
-                    crate::error::DescribeServicesErrorKind::InvalidParameterException(inner) => {
-                        Error::InvalidParameterException(inner)
-                    }
-                    crate::error::DescribeServicesErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::DescribeServicesErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeServicesError> for Error {
+    fn from(err: crate::error::DescribeServicesError) -> Self {
+        match err.kind {
+            crate::error::DescribeServicesErrorKind::ExpiredNextTokenException(inner) => {
+                Error::ExpiredNextTokenException(inner)
+            }
+            crate::error::DescribeServicesErrorKind::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::error::DescribeServicesErrorKind::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::error::DescribeServicesErrorKind::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::error::DescribeServicesErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::DescribeServicesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -71,28 +76,33 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetAttributeValuesErrorKind::ExpiredNextTokenException(inner) => {
-                        Error::ExpiredNextTokenException(inner)
-                    }
-                    crate::error::GetAttributeValuesErrorKind::InternalErrorException(inner) => {
-                        Error::InternalErrorException(inner)
-                    }
-                    crate::error::GetAttributeValuesErrorKind::InvalidNextTokenException(inner) => {
-                        Error::InvalidNextTokenException(inner)
-                    }
-                    crate::error::GetAttributeValuesErrorKind::InvalidParameterException(inner) => {
-                        Error::InvalidParameterException(inner)
-                    }
-                    crate::error::GetAttributeValuesErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::GetAttributeValuesErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetAttributeValuesError> for Error {
+    fn from(err: crate::error::GetAttributeValuesError) -> Self {
+        match err.kind {
+            crate::error::GetAttributeValuesErrorKind::ExpiredNextTokenException(inner) => {
+                Error::ExpiredNextTokenException(inner)
+            }
+            crate::error::GetAttributeValuesErrorKind::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::error::GetAttributeValuesErrorKind::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::error::GetAttributeValuesErrorKind::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::error::GetAttributeValuesErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::GetAttributeValuesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -103,28 +113,33 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetProductsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetProductsErrorKind::ExpiredNextTokenException(inner) => {
-                        Error::ExpiredNextTokenException(inner)
-                    }
-                    crate::error::GetProductsErrorKind::InternalErrorException(inner) => {
-                        Error::InternalErrorException(inner)
-                    }
-                    crate::error::GetProductsErrorKind::InvalidNextTokenException(inner) => {
-                        Error::InvalidNextTokenException(inner)
-                    }
-                    crate::error::GetProductsErrorKind::InvalidParameterException(inner) => {
-                        Error::InvalidParameterException(inner)
-                    }
-                    crate::error::GetProductsErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::GetProductsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetProductsError> for Error {
+    fn from(err: crate::error::GetProductsError) -> Self {
+        match err.kind {
+            crate::error::GetProductsErrorKind::ExpiredNextTokenException(inner) => {
+                Error::ExpiredNextTokenException(inner)
+            }
+            crate::error::GetProductsErrorKind::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::error::GetProductsErrorKind::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::error::GetProductsErrorKind::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::error::GetProductsErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::GetProductsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }

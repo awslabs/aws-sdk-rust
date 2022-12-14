@@ -40,31 +40,36 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetIceServerConfigErrorKind::ClientLimitExceededException(
-                        inner,
-                    ) => Error::ClientLimitExceededException(inner),
-                    crate::error::GetIceServerConfigErrorKind::InvalidArgumentException(inner) => {
-                        Error::InvalidArgumentException(inner)
-                    }
-                    crate::error::GetIceServerConfigErrorKind::InvalidClientException(inner) => {
-                        Error::InvalidClientException(inner)
-                    }
-                    crate::error::GetIceServerConfigErrorKind::NotAuthorizedException(inner) => {
-                        Error::NotAuthorizedException(inner)
-                    }
-                    crate::error::GetIceServerConfigErrorKind::ResourceNotFoundException(inner) => {
-                        Error::ResourceNotFoundException(inner)
-                    }
-                    crate::error::GetIceServerConfigErrorKind::SessionExpiredException(inner) => {
-                        Error::SessionExpiredException(inner)
-                    }
-                    crate::error::GetIceServerConfigErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetIceServerConfigError> for Error {
+    fn from(err: crate::error::GetIceServerConfigError) -> Self {
+        match err.kind {
+            crate::error::GetIceServerConfigErrorKind::ClientLimitExceededException(inner) => {
+                Error::ClientLimitExceededException(inner)
+            }
+            crate::error::GetIceServerConfigErrorKind::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::error::GetIceServerConfigErrorKind::InvalidClientException(inner) => {
+                Error::InvalidClientException(inner)
+            }
+            crate::error::GetIceServerConfigErrorKind::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::error::GetIceServerConfigErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::GetIceServerConfigErrorKind::SessionExpiredException(inner) => {
+                Error::SessionExpiredException(inner)
+            }
+            crate::error::GetIceServerConfigErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -78,25 +83,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::SendAlexaOfferToMasterErrorKind::ClientLimitExceededException(
-                        inner,
-                    ) => Error::ClientLimitExceededException(inner),
-                    crate::error::SendAlexaOfferToMasterErrorKind::InvalidArgumentException(
-                        inner,
-                    ) => Error::InvalidArgumentException(inner),
-                    crate::error::SendAlexaOfferToMasterErrorKind::NotAuthorizedException(
-                        inner,
-                    ) => Error::NotAuthorizedException(inner),
-                    crate::error::SendAlexaOfferToMasterErrorKind::ResourceNotFoundException(
-                        inner,
-                    ) => Error::ResourceNotFoundException(inner),
-                    crate::error::SendAlexaOfferToMasterErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::SendAlexaOfferToMasterError> for Error {
+    fn from(err: crate::error::SendAlexaOfferToMasterError) -> Self {
+        match err.kind {
+            crate::error::SendAlexaOfferToMasterErrorKind::ClientLimitExceededException(inner) => {
+                Error::ClientLimitExceededException(inner)
+            }
+            crate::error::SendAlexaOfferToMasterErrorKind::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::error::SendAlexaOfferToMasterErrorKind::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::error::SendAlexaOfferToMasterErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::SendAlexaOfferToMasterErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }

@@ -38,31 +38,36 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SendCommandError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::SendCommandErrorKind::BadRequestException(inner) => {
-                        Error::BadRequestException(inner)
-                    }
-                    crate::error::SendCommandErrorKind::CapacityExceededException(inner) => {
-                        Error::CapacityExceededException(inner)
-                    }
-                    crate::error::SendCommandErrorKind::InvalidSessionException(inner) => {
-                        Error::InvalidSessionException(inner)
-                    }
-                    crate::error::SendCommandErrorKind::LimitExceededException(inner) => {
-                        Error::LimitExceededException(inner)
-                    }
-                    crate::error::SendCommandErrorKind::OccConflictException(inner) => {
-                        Error::OccConflictException(inner)
-                    }
-                    crate::error::SendCommandErrorKind::RateExceededException(inner) => {
-                        Error::RateExceededException(inner)
-                    }
-                    crate::error::SendCommandErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::SendCommandError> for Error {
+    fn from(err: crate::error::SendCommandError) -> Self {
+        match err.kind {
+            crate::error::SendCommandErrorKind::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::error::SendCommandErrorKind::CapacityExceededException(inner) => {
+                Error::CapacityExceededException(inner)
+            }
+            crate::error::SendCommandErrorKind::InvalidSessionException(inner) => {
+                Error::InvalidSessionException(inner)
+            }
+            crate::error::SendCommandErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::SendCommandErrorKind::OccConflictException(inner) => {
+                Error::OccConflictException(inner)
+            }
+            crate::error::SendCommandErrorKind::RateExceededException(inner) => {
+                Error::RateExceededException(inner)
+            }
+            crate::error::SendCommandErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }

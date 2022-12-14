@@ -44,25 +44,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::AssociateEntityToThingErrorKind::InternalFailureException(
-                        inner,
-                    ) => Error::InternalFailureException(inner),
-                    crate::error::AssociateEntityToThingErrorKind::InvalidRequestException(
-                        inner,
-                    ) => Error::InvalidRequestException(inner),
-                    crate::error::AssociateEntityToThingErrorKind::ResourceNotFoundException(
-                        inner,
-                    ) => Error::ResourceNotFoundException(inner),
-                    crate::error::AssociateEntityToThingErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::AssociateEntityToThingErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::AssociateEntityToThingError> for Error {
+    fn from(err: crate::error::AssociateEntityToThingError) -> Self {
+        match err.kind {
+            crate::error::AssociateEntityToThingErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::AssociateEntityToThingErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::AssociateEntityToThingErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::AssociateEntityToThingErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::AssociateEntityToThingErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -75,28 +80,33 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::CreateFlowTemplateErrorKind::InternalFailureException(inner) => {
-                        Error::InternalFailureException(inner)
-                    }
-                    crate::error::CreateFlowTemplateErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::CreateFlowTemplateErrorKind::LimitExceededException(inner) => {
-                        Error::LimitExceededException(inner)
-                    }
-                    crate::error::CreateFlowTemplateErrorKind::ResourceAlreadyExistsException(
-                        inner,
-                    ) => Error::ResourceAlreadyExistsException(inner),
-                    crate::error::CreateFlowTemplateErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::CreateFlowTemplateErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateFlowTemplateError> for Error {
+    fn from(err: crate::error::CreateFlowTemplateError) -> Self {
+        match err.kind {
+            crate::error::CreateFlowTemplateErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::CreateFlowTemplateErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::CreateFlowTemplateErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::CreateFlowTemplateErrorKind::ResourceAlreadyExistsException(inner) => {
+                Error::ResourceAlreadyExistsException(inner)
+            }
+            crate::error::CreateFlowTemplateErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::CreateFlowTemplateErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -110,28 +120,33 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::CreateSystemInstanceErrorKind::InternalFailureException(
-                        inner,
-                    ) => Error::InternalFailureException(inner),
-                    crate::error::CreateSystemInstanceErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::CreateSystemInstanceErrorKind::LimitExceededException(inner) => {
-                        Error::LimitExceededException(inner)
-                    }
-                    crate::error::CreateSystemInstanceErrorKind::ResourceAlreadyExistsException(
-                        inner,
-                    ) => Error::ResourceAlreadyExistsException(inner),
-                    crate::error::CreateSystemInstanceErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::CreateSystemInstanceErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateSystemInstanceError> for Error {
+    fn from(err: crate::error::CreateSystemInstanceError) -> Self {
+        match err.kind {
+            crate::error::CreateSystemInstanceErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::CreateSystemInstanceErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::CreateSystemInstanceErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::CreateSystemInstanceErrorKind::ResourceAlreadyExistsException(inner) => {
+                Error::ResourceAlreadyExistsException(inner)
+            }
+            crate::error::CreateSystemInstanceErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::CreateSystemInstanceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -145,25 +160,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::CreateSystemTemplateErrorKind::InternalFailureException(
-                        inner,
-                    ) => Error::InternalFailureException(inner),
-                    crate::error::CreateSystemTemplateErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::CreateSystemTemplateErrorKind::ResourceAlreadyExistsException(
-                        inner,
-                    ) => Error::ResourceAlreadyExistsException(inner),
-                    crate::error::CreateSystemTemplateErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::CreateSystemTemplateErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateSystemTemplateError> for Error {
+    fn from(err: crate::error::CreateSystemTemplateError) -> Self {
+        match err.kind {
+            crate::error::CreateSystemTemplateErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::CreateSystemTemplateErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::CreateSystemTemplateErrorKind::ResourceAlreadyExistsException(inner) => {
+                Error::ResourceAlreadyExistsException(inner)
+            }
+            crate::error::CreateSystemTemplateErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::CreateSystemTemplateErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -176,25 +196,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DeleteFlowTemplateErrorKind::InternalFailureException(inner) => {
-                        Error::InternalFailureException(inner)
-                    }
-                    crate::error::DeleteFlowTemplateErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::DeleteFlowTemplateErrorKind::ResourceInUseException(inner) => {
-                        Error::ResourceInUseException(inner)
-                    }
-                    crate::error::DeleteFlowTemplateErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::DeleteFlowTemplateErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteFlowTemplateError> for Error {
+    fn from(err: crate::error::DeleteFlowTemplateError) -> Self {
+        match err.kind {
+            crate::error::DeleteFlowTemplateErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::DeleteFlowTemplateErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::DeleteFlowTemplateErrorKind::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::error::DeleteFlowTemplateErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::DeleteFlowTemplateErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -205,19 +230,24 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteNamespaceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DeleteNamespaceErrorKind::InternalFailureException(inner) => {
-                        Error::InternalFailureException(inner)
-                    }
-                    crate::error::DeleteNamespaceErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::DeleteNamespaceErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteNamespaceError> for Error {
+    fn from(err: crate::error::DeleteNamespaceError) -> Self {
+        match err.kind {
+            crate::error::DeleteNamespaceErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::DeleteNamespaceErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::DeleteNamespaceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -231,25 +261,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DeleteSystemInstanceErrorKind::InternalFailureException(
-                        inner,
-                    ) => Error::InternalFailureException(inner),
-                    crate::error::DeleteSystemInstanceErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::DeleteSystemInstanceErrorKind::ResourceInUseException(inner) => {
-                        Error::ResourceInUseException(inner)
-                    }
-                    crate::error::DeleteSystemInstanceErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::DeleteSystemInstanceErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteSystemInstanceError> for Error {
+    fn from(err: crate::error::DeleteSystemInstanceError) -> Self {
+        match err.kind {
+            crate::error::DeleteSystemInstanceErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::DeleteSystemInstanceErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::DeleteSystemInstanceErrorKind::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::error::DeleteSystemInstanceErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::DeleteSystemInstanceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -263,25 +298,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DeleteSystemTemplateErrorKind::InternalFailureException(
-                        inner,
-                    ) => Error::InternalFailureException(inner),
-                    crate::error::DeleteSystemTemplateErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::DeleteSystemTemplateErrorKind::ResourceInUseException(inner) => {
-                        Error::ResourceInUseException(inner)
-                    }
-                    crate::error::DeleteSystemTemplateErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::DeleteSystemTemplateErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteSystemTemplateError> for Error {
+    fn from(err: crate::error::DeleteSystemTemplateError) -> Self {
+        match err.kind {
+            crate::error::DeleteSystemTemplateErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::DeleteSystemTemplateErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::DeleteSystemTemplateErrorKind::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::error::DeleteSystemTemplateErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::DeleteSystemTemplateErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -295,28 +335,33 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DeploySystemInstanceErrorKind::InternalFailureException(
-                        inner,
-                    ) => Error::InternalFailureException(inner),
-                    crate::error::DeploySystemInstanceErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::DeploySystemInstanceErrorKind::ResourceInUseException(inner) => {
-                        Error::ResourceInUseException(inner)
-                    }
-                    crate::error::DeploySystemInstanceErrorKind::ResourceNotFoundException(
-                        inner,
-                    ) => Error::ResourceNotFoundException(inner),
-                    crate::error::DeploySystemInstanceErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::DeploySystemInstanceErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeploySystemInstanceError> for Error {
+    fn from(err: crate::error::DeploySystemInstanceError) -> Self {
+        match err.kind {
+            crate::error::DeploySystemInstanceErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::DeploySystemInstanceErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::DeploySystemInstanceErrorKind::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::error::DeploySystemInstanceErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::DeploySystemInstanceErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::DeploySystemInstanceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -330,25 +375,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DeprecateFlowTemplateErrorKind::InternalFailureException(
-                        inner,
-                    ) => Error::InternalFailureException(inner),
-                    crate::error::DeprecateFlowTemplateErrorKind::InvalidRequestException(
-                        inner,
-                    ) => Error::InvalidRequestException(inner),
-                    crate::error::DeprecateFlowTemplateErrorKind::ResourceNotFoundException(
-                        inner,
-                    ) => Error::ResourceNotFoundException(inner),
-                    crate::error::DeprecateFlowTemplateErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::DeprecateFlowTemplateErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeprecateFlowTemplateError> for Error {
+    fn from(err: crate::error::DeprecateFlowTemplateError) -> Self {
+        match err.kind {
+            crate::error::DeprecateFlowTemplateErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::DeprecateFlowTemplateErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::DeprecateFlowTemplateErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::DeprecateFlowTemplateErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::DeprecateFlowTemplateErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -362,25 +412,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DeprecateSystemTemplateErrorKind::InternalFailureException(
-                        inner,
-                    ) => Error::InternalFailureException(inner),
-                    crate::error::DeprecateSystemTemplateErrorKind::InvalidRequestException(
-                        inner,
-                    ) => Error::InvalidRequestException(inner),
-                    crate::error::DeprecateSystemTemplateErrorKind::ResourceNotFoundException(
-                        inner,
-                    ) => Error::ResourceNotFoundException(inner),
-                    crate::error::DeprecateSystemTemplateErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::DeprecateSystemTemplateErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeprecateSystemTemplateError> for Error {
+    fn from(err: crate::error::DeprecateSystemTemplateError) -> Self {
+        match err.kind {
+            crate::error::DeprecateSystemTemplateErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::DeprecateSystemTemplateErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::DeprecateSystemTemplateErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::DeprecateSystemTemplateErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::DeprecateSystemTemplateErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -393,25 +448,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DescribeNamespaceErrorKind::InternalFailureException(inner) => {
-                        Error::InternalFailureException(inner)
-                    }
-                    crate::error::DescribeNamespaceErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::DescribeNamespaceErrorKind::ResourceNotFoundException(inner) => {
-                        Error::ResourceNotFoundException(inner)
-                    }
-                    crate::error::DescribeNamespaceErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::DescribeNamespaceErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeNamespaceError> for Error {
+    fn from(err: crate::error::DescribeNamespaceError) -> Self {
+        match err.kind {
+            crate::error::DescribeNamespaceErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::DescribeNamespaceErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::DescribeNamespaceErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::DescribeNamespaceErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::DescribeNamespaceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -425,25 +485,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DissociateEntityFromThingErrorKind::InternalFailureException(
-                        inner,
-                    ) => Error::InternalFailureException(inner),
-                    crate::error::DissociateEntityFromThingErrorKind::InvalidRequestException(
-                        inner,
-                    ) => Error::InvalidRequestException(inner),
-                    crate::error::DissociateEntityFromThingErrorKind::ResourceNotFoundException(
-                        inner,
-                    ) => Error::ResourceNotFoundException(inner),
-                    crate::error::DissociateEntityFromThingErrorKind::ThrottlingException(
-                        inner,
-                    ) => Error::ThrottlingException(inner),
-                    crate::error::DissociateEntityFromThingErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DissociateEntityFromThingError> for Error {
+    fn from(err: crate::error::DissociateEntityFromThingError) -> Self {
+        match err.kind {
+            crate::error::DissociateEntityFromThingErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::DissociateEntityFromThingErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::DissociateEntityFromThingErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::DissociateEntityFromThingErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::DissociateEntityFromThingErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -454,25 +519,30 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetEntitiesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetEntitiesErrorKind::InternalFailureException(inner) => {
-                        Error::InternalFailureException(inner)
-                    }
-                    crate::error::GetEntitiesErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::GetEntitiesErrorKind::ResourceNotFoundException(inner) => {
-                        Error::ResourceNotFoundException(inner)
-                    }
-                    crate::error::GetEntitiesErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::GetEntitiesErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetEntitiesError> for Error {
+    fn from(err: crate::error::GetEntitiesError) -> Self {
+        match err.kind {
+            crate::error::GetEntitiesErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::GetEntitiesErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::GetEntitiesErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::GetEntitiesErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::GetEntitiesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -483,25 +553,30 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetFlowTemplateError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetFlowTemplateErrorKind::InternalFailureException(inner) => {
-                        Error::InternalFailureException(inner)
-                    }
-                    crate::error::GetFlowTemplateErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::GetFlowTemplateErrorKind::ResourceNotFoundException(inner) => {
-                        Error::ResourceNotFoundException(inner)
-                    }
-                    crate::error::GetFlowTemplateErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::GetFlowTemplateErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetFlowTemplateError> for Error {
+    fn from(err: crate::error::GetFlowTemplateError) -> Self {
+        match err.kind {
+            crate::error::GetFlowTemplateErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::GetFlowTemplateErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::GetFlowTemplateErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::GetFlowTemplateErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::GetFlowTemplateErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -515,25 +590,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetFlowTemplateRevisionsErrorKind::InternalFailureException(
-                        inner,
-                    ) => Error::InternalFailureException(inner),
-                    crate::error::GetFlowTemplateRevisionsErrorKind::InvalidRequestException(
-                        inner,
-                    ) => Error::InvalidRequestException(inner),
-                    crate::error::GetFlowTemplateRevisionsErrorKind::ResourceNotFoundException(
-                        inner,
-                    ) => Error::ResourceNotFoundException(inner),
-                    crate::error::GetFlowTemplateRevisionsErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::GetFlowTemplateRevisionsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetFlowTemplateRevisionsError> for Error {
+    fn from(err: crate::error::GetFlowTemplateRevisionsError) -> Self {
+        match err.kind {
+            crate::error::GetFlowTemplateRevisionsErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::GetFlowTemplateRevisionsErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::GetFlowTemplateRevisionsErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::GetFlowTemplateRevisionsErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::GetFlowTemplateRevisionsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -547,22 +627,27 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetNamespaceDeletionStatusErrorKind::InternalFailureException(
-                        inner,
-                    ) => Error::InternalFailureException(inner),
-                    crate::error::GetNamespaceDeletionStatusErrorKind::InvalidRequestException(
-                        inner,
-                    ) => Error::InvalidRequestException(inner),
-                    crate::error::GetNamespaceDeletionStatusErrorKind::ThrottlingException(
-                        inner,
-                    ) => Error::ThrottlingException(inner),
-                    crate::error::GetNamespaceDeletionStatusErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetNamespaceDeletionStatusError> for Error {
+    fn from(err: crate::error::GetNamespaceDeletionStatusError) -> Self {
+        match err.kind {
+            crate::error::GetNamespaceDeletionStatusErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::GetNamespaceDeletionStatusErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::GetNamespaceDeletionStatusErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::GetNamespaceDeletionStatusErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -575,25 +660,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetSystemInstanceErrorKind::InternalFailureException(inner) => {
-                        Error::InternalFailureException(inner)
-                    }
-                    crate::error::GetSystemInstanceErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::GetSystemInstanceErrorKind::ResourceNotFoundException(inner) => {
-                        Error::ResourceNotFoundException(inner)
-                    }
-                    crate::error::GetSystemInstanceErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::GetSystemInstanceErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetSystemInstanceError> for Error {
+    fn from(err: crate::error::GetSystemInstanceError) -> Self {
+        match err.kind {
+            crate::error::GetSystemInstanceErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::GetSystemInstanceErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::GetSystemInstanceErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::GetSystemInstanceErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::GetSystemInstanceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -606,25 +696,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetSystemTemplateErrorKind::InternalFailureException(inner) => {
-                        Error::InternalFailureException(inner)
-                    }
-                    crate::error::GetSystemTemplateErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::GetSystemTemplateErrorKind::ResourceNotFoundException(inner) => {
-                        Error::ResourceNotFoundException(inner)
-                    }
-                    crate::error::GetSystemTemplateErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::GetSystemTemplateErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetSystemTemplateError> for Error {
+    fn from(err: crate::error::GetSystemTemplateError) -> Self {
+        match err.kind {
+            crate::error::GetSystemTemplateErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::GetSystemTemplateErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::GetSystemTemplateErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::GetSystemTemplateErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::GetSystemTemplateErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -637,27 +732,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetSystemTemplateRevisionsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::GetSystemTemplateRevisionsErrorKind::InternalFailureException(
-                    inner,
-                ) => Error::InternalFailureException(inner),
-                crate::error::GetSystemTemplateRevisionsErrorKind::InvalidRequestException(
-                    inner,
-                ) => Error::InvalidRequestException(inner),
-                crate::error::GetSystemTemplateRevisionsErrorKind::ResourceNotFoundException(
-                    inner,
-                ) => Error::ResourceNotFoundException(inner),
-                crate::error::GetSystemTemplateRevisionsErrorKind::ThrottlingException(inner) => {
-                    Error::ThrottlingException(inner)
-                }
-                crate::error::GetSystemTemplateRevisionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetSystemTemplateRevisionsError> for Error {
+    fn from(err: crate::error::GetSystemTemplateRevisionsError) -> Self {
+        match err.kind {
+            crate::error::GetSystemTemplateRevisionsErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::GetSystemTemplateRevisionsErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::GetSystemTemplateRevisionsErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::GetSystemTemplateRevisionsErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::GetSystemTemplateRevisionsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -668,25 +767,30 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetUploadStatusError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetUploadStatusErrorKind::InternalFailureException(inner) => {
-                        Error::InternalFailureException(inner)
-                    }
-                    crate::error::GetUploadStatusErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::GetUploadStatusErrorKind::ResourceNotFoundException(inner) => {
-                        Error::ResourceNotFoundException(inner)
-                    }
-                    crate::error::GetUploadStatusErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::GetUploadStatusErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetUploadStatusError> for Error {
+    fn from(err: crate::error::GetUploadStatusError) -> Self {
+        match err.kind {
+            crate::error::GetUploadStatusErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::GetUploadStatusErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::GetUploadStatusErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::GetUploadStatusErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::GetUploadStatusErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -700,25 +804,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListFlowExecutionMessagesErrorKind::InternalFailureException(
-                        inner,
-                    ) => Error::InternalFailureException(inner),
-                    crate::error::ListFlowExecutionMessagesErrorKind::InvalidRequestException(
-                        inner,
-                    ) => Error::InvalidRequestException(inner),
-                    crate::error::ListFlowExecutionMessagesErrorKind::ResourceNotFoundException(
-                        inner,
-                    ) => Error::ResourceNotFoundException(inner),
-                    crate::error::ListFlowExecutionMessagesErrorKind::ThrottlingException(
-                        inner,
-                    ) => Error::ThrottlingException(inner),
-                    crate::error::ListFlowExecutionMessagesErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListFlowExecutionMessagesError> for Error {
+    fn from(err: crate::error::ListFlowExecutionMessagesError) -> Self {
+        match err.kind {
+            crate::error::ListFlowExecutionMessagesErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::ListFlowExecutionMessagesErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::ListFlowExecutionMessagesErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::ListFlowExecutionMessagesErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::ListFlowExecutionMessagesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -731,25 +840,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListTagsForResourceErrorKind::InternalFailureException(inner) => {
-                        Error::InternalFailureException(inner)
-                    }
-                    crate::error::ListTagsForResourceErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::ListTagsForResourceErrorKind::ResourceAlreadyExistsException(
-                        inner,
-                    ) => Error::ResourceAlreadyExistsException(inner),
-                    crate::error::ListTagsForResourceErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListTagsForResourceError> for Error {
+    fn from(err: crate::error::ListTagsForResourceError) -> Self {
+        match err.kind {
+            crate::error::ListTagsForResourceErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::ListTagsForResourceErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::ListTagsForResourceErrorKind::ResourceAlreadyExistsException(inner) => {
+                Error::ResourceAlreadyExistsException(inner)
+            }
+            crate::error::ListTagsForResourceErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -760,22 +874,27 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SearchEntitiesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::SearchEntitiesErrorKind::InternalFailureException(inner) => {
-                        Error::InternalFailureException(inner)
-                    }
-                    crate::error::SearchEntitiesErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::SearchEntitiesErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::SearchEntitiesErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::SearchEntitiesError> for Error {
+    fn from(err: crate::error::SearchEntitiesError) -> Self {
+        match err.kind {
+            crate::error::SearchEntitiesErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::SearchEntitiesErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::SearchEntitiesErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::SearchEntitiesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -789,25 +908,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::SearchFlowExecutionsErrorKind::InternalFailureException(
-                        inner,
-                    ) => Error::InternalFailureException(inner),
-                    crate::error::SearchFlowExecutionsErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::SearchFlowExecutionsErrorKind::ResourceNotFoundException(
-                        inner,
-                    ) => Error::ResourceNotFoundException(inner),
-                    crate::error::SearchFlowExecutionsErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::SearchFlowExecutionsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::SearchFlowExecutionsError> for Error {
+    fn from(err: crate::error::SearchFlowExecutionsError) -> Self {
+        match err.kind {
+            crate::error::SearchFlowExecutionsErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::SearchFlowExecutionsErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::SearchFlowExecutionsErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::SearchFlowExecutionsErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::SearchFlowExecutionsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -820,22 +944,27 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::SearchFlowTemplatesErrorKind::InternalFailureException(inner) => {
-                        Error::InternalFailureException(inner)
-                    }
-                    crate::error::SearchFlowTemplatesErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::SearchFlowTemplatesErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::SearchFlowTemplatesErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::SearchFlowTemplatesError> for Error {
+    fn from(err: crate::error::SearchFlowTemplatesError) -> Self {
+        match err.kind {
+            crate::error::SearchFlowTemplatesErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::SearchFlowTemplatesErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::SearchFlowTemplatesErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::SearchFlowTemplatesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -849,22 +978,27 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::SearchSystemInstancesErrorKind::InternalFailureException(
-                        inner,
-                    ) => Error::InternalFailureException(inner),
-                    crate::error::SearchSystemInstancesErrorKind::InvalidRequestException(
-                        inner,
-                    ) => Error::InvalidRequestException(inner),
-                    crate::error::SearchSystemInstancesErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::SearchSystemInstancesErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::SearchSystemInstancesError> for Error {
+    fn from(err: crate::error::SearchSystemInstancesError) -> Self {
+        match err.kind {
+            crate::error::SearchSystemInstancesErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::SearchSystemInstancesErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::SearchSystemInstancesErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::SearchSystemInstancesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -878,22 +1012,27 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::SearchSystemTemplatesErrorKind::InternalFailureException(
-                        inner,
-                    ) => Error::InternalFailureException(inner),
-                    crate::error::SearchSystemTemplatesErrorKind::InvalidRequestException(
-                        inner,
-                    ) => Error::InvalidRequestException(inner),
-                    crate::error::SearchSystemTemplatesErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::SearchSystemTemplatesErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::SearchSystemTemplatesError> for Error {
+    fn from(err: crate::error::SearchSystemTemplatesError) -> Self {
+        match err.kind {
+            crate::error::SearchSystemTemplatesErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::SearchSystemTemplatesErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::SearchSystemTemplatesErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::SearchSystemTemplatesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -904,25 +1043,30 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SearchThingsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::SearchThingsErrorKind::InternalFailureException(inner) => {
-                        Error::InternalFailureException(inner)
-                    }
-                    crate::error::SearchThingsErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::SearchThingsErrorKind::ResourceNotFoundException(inner) => {
-                        Error::ResourceNotFoundException(inner)
-                    }
-                    crate::error::SearchThingsErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::SearchThingsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::SearchThingsError> for Error {
+    fn from(err: crate::error::SearchThingsError) -> Self {
+        match err.kind {
+            crate::error::SearchThingsErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::SearchThingsErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::SearchThingsErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::SearchThingsErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::SearchThingsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -933,25 +1077,30 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::TagResourceErrorKind::InternalFailureException(inner) => {
-                        Error::InternalFailureException(inner)
-                    }
-                    crate::error::TagResourceErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::TagResourceErrorKind::ResourceAlreadyExistsException(inner) => {
-                        Error::ResourceAlreadyExistsException(inner)
-                    }
-                    crate::error::TagResourceErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::TagResourceError> for Error {
+    fn from(err: crate::error::TagResourceError) -> Self {
+        match err.kind {
+            crate::error::TagResourceErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::TagResourceErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::TagResourceErrorKind::ResourceAlreadyExistsException(inner) => {
+                Error::ResourceAlreadyExistsException(inner)
+            }
+            crate::error::TagResourceErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -965,28 +1114,33 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::UndeploySystemInstanceErrorKind::InternalFailureException(
-                        inner,
-                    ) => Error::InternalFailureException(inner),
-                    crate::error::UndeploySystemInstanceErrorKind::InvalidRequestException(
-                        inner,
-                    ) => Error::InvalidRequestException(inner),
-                    crate::error::UndeploySystemInstanceErrorKind::ResourceInUseException(
-                        inner,
-                    ) => Error::ResourceInUseException(inner),
-                    crate::error::UndeploySystemInstanceErrorKind::ResourceNotFoundException(
-                        inner,
-                    ) => Error::ResourceNotFoundException(inner),
-                    crate::error::UndeploySystemInstanceErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::UndeploySystemInstanceErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UndeploySystemInstanceError> for Error {
+    fn from(err: crate::error::UndeploySystemInstanceError) -> Self {
+        match err.kind {
+            crate::error::UndeploySystemInstanceErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::UndeploySystemInstanceErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::UndeploySystemInstanceErrorKind::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::error::UndeploySystemInstanceErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::UndeploySystemInstanceErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::UndeploySystemInstanceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -997,25 +1151,30 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::UntagResourceErrorKind::InternalFailureException(inner) => {
-                        Error::InternalFailureException(inner)
-                    }
-                    crate::error::UntagResourceErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::UntagResourceErrorKind::ResourceAlreadyExistsException(inner) => {
-                        Error::ResourceAlreadyExistsException(inner)
-                    }
-                    crate::error::UntagResourceErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UntagResourceError> for Error {
+    fn from(err: crate::error::UntagResourceError) -> Self {
+        match err.kind {
+            crate::error::UntagResourceErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::UntagResourceErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::UntagResourceErrorKind::ResourceAlreadyExistsException(inner) => {
+                Error::ResourceAlreadyExistsException(inner)
+            }
+            crate::error::UntagResourceErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1028,25 +1187,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::UpdateFlowTemplateErrorKind::InternalFailureException(inner) => {
-                        Error::InternalFailureException(inner)
-                    }
-                    crate::error::UpdateFlowTemplateErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::UpdateFlowTemplateErrorKind::ResourceNotFoundException(inner) => {
-                        Error::ResourceNotFoundException(inner)
-                    }
-                    crate::error::UpdateFlowTemplateErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::UpdateFlowTemplateErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateFlowTemplateError> for Error {
+    fn from(err: crate::error::UpdateFlowTemplateError) -> Self {
+        match err.kind {
+            crate::error::UpdateFlowTemplateErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::UpdateFlowTemplateErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::UpdateFlowTemplateErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::UpdateFlowTemplateErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::UpdateFlowTemplateErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1060,25 +1224,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::UpdateSystemTemplateErrorKind::InternalFailureException(
-                        inner,
-                    ) => Error::InternalFailureException(inner),
-                    crate::error::UpdateSystemTemplateErrorKind::InvalidRequestException(inner) => {
-                        Error::InvalidRequestException(inner)
-                    }
-                    crate::error::UpdateSystemTemplateErrorKind::ResourceNotFoundException(
-                        inner,
-                    ) => Error::ResourceNotFoundException(inner),
-                    crate::error::UpdateSystemTemplateErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::UpdateSystemTemplateErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateSystemTemplateError> for Error {
+    fn from(err: crate::error::UpdateSystemTemplateError) -> Self {
+        match err.kind {
+            crate::error::UpdateSystemTemplateErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::UpdateSystemTemplateErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::UpdateSystemTemplateErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::UpdateSystemTemplateErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::UpdateSystemTemplateErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1092,22 +1261,27 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::UploadEntityDefinitionsErrorKind::InternalFailureException(
-                        inner,
-                    ) => Error::InternalFailureException(inner),
-                    crate::error::UploadEntityDefinitionsErrorKind::InvalidRequestException(
-                        inner,
-                    ) => Error::InvalidRequestException(inner),
-                    crate::error::UploadEntityDefinitionsErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::UploadEntityDefinitionsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UploadEntityDefinitionsError> for Error {
+    fn from(err: crate::error::UploadEntityDefinitionsError) -> Self {
+        match err.kind {
+            crate::error::UploadEntityDefinitionsErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::UploadEntityDefinitionsErrorKind::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::UploadEntityDefinitionsErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::UploadEntityDefinitionsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }

@@ -26,16 +26,19 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SearchError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::SearchErrorKind::SearchException(inner) => {
-                        Error::SearchException(inner)
-                    }
-                    crate::error::SearchErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::SearchError> for Error {
+    fn from(err: crate::error::SearchError) -> Self {
+        match err.kind {
+            crate::error::SearchErrorKind::SearchException(inner) => Error::SearchException(inner),
+            crate::error::SearchErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -46,16 +49,19 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SuggestError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::SuggestErrorKind::SearchException(inner) => {
-                        Error::SearchException(inner)
-                    }
-                    crate::error::SuggestErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::SuggestError> for Error {
+    fn from(err: crate::error::SuggestError) -> Self {
+        match err.kind {
+            crate::error::SuggestErrorKind::SearchException(inner) => Error::SearchException(inner),
+            crate::error::SuggestErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -66,16 +72,21 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UploadDocumentsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::UploadDocumentsErrorKind::DocumentServiceException(inner) => {
-                        Error::DocumentServiceException(inner)
-                    }
-                    crate::error::UploadDocumentsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UploadDocumentsError> for Error {
+    fn from(err: crate::error::UploadDocumentsError) -> Self {
+        match err.kind {
+            crate::error::UploadDocumentsErrorKind::DocumentServiceException(inner) => {
+                Error::DocumentServiceException(inner)
+            }
+            crate::error::UploadDocumentsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }

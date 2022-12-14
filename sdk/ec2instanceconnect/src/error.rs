@@ -736,6 +736,16 @@ pub struct SendSerialConsoleSSHPublicKeyError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for SendSerialConsoleSSHPublicKeyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: SendSerialConsoleSSHPublicKeyErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `SendSerialConsoleSSHPublicKey` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -977,6 +987,14 @@ pub struct SendSSHPublicKeyError {
     pub kind: SendSSHPublicKeyErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for SendSSHPublicKeyError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: SendSSHPublicKeyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `SendSSHPublicKey` operation.
 #[non_exhaustive]

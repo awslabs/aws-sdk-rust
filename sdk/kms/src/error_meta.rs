@@ -151,28 +151,33 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::CancelKeyDeletionErrorKind::DependencyTimeoutException(inner) => {
-                        Error::DependencyTimeoutException(inner)
-                    }
-                    crate::error::CancelKeyDeletionErrorKind::InvalidArnException(inner) => {
-                        Error::InvalidArnException(inner)
-                    }
-                    crate::error::CancelKeyDeletionErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::CancelKeyDeletionErrorKind::KmsInvalidStateException(inner) => {
-                        Error::KmsInvalidStateException(inner)
-                    }
-                    crate::error::CancelKeyDeletionErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::CancelKeyDeletionErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CancelKeyDeletionError> for Error {
+    fn from(err: crate::error::CancelKeyDeletionError) -> Self {
+        match err.kind {
+            crate::error::CancelKeyDeletionErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::CancelKeyDeletionErrorKind::InvalidArnException(inner) => {
+                Error::InvalidArnException(inner)
+            }
+            crate::error::CancelKeyDeletionErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::CancelKeyDeletionErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::CancelKeyDeletionErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::CancelKeyDeletionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -185,15 +190,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ConnectCustomKeyStoreError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::ConnectCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(inner) => Error::CloudHsmClusterInvalidConfigurationException(inner),
-                crate::error::ConnectCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(inner) => Error::CloudHsmClusterNotActiveException(inner),
-                crate::error::ConnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(inner) => Error::CustomKeyStoreInvalidStateException(inner),
-                crate::error::ConnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(inner) => Error::CustomKeyStoreNotFoundException(inner),
-                crate::error::ConnectCustomKeyStoreErrorKind::KmsInternalException(inner) => Error::KmsInternalException(inner),
-                crate::error::ConnectCustomKeyStoreErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ConnectCustomKeyStoreError> for Error {
+    fn from(err: crate::error::ConnectCustomKeyStoreError) -> Self {
+        match err.kind {
+            crate::error::ConnectCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(inner) => Error::CloudHsmClusterInvalidConfigurationException(inner),
+            crate::error::ConnectCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(inner) => Error::CloudHsmClusterNotActiveException(inner),
+            crate::error::ConnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(inner) => Error::CustomKeyStoreInvalidStateException(inner),
+            crate::error::ConnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(inner) => Error::CustomKeyStoreNotFoundException(inner),
+            crate::error::ConnectCustomKeyStoreErrorKind::KmsInternalException(inner) => Error::KmsInternalException(inner),
+            crate::error::ConnectCustomKeyStoreErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -204,34 +216,39 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateAliasError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::CreateAliasErrorKind::AlreadyExistsException(inner) => {
-                        Error::AlreadyExistsException(inner)
-                    }
-                    crate::error::CreateAliasErrorKind::DependencyTimeoutException(inner) => {
-                        Error::DependencyTimeoutException(inner)
-                    }
-                    crate::error::CreateAliasErrorKind::InvalidAliasNameException(inner) => {
-                        Error::InvalidAliasNameException(inner)
-                    }
-                    crate::error::CreateAliasErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::CreateAliasErrorKind::KmsInvalidStateException(inner) => {
-                        Error::KmsInvalidStateException(inner)
-                    }
-                    crate::error::CreateAliasErrorKind::LimitExceededException(inner) => {
-                        Error::LimitExceededException(inner)
-                    }
-                    crate::error::CreateAliasErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::CreateAliasErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateAliasError> for Error {
+    fn from(err: crate::error::CreateAliasError) -> Self {
+        match err.kind {
+            crate::error::CreateAliasErrorKind::AlreadyExistsException(inner) => {
+                Error::AlreadyExistsException(inner)
+            }
+            crate::error::CreateAliasErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::CreateAliasErrorKind::InvalidAliasNameException(inner) => {
+                Error::InvalidAliasNameException(inner)
+            }
+            crate::error::CreateAliasErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::CreateAliasErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::CreateAliasErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::CreateAliasErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::CreateAliasErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -244,17 +261,24 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateCustomKeyStoreError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::CreateCustomKeyStoreErrorKind::CloudHsmClusterInUseException(inner) => Error::CloudHsmClusterInUseException(inner),
-                crate::error::CreateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(inner) => Error::CloudHsmClusterInvalidConfigurationException(inner),
-                crate::error::CreateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(inner) => Error::CloudHsmClusterNotActiveException(inner),
-                crate::error::CreateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException(inner) => Error::CloudHsmClusterNotFoundException(inner),
-                crate::error::CreateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException(inner) => Error::CustomKeyStoreNameInUseException(inner),
-                crate::error::CreateCustomKeyStoreErrorKind::IncorrectTrustAnchorException(inner) => Error::IncorrectTrustAnchorException(inner),
-                crate::error::CreateCustomKeyStoreErrorKind::KmsInternalException(inner) => Error::KmsInternalException(inner),
-                crate::error::CreateCustomKeyStoreErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateCustomKeyStoreError> for Error {
+    fn from(err: crate::error::CreateCustomKeyStoreError) -> Self {
+        match err.kind {
+            crate::error::CreateCustomKeyStoreErrorKind::CloudHsmClusterInUseException(inner) => Error::CloudHsmClusterInUseException(inner),
+            crate::error::CreateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(inner) => Error::CloudHsmClusterInvalidConfigurationException(inner),
+            crate::error::CreateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(inner) => Error::CloudHsmClusterNotActiveException(inner),
+            crate::error::CreateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException(inner) => Error::CloudHsmClusterNotFoundException(inner),
+            crate::error::CreateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException(inner) => Error::CustomKeyStoreNameInUseException(inner),
+            crate::error::CreateCustomKeyStoreErrorKind::IncorrectTrustAnchorException(inner) => Error::IncorrectTrustAnchorException(inner),
+            crate::error::CreateCustomKeyStoreErrorKind::KmsInternalException(inner) => Error::KmsInternalException(inner),
+            crate::error::CreateCustomKeyStoreErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -265,37 +289,42 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateGrantError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::CreateGrantErrorKind::DependencyTimeoutException(inner) => {
-                        Error::DependencyTimeoutException(inner)
-                    }
-                    crate::error::CreateGrantErrorKind::DisabledException(inner) => {
-                        Error::DisabledException(inner)
-                    }
-                    crate::error::CreateGrantErrorKind::InvalidArnException(inner) => {
-                        Error::InvalidArnException(inner)
-                    }
-                    crate::error::CreateGrantErrorKind::InvalidGrantTokenException(inner) => {
-                        Error::InvalidGrantTokenException(inner)
-                    }
-                    crate::error::CreateGrantErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::CreateGrantErrorKind::KmsInvalidStateException(inner) => {
-                        Error::KmsInvalidStateException(inner)
-                    }
-                    crate::error::CreateGrantErrorKind::LimitExceededException(inner) => {
-                        Error::LimitExceededException(inner)
-                    }
-                    crate::error::CreateGrantErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::CreateGrantErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateGrantError> for Error {
+    fn from(err: crate::error::CreateGrantError) -> Self {
+        match err.kind {
+            crate::error::CreateGrantErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::CreateGrantErrorKind::DisabledException(inner) => {
+                Error::DisabledException(inner)
+            }
+            crate::error::CreateGrantErrorKind::InvalidArnException(inner) => {
+                Error::InvalidArnException(inner)
+            }
+            crate::error::CreateGrantErrorKind::InvalidGrantTokenException(inner) => {
+                Error::InvalidGrantTokenException(inner)
+            }
+            crate::error::CreateGrantErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::CreateGrantErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::CreateGrantErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::CreateGrantErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::CreateGrantErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -305,43 +334,47 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateKeyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::CreateKeyErrorKind::CloudHsmClusterInvalidConfigurationException(
-                    inner,
-                ) => Error::CloudHsmClusterInvalidConfigurationException(inner),
-                crate::error::CreateKeyErrorKind::CustomKeyStoreInvalidStateException(inner) => {
-                    Error::CustomKeyStoreInvalidStateException(inner)
-                }
-                crate::error::CreateKeyErrorKind::CustomKeyStoreNotFoundException(inner) => {
-                    Error::CustomKeyStoreNotFoundException(inner)
-                }
-                crate::error::CreateKeyErrorKind::DependencyTimeoutException(inner) => {
-                    Error::DependencyTimeoutException(inner)
-                }
-                crate::error::CreateKeyErrorKind::InvalidArnException(inner) => {
-                    Error::InvalidArnException(inner)
-                }
-                crate::error::CreateKeyErrorKind::KmsInternalException(inner) => {
-                    Error::KmsInternalException(inner)
-                }
-                crate::error::CreateKeyErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::CreateKeyErrorKind::MalformedPolicyDocumentException(inner) => {
-                    Error::MalformedPolicyDocumentException(inner)
-                }
-                crate::error::CreateKeyErrorKind::TagException(inner) => Error::TagException(inner),
-                crate::error::CreateKeyErrorKind::UnsupportedOperationException(inner) => {
-                    Error::UnsupportedOperationException(inner)
-                }
-                crate::error::CreateKeyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateKeyError> for Error {
+    fn from(err: crate::error::CreateKeyError) -> Self {
+        match err.kind {
+            crate::error::CreateKeyErrorKind::CloudHsmClusterInvalidConfigurationException(
+                inner,
+            ) => Error::CloudHsmClusterInvalidConfigurationException(inner),
+            crate::error::CreateKeyErrorKind::CustomKeyStoreInvalidStateException(inner) => {
+                Error::CustomKeyStoreInvalidStateException(inner)
+            }
+            crate::error::CreateKeyErrorKind::CustomKeyStoreNotFoundException(inner) => {
+                Error::CustomKeyStoreNotFoundException(inner)
+            }
+            crate::error::CreateKeyErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::CreateKeyErrorKind::InvalidArnException(inner) => {
+                Error::InvalidArnException(inner)
+            }
+            crate::error::CreateKeyErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::CreateKeyErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::CreateKeyErrorKind::MalformedPolicyDocumentException(inner) => {
+                Error::MalformedPolicyDocumentException(inner)
+            }
+            crate::error::CreateKeyErrorKind::TagException(inner) => Error::TagException(inner),
+            crate::error::CreateKeyErrorKind::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::error::CreateKeyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -352,43 +385,48 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DecryptError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DecryptErrorKind::DependencyTimeoutException(inner) => {
-                        Error::DependencyTimeoutException(inner)
-                    }
-                    crate::error::DecryptErrorKind::DisabledException(inner) => {
-                        Error::DisabledException(inner)
-                    }
-                    crate::error::DecryptErrorKind::IncorrectKeyException(inner) => {
-                        Error::IncorrectKeyException(inner)
-                    }
-                    crate::error::DecryptErrorKind::InvalidCiphertextException(inner) => {
-                        Error::InvalidCiphertextException(inner)
-                    }
-                    crate::error::DecryptErrorKind::InvalidGrantTokenException(inner) => {
-                        Error::InvalidGrantTokenException(inner)
-                    }
-                    crate::error::DecryptErrorKind::InvalidKeyUsageException(inner) => {
-                        Error::InvalidKeyUsageException(inner)
-                    }
-                    crate::error::DecryptErrorKind::KeyUnavailableException(inner) => {
-                        Error::KeyUnavailableException(inner)
-                    }
-                    crate::error::DecryptErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::DecryptErrorKind::KmsInvalidStateException(inner) => {
-                        Error::KmsInvalidStateException(inner)
-                    }
-                    crate::error::DecryptErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::DecryptErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DecryptError> for Error {
+    fn from(err: crate::error::DecryptError) -> Self {
+        match err.kind {
+            crate::error::DecryptErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::DecryptErrorKind::DisabledException(inner) => {
+                Error::DisabledException(inner)
+            }
+            crate::error::DecryptErrorKind::IncorrectKeyException(inner) => {
+                Error::IncorrectKeyException(inner)
+            }
+            crate::error::DecryptErrorKind::InvalidCiphertextException(inner) => {
+                Error::InvalidCiphertextException(inner)
+            }
+            crate::error::DecryptErrorKind::InvalidGrantTokenException(inner) => {
+                Error::InvalidGrantTokenException(inner)
+            }
+            crate::error::DecryptErrorKind::InvalidKeyUsageException(inner) => {
+                Error::InvalidKeyUsageException(inner)
+            }
+            crate::error::DecryptErrorKind::KeyUnavailableException(inner) => {
+                Error::KeyUnavailableException(inner)
+            }
+            crate::error::DecryptErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::DecryptErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::DecryptErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::DecryptErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -399,25 +437,30 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteAliasError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DeleteAliasErrorKind::DependencyTimeoutException(inner) => {
-                        Error::DependencyTimeoutException(inner)
-                    }
-                    crate::error::DeleteAliasErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::DeleteAliasErrorKind::KmsInvalidStateException(inner) => {
-                        Error::KmsInvalidStateException(inner)
-                    }
-                    crate::error::DeleteAliasErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::DeleteAliasErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteAliasError> for Error {
+    fn from(err: crate::error::DeleteAliasError) -> Self {
+        match err.kind {
+            crate::error::DeleteAliasErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::DeleteAliasErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::DeleteAliasErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::DeleteAliasErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::DeleteAliasErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -430,14 +473,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteCustomKeyStoreError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::DeleteCustomKeyStoreErrorKind::CustomKeyStoreHasCmKsException(inner) => Error::CustomKeyStoreHasCmKsException(inner),
-                crate::error::DeleteCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(inner) => Error::CustomKeyStoreInvalidStateException(inner),
-                crate::error::DeleteCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(inner) => Error::CustomKeyStoreNotFoundException(inner),
-                crate::error::DeleteCustomKeyStoreErrorKind::KmsInternalException(inner) => Error::KmsInternalException(inner),
-                crate::error::DeleteCustomKeyStoreErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteCustomKeyStoreError> for Error {
+    fn from(err: crate::error::DeleteCustomKeyStoreError) -> Self {
+        match err.kind {
+            crate::error::DeleteCustomKeyStoreErrorKind::CustomKeyStoreHasCmKsException(inner) => {
+                Error::CustomKeyStoreHasCmKsException(inner)
+            }
+            crate::error::DeleteCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(
+                inner,
+            ) => Error::CustomKeyStoreInvalidStateException(inner),
+            crate::error::DeleteCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(inner) => {
+                Error::CustomKeyStoreNotFoundException(inner)
+            }
+            crate::error::DeleteCustomKeyStoreErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::DeleteCustomKeyStoreErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -450,33 +510,37 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteImportedKeyMaterialError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::DeleteImportedKeyMaterialErrorKind::DependencyTimeoutException(
-                    inner,
-                ) => Error::DependencyTimeoutException(inner),
-                crate::error::DeleteImportedKeyMaterialErrorKind::InvalidArnException(inner) => {
-                    Error::InvalidArnException(inner)
-                }
-                crate::error::DeleteImportedKeyMaterialErrorKind::KmsInternalException(inner) => {
-                    Error::KmsInternalException(inner)
-                }
-                crate::error::DeleteImportedKeyMaterialErrorKind::KmsInvalidStateException(
-                    inner,
-                ) => Error::KmsInvalidStateException(inner),
-                crate::error::DeleteImportedKeyMaterialErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::DeleteImportedKeyMaterialErrorKind::UnsupportedOperationException(
-                    inner,
-                ) => Error::UnsupportedOperationException(inner),
-                crate::error::DeleteImportedKeyMaterialErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteImportedKeyMaterialError> for Error {
+    fn from(err: crate::error::DeleteImportedKeyMaterialError) -> Self {
+        match err.kind {
+            crate::error::DeleteImportedKeyMaterialErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::DeleteImportedKeyMaterialErrorKind::InvalidArnException(inner) => {
+                Error::InvalidArnException(inner)
+            }
+            crate::error::DeleteImportedKeyMaterialErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::DeleteImportedKeyMaterialErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::DeleteImportedKeyMaterialErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::DeleteImportedKeyMaterialErrorKind::UnsupportedOperationException(
+                inner,
+            ) => Error::UnsupportedOperationException(inner),
+            crate::error::DeleteImportedKeyMaterialErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -489,24 +553,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeCustomKeyStoresError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::DescribeCustomKeyStoresErrorKind::CustomKeyStoreNotFoundException(
-                    inner,
-                ) => Error::CustomKeyStoreNotFoundException(inner),
-                crate::error::DescribeCustomKeyStoresErrorKind::InvalidMarkerException(inner) => {
-                    Error::InvalidMarkerException(inner)
-                }
-                crate::error::DescribeCustomKeyStoresErrorKind::KmsInternalException(inner) => {
-                    Error::KmsInternalException(inner)
-                }
-                crate::error::DescribeCustomKeyStoresErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeCustomKeyStoresError> for Error {
+    fn from(err: crate::error::DescribeCustomKeyStoresError) -> Self {
+        match err.kind {
+            crate::error::DescribeCustomKeyStoresErrorKind::CustomKeyStoreNotFoundException(
+                inner,
+            ) => Error::CustomKeyStoreNotFoundException(inner),
+            crate::error::DescribeCustomKeyStoresErrorKind::InvalidMarkerException(inner) => {
+                Error::InvalidMarkerException(inner)
+            }
+            crate::error::DescribeCustomKeyStoresErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::DescribeCustomKeyStoresErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -517,25 +585,30 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeKeyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DescribeKeyErrorKind::DependencyTimeoutException(inner) => {
-                        Error::DependencyTimeoutException(inner)
-                    }
-                    crate::error::DescribeKeyErrorKind::InvalidArnException(inner) => {
-                        Error::InvalidArnException(inner)
-                    }
-                    crate::error::DescribeKeyErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::DescribeKeyErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::DescribeKeyErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeKeyError> for Error {
+    fn from(err: crate::error::DescribeKeyError) -> Self {
+        match err.kind {
+            crate::error::DescribeKeyErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::DescribeKeyErrorKind::InvalidArnException(inner) => {
+                Error::InvalidArnException(inner)
+            }
+            crate::error::DescribeKeyErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::DescribeKeyErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::DescribeKeyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -546,28 +619,33 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DisableKeyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DisableKeyErrorKind::DependencyTimeoutException(inner) => {
-                        Error::DependencyTimeoutException(inner)
-                    }
-                    crate::error::DisableKeyErrorKind::InvalidArnException(inner) => {
-                        Error::InvalidArnException(inner)
-                    }
-                    crate::error::DisableKeyErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::DisableKeyErrorKind::KmsInvalidStateException(inner) => {
-                        Error::KmsInvalidStateException(inner)
-                    }
-                    crate::error::DisableKeyErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::DisableKeyErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DisableKeyError> for Error {
+    fn from(err: crate::error::DisableKeyError) -> Self {
+        match err.kind {
+            crate::error::DisableKeyErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::DisableKeyErrorKind::InvalidArnException(inner) => {
+                Error::InvalidArnException(inner)
+            }
+            crate::error::DisableKeyErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::DisableKeyErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::DisableKeyErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::DisableKeyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -580,34 +658,39 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DisableKeyRotationErrorKind::DependencyTimeoutException(
-                        inner,
-                    ) => Error::DependencyTimeoutException(inner),
-                    crate::error::DisableKeyRotationErrorKind::DisabledException(inner) => {
-                        Error::DisabledException(inner)
-                    }
-                    crate::error::DisableKeyRotationErrorKind::InvalidArnException(inner) => {
-                        Error::InvalidArnException(inner)
-                    }
-                    crate::error::DisableKeyRotationErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::DisableKeyRotationErrorKind::KmsInvalidStateException(inner) => {
-                        Error::KmsInvalidStateException(inner)
-                    }
-                    crate::error::DisableKeyRotationErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::DisableKeyRotationErrorKind::UnsupportedOperationException(
-                        inner,
-                    ) => Error::UnsupportedOperationException(inner),
-                    crate::error::DisableKeyRotationErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DisableKeyRotationError> for Error {
+    fn from(err: crate::error::DisableKeyRotationError) -> Self {
+        match err.kind {
+            crate::error::DisableKeyRotationErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::DisableKeyRotationErrorKind::DisabledException(inner) => {
+                Error::DisabledException(inner)
+            }
+            crate::error::DisableKeyRotationErrorKind::InvalidArnException(inner) => {
+                Error::InvalidArnException(inner)
+            }
+            crate::error::DisableKeyRotationErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::DisableKeyRotationErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::DisableKeyRotationErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::DisableKeyRotationErrorKind::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::error::DisableKeyRotationErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -620,13 +703,20 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DisconnectCustomKeyStoreError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::DisconnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(inner) => Error::CustomKeyStoreInvalidStateException(inner),
-                crate::error::DisconnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(inner) => Error::CustomKeyStoreNotFoundException(inner),
-                crate::error::DisconnectCustomKeyStoreErrorKind::KmsInternalException(inner) => Error::KmsInternalException(inner),
-                crate::error::DisconnectCustomKeyStoreErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DisconnectCustomKeyStoreError> for Error {
+    fn from(err: crate::error::DisconnectCustomKeyStoreError) -> Self {
+        match err.kind {
+            crate::error::DisconnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(inner) => Error::CustomKeyStoreInvalidStateException(inner),
+            crate::error::DisconnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(inner) => Error::CustomKeyStoreNotFoundException(inner),
+            crate::error::DisconnectCustomKeyStoreErrorKind::KmsInternalException(inner) => Error::KmsInternalException(inner),
+            crate::error::DisconnectCustomKeyStoreErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -637,31 +727,36 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::EnableKeyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::EnableKeyErrorKind::DependencyTimeoutException(inner) => {
-                        Error::DependencyTimeoutException(inner)
-                    }
-                    crate::error::EnableKeyErrorKind::InvalidArnException(inner) => {
-                        Error::InvalidArnException(inner)
-                    }
-                    crate::error::EnableKeyErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::EnableKeyErrorKind::KmsInvalidStateException(inner) => {
-                        Error::KmsInvalidStateException(inner)
-                    }
-                    crate::error::EnableKeyErrorKind::LimitExceededException(inner) => {
-                        Error::LimitExceededException(inner)
-                    }
-                    crate::error::EnableKeyErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::EnableKeyErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::EnableKeyError> for Error {
+    fn from(err: crate::error::EnableKeyError) -> Self {
+        match err.kind {
+            crate::error::EnableKeyErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::EnableKeyErrorKind::InvalidArnException(inner) => {
+                Error::InvalidArnException(inner)
+            }
+            crate::error::EnableKeyErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::EnableKeyErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::EnableKeyErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::EnableKeyErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::EnableKeyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -674,34 +769,39 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::EnableKeyRotationErrorKind::DependencyTimeoutException(inner) => {
-                        Error::DependencyTimeoutException(inner)
-                    }
-                    crate::error::EnableKeyRotationErrorKind::DisabledException(inner) => {
-                        Error::DisabledException(inner)
-                    }
-                    crate::error::EnableKeyRotationErrorKind::InvalidArnException(inner) => {
-                        Error::InvalidArnException(inner)
-                    }
-                    crate::error::EnableKeyRotationErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::EnableKeyRotationErrorKind::KmsInvalidStateException(inner) => {
-                        Error::KmsInvalidStateException(inner)
-                    }
-                    crate::error::EnableKeyRotationErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::EnableKeyRotationErrorKind::UnsupportedOperationException(
-                        inner,
-                    ) => Error::UnsupportedOperationException(inner),
-                    crate::error::EnableKeyRotationErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::EnableKeyRotationError> for Error {
+    fn from(err: crate::error::EnableKeyRotationError) -> Self {
+        match err.kind {
+            crate::error::EnableKeyRotationErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::EnableKeyRotationErrorKind::DisabledException(inner) => {
+                Error::DisabledException(inner)
+            }
+            crate::error::EnableKeyRotationErrorKind::InvalidArnException(inner) => {
+                Error::InvalidArnException(inner)
+            }
+            crate::error::EnableKeyRotationErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::EnableKeyRotationErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::EnableKeyRotationErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::EnableKeyRotationErrorKind::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::error::EnableKeyRotationErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -712,37 +812,42 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::EncryptError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::EncryptErrorKind::DependencyTimeoutException(inner) => {
-                        Error::DependencyTimeoutException(inner)
-                    }
-                    crate::error::EncryptErrorKind::DisabledException(inner) => {
-                        Error::DisabledException(inner)
-                    }
-                    crate::error::EncryptErrorKind::InvalidGrantTokenException(inner) => {
-                        Error::InvalidGrantTokenException(inner)
-                    }
-                    crate::error::EncryptErrorKind::InvalidKeyUsageException(inner) => {
-                        Error::InvalidKeyUsageException(inner)
-                    }
-                    crate::error::EncryptErrorKind::KeyUnavailableException(inner) => {
-                        Error::KeyUnavailableException(inner)
-                    }
-                    crate::error::EncryptErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::EncryptErrorKind::KmsInvalidStateException(inner) => {
-                        Error::KmsInvalidStateException(inner)
-                    }
-                    crate::error::EncryptErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::EncryptErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::EncryptError> for Error {
+    fn from(err: crate::error::EncryptError) -> Self {
+        match err.kind {
+            crate::error::EncryptErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::EncryptErrorKind::DisabledException(inner) => {
+                Error::DisabledException(inner)
+            }
+            crate::error::EncryptErrorKind::InvalidGrantTokenException(inner) => {
+                Error::InvalidGrantTokenException(inner)
+            }
+            crate::error::EncryptErrorKind::InvalidKeyUsageException(inner) => {
+                Error::InvalidKeyUsageException(inner)
+            }
+            crate::error::EncryptErrorKind::KeyUnavailableException(inner) => {
+                Error::KeyUnavailableException(inner)
+            }
+            crate::error::EncryptErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::EncryptErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::EncryptErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::EncryptErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -753,37 +858,42 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GenerateDataKeyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GenerateDataKeyErrorKind::DependencyTimeoutException(inner) => {
-                        Error::DependencyTimeoutException(inner)
-                    }
-                    crate::error::GenerateDataKeyErrorKind::DisabledException(inner) => {
-                        Error::DisabledException(inner)
-                    }
-                    crate::error::GenerateDataKeyErrorKind::InvalidGrantTokenException(inner) => {
-                        Error::InvalidGrantTokenException(inner)
-                    }
-                    crate::error::GenerateDataKeyErrorKind::InvalidKeyUsageException(inner) => {
-                        Error::InvalidKeyUsageException(inner)
-                    }
-                    crate::error::GenerateDataKeyErrorKind::KeyUnavailableException(inner) => {
-                        Error::KeyUnavailableException(inner)
-                    }
-                    crate::error::GenerateDataKeyErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::GenerateDataKeyErrorKind::KmsInvalidStateException(inner) => {
-                        Error::KmsInvalidStateException(inner)
-                    }
-                    crate::error::GenerateDataKeyErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::GenerateDataKeyErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GenerateDataKeyError> for Error {
+    fn from(err: crate::error::GenerateDataKeyError) -> Self {
+        match err.kind {
+            crate::error::GenerateDataKeyErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::GenerateDataKeyErrorKind::DisabledException(inner) => {
+                Error::DisabledException(inner)
+            }
+            crate::error::GenerateDataKeyErrorKind::InvalidGrantTokenException(inner) => {
+                Error::InvalidGrantTokenException(inner)
+            }
+            crate::error::GenerateDataKeyErrorKind::InvalidKeyUsageException(inner) => {
+                Error::InvalidKeyUsageException(inner)
+            }
+            crate::error::GenerateDataKeyErrorKind::KeyUnavailableException(inner) => {
+                Error::KeyUnavailableException(inner)
+            }
+            crate::error::GenerateDataKeyErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::GenerateDataKeyErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::GenerateDataKeyErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::GenerateDataKeyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -796,40 +906,45 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GenerateDataKeyPairErrorKind::DependencyTimeoutException(
-                        inner,
-                    ) => Error::DependencyTimeoutException(inner),
-                    crate::error::GenerateDataKeyPairErrorKind::DisabledException(inner) => {
-                        Error::DisabledException(inner)
-                    }
-                    crate::error::GenerateDataKeyPairErrorKind::InvalidGrantTokenException(
-                        inner,
-                    ) => Error::InvalidGrantTokenException(inner),
-                    crate::error::GenerateDataKeyPairErrorKind::InvalidKeyUsageException(inner) => {
-                        Error::InvalidKeyUsageException(inner)
-                    }
-                    crate::error::GenerateDataKeyPairErrorKind::KeyUnavailableException(inner) => {
-                        Error::KeyUnavailableException(inner)
-                    }
-                    crate::error::GenerateDataKeyPairErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::GenerateDataKeyPairErrorKind::KmsInvalidStateException(inner) => {
-                        Error::KmsInvalidStateException(inner)
-                    }
-                    crate::error::GenerateDataKeyPairErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::GenerateDataKeyPairErrorKind::UnsupportedOperationException(
-                        inner,
-                    ) => Error::UnsupportedOperationException(inner),
-                    crate::error::GenerateDataKeyPairErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GenerateDataKeyPairError> for Error {
+    fn from(err: crate::error::GenerateDataKeyPairError) -> Self {
+        match err.kind {
+            crate::error::GenerateDataKeyPairErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::GenerateDataKeyPairErrorKind::DisabledException(inner) => {
+                Error::DisabledException(inner)
+            }
+            crate::error::GenerateDataKeyPairErrorKind::InvalidGrantTokenException(inner) => {
+                Error::InvalidGrantTokenException(inner)
+            }
+            crate::error::GenerateDataKeyPairErrorKind::InvalidKeyUsageException(inner) => {
+                Error::InvalidKeyUsageException(inner)
+            }
+            crate::error::GenerateDataKeyPairErrorKind::KeyUnavailableException(inner) => {
+                Error::KeyUnavailableException(inner)
+            }
+            crate::error::GenerateDataKeyPairErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::GenerateDataKeyPairErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::GenerateDataKeyPairErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::GenerateDataKeyPairErrorKind::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::error::GenerateDataKeyPairErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -850,19 +965,26 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::DependencyTimeoutException(inner) => Error::DependencyTimeoutException(inner),
-                crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::DisabledException(inner) => Error::DisabledException(inner),
-                crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidGrantTokenException(inner) => Error::InvalidGrantTokenException(inner),
-                crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidKeyUsageException(inner) => Error::InvalidKeyUsageException(inner),
-                crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::KeyUnavailableException(inner) => Error::KeyUnavailableException(inner),
-                crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInternalException(inner) => Error::KmsInternalException(inner),
-                crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInvalidStateException(inner) => Error::KmsInvalidStateException(inner),
-                crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
-                crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
-                crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GenerateDataKeyPairWithoutPlaintextError> for Error {
+    fn from(err: crate::error::GenerateDataKeyPairWithoutPlaintextError) -> Self {
+        match err.kind {
+            crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::DependencyTimeoutException(inner) => Error::DependencyTimeoutException(inner),
+            crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::DisabledException(inner) => Error::DisabledException(inner),
+            crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidGrantTokenException(inner) => Error::InvalidGrantTokenException(inner),
+            crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidKeyUsageException(inner) => Error::InvalidKeyUsageException(inner),
+            crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::KeyUnavailableException(inner) => Error::KeyUnavailableException(inner),
+            crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInternalException(inner) => Error::KmsInternalException(inner),
+            crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInvalidStateException(inner) => Error::KmsInvalidStateException(inner),
+            crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -879,18 +1001,43 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::GenerateDataKeyWithoutPlaintextErrorKind::DependencyTimeoutException(inner) => Error::DependencyTimeoutException(inner),
-                crate::error::GenerateDataKeyWithoutPlaintextErrorKind::DisabledException(inner) => Error::DisabledException(inner),
-                crate::error::GenerateDataKeyWithoutPlaintextErrorKind::InvalidGrantTokenException(inner) => Error::InvalidGrantTokenException(inner),
-                crate::error::GenerateDataKeyWithoutPlaintextErrorKind::InvalidKeyUsageException(inner) => Error::InvalidKeyUsageException(inner),
-                crate::error::GenerateDataKeyWithoutPlaintextErrorKind::KeyUnavailableException(inner) => Error::KeyUnavailableException(inner),
-                crate::error::GenerateDataKeyWithoutPlaintextErrorKind::KmsInternalException(inner) => Error::KmsInternalException(inner),
-                crate::error::GenerateDataKeyWithoutPlaintextErrorKind::KmsInvalidStateException(inner) => Error::KmsInvalidStateException(inner),
-                crate::error::GenerateDataKeyWithoutPlaintextErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
-                crate::error::GenerateDataKeyWithoutPlaintextErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GenerateDataKeyWithoutPlaintextError> for Error {
+    fn from(err: crate::error::GenerateDataKeyWithoutPlaintextError) -> Self {
+        match err.kind {
+            crate::error::GenerateDataKeyWithoutPlaintextErrorKind::DependencyTimeoutException(
+                inner,
+            ) => Error::DependencyTimeoutException(inner),
+            crate::error::GenerateDataKeyWithoutPlaintextErrorKind::DisabledException(inner) => {
+                Error::DisabledException(inner)
+            }
+            crate::error::GenerateDataKeyWithoutPlaintextErrorKind::InvalidGrantTokenException(
+                inner,
+            ) => Error::InvalidGrantTokenException(inner),
+            crate::error::GenerateDataKeyWithoutPlaintextErrorKind::InvalidKeyUsageException(
+                inner,
+            ) => Error::InvalidKeyUsageException(inner),
+            crate::error::GenerateDataKeyWithoutPlaintextErrorKind::KeyUnavailableException(
+                inner,
+            ) => Error::KeyUnavailableException(inner),
+            crate::error::GenerateDataKeyWithoutPlaintextErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::GenerateDataKeyWithoutPlaintextErrorKind::KmsInvalidStateException(
+                inner,
+            ) => Error::KmsInvalidStateException(inner),
+            crate::error::GenerateDataKeyWithoutPlaintextErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::GenerateDataKeyWithoutPlaintextErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -901,34 +1048,39 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GenerateMacError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GenerateMacErrorKind::DisabledException(inner) => {
-                        Error::DisabledException(inner)
-                    }
-                    crate::error::GenerateMacErrorKind::InvalidGrantTokenException(inner) => {
-                        Error::InvalidGrantTokenException(inner)
-                    }
-                    crate::error::GenerateMacErrorKind::InvalidKeyUsageException(inner) => {
-                        Error::InvalidKeyUsageException(inner)
-                    }
-                    crate::error::GenerateMacErrorKind::KeyUnavailableException(inner) => {
-                        Error::KeyUnavailableException(inner)
-                    }
-                    crate::error::GenerateMacErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::GenerateMacErrorKind::KmsInvalidStateException(inner) => {
-                        Error::KmsInvalidStateException(inner)
-                    }
-                    crate::error::GenerateMacErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::GenerateMacErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GenerateMacError> for Error {
+    fn from(err: crate::error::GenerateMacError) -> Self {
+        match err.kind {
+            crate::error::GenerateMacErrorKind::DisabledException(inner) => {
+                Error::DisabledException(inner)
+            }
+            crate::error::GenerateMacErrorKind::InvalidGrantTokenException(inner) => {
+                Error::InvalidGrantTokenException(inner)
+            }
+            crate::error::GenerateMacErrorKind::InvalidKeyUsageException(inner) => {
+                Error::InvalidKeyUsageException(inner)
+            }
+            crate::error::GenerateMacErrorKind::KeyUnavailableException(inner) => {
+                Error::KeyUnavailableException(inner)
+            }
+            crate::error::GenerateMacErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::GenerateMacErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::GenerateMacErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::GenerateMacErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -939,25 +1091,30 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GenerateRandomError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GenerateRandomErrorKind::CustomKeyStoreInvalidStateException(
-                        inner,
-                    ) => Error::CustomKeyStoreInvalidStateException(inner),
-                    crate::error::GenerateRandomErrorKind::CustomKeyStoreNotFoundException(
-                        inner,
-                    ) => Error::CustomKeyStoreNotFoundException(inner),
-                    crate::error::GenerateRandomErrorKind::DependencyTimeoutException(inner) => {
-                        Error::DependencyTimeoutException(inner)
-                    }
-                    crate::error::GenerateRandomErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::GenerateRandomErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GenerateRandomError> for Error {
+    fn from(err: crate::error::GenerateRandomError) -> Self {
+        match err.kind {
+            crate::error::GenerateRandomErrorKind::CustomKeyStoreInvalidStateException(inner) => {
+                Error::CustomKeyStoreInvalidStateException(inner)
+            }
+            crate::error::GenerateRandomErrorKind::CustomKeyStoreNotFoundException(inner) => {
+                Error::CustomKeyStoreNotFoundException(inner)
+            }
+            crate::error::GenerateRandomErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::GenerateRandomErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::GenerateRandomErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -968,28 +1125,33 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetKeyPolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetKeyPolicyErrorKind::DependencyTimeoutException(inner) => {
-                        Error::DependencyTimeoutException(inner)
-                    }
-                    crate::error::GetKeyPolicyErrorKind::InvalidArnException(inner) => {
-                        Error::InvalidArnException(inner)
-                    }
-                    crate::error::GetKeyPolicyErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::GetKeyPolicyErrorKind::KmsInvalidStateException(inner) => {
-                        Error::KmsInvalidStateException(inner)
-                    }
-                    crate::error::GetKeyPolicyErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::GetKeyPolicyErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetKeyPolicyError> for Error {
+    fn from(err: crate::error::GetKeyPolicyError) -> Self {
+        match err.kind {
+            crate::error::GetKeyPolicyErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::GetKeyPolicyErrorKind::InvalidArnException(inner) => {
+                Error::InvalidArnException(inner)
+            }
+            crate::error::GetKeyPolicyErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::GetKeyPolicyErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::GetKeyPolicyErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::GetKeyPolicyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1003,31 +1165,36 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetKeyRotationStatusErrorKind::DependencyTimeoutException(
-                        inner,
-                    ) => Error::DependencyTimeoutException(inner),
-                    crate::error::GetKeyRotationStatusErrorKind::InvalidArnException(inner) => {
-                        Error::InvalidArnException(inner)
-                    }
-                    crate::error::GetKeyRotationStatusErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::GetKeyRotationStatusErrorKind::KmsInvalidStateException(
-                        inner,
-                    ) => Error::KmsInvalidStateException(inner),
-                    crate::error::GetKeyRotationStatusErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::GetKeyRotationStatusErrorKind::UnsupportedOperationException(
-                        inner,
-                    ) => Error::UnsupportedOperationException(inner),
-                    crate::error::GetKeyRotationStatusErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetKeyRotationStatusError> for Error {
+    fn from(err: crate::error::GetKeyRotationStatusError) -> Self {
+        match err.kind {
+            crate::error::GetKeyRotationStatusErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::GetKeyRotationStatusErrorKind::InvalidArnException(inner) => {
+                Error::InvalidArnException(inner)
+            }
+            crate::error::GetKeyRotationStatusErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::GetKeyRotationStatusErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::GetKeyRotationStatusErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::GetKeyRotationStatusErrorKind::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::error::GetKeyRotationStatusErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1040,33 +1207,37 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetParametersForImportError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::GetParametersForImportErrorKind::DependencyTimeoutException(
-                    inner,
-                ) => Error::DependencyTimeoutException(inner),
-                crate::error::GetParametersForImportErrorKind::InvalidArnException(inner) => {
-                    Error::InvalidArnException(inner)
-                }
-                crate::error::GetParametersForImportErrorKind::KmsInternalException(inner) => {
-                    Error::KmsInternalException(inner)
-                }
-                crate::error::GetParametersForImportErrorKind::KmsInvalidStateException(inner) => {
-                    Error::KmsInvalidStateException(inner)
-                }
-                crate::error::GetParametersForImportErrorKind::NotFoundException(inner) => {
-                    Error::NotFoundException(inner)
-                }
-                crate::error::GetParametersForImportErrorKind::UnsupportedOperationException(
-                    inner,
-                ) => Error::UnsupportedOperationException(inner),
-                crate::error::GetParametersForImportErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetParametersForImportError> for Error {
+    fn from(err: crate::error::GetParametersForImportError) -> Self {
+        match err.kind {
+            crate::error::GetParametersForImportErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::GetParametersForImportErrorKind::InvalidArnException(inner) => {
+                Error::InvalidArnException(inner)
+            }
+            crate::error::GetParametersForImportErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::GetParametersForImportErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::GetParametersForImportErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::GetParametersForImportErrorKind::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::error::GetParametersForImportErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1077,43 +1248,48 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetPublicKeyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetPublicKeyErrorKind::DependencyTimeoutException(inner) => {
-                        Error::DependencyTimeoutException(inner)
-                    }
-                    crate::error::GetPublicKeyErrorKind::DisabledException(inner) => {
-                        Error::DisabledException(inner)
-                    }
-                    crate::error::GetPublicKeyErrorKind::InvalidArnException(inner) => {
-                        Error::InvalidArnException(inner)
-                    }
-                    crate::error::GetPublicKeyErrorKind::InvalidGrantTokenException(inner) => {
-                        Error::InvalidGrantTokenException(inner)
-                    }
-                    crate::error::GetPublicKeyErrorKind::InvalidKeyUsageException(inner) => {
-                        Error::InvalidKeyUsageException(inner)
-                    }
-                    crate::error::GetPublicKeyErrorKind::KeyUnavailableException(inner) => {
-                        Error::KeyUnavailableException(inner)
-                    }
-                    crate::error::GetPublicKeyErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::GetPublicKeyErrorKind::KmsInvalidStateException(inner) => {
-                        Error::KmsInvalidStateException(inner)
-                    }
-                    crate::error::GetPublicKeyErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::GetPublicKeyErrorKind::UnsupportedOperationException(inner) => {
-                        Error::UnsupportedOperationException(inner)
-                    }
-                    crate::error::GetPublicKeyErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetPublicKeyError> for Error {
+    fn from(err: crate::error::GetPublicKeyError) -> Self {
+        match err.kind {
+            crate::error::GetPublicKeyErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::GetPublicKeyErrorKind::DisabledException(inner) => {
+                Error::DisabledException(inner)
+            }
+            crate::error::GetPublicKeyErrorKind::InvalidArnException(inner) => {
+                Error::InvalidArnException(inner)
+            }
+            crate::error::GetPublicKeyErrorKind::InvalidGrantTokenException(inner) => {
+                Error::InvalidGrantTokenException(inner)
+            }
+            crate::error::GetPublicKeyErrorKind::InvalidKeyUsageException(inner) => {
+                Error::InvalidKeyUsageException(inner)
+            }
+            crate::error::GetPublicKeyErrorKind::KeyUnavailableException(inner) => {
+                Error::KeyUnavailableException(inner)
+            }
+            crate::error::GetPublicKeyErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::GetPublicKeyErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::GetPublicKeyErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::GetPublicKeyErrorKind::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::error::GetPublicKeyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1126,43 +1302,48 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ImportKeyMaterialErrorKind::DependencyTimeoutException(inner) => {
-                        Error::DependencyTimeoutException(inner)
-                    }
-                    crate::error::ImportKeyMaterialErrorKind::ExpiredImportTokenException(
-                        inner,
-                    ) => Error::ExpiredImportTokenException(inner),
-                    crate::error::ImportKeyMaterialErrorKind::IncorrectKeyMaterialException(
-                        inner,
-                    ) => Error::IncorrectKeyMaterialException(inner),
-                    crate::error::ImportKeyMaterialErrorKind::InvalidArnException(inner) => {
-                        Error::InvalidArnException(inner)
-                    }
-                    crate::error::ImportKeyMaterialErrorKind::InvalidCiphertextException(inner) => {
-                        Error::InvalidCiphertextException(inner)
-                    }
-                    crate::error::ImportKeyMaterialErrorKind::InvalidImportTokenException(
-                        inner,
-                    ) => Error::InvalidImportTokenException(inner),
-                    crate::error::ImportKeyMaterialErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::ImportKeyMaterialErrorKind::KmsInvalidStateException(inner) => {
-                        Error::KmsInvalidStateException(inner)
-                    }
-                    crate::error::ImportKeyMaterialErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::ImportKeyMaterialErrorKind::UnsupportedOperationException(
-                        inner,
-                    ) => Error::UnsupportedOperationException(inner),
-                    crate::error::ImportKeyMaterialErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ImportKeyMaterialError> for Error {
+    fn from(err: crate::error::ImportKeyMaterialError) -> Self {
+        match err.kind {
+            crate::error::ImportKeyMaterialErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::ImportKeyMaterialErrorKind::ExpiredImportTokenException(inner) => {
+                Error::ExpiredImportTokenException(inner)
+            }
+            crate::error::ImportKeyMaterialErrorKind::IncorrectKeyMaterialException(inner) => {
+                Error::IncorrectKeyMaterialException(inner)
+            }
+            crate::error::ImportKeyMaterialErrorKind::InvalidArnException(inner) => {
+                Error::InvalidArnException(inner)
+            }
+            crate::error::ImportKeyMaterialErrorKind::InvalidCiphertextException(inner) => {
+                Error::InvalidCiphertextException(inner)
+            }
+            crate::error::ImportKeyMaterialErrorKind::InvalidImportTokenException(inner) => {
+                Error::InvalidImportTokenException(inner)
+            }
+            crate::error::ImportKeyMaterialErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::ImportKeyMaterialErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::ImportKeyMaterialErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::ImportKeyMaterialErrorKind::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::error::ImportKeyMaterialErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1173,28 +1354,33 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListAliasesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListAliasesErrorKind::DependencyTimeoutException(inner) => {
-                        Error::DependencyTimeoutException(inner)
-                    }
-                    crate::error::ListAliasesErrorKind::InvalidArnException(inner) => {
-                        Error::InvalidArnException(inner)
-                    }
-                    crate::error::ListAliasesErrorKind::InvalidMarkerException(inner) => {
-                        Error::InvalidMarkerException(inner)
-                    }
-                    crate::error::ListAliasesErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::ListAliasesErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::ListAliasesErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListAliasesError> for Error {
+    fn from(err: crate::error::ListAliasesError) -> Self {
+        match err.kind {
+            crate::error::ListAliasesErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::ListAliasesErrorKind::InvalidArnException(inner) => {
+                Error::InvalidArnException(inner)
+            }
+            crate::error::ListAliasesErrorKind::InvalidMarkerException(inner) => {
+                Error::InvalidMarkerException(inner)
+            }
+            crate::error::ListAliasesErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::ListAliasesErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::ListAliasesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1205,34 +1391,39 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListGrantsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListGrantsErrorKind::DependencyTimeoutException(inner) => {
-                        Error::DependencyTimeoutException(inner)
-                    }
-                    crate::error::ListGrantsErrorKind::InvalidArnException(inner) => {
-                        Error::InvalidArnException(inner)
-                    }
-                    crate::error::ListGrantsErrorKind::InvalidGrantIdException(inner) => {
-                        Error::InvalidGrantIdException(inner)
-                    }
-                    crate::error::ListGrantsErrorKind::InvalidMarkerException(inner) => {
-                        Error::InvalidMarkerException(inner)
-                    }
-                    crate::error::ListGrantsErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::ListGrantsErrorKind::KmsInvalidStateException(inner) => {
-                        Error::KmsInvalidStateException(inner)
-                    }
-                    crate::error::ListGrantsErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::ListGrantsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListGrantsError> for Error {
+    fn from(err: crate::error::ListGrantsError) -> Self {
+        match err.kind {
+            crate::error::ListGrantsErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::ListGrantsErrorKind::InvalidArnException(inner) => {
+                Error::InvalidArnException(inner)
+            }
+            crate::error::ListGrantsErrorKind::InvalidGrantIdException(inner) => {
+                Error::InvalidGrantIdException(inner)
+            }
+            crate::error::ListGrantsErrorKind::InvalidMarkerException(inner) => {
+                Error::InvalidMarkerException(inner)
+            }
+            crate::error::ListGrantsErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::ListGrantsErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::ListGrantsErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::ListGrantsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1243,28 +1434,33 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListKeyPoliciesError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListKeyPoliciesErrorKind::DependencyTimeoutException(inner) => {
-                        Error::DependencyTimeoutException(inner)
-                    }
-                    crate::error::ListKeyPoliciesErrorKind::InvalidArnException(inner) => {
-                        Error::InvalidArnException(inner)
-                    }
-                    crate::error::ListKeyPoliciesErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::ListKeyPoliciesErrorKind::KmsInvalidStateException(inner) => {
-                        Error::KmsInvalidStateException(inner)
-                    }
-                    crate::error::ListKeyPoliciesErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::ListKeyPoliciesErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListKeyPoliciesError> for Error {
+    fn from(err: crate::error::ListKeyPoliciesError) -> Self {
+        match err.kind {
+            crate::error::ListKeyPoliciesErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::ListKeyPoliciesErrorKind::InvalidArnException(inner) => {
+                Error::InvalidArnException(inner)
+            }
+            crate::error::ListKeyPoliciesErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::ListKeyPoliciesErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::ListKeyPoliciesErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::ListKeyPoliciesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1275,22 +1471,27 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListKeysError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListKeysErrorKind::DependencyTimeoutException(inner) => {
-                        Error::DependencyTimeoutException(inner)
-                    }
-                    crate::error::ListKeysErrorKind::InvalidMarkerException(inner) => {
-                        Error::InvalidMarkerException(inner)
-                    }
-                    crate::error::ListKeysErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::ListKeysErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListKeysError> for Error {
+    fn from(err: crate::error::ListKeysError) -> Self {
+        match err.kind {
+            crate::error::ListKeysErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::ListKeysErrorKind::InvalidMarkerException(inner) => {
+                Error::InvalidMarkerException(inner)
+            }
+            crate::error::ListKeysErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::ListKeysErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1303,25 +1504,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListResourceTagsErrorKind::InvalidArnException(inner) => {
-                        Error::InvalidArnException(inner)
-                    }
-                    crate::error::ListResourceTagsErrorKind::InvalidMarkerException(inner) => {
-                        Error::InvalidMarkerException(inner)
-                    }
-                    crate::error::ListResourceTagsErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::ListResourceTagsErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::ListResourceTagsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListResourceTagsError> for Error {
+    fn from(err: crate::error::ListResourceTagsError) -> Self {
+        match err.kind {
+            crate::error::ListResourceTagsErrorKind::InvalidArnException(inner) => {
+                Error::InvalidArnException(inner)
+            }
+            crate::error::ListResourceTagsErrorKind::InvalidMarkerException(inner) => {
+                Error::InvalidMarkerException(inner)
+            }
+            crate::error::ListResourceTagsErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::ListResourceTagsErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::ListResourceTagsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1334,28 +1540,33 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListRetirableGrantsErrorKind::DependencyTimeoutException(
-                        inner,
-                    ) => Error::DependencyTimeoutException(inner),
-                    crate::error::ListRetirableGrantsErrorKind::InvalidArnException(inner) => {
-                        Error::InvalidArnException(inner)
-                    }
-                    crate::error::ListRetirableGrantsErrorKind::InvalidMarkerException(inner) => {
-                        Error::InvalidMarkerException(inner)
-                    }
-                    crate::error::ListRetirableGrantsErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::ListRetirableGrantsErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::ListRetirableGrantsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListRetirableGrantsError> for Error {
+    fn from(err: crate::error::ListRetirableGrantsError) -> Self {
+        match err.kind {
+            crate::error::ListRetirableGrantsErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::ListRetirableGrantsErrorKind::InvalidArnException(inner) => {
+                Error::InvalidArnException(inner)
+            }
+            crate::error::ListRetirableGrantsErrorKind::InvalidMarkerException(inner) => {
+                Error::InvalidMarkerException(inner)
+            }
+            crate::error::ListRetirableGrantsErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::ListRetirableGrantsErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::ListRetirableGrantsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1366,37 +1577,42 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::PutKeyPolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::PutKeyPolicyErrorKind::DependencyTimeoutException(inner) => {
-                        Error::DependencyTimeoutException(inner)
-                    }
-                    crate::error::PutKeyPolicyErrorKind::InvalidArnException(inner) => {
-                        Error::InvalidArnException(inner)
-                    }
-                    crate::error::PutKeyPolicyErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::PutKeyPolicyErrorKind::KmsInvalidStateException(inner) => {
-                        Error::KmsInvalidStateException(inner)
-                    }
-                    crate::error::PutKeyPolicyErrorKind::LimitExceededException(inner) => {
-                        Error::LimitExceededException(inner)
-                    }
-                    crate::error::PutKeyPolicyErrorKind::MalformedPolicyDocumentException(
-                        inner,
-                    ) => Error::MalformedPolicyDocumentException(inner),
-                    crate::error::PutKeyPolicyErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::PutKeyPolicyErrorKind::UnsupportedOperationException(inner) => {
-                        Error::UnsupportedOperationException(inner)
-                    }
-                    crate::error::PutKeyPolicyErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::PutKeyPolicyError> for Error {
+    fn from(err: crate::error::PutKeyPolicyError) -> Self {
+        match err.kind {
+            crate::error::PutKeyPolicyErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::PutKeyPolicyErrorKind::InvalidArnException(inner) => {
+                Error::InvalidArnException(inner)
+            }
+            crate::error::PutKeyPolicyErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::PutKeyPolicyErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::PutKeyPolicyErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::PutKeyPolicyErrorKind::MalformedPolicyDocumentException(inner) => {
+                Error::MalformedPolicyDocumentException(inner)
+            }
+            crate::error::PutKeyPolicyErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::PutKeyPolicyErrorKind::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::error::PutKeyPolicyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1407,43 +1623,48 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ReEncryptError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ReEncryptErrorKind::DependencyTimeoutException(inner) => {
-                        Error::DependencyTimeoutException(inner)
-                    }
-                    crate::error::ReEncryptErrorKind::DisabledException(inner) => {
-                        Error::DisabledException(inner)
-                    }
-                    crate::error::ReEncryptErrorKind::IncorrectKeyException(inner) => {
-                        Error::IncorrectKeyException(inner)
-                    }
-                    crate::error::ReEncryptErrorKind::InvalidCiphertextException(inner) => {
-                        Error::InvalidCiphertextException(inner)
-                    }
-                    crate::error::ReEncryptErrorKind::InvalidGrantTokenException(inner) => {
-                        Error::InvalidGrantTokenException(inner)
-                    }
-                    crate::error::ReEncryptErrorKind::InvalidKeyUsageException(inner) => {
-                        Error::InvalidKeyUsageException(inner)
-                    }
-                    crate::error::ReEncryptErrorKind::KeyUnavailableException(inner) => {
-                        Error::KeyUnavailableException(inner)
-                    }
-                    crate::error::ReEncryptErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::ReEncryptErrorKind::KmsInvalidStateException(inner) => {
-                        Error::KmsInvalidStateException(inner)
-                    }
-                    crate::error::ReEncryptErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::ReEncryptErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ReEncryptError> for Error {
+    fn from(err: crate::error::ReEncryptError) -> Self {
+        match err.kind {
+            crate::error::ReEncryptErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::ReEncryptErrorKind::DisabledException(inner) => {
+                Error::DisabledException(inner)
+            }
+            crate::error::ReEncryptErrorKind::IncorrectKeyException(inner) => {
+                Error::IncorrectKeyException(inner)
+            }
+            crate::error::ReEncryptErrorKind::InvalidCiphertextException(inner) => {
+                Error::InvalidCiphertextException(inner)
+            }
+            crate::error::ReEncryptErrorKind::InvalidGrantTokenException(inner) => {
+                Error::InvalidGrantTokenException(inner)
+            }
+            crate::error::ReEncryptErrorKind::InvalidKeyUsageException(inner) => {
+                Error::InvalidKeyUsageException(inner)
+            }
+            crate::error::ReEncryptErrorKind::KeyUnavailableException(inner) => {
+                Error::KeyUnavailableException(inner)
+            }
+            crate::error::ReEncryptErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::ReEncryptErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::ReEncryptErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::ReEncryptErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1454,43 +1675,46 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ReplicateKeyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ReplicateKeyErrorKind::AlreadyExistsException(inner) => {
-                        Error::AlreadyExistsException(inner)
-                    }
-                    crate::error::ReplicateKeyErrorKind::DisabledException(inner) => {
-                        Error::DisabledException(inner)
-                    }
-                    crate::error::ReplicateKeyErrorKind::InvalidArnException(inner) => {
-                        Error::InvalidArnException(inner)
-                    }
-                    crate::error::ReplicateKeyErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::ReplicateKeyErrorKind::KmsInvalidStateException(inner) => {
-                        Error::KmsInvalidStateException(inner)
-                    }
-                    crate::error::ReplicateKeyErrorKind::LimitExceededException(inner) => {
-                        Error::LimitExceededException(inner)
-                    }
-                    crate::error::ReplicateKeyErrorKind::MalformedPolicyDocumentException(
-                        inner,
-                    ) => Error::MalformedPolicyDocumentException(inner),
-                    crate::error::ReplicateKeyErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::ReplicateKeyErrorKind::TagException(inner) => {
-                        Error::TagException(inner)
-                    }
-                    crate::error::ReplicateKeyErrorKind::UnsupportedOperationException(inner) => {
-                        Error::UnsupportedOperationException(inner)
-                    }
-                    crate::error::ReplicateKeyErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ReplicateKeyError> for Error {
+    fn from(err: crate::error::ReplicateKeyError) -> Self {
+        match err.kind {
+            crate::error::ReplicateKeyErrorKind::AlreadyExistsException(inner) => {
+                Error::AlreadyExistsException(inner)
+            }
+            crate::error::ReplicateKeyErrorKind::DisabledException(inner) => {
+                Error::DisabledException(inner)
+            }
+            crate::error::ReplicateKeyErrorKind::InvalidArnException(inner) => {
+                Error::InvalidArnException(inner)
+            }
+            crate::error::ReplicateKeyErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::ReplicateKeyErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::ReplicateKeyErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::ReplicateKeyErrorKind::MalformedPolicyDocumentException(inner) => {
+                Error::MalformedPolicyDocumentException(inner)
+            }
+            crate::error::ReplicateKeyErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::ReplicateKeyErrorKind::TagException(inner) => Error::TagException(inner),
+            crate::error::ReplicateKeyErrorKind::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::error::ReplicateKeyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1501,34 +1725,39 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::RetireGrantError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::RetireGrantErrorKind::DependencyTimeoutException(inner) => {
-                        Error::DependencyTimeoutException(inner)
-                    }
-                    crate::error::RetireGrantErrorKind::InvalidArnException(inner) => {
-                        Error::InvalidArnException(inner)
-                    }
-                    crate::error::RetireGrantErrorKind::InvalidGrantIdException(inner) => {
-                        Error::InvalidGrantIdException(inner)
-                    }
-                    crate::error::RetireGrantErrorKind::InvalidGrantTokenException(inner) => {
-                        Error::InvalidGrantTokenException(inner)
-                    }
-                    crate::error::RetireGrantErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::RetireGrantErrorKind::KmsInvalidStateException(inner) => {
-                        Error::KmsInvalidStateException(inner)
-                    }
-                    crate::error::RetireGrantErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::RetireGrantErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::RetireGrantError> for Error {
+    fn from(err: crate::error::RetireGrantError) -> Self {
+        match err.kind {
+            crate::error::RetireGrantErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::RetireGrantErrorKind::InvalidArnException(inner) => {
+                Error::InvalidArnException(inner)
+            }
+            crate::error::RetireGrantErrorKind::InvalidGrantIdException(inner) => {
+                Error::InvalidGrantIdException(inner)
+            }
+            crate::error::RetireGrantErrorKind::InvalidGrantTokenException(inner) => {
+                Error::InvalidGrantTokenException(inner)
+            }
+            crate::error::RetireGrantErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::RetireGrantErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::RetireGrantErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::RetireGrantErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1539,31 +1768,36 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::RevokeGrantError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::RevokeGrantErrorKind::DependencyTimeoutException(inner) => {
-                        Error::DependencyTimeoutException(inner)
-                    }
-                    crate::error::RevokeGrantErrorKind::InvalidArnException(inner) => {
-                        Error::InvalidArnException(inner)
-                    }
-                    crate::error::RevokeGrantErrorKind::InvalidGrantIdException(inner) => {
-                        Error::InvalidGrantIdException(inner)
-                    }
-                    crate::error::RevokeGrantErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::RevokeGrantErrorKind::KmsInvalidStateException(inner) => {
-                        Error::KmsInvalidStateException(inner)
-                    }
-                    crate::error::RevokeGrantErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::RevokeGrantErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::RevokeGrantError> for Error {
+    fn from(err: crate::error::RevokeGrantError) -> Self {
+        match err.kind {
+            crate::error::RevokeGrantErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::RevokeGrantErrorKind::InvalidArnException(inner) => {
+                Error::InvalidArnException(inner)
+            }
+            crate::error::RevokeGrantErrorKind::InvalidGrantIdException(inner) => {
+                Error::InvalidGrantIdException(inner)
+            }
+            crate::error::RevokeGrantErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::RevokeGrantErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::RevokeGrantErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::RevokeGrantErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1576,28 +1810,33 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ScheduleKeyDeletionErrorKind::DependencyTimeoutException(
-                        inner,
-                    ) => Error::DependencyTimeoutException(inner),
-                    crate::error::ScheduleKeyDeletionErrorKind::InvalidArnException(inner) => {
-                        Error::InvalidArnException(inner)
-                    }
-                    crate::error::ScheduleKeyDeletionErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::ScheduleKeyDeletionErrorKind::KmsInvalidStateException(inner) => {
-                        Error::KmsInvalidStateException(inner)
-                    }
-                    crate::error::ScheduleKeyDeletionErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::ScheduleKeyDeletionErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ScheduleKeyDeletionError> for Error {
+    fn from(err: crate::error::ScheduleKeyDeletionError) -> Self {
+        match err.kind {
+            crate::error::ScheduleKeyDeletionErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::ScheduleKeyDeletionErrorKind::InvalidArnException(inner) => {
+                Error::InvalidArnException(inner)
+            }
+            crate::error::ScheduleKeyDeletionErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::ScheduleKeyDeletionErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::ScheduleKeyDeletionErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::ScheduleKeyDeletionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1608,37 +1847,42 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::SignError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::SignErrorKind::DependencyTimeoutException(inner) => {
-                        Error::DependencyTimeoutException(inner)
-                    }
-                    crate::error::SignErrorKind::DisabledException(inner) => {
-                        Error::DisabledException(inner)
-                    }
-                    crate::error::SignErrorKind::InvalidGrantTokenException(inner) => {
-                        Error::InvalidGrantTokenException(inner)
-                    }
-                    crate::error::SignErrorKind::InvalidKeyUsageException(inner) => {
-                        Error::InvalidKeyUsageException(inner)
-                    }
-                    crate::error::SignErrorKind::KeyUnavailableException(inner) => {
-                        Error::KeyUnavailableException(inner)
-                    }
-                    crate::error::SignErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::SignErrorKind::KmsInvalidStateException(inner) => {
-                        Error::KmsInvalidStateException(inner)
-                    }
-                    crate::error::SignErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::SignErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::SignError> for Error {
+    fn from(err: crate::error::SignError) -> Self {
+        match err.kind {
+            crate::error::SignErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::SignErrorKind::DisabledException(inner) => {
+                Error::DisabledException(inner)
+            }
+            crate::error::SignErrorKind::InvalidGrantTokenException(inner) => {
+                Error::InvalidGrantTokenException(inner)
+            }
+            crate::error::SignErrorKind::InvalidKeyUsageException(inner) => {
+                Error::InvalidKeyUsageException(inner)
+            }
+            crate::error::SignErrorKind::KeyUnavailableException(inner) => {
+                Error::KeyUnavailableException(inner)
+            }
+            crate::error::SignErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::SignErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::SignErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::SignErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1649,31 +1893,34 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::TagResourceErrorKind::InvalidArnException(inner) => {
-                        Error::InvalidArnException(inner)
-                    }
-                    crate::error::TagResourceErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::TagResourceErrorKind::KmsInvalidStateException(inner) => {
-                        Error::KmsInvalidStateException(inner)
-                    }
-                    crate::error::TagResourceErrorKind::LimitExceededException(inner) => {
-                        Error::LimitExceededException(inner)
-                    }
-                    crate::error::TagResourceErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::TagResourceErrorKind::TagException(inner) => {
-                        Error::TagException(inner)
-                    }
-                    crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::TagResourceError> for Error {
+    fn from(err: crate::error::TagResourceError) -> Self {
+        match err.kind {
+            crate::error::TagResourceErrorKind::InvalidArnException(inner) => {
+                Error::InvalidArnException(inner)
+            }
+            crate::error::TagResourceErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::TagResourceErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::TagResourceErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::TagResourceErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::TagResourceErrorKind::TagException(inner) => Error::TagException(inner),
+            crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1684,28 +1931,31 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::UntagResourceErrorKind::InvalidArnException(inner) => {
-                        Error::InvalidArnException(inner)
-                    }
-                    crate::error::UntagResourceErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::UntagResourceErrorKind::KmsInvalidStateException(inner) => {
-                        Error::KmsInvalidStateException(inner)
-                    }
-                    crate::error::UntagResourceErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::UntagResourceErrorKind::TagException(inner) => {
-                        Error::TagException(inner)
-                    }
-                    crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UntagResourceError> for Error {
+    fn from(err: crate::error::UntagResourceError) -> Self {
+        match err.kind {
+            crate::error::UntagResourceErrorKind::InvalidArnException(inner) => {
+                Error::InvalidArnException(inner)
+            }
+            crate::error::UntagResourceErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::UntagResourceErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::UntagResourceErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::UntagResourceErrorKind::TagException(inner) => Error::TagException(inner),
+            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1716,28 +1966,33 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateAliasError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::UpdateAliasErrorKind::DependencyTimeoutException(inner) => {
-                        Error::DependencyTimeoutException(inner)
-                    }
-                    crate::error::UpdateAliasErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::UpdateAliasErrorKind::KmsInvalidStateException(inner) => {
-                        Error::KmsInvalidStateException(inner)
-                    }
-                    crate::error::UpdateAliasErrorKind::LimitExceededException(inner) => {
-                        Error::LimitExceededException(inner)
-                    }
-                    crate::error::UpdateAliasErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::UpdateAliasErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateAliasError> for Error {
+    fn from(err: crate::error::UpdateAliasError) -> Self {
+        match err.kind {
+            crate::error::UpdateAliasErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::UpdateAliasErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::UpdateAliasErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::UpdateAliasErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::UpdateAliasErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::UpdateAliasErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1750,18 +2005,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateCustomKeyStoreError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::UpdateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(inner) => Error::CloudHsmClusterInvalidConfigurationException(inner),
-                crate::error::UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(inner) => Error::CloudHsmClusterNotActiveException(inner),
-                crate::error::UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException(inner) => Error::CloudHsmClusterNotFoundException(inner),
-                crate::error::UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotRelatedException(inner) => Error::CloudHsmClusterNotRelatedException(inner),
-                crate::error::UpdateCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(inner) => Error::CustomKeyStoreInvalidStateException(inner),
-                crate::error::UpdateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException(inner) => Error::CustomKeyStoreNameInUseException(inner),
-                crate::error::UpdateCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(inner) => Error::CustomKeyStoreNotFoundException(inner),
-                crate::error::UpdateCustomKeyStoreErrorKind::KmsInternalException(inner) => Error::KmsInternalException(inner),
-                crate::error::UpdateCustomKeyStoreErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateCustomKeyStoreError> for Error {
+    fn from(err: crate::error::UpdateCustomKeyStoreError) -> Self {
+        match err.kind {
+            crate::error::UpdateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(inner) => Error::CloudHsmClusterInvalidConfigurationException(inner),
+            crate::error::UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(inner) => Error::CloudHsmClusterNotActiveException(inner),
+            crate::error::UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException(inner) => Error::CloudHsmClusterNotFoundException(inner),
+            crate::error::UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotRelatedException(inner) => Error::CloudHsmClusterNotRelatedException(inner),
+            crate::error::UpdateCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(inner) => Error::CustomKeyStoreInvalidStateException(inner),
+            crate::error::UpdateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException(inner) => Error::CustomKeyStoreNameInUseException(inner),
+            crate::error::UpdateCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(inner) => Error::CustomKeyStoreNotFoundException(inner),
+            crate::error::UpdateCustomKeyStoreErrorKind::KmsInternalException(inner) => Error::KmsInternalException(inner),
+            crate::error::UpdateCustomKeyStoreErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -1775,28 +2037,33 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::UpdateKeyDescriptionErrorKind::DependencyTimeoutException(
-                        inner,
-                    ) => Error::DependencyTimeoutException(inner),
-                    crate::error::UpdateKeyDescriptionErrorKind::InvalidArnException(inner) => {
-                        Error::InvalidArnException(inner)
-                    }
-                    crate::error::UpdateKeyDescriptionErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::UpdateKeyDescriptionErrorKind::KmsInvalidStateException(
-                        inner,
-                    ) => Error::KmsInvalidStateException(inner),
-                    crate::error::UpdateKeyDescriptionErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::UpdateKeyDescriptionErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateKeyDescriptionError> for Error {
+    fn from(err: crate::error::UpdateKeyDescriptionError) -> Self {
+        match err.kind {
+            crate::error::UpdateKeyDescriptionErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::UpdateKeyDescriptionErrorKind::InvalidArnException(inner) => {
+                Error::InvalidArnException(inner)
+            }
+            crate::error::UpdateKeyDescriptionErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::UpdateKeyDescriptionErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::UpdateKeyDescriptionErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::UpdateKeyDescriptionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1809,31 +2076,36 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::UpdatePrimaryRegionErrorKind::DisabledException(inner) => {
-                        Error::DisabledException(inner)
-                    }
-                    crate::error::UpdatePrimaryRegionErrorKind::InvalidArnException(inner) => {
-                        Error::InvalidArnException(inner)
-                    }
-                    crate::error::UpdatePrimaryRegionErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::UpdatePrimaryRegionErrorKind::KmsInvalidStateException(inner) => {
-                        Error::KmsInvalidStateException(inner)
-                    }
-                    crate::error::UpdatePrimaryRegionErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::UpdatePrimaryRegionErrorKind::UnsupportedOperationException(
-                        inner,
-                    ) => Error::UnsupportedOperationException(inner),
-                    crate::error::UpdatePrimaryRegionErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdatePrimaryRegionError> for Error {
+    fn from(err: crate::error::UpdatePrimaryRegionError) -> Self {
+        match err.kind {
+            crate::error::UpdatePrimaryRegionErrorKind::DisabledException(inner) => {
+                Error::DisabledException(inner)
+            }
+            crate::error::UpdatePrimaryRegionErrorKind::InvalidArnException(inner) => {
+                Error::InvalidArnException(inner)
+            }
+            crate::error::UpdatePrimaryRegionErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::UpdatePrimaryRegionErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::UpdatePrimaryRegionErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::UpdatePrimaryRegionErrorKind::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::error::UpdatePrimaryRegionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1844,40 +2116,45 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::VerifyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::VerifyErrorKind::DependencyTimeoutException(inner) => {
-                        Error::DependencyTimeoutException(inner)
-                    }
-                    crate::error::VerifyErrorKind::DisabledException(inner) => {
-                        Error::DisabledException(inner)
-                    }
-                    crate::error::VerifyErrorKind::InvalidGrantTokenException(inner) => {
-                        Error::InvalidGrantTokenException(inner)
-                    }
-                    crate::error::VerifyErrorKind::InvalidKeyUsageException(inner) => {
-                        Error::InvalidKeyUsageException(inner)
-                    }
-                    crate::error::VerifyErrorKind::KeyUnavailableException(inner) => {
-                        Error::KeyUnavailableException(inner)
-                    }
-                    crate::error::VerifyErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::VerifyErrorKind::KmsInvalidSignatureException(inner) => {
-                        Error::KmsInvalidSignatureException(inner)
-                    }
-                    crate::error::VerifyErrorKind::KmsInvalidStateException(inner) => {
-                        Error::KmsInvalidStateException(inner)
-                    }
-                    crate::error::VerifyErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::VerifyErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::VerifyError> for Error {
+    fn from(err: crate::error::VerifyError) -> Self {
+        match err.kind {
+            crate::error::VerifyErrorKind::DependencyTimeoutException(inner) => {
+                Error::DependencyTimeoutException(inner)
+            }
+            crate::error::VerifyErrorKind::DisabledException(inner) => {
+                Error::DisabledException(inner)
+            }
+            crate::error::VerifyErrorKind::InvalidGrantTokenException(inner) => {
+                Error::InvalidGrantTokenException(inner)
+            }
+            crate::error::VerifyErrorKind::InvalidKeyUsageException(inner) => {
+                Error::InvalidKeyUsageException(inner)
+            }
+            crate::error::VerifyErrorKind::KeyUnavailableException(inner) => {
+                Error::KeyUnavailableException(inner)
+            }
+            crate::error::VerifyErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::VerifyErrorKind::KmsInvalidSignatureException(inner) => {
+                Error::KmsInvalidSignatureException(inner)
+            }
+            crate::error::VerifyErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::VerifyErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::VerifyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1888,37 +2165,42 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::VerifyMacError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::VerifyMacErrorKind::DisabledException(inner) => {
-                        Error::DisabledException(inner)
-                    }
-                    crate::error::VerifyMacErrorKind::InvalidGrantTokenException(inner) => {
-                        Error::InvalidGrantTokenException(inner)
-                    }
-                    crate::error::VerifyMacErrorKind::InvalidKeyUsageException(inner) => {
-                        Error::InvalidKeyUsageException(inner)
-                    }
-                    crate::error::VerifyMacErrorKind::KeyUnavailableException(inner) => {
-                        Error::KeyUnavailableException(inner)
-                    }
-                    crate::error::VerifyMacErrorKind::KmsInternalException(inner) => {
-                        Error::KmsInternalException(inner)
-                    }
-                    crate::error::VerifyMacErrorKind::KmsInvalidMacException(inner) => {
-                        Error::KmsInvalidMacException(inner)
-                    }
-                    crate::error::VerifyMacErrorKind::KmsInvalidStateException(inner) => {
-                        Error::KmsInvalidStateException(inner)
-                    }
-                    crate::error::VerifyMacErrorKind::NotFoundException(inner) => {
-                        Error::NotFoundException(inner)
-                    }
-                    crate::error::VerifyMacErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::VerifyMacError> for Error {
+    fn from(err: crate::error::VerifyMacError) -> Self {
+        match err.kind {
+            crate::error::VerifyMacErrorKind::DisabledException(inner) => {
+                Error::DisabledException(inner)
+            }
+            crate::error::VerifyMacErrorKind::InvalidGrantTokenException(inner) => {
+                Error::InvalidGrantTokenException(inner)
+            }
+            crate::error::VerifyMacErrorKind::InvalidKeyUsageException(inner) => {
+                Error::InvalidKeyUsageException(inner)
+            }
+            crate::error::VerifyMacErrorKind::KeyUnavailableException(inner) => {
+                Error::KeyUnavailableException(inner)
+            }
+            crate::error::VerifyMacErrorKind::KmsInternalException(inner) => {
+                Error::KmsInternalException(inner)
+            }
+            crate::error::VerifyMacErrorKind::KmsInvalidMacException(inner) => {
+                Error::KmsInvalidMacException(inner)
+            }
+            crate::error::VerifyMacErrorKind::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::error::VerifyMacErrorKind::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::VerifyMacErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }

@@ -95,28 +95,33 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AssociateWebACLError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::AssociateWebACLErrorKind::WafInternalErrorException(inner) => {
-                        Error::WafInternalErrorException(inner)
-                    }
-                    crate::error::AssociateWebACLErrorKind::WafInvalidOperationException(inner) => {
-                        Error::WafInvalidOperationException(inner)
-                    }
-                    crate::error::AssociateWebACLErrorKind::WafInvalidParameterException(inner) => {
-                        Error::WafInvalidParameterException(inner)
-                    }
-                    crate::error::AssociateWebACLErrorKind::WafNonexistentItemException(inner) => {
-                        Error::WafNonexistentItemException(inner)
-                    }
-                    crate::error::AssociateWebACLErrorKind::WafUnavailableEntityException(
-                        inner,
-                    ) => Error::WafUnavailableEntityException(inner),
-                    crate::error::AssociateWebACLErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::AssociateWebACLError> for Error {
+    fn from(err: crate::error::AssociateWebACLError) -> Self {
+        match err.kind {
+            crate::error::AssociateWebACLErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::AssociateWebACLErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::AssociateWebACLErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::AssociateWebACLErrorKind::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::error::AssociateWebACLErrorKind::WafUnavailableEntityException(inner) => {
+                Error::WafUnavailableEntityException(inner)
+            }
+            crate::error::AssociateWebACLErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -126,19 +131,46 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CheckCapacityError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::CheckCapacityErrorKind::WafExpiredManagedRuleGroupVersionException(inner) => Error::WafExpiredManagedRuleGroupVersionException(inner),
-                crate::error::CheckCapacityErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
-                crate::error::CheckCapacityErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
-                crate::error::CheckCapacityErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
-                crate::error::CheckCapacityErrorKind::WafInvalidResourceException(inner) => Error::WafInvalidResourceException(inner),
-                crate::error::CheckCapacityErrorKind::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
-                crate::error::CheckCapacityErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
-                crate::error::CheckCapacityErrorKind::WafSubscriptionNotFoundException(inner) => Error::WafSubscriptionNotFoundException(inner),
-                crate::error::CheckCapacityErrorKind::WafUnavailableEntityException(inner) => Error::WafUnavailableEntityException(inner),
-                crate::error::CheckCapacityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CheckCapacityError> for Error {
+    fn from(err: crate::error::CheckCapacityError) -> Self {
+        match err.kind {
+            crate::error::CheckCapacityErrorKind::WafExpiredManagedRuleGroupVersionException(
+                inner,
+            ) => Error::WafExpiredManagedRuleGroupVersionException(inner),
+            crate::error::CheckCapacityErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::CheckCapacityErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::CheckCapacityErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::CheckCapacityErrorKind::WafInvalidResourceException(inner) => {
+                Error::WafInvalidResourceException(inner)
+            }
+            crate::error::CheckCapacityErrorKind::WafLimitsExceededException(inner) => {
+                Error::WafLimitsExceededException(inner)
+            }
+            crate::error::CheckCapacityErrorKind::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::error::CheckCapacityErrorKind::WafSubscriptionNotFoundException(inner) => {
+                Error::WafSubscriptionNotFoundException(inner)
+            }
+            crate::error::CheckCapacityErrorKind::WafUnavailableEntityException(inner) => {
+                Error::WafUnavailableEntityException(inner)
+            }
+            crate::error::CheckCapacityErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -149,37 +181,42 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateIPSetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::CreateIPSetErrorKind::WafDuplicateItemException(inner) => {
-                        Error::WafDuplicateItemException(inner)
-                    }
-                    crate::error::CreateIPSetErrorKind::WafInternalErrorException(inner) => {
-                        Error::WafInternalErrorException(inner)
-                    }
-                    crate::error::CreateIPSetErrorKind::WafInvalidOperationException(inner) => {
-                        Error::WafInvalidOperationException(inner)
-                    }
-                    crate::error::CreateIPSetErrorKind::WafInvalidParameterException(inner) => {
-                        Error::WafInvalidParameterException(inner)
-                    }
-                    crate::error::CreateIPSetErrorKind::WafLimitsExceededException(inner) => {
-                        Error::WafLimitsExceededException(inner)
-                    }
-                    crate::error::CreateIPSetErrorKind::WafOptimisticLockException(inner) => {
-                        Error::WafOptimisticLockException(inner)
-                    }
-                    crate::error::CreateIPSetErrorKind::WafTagOperationException(inner) => {
-                        Error::WafTagOperationException(inner)
-                    }
-                    crate::error::CreateIPSetErrorKind::WafTagOperationInternalErrorException(
-                        inner,
-                    ) => Error::WafTagOperationInternalErrorException(inner),
-                    crate::error::CreateIPSetErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateIPSetError> for Error {
+    fn from(err: crate::error::CreateIPSetError) -> Self {
+        match err.kind {
+            crate::error::CreateIPSetErrorKind::WafDuplicateItemException(inner) => {
+                Error::WafDuplicateItemException(inner)
+            }
+            crate::error::CreateIPSetErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::CreateIPSetErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::CreateIPSetErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::CreateIPSetErrorKind::WafLimitsExceededException(inner) => {
+                Error::WafLimitsExceededException(inner)
+            }
+            crate::error::CreateIPSetErrorKind::WafOptimisticLockException(inner) => {
+                Error::WafOptimisticLockException(inner)
+            }
+            crate::error::CreateIPSetErrorKind::WafTagOperationException(inner) => {
+                Error::WafTagOperationException(inner)
+            }
+            crate::error::CreateIPSetErrorKind::WafTagOperationInternalErrorException(inner) => {
+                Error::WafTagOperationInternalErrorException(inner)
+            }
+            crate::error::CreateIPSetErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -192,18 +229,43 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateRegexPatternSetError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::CreateRegexPatternSetErrorKind::WafDuplicateItemException(inner) => Error::WafDuplicateItemException(inner),
-                crate::error::CreateRegexPatternSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
-                crate::error::CreateRegexPatternSetErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
-                crate::error::CreateRegexPatternSetErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
-                crate::error::CreateRegexPatternSetErrorKind::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
-                crate::error::CreateRegexPatternSetErrorKind::WafOptimisticLockException(inner) => Error::WafOptimisticLockException(inner),
-                crate::error::CreateRegexPatternSetErrorKind::WafTagOperationException(inner) => Error::WafTagOperationException(inner),
-                crate::error::CreateRegexPatternSetErrorKind::WafTagOperationInternalErrorException(inner) => Error::WafTagOperationInternalErrorException(inner),
-                crate::error::CreateRegexPatternSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateRegexPatternSetError> for Error {
+    fn from(err: crate::error::CreateRegexPatternSetError) -> Self {
+        match err.kind {
+            crate::error::CreateRegexPatternSetErrorKind::WafDuplicateItemException(inner) => {
+                Error::WafDuplicateItemException(inner)
+            }
+            crate::error::CreateRegexPatternSetErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::CreateRegexPatternSetErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::CreateRegexPatternSetErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::CreateRegexPatternSetErrorKind::WafLimitsExceededException(inner) => {
+                Error::WafLimitsExceededException(inner)
+            }
+            crate::error::CreateRegexPatternSetErrorKind::WafOptimisticLockException(inner) => {
+                Error::WafOptimisticLockException(inner)
+            }
+            crate::error::CreateRegexPatternSetErrorKind::WafTagOperationException(inner) => {
+                Error::WafTagOperationException(inner)
+            }
+            crate::error::CreateRegexPatternSetErrorKind::WafTagOperationInternalErrorException(
+                inner,
+            ) => Error::WafTagOperationInternalErrorException(inner),
+            crate::error::CreateRegexPatternSetErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -213,48 +275,52 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateRuleGroupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::CreateRuleGroupErrorKind::WafDuplicateItemException(inner) => {
-                    Error::WafDuplicateItemException(inner)
-                }
-                crate::error::CreateRuleGroupErrorKind::WafInternalErrorException(inner) => {
-                    Error::WafInternalErrorException(inner)
-                }
-                crate::error::CreateRuleGroupErrorKind::WafInvalidOperationException(inner) => {
-                    Error::WafInvalidOperationException(inner)
-                }
-                crate::error::CreateRuleGroupErrorKind::WafInvalidParameterException(inner) => {
-                    Error::WafInvalidParameterException(inner)
-                }
-                crate::error::CreateRuleGroupErrorKind::WafLimitsExceededException(inner) => {
-                    Error::WafLimitsExceededException(inner)
-                }
-                crate::error::CreateRuleGroupErrorKind::WafNonexistentItemException(inner) => {
-                    Error::WafNonexistentItemException(inner)
-                }
-                crate::error::CreateRuleGroupErrorKind::WafOptimisticLockException(inner) => {
-                    Error::WafOptimisticLockException(inner)
-                }
-                crate::error::CreateRuleGroupErrorKind::WafSubscriptionNotFoundException(inner) => {
-                    Error::WafSubscriptionNotFoundException(inner)
-                }
-                crate::error::CreateRuleGroupErrorKind::WafTagOperationException(inner) => {
-                    Error::WafTagOperationException(inner)
-                }
-                crate::error::CreateRuleGroupErrorKind::WafTagOperationInternalErrorException(
-                    inner,
-                ) => Error::WafTagOperationInternalErrorException(inner),
-                crate::error::CreateRuleGroupErrorKind::WafUnavailableEntityException(inner) => {
-                    Error::WafUnavailableEntityException(inner)
-                }
-                crate::error::CreateRuleGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateRuleGroupError> for Error {
+    fn from(err: crate::error::CreateRuleGroupError) -> Self {
+        match err.kind {
+            crate::error::CreateRuleGroupErrorKind::WafDuplicateItemException(inner) => {
+                Error::WafDuplicateItemException(inner)
+            }
+            crate::error::CreateRuleGroupErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::CreateRuleGroupErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::CreateRuleGroupErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::CreateRuleGroupErrorKind::WafLimitsExceededException(inner) => {
+                Error::WafLimitsExceededException(inner)
+            }
+            crate::error::CreateRuleGroupErrorKind::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::error::CreateRuleGroupErrorKind::WafOptimisticLockException(inner) => {
+                Error::WafOptimisticLockException(inner)
+            }
+            crate::error::CreateRuleGroupErrorKind::WafSubscriptionNotFoundException(inner) => {
+                Error::WafSubscriptionNotFoundException(inner)
+            }
+            crate::error::CreateRuleGroupErrorKind::WafTagOperationException(inner) => {
+                Error::WafTagOperationException(inner)
+            }
+            crate::error::CreateRuleGroupErrorKind::WafTagOperationInternalErrorException(
+                inner,
+            ) => Error::WafTagOperationInternalErrorException(inner),
+            crate::error::CreateRuleGroupErrorKind::WafUnavailableEntityException(inner) => {
+                Error::WafUnavailableEntityException(inner)
+            }
+            crate::error::CreateRuleGroupErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -265,52 +331,57 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateWebACLError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::CreateWebACLErrorKind::WafConfigurationWarningException(
-                        inner,
-                    ) => Error::WafConfigurationWarningException(inner),
-                    crate::error::CreateWebACLErrorKind::WafDuplicateItemException(inner) => {
-                        Error::WafDuplicateItemException(inner)
-                    }
-                    crate::error::CreateWebACLErrorKind::WafInternalErrorException(inner) => {
-                        Error::WafInternalErrorException(inner)
-                    }
-                    crate::error::CreateWebACLErrorKind::WafInvalidOperationException(inner) => {
-                        Error::WafInvalidOperationException(inner)
-                    }
-                    crate::error::CreateWebACLErrorKind::WafInvalidParameterException(inner) => {
-                        Error::WafInvalidParameterException(inner)
-                    }
-                    crate::error::CreateWebACLErrorKind::WafInvalidResourceException(inner) => {
-                        Error::WafInvalidResourceException(inner)
-                    }
-                    crate::error::CreateWebACLErrorKind::WafLimitsExceededException(inner) => {
-                        Error::WafLimitsExceededException(inner)
-                    }
-                    crate::error::CreateWebACLErrorKind::WafNonexistentItemException(inner) => {
-                        Error::WafNonexistentItemException(inner)
-                    }
-                    crate::error::CreateWebACLErrorKind::WafOptimisticLockException(inner) => {
-                        Error::WafOptimisticLockException(inner)
-                    }
-                    crate::error::CreateWebACLErrorKind::WafSubscriptionNotFoundException(
-                        inner,
-                    ) => Error::WafSubscriptionNotFoundException(inner),
-                    crate::error::CreateWebACLErrorKind::WafTagOperationException(inner) => {
-                        Error::WafTagOperationException(inner)
-                    }
-                    crate::error::CreateWebACLErrorKind::WafTagOperationInternalErrorException(
-                        inner,
-                    ) => Error::WafTagOperationInternalErrorException(inner),
-                    crate::error::CreateWebACLErrorKind::WafUnavailableEntityException(inner) => {
-                        Error::WafUnavailableEntityException(inner)
-                    }
-                    crate::error::CreateWebACLErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateWebACLError> for Error {
+    fn from(err: crate::error::CreateWebACLError) -> Self {
+        match err.kind {
+            crate::error::CreateWebACLErrorKind::WafConfigurationWarningException(inner) => {
+                Error::WafConfigurationWarningException(inner)
+            }
+            crate::error::CreateWebACLErrorKind::WafDuplicateItemException(inner) => {
+                Error::WafDuplicateItemException(inner)
+            }
+            crate::error::CreateWebACLErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::CreateWebACLErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::CreateWebACLErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::CreateWebACLErrorKind::WafInvalidResourceException(inner) => {
+                Error::WafInvalidResourceException(inner)
+            }
+            crate::error::CreateWebACLErrorKind::WafLimitsExceededException(inner) => {
+                Error::WafLimitsExceededException(inner)
+            }
+            crate::error::CreateWebACLErrorKind::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::error::CreateWebACLErrorKind::WafOptimisticLockException(inner) => {
+                Error::WafOptimisticLockException(inner)
+            }
+            crate::error::CreateWebACLErrorKind::WafSubscriptionNotFoundException(inner) => {
+                Error::WafSubscriptionNotFoundException(inner)
+            }
+            crate::error::CreateWebACLErrorKind::WafTagOperationException(inner) => {
+                Error::WafTagOperationException(inner)
+            }
+            crate::error::CreateWebACLErrorKind::WafTagOperationInternalErrorException(inner) => {
+                Error::WafTagOperationInternalErrorException(inner)
+            }
+            crate::error::CreateWebACLErrorKind::WafUnavailableEntityException(inner) => {
+                Error::WafUnavailableEntityException(inner)
+            }
+            crate::error::CreateWebACLErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -327,15 +398,22 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::DeleteFirewallManagerRuleGroupsErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
-                crate::error::DeleteFirewallManagerRuleGroupsErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
-                crate::error::DeleteFirewallManagerRuleGroupsErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
-                crate::error::DeleteFirewallManagerRuleGroupsErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
-                crate::error::DeleteFirewallManagerRuleGroupsErrorKind::WafOptimisticLockException(inner) => Error::WafOptimisticLockException(inner),
-                crate::error::DeleteFirewallManagerRuleGroupsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteFirewallManagerRuleGroupsError> for Error {
+    fn from(err: crate::error::DeleteFirewallManagerRuleGroupsError) -> Self {
+        match err.kind {
+            crate::error::DeleteFirewallManagerRuleGroupsErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::DeleteFirewallManagerRuleGroupsErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::error::DeleteFirewallManagerRuleGroupsErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::error::DeleteFirewallManagerRuleGroupsErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::DeleteFirewallManagerRuleGroupsErrorKind::WafOptimisticLockException(inner) => Error::WafOptimisticLockException(inner),
+            crate::error::DeleteFirewallManagerRuleGroupsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -346,37 +424,42 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteIPSetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DeleteIPSetErrorKind::WafAssociatedItemException(inner) => {
-                        Error::WafAssociatedItemException(inner)
-                    }
-                    crate::error::DeleteIPSetErrorKind::WafInternalErrorException(inner) => {
-                        Error::WafInternalErrorException(inner)
-                    }
-                    crate::error::DeleteIPSetErrorKind::WafInvalidOperationException(inner) => {
-                        Error::WafInvalidOperationException(inner)
-                    }
-                    crate::error::DeleteIPSetErrorKind::WafInvalidParameterException(inner) => {
-                        Error::WafInvalidParameterException(inner)
-                    }
-                    crate::error::DeleteIPSetErrorKind::WafNonexistentItemException(inner) => {
-                        Error::WafNonexistentItemException(inner)
-                    }
-                    crate::error::DeleteIPSetErrorKind::WafOptimisticLockException(inner) => {
-                        Error::WafOptimisticLockException(inner)
-                    }
-                    crate::error::DeleteIPSetErrorKind::WafTagOperationException(inner) => {
-                        Error::WafTagOperationException(inner)
-                    }
-                    crate::error::DeleteIPSetErrorKind::WafTagOperationInternalErrorException(
-                        inner,
-                    ) => Error::WafTagOperationInternalErrorException(inner),
-                    crate::error::DeleteIPSetErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteIPSetError> for Error {
+    fn from(err: crate::error::DeleteIPSetError) -> Self {
+        match err.kind {
+            crate::error::DeleteIPSetErrorKind::WafAssociatedItemException(inner) => {
+                Error::WafAssociatedItemException(inner)
+            }
+            crate::error::DeleteIPSetErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::DeleteIPSetErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::DeleteIPSetErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::DeleteIPSetErrorKind::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::error::DeleteIPSetErrorKind::WafOptimisticLockException(inner) => {
+                Error::WafOptimisticLockException(inner)
+            }
+            crate::error::DeleteIPSetErrorKind::WafTagOperationException(inner) => {
+                Error::WafTagOperationException(inner)
+            }
+            crate::error::DeleteIPSetErrorKind::WafTagOperationInternalErrorException(inner) => {
+                Error::WafTagOperationInternalErrorException(inner)
+            }
+            crate::error::DeleteIPSetErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -389,30 +472,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteLoggingConfigurationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::DeleteLoggingConfigurationErrorKind::WafInternalErrorException(
-                    inner,
-                ) => Error::WafInternalErrorException(inner),
-                crate::error::DeleteLoggingConfigurationErrorKind::WafInvalidOperationException(
-                    inner,
-                ) => Error::WafInvalidOperationException(inner),
-                crate::error::DeleteLoggingConfigurationErrorKind::WafInvalidParameterException(
-                    inner,
-                ) => Error::WafInvalidParameterException(inner),
-                crate::error::DeleteLoggingConfigurationErrorKind::WafNonexistentItemException(
-                    inner,
-                ) => Error::WafNonexistentItemException(inner),
-                crate::error::DeleteLoggingConfigurationErrorKind::WafOptimisticLockException(
-                    inner,
-                ) => Error::WafOptimisticLockException(inner),
-                crate::error::DeleteLoggingConfigurationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteLoggingConfigurationError> for Error {
+    fn from(err: crate::error::DeleteLoggingConfigurationError) -> Self {
+        match err.kind {
+            crate::error::DeleteLoggingConfigurationErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::DeleteLoggingConfigurationErrorKind::WafInvalidOperationException(
+                inner,
+            ) => Error::WafInvalidOperationException(inner),
+            crate::error::DeleteLoggingConfigurationErrorKind::WafInvalidParameterException(
+                inner,
+            ) => Error::WafInvalidParameterException(inner),
+            crate::error::DeleteLoggingConfigurationErrorKind::WafNonexistentItemException(
+                inner,
+            ) => Error::WafNonexistentItemException(inner),
+            crate::error::DeleteLoggingConfigurationErrorKind::WafOptimisticLockException(
+                inner,
+            ) => Error::WafOptimisticLockException(inner),
+            crate::error::DeleteLoggingConfigurationErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -426,22 +513,27 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DeletePermissionPolicyErrorKind::WafInternalErrorException(
-                        inner,
-                    ) => Error::WafInternalErrorException(inner),
-                    crate::error::DeletePermissionPolicyErrorKind::WafInvalidParameterException(
-                        inner,
-                    ) => Error::WafInvalidParameterException(inner),
-                    crate::error::DeletePermissionPolicyErrorKind::WafNonexistentItemException(
-                        inner,
-                    ) => Error::WafNonexistentItemException(inner),
-                    crate::error::DeletePermissionPolicyErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeletePermissionPolicyError> for Error {
+    fn from(err: crate::error::DeletePermissionPolicyError) -> Self {
+        match err.kind {
+            crate::error::DeletePermissionPolicyErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::DeletePermissionPolicyErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::DeletePermissionPolicyErrorKind::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::error::DeletePermissionPolicyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -454,18 +546,43 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteRegexPatternSetError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::DeleteRegexPatternSetErrorKind::WafAssociatedItemException(inner) => Error::WafAssociatedItemException(inner),
-                crate::error::DeleteRegexPatternSetErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
-                crate::error::DeleteRegexPatternSetErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
-                crate::error::DeleteRegexPatternSetErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
-                crate::error::DeleteRegexPatternSetErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
-                crate::error::DeleteRegexPatternSetErrorKind::WafOptimisticLockException(inner) => Error::WafOptimisticLockException(inner),
-                crate::error::DeleteRegexPatternSetErrorKind::WafTagOperationException(inner) => Error::WafTagOperationException(inner),
-                crate::error::DeleteRegexPatternSetErrorKind::WafTagOperationInternalErrorException(inner) => Error::WafTagOperationInternalErrorException(inner),
-                crate::error::DeleteRegexPatternSetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteRegexPatternSetError> for Error {
+    fn from(err: crate::error::DeleteRegexPatternSetError) -> Self {
+        match err.kind {
+            crate::error::DeleteRegexPatternSetErrorKind::WafAssociatedItemException(inner) => {
+                Error::WafAssociatedItemException(inner)
+            }
+            crate::error::DeleteRegexPatternSetErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::DeleteRegexPatternSetErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::DeleteRegexPatternSetErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::DeleteRegexPatternSetErrorKind::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::error::DeleteRegexPatternSetErrorKind::WafOptimisticLockException(inner) => {
+                Error::WafOptimisticLockException(inner)
+            }
+            crate::error::DeleteRegexPatternSetErrorKind::WafTagOperationException(inner) => {
+                Error::WafTagOperationException(inner)
+            }
+            crate::error::DeleteRegexPatternSetErrorKind::WafTagOperationInternalErrorException(
+                inner,
+            ) => Error::WafTagOperationInternalErrorException(inner),
+            crate::error::DeleteRegexPatternSetErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -475,39 +592,43 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteRuleGroupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::DeleteRuleGroupErrorKind::WafAssociatedItemException(inner) => {
-                    Error::WafAssociatedItemException(inner)
-                }
-                crate::error::DeleteRuleGroupErrorKind::WafInternalErrorException(inner) => {
-                    Error::WafInternalErrorException(inner)
-                }
-                crate::error::DeleteRuleGroupErrorKind::WafInvalidOperationException(inner) => {
-                    Error::WafInvalidOperationException(inner)
-                }
-                crate::error::DeleteRuleGroupErrorKind::WafInvalidParameterException(inner) => {
-                    Error::WafInvalidParameterException(inner)
-                }
-                crate::error::DeleteRuleGroupErrorKind::WafNonexistentItemException(inner) => {
-                    Error::WafNonexistentItemException(inner)
-                }
-                crate::error::DeleteRuleGroupErrorKind::WafOptimisticLockException(inner) => {
-                    Error::WafOptimisticLockException(inner)
-                }
-                crate::error::DeleteRuleGroupErrorKind::WafTagOperationException(inner) => {
-                    Error::WafTagOperationException(inner)
-                }
-                crate::error::DeleteRuleGroupErrorKind::WafTagOperationInternalErrorException(
-                    inner,
-                ) => Error::WafTagOperationInternalErrorException(inner),
-                crate::error::DeleteRuleGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteRuleGroupError> for Error {
+    fn from(err: crate::error::DeleteRuleGroupError) -> Self {
+        match err.kind {
+            crate::error::DeleteRuleGroupErrorKind::WafAssociatedItemException(inner) => {
+                Error::WafAssociatedItemException(inner)
+            }
+            crate::error::DeleteRuleGroupErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::DeleteRuleGroupErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::DeleteRuleGroupErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::DeleteRuleGroupErrorKind::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::error::DeleteRuleGroupErrorKind::WafOptimisticLockException(inner) => {
+                Error::WafOptimisticLockException(inner)
+            }
+            crate::error::DeleteRuleGroupErrorKind::WafTagOperationException(inner) => {
+                Error::WafTagOperationException(inner)
+            }
+            crate::error::DeleteRuleGroupErrorKind::WafTagOperationInternalErrorException(
+                inner,
+            ) => Error::WafTagOperationInternalErrorException(inner),
+            crate::error::DeleteRuleGroupErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -518,37 +639,42 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteWebACLError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DeleteWebACLErrorKind::WafAssociatedItemException(inner) => {
-                        Error::WafAssociatedItemException(inner)
-                    }
-                    crate::error::DeleteWebACLErrorKind::WafInternalErrorException(inner) => {
-                        Error::WafInternalErrorException(inner)
-                    }
-                    crate::error::DeleteWebACLErrorKind::WafInvalidOperationException(inner) => {
-                        Error::WafInvalidOperationException(inner)
-                    }
-                    crate::error::DeleteWebACLErrorKind::WafInvalidParameterException(inner) => {
-                        Error::WafInvalidParameterException(inner)
-                    }
-                    crate::error::DeleteWebACLErrorKind::WafNonexistentItemException(inner) => {
-                        Error::WafNonexistentItemException(inner)
-                    }
-                    crate::error::DeleteWebACLErrorKind::WafOptimisticLockException(inner) => {
-                        Error::WafOptimisticLockException(inner)
-                    }
-                    crate::error::DeleteWebACLErrorKind::WafTagOperationException(inner) => {
-                        Error::WafTagOperationException(inner)
-                    }
-                    crate::error::DeleteWebACLErrorKind::WafTagOperationInternalErrorException(
-                        inner,
-                    ) => Error::WafTagOperationInternalErrorException(inner),
-                    crate::error::DeleteWebACLErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteWebACLError> for Error {
+    fn from(err: crate::error::DeleteWebACLError) -> Self {
+        match err.kind {
+            crate::error::DeleteWebACLErrorKind::WafAssociatedItemException(inner) => {
+                Error::WafAssociatedItemException(inner)
+            }
+            crate::error::DeleteWebACLErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::DeleteWebACLErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::DeleteWebACLErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::DeleteWebACLErrorKind::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::error::DeleteWebACLErrorKind::WafOptimisticLockException(inner) => {
+                Error::WafOptimisticLockException(inner)
+            }
+            crate::error::DeleteWebACLErrorKind::WafTagOperationException(inner) => {
+                Error::WafTagOperationException(inner)
+            }
+            crate::error::DeleteWebACLErrorKind::WafTagOperationInternalErrorException(inner) => {
+                Error::WafTagOperationInternalErrorException(inner)
+            }
+            crate::error::DeleteWebACLErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -561,16 +687,23 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeManagedRuleGroupError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::DescribeManagedRuleGroupErrorKind::WafExpiredManagedRuleGroupVersionException(inner) => Error::WafExpiredManagedRuleGroupVersionException(inner),
-                crate::error::DescribeManagedRuleGroupErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
-                crate::error::DescribeManagedRuleGroupErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
-                crate::error::DescribeManagedRuleGroupErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
-                crate::error::DescribeManagedRuleGroupErrorKind::WafInvalidResourceException(inner) => Error::WafInvalidResourceException(inner),
-                crate::error::DescribeManagedRuleGroupErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
-                crate::error::DescribeManagedRuleGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeManagedRuleGroupError> for Error {
+    fn from(err: crate::error::DescribeManagedRuleGroupError) -> Self {
+        match err.kind {
+            crate::error::DescribeManagedRuleGroupErrorKind::WafExpiredManagedRuleGroupVersionException(inner) => Error::WafExpiredManagedRuleGroupVersionException(inner),
+            crate::error::DescribeManagedRuleGroupErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::DescribeManagedRuleGroupErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::error::DescribeManagedRuleGroupErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::error::DescribeManagedRuleGroupErrorKind::WafInvalidResourceException(inner) => Error::WafInvalidResourceException(inner),
+            crate::error::DescribeManagedRuleGroupErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::DescribeManagedRuleGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -583,25 +716,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DisassociateWebACLErrorKind::WafInternalErrorException(inner) => {
-                        Error::WafInternalErrorException(inner)
-                    }
-                    crate::error::DisassociateWebACLErrorKind::WafInvalidOperationException(
-                        inner,
-                    ) => Error::WafInvalidOperationException(inner),
-                    crate::error::DisassociateWebACLErrorKind::WafInvalidParameterException(
-                        inner,
-                    ) => Error::WafInvalidParameterException(inner),
-                    crate::error::DisassociateWebACLErrorKind::WafNonexistentItemException(
-                        inner,
-                    ) => Error::WafNonexistentItemException(inner),
-                    crate::error::DisassociateWebACLErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DisassociateWebACLError> for Error {
+    fn from(err: crate::error::DisassociateWebACLError) -> Self {
+        match err.kind {
+            crate::error::DisassociateWebACLErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::DisassociateWebACLErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::DisassociateWebACLErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::DisassociateWebACLErrorKind::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::error::DisassociateWebACLErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -614,14 +752,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GenerateMobileSdkReleaseUrlError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::GenerateMobileSdkReleaseUrlErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
-                crate::error::GenerateMobileSdkReleaseUrlErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
-                crate::error::GenerateMobileSdkReleaseUrlErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
-                crate::error::GenerateMobileSdkReleaseUrlErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
-                crate::error::GenerateMobileSdkReleaseUrlErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GenerateMobileSdkReleaseUrlError> for Error {
+    fn from(err: crate::error::GenerateMobileSdkReleaseUrlError) -> Self {
+        match err.kind {
+            crate::error::GenerateMobileSdkReleaseUrlErrorKind::WafInternalErrorException(
+                inner,
+            ) => Error::WafInternalErrorException(inner),
+            crate::error::GenerateMobileSdkReleaseUrlErrorKind::WafInvalidOperationException(
+                inner,
+            ) => Error::WafInvalidOperationException(inner),
+            crate::error::GenerateMobileSdkReleaseUrlErrorKind::WafInvalidParameterException(
+                inner,
+            ) => Error::WafInvalidParameterException(inner),
+            crate::error::GenerateMobileSdkReleaseUrlErrorKind::WafNonexistentItemException(
+                inner,
+            ) => Error::WafNonexistentItemException(inner),
+            crate::error::GenerateMobileSdkReleaseUrlErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -632,25 +787,30 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetIPSetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetIPSetErrorKind::WafInternalErrorException(inner) => {
-                        Error::WafInternalErrorException(inner)
-                    }
-                    crate::error::GetIPSetErrorKind::WafInvalidOperationException(inner) => {
-                        Error::WafInvalidOperationException(inner)
-                    }
-                    crate::error::GetIPSetErrorKind::WafInvalidParameterException(inner) => {
-                        Error::WafInvalidParameterException(inner)
-                    }
-                    crate::error::GetIPSetErrorKind::WafNonexistentItemException(inner) => {
-                        Error::WafNonexistentItemException(inner)
-                    }
-                    crate::error::GetIPSetErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetIPSetError> for Error {
+    fn from(err: crate::error::GetIPSetError) -> Self {
+        match err.kind {
+            crate::error::GetIPSetErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::GetIPSetErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::GetIPSetErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::GetIPSetErrorKind::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::error::GetIPSetErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -663,27 +823,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetLoggingConfigurationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::GetLoggingConfigurationErrorKind::WafInternalErrorException(
-                    inner,
-                ) => Error::WafInternalErrorException(inner),
-                crate::error::GetLoggingConfigurationErrorKind::WafInvalidOperationException(
-                    inner,
-                ) => Error::WafInvalidOperationException(inner),
-                crate::error::GetLoggingConfigurationErrorKind::WafInvalidParameterException(
-                    inner,
-                ) => Error::WafInvalidParameterException(inner),
-                crate::error::GetLoggingConfigurationErrorKind::WafNonexistentItemException(
-                    inner,
-                ) => Error::WafNonexistentItemException(inner),
-                crate::error::GetLoggingConfigurationErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetLoggingConfigurationError> for Error {
+    fn from(err: crate::error::GetLoggingConfigurationError) -> Self {
+        match err.kind {
+            crate::error::GetLoggingConfigurationErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::GetLoggingConfigurationErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::GetLoggingConfigurationErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::GetLoggingConfigurationErrorKind::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::error::GetLoggingConfigurationErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -696,25 +860,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetManagedRuleSetErrorKind::WafInternalErrorException(inner) => {
-                        Error::WafInternalErrorException(inner)
-                    }
-                    crate::error::GetManagedRuleSetErrorKind::WafInvalidOperationException(
-                        inner,
-                    ) => Error::WafInvalidOperationException(inner),
-                    crate::error::GetManagedRuleSetErrorKind::WafInvalidParameterException(
-                        inner,
-                    ) => Error::WafInvalidParameterException(inner),
-                    crate::error::GetManagedRuleSetErrorKind::WafNonexistentItemException(
-                        inner,
-                    ) => Error::WafNonexistentItemException(inner),
-                    crate::error::GetManagedRuleSetErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetManagedRuleSetError> for Error {
+    fn from(err: crate::error::GetManagedRuleSetError) -> Self {
+        match err.kind {
+            crate::error::GetManagedRuleSetErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::GetManagedRuleSetErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::GetManagedRuleSetErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::GetManagedRuleSetErrorKind::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::error::GetManagedRuleSetErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -727,25 +896,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetMobileSdkReleaseErrorKind::WafInternalErrorException(
-                        inner,
-                    ) => Error::WafInternalErrorException(inner),
-                    crate::error::GetMobileSdkReleaseErrorKind::WafInvalidOperationException(
-                        inner,
-                    ) => Error::WafInvalidOperationException(inner),
-                    crate::error::GetMobileSdkReleaseErrorKind::WafInvalidParameterException(
-                        inner,
-                    ) => Error::WafInvalidParameterException(inner),
-                    crate::error::GetMobileSdkReleaseErrorKind::WafNonexistentItemException(
-                        inner,
-                    ) => Error::WafNonexistentItemException(inner),
-                    crate::error::GetMobileSdkReleaseErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetMobileSdkReleaseError> for Error {
+    fn from(err: crate::error::GetMobileSdkReleaseError) -> Self {
+        match err.kind {
+            crate::error::GetMobileSdkReleaseErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::GetMobileSdkReleaseErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::GetMobileSdkReleaseErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::GetMobileSdkReleaseErrorKind::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::error::GetMobileSdkReleaseErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -758,22 +932,27 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetPermissionPolicyErrorKind::WafInternalErrorException(
-                        inner,
-                    ) => Error::WafInternalErrorException(inner),
-                    crate::error::GetPermissionPolicyErrorKind::WafInvalidParameterException(
-                        inner,
-                    ) => Error::WafInvalidParameterException(inner),
-                    crate::error::GetPermissionPolicyErrorKind::WafNonexistentItemException(
-                        inner,
-                    ) => Error::WafNonexistentItemException(inner),
-                    crate::error::GetPermissionPolicyErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetPermissionPolicyError> for Error {
+    fn from(err: crate::error::GetPermissionPolicyError) -> Self {
+        match err.kind {
+            crate::error::GetPermissionPolicyErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::GetPermissionPolicyErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::GetPermissionPolicyErrorKind::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::error::GetPermissionPolicyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -790,14 +969,21 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::GetRateBasedStatementManagedKeysErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
-                crate::error::GetRateBasedStatementManagedKeysErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
-                crate::error::GetRateBasedStatementManagedKeysErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
-                crate::error::GetRateBasedStatementManagedKeysErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
-                crate::error::GetRateBasedStatementManagedKeysErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetRateBasedStatementManagedKeysError> for Error {
+    fn from(err: crate::error::GetRateBasedStatementManagedKeysError) -> Self {
+        match err.kind {
+            crate::error::GetRateBasedStatementManagedKeysErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::GetRateBasedStatementManagedKeysErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::error::GetRateBasedStatementManagedKeysErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::error::GetRateBasedStatementManagedKeysErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::GetRateBasedStatementManagedKeysErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -810,25 +996,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetRegexPatternSetErrorKind::WafInternalErrorException(inner) => {
-                        Error::WafInternalErrorException(inner)
-                    }
-                    crate::error::GetRegexPatternSetErrorKind::WafInvalidOperationException(
-                        inner,
-                    ) => Error::WafInvalidOperationException(inner),
-                    crate::error::GetRegexPatternSetErrorKind::WafInvalidParameterException(
-                        inner,
-                    ) => Error::WafInvalidParameterException(inner),
-                    crate::error::GetRegexPatternSetErrorKind::WafNonexistentItemException(
-                        inner,
-                    ) => Error::WafNonexistentItemException(inner),
-                    crate::error::GetRegexPatternSetErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetRegexPatternSetError> for Error {
+    fn from(err: crate::error::GetRegexPatternSetError) -> Self {
+        match err.kind {
+            crate::error::GetRegexPatternSetErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::GetRegexPatternSetErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::GetRegexPatternSetErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::GetRegexPatternSetErrorKind::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::error::GetRegexPatternSetErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -839,25 +1030,30 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetRuleGroupError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetRuleGroupErrorKind::WafInternalErrorException(inner) => {
-                        Error::WafInternalErrorException(inner)
-                    }
-                    crate::error::GetRuleGroupErrorKind::WafInvalidOperationException(inner) => {
-                        Error::WafInvalidOperationException(inner)
-                    }
-                    crate::error::GetRuleGroupErrorKind::WafInvalidParameterException(inner) => {
-                        Error::WafInvalidParameterException(inner)
-                    }
-                    crate::error::GetRuleGroupErrorKind::WafNonexistentItemException(inner) => {
-                        Error::WafNonexistentItemException(inner)
-                    }
-                    crate::error::GetRuleGroupErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetRuleGroupError> for Error {
+    fn from(err: crate::error::GetRuleGroupError) -> Self {
+        match err.kind {
+            crate::error::GetRuleGroupErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::GetRuleGroupErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::GetRuleGroupErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::GetRuleGroupErrorKind::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::error::GetRuleGroupErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -870,22 +1066,27 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetSampledRequestsErrorKind::WafInternalErrorException(inner) => {
-                        Error::WafInternalErrorException(inner)
-                    }
-                    crate::error::GetSampledRequestsErrorKind::WafInvalidParameterException(
-                        inner,
-                    ) => Error::WafInvalidParameterException(inner),
-                    crate::error::GetSampledRequestsErrorKind::WafNonexistentItemException(
-                        inner,
-                    ) => Error::WafNonexistentItemException(inner),
-                    crate::error::GetSampledRequestsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetSampledRequestsError> for Error {
+    fn from(err: crate::error::GetSampledRequestsError) -> Self {
+        match err.kind {
+            crate::error::GetSampledRequestsErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::GetSampledRequestsErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::GetSampledRequestsErrorKind::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::error::GetSampledRequestsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -896,25 +1097,30 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetWebACLError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetWebACLErrorKind::WafInternalErrorException(inner) => {
-                        Error::WafInternalErrorException(inner)
-                    }
-                    crate::error::GetWebACLErrorKind::WafInvalidOperationException(inner) => {
-                        Error::WafInvalidOperationException(inner)
-                    }
-                    crate::error::GetWebACLErrorKind::WafInvalidParameterException(inner) => {
-                        Error::WafInvalidParameterException(inner)
-                    }
-                    crate::error::GetWebACLErrorKind::WafNonexistentItemException(inner) => {
-                        Error::WafNonexistentItemException(inner)
-                    }
-                    crate::error::GetWebACLErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetWebACLError> for Error {
+    fn from(err: crate::error::GetWebACLError) -> Self {
+        match err.kind {
+            crate::error::GetWebACLErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::GetWebACLErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::GetWebACLErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::GetWebACLErrorKind::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::error::GetWebACLErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -928,28 +1134,33 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetWebACLForResourceErrorKind::WafInternalErrorException(
-                        inner,
-                    ) => Error::WafInternalErrorException(inner),
-                    crate::error::GetWebACLForResourceErrorKind::WafInvalidOperationException(
-                        inner,
-                    ) => Error::WafInvalidOperationException(inner),
-                    crate::error::GetWebACLForResourceErrorKind::WafInvalidParameterException(
-                        inner,
-                    ) => Error::WafInvalidParameterException(inner),
-                    crate::error::GetWebACLForResourceErrorKind::WafNonexistentItemException(
-                        inner,
-                    ) => Error::WafNonexistentItemException(inner),
-                    crate::error::GetWebACLForResourceErrorKind::WafUnavailableEntityException(
-                        inner,
-                    ) => Error::WafUnavailableEntityException(inner),
-                    crate::error::GetWebACLForResourceErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetWebACLForResourceError> for Error {
+    fn from(err: crate::error::GetWebACLForResourceError) -> Self {
+        match err.kind {
+            crate::error::GetWebACLForResourceErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::GetWebACLForResourceErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::GetWebACLForResourceErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::GetWebACLForResourceErrorKind::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::error::GetWebACLForResourceErrorKind::WafUnavailableEntityException(inner) => {
+                Error::WafUnavailableEntityException(inner)
+            }
+            crate::error::GetWebACLForResourceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -966,13 +1177,28 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::ListAvailableManagedRuleGroupsErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
-                crate::error::ListAvailableManagedRuleGroupsErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
-                crate::error::ListAvailableManagedRuleGroupsErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
-                crate::error::ListAvailableManagedRuleGroupsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListAvailableManagedRuleGroupsError> for Error {
+    fn from(err: crate::error::ListAvailableManagedRuleGroupsError) -> Self {
+        match err.kind {
+            crate::error::ListAvailableManagedRuleGroupsErrorKind::WafInternalErrorException(
+                inner,
+            ) => Error::WafInternalErrorException(inner),
+            crate::error::ListAvailableManagedRuleGroupsErrorKind::WafInvalidOperationException(
+                inner,
+            ) => Error::WafInvalidOperationException(inner),
+            crate::error::ListAvailableManagedRuleGroupsErrorKind::WafInvalidParameterException(
+                inner,
+            ) => Error::WafInvalidParameterException(inner),
+            crate::error::ListAvailableManagedRuleGroupsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -993,14 +1219,21 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::ListAvailableManagedRuleGroupVersionsErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
-                crate::error::ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
-                crate::error::ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
-                crate::error::ListAvailableManagedRuleGroupVersionsErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
-                crate::error::ListAvailableManagedRuleGroupVersionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListAvailableManagedRuleGroupVersionsError> for Error {
+    fn from(err: crate::error::ListAvailableManagedRuleGroupVersionsError) -> Self {
+        match err.kind {
+            crate::error::ListAvailableManagedRuleGroupVersionsErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::error::ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::error::ListAvailableManagedRuleGroupVersionsErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::ListAvailableManagedRuleGroupVersionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -1011,22 +1244,27 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListIPSetsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListIPSetsErrorKind::WafInternalErrorException(inner) => {
-                        Error::WafInternalErrorException(inner)
-                    }
-                    crate::error::ListIPSetsErrorKind::WafInvalidOperationException(inner) => {
-                        Error::WafInvalidOperationException(inner)
-                    }
-                    crate::error::ListIPSetsErrorKind::WafInvalidParameterException(inner) => {
-                        Error::WafInvalidParameterException(inner)
-                    }
-                    crate::error::ListIPSetsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListIPSetsError> for Error {
+    fn from(err: crate::error::ListIPSetsError) -> Self {
+        match err.kind {
+            crate::error::ListIPSetsErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::ListIPSetsErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::ListIPSetsErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::ListIPSetsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1039,24 +1277,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListLoggingConfigurationsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::ListLoggingConfigurationsErrorKind::WafInternalErrorException(
-                    inner,
-                ) => Error::WafInternalErrorException(inner),
-                crate::error::ListLoggingConfigurationsErrorKind::WafInvalidOperationException(
-                    inner,
-                ) => Error::WafInvalidOperationException(inner),
-                crate::error::ListLoggingConfigurationsErrorKind::WafInvalidParameterException(
-                    inner,
-                ) => Error::WafInvalidParameterException(inner),
-                crate::error::ListLoggingConfigurationsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListLoggingConfigurationsError> for Error {
+    fn from(err: crate::error::ListLoggingConfigurationsError) -> Self {
+        match err.kind {
+            crate::error::ListLoggingConfigurationsErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::ListLoggingConfigurationsErrorKind::WafInvalidOperationException(
+                inner,
+            ) => Error::WafInvalidOperationException(inner),
+            crate::error::ListLoggingConfigurationsErrorKind::WafInvalidParameterException(
+                inner,
+            ) => Error::WafInvalidParameterException(inner),
+            crate::error::ListLoggingConfigurationsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1069,22 +1311,27 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListManagedRuleSetsErrorKind::WafInternalErrorException(
-                        inner,
-                    ) => Error::WafInternalErrorException(inner),
-                    crate::error::ListManagedRuleSetsErrorKind::WafInvalidOperationException(
-                        inner,
-                    ) => Error::WafInvalidOperationException(inner),
-                    crate::error::ListManagedRuleSetsErrorKind::WafInvalidParameterException(
-                        inner,
-                    ) => Error::WafInvalidParameterException(inner),
-                    crate::error::ListManagedRuleSetsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListManagedRuleSetsError> for Error {
+    fn from(err: crate::error::ListManagedRuleSetsError) -> Self {
+        match err.kind {
+            crate::error::ListManagedRuleSetsErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::ListManagedRuleSetsErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::ListManagedRuleSetsErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::ListManagedRuleSetsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1098,22 +1345,27 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListMobileSdkReleasesErrorKind::WafInternalErrorException(
-                        inner,
-                    ) => Error::WafInternalErrorException(inner),
-                    crate::error::ListMobileSdkReleasesErrorKind::WafInvalidOperationException(
-                        inner,
-                    ) => Error::WafInvalidOperationException(inner),
-                    crate::error::ListMobileSdkReleasesErrorKind::WafInvalidParameterException(
-                        inner,
-                    ) => Error::WafInvalidParameterException(inner),
-                    crate::error::ListMobileSdkReleasesErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListMobileSdkReleasesError> for Error {
+    fn from(err: crate::error::ListMobileSdkReleasesError) -> Self {
+        match err.kind {
+            crate::error::ListMobileSdkReleasesErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::ListMobileSdkReleasesErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::ListMobileSdkReleasesErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::ListMobileSdkReleasesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1127,22 +1379,27 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListRegexPatternSetsErrorKind::WafInternalErrorException(
-                        inner,
-                    ) => Error::WafInternalErrorException(inner),
-                    crate::error::ListRegexPatternSetsErrorKind::WafInvalidOperationException(
-                        inner,
-                    ) => Error::WafInvalidOperationException(inner),
-                    crate::error::ListRegexPatternSetsErrorKind::WafInvalidParameterException(
-                        inner,
-                    ) => Error::WafInvalidParameterException(inner),
-                    crate::error::ListRegexPatternSetsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListRegexPatternSetsError> for Error {
+    fn from(err: crate::error::ListRegexPatternSetsError) -> Self {
+        match err.kind {
+            crate::error::ListRegexPatternSetsErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::ListRegexPatternSetsErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::ListRegexPatternSetsErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::ListRegexPatternSetsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1156,25 +1413,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListResourcesForWebACLErrorKind::WafInternalErrorException(
-                        inner,
-                    ) => Error::WafInternalErrorException(inner),
-                    crate::error::ListResourcesForWebACLErrorKind::WafInvalidOperationException(
-                        inner,
-                    ) => Error::WafInvalidOperationException(inner),
-                    crate::error::ListResourcesForWebACLErrorKind::WafInvalidParameterException(
-                        inner,
-                    ) => Error::WafInvalidParameterException(inner),
-                    crate::error::ListResourcesForWebACLErrorKind::WafNonexistentItemException(
-                        inner,
-                    ) => Error::WafNonexistentItemException(inner),
-                    crate::error::ListResourcesForWebACLErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListResourcesForWebACLError> for Error {
+    fn from(err: crate::error::ListResourcesForWebACLError) -> Self {
+        match err.kind {
+            crate::error::ListResourcesForWebACLErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::ListResourcesForWebACLErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::ListResourcesForWebACLErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::ListResourcesForWebACLErrorKind::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::error::ListResourcesForWebACLErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1185,22 +1447,27 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListRuleGroupsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListRuleGroupsErrorKind::WafInternalErrorException(inner) => {
-                        Error::WafInternalErrorException(inner)
-                    }
-                    crate::error::ListRuleGroupsErrorKind::WafInvalidOperationException(inner) => {
-                        Error::WafInvalidOperationException(inner)
-                    }
-                    crate::error::ListRuleGroupsErrorKind::WafInvalidParameterException(inner) => {
-                        Error::WafInvalidParameterException(inner)
-                    }
-                    crate::error::ListRuleGroupsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListRuleGroupsError> for Error {
+    fn from(err: crate::error::ListRuleGroupsError) -> Self {
+        match err.kind {
+            crate::error::ListRuleGroupsErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::ListRuleGroupsErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::ListRuleGroupsErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::ListRuleGroupsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1212,16 +1479,37 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::ListTagsForResourceErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
-                crate::error::ListTagsForResourceErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
-                crate::error::ListTagsForResourceErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
-                crate::error::ListTagsForResourceErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
-                crate::error::ListTagsForResourceErrorKind::WafTagOperationException(inner) => Error::WafTagOperationException(inner),
-                crate::error::ListTagsForResourceErrorKind::WafTagOperationInternalErrorException(inner) => Error::WafTagOperationInternalErrorException(inner),
-                crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListTagsForResourceError> for Error {
+    fn from(err: crate::error::ListTagsForResourceError) -> Self {
+        match err.kind {
+            crate::error::ListTagsForResourceErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::ListTagsForResourceErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::ListTagsForResourceErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::ListTagsForResourceErrorKind::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::error::ListTagsForResourceErrorKind::WafTagOperationException(inner) => {
+                Error::WafTagOperationException(inner)
+            }
+            crate::error::ListTagsForResourceErrorKind::WafTagOperationInternalErrorException(
+                inner,
+            ) => Error::WafTagOperationInternalErrorException(inner),
+            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1232,22 +1520,27 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListWebACLsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListWebACLsErrorKind::WafInternalErrorException(inner) => {
-                        Error::WafInternalErrorException(inner)
-                    }
-                    crate::error::ListWebACLsErrorKind::WafInvalidOperationException(inner) => {
-                        Error::WafInvalidOperationException(inner)
-                    }
-                    crate::error::ListWebACLsErrorKind::WafInvalidParameterException(inner) => {
-                        Error::WafInvalidParameterException(inner)
-                    }
-                    crate::error::ListWebACLsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListWebACLsError> for Error {
+    fn from(err: crate::error::ListWebACLsError) -> Self {
+        match err.kind {
+            crate::error::ListWebACLsErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::ListWebACLsErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::ListWebACLsErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::ListWebACLsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1260,18 +1553,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::PutLoggingConfigurationError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::PutLoggingConfigurationErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
-                crate::error::PutLoggingConfigurationErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
-                crate::error::PutLoggingConfigurationErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
-                crate::error::PutLoggingConfigurationErrorKind::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
-                crate::error::PutLoggingConfigurationErrorKind::WafLogDestinationPermissionIssueException(inner) => Error::WafLogDestinationPermissionIssueException(inner),
-                crate::error::PutLoggingConfigurationErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
-                crate::error::PutLoggingConfigurationErrorKind::WafOptimisticLockException(inner) => Error::WafOptimisticLockException(inner),
-                crate::error::PutLoggingConfigurationErrorKind::WafServiceLinkedRoleErrorException(inner) => Error::WafServiceLinkedRoleErrorException(inner),
-                crate::error::PutLoggingConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::PutLoggingConfigurationError> for Error {
+    fn from(err: crate::error::PutLoggingConfigurationError) -> Self {
+        match err.kind {
+            crate::error::PutLoggingConfigurationErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::PutLoggingConfigurationErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::error::PutLoggingConfigurationErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::error::PutLoggingConfigurationErrorKind::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+            crate::error::PutLoggingConfigurationErrorKind::WafLogDestinationPermissionIssueException(inner) => Error::WafLogDestinationPermissionIssueException(inner),
+            crate::error::PutLoggingConfigurationErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::PutLoggingConfigurationErrorKind::WafOptimisticLockException(inner) => Error::WafOptimisticLockException(inner),
+            crate::error::PutLoggingConfigurationErrorKind::WafServiceLinkedRoleErrorException(inner) => Error::WafServiceLinkedRoleErrorException(inner),
+            crate::error::PutLoggingConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -1284,30 +1584,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::PutManagedRuleSetVersionsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::PutManagedRuleSetVersionsErrorKind::WafInternalErrorException(
-                    inner,
-                ) => Error::WafInternalErrorException(inner),
-                crate::error::PutManagedRuleSetVersionsErrorKind::WafInvalidOperationException(
-                    inner,
-                ) => Error::WafInvalidOperationException(inner),
-                crate::error::PutManagedRuleSetVersionsErrorKind::WafInvalidParameterException(
-                    inner,
-                ) => Error::WafInvalidParameterException(inner),
-                crate::error::PutManagedRuleSetVersionsErrorKind::WafNonexistentItemException(
-                    inner,
-                ) => Error::WafNonexistentItemException(inner),
-                crate::error::PutManagedRuleSetVersionsErrorKind::WafOptimisticLockException(
-                    inner,
-                ) => Error::WafOptimisticLockException(inner),
-                crate::error::PutManagedRuleSetVersionsErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::PutManagedRuleSetVersionsError> for Error {
+    fn from(err: crate::error::PutManagedRuleSetVersionsError) -> Self {
+        match err.kind {
+            crate::error::PutManagedRuleSetVersionsErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::PutManagedRuleSetVersionsErrorKind::WafInvalidOperationException(
+                inner,
+            ) => Error::WafInvalidOperationException(inner),
+            crate::error::PutManagedRuleSetVersionsErrorKind::WafInvalidParameterException(
+                inner,
+            ) => Error::WafInvalidParameterException(inner),
+            crate::error::PutManagedRuleSetVersionsErrorKind::WafNonexistentItemException(
+                inner,
+            ) => Error::WafNonexistentItemException(inner),
+            crate::error::PutManagedRuleSetVersionsErrorKind::WafOptimisticLockException(inner) => {
+                Error::WafOptimisticLockException(inner)
+            }
+            crate::error::PutManagedRuleSetVersionsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1319,27 +1623,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::PutPermissionPolicyError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::PutPermissionPolicyErrorKind::WafInternalErrorException(inner) => {
-                    Error::WafInternalErrorException(inner)
-                }
-                crate::error::PutPermissionPolicyErrorKind::WafInvalidParameterException(inner) => {
-                    Error::WafInvalidParameterException(inner)
-                }
-                crate::error::PutPermissionPolicyErrorKind::WafInvalidPermissionPolicyException(
-                    inner,
-                ) => Error::WafInvalidPermissionPolicyException(inner),
-                crate::error::PutPermissionPolicyErrorKind::WafNonexistentItemException(inner) => {
-                    Error::WafNonexistentItemException(inner)
-                }
-                crate::error::PutPermissionPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::PutPermissionPolicyError> for Error {
+    fn from(err: crate::error::PutPermissionPolicyError) -> Self {
+        match err.kind {
+            crate::error::PutPermissionPolicyErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::PutPermissionPolicyErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::PutPermissionPolicyErrorKind::WafInvalidPermissionPolicyException(
+                inner,
+            ) => Error::WafInvalidPermissionPolicyException(inner),
+            crate::error::PutPermissionPolicyErrorKind::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::error::PutPermissionPolicyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1350,34 +1658,39 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::TagResourceErrorKind::WafInternalErrorException(inner) => {
-                        Error::WafInternalErrorException(inner)
-                    }
-                    crate::error::TagResourceErrorKind::WafInvalidOperationException(inner) => {
-                        Error::WafInvalidOperationException(inner)
-                    }
-                    crate::error::TagResourceErrorKind::WafInvalidParameterException(inner) => {
-                        Error::WafInvalidParameterException(inner)
-                    }
-                    crate::error::TagResourceErrorKind::WafLimitsExceededException(inner) => {
-                        Error::WafLimitsExceededException(inner)
-                    }
-                    crate::error::TagResourceErrorKind::WafNonexistentItemException(inner) => {
-                        Error::WafNonexistentItemException(inner)
-                    }
-                    crate::error::TagResourceErrorKind::WafTagOperationException(inner) => {
-                        Error::WafTagOperationException(inner)
-                    }
-                    crate::error::TagResourceErrorKind::WafTagOperationInternalErrorException(
-                        inner,
-                    ) => Error::WafTagOperationInternalErrorException(inner),
-                    crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::TagResourceError> for Error {
+    fn from(err: crate::error::TagResourceError) -> Self {
+        match err.kind {
+            crate::error::TagResourceErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::TagResourceErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::TagResourceErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::TagResourceErrorKind::WafLimitsExceededException(inner) => {
+                Error::WafLimitsExceededException(inner)
+            }
+            crate::error::TagResourceErrorKind::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::error::TagResourceErrorKind::WafTagOperationException(inner) => {
+                Error::WafTagOperationException(inner)
+            }
+            crate::error::TagResourceErrorKind::WafTagOperationInternalErrorException(inner) => {
+                Error::WafTagOperationInternalErrorException(inner)
+            }
+            crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1388,31 +1701,36 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::UntagResourceErrorKind::WafInternalErrorException(inner) => {
-                        Error::WafInternalErrorException(inner)
-                    }
-                    crate::error::UntagResourceErrorKind::WafInvalidOperationException(inner) => {
-                        Error::WafInvalidOperationException(inner)
-                    }
-                    crate::error::UntagResourceErrorKind::WafInvalidParameterException(inner) => {
-                        Error::WafInvalidParameterException(inner)
-                    }
-                    crate::error::UntagResourceErrorKind::WafNonexistentItemException(inner) => {
-                        Error::WafNonexistentItemException(inner)
-                    }
-                    crate::error::UntagResourceErrorKind::WafTagOperationException(inner) => {
-                        Error::WafTagOperationException(inner)
-                    }
-                    crate::error::UntagResourceErrorKind::WafTagOperationInternalErrorException(
-                        inner,
-                    ) => Error::WafTagOperationInternalErrorException(inner),
-                    crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UntagResourceError> for Error {
+    fn from(err: crate::error::UntagResourceError) -> Self {
+        match err.kind {
+            crate::error::UntagResourceErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::UntagResourceErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::UntagResourceErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::UntagResourceErrorKind::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::error::UntagResourceErrorKind::WafTagOperationException(inner) => {
+                Error::WafTagOperationException(inner)
+            }
+            crate::error::UntagResourceErrorKind::WafTagOperationInternalErrorException(inner) => {
+                Error::WafTagOperationInternalErrorException(inner)
+            }
+            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1423,34 +1741,39 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateIPSetError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::UpdateIPSetErrorKind::WafDuplicateItemException(inner) => {
-                        Error::WafDuplicateItemException(inner)
-                    }
-                    crate::error::UpdateIPSetErrorKind::WafInternalErrorException(inner) => {
-                        Error::WafInternalErrorException(inner)
-                    }
-                    crate::error::UpdateIPSetErrorKind::WafInvalidOperationException(inner) => {
-                        Error::WafInvalidOperationException(inner)
-                    }
-                    crate::error::UpdateIPSetErrorKind::WafInvalidParameterException(inner) => {
-                        Error::WafInvalidParameterException(inner)
-                    }
-                    crate::error::UpdateIPSetErrorKind::WafLimitsExceededException(inner) => {
-                        Error::WafLimitsExceededException(inner)
-                    }
-                    crate::error::UpdateIPSetErrorKind::WafNonexistentItemException(inner) => {
-                        Error::WafNonexistentItemException(inner)
-                    }
-                    crate::error::UpdateIPSetErrorKind::WafOptimisticLockException(inner) => {
-                        Error::WafOptimisticLockException(inner)
-                    }
-                    crate::error::UpdateIPSetErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateIPSetError> for Error {
+    fn from(err: crate::error::UpdateIPSetError) -> Self {
+        match err.kind {
+            crate::error::UpdateIPSetErrorKind::WafDuplicateItemException(inner) => {
+                Error::WafDuplicateItemException(inner)
+            }
+            crate::error::UpdateIPSetErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::UpdateIPSetErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::UpdateIPSetErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::UpdateIPSetErrorKind::WafLimitsExceededException(inner) => {
+                Error::WafLimitsExceededException(inner)
+            }
+            crate::error::UpdateIPSetErrorKind::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::error::UpdateIPSetErrorKind::WafOptimisticLockException(inner) => {
+                Error::WafOptimisticLockException(inner)
+            }
+            crate::error::UpdateIPSetErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1471,15 +1794,22 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
-                crate::error::UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
-                crate::error::UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
-                crate::error::UpdateManagedRuleSetVersionExpiryDateErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
-                crate::error::UpdateManagedRuleSetVersionExpiryDateErrorKind::WafOptimisticLockException(inner) => Error::WafOptimisticLockException(inner),
-                crate::error::UpdateManagedRuleSetVersionExpiryDateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateManagedRuleSetVersionExpiryDateError> for Error {
+    fn from(err: crate::error::UpdateManagedRuleSetVersionExpiryDateError) -> Self {
+        match err.kind {
+            crate::error::UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::error::UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::error::UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::error::UpdateManagedRuleSetVersionExpiryDateErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::error::UpdateManagedRuleSetVersionExpiryDateErrorKind::WafOptimisticLockException(inner) => Error::WafOptimisticLockException(inner),
+            crate::error::UpdateManagedRuleSetVersionExpiryDateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -1493,34 +1823,39 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::UpdateRegexPatternSetErrorKind::WafDuplicateItemException(
-                        inner,
-                    ) => Error::WafDuplicateItemException(inner),
-                    crate::error::UpdateRegexPatternSetErrorKind::WafInternalErrorException(
-                        inner,
-                    ) => Error::WafInternalErrorException(inner),
-                    crate::error::UpdateRegexPatternSetErrorKind::WafInvalidOperationException(
-                        inner,
-                    ) => Error::WafInvalidOperationException(inner),
-                    crate::error::UpdateRegexPatternSetErrorKind::WafInvalidParameterException(
-                        inner,
-                    ) => Error::WafInvalidParameterException(inner),
-                    crate::error::UpdateRegexPatternSetErrorKind::WafLimitsExceededException(
-                        inner,
-                    ) => Error::WafLimitsExceededException(inner),
-                    crate::error::UpdateRegexPatternSetErrorKind::WafNonexistentItemException(
-                        inner,
-                    ) => Error::WafNonexistentItemException(inner),
-                    crate::error::UpdateRegexPatternSetErrorKind::WafOptimisticLockException(
-                        inner,
-                    ) => Error::WafOptimisticLockException(inner),
-                    crate::error::UpdateRegexPatternSetErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateRegexPatternSetError> for Error {
+    fn from(err: crate::error::UpdateRegexPatternSetError) -> Self {
+        match err.kind {
+            crate::error::UpdateRegexPatternSetErrorKind::WafDuplicateItemException(inner) => {
+                Error::WafDuplicateItemException(inner)
+            }
+            crate::error::UpdateRegexPatternSetErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::UpdateRegexPatternSetErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::UpdateRegexPatternSetErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::UpdateRegexPatternSetErrorKind::WafLimitsExceededException(inner) => {
+                Error::WafLimitsExceededException(inner)
+            }
+            crate::error::UpdateRegexPatternSetErrorKind::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::error::UpdateRegexPatternSetErrorKind::WafOptimisticLockException(inner) => {
+                Error::WafOptimisticLockException(inner)
+            }
+            crate::error::UpdateRegexPatternSetErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1531,43 +1866,48 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateRuleGroupError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::UpdateRuleGroupErrorKind::WafConfigurationWarningException(
-                        inner,
-                    ) => Error::WafConfigurationWarningException(inner),
-                    crate::error::UpdateRuleGroupErrorKind::WafDuplicateItemException(inner) => {
-                        Error::WafDuplicateItemException(inner)
-                    }
-                    crate::error::UpdateRuleGroupErrorKind::WafInternalErrorException(inner) => {
-                        Error::WafInternalErrorException(inner)
-                    }
-                    crate::error::UpdateRuleGroupErrorKind::WafInvalidOperationException(inner) => {
-                        Error::WafInvalidOperationException(inner)
-                    }
-                    crate::error::UpdateRuleGroupErrorKind::WafInvalidParameterException(inner) => {
-                        Error::WafInvalidParameterException(inner)
-                    }
-                    crate::error::UpdateRuleGroupErrorKind::WafLimitsExceededException(inner) => {
-                        Error::WafLimitsExceededException(inner)
-                    }
-                    crate::error::UpdateRuleGroupErrorKind::WafNonexistentItemException(inner) => {
-                        Error::WafNonexistentItemException(inner)
-                    }
-                    crate::error::UpdateRuleGroupErrorKind::WafOptimisticLockException(inner) => {
-                        Error::WafOptimisticLockException(inner)
-                    }
-                    crate::error::UpdateRuleGroupErrorKind::WafSubscriptionNotFoundException(
-                        inner,
-                    ) => Error::WafSubscriptionNotFoundException(inner),
-                    crate::error::UpdateRuleGroupErrorKind::WafUnavailableEntityException(
-                        inner,
-                    ) => Error::WafUnavailableEntityException(inner),
-                    crate::error::UpdateRuleGroupErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateRuleGroupError> for Error {
+    fn from(err: crate::error::UpdateRuleGroupError) -> Self {
+        match err.kind {
+            crate::error::UpdateRuleGroupErrorKind::WafConfigurationWarningException(inner) => {
+                Error::WafConfigurationWarningException(inner)
+            }
+            crate::error::UpdateRuleGroupErrorKind::WafDuplicateItemException(inner) => {
+                Error::WafDuplicateItemException(inner)
+            }
+            crate::error::UpdateRuleGroupErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::UpdateRuleGroupErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::UpdateRuleGroupErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::UpdateRuleGroupErrorKind::WafLimitsExceededException(inner) => {
+                Error::WafLimitsExceededException(inner)
+            }
+            crate::error::UpdateRuleGroupErrorKind::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::error::UpdateRuleGroupErrorKind::WafOptimisticLockException(inner) => {
+                Error::WafOptimisticLockException(inner)
+            }
+            crate::error::UpdateRuleGroupErrorKind::WafSubscriptionNotFoundException(inner) => {
+                Error::WafSubscriptionNotFoundException(inner)
+            }
+            crate::error::UpdateRuleGroupErrorKind::WafUnavailableEntityException(inner) => {
+                Error::WafUnavailableEntityException(inner)
+            }
+            crate::error::UpdateRuleGroupErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1577,51 +1917,55 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateWebACLError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::UpdateWebACLErrorKind::WafConfigurationWarningException(inner) => {
-                    Error::WafConfigurationWarningException(inner)
-                }
-                crate::error::UpdateWebACLErrorKind::WafDuplicateItemException(inner) => {
-                    Error::WafDuplicateItemException(inner)
-                }
-                crate::error::UpdateWebACLErrorKind::WafExpiredManagedRuleGroupVersionException(
-                    inner,
-                ) => Error::WafExpiredManagedRuleGroupVersionException(inner),
-                crate::error::UpdateWebACLErrorKind::WafInternalErrorException(inner) => {
-                    Error::WafInternalErrorException(inner)
-                }
-                crate::error::UpdateWebACLErrorKind::WafInvalidOperationException(inner) => {
-                    Error::WafInvalidOperationException(inner)
-                }
-                crate::error::UpdateWebACLErrorKind::WafInvalidParameterException(inner) => {
-                    Error::WafInvalidParameterException(inner)
-                }
-                crate::error::UpdateWebACLErrorKind::WafInvalidResourceException(inner) => {
-                    Error::WafInvalidResourceException(inner)
-                }
-                crate::error::UpdateWebACLErrorKind::WafLimitsExceededException(inner) => {
-                    Error::WafLimitsExceededException(inner)
-                }
-                crate::error::UpdateWebACLErrorKind::WafNonexistentItemException(inner) => {
-                    Error::WafNonexistentItemException(inner)
-                }
-                crate::error::UpdateWebACLErrorKind::WafOptimisticLockException(inner) => {
-                    Error::WafOptimisticLockException(inner)
-                }
-                crate::error::UpdateWebACLErrorKind::WafSubscriptionNotFoundException(inner) => {
-                    Error::WafSubscriptionNotFoundException(inner)
-                }
-                crate::error::UpdateWebACLErrorKind::WafUnavailableEntityException(inner) => {
-                    Error::WafUnavailableEntityException(inner)
-                }
-                crate::error::UpdateWebACLErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateWebACLError> for Error {
+    fn from(err: crate::error::UpdateWebACLError) -> Self {
+        match err.kind {
+            crate::error::UpdateWebACLErrorKind::WafConfigurationWarningException(inner) => {
+                Error::WafConfigurationWarningException(inner)
+            }
+            crate::error::UpdateWebACLErrorKind::WafDuplicateItemException(inner) => {
+                Error::WafDuplicateItemException(inner)
+            }
+            crate::error::UpdateWebACLErrorKind::WafExpiredManagedRuleGroupVersionException(
+                inner,
+            ) => Error::WafExpiredManagedRuleGroupVersionException(inner),
+            crate::error::UpdateWebACLErrorKind::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::error::UpdateWebACLErrorKind::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::error::UpdateWebACLErrorKind::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::error::UpdateWebACLErrorKind::WafInvalidResourceException(inner) => {
+                Error::WafInvalidResourceException(inner)
+            }
+            crate::error::UpdateWebACLErrorKind::WafLimitsExceededException(inner) => {
+                Error::WafLimitsExceededException(inner)
+            }
+            crate::error::UpdateWebACLErrorKind::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::error::UpdateWebACLErrorKind::WafOptimisticLockException(inner) => {
+                Error::WafOptimisticLockException(inner)
+            }
+            crate::error::UpdateWebACLErrorKind::WafSubscriptionNotFoundException(inner) => {
+                Error::WafSubscriptionNotFoundException(inner)
+            }
+            crate::error::UpdateWebACLErrorKind::WafUnavailableEntityException(inner) => {
+                Error::WafUnavailableEntityException(inner)
+            }
+            crate::error::UpdateWebACLErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }

@@ -482,28 +482,33 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AssociateAliasError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::AssociateAliasErrorKind::AccessDenied(inner) => {
-                        Error::AccessDenied(inner)
-                    }
-                    crate::error::AssociateAliasErrorKind::IllegalUpdate(inner) => {
-                        Error::IllegalUpdate(inner)
-                    }
-                    crate::error::AssociateAliasErrorKind::InvalidArgument(inner) => {
-                        Error::InvalidArgument(inner)
-                    }
-                    crate::error::AssociateAliasErrorKind::NoSuchDistribution(inner) => {
-                        Error::NoSuchDistribution(inner)
-                    }
-                    crate::error::AssociateAliasErrorKind::TooManyDistributionCnamEs(inner) => {
-                        Error::TooManyDistributionCnamEs(inner)
-                    }
-                    crate::error::AssociateAliasErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::AssociateAliasError> for Error {
+    fn from(err: crate::error::AssociateAliasError) -> Self {
+        match err.kind {
+            crate::error::AssociateAliasErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::AssociateAliasErrorKind::IllegalUpdate(inner) => {
+                Error::IllegalUpdate(inner)
+            }
+            crate::error::AssociateAliasErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::AssociateAliasErrorKind::NoSuchDistribution(inner) => {
+                Error::NoSuchDistribution(inner)
+            }
+            crate::error::AssociateAliasErrorKind::TooManyDistributionCnamEs(inner) => {
+                Error::TooManyDistributionCnamEs(inner)
+            }
+            crate::error::AssociateAliasErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -516,37 +521,42 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::CreateCachePolicyErrorKind::AccessDenied(inner) => {
-                        Error::AccessDenied(inner)
-                    }
-                    crate::error::CreateCachePolicyErrorKind::CachePolicyAlreadyExists(inner) => {
-                        Error::CachePolicyAlreadyExists(inner)
-                    }
-                    crate::error::CreateCachePolicyErrorKind::InconsistentQuantities(inner) => {
-                        Error::InconsistentQuantities(inner)
-                    }
-                    crate::error::CreateCachePolicyErrorKind::InvalidArgument(inner) => {
-                        Error::InvalidArgument(inner)
-                    }
-                    crate::error::CreateCachePolicyErrorKind::TooManyCachePolicies(inner) => {
-                        Error::TooManyCachePolicies(inner)
-                    }
-                    crate::error::CreateCachePolicyErrorKind::TooManyCookiesInCachePolicy(
-                        inner,
-                    ) => Error::TooManyCookiesInCachePolicy(inner),
-                    crate::error::CreateCachePolicyErrorKind::TooManyHeadersInCachePolicy(
-                        inner,
-                    ) => Error::TooManyHeadersInCachePolicy(inner),
-                    crate::error::CreateCachePolicyErrorKind::TooManyQueryStringsInCachePolicy(
-                        inner,
-                    ) => Error::TooManyQueryStringsInCachePolicy(inner),
-                    crate::error::CreateCachePolicyErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateCachePolicyError> for Error {
+    fn from(err: crate::error::CreateCachePolicyError) -> Self {
+        match err.kind {
+            crate::error::CreateCachePolicyErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::CreateCachePolicyErrorKind::CachePolicyAlreadyExists(inner) => {
+                Error::CachePolicyAlreadyExists(inner)
+            }
+            crate::error::CreateCachePolicyErrorKind::InconsistentQuantities(inner) => {
+                Error::InconsistentQuantities(inner)
+            }
+            crate::error::CreateCachePolicyErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::CreateCachePolicyErrorKind::TooManyCachePolicies(inner) => {
+                Error::TooManyCachePolicies(inner)
+            }
+            crate::error::CreateCachePolicyErrorKind::TooManyCookiesInCachePolicy(inner) => {
+                Error::TooManyCookiesInCachePolicy(inner)
+            }
+            crate::error::CreateCachePolicyErrorKind::TooManyHeadersInCachePolicy(inner) => {
+                Error::TooManyHeadersInCachePolicy(inner)
+            }
+            crate::error::CreateCachePolicyErrorKind::TooManyQueryStringsInCachePolicy(inner) => {
+                Error::TooManyQueryStringsInCachePolicy(inner)
+            }
+            crate::error::CreateCachePolicyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -567,15 +577,22 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::CreateCloudFrontOriginAccessIdentityErrorKind::CloudFrontOriginAccessIdentityAlreadyExists(inner) => Error::CloudFrontOriginAccessIdentityAlreadyExists(inner),
-                crate::error::CreateCloudFrontOriginAccessIdentityErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
-                crate::error::CreateCloudFrontOriginAccessIdentityErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
-                crate::error::CreateCloudFrontOriginAccessIdentityErrorKind::MissingBody(inner) => Error::MissingBody(inner),
-                crate::error::CreateCloudFrontOriginAccessIdentityErrorKind::TooManyCloudFrontOriginAccessIdentities(inner) => Error::TooManyCloudFrontOriginAccessIdentities(inner),
-                crate::error::CreateCloudFrontOriginAccessIdentityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateCloudFrontOriginAccessIdentityError> for Error {
+    fn from(err: crate::error::CreateCloudFrontOriginAccessIdentityError) -> Self {
+        match err.kind {
+            crate::error::CreateCloudFrontOriginAccessIdentityErrorKind::CloudFrontOriginAccessIdentityAlreadyExists(inner) => Error::CloudFrontOriginAccessIdentityAlreadyExists(inner),
+            crate::error::CreateCloudFrontOriginAccessIdentityErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+            crate::error::CreateCloudFrontOriginAccessIdentityErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::CreateCloudFrontOriginAccessIdentityErrorKind::MissingBody(inner) => Error::MissingBody(inner),
+            crate::error::CreateCloudFrontOriginAccessIdentityErrorKind::TooManyCloudFrontOriginAccessIdentities(inner) => Error::TooManyCloudFrontOriginAccessIdentities(inner),
+            crate::error::CreateCloudFrontOriginAccessIdentityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -587,73 +604,80 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateDistributionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::CreateDistributionErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-                crate::error::CreateDistributionErrorKind::CnameAlreadyExists(inner) => Error::CnameAlreadyExists(inner),
-                crate::error::CreateDistributionErrorKind::DistributionAlreadyExists(inner) => Error::DistributionAlreadyExists(inner),
-                crate::error::CreateDistributionErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner) => Error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner),
-                crate::error::CreateDistributionErrorKind::IllegalOriginAccessConfiguration(inner) => Error::IllegalOriginAccessConfiguration(inner),
-                crate::error::CreateDistributionErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
-                crate::error::CreateDistributionErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
-                crate::error::CreateDistributionErrorKind::InvalidDefaultRootObject(inner) => Error::InvalidDefaultRootObject(inner),
-                crate::error::CreateDistributionErrorKind::InvalidDomainNameForOriginAccessControl(inner) => Error::InvalidDomainNameForOriginAccessControl(inner),
-                crate::error::CreateDistributionErrorKind::InvalidErrorCode(inner) => Error::InvalidErrorCode(inner),
-                crate::error::CreateDistributionErrorKind::InvalidForwardCookies(inner) => Error::InvalidForwardCookies(inner),
-                crate::error::CreateDistributionErrorKind::InvalidFunctionAssociation(inner) => Error::InvalidFunctionAssociation(inner),
-                crate::error::CreateDistributionErrorKind::InvalidGeoRestrictionParameter(inner) => Error::InvalidGeoRestrictionParameter(inner),
-                crate::error::CreateDistributionErrorKind::InvalidHeadersForS3Origin(inner) => Error::InvalidHeadersForS3Origin(inner),
-                crate::error::CreateDistributionErrorKind::InvalidLambdaFunctionAssociation(inner) => Error::InvalidLambdaFunctionAssociation(inner),
-                crate::error::CreateDistributionErrorKind::InvalidLocationCode(inner) => Error::InvalidLocationCode(inner),
-                crate::error::CreateDistributionErrorKind::InvalidMinimumProtocolVersion(inner) => Error::InvalidMinimumProtocolVersion(inner),
-                crate::error::CreateDistributionErrorKind::InvalidOrigin(inner) => Error::InvalidOrigin(inner),
-                crate::error::CreateDistributionErrorKind::InvalidOriginAccessControl(inner) => Error::InvalidOriginAccessControl(inner),
-                crate::error::CreateDistributionErrorKind::InvalidOriginAccessIdentity(inner) => Error::InvalidOriginAccessIdentity(inner),
-                crate::error::CreateDistributionErrorKind::InvalidOriginKeepaliveTimeout(inner) => Error::InvalidOriginKeepaliveTimeout(inner),
-                crate::error::CreateDistributionErrorKind::InvalidOriginReadTimeout(inner) => Error::InvalidOriginReadTimeout(inner),
-                crate::error::CreateDistributionErrorKind::InvalidProtocolSettings(inner) => Error::InvalidProtocolSettings(inner),
-                crate::error::CreateDistributionErrorKind::InvalidQueryStringParameters(inner) => Error::InvalidQueryStringParameters(inner),
-                crate::error::CreateDistributionErrorKind::InvalidRelativePath(inner) => Error::InvalidRelativePath(inner),
-                crate::error::CreateDistributionErrorKind::InvalidRequiredProtocol(inner) => Error::InvalidRequiredProtocol(inner),
-                crate::error::CreateDistributionErrorKind::InvalidResponseCode(inner) => Error::InvalidResponseCode(inner),
-                crate::error::CreateDistributionErrorKind::InvalidTtlOrder(inner) => Error::InvalidTtlOrder(inner),
-                crate::error::CreateDistributionErrorKind::InvalidViewerCertificate(inner) => Error::InvalidViewerCertificate(inner),
-                crate::error::CreateDistributionErrorKind::InvalidWebAclId(inner) => Error::InvalidWebAclId(inner),
-                crate::error::CreateDistributionErrorKind::MissingBody(inner) => Error::MissingBody(inner),
-                crate::error::CreateDistributionErrorKind::NoSuchCachePolicy(inner) => Error::NoSuchCachePolicy(inner),
-                crate::error::CreateDistributionErrorKind::NoSuchFieldLevelEncryptionConfig(inner) => Error::NoSuchFieldLevelEncryptionConfig(inner),
-                crate::error::CreateDistributionErrorKind::NoSuchOrigin(inner) => Error::NoSuchOrigin(inner),
-                crate::error::CreateDistributionErrorKind::NoSuchOriginRequestPolicy(inner) => Error::NoSuchOriginRequestPolicy(inner),
-                crate::error::CreateDistributionErrorKind::NoSuchRealtimeLogConfig(inner) => Error::NoSuchRealtimeLogConfig(inner),
-                crate::error::CreateDistributionErrorKind::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
-                crate::error::CreateDistributionErrorKind::RealtimeLogConfigOwnerMismatch(inner) => Error::RealtimeLogConfigOwnerMismatch(inner),
-                crate::error::CreateDistributionErrorKind::TooManyCacheBehaviors(inner) => Error::TooManyCacheBehaviors(inner),
-                crate::error::CreateDistributionErrorKind::TooManyCertificates(inner) => Error::TooManyCertificates(inner),
-                crate::error::CreateDistributionErrorKind::TooManyCookieNamesInWhiteList(inner) => Error::TooManyCookieNamesInWhiteList(inner),
-                crate::error::CreateDistributionErrorKind::TooManyDistributionCnamEs(inner) => Error::TooManyDistributionCnamEs(inner),
-                crate::error::CreateDistributionErrorKind::TooManyDistributions(inner) => Error::TooManyDistributions(inner),
-                crate::error::CreateDistributionErrorKind::TooManyDistributionsAssociatedToCachePolicy(inner) => Error::TooManyDistributionsAssociatedToCachePolicy(inner),
-                crate::error::CreateDistributionErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner) => Error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner),
-                crate::error::CreateDistributionErrorKind::TooManyDistributionsAssociatedToKeyGroup(inner) => Error::TooManyDistributionsAssociatedToKeyGroup(inner),
-                crate::error::CreateDistributionErrorKind::TooManyDistributionsAssociatedToOriginAccessControl(inner) => Error::TooManyDistributionsAssociatedToOriginAccessControl(inner),
-                crate::error::CreateDistributionErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy(inner) => Error::TooManyDistributionsAssociatedToOriginRequestPolicy(inner),
-                crate::error::CreateDistributionErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner) => Error::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner),
-                crate::error::CreateDistributionErrorKind::TooManyDistributionsWithFunctionAssociations(inner) => Error::TooManyDistributionsWithFunctionAssociations(inner),
-                crate::error::CreateDistributionErrorKind::TooManyDistributionsWithLambdaAssociations(inner) => Error::TooManyDistributionsWithLambdaAssociations(inner),
-                crate::error::CreateDistributionErrorKind::TooManyDistributionsWithSingleFunctionArn(inner) => Error::TooManyDistributionsWithSingleFunctionArn(inner),
-                crate::error::CreateDistributionErrorKind::TooManyFunctionAssociations(inner) => Error::TooManyFunctionAssociations(inner),
-                crate::error::CreateDistributionErrorKind::TooManyHeadersInForwardedValues(inner) => Error::TooManyHeadersInForwardedValues(inner),
-                crate::error::CreateDistributionErrorKind::TooManyKeyGroupsAssociatedToDistribution(inner) => Error::TooManyKeyGroupsAssociatedToDistribution(inner),
-                crate::error::CreateDistributionErrorKind::TooManyLambdaFunctionAssociations(inner) => Error::TooManyLambdaFunctionAssociations(inner),
-                crate::error::CreateDistributionErrorKind::TooManyOriginCustomHeaders(inner) => Error::TooManyOriginCustomHeaders(inner),
-                crate::error::CreateDistributionErrorKind::TooManyOriginGroupsPerDistribution(inner) => Error::TooManyOriginGroupsPerDistribution(inner),
-                crate::error::CreateDistributionErrorKind::TooManyOrigins(inner) => Error::TooManyOrigins(inner),
-                crate::error::CreateDistributionErrorKind::TooManyQueryStringParameters(inner) => Error::TooManyQueryStringParameters(inner),
-                crate::error::CreateDistributionErrorKind::TooManyTrustedSigners(inner) => Error::TooManyTrustedSigners(inner),
-                crate::error::CreateDistributionErrorKind::TrustedKeyGroupDoesNotExist(inner) => Error::TrustedKeyGroupDoesNotExist(inner),
-                crate::error::CreateDistributionErrorKind::TrustedSignerDoesNotExist(inner) => Error::TrustedSignerDoesNotExist(inner),
-                crate::error::CreateDistributionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateDistributionError> for Error {
+    fn from(err: crate::error::CreateDistributionError) -> Self {
+        match err.kind {
+            crate::error::CreateDistributionErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::CreateDistributionErrorKind::CnameAlreadyExists(inner) => Error::CnameAlreadyExists(inner),
+            crate::error::CreateDistributionErrorKind::DistributionAlreadyExists(inner) => Error::DistributionAlreadyExists(inner),
+            crate::error::CreateDistributionErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner) => Error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner),
+            crate::error::CreateDistributionErrorKind::IllegalOriginAccessConfiguration(inner) => Error::IllegalOriginAccessConfiguration(inner),
+            crate::error::CreateDistributionErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+            crate::error::CreateDistributionErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::CreateDistributionErrorKind::InvalidDefaultRootObject(inner) => Error::InvalidDefaultRootObject(inner),
+            crate::error::CreateDistributionErrorKind::InvalidDomainNameForOriginAccessControl(inner) => Error::InvalidDomainNameForOriginAccessControl(inner),
+            crate::error::CreateDistributionErrorKind::InvalidErrorCode(inner) => Error::InvalidErrorCode(inner),
+            crate::error::CreateDistributionErrorKind::InvalidForwardCookies(inner) => Error::InvalidForwardCookies(inner),
+            crate::error::CreateDistributionErrorKind::InvalidFunctionAssociation(inner) => Error::InvalidFunctionAssociation(inner),
+            crate::error::CreateDistributionErrorKind::InvalidGeoRestrictionParameter(inner) => Error::InvalidGeoRestrictionParameter(inner),
+            crate::error::CreateDistributionErrorKind::InvalidHeadersForS3Origin(inner) => Error::InvalidHeadersForS3Origin(inner),
+            crate::error::CreateDistributionErrorKind::InvalidLambdaFunctionAssociation(inner) => Error::InvalidLambdaFunctionAssociation(inner),
+            crate::error::CreateDistributionErrorKind::InvalidLocationCode(inner) => Error::InvalidLocationCode(inner),
+            crate::error::CreateDistributionErrorKind::InvalidMinimumProtocolVersion(inner) => Error::InvalidMinimumProtocolVersion(inner),
+            crate::error::CreateDistributionErrorKind::InvalidOrigin(inner) => Error::InvalidOrigin(inner),
+            crate::error::CreateDistributionErrorKind::InvalidOriginAccessControl(inner) => Error::InvalidOriginAccessControl(inner),
+            crate::error::CreateDistributionErrorKind::InvalidOriginAccessIdentity(inner) => Error::InvalidOriginAccessIdentity(inner),
+            crate::error::CreateDistributionErrorKind::InvalidOriginKeepaliveTimeout(inner) => Error::InvalidOriginKeepaliveTimeout(inner),
+            crate::error::CreateDistributionErrorKind::InvalidOriginReadTimeout(inner) => Error::InvalidOriginReadTimeout(inner),
+            crate::error::CreateDistributionErrorKind::InvalidProtocolSettings(inner) => Error::InvalidProtocolSettings(inner),
+            crate::error::CreateDistributionErrorKind::InvalidQueryStringParameters(inner) => Error::InvalidQueryStringParameters(inner),
+            crate::error::CreateDistributionErrorKind::InvalidRelativePath(inner) => Error::InvalidRelativePath(inner),
+            crate::error::CreateDistributionErrorKind::InvalidRequiredProtocol(inner) => Error::InvalidRequiredProtocol(inner),
+            crate::error::CreateDistributionErrorKind::InvalidResponseCode(inner) => Error::InvalidResponseCode(inner),
+            crate::error::CreateDistributionErrorKind::InvalidTtlOrder(inner) => Error::InvalidTtlOrder(inner),
+            crate::error::CreateDistributionErrorKind::InvalidViewerCertificate(inner) => Error::InvalidViewerCertificate(inner),
+            crate::error::CreateDistributionErrorKind::InvalidWebAclId(inner) => Error::InvalidWebAclId(inner),
+            crate::error::CreateDistributionErrorKind::MissingBody(inner) => Error::MissingBody(inner),
+            crate::error::CreateDistributionErrorKind::NoSuchCachePolicy(inner) => Error::NoSuchCachePolicy(inner),
+            crate::error::CreateDistributionErrorKind::NoSuchFieldLevelEncryptionConfig(inner) => Error::NoSuchFieldLevelEncryptionConfig(inner),
+            crate::error::CreateDistributionErrorKind::NoSuchOrigin(inner) => Error::NoSuchOrigin(inner),
+            crate::error::CreateDistributionErrorKind::NoSuchOriginRequestPolicy(inner) => Error::NoSuchOriginRequestPolicy(inner),
+            crate::error::CreateDistributionErrorKind::NoSuchRealtimeLogConfig(inner) => Error::NoSuchRealtimeLogConfig(inner),
+            crate::error::CreateDistributionErrorKind::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
+            crate::error::CreateDistributionErrorKind::RealtimeLogConfigOwnerMismatch(inner) => Error::RealtimeLogConfigOwnerMismatch(inner),
+            crate::error::CreateDistributionErrorKind::TooManyCacheBehaviors(inner) => Error::TooManyCacheBehaviors(inner),
+            crate::error::CreateDistributionErrorKind::TooManyCertificates(inner) => Error::TooManyCertificates(inner),
+            crate::error::CreateDistributionErrorKind::TooManyCookieNamesInWhiteList(inner) => Error::TooManyCookieNamesInWhiteList(inner),
+            crate::error::CreateDistributionErrorKind::TooManyDistributionCnamEs(inner) => Error::TooManyDistributionCnamEs(inner),
+            crate::error::CreateDistributionErrorKind::TooManyDistributions(inner) => Error::TooManyDistributions(inner),
+            crate::error::CreateDistributionErrorKind::TooManyDistributionsAssociatedToCachePolicy(inner) => Error::TooManyDistributionsAssociatedToCachePolicy(inner),
+            crate::error::CreateDistributionErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner) => Error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner),
+            crate::error::CreateDistributionErrorKind::TooManyDistributionsAssociatedToKeyGroup(inner) => Error::TooManyDistributionsAssociatedToKeyGroup(inner),
+            crate::error::CreateDistributionErrorKind::TooManyDistributionsAssociatedToOriginAccessControl(inner) => Error::TooManyDistributionsAssociatedToOriginAccessControl(inner),
+            crate::error::CreateDistributionErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy(inner) => Error::TooManyDistributionsAssociatedToOriginRequestPolicy(inner),
+            crate::error::CreateDistributionErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner) => Error::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner),
+            crate::error::CreateDistributionErrorKind::TooManyDistributionsWithFunctionAssociations(inner) => Error::TooManyDistributionsWithFunctionAssociations(inner),
+            crate::error::CreateDistributionErrorKind::TooManyDistributionsWithLambdaAssociations(inner) => Error::TooManyDistributionsWithLambdaAssociations(inner),
+            crate::error::CreateDistributionErrorKind::TooManyDistributionsWithSingleFunctionArn(inner) => Error::TooManyDistributionsWithSingleFunctionArn(inner),
+            crate::error::CreateDistributionErrorKind::TooManyFunctionAssociations(inner) => Error::TooManyFunctionAssociations(inner),
+            crate::error::CreateDistributionErrorKind::TooManyHeadersInForwardedValues(inner) => Error::TooManyHeadersInForwardedValues(inner),
+            crate::error::CreateDistributionErrorKind::TooManyKeyGroupsAssociatedToDistribution(inner) => Error::TooManyKeyGroupsAssociatedToDistribution(inner),
+            crate::error::CreateDistributionErrorKind::TooManyLambdaFunctionAssociations(inner) => Error::TooManyLambdaFunctionAssociations(inner),
+            crate::error::CreateDistributionErrorKind::TooManyOriginCustomHeaders(inner) => Error::TooManyOriginCustomHeaders(inner),
+            crate::error::CreateDistributionErrorKind::TooManyOriginGroupsPerDistribution(inner) => Error::TooManyOriginGroupsPerDistribution(inner),
+            crate::error::CreateDistributionErrorKind::TooManyOrigins(inner) => Error::TooManyOrigins(inner),
+            crate::error::CreateDistributionErrorKind::TooManyQueryStringParameters(inner) => Error::TooManyQueryStringParameters(inner),
+            crate::error::CreateDistributionErrorKind::TooManyTrustedSigners(inner) => Error::TooManyTrustedSigners(inner),
+            crate::error::CreateDistributionErrorKind::TrustedKeyGroupDoesNotExist(inner) => Error::TrustedKeyGroupDoesNotExist(inner),
+            crate::error::CreateDistributionErrorKind::TrustedSignerDoesNotExist(inner) => Error::TrustedSignerDoesNotExist(inner),
+            crate::error::CreateDistributionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -666,72 +690,79 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateDistributionWithTagsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::CreateDistributionWithTagsErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::CnameAlreadyExists(inner) => Error::CnameAlreadyExists(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::DistributionAlreadyExists(inner) => Error::DistributionAlreadyExists(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner) => Error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::InvalidDefaultRootObject(inner) => Error::InvalidDefaultRootObject(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::InvalidDomainNameForOriginAccessControl(inner) => Error::InvalidDomainNameForOriginAccessControl(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::InvalidErrorCode(inner) => Error::InvalidErrorCode(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::InvalidForwardCookies(inner) => Error::InvalidForwardCookies(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::InvalidFunctionAssociation(inner) => Error::InvalidFunctionAssociation(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::InvalidGeoRestrictionParameter(inner) => Error::InvalidGeoRestrictionParameter(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::InvalidHeadersForS3Origin(inner) => Error::InvalidHeadersForS3Origin(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::InvalidLambdaFunctionAssociation(inner) => Error::InvalidLambdaFunctionAssociation(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::InvalidLocationCode(inner) => Error::InvalidLocationCode(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::InvalidMinimumProtocolVersion(inner) => Error::InvalidMinimumProtocolVersion(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::InvalidOrigin(inner) => Error::InvalidOrigin(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::InvalidOriginAccessControl(inner) => Error::InvalidOriginAccessControl(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::InvalidOriginAccessIdentity(inner) => Error::InvalidOriginAccessIdentity(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::InvalidOriginKeepaliveTimeout(inner) => Error::InvalidOriginKeepaliveTimeout(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::InvalidOriginReadTimeout(inner) => Error::InvalidOriginReadTimeout(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::InvalidProtocolSettings(inner) => Error::InvalidProtocolSettings(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::InvalidQueryStringParameters(inner) => Error::InvalidQueryStringParameters(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::InvalidRelativePath(inner) => Error::InvalidRelativePath(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::InvalidRequiredProtocol(inner) => Error::InvalidRequiredProtocol(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::InvalidResponseCode(inner) => Error::InvalidResponseCode(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::InvalidTagging(inner) => Error::InvalidTagging(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::InvalidTtlOrder(inner) => Error::InvalidTtlOrder(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::InvalidViewerCertificate(inner) => Error::InvalidViewerCertificate(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::InvalidWebAclId(inner) => Error::InvalidWebAclId(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::MissingBody(inner) => Error::MissingBody(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::NoSuchCachePolicy(inner) => Error::NoSuchCachePolicy(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::NoSuchFieldLevelEncryptionConfig(inner) => Error::NoSuchFieldLevelEncryptionConfig(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::NoSuchOrigin(inner) => Error::NoSuchOrigin(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::NoSuchOriginRequestPolicy(inner) => Error::NoSuchOriginRequestPolicy(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::NoSuchRealtimeLogConfig(inner) => Error::NoSuchRealtimeLogConfig(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::RealtimeLogConfigOwnerMismatch(inner) => Error::RealtimeLogConfigOwnerMismatch(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::TooManyCacheBehaviors(inner) => Error::TooManyCacheBehaviors(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::TooManyCertificates(inner) => Error::TooManyCertificates(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::TooManyCookieNamesInWhiteList(inner) => Error::TooManyCookieNamesInWhiteList(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionCnamEs(inner) => Error::TooManyDistributionCnamEs(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributions(inner) => Error::TooManyDistributions(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToCachePolicy(inner) => Error::TooManyDistributionsAssociatedToCachePolicy(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner) => Error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToKeyGroup(inner) => Error::TooManyDistributionsAssociatedToKeyGroup(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy(inner) => Error::TooManyDistributionsAssociatedToOriginRequestPolicy(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner) => Error::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionsWithFunctionAssociations(inner) => Error::TooManyDistributionsWithFunctionAssociations(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionsWithLambdaAssociations(inner) => Error::TooManyDistributionsWithLambdaAssociations(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionsWithSingleFunctionArn(inner) => Error::TooManyDistributionsWithSingleFunctionArn(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::TooManyFunctionAssociations(inner) => Error::TooManyFunctionAssociations(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::TooManyHeadersInForwardedValues(inner) => Error::TooManyHeadersInForwardedValues(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::TooManyKeyGroupsAssociatedToDistribution(inner) => Error::TooManyKeyGroupsAssociatedToDistribution(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::TooManyLambdaFunctionAssociations(inner) => Error::TooManyLambdaFunctionAssociations(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::TooManyOriginCustomHeaders(inner) => Error::TooManyOriginCustomHeaders(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::TooManyOriginGroupsPerDistribution(inner) => Error::TooManyOriginGroupsPerDistribution(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::TooManyOrigins(inner) => Error::TooManyOrigins(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::TooManyQueryStringParameters(inner) => Error::TooManyQueryStringParameters(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::TooManyTrustedSigners(inner) => Error::TooManyTrustedSigners(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::TrustedKeyGroupDoesNotExist(inner) => Error::TrustedKeyGroupDoesNotExist(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::TrustedSignerDoesNotExist(inner) => Error::TrustedSignerDoesNotExist(inner),
-                crate::error::CreateDistributionWithTagsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateDistributionWithTagsError> for Error {
+    fn from(err: crate::error::CreateDistributionWithTagsError) -> Self {
+        match err.kind {
+            crate::error::CreateDistributionWithTagsErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::CnameAlreadyExists(inner) => Error::CnameAlreadyExists(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::DistributionAlreadyExists(inner) => Error::DistributionAlreadyExists(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner) => Error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::InvalidDefaultRootObject(inner) => Error::InvalidDefaultRootObject(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::InvalidDomainNameForOriginAccessControl(inner) => Error::InvalidDomainNameForOriginAccessControl(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::InvalidErrorCode(inner) => Error::InvalidErrorCode(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::InvalidForwardCookies(inner) => Error::InvalidForwardCookies(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::InvalidFunctionAssociation(inner) => Error::InvalidFunctionAssociation(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::InvalidGeoRestrictionParameter(inner) => Error::InvalidGeoRestrictionParameter(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::InvalidHeadersForS3Origin(inner) => Error::InvalidHeadersForS3Origin(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::InvalidLambdaFunctionAssociation(inner) => Error::InvalidLambdaFunctionAssociation(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::InvalidLocationCode(inner) => Error::InvalidLocationCode(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::InvalidMinimumProtocolVersion(inner) => Error::InvalidMinimumProtocolVersion(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::InvalidOrigin(inner) => Error::InvalidOrigin(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::InvalidOriginAccessControl(inner) => Error::InvalidOriginAccessControl(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::InvalidOriginAccessIdentity(inner) => Error::InvalidOriginAccessIdentity(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::InvalidOriginKeepaliveTimeout(inner) => Error::InvalidOriginKeepaliveTimeout(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::InvalidOriginReadTimeout(inner) => Error::InvalidOriginReadTimeout(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::InvalidProtocolSettings(inner) => Error::InvalidProtocolSettings(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::InvalidQueryStringParameters(inner) => Error::InvalidQueryStringParameters(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::InvalidRelativePath(inner) => Error::InvalidRelativePath(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::InvalidRequiredProtocol(inner) => Error::InvalidRequiredProtocol(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::InvalidResponseCode(inner) => Error::InvalidResponseCode(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::InvalidTagging(inner) => Error::InvalidTagging(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::InvalidTtlOrder(inner) => Error::InvalidTtlOrder(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::InvalidViewerCertificate(inner) => Error::InvalidViewerCertificate(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::InvalidWebAclId(inner) => Error::InvalidWebAclId(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::MissingBody(inner) => Error::MissingBody(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::NoSuchCachePolicy(inner) => Error::NoSuchCachePolicy(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::NoSuchFieldLevelEncryptionConfig(inner) => Error::NoSuchFieldLevelEncryptionConfig(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::NoSuchOrigin(inner) => Error::NoSuchOrigin(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::NoSuchOriginRequestPolicy(inner) => Error::NoSuchOriginRequestPolicy(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::NoSuchRealtimeLogConfig(inner) => Error::NoSuchRealtimeLogConfig(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::RealtimeLogConfigOwnerMismatch(inner) => Error::RealtimeLogConfigOwnerMismatch(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::TooManyCacheBehaviors(inner) => Error::TooManyCacheBehaviors(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::TooManyCertificates(inner) => Error::TooManyCertificates(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::TooManyCookieNamesInWhiteList(inner) => Error::TooManyCookieNamesInWhiteList(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionCnamEs(inner) => Error::TooManyDistributionCnamEs(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributions(inner) => Error::TooManyDistributions(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToCachePolicy(inner) => Error::TooManyDistributionsAssociatedToCachePolicy(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner) => Error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToKeyGroup(inner) => Error::TooManyDistributionsAssociatedToKeyGroup(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy(inner) => Error::TooManyDistributionsAssociatedToOriginRequestPolicy(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner) => Error::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionsWithFunctionAssociations(inner) => Error::TooManyDistributionsWithFunctionAssociations(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionsWithLambdaAssociations(inner) => Error::TooManyDistributionsWithLambdaAssociations(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::TooManyDistributionsWithSingleFunctionArn(inner) => Error::TooManyDistributionsWithSingleFunctionArn(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::TooManyFunctionAssociations(inner) => Error::TooManyFunctionAssociations(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::TooManyHeadersInForwardedValues(inner) => Error::TooManyHeadersInForwardedValues(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::TooManyKeyGroupsAssociatedToDistribution(inner) => Error::TooManyKeyGroupsAssociatedToDistribution(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::TooManyLambdaFunctionAssociations(inner) => Error::TooManyLambdaFunctionAssociations(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::TooManyOriginCustomHeaders(inner) => Error::TooManyOriginCustomHeaders(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::TooManyOriginGroupsPerDistribution(inner) => Error::TooManyOriginGroupsPerDistribution(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::TooManyOrigins(inner) => Error::TooManyOrigins(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::TooManyQueryStringParameters(inner) => Error::TooManyQueryStringParameters(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::TooManyTrustedSigners(inner) => Error::TooManyTrustedSigners(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::TrustedKeyGroupDoesNotExist(inner) => Error::TrustedKeyGroupDoesNotExist(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::TrustedSignerDoesNotExist(inner) => Error::TrustedSignerDoesNotExist(inner),
+            crate::error::CreateDistributionWithTagsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -748,18 +779,25 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::CreateFieldLevelEncryptionConfigErrorKind::FieldLevelEncryptionConfigAlreadyExists(inner) => Error::FieldLevelEncryptionConfigAlreadyExists(inner),
-                crate::error::CreateFieldLevelEncryptionConfigErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
-                crate::error::CreateFieldLevelEncryptionConfigErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
-                crate::error::CreateFieldLevelEncryptionConfigErrorKind::NoSuchFieldLevelEncryptionProfile(inner) => Error::NoSuchFieldLevelEncryptionProfile(inner),
-                crate::error::CreateFieldLevelEncryptionConfigErrorKind::QueryArgProfileEmpty(inner) => Error::QueryArgProfileEmpty(inner),
-                crate::error::CreateFieldLevelEncryptionConfigErrorKind::TooManyFieldLevelEncryptionConfigs(inner) => Error::TooManyFieldLevelEncryptionConfigs(inner),
-                crate::error::CreateFieldLevelEncryptionConfigErrorKind::TooManyFieldLevelEncryptionContentTypeProfiles(inner) => Error::TooManyFieldLevelEncryptionContentTypeProfiles(inner),
-                crate::error::CreateFieldLevelEncryptionConfigErrorKind::TooManyFieldLevelEncryptionQueryArgProfiles(inner) => Error::TooManyFieldLevelEncryptionQueryArgProfiles(inner),
-                crate::error::CreateFieldLevelEncryptionConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateFieldLevelEncryptionConfigError> for Error {
+    fn from(err: crate::error::CreateFieldLevelEncryptionConfigError) -> Self {
+        match err.kind {
+            crate::error::CreateFieldLevelEncryptionConfigErrorKind::FieldLevelEncryptionConfigAlreadyExists(inner) => Error::FieldLevelEncryptionConfigAlreadyExists(inner),
+            crate::error::CreateFieldLevelEncryptionConfigErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+            crate::error::CreateFieldLevelEncryptionConfigErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::CreateFieldLevelEncryptionConfigErrorKind::NoSuchFieldLevelEncryptionProfile(inner) => Error::NoSuchFieldLevelEncryptionProfile(inner),
+            crate::error::CreateFieldLevelEncryptionConfigErrorKind::QueryArgProfileEmpty(inner) => Error::QueryArgProfileEmpty(inner),
+            crate::error::CreateFieldLevelEncryptionConfigErrorKind::TooManyFieldLevelEncryptionConfigs(inner) => Error::TooManyFieldLevelEncryptionConfigs(inner),
+            crate::error::CreateFieldLevelEncryptionConfigErrorKind::TooManyFieldLevelEncryptionContentTypeProfiles(inner) => Error::TooManyFieldLevelEncryptionContentTypeProfiles(inner),
+            crate::error::CreateFieldLevelEncryptionConfigErrorKind::TooManyFieldLevelEncryptionQueryArgProfiles(inner) => Error::TooManyFieldLevelEncryptionQueryArgProfiles(inner),
+            crate::error::CreateFieldLevelEncryptionConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -776,18 +814,25 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::CreateFieldLevelEncryptionProfileErrorKind::FieldLevelEncryptionProfileAlreadyExists(inner) => Error::FieldLevelEncryptionProfileAlreadyExists(inner),
-                crate::error::CreateFieldLevelEncryptionProfileErrorKind::FieldLevelEncryptionProfileSizeExceeded(inner) => Error::FieldLevelEncryptionProfileSizeExceeded(inner),
-                crate::error::CreateFieldLevelEncryptionProfileErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
-                crate::error::CreateFieldLevelEncryptionProfileErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
-                crate::error::CreateFieldLevelEncryptionProfileErrorKind::NoSuchPublicKey(inner) => Error::NoSuchPublicKey(inner),
-                crate::error::CreateFieldLevelEncryptionProfileErrorKind::TooManyFieldLevelEncryptionEncryptionEntities(inner) => Error::TooManyFieldLevelEncryptionEncryptionEntities(inner),
-                crate::error::CreateFieldLevelEncryptionProfileErrorKind::TooManyFieldLevelEncryptionFieldPatterns(inner) => Error::TooManyFieldLevelEncryptionFieldPatterns(inner),
-                crate::error::CreateFieldLevelEncryptionProfileErrorKind::TooManyFieldLevelEncryptionProfiles(inner) => Error::TooManyFieldLevelEncryptionProfiles(inner),
-                crate::error::CreateFieldLevelEncryptionProfileErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateFieldLevelEncryptionProfileError> for Error {
+    fn from(err: crate::error::CreateFieldLevelEncryptionProfileError) -> Self {
+        match err.kind {
+            crate::error::CreateFieldLevelEncryptionProfileErrorKind::FieldLevelEncryptionProfileAlreadyExists(inner) => Error::FieldLevelEncryptionProfileAlreadyExists(inner),
+            crate::error::CreateFieldLevelEncryptionProfileErrorKind::FieldLevelEncryptionProfileSizeExceeded(inner) => Error::FieldLevelEncryptionProfileSizeExceeded(inner),
+            crate::error::CreateFieldLevelEncryptionProfileErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+            crate::error::CreateFieldLevelEncryptionProfileErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::CreateFieldLevelEncryptionProfileErrorKind::NoSuchPublicKey(inner) => Error::NoSuchPublicKey(inner),
+            crate::error::CreateFieldLevelEncryptionProfileErrorKind::TooManyFieldLevelEncryptionEncryptionEntities(inner) => Error::TooManyFieldLevelEncryptionEncryptionEntities(inner),
+            crate::error::CreateFieldLevelEncryptionProfileErrorKind::TooManyFieldLevelEncryptionFieldPatterns(inner) => Error::TooManyFieldLevelEncryptionFieldPatterns(inner),
+            crate::error::CreateFieldLevelEncryptionProfileErrorKind::TooManyFieldLevelEncryptionProfiles(inner) => Error::TooManyFieldLevelEncryptionProfiles(inner),
+            crate::error::CreateFieldLevelEncryptionProfileErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -798,28 +843,33 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateFunctionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::CreateFunctionErrorKind::FunctionAlreadyExists(inner) => {
-                        Error::FunctionAlreadyExists(inner)
-                    }
-                    crate::error::CreateFunctionErrorKind::FunctionSizeLimitExceeded(inner) => {
-                        Error::FunctionSizeLimitExceeded(inner)
-                    }
-                    crate::error::CreateFunctionErrorKind::InvalidArgument(inner) => {
-                        Error::InvalidArgument(inner)
-                    }
-                    crate::error::CreateFunctionErrorKind::TooManyFunctions(inner) => {
-                        Error::TooManyFunctions(inner)
-                    }
-                    crate::error::CreateFunctionErrorKind::UnsupportedOperation(inner) => {
-                        Error::UnsupportedOperation(inner)
-                    }
-                    crate::error::CreateFunctionErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateFunctionError> for Error {
+    fn from(err: crate::error::CreateFunctionError) -> Self {
+        match err.kind {
+            crate::error::CreateFunctionErrorKind::FunctionAlreadyExists(inner) => {
+                Error::FunctionAlreadyExists(inner)
+            }
+            crate::error::CreateFunctionErrorKind::FunctionSizeLimitExceeded(inner) => {
+                Error::FunctionSizeLimitExceeded(inner)
+            }
+            crate::error::CreateFunctionErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::CreateFunctionErrorKind::TooManyFunctions(inner) => {
+                Error::TooManyFunctions(inner)
+            }
+            crate::error::CreateFunctionErrorKind::UnsupportedOperation(inner) => {
+                Error::UnsupportedOperation(inner)
+            }
+            crate::error::CreateFunctionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -832,34 +882,39 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::CreateInvalidationErrorKind::AccessDenied(inner) => {
-                        Error::AccessDenied(inner)
-                    }
-                    crate::error::CreateInvalidationErrorKind::BatchTooLarge(inner) => {
-                        Error::BatchTooLarge(inner)
-                    }
-                    crate::error::CreateInvalidationErrorKind::InconsistentQuantities(inner) => {
-                        Error::InconsistentQuantities(inner)
-                    }
-                    crate::error::CreateInvalidationErrorKind::InvalidArgument(inner) => {
-                        Error::InvalidArgument(inner)
-                    }
-                    crate::error::CreateInvalidationErrorKind::MissingBody(inner) => {
-                        Error::MissingBody(inner)
-                    }
-                    crate::error::CreateInvalidationErrorKind::NoSuchDistribution(inner) => {
-                        Error::NoSuchDistribution(inner)
-                    }
-                    crate::error::CreateInvalidationErrorKind::TooManyInvalidationsInProgress(
-                        inner,
-                    ) => Error::TooManyInvalidationsInProgress(inner),
-                    crate::error::CreateInvalidationErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateInvalidationError> for Error {
+    fn from(err: crate::error::CreateInvalidationError) -> Self {
+        match err.kind {
+            crate::error::CreateInvalidationErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::CreateInvalidationErrorKind::BatchTooLarge(inner) => {
+                Error::BatchTooLarge(inner)
+            }
+            crate::error::CreateInvalidationErrorKind::InconsistentQuantities(inner) => {
+                Error::InconsistentQuantities(inner)
+            }
+            crate::error::CreateInvalidationErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::CreateInvalidationErrorKind::MissingBody(inner) => {
+                Error::MissingBody(inner)
+            }
+            crate::error::CreateInvalidationErrorKind::NoSuchDistribution(inner) => {
+                Error::NoSuchDistribution(inner)
+            }
+            crate::error::CreateInvalidationErrorKind::TooManyInvalidationsInProgress(inner) => {
+                Error::TooManyInvalidationsInProgress(inner)
+            }
+            crate::error::CreateInvalidationErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -870,25 +925,30 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateKeyGroupError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::CreateKeyGroupErrorKind::InvalidArgument(inner) => {
-                        Error::InvalidArgument(inner)
-                    }
-                    crate::error::CreateKeyGroupErrorKind::KeyGroupAlreadyExists(inner) => {
-                        Error::KeyGroupAlreadyExists(inner)
-                    }
-                    crate::error::CreateKeyGroupErrorKind::TooManyKeyGroups(inner) => {
-                        Error::TooManyKeyGroups(inner)
-                    }
-                    crate::error::CreateKeyGroupErrorKind::TooManyPublicKeysInKeyGroup(inner) => {
-                        Error::TooManyPublicKeysInKeyGroup(inner)
-                    }
-                    crate::error::CreateKeyGroupErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateKeyGroupError> for Error {
+    fn from(err: crate::error::CreateKeyGroupError) -> Self {
+        match err.kind {
+            crate::error::CreateKeyGroupErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::CreateKeyGroupErrorKind::KeyGroupAlreadyExists(inner) => {
+                Error::KeyGroupAlreadyExists(inner)
+            }
+            crate::error::CreateKeyGroupErrorKind::TooManyKeyGroups(inner) => {
+                Error::TooManyKeyGroups(inner)
+            }
+            crate::error::CreateKeyGroupErrorKind::TooManyPublicKeysInKeyGroup(inner) => {
+                Error::TooManyPublicKeysInKeyGroup(inner)
+            }
+            crate::error::CreateKeyGroupErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -901,14 +961,21 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateMonitoringSubscriptionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::CreateMonitoringSubscriptionErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-                crate::error::CreateMonitoringSubscriptionErrorKind::MonitoringSubscriptionAlreadyExists(inner) => Error::MonitoringSubscriptionAlreadyExists(inner),
-                crate::error::CreateMonitoringSubscriptionErrorKind::NoSuchDistribution(inner) => Error::NoSuchDistribution(inner),
-                crate::error::CreateMonitoringSubscriptionErrorKind::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
-                crate::error::CreateMonitoringSubscriptionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateMonitoringSubscriptionError> for Error {
+    fn from(err: crate::error::CreateMonitoringSubscriptionError) -> Self {
+        match err.kind {
+            crate::error::CreateMonitoringSubscriptionErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::CreateMonitoringSubscriptionErrorKind::MonitoringSubscriptionAlreadyExists(inner) => Error::MonitoringSubscriptionAlreadyExists(inner),
+            crate::error::CreateMonitoringSubscriptionErrorKind::NoSuchDistribution(inner) => Error::NoSuchDistribution(inner),
+            crate::error::CreateMonitoringSubscriptionErrorKind::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
+            crate::error::CreateMonitoringSubscriptionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -921,13 +988,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateOriginAccessControlError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::CreateOriginAccessControlErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
-                crate::error::CreateOriginAccessControlErrorKind::OriginAccessControlAlreadyExists(inner) => Error::OriginAccessControlAlreadyExists(inner),
-                crate::error::CreateOriginAccessControlErrorKind::TooManyOriginAccessControls(inner) => Error::TooManyOriginAccessControls(inner),
-                crate::error::CreateOriginAccessControlErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateOriginAccessControlError> for Error {
+    fn from(err: crate::error::CreateOriginAccessControlError) -> Self {
+        match err.kind {
+            crate::error::CreateOriginAccessControlErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::CreateOriginAccessControlErrorKind::OriginAccessControlAlreadyExists(
+                inner,
+            ) => Error::OriginAccessControlAlreadyExists(inner),
+            crate::error::CreateOriginAccessControlErrorKind::TooManyOriginAccessControls(
+                inner,
+            ) => Error::TooManyOriginAccessControls(inner),
+            crate::error::CreateOriginAccessControlErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -940,18 +1022,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateOriginRequestPolicyError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::CreateOriginRequestPolicyErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-                crate::error::CreateOriginRequestPolicyErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
-                crate::error::CreateOriginRequestPolicyErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
-                crate::error::CreateOriginRequestPolicyErrorKind::OriginRequestPolicyAlreadyExists(inner) => Error::OriginRequestPolicyAlreadyExists(inner),
-                crate::error::CreateOriginRequestPolicyErrorKind::TooManyCookiesInOriginRequestPolicy(inner) => Error::TooManyCookiesInOriginRequestPolicy(inner),
-                crate::error::CreateOriginRequestPolicyErrorKind::TooManyHeadersInOriginRequestPolicy(inner) => Error::TooManyHeadersInOriginRequestPolicy(inner),
-                crate::error::CreateOriginRequestPolicyErrorKind::TooManyOriginRequestPolicies(inner) => Error::TooManyOriginRequestPolicies(inner),
-                crate::error::CreateOriginRequestPolicyErrorKind::TooManyQueryStringsInOriginRequestPolicy(inner) => Error::TooManyQueryStringsInOriginRequestPolicy(inner),
-                crate::error::CreateOriginRequestPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateOriginRequestPolicyError> for Error {
+    fn from(err: crate::error::CreateOriginRequestPolicyError) -> Self {
+        match err.kind {
+            crate::error::CreateOriginRequestPolicyErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::CreateOriginRequestPolicyErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+            crate::error::CreateOriginRequestPolicyErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::CreateOriginRequestPolicyErrorKind::OriginRequestPolicyAlreadyExists(inner) => Error::OriginRequestPolicyAlreadyExists(inner),
+            crate::error::CreateOriginRequestPolicyErrorKind::TooManyCookiesInOriginRequestPolicy(inner) => Error::TooManyCookiesInOriginRequestPolicy(inner),
+            crate::error::CreateOriginRequestPolicyErrorKind::TooManyHeadersInOriginRequestPolicy(inner) => Error::TooManyHeadersInOriginRequestPolicy(inner),
+            crate::error::CreateOriginRequestPolicyErrorKind::TooManyOriginRequestPolicies(inner) => Error::TooManyOriginRequestPolicies(inner),
+            crate::error::CreateOriginRequestPolicyErrorKind::TooManyQueryStringsInOriginRequestPolicy(inner) => Error::TooManyQueryStringsInOriginRequestPolicy(inner),
+            crate::error::CreateOriginRequestPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -962,22 +1051,27 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreatePublicKeyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::CreatePublicKeyErrorKind::InvalidArgument(inner) => {
-                        Error::InvalidArgument(inner)
-                    }
-                    crate::error::CreatePublicKeyErrorKind::PublicKeyAlreadyExists(inner) => {
-                        Error::PublicKeyAlreadyExists(inner)
-                    }
-                    crate::error::CreatePublicKeyErrorKind::TooManyPublicKeys(inner) => {
-                        Error::TooManyPublicKeys(inner)
-                    }
-                    crate::error::CreatePublicKeyErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreatePublicKeyError> for Error {
+    fn from(err: crate::error::CreatePublicKeyError) -> Self {
+        match err.kind {
+            crate::error::CreatePublicKeyErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::CreatePublicKeyErrorKind::PublicKeyAlreadyExists(inner) => {
+                Error::PublicKeyAlreadyExists(inner)
+            }
+            crate::error::CreatePublicKeyErrorKind::TooManyPublicKeys(inner) => {
+                Error::TooManyPublicKeys(inner)
+            }
+            crate::error::CreatePublicKeyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -990,27 +1084,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateRealtimeLogConfigError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::CreateRealtimeLogConfigErrorKind::AccessDenied(inner) => {
-                    Error::AccessDenied(inner)
-                }
-                crate::error::CreateRealtimeLogConfigErrorKind::InvalidArgument(inner) => {
-                    Error::InvalidArgument(inner)
-                }
-                crate::error::CreateRealtimeLogConfigErrorKind::RealtimeLogConfigAlreadyExists(
-                    inner,
-                ) => Error::RealtimeLogConfigAlreadyExists(inner),
-                crate::error::CreateRealtimeLogConfigErrorKind::TooManyRealtimeLogConfigs(
-                    inner,
-                ) => Error::TooManyRealtimeLogConfigs(inner),
-                crate::error::CreateRealtimeLogConfigErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateRealtimeLogConfigError> for Error {
+    fn from(err: crate::error::CreateRealtimeLogConfigError) -> Self {
+        match err.kind {
+            crate::error::CreateRealtimeLogConfigErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::CreateRealtimeLogConfigErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::CreateRealtimeLogConfigErrorKind::RealtimeLogConfigAlreadyExists(
+                inner,
+            ) => Error::RealtimeLogConfigAlreadyExists(inner),
+            crate::error::CreateRealtimeLogConfigErrorKind::TooManyRealtimeLogConfigs(inner) => {
+                Error::TooManyRealtimeLogConfigs(inner)
+            }
+            crate::error::CreateRealtimeLogConfigErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1023,17 +1121,24 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateResponseHeadersPolicyError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::CreateResponseHeadersPolicyErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-                crate::error::CreateResponseHeadersPolicyErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
-                crate::error::CreateResponseHeadersPolicyErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
-                crate::error::CreateResponseHeadersPolicyErrorKind::ResponseHeadersPolicyAlreadyExists(inner) => Error::ResponseHeadersPolicyAlreadyExists(inner),
-                crate::error::CreateResponseHeadersPolicyErrorKind::TooLongCspInResponseHeadersPolicy(inner) => Error::TooLongCspInResponseHeadersPolicy(inner),
-                crate::error::CreateResponseHeadersPolicyErrorKind::TooManyCustomHeadersInResponseHeadersPolicy(inner) => Error::TooManyCustomHeadersInResponseHeadersPolicy(inner),
-                crate::error::CreateResponseHeadersPolicyErrorKind::TooManyResponseHeadersPolicies(inner) => Error::TooManyResponseHeadersPolicies(inner),
-                crate::error::CreateResponseHeadersPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateResponseHeadersPolicyError> for Error {
+    fn from(err: crate::error::CreateResponseHeadersPolicyError) -> Self {
+        match err.kind {
+            crate::error::CreateResponseHeadersPolicyErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::CreateResponseHeadersPolicyErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+            crate::error::CreateResponseHeadersPolicyErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::CreateResponseHeadersPolicyErrorKind::ResponseHeadersPolicyAlreadyExists(inner) => Error::ResponseHeadersPolicyAlreadyExists(inner),
+            crate::error::CreateResponseHeadersPolicyErrorKind::TooLongCspInResponseHeadersPolicy(inner) => Error::TooLongCspInResponseHeadersPolicy(inner),
+            crate::error::CreateResponseHeadersPolicyErrorKind::TooManyCustomHeadersInResponseHeadersPolicy(inner) => Error::TooManyCustomHeadersInResponseHeadersPolicy(inner),
+            crate::error::CreateResponseHeadersPolicyErrorKind::TooManyResponseHeadersPolicies(inner) => Error::TooManyResponseHeadersPolicies(inner),
+            crate::error::CreateResponseHeadersPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -1046,23 +1151,30 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateStreamingDistributionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::CreateStreamingDistributionErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-                crate::error::CreateStreamingDistributionErrorKind::CnameAlreadyExists(inner) => Error::CnameAlreadyExists(inner),
-                crate::error::CreateStreamingDistributionErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
-                crate::error::CreateStreamingDistributionErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
-                crate::error::CreateStreamingDistributionErrorKind::InvalidOrigin(inner) => Error::InvalidOrigin(inner),
-                crate::error::CreateStreamingDistributionErrorKind::InvalidOriginAccessControl(inner) => Error::InvalidOriginAccessControl(inner),
-                crate::error::CreateStreamingDistributionErrorKind::InvalidOriginAccessIdentity(inner) => Error::InvalidOriginAccessIdentity(inner),
-                crate::error::CreateStreamingDistributionErrorKind::MissingBody(inner) => Error::MissingBody(inner),
-                crate::error::CreateStreamingDistributionErrorKind::StreamingDistributionAlreadyExists(inner) => Error::StreamingDistributionAlreadyExists(inner),
-                crate::error::CreateStreamingDistributionErrorKind::TooManyStreamingDistributionCnamEs(inner) => Error::TooManyStreamingDistributionCnamEs(inner),
-                crate::error::CreateStreamingDistributionErrorKind::TooManyStreamingDistributions(inner) => Error::TooManyStreamingDistributions(inner),
-                crate::error::CreateStreamingDistributionErrorKind::TooManyTrustedSigners(inner) => Error::TooManyTrustedSigners(inner),
-                crate::error::CreateStreamingDistributionErrorKind::TrustedSignerDoesNotExist(inner) => Error::TrustedSignerDoesNotExist(inner),
-                crate::error::CreateStreamingDistributionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateStreamingDistributionError> for Error {
+    fn from(err: crate::error::CreateStreamingDistributionError) -> Self {
+        match err.kind {
+            crate::error::CreateStreamingDistributionErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::CreateStreamingDistributionErrorKind::CnameAlreadyExists(inner) => Error::CnameAlreadyExists(inner),
+            crate::error::CreateStreamingDistributionErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+            crate::error::CreateStreamingDistributionErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::CreateStreamingDistributionErrorKind::InvalidOrigin(inner) => Error::InvalidOrigin(inner),
+            crate::error::CreateStreamingDistributionErrorKind::InvalidOriginAccessControl(inner) => Error::InvalidOriginAccessControl(inner),
+            crate::error::CreateStreamingDistributionErrorKind::InvalidOriginAccessIdentity(inner) => Error::InvalidOriginAccessIdentity(inner),
+            crate::error::CreateStreamingDistributionErrorKind::MissingBody(inner) => Error::MissingBody(inner),
+            crate::error::CreateStreamingDistributionErrorKind::StreamingDistributionAlreadyExists(inner) => Error::StreamingDistributionAlreadyExists(inner),
+            crate::error::CreateStreamingDistributionErrorKind::TooManyStreamingDistributionCnamEs(inner) => Error::TooManyStreamingDistributionCnamEs(inner),
+            crate::error::CreateStreamingDistributionErrorKind::TooManyStreamingDistributions(inner) => Error::TooManyStreamingDistributions(inner),
+            crate::error::CreateStreamingDistributionErrorKind::TooManyTrustedSigners(inner) => Error::TooManyTrustedSigners(inner),
+            crate::error::CreateStreamingDistributionErrorKind::TrustedSignerDoesNotExist(inner) => Error::TrustedSignerDoesNotExist(inner),
+            crate::error::CreateStreamingDistributionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -1083,24 +1195,31 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::CreateStreamingDistributionWithTagsErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-                crate::error::CreateStreamingDistributionWithTagsErrorKind::CnameAlreadyExists(inner) => Error::CnameAlreadyExists(inner),
-                crate::error::CreateStreamingDistributionWithTagsErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
-                crate::error::CreateStreamingDistributionWithTagsErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
-                crate::error::CreateStreamingDistributionWithTagsErrorKind::InvalidOrigin(inner) => Error::InvalidOrigin(inner),
-                crate::error::CreateStreamingDistributionWithTagsErrorKind::InvalidOriginAccessControl(inner) => Error::InvalidOriginAccessControl(inner),
-                crate::error::CreateStreamingDistributionWithTagsErrorKind::InvalidOriginAccessIdentity(inner) => Error::InvalidOriginAccessIdentity(inner),
-                crate::error::CreateStreamingDistributionWithTagsErrorKind::InvalidTagging(inner) => Error::InvalidTagging(inner),
-                crate::error::CreateStreamingDistributionWithTagsErrorKind::MissingBody(inner) => Error::MissingBody(inner),
-                crate::error::CreateStreamingDistributionWithTagsErrorKind::StreamingDistributionAlreadyExists(inner) => Error::StreamingDistributionAlreadyExists(inner),
-                crate::error::CreateStreamingDistributionWithTagsErrorKind::TooManyStreamingDistributionCnamEs(inner) => Error::TooManyStreamingDistributionCnamEs(inner),
-                crate::error::CreateStreamingDistributionWithTagsErrorKind::TooManyStreamingDistributions(inner) => Error::TooManyStreamingDistributions(inner),
-                crate::error::CreateStreamingDistributionWithTagsErrorKind::TooManyTrustedSigners(inner) => Error::TooManyTrustedSigners(inner),
-                crate::error::CreateStreamingDistributionWithTagsErrorKind::TrustedSignerDoesNotExist(inner) => Error::TrustedSignerDoesNotExist(inner),
-                crate::error::CreateStreamingDistributionWithTagsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateStreamingDistributionWithTagsError> for Error {
+    fn from(err: crate::error::CreateStreamingDistributionWithTagsError) -> Self {
+        match err.kind {
+            crate::error::CreateStreamingDistributionWithTagsErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::CreateStreamingDistributionWithTagsErrorKind::CnameAlreadyExists(inner) => Error::CnameAlreadyExists(inner),
+            crate::error::CreateStreamingDistributionWithTagsErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+            crate::error::CreateStreamingDistributionWithTagsErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::CreateStreamingDistributionWithTagsErrorKind::InvalidOrigin(inner) => Error::InvalidOrigin(inner),
+            crate::error::CreateStreamingDistributionWithTagsErrorKind::InvalidOriginAccessControl(inner) => Error::InvalidOriginAccessControl(inner),
+            crate::error::CreateStreamingDistributionWithTagsErrorKind::InvalidOriginAccessIdentity(inner) => Error::InvalidOriginAccessIdentity(inner),
+            crate::error::CreateStreamingDistributionWithTagsErrorKind::InvalidTagging(inner) => Error::InvalidTagging(inner),
+            crate::error::CreateStreamingDistributionWithTagsErrorKind::MissingBody(inner) => Error::MissingBody(inner),
+            crate::error::CreateStreamingDistributionWithTagsErrorKind::StreamingDistributionAlreadyExists(inner) => Error::StreamingDistributionAlreadyExists(inner),
+            crate::error::CreateStreamingDistributionWithTagsErrorKind::TooManyStreamingDistributionCnamEs(inner) => Error::TooManyStreamingDistributionCnamEs(inner),
+            crate::error::CreateStreamingDistributionWithTagsErrorKind::TooManyStreamingDistributions(inner) => Error::TooManyStreamingDistributions(inner),
+            crate::error::CreateStreamingDistributionWithTagsErrorKind::TooManyTrustedSigners(inner) => Error::TooManyTrustedSigners(inner),
+            crate::error::CreateStreamingDistributionWithTagsErrorKind::TrustedSignerDoesNotExist(inner) => Error::TrustedSignerDoesNotExist(inner),
+            crate::error::CreateStreamingDistributionWithTagsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -1113,31 +1232,36 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DeleteCachePolicyErrorKind::AccessDenied(inner) => {
-                        Error::AccessDenied(inner)
-                    }
-                    crate::error::DeleteCachePolicyErrorKind::CachePolicyInUse(inner) => {
-                        Error::CachePolicyInUse(inner)
-                    }
-                    crate::error::DeleteCachePolicyErrorKind::IllegalDelete(inner) => {
-                        Error::IllegalDelete(inner)
-                    }
-                    crate::error::DeleteCachePolicyErrorKind::InvalidIfMatchVersion(inner) => {
-                        Error::InvalidIfMatchVersion(inner)
-                    }
-                    crate::error::DeleteCachePolicyErrorKind::NoSuchCachePolicy(inner) => {
-                        Error::NoSuchCachePolicy(inner)
-                    }
-                    crate::error::DeleteCachePolicyErrorKind::PreconditionFailed(inner) => {
-                        Error::PreconditionFailed(inner)
-                    }
-                    crate::error::DeleteCachePolicyErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteCachePolicyError> for Error {
+    fn from(err: crate::error::DeleteCachePolicyError) -> Self {
+        match err.kind {
+            crate::error::DeleteCachePolicyErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::DeleteCachePolicyErrorKind::CachePolicyInUse(inner) => {
+                Error::CachePolicyInUse(inner)
+            }
+            crate::error::DeleteCachePolicyErrorKind::IllegalDelete(inner) => {
+                Error::IllegalDelete(inner)
+            }
+            crate::error::DeleteCachePolicyErrorKind::InvalidIfMatchVersion(inner) => {
+                Error::InvalidIfMatchVersion(inner)
+            }
+            crate::error::DeleteCachePolicyErrorKind::NoSuchCachePolicy(inner) => {
+                Error::NoSuchCachePolicy(inner)
+            }
+            crate::error::DeleteCachePolicyErrorKind::PreconditionFailed(inner) => {
+                Error::PreconditionFailed(inner)
+            }
+            crate::error::DeleteCachePolicyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1158,15 +1282,22 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::DeleteCloudFrontOriginAccessIdentityErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-                crate::error::DeleteCloudFrontOriginAccessIdentityErrorKind::CloudFrontOriginAccessIdentityInUse(inner) => Error::CloudFrontOriginAccessIdentityInUse(inner),
-                crate::error::DeleteCloudFrontOriginAccessIdentityErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
-                crate::error::DeleteCloudFrontOriginAccessIdentityErrorKind::NoSuchCloudFrontOriginAccessIdentity(inner) => Error::NoSuchCloudFrontOriginAccessIdentity(inner),
-                crate::error::DeleteCloudFrontOriginAccessIdentityErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
-                crate::error::DeleteCloudFrontOriginAccessIdentityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteCloudFrontOriginAccessIdentityError> for Error {
+    fn from(err: crate::error::DeleteCloudFrontOriginAccessIdentityError) -> Self {
+        match err.kind {
+            crate::error::DeleteCloudFrontOriginAccessIdentityErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::DeleteCloudFrontOriginAccessIdentityErrorKind::CloudFrontOriginAccessIdentityInUse(inner) => Error::CloudFrontOriginAccessIdentityInUse(inner),
+            crate::error::DeleteCloudFrontOriginAccessIdentityErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::error::DeleteCloudFrontOriginAccessIdentityErrorKind::NoSuchCloudFrontOriginAccessIdentity(inner) => Error::NoSuchCloudFrontOriginAccessIdentity(inner),
+            crate::error::DeleteCloudFrontOriginAccessIdentityErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::error::DeleteCloudFrontOriginAccessIdentityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -1179,28 +1310,33 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DeleteDistributionErrorKind::AccessDenied(inner) => {
-                        Error::AccessDenied(inner)
-                    }
-                    crate::error::DeleteDistributionErrorKind::DistributionNotDisabled(inner) => {
-                        Error::DistributionNotDisabled(inner)
-                    }
-                    crate::error::DeleteDistributionErrorKind::InvalidIfMatchVersion(inner) => {
-                        Error::InvalidIfMatchVersion(inner)
-                    }
-                    crate::error::DeleteDistributionErrorKind::NoSuchDistribution(inner) => {
-                        Error::NoSuchDistribution(inner)
-                    }
-                    crate::error::DeleteDistributionErrorKind::PreconditionFailed(inner) => {
-                        Error::PreconditionFailed(inner)
-                    }
-                    crate::error::DeleteDistributionErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteDistributionError> for Error {
+    fn from(err: crate::error::DeleteDistributionError) -> Self {
+        match err.kind {
+            crate::error::DeleteDistributionErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::DeleteDistributionErrorKind::DistributionNotDisabled(inner) => {
+                Error::DistributionNotDisabled(inner)
+            }
+            crate::error::DeleteDistributionErrorKind::InvalidIfMatchVersion(inner) => {
+                Error::InvalidIfMatchVersion(inner)
+            }
+            crate::error::DeleteDistributionErrorKind::NoSuchDistribution(inner) => {
+                Error::NoSuchDistribution(inner)
+            }
+            crate::error::DeleteDistributionErrorKind::PreconditionFailed(inner) => {
+                Error::PreconditionFailed(inner)
+            }
+            crate::error::DeleteDistributionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1217,15 +1353,22 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::DeleteFieldLevelEncryptionConfigErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-                crate::error::DeleteFieldLevelEncryptionConfigErrorKind::FieldLevelEncryptionConfigInUse(inner) => Error::FieldLevelEncryptionConfigInUse(inner),
-                crate::error::DeleteFieldLevelEncryptionConfigErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
-                crate::error::DeleteFieldLevelEncryptionConfigErrorKind::NoSuchFieldLevelEncryptionConfig(inner) => Error::NoSuchFieldLevelEncryptionConfig(inner),
-                crate::error::DeleteFieldLevelEncryptionConfigErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
-                crate::error::DeleteFieldLevelEncryptionConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteFieldLevelEncryptionConfigError> for Error {
+    fn from(err: crate::error::DeleteFieldLevelEncryptionConfigError) -> Self {
+        match err.kind {
+            crate::error::DeleteFieldLevelEncryptionConfigErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::DeleteFieldLevelEncryptionConfigErrorKind::FieldLevelEncryptionConfigInUse(inner) => Error::FieldLevelEncryptionConfigInUse(inner),
+            crate::error::DeleteFieldLevelEncryptionConfigErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::error::DeleteFieldLevelEncryptionConfigErrorKind::NoSuchFieldLevelEncryptionConfig(inner) => Error::NoSuchFieldLevelEncryptionConfig(inner),
+            crate::error::DeleteFieldLevelEncryptionConfigErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::error::DeleteFieldLevelEncryptionConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -1242,15 +1385,22 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::DeleteFieldLevelEncryptionProfileErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-                crate::error::DeleteFieldLevelEncryptionProfileErrorKind::FieldLevelEncryptionProfileInUse(inner) => Error::FieldLevelEncryptionProfileInUse(inner),
-                crate::error::DeleteFieldLevelEncryptionProfileErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
-                crate::error::DeleteFieldLevelEncryptionProfileErrorKind::NoSuchFieldLevelEncryptionProfile(inner) => Error::NoSuchFieldLevelEncryptionProfile(inner),
-                crate::error::DeleteFieldLevelEncryptionProfileErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
-                crate::error::DeleteFieldLevelEncryptionProfileErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteFieldLevelEncryptionProfileError> for Error {
+    fn from(err: crate::error::DeleteFieldLevelEncryptionProfileError) -> Self {
+        match err.kind {
+            crate::error::DeleteFieldLevelEncryptionProfileErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::DeleteFieldLevelEncryptionProfileErrorKind::FieldLevelEncryptionProfileInUse(inner) => Error::FieldLevelEncryptionProfileInUse(inner),
+            crate::error::DeleteFieldLevelEncryptionProfileErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::error::DeleteFieldLevelEncryptionProfileErrorKind::NoSuchFieldLevelEncryptionProfile(inner) => Error::NoSuchFieldLevelEncryptionProfile(inner),
+            crate::error::DeleteFieldLevelEncryptionProfileErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::error::DeleteFieldLevelEncryptionProfileErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -1261,28 +1411,33 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteFunctionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DeleteFunctionErrorKind::FunctionInUse(inner) => {
-                        Error::FunctionInUse(inner)
-                    }
-                    crate::error::DeleteFunctionErrorKind::InvalidIfMatchVersion(inner) => {
-                        Error::InvalidIfMatchVersion(inner)
-                    }
-                    crate::error::DeleteFunctionErrorKind::NoSuchFunctionExists(inner) => {
-                        Error::NoSuchFunctionExists(inner)
-                    }
-                    crate::error::DeleteFunctionErrorKind::PreconditionFailed(inner) => {
-                        Error::PreconditionFailed(inner)
-                    }
-                    crate::error::DeleteFunctionErrorKind::UnsupportedOperation(inner) => {
-                        Error::UnsupportedOperation(inner)
-                    }
-                    crate::error::DeleteFunctionErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteFunctionError> for Error {
+    fn from(err: crate::error::DeleteFunctionError) -> Self {
+        match err.kind {
+            crate::error::DeleteFunctionErrorKind::FunctionInUse(inner) => {
+                Error::FunctionInUse(inner)
+            }
+            crate::error::DeleteFunctionErrorKind::InvalidIfMatchVersion(inner) => {
+                Error::InvalidIfMatchVersion(inner)
+            }
+            crate::error::DeleteFunctionErrorKind::NoSuchFunctionExists(inner) => {
+                Error::NoSuchFunctionExists(inner)
+            }
+            crate::error::DeleteFunctionErrorKind::PreconditionFailed(inner) => {
+                Error::PreconditionFailed(inner)
+            }
+            crate::error::DeleteFunctionErrorKind::UnsupportedOperation(inner) => {
+                Error::UnsupportedOperation(inner)
+            }
+            crate::error::DeleteFunctionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1293,25 +1448,30 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteKeyGroupError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DeleteKeyGroupErrorKind::InvalidIfMatchVersion(inner) => {
-                        Error::InvalidIfMatchVersion(inner)
-                    }
-                    crate::error::DeleteKeyGroupErrorKind::NoSuchResource(inner) => {
-                        Error::NoSuchResource(inner)
-                    }
-                    crate::error::DeleteKeyGroupErrorKind::PreconditionFailed(inner) => {
-                        Error::PreconditionFailed(inner)
-                    }
-                    crate::error::DeleteKeyGroupErrorKind::ResourceInUse(inner) => {
-                        Error::ResourceInUse(inner)
-                    }
-                    crate::error::DeleteKeyGroupErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteKeyGroupError> for Error {
+    fn from(err: crate::error::DeleteKeyGroupError) -> Self {
+        match err.kind {
+            crate::error::DeleteKeyGroupErrorKind::InvalidIfMatchVersion(inner) => {
+                Error::InvalidIfMatchVersion(inner)
+            }
+            crate::error::DeleteKeyGroupErrorKind::NoSuchResource(inner) => {
+                Error::NoSuchResource(inner)
+            }
+            crate::error::DeleteKeyGroupErrorKind::PreconditionFailed(inner) => {
+                Error::PreconditionFailed(inner)
+            }
+            crate::error::DeleteKeyGroupErrorKind::ResourceInUse(inner) => {
+                Error::ResourceInUse(inner)
+            }
+            crate::error::DeleteKeyGroupErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1324,14 +1484,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteMonitoringSubscriptionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::DeleteMonitoringSubscriptionErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-                crate::error::DeleteMonitoringSubscriptionErrorKind::NoSuchDistribution(inner) => Error::NoSuchDistribution(inner),
-                crate::error::DeleteMonitoringSubscriptionErrorKind::NoSuchMonitoringSubscription(inner) => Error::NoSuchMonitoringSubscription(inner),
-                crate::error::DeleteMonitoringSubscriptionErrorKind::UnsupportedOperation(inner) => Error::UnsupportedOperation(inner),
-                crate::error::DeleteMonitoringSubscriptionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteMonitoringSubscriptionError> for Error {
+    fn from(err: crate::error::DeleteMonitoringSubscriptionError) -> Self {
+        match err.kind {
+            crate::error::DeleteMonitoringSubscriptionErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::DeleteMonitoringSubscriptionErrorKind::NoSuchDistribution(inner) => {
+                Error::NoSuchDistribution(inner)
+            }
+            crate::error::DeleteMonitoringSubscriptionErrorKind::NoSuchMonitoringSubscription(
+                inner,
+            ) => Error::NoSuchMonitoringSubscription(inner),
+            crate::error::DeleteMonitoringSubscriptionErrorKind::UnsupportedOperation(inner) => {
+                Error::UnsupportedOperation(inner)
+            }
+            crate::error::DeleteMonitoringSubscriptionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1345,28 +1522,33 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DeleteOriginAccessControlErrorKind::AccessDenied(inner) => {
-                        Error::AccessDenied(inner)
-                    }
-                    crate::error::DeleteOriginAccessControlErrorKind::InvalidIfMatchVersion(
-                        inner,
-                    ) => Error::InvalidIfMatchVersion(inner),
-                    crate::error::DeleteOriginAccessControlErrorKind::NoSuchOriginAccessControl(
-                        inner,
-                    ) => Error::NoSuchOriginAccessControl(inner),
-                    crate::error::DeleteOriginAccessControlErrorKind::OriginAccessControlInUse(
-                        inner,
-                    ) => Error::OriginAccessControlInUse(inner),
-                    crate::error::DeleteOriginAccessControlErrorKind::PreconditionFailed(inner) => {
-                        Error::PreconditionFailed(inner)
-                    }
-                    crate::error::DeleteOriginAccessControlErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteOriginAccessControlError> for Error {
+    fn from(err: crate::error::DeleteOriginAccessControlError) -> Self {
+        match err.kind {
+            crate::error::DeleteOriginAccessControlErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::DeleteOriginAccessControlErrorKind::InvalidIfMatchVersion(inner) => {
+                Error::InvalidIfMatchVersion(inner)
+            }
+            crate::error::DeleteOriginAccessControlErrorKind::NoSuchOriginAccessControl(inner) => {
+                Error::NoSuchOriginAccessControl(inner)
+            }
+            crate::error::DeleteOriginAccessControlErrorKind::OriginAccessControlInUse(inner) => {
+                Error::OriginAccessControlInUse(inner)
+            }
+            crate::error::DeleteOriginAccessControlErrorKind::PreconditionFailed(inner) => {
+                Error::PreconditionFailed(inner)
+            }
+            crate::error::DeleteOriginAccessControlErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1380,31 +1562,36 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DeleteOriginRequestPolicyErrorKind::AccessDenied(inner) => {
-                        Error::AccessDenied(inner)
-                    }
-                    crate::error::DeleteOriginRequestPolicyErrorKind::IllegalDelete(inner) => {
-                        Error::IllegalDelete(inner)
-                    }
-                    crate::error::DeleteOriginRequestPolicyErrorKind::InvalidIfMatchVersion(
-                        inner,
-                    ) => Error::InvalidIfMatchVersion(inner),
-                    crate::error::DeleteOriginRequestPolicyErrorKind::NoSuchOriginRequestPolicy(
-                        inner,
-                    ) => Error::NoSuchOriginRequestPolicy(inner),
-                    crate::error::DeleteOriginRequestPolicyErrorKind::OriginRequestPolicyInUse(
-                        inner,
-                    ) => Error::OriginRequestPolicyInUse(inner),
-                    crate::error::DeleteOriginRequestPolicyErrorKind::PreconditionFailed(inner) => {
-                        Error::PreconditionFailed(inner)
-                    }
-                    crate::error::DeleteOriginRequestPolicyErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteOriginRequestPolicyError> for Error {
+    fn from(err: crate::error::DeleteOriginRequestPolicyError) -> Self {
+        match err.kind {
+            crate::error::DeleteOriginRequestPolicyErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::DeleteOriginRequestPolicyErrorKind::IllegalDelete(inner) => {
+                Error::IllegalDelete(inner)
+            }
+            crate::error::DeleteOriginRequestPolicyErrorKind::InvalidIfMatchVersion(inner) => {
+                Error::InvalidIfMatchVersion(inner)
+            }
+            crate::error::DeleteOriginRequestPolicyErrorKind::NoSuchOriginRequestPolicy(inner) => {
+                Error::NoSuchOriginRequestPolicy(inner)
+            }
+            crate::error::DeleteOriginRequestPolicyErrorKind::OriginRequestPolicyInUse(inner) => {
+                Error::OriginRequestPolicyInUse(inner)
+            }
+            crate::error::DeleteOriginRequestPolicyErrorKind::PreconditionFailed(inner) => {
+                Error::PreconditionFailed(inner)
+            }
+            crate::error::DeleteOriginRequestPolicyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1415,28 +1602,33 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeletePublicKeyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DeletePublicKeyErrorKind::AccessDenied(inner) => {
-                        Error::AccessDenied(inner)
-                    }
-                    crate::error::DeletePublicKeyErrorKind::InvalidIfMatchVersion(inner) => {
-                        Error::InvalidIfMatchVersion(inner)
-                    }
-                    crate::error::DeletePublicKeyErrorKind::NoSuchPublicKey(inner) => {
-                        Error::NoSuchPublicKey(inner)
-                    }
-                    crate::error::DeletePublicKeyErrorKind::PreconditionFailed(inner) => {
-                        Error::PreconditionFailed(inner)
-                    }
-                    crate::error::DeletePublicKeyErrorKind::PublicKeyInUse(inner) => {
-                        Error::PublicKeyInUse(inner)
-                    }
-                    crate::error::DeletePublicKeyErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeletePublicKeyError> for Error {
+    fn from(err: crate::error::DeletePublicKeyError) -> Self {
+        match err.kind {
+            crate::error::DeletePublicKeyErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::DeletePublicKeyErrorKind::InvalidIfMatchVersion(inner) => {
+                Error::InvalidIfMatchVersion(inner)
+            }
+            crate::error::DeletePublicKeyErrorKind::NoSuchPublicKey(inner) => {
+                Error::NoSuchPublicKey(inner)
+            }
+            crate::error::DeletePublicKeyErrorKind::PreconditionFailed(inner) => {
+                Error::PreconditionFailed(inner)
+            }
+            crate::error::DeletePublicKeyErrorKind::PublicKeyInUse(inner) => {
+                Error::PublicKeyInUse(inner)
+            }
+            crate::error::DeletePublicKeyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1450,25 +1642,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DeleteRealtimeLogConfigErrorKind::AccessDenied(inner) => {
-                        Error::AccessDenied(inner)
-                    }
-                    crate::error::DeleteRealtimeLogConfigErrorKind::InvalidArgument(inner) => {
-                        Error::InvalidArgument(inner)
-                    }
-                    crate::error::DeleteRealtimeLogConfigErrorKind::NoSuchRealtimeLogConfig(
-                        inner,
-                    ) => Error::NoSuchRealtimeLogConfig(inner),
-                    crate::error::DeleteRealtimeLogConfigErrorKind::RealtimeLogConfigInUse(
-                        inner,
-                    ) => Error::RealtimeLogConfigInUse(inner),
-                    crate::error::DeleteRealtimeLogConfigErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteRealtimeLogConfigError> for Error {
+    fn from(err: crate::error::DeleteRealtimeLogConfigError) -> Self {
+        match err.kind {
+            crate::error::DeleteRealtimeLogConfigErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::DeleteRealtimeLogConfigErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::DeleteRealtimeLogConfigErrorKind::NoSuchRealtimeLogConfig(inner) => {
+                Error::NoSuchRealtimeLogConfig(inner)
+            }
+            crate::error::DeleteRealtimeLogConfigErrorKind::RealtimeLogConfigInUse(inner) => {
+                Error::RealtimeLogConfigInUse(inner)
+            }
+            crate::error::DeleteRealtimeLogConfigErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1481,33 +1678,37 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteResponseHeadersPolicyError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::DeleteResponseHeadersPolicyErrorKind::AccessDenied(inner) => {
-                    Error::AccessDenied(inner)
-                }
-                crate::error::DeleteResponseHeadersPolicyErrorKind::IllegalDelete(inner) => {
-                    Error::IllegalDelete(inner)
-                }
-                crate::error::DeleteResponseHeadersPolicyErrorKind::InvalidIfMatchVersion(
-                    inner,
-                ) => Error::InvalidIfMatchVersion(inner),
-                crate::error::DeleteResponseHeadersPolicyErrorKind::NoSuchResponseHeadersPolicy(
-                    inner,
-                ) => Error::NoSuchResponseHeadersPolicy(inner),
-                crate::error::DeleteResponseHeadersPolicyErrorKind::PreconditionFailed(inner) => {
-                    Error::PreconditionFailed(inner)
-                }
-                crate::error::DeleteResponseHeadersPolicyErrorKind::ResponseHeadersPolicyInUse(
-                    inner,
-                ) => Error::ResponseHeadersPolicyInUse(inner),
-                crate::error::DeleteResponseHeadersPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteResponseHeadersPolicyError> for Error {
+    fn from(err: crate::error::DeleteResponseHeadersPolicyError) -> Self {
+        match err.kind {
+            crate::error::DeleteResponseHeadersPolicyErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::DeleteResponseHeadersPolicyErrorKind::IllegalDelete(inner) => {
+                Error::IllegalDelete(inner)
+            }
+            crate::error::DeleteResponseHeadersPolicyErrorKind::InvalidIfMatchVersion(inner) => {
+                Error::InvalidIfMatchVersion(inner)
+            }
+            crate::error::DeleteResponseHeadersPolicyErrorKind::NoSuchResponseHeadersPolicy(
+                inner,
+            ) => Error::NoSuchResponseHeadersPolicy(inner),
+            crate::error::DeleteResponseHeadersPolicyErrorKind::PreconditionFailed(inner) => {
+                Error::PreconditionFailed(inner)
+            }
+            crate::error::DeleteResponseHeadersPolicyErrorKind::ResponseHeadersPolicyInUse(
+                inner,
+            ) => Error::ResponseHeadersPolicyInUse(inner),
+            crate::error::DeleteResponseHeadersPolicyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1520,15 +1721,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteStreamingDistributionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::DeleteStreamingDistributionErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-                crate::error::DeleteStreamingDistributionErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
-                crate::error::DeleteStreamingDistributionErrorKind::NoSuchStreamingDistribution(inner) => Error::NoSuchStreamingDistribution(inner),
-                crate::error::DeleteStreamingDistributionErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
-                crate::error::DeleteStreamingDistributionErrorKind::StreamingDistributionNotDisabled(inner) => Error::StreamingDistributionNotDisabled(inner),
-                crate::error::DeleteStreamingDistributionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteStreamingDistributionError> for Error {
+    fn from(err: crate::error::DeleteStreamingDistributionError) -> Self {
+        match err.kind {
+            crate::error::DeleteStreamingDistributionErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::DeleteStreamingDistributionErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::error::DeleteStreamingDistributionErrorKind::NoSuchStreamingDistribution(inner) => Error::NoSuchStreamingDistribution(inner),
+            crate::error::DeleteStreamingDistributionErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::error::DeleteStreamingDistributionErrorKind::StreamingDistributionNotDisabled(inner) => Error::StreamingDistributionNotDisabled(inner),
+            crate::error::DeleteStreamingDistributionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -1541,19 +1749,24 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DescribeFunctionErrorKind::NoSuchFunctionExists(inner) => {
-                        Error::NoSuchFunctionExists(inner)
-                    }
-                    crate::error::DescribeFunctionErrorKind::UnsupportedOperation(inner) => {
-                        Error::UnsupportedOperation(inner)
-                    }
-                    crate::error::DescribeFunctionErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeFunctionError> for Error {
+    fn from(err: crate::error::DescribeFunctionError) -> Self {
+        match err.kind {
+            crate::error::DescribeFunctionErrorKind::NoSuchFunctionExists(inner) => {
+                Error::NoSuchFunctionExists(inner)
+            }
+            crate::error::DescribeFunctionErrorKind::UnsupportedOperation(inner) => {
+                Error::UnsupportedOperation(inner)
+            }
+            crate::error::DescribeFunctionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1564,19 +1777,24 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetCachePolicyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetCachePolicyErrorKind::AccessDenied(inner) => {
-                        Error::AccessDenied(inner)
-                    }
-                    crate::error::GetCachePolicyErrorKind::NoSuchCachePolicy(inner) => {
-                        Error::NoSuchCachePolicy(inner)
-                    }
-                    crate::error::GetCachePolicyErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetCachePolicyError> for Error {
+    fn from(err: crate::error::GetCachePolicyError) -> Self {
+        match err.kind {
+            crate::error::GetCachePolicyErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::GetCachePolicyErrorKind::NoSuchCachePolicy(inner) => {
+                Error::NoSuchCachePolicy(inner)
+            }
+            crate::error::GetCachePolicyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1590,19 +1808,24 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetCachePolicyConfigErrorKind::AccessDenied(inner) => {
-                        Error::AccessDenied(inner)
-                    }
-                    crate::error::GetCachePolicyConfigErrorKind::NoSuchCachePolicy(inner) => {
-                        Error::NoSuchCachePolicy(inner)
-                    }
-                    crate::error::GetCachePolicyConfigErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetCachePolicyConfigError> for Error {
+    fn from(err: crate::error::GetCachePolicyConfigError) -> Self {
+        match err.kind {
+            crate::error::GetCachePolicyConfigErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::GetCachePolicyConfigErrorKind::NoSuchCachePolicy(inner) => {
+                Error::NoSuchCachePolicy(inner)
+            }
+            crate::error::GetCachePolicyConfigErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1619,12 +1842,19 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::GetCloudFrontOriginAccessIdentityErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-                crate::error::GetCloudFrontOriginAccessIdentityErrorKind::NoSuchCloudFrontOriginAccessIdentity(inner) => Error::NoSuchCloudFrontOriginAccessIdentity(inner),
-                crate::error::GetCloudFrontOriginAccessIdentityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetCloudFrontOriginAccessIdentityError> for Error {
+    fn from(err: crate::error::GetCloudFrontOriginAccessIdentityError) -> Self {
+        match err.kind {
+            crate::error::GetCloudFrontOriginAccessIdentityErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::GetCloudFrontOriginAccessIdentityErrorKind::NoSuchCloudFrontOriginAccessIdentity(inner) => Error::NoSuchCloudFrontOriginAccessIdentity(inner),
+            crate::error::GetCloudFrontOriginAccessIdentityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -1645,12 +1875,19 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::GetCloudFrontOriginAccessIdentityConfigErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-                crate::error::GetCloudFrontOriginAccessIdentityConfigErrorKind::NoSuchCloudFrontOriginAccessIdentity(inner) => Error::NoSuchCloudFrontOriginAccessIdentity(inner),
-                crate::error::GetCloudFrontOriginAccessIdentityConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetCloudFrontOriginAccessIdentityConfigError> for Error {
+    fn from(err: crate::error::GetCloudFrontOriginAccessIdentityConfigError) -> Self {
+        match err.kind {
+            crate::error::GetCloudFrontOriginAccessIdentityConfigErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::GetCloudFrontOriginAccessIdentityConfigErrorKind::NoSuchCloudFrontOriginAccessIdentity(inner) => Error::NoSuchCloudFrontOriginAccessIdentity(inner),
+            crate::error::GetCloudFrontOriginAccessIdentityConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -1661,19 +1898,24 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetDistributionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetDistributionErrorKind::AccessDenied(inner) => {
-                        Error::AccessDenied(inner)
-                    }
-                    crate::error::GetDistributionErrorKind::NoSuchDistribution(inner) => {
-                        Error::NoSuchDistribution(inner)
-                    }
-                    crate::error::GetDistributionErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetDistributionError> for Error {
+    fn from(err: crate::error::GetDistributionError) -> Self {
+        match err.kind {
+            crate::error::GetDistributionErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::GetDistributionErrorKind::NoSuchDistribution(inner) => {
+                Error::NoSuchDistribution(inner)
+            }
+            crate::error::GetDistributionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1687,19 +1929,24 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetDistributionConfigErrorKind::AccessDenied(inner) => {
-                        Error::AccessDenied(inner)
-                    }
-                    crate::error::GetDistributionConfigErrorKind::NoSuchDistribution(inner) => {
-                        Error::NoSuchDistribution(inner)
-                    }
-                    crate::error::GetDistributionConfigErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetDistributionConfigError> for Error {
+    fn from(err: crate::error::GetDistributionConfigError) -> Self {
+        match err.kind {
+            crate::error::GetDistributionConfigErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::GetDistributionConfigErrorKind::NoSuchDistribution(inner) => {
+                Error::NoSuchDistribution(inner)
+            }
+            crate::error::GetDistributionConfigErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1712,12 +1959,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetFieldLevelEncryptionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::GetFieldLevelEncryptionErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-                crate::error::GetFieldLevelEncryptionErrorKind::NoSuchFieldLevelEncryptionConfig(inner) => Error::NoSuchFieldLevelEncryptionConfig(inner),
-                crate::error::GetFieldLevelEncryptionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetFieldLevelEncryptionError> for Error {
+    fn from(err: crate::error::GetFieldLevelEncryptionError) -> Self {
+        match err.kind {
+            crate::error::GetFieldLevelEncryptionErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::GetFieldLevelEncryptionErrorKind::NoSuchFieldLevelEncryptionConfig(
+                inner,
+            ) => Error::NoSuchFieldLevelEncryptionConfig(inner),
+            crate::error::GetFieldLevelEncryptionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1730,12 +1990,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetFieldLevelEncryptionConfigError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::GetFieldLevelEncryptionConfigErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-                crate::error::GetFieldLevelEncryptionConfigErrorKind::NoSuchFieldLevelEncryptionConfig(inner) => Error::NoSuchFieldLevelEncryptionConfig(inner),
-                crate::error::GetFieldLevelEncryptionConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetFieldLevelEncryptionConfigError> for Error {
+    fn from(err: crate::error::GetFieldLevelEncryptionConfigError) -> Self {
+        match err.kind {
+            crate::error::GetFieldLevelEncryptionConfigErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::GetFieldLevelEncryptionConfigErrorKind::NoSuchFieldLevelEncryptionConfig(inner) => Error::NoSuchFieldLevelEncryptionConfig(inner),
+            crate::error::GetFieldLevelEncryptionConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -1752,12 +2019,19 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::GetFieldLevelEncryptionProfileErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-                crate::error::GetFieldLevelEncryptionProfileErrorKind::NoSuchFieldLevelEncryptionProfile(inner) => Error::NoSuchFieldLevelEncryptionProfile(inner),
-                crate::error::GetFieldLevelEncryptionProfileErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetFieldLevelEncryptionProfileError> for Error {
+    fn from(err: crate::error::GetFieldLevelEncryptionProfileError) -> Self {
+        match err.kind {
+            crate::error::GetFieldLevelEncryptionProfileErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::GetFieldLevelEncryptionProfileErrorKind::NoSuchFieldLevelEncryptionProfile(inner) => Error::NoSuchFieldLevelEncryptionProfile(inner),
+            crate::error::GetFieldLevelEncryptionProfileErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -1778,12 +2052,19 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::GetFieldLevelEncryptionProfileConfigErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-                crate::error::GetFieldLevelEncryptionProfileConfigErrorKind::NoSuchFieldLevelEncryptionProfile(inner) => Error::NoSuchFieldLevelEncryptionProfile(inner),
-                crate::error::GetFieldLevelEncryptionProfileConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetFieldLevelEncryptionProfileConfigError> for Error {
+    fn from(err: crate::error::GetFieldLevelEncryptionProfileConfigError) -> Self {
+        match err.kind {
+            crate::error::GetFieldLevelEncryptionProfileConfigErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::GetFieldLevelEncryptionProfileConfigErrorKind::NoSuchFieldLevelEncryptionProfile(inner) => Error::NoSuchFieldLevelEncryptionProfile(inner),
+            crate::error::GetFieldLevelEncryptionProfileConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -1794,19 +2075,24 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetFunctionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetFunctionErrorKind::NoSuchFunctionExists(inner) => {
-                        Error::NoSuchFunctionExists(inner)
-                    }
-                    crate::error::GetFunctionErrorKind::UnsupportedOperation(inner) => {
-                        Error::UnsupportedOperation(inner)
-                    }
-                    crate::error::GetFunctionErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetFunctionError> for Error {
+    fn from(err: crate::error::GetFunctionError) -> Self {
+        match err.kind {
+            crate::error::GetFunctionErrorKind::NoSuchFunctionExists(inner) => {
+                Error::NoSuchFunctionExists(inner)
+            }
+            crate::error::GetFunctionErrorKind::UnsupportedOperation(inner) => {
+                Error::UnsupportedOperation(inner)
+            }
+            crate::error::GetFunctionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1817,22 +2103,27 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetInvalidationError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetInvalidationErrorKind::AccessDenied(inner) => {
-                        Error::AccessDenied(inner)
-                    }
-                    crate::error::GetInvalidationErrorKind::NoSuchDistribution(inner) => {
-                        Error::NoSuchDistribution(inner)
-                    }
-                    crate::error::GetInvalidationErrorKind::NoSuchInvalidation(inner) => {
-                        Error::NoSuchInvalidation(inner)
-                    }
-                    crate::error::GetInvalidationErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetInvalidationError> for Error {
+    fn from(err: crate::error::GetInvalidationError) -> Self {
+        match err.kind {
+            crate::error::GetInvalidationErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::GetInvalidationErrorKind::NoSuchDistribution(inner) => {
+                Error::NoSuchDistribution(inner)
+            }
+            crate::error::GetInvalidationErrorKind::NoSuchInvalidation(inner) => {
+                Error::NoSuchInvalidation(inner)
+            }
+            crate::error::GetInvalidationErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1843,16 +2134,21 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetKeyGroupError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetKeyGroupErrorKind::NoSuchResource(inner) => {
-                        Error::NoSuchResource(inner)
-                    }
-                    crate::error::GetKeyGroupErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetKeyGroupError> for Error {
+    fn from(err: crate::error::GetKeyGroupError) -> Self {
+        match err.kind {
+            crate::error::GetKeyGroupErrorKind::NoSuchResource(inner) => {
+                Error::NoSuchResource(inner)
+            }
+            crate::error::GetKeyGroupErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1865,16 +2161,21 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetKeyGroupConfigErrorKind::NoSuchResource(inner) => {
-                        Error::NoSuchResource(inner)
-                    }
-                    crate::error::GetKeyGroupConfigErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetKeyGroupConfigError> for Error {
+    fn from(err: crate::error::GetKeyGroupConfigError) -> Self {
+        match err.kind {
+            crate::error::GetKeyGroupConfigErrorKind::NoSuchResource(inner) => {
+                Error::NoSuchResource(inner)
+            }
+            crate::error::GetKeyGroupConfigErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1887,27 +2188,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetMonitoringSubscriptionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::GetMonitoringSubscriptionErrorKind::AccessDenied(inner) => {
-                    Error::AccessDenied(inner)
-                }
-                crate::error::GetMonitoringSubscriptionErrorKind::NoSuchDistribution(inner) => {
-                    Error::NoSuchDistribution(inner)
-                }
-                crate::error::GetMonitoringSubscriptionErrorKind::NoSuchMonitoringSubscription(
-                    inner,
-                ) => Error::NoSuchMonitoringSubscription(inner),
-                crate::error::GetMonitoringSubscriptionErrorKind::UnsupportedOperation(inner) => {
-                    Error::UnsupportedOperation(inner)
-                }
-                crate::error::GetMonitoringSubscriptionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetMonitoringSubscriptionError> for Error {
+    fn from(err: crate::error::GetMonitoringSubscriptionError) -> Self {
+        match err.kind {
+            crate::error::GetMonitoringSubscriptionErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::GetMonitoringSubscriptionErrorKind::NoSuchDistribution(inner) => {
+                Error::NoSuchDistribution(inner)
+            }
+            crate::error::GetMonitoringSubscriptionErrorKind::NoSuchMonitoringSubscription(
+                inner,
+            ) => Error::NoSuchMonitoringSubscription(inner),
+            crate::error::GetMonitoringSubscriptionErrorKind::UnsupportedOperation(inner) => {
+                Error::UnsupportedOperation(inner)
+            }
+            crate::error::GetMonitoringSubscriptionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1921,19 +2226,24 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetOriginAccessControlErrorKind::AccessDenied(inner) => {
-                        Error::AccessDenied(inner)
-                    }
-                    crate::error::GetOriginAccessControlErrorKind::NoSuchOriginAccessControl(
-                        inner,
-                    ) => Error::NoSuchOriginAccessControl(inner),
-                    crate::error::GetOriginAccessControlErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetOriginAccessControlError> for Error {
+    fn from(err: crate::error::GetOriginAccessControlError) -> Self {
+        match err.kind {
+            crate::error::GetOriginAccessControlErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::GetOriginAccessControlErrorKind::NoSuchOriginAccessControl(inner) => {
+                Error::NoSuchOriginAccessControl(inner)
+            }
+            crate::error::GetOriginAccessControlErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1946,21 +2256,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetOriginAccessControlConfigError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::GetOriginAccessControlConfigErrorKind::AccessDenied(inner) => {
-                    Error::AccessDenied(inner)
-                }
-                crate::error::GetOriginAccessControlConfigErrorKind::NoSuchOriginAccessControl(
-                    inner,
-                ) => Error::NoSuchOriginAccessControl(inner),
-                crate::error::GetOriginAccessControlConfigErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetOriginAccessControlConfigError> for Error {
+    fn from(err: crate::error::GetOriginAccessControlConfigError) -> Self {
+        match err.kind {
+            crate::error::GetOriginAccessControlConfigErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::GetOriginAccessControlConfigErrorKind::NoSuchOriginAccessControl(
+                inner,
+            ) => Error::NoSuchOriginAccessControl(inner),
+            crate::error::GetOriginAccessControlConfigErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1974,19 +2288,24 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetOriginRequestPolicyErrorKind::AccessDenied(inner) => {
-                        Error::AccessDenied(inner)
-                    }
-                    crate::error::GetOriginRequestPolicyErrorKind::NoSuchOriginRequestPolicy(
-                        inner,
-                    ) => Error::NoSuchOriginRequestPolicy(inner),
-                    crate::error::GetOriginRequestPolicyErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetOriginRequestPolicyError> for Error {
+    fn from(err: crate::error::GetOriginRequestPolicyError) -> Self {
+        match err.kind {
+            crate::error::GetOriginRequestPolicyErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::GetOriginRequestPolicyErrorKind::NoSuchOriginRequestPolicy(inner) => {
+                Error::NoSuchOriginRequestPolicy(inner)
+            }
+            crate::error::GetOriginRequestPolicyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -1999,21 +2318,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetOriginRequestPolicyConfigError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::GetOriginRequestPolicyConfigErrorKind::AccessDenied(inner) => {
-                    Error::AccessDenied(inner)
-                }
-                crate::error::GetOriginRequestPolicyConfigErrorKind::NoSuchOriginRequestPolicy(
-                    inner,
-                ) => Error::NoSuchOriginRequestPolicy(inner),
-                crate::error::GetOriginRequestPolicyConfigErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetOriginRequestPolicyConfigError> for Error {
+    fn from(err: crate::error::GetOriginRequestPolicyConfigError) -> Self {
+        match err.kind {
+            crate::error::GetOriginRequestPolicyConfigErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::GetOriginRequestPolicyConfigErrorKind::NoSuchOriginRequestPolicy(
+                inner,
+            ) => Error::NoSuchOriginRequestPolicy(inner),
+            crate::error::GetOriginRequestPolicyConfigErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2024,19 +2347,22 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetPublicKeyError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetPublicKeyErrorKind::AccessDenied(inner) => {
-                        Error::AccessDenied(inner)
-                    }
-                    crate::error::GetPublicKeyErrorKind::NoSuchPublicKey(inner) => {
-                        Error::NoSuchPublicKey(inner)
-                    }
-                    crate::error::GetPublicKeyErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetPublicKeyError> for Error {
+    fn from(err: crate::error::GetPublicKeyError) -> Self {
+        match err.kind {
+            crate::error::GetPublicKeyErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::GetPublicKeyErrorKind::NoSuchPublicKey(inner) => {
+                Error::NoSuchPublicKey(inner)
+            }
+            crate::error::GetPublicKeyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2049,19 +2375,24 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetPublicKeyConfigErrorKind::AccessDenied(inner) => {
-                        Error::AccessDenied(inner)
-                    }
-                    crate::error::GetPublicKeyConfigErrorKind::NoSuchPublicKey(inner) => {
-                        Error::NoSuchPublicKey(inner)
-                    }
-                    crate::error::GetPublicKeyConfigErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetPublicKeyConfigError> for Error {
+    fn from(err: crate::error::GetPublicKeyConfigError) -> Self {
+        match err.kind {
+            crate::error::GetPublicKeyConfigErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::GetPublicKeyConfigErrorKind::NoSuchPublicKey(inner) => {
+                Error::NoSuchPublicKey(inner)
+            }
+            crate::error::GetPublicKeyConfigErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2075,22 +2406,27 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetRealtimeLogConfigErrorKind::AccessDenied(inner) => {
-                        Error::AccessDenied(inner)
-                    }
-                    crate::error::GetRealtimeLogConfigErrorKind::InvalidArgument(inner) => {
-                        Error::InvalidArgument(inner)
-                    }
-                    crate::error::GetRealtimeLogConfigErrorKind::NoSuchRealtimeLogConfig(inner) => {
-                        Error::NoSuchRealtimeLogConfig(inner)
-                    }
-                    crate::error::GetRealtimeLogConfigErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetRealtimeLogConfigError> for Error {
+    fn from(err: crate::error::GetRealtimeLogConfigError) -> Self {
+        match err.kind {
+            crate::error::GetRealtimeLogConfigErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::GetRealtimeLogConfigErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::GetRealtimeLogConfigErrorKind::NoSuchRealtimeLogConfig(inner) => {
+                Error::NoSuchRealtimeLogConfig(inner)
+            }
+            crate::error::GetRealtimeLogConfigErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2103,21 +2439,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetResponseHeadersPolicyError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::GetResponseHeadersPolicyErrorKind::AccessDenied(inner) => {
-                    Error::AccessDenied(inner)
-                }
-                crate::error::GetResponseHeadersPolicyErrorKind::NoSuchResponseHeadersPolicy(
-                    inner,
-                ) => Error::NoSuchResponseHeadersPolicy(inner),
-                crate::error::GetResponseHeadersPolicyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetResponseHeadersPolicyError> for Error {
+    fn from(err: crate::error::GetResponseHeadersPolicyError) -> Self {
+        match err.kind {
+            crate::error::GetResponseHeadersPolicyErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::GetResponseHeadersPolicyErrorKind::NoSuchResponseHeadersPolicy(inner) => {
+                Error::NoSuchResponseHeadersPolicy(inner)
+            }
+            crate::error::GetResponseHeadersPolicyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2134,12 +2474,25 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::GetResponseHeadersPolicyConfigErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-                crate::error::GetResponseHeadersPolicyConfigErrorKind::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
-                crate::error::GetResponseHeadersPolicyConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetResponseHeadersPolicyConfigError> for Error {
+    fn from(err: crate::error::GetResponseHeadersPolicyConfigError) -> Self {
+        match err.kind {
+            crate::error::GetResponseHeadersPolicyConfigErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::GetResponseHeadersPolicyConfigErrorKind::NoSuchResponseHeadersPolicy(
+                inner,
+            ) => Error::NoSuchResponseHeadersPolicy(inner),
+            crate::error::GetResponseHeadersPolicyConfigErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2152,21 +2505,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::GetStreamingDistributionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::GetStreamingDistributionErrorKind::AccessDenied(inner) => {
-                    Error::AccessDenied(inner)
-                }
-                crate::error::GetStreamingDistributionErrorKind::NoSuchStreamingDistribution(
-                    inner,
-                ) => Error::NoSuchStreamingDistribution(inner),
-                crate::error::GetStreamingDistributionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetStreamingDistributionError> for Error {
+    fn from(err: crate::error::GetStreamingDistributionError) -> Self {
+        match err.kind {
+            crate::error::GetStreamingDistributionErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::GetStreamingDistributionErrorKind::NoSuchStreamingDistribution(inner) => {
+                Error::NoSuchStreamingDistribution(inner)
+            }
+            crate::error::GetStreamingDistributionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2183,12 +2540,25 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::GetStreamingDistributionConfigErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-                crate::error::GetStreamingDistributionConfigErrorKind::NoSuchStreamingDistribution(inner) => Error::NoSuchStreamingDistribution(inner),
-                crate::error::GetStreamingDistributionConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetStreamingDistributionConfigError> for Error {
+    fn from(err: crate::error::GetStreamingDistributionConfigError) -> Self {
+        match err.kind {
+            crate::error::GetStreamingDistributionConfigErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::GetStreamingDistributionConfigErrorKind::NoSuchStreamingDistribution(
+                inner,
+            ) => Error::NoSuchStreamingDistribution(inner),
+            crate::error::GetStreamingDistributionConfigErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2201,22 +2571,27 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListCachePoliciesErrorKind::AccessDenied(inner) => {
-                        Error::AccessDenied(inner)
-                    }
-                    crate::error::ListCachePoliciesErrorKind::InvalidArgument(inner) => {
-                        Error::InvalidArgument(inner)
-                    }
-                    crate::error::ListCachePoliciesErrorKind::NoSuchCachePolicy(inner) => {
-                        Error::NoSuchCachePolicy(inner)
-                    }
-                    crate::error::ListCachePoliciesErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListCachePoliciesError> for Error {
+    fn from(err: crate::error::ListCachePoliciesError) -> Self {
+        match err.kind {
+            crate::error::ListCachePoliciesErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::ListCachePoliciesErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::ListCachePoliciesErrorKind::NoSuchCachePolicy(inner) => {
+                Error::NoSuchCachePolicy(inner)
+            }
+            crate::error::ListCachePoliciesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2237,18 +2612,22 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::ListCloudFrontOriginAccessIdentitiesErrorKind::InvalidArgument(
-                    inner,
-                ) => Error::InvalidArgument(inner),
-                crate::error::ListCloudFrontOriginAccessIdentitiesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListCloudFrontOriginAccessIdentitiesError> for Error {
+    fn from(err: crate::error::ListCloudFrontOriginAccessIdentitiesError) -> Self {
+        match err.kind {
+            crate::error::ListCloudFrontOriginAccessIdentitiesErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::ListCloudFrontOriginAccessIdentitiesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2262,19 +2641,24 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListConflictingAliasesErrorKind::InvalidArgument(inner) => {
-                        Error::InvalidArgument(inner)
-                    }
-                    crate::error::ListConflictingAliasesErrorKind::NoSuchDistribution(inner) => {
-                        Error::NoSuchDistribution(inner)
-                    }
-                    crate::error::ListConflictingAliasesErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListConflictingAliasesError> for Error {
+    fn from(err: crate::error::ListConflictingAliasesError) -> Self {
+        match err.kind {
+            crate::error::ListConflictingAliasesErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::ListConflictingAliasesErrorKind::NoSuchDistribution(inner) => {
+                Error::NoSuchDistribution(inner)
+            }
+            crate::error::ListConflictingAliasesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2287,16 +2671,21 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListDistributionsErrorKind::InvalidArgument(inner) => {
-                        Error::InvalidArgument(inner)
-                    }
-                    crate::error::ListDistributionsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListDistributionsError> for Error {
+    fn from(err: crate::error::ListDistributionsError) -> Self {
+        match err.kind {
+            crate::error::ListDistributionsErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::ListDistributionsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2314,22 +2703,27 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListDistributionsByCachePolicyIdErrorKind::AccessDenied(
-                        inner,
-                    ) => Error::AccessDenied(inner),
-                    crate::error::ListDistributionsByCachePolicyIdErrorKind::InvalidArgument(
-                        inner,
-                    ) => Error::InvalidArgument(inner),
-                    crate::error::ListDistributionsByCachePolicyIdErrorKind::NoSuchCachePolicy(
-                        inner,
-                    ) => Error::NoSuchCachePolicy(inner),
-                    crate::error::ListDistributionsByCachePolicyIdErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListDistributionsByCachePolicyIdError> for Error {
+    fn from(err: crate::error::ListDistributionsByCachePolicyIdError) -> Self {
+        match err.kind {
+            crate::error::ListDistributionsByCachePolicyIdErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::ListDistributionsByCachePolicyIdErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::ListDistributionsByCachePolicyIdErrorKind::NoSuchCachePolicy(inner) => {
+                Error::NoSuchCachePolicy(inner)
+            }
+            crate::error::ListDistributionsByCachePolicyIdErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2343,19 +2737,24 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListDistributionsByKeyGroupErrorKind::InvalidArgument(inner) => {
-                        Error::InvalidArgument(inner)
-                    }
-                    crate::error::ListDistributionsByKeyGroupErrorKind::NoSuchResource(inner) => {
-                        Error::NoSuchResource(inner)
-                    }
-                    crate::error::ListDistributionsByKeyGroupErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListDistributionsByKeyGroupError> for Error {
+    fn from(err: crate::error::ListDistributionsByKeyGroupError) -> Self {
+        match err.kind {
+            crate::error::ListDistributionsByKeyGroupErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::ListDistributionsByKeyGroupErrorKind::NoSuchResource(inner) => {
+                Error::NoSuchResource(inner)
+            }
+            crate::error::ListDistributionsByKeyGroupErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2376,13 +2775,20 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::ListDistributionsByOriginRequestPolicyIdErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-                crate::error::ListDistributionsByOriginRequestPolicyIdErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
-                crate::error::ListDistributionsByOriginRequestPolicyIdErrorKind::NoSuchOriginRequestPolicy(inner) => Error::NoSuchOriginRequestPolicy(inner),
-                crate::error::ListDistributionsByOriginRequestPolicyIdErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListDistributionsByOriginRequestPolicyIdError> for Error {
+    fn from(err: crate::error::ListDistributionsByOriginRequestPolicyIdError) -> Self {
+        match err.kind {
+            crate::error::ListDistributionsByOriginRequestPolicyIdErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::ListDistributionsByOriginRequestPolicyIdErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::ListDistributionsByOriginRequestPolicyIdErrorKind::NoSuchOriginRequestPolicy(inner) => Error::NoSuchOriginRequestPolicy(inner),
+            crate::error::ListDistributionsByOriginRequestPolicyIdErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -2403,18 +2809,22 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::ListDistributionsByRealtimeLogConfigErrorKind::InvalidArgument(
-                    inner,
-                ) => Error::InvalidArgument(inner),
-                crate::error::ListDistributionsByRealtimeLogConfigErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListDistributionsByRealtimeLogConfigError> for Error {
+    fn from(err: crate::error::ListDistributionsByRealtimeLogConfigError) -> Self {
+        match err.kind {
+            crate::error::ListDistributionsByRealtimeLogConfigErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::ListDistributionsByRealtimeLogConfigErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2435,13 +2845,20 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::ListDistributionsByResponseHeadersPolicyIdErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-                crate::error::ListDistributionsByResponseHeadersPolicyIdErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
-                crate::error::ListDistributionsByResponseHeadersPolicyIdErrorKind::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
-                crate::error::ListDistributionsByResponseHeadersPolicyIdErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListDistributionsByResponseHeadersPolicyIdError> for Error {
+    fn from(err: crate::error::ListDistributionsByResponseHeadersPolicyIdError) -> Self {
+        match err.kind {
+            crate::error::ListDistributionsByResponseHeadersPolicyIdErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::ListDistributionsByResponseHeadersPolicyIdErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::ListDistributionsByResponseHeadersPolicyIdErrorKind::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
+            crate::error::ListDistributionsByResponseHeadersPolicyIdErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -2455,19 +2872,24 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListDistributionsByWebACLIdErrorKind::InvalidArgument(inner) => {
-                        Error::InvalidArgument(inner)
-                    }
-                    crate::error::ListDistributionsByWebACLIdErrorKind::InvalidWebAclId(inner) => {
-                        Error::InvalidWebAclId(inner)
-                    }
-                    crate::error::ListDistributionsByWebACLIdErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListDistributionsByWebACLIdError> for Error {
+    fn from(err: crate::error::ListDistributionsByWebACLIdError) -> Self {
+        match err.kind {
+            crate::error::ListDistributionsByWebACLIdErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::ListDistributionsByWebACLIdErrorKind::InvalidWebAclId(inner) => {
+                Error::InvalidWebAclId(inner)
+            }
+            crate::error::ListDistributionsByWebACLIdErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2485,16 +2907,21 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListFieldLevelEncryptionConfigsErrorKind::InvalidArgument(
-                        inner,
-                    ) => Error::InvalidArgument(inner),
-                    crate::error::ListFieldLevelEncryptionConfigsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListFieldLevelEncryptionConfigsError> for Error {
+    fn from(err: crate::error::ListFieldLevelEncryptionConfigsError) -> Self {
+        match err.kind {
+            crate::error::ListFieldLevelEncryptionConfigsErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::ListFieldLevelEncryptionConfigsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2512,16 +2939,21 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListFieldLevelEncryptionProfilesErrorKind::InvalidArgument(
-                        inner,
-                    ) => Error::InvalidArgument(inner),
-                    crate::error::ListFieldLevelEncryptionProfilesErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListFieldLevelEncryptionProfilesError> for Error {
+    fn from(err: crate::error::ListFieldLevelEncryptionProfilesError) -> Self {
+        match err.kind {
+            crate::error::ListFieldLevelEncryptionProfilesErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::ListFieldLevelEncryptionProfilesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2532,19 +2964,24 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListFunctionsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListFunctionsErrorKind::InvalidArgument(inner) => {
-                        Error::InvalidArgument(inner)
-                    }
-                    crate::error::ListFunctionsErrorKind::UnsupportedOperation(inner) => {
-                        Error::UnsupportedOperation(inner)
-                    }
-                    crate::error::ListFunctionsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListFunctionsError> for Error {
+    fn from(err: crate::error::ListFunctionsError) -> Self {
+        match err.kind {
+            crate::error::ListFunctionsErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::ListFunctionsErrorKind::UnsupportedOperation(inner) => {
+                Error::UnsupportedOperation(inner)
+            }
+            crate::error::ListFunctionsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2557,22 +2994,27 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListInvalidationsErrorKind::AccessDenied(inner) => {
-                        Error::AccessDenied(inner)
-                    }
-                    crate::error::ListInvalidationsErrorKind::InvalidArgument(inner) => {
-                        Error::InvalidArgument(inner)
-                    }
-                    crate::error::ListInvalidationsErrorKind::NoSuchDistribution(inner) => {
-                        Error::NoSuchDistribution(inner)
-                    }
-                    crate::error::ListInvalidationsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListInvalidationsError> for Error {
+    fn from(err: crate::error::ListInvalidationsError) -> Self {
+        match err.kind {
+            crate::error::ListInvalidationsErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::ListInvalidationsErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::ListInvalidationsErrorKind::NoSuchDistribution(inner) => {
+                Error::NoSuchDistribution(inner)
+            }
+            crate::error::ListInvalidationsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2583,16 +3025,21 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListKeyGroupsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListKeyGroupsErrorKind::InvalidArgument(inner) => {
-                        Error::InvalidArgument(inner)
-                    }
-                    crate::error::ListKeyGroupsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListKeyGroupsError> for Error {
+    fn from(err: crate::error::ListKeyGroupsError) -> Self {
+        match err.kind {
+            crate::error::ListKeyGroupsErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::ListKeyGroupsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2606,16 +3053,21 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListOriginAccessControlsErrorKind::InvalidArgument(inner) => {
-                        Error::InvalidArgument(inner)
-                    }
-                    crate::error::ListOriginAccessControlsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListOriginAccessControlsError> for Error {
+    fn from(err: crate::error::ListOriginAccessControlsError) -> Self {
+        match err.kind {
+            crate::error::ListOriginAccessControlsErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::ListOriginAccessControlsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2629,22 +3081,27 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListOriginRequestPoliciesErrorKind::AccessDenied(inner) => {
-                        Error::AccessDenied(inner)
-                    }
-                    crate::error::ListOriginRequestPoliciesErrorKind::InvalidArgument(inner) => {
-                        Error::InvalidArgument(inner)
-                    }
-                    crate::error::ListOriginRequestPoliciesErrorKind::NoSuchOriginRequestPolicy(
-                        inner,
-                    ) => Error::NoSuchOriginRequestPolicy(inner),
-                    crate::error::ListOriginRequestPoliciesErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListOriginRequestPoliciesError> for Error {
+    fn from(err: crate::error::ListOriginRequestPoliciesError) -> Self {
+        match err.kind {
+            crate::error::ListOriginRequestPoliciesErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::ListOriginRequestPoliciesErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::ListOriginRequestPoliciesErrorKind::NoSuchOriginRequestPolicy(inner) => {
+                Error::NoSuchOriginRequestPolicy(inner)
+            }
+            crate::error::ListOriginRequestPoliciesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2655,16 +3112,21 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListPublicKeysError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListPublicKeysErrorKind::InvalidArgument(inner) => {
-                        Error::InvalidArgument(inner)
-                    }
-                    crate::error::ListPublicKeysErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListPublicKeysError> for Error {
+    fn from(err: crate::error::ListPublicKeysError) -> Self {
+        match err.kind {
+            crate::error::ListPublicKeysErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::ListPublicKeysErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2678,22 +3140,27 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListRealtimeLogConfigsErrorKind::AccessDenied(inner) => {
-                        Error::AccessDenied(inner)
-                    }
-                    crate::error::ListRealtimeLogConfigsErrorKind::InvalidArgument(inner) => {
-                        Error::InvalidArgument(inner)
-                    }
-                    crate::error::ListRealtimeLogConfigsErrorKind::NoSuchRealtimeLogConfig(
-                        inner,
-                    ) => Error::NoSuchRealtimeLogConfig(inner),
-                    crate::error::ListRealtimeLogConfigsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListRealtimeLogConfigsError> for Error {
+    fn from(err: crate::error::ListRealtimeLogConfigsError) -> Self {
+        match err.kind {
+            crate::error::ListRealtimeLogConfigsErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::ListRealtimeLogConfigsErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::ListRealtimeLogConfigsErrorKind::NoSuchRealtimeLogConfig(inner) => {
+                Error::NoSuchRealtimeLogConfig(inner)
+            }
+            crate::error::ListRealtimeLogConfigsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2706,24 +3173,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ListResponseHeadersPoliciesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::ListResponseHeadersPoliciesErrorKind::AccessDenied(inner) => {
-                    Error::AccessDenied(inner)
-                }
-                crate::error::ListResponseHeadersPoliciesErrorKind::InvalidArgument(inner) => {
-                    Error::InvalidArgument(inner)
-                }
-                crate::error::ListResponseHeadersPoliciesErrorKind::NoSuchResponseHeadersPolicy(
-                    inner,
-                ) => Error::NoSuchResponseHeadersPolicy(inner),
-                crate::error::ListResponseHeadersPoliciesErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListResponseHeadersPoliciesError> for Error {
+    fn from(err: crate::error::ListResponseHeadersPoliciesError) -> Self {
+        match err.kind {
+            crate::error::ListResponseHeadersPoliciesErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::ListResponseHeadersPoliciesErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::ListResponseHeadersPoliciesErrorKind::NoSuchResponseHeadersPolicy(
+                inner,
+            ) => Error::NoSuchResponseHeadersPolicy(inner),
+            crate::error::ListResponseHeadersPoliciesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2737,16 +3208,21 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListStreamingDistributionsErrorKind::InvalidArgument(inner) => {
-                        Error::InvalidArgument(inner)
-                    }
-                    crate::error::ListStreamingDistributionsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListStreamingDistributionsError> for Error {
+    fn from(err: crate::error::ListStreamingDistributionsError) -> Self {
+        match err.kind {
+            crate::error::ListStreamingDistributionsErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::ListStreamingDistributionsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2759,25 +3235,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListTagsForResourceErrorKind::AccessDenied(inner) => {
-                        Error::AccessDenied(inner)
-                    }
-                    crate::error::ListTagsForResourceErrorKind::InvalidArgument(inner) => {
-                        Error::InvalidArgument(inner)
-                    }
-                    crate::error::ListTagsForResourceErrorKind::InvalidTagging(inner) => {
-                        Error::InvalidTagging(inner)
-                    }
-                    crate::error::ListTagsForResourceErrorKind::NoSuchResource(inner) => {
-                        Error::NoSuchResource(inner)
-                    }
-                    crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListTagsForResourceError> for Error {
+    fn from(err: crate::error::ListTagsForResourceError) -> Self {
+        match err.kind {
+            crate::error::ListTagsForResourceErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::ListTagsForResourceErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::ListTagsForResourceErrorKind::InvalidTagging(inner) => {
+                Error::InvalidTagging(inner)
+            }
+            crate::error::ListTagsForResourceErrorKind::NoSuchResource(inner) => {
+                Error::NoSuchResource(inner)
+            }
+            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2788,28 +3269,33 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::PublishFunctionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::PublishFunctionErrorKind::InvalidArgument(inner) => {
-                        Error::InvalidArgument(inner)
-                    }
-                    crate::error::PublishFunctionErrorKind::InvalidIfMatchVersion(inner) => {
-                        Error::InvalidIfMatchVersion(inner)
-                    }
-                    crate::error::PublishFunctionErrorKind::NoSuchFunctionExists(inner) => {
-                        Error::NoSuchFunctionExists(inner)
-                    }
-                    crate::error::PublishFunctionErrorKind::PreconditionFailed(inner) => {
-                        Error::PreconditionFailed(inner)
-                    }
-                    crate::error::PublishFunctionErrorKind::UnsupportedOperation(inner) => {
-                        Error::UnsupportedOperation(inner)
-                    }
-                    crate::error::PublishFunctionErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::PublishFunctionError> for Error {
+    fn from(err: crate::error::PublishFunctionError) -> Self {
+        match err.kind {
+            crate::error::PublishFunctionErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::PublishFunctionErrorKind::InvalidIfMatchVersion(inner) => {
+                Error::InvalidIfMatchVersion(inner)
+            }
+            crate::error::PublishFunctionErrorKind::NoSuchFunctionExists(inner) => {
+                Error::NoSuchFunctionExists(inner)
+            }
+            crate::error::PublishFunctionErrorKind::PreconditionFailed(inner) => {
+                Error::PreconditionFailed(inner)
+            }
+            crate::error::PublishFunctionErrorKind::UnsupportedOperation(inner) => {
+                Error::UnsupportedOperation(inner)
+            }
+            crate::error::PublishFunctionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2820,25 +3306,28 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::TagResourceErrorKind::AccessDenied(inner) => {
-                        Error::AccessDenied(inner)
-                    }
-                    crate::error::TagResourceErrorKind::InvalidArgument(inner) => {
-                        Error::InvalidArgument(inner)
-                    }
-                    crate::error::TagResourceErrorKind::InvalidTagging(inner) => {
-                        Error::InvalidTagging(inner)
-                    }
-                    crate::error::TagResourceErrorKind::NoSuchResource(inner) => {
-                        Error::NoSuchResource(inner)
-                    }
-                    crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::TagResourceError> for Error {
+    fn from(err: crate::error::TagResourceError) -> Self {
+        match err.kind {
+            crate::error::TagResourceErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::TagResourceErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::TagResourceErrorKind::InvalidTagging(inner) => {
+                Error::InvalidTagging(inner)
+            }
+            crate::error::TagResourceErrorKind::NoSuchResource(inner) => {
+                Error::NoSuchResource(inner)
+            }
+            crate::error::TagResourceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2849,28 +3338,33 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TestFunctionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::TestFunctionErrorKind::InvalidArgument(inner) => {
-                        Error::InvalidArgument(inner)
-                    }
-                    crate::error::TestFunctionErrorKind::InvalidIfMatchVersion(inner) => {
-                        Error::InvalidIfMatchVersion(inner)
-                    }
-                    crate::error::TestFunctionErrorKind::NoSuchFunctionExists(inner) => {
-                        Error::NoSuchFunctionExists(inner)
-                    }
-                    crate::error::TestFunctionErrorKind::TestFunctionFailed(inner) => {
-                        Error::TestFunctionFailed(inner)
-                    }
-                    crate::error::TestFunctionErrorKind::UnsupportedOperation(inner) => {
-                        Error::UnsupportedOperation(inner)
-                    }
-                    crate::error::TestFunctionErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::TestFunctionError> for Error {
+    fn from(err: crate::error::TestFunctionError) -> Self {
+        match err.kind {
+            crate::error::TestFunctionErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::TestFunctionErrorKind::InvalidIfMatchVersion(inner) => {
+                Error::InvalidIfMatchVersion(inner)
+            }
+            crate::error::TestFunctionErrorKind::NoSuchFunctionExists(inner) => {
+                Error::NoSuchFunctionExists(inner)
+            }
+            crate::error::TestFunctionErrorKind::TestFunctionFailed(inner) => {
+                Error::TestFunctionFailed(inner)
+            }
+            crate::error::TestFunctionErrorKind::UnsupportedOperation(inner) => {
+                Error::UnsupportedOperation(inner)
+            }
+            crate::error::TestFunctionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2881,25 +3375,28 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::UntagResourceErrorKind::AccessDenied(inner) => {
-                        Error::AccessDenied(inner)
-                    }
-                    crate::error::UntagResourceErrorKind::InvalidArgument(inner) => {
-                        Error::InvalidArgument(inner)
-                    }
-                    crate::error::UntagResourceErrorKind::InvalidTagging(inner) => {
-                        Error::InvalidTagging(inner)
-                    }
-                    crate::error::UntagResourceErrorKind::NoSuchResource(inner) => {
-                        Error::NoSuchResource(inner)
-                    }
-                    crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UntagResourceError> for Error {
+    fn from(err: crate::error::UntagResourceError) -> Self {
+        match err.kind {
+            crate::error::UntagResourceErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::UntagResourceErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::UntagResourceErrorKind::InvalidTagging(inner) => {
+                Error::InvalidTagging(inner)
+            }
+            crate::error::UntagResourceErrorKind::NoSuchResource(inner) => {
+                Error::NoSuchResource(inner)
+            }
+            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2912,46 +3409,51 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::UpdateCachePolicyErrorKind::AccessDenied(inner) => {
-                        Error::AccessDenied(inner)
-                    }
-                    crate::error::UpdateCachePolicyErrorKind::CachePolicyAlreadyExists(inner) => {
-                        Error::CachePolicyAlreadyExists(inner)
-                    }
-                    crate::error::UpdateCachePolicyErrorKind::IllegalUpdate(inner) => {
-                        Error::IllegalUpdate(inner)
-                    }
-                    crate::error::UpdateCachePolicyErrorKind::InconsistentQuantities(inner) => {
-                        Error::InconsistentQuantities(inner)
-                    }
-                    crate::error::UpdateCachePolicyErrorKind::InvalidArgument(inner) => {
-                        Error::InvalidArgument(inner)
-                    }
-                    crate::error::UpdateCachePolicyErrorKind::InvalidIfMatchVersion(inner) => {
-                        Error::InvalidIfMatchVersion(inner)
-                    }
-                    crate::error::UpdateCachePolicyErrorKind::NoSuchCachePolicy(inner) => {
-                        Error::NoSuchCachePolicy(inner)
-                    }
-                    crate::error::UpdateCachePolicyErrorKind::PreconditionFailed(inner) => {
-                        Error::PreconditionFailed(inner)
-                    }
-                    crate::error::UpdateCachePolicyErrorKind::TooManyCookiesInCachePolicy(
-                        inner,
-                    ) => Error::TooManyCookiesInCachePolicy(inner),
-                    crate::error::UpdateCachePolicyErrorKind::TooManyHeadersInCachePolicy(
-                        inner,
-                    ) => Error::TooManyHeadersInCachePolicy(inner),
-                    crate::error::UpdateCachePolicyErrorKind::TooManyQueryStringsInCachePolicy(
-                        inner,
-                    ) => Error::TooManyQueryStringsInCachePolicy(inner),
-                    crate::error::UpdateCachePolicyErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateCachePolicyError> for Error {
+    fn from(err: crate::error::UpdateCachePolicyError) -> Self {
+        match err.kind {
+            crate::error::UpdateCachePolicyErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::UpdateCachePolicyErrorKind::CachePolicyAlreadyExists(inner) => {
+                Error::CachePolicyAlreadyExists(inner)
+            }
+            crate::error::UpdateCachePolicyErrorKind::IllegalUpdate(inner) => {
+                Error::IllegalUpdate(inner)
+            }
+            crate::error::UpdateCachePolicyErrorKind::InconsistentQuantities(inner) => {
+                Error::InconsistentQuantities(inner)
+            }
+            crate::error::UpdateCachePolicyErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::UpdateCachePolicyErrorKind::InvalidIfMatchVersion(inner) => {
+                Error::InvalidIfMatchVersion(inner)
+            }
+            crate::error::UpdateCachePolicyErrorKind::NoSuchCachePolicy(inner) => {
+                Error::NoSuchCachePolicy(inner)
+            }
+            crate::error::UpdateCachePolicyErrorKind::PreconditionFailed(inner) => {
+                Error::PreconditionFailed(inner)
+            }
+            crate::error::UpdateCachePolicyErrorKind::TooManyCookiesInCachePolicy(inner) => {
+                Error::TooManyCookiesInCachePolicy(inner)
+            }
+            crate::error::UpdateCachePolicyErrorKind::TooManyHeadersInCachePolicy(inner) => {
+                Error::TooManyHeadersInCachePolicy(inner)
+            }
+            crate::error::UpdateCachePolicyErrorKind::TooManyQueryStringsInCachePolicy(inner) => {
+                Error::TooManyQueryStringsInCachePolicy(inner)
+            }
+            crate::error::UpdateCachePolicyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -2972,18 +3474,25 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::UpdateCloudFrontOriginAccessIdentityErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-                crate::error::UpdateCloudFrontOriginAccessIdentityErrorKind::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
-                crate::error::UpdateCloudFrontOriginAccessIdentityErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
-                crate::error::UpdateCloudFrontOriginAccessIdentityErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
-                crate::error::UpdateCloudFrontOriginAccessIdentityErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
-                crate::error::UpdateCloudFrontOriginAccessIdentityErrorKind::MissingBody(inner) => Error::MissingBody(inner),
-                crate::error::UpdateCloudFrontOriginAccessIdentityErrorKind::NoSuchCloudFrontOriginAccessIdentity(inner) => Error::NoSuchCloudFrontOriginAccessIdentity(inner),
-                crate::error::UpdateCloudFrontOriginAccessIdentityErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
-                crate::error::UpdateCloudFrontOriginAccessIdentityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateCloudFrontOriginAccessIdentityError> for Error {
+    fn from(err: crate::error::UpdateCloudFrontOriginAccessIdentityError) -> Self {
+        match err.kind {
+            crate::error::UpdateCloudFrontOriginAccessIdentityErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::UpdateCloudFrontOriginAccessIdentityErrorKind::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
+            crate::error::UpdateCloudFrontOriginAccessIdentityErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+            crate::error::UpdateCloudFrontOriginAccessIdentityErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::UpdateCloudFrontOriginAccessIdentityErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::error::UpdateCloudFrontOriginAccessIdentityErrorKind::MissingBody(inner) => Error::MissingBody(inner),
+            crate::error::UpdateCloudFrontOriginAccessIdentityErrorKind::NoSuchCloudFrontOriginAccessIdentity(inner) => Error::NoSuchCloudFrontOriginAccessIdentity(inner),
+            crate::error::UpdateCloudFrontOriginAccessIdentityErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::error::UpdateCloudFrontOriginAccessIdentityErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -2995,72 +3504,79 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateDistributionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::UpdateDistributionErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-                crate::error::UpdateDistributionErrorKind::CnameAlreadyExists(inner) => Error::CnameAlreadyExists(inner),
-                crate::error::UpdateDistributionErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner) => Error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner),
-                crate::error::UpdateDistributionErrorKind::IllegalOriginAccessConfiguration(inner) => Error::IllegalOriginAccessConfiguration(inner),
-                crate::error::UpdateDistributionErrorKind::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
-                crate::error::UpdateDistributionErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
-                crate::error::UpdateDistributionErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
-                crate::error::UpdateDistributionErrorKind::InvalidDefaultRootObject(inner) => Error::InvalidDefaultRootObject(inner),
-                crate::error::UpdateDistributionErrorKind::InvalidDomainNameForOriginAccessControl(inner) => Error::InvalidDomainNameForOriginAccessControl(inner),
-                crate::error::UpdateDistributionErrorKind::InvalidErrorCode(inner) => Error::InvalidErrorCode(inner),
-                crate::error::UpdateDistributionErrorKind::InvalidForwardCookies(inner) => Error::InvalidForwardCookies(inner),
-                crate::error::UpdateDistributionErrorKind::InvalidFunctionAssociation(inner) => Error::InvalidFunctionAssociation(inner),
-                crate::error::UpdateDistributionErrorKind::InvalidGeoRestrictionParameter(inner) => Error::InvalidGeoRestrictionParameter(inner),
-                crate::error::UpdateDistributionErrorKind::InvalidHeadersForS3Origin(inner) => Error::InvalidHeadersForS3Origin(inner),
-                crate::error::UpdateDistributionErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
-                crate::error::UpdateDistributionErrorKind::InvalidLambdaFunctionAssociation(inner) => Error::InvalidLambdaFunctionAssociation(inner),
-                crate::error::UpdateDistributionErrorKind::InvalidLocationCode(inner) => Error::InvalidLocationCode(inner),
-                crate::error::UpdateDistributionErrorKind::InvalidMinimumProtocolVersion(inner) => Error::InvalidMinimumProtocolVersion(inner),
-                crate::error::UpdateDistributionErrorKind::InvalidOriginAccessControl(inner) => Error::InvalidOriginAccessControl(inner),
-                crate::error::UpdateDistributionErrorKind::InvalidOriginAccessIdentity(inner) => Error::InvalidOriginAccessIdentity(inner),
-                crate::error::UpdateDistributionErrorKind::InvalidOriginKeepaliveTimeout(inner) => Error::InvalidOriginKeepaliveTimeout(inner),
-                crate::error::UpdateDistributionErrorKind::InvalidOriginReadTimeout(inner) => Error::InvalidOriginReadTimeout(inner),
-                crate::error::UpdateDistributionErrorKind::InvalidQueryStringParameters(inner) => Error::InvalidQueryStringParameters(inner),
-                crate::error::UpdateDistributionErrorKind::InvalidRelativePath(inner) => Error::InvalidRelativePath(inner),
-                crate::error::UpdateDistributionErrorKind::InvalidRequiredProtocol(inner) => Error::InvalidRequiredProtocol(inner),
-                crate::error::UpdateDistributionErrorKind::InvalidResponseCode(inner) => Error::InvalidResponseCode(inner),
-                crate::error::UpdateDistributionErrorKind::InvalidTtlOrder(inner) => Error::InvalidTtlOrder(inner),
-                crate::error::UpdateDistributionErrorKind::InvalidViewerCertificate(inner) => Error::InvalidViewerCertificate(inner),
-                crate::error::UpdateDistributionErrorKind::InvalidWebAclId(inner) => Error::InvalidWebAclId(inner),
-                crate::error::UpdateDistributionErrorKind::MissingBody(inner) => Error::MissingBody(inner),
-                crate::error::UpdateDistributionErrorKind::NoSuchCachePolicy(inner) => Error::NoSuchCachePolicy(inner),
-                crate::error::UpdateDistributionErrorKind::NoSuchDistribution(inner) => Error::NoSuchDistribution(inner),
-                crate::error::UpdateDistributionErrorKind::NoSuchFieldLevelEncryptionConfig(inner) => Error::NoSuchFieldLevelEncryptionConfig(inner),
-                crate::error::UpdateDistributionErrorKind::NoSuchOrigin(inner) => Error::NoSuchOrigin(inner),
-                crate::error::UpdateDistributionErrorKind::NoSuchOriginRequestPolicy(inner) => Error::NoSuchOriginRequestPolicy(inner),
-                crate::error::UpdateDistributionErrorKind::NoSuchRealtimeLogConfig(inner) => Error::NoSuchRealtimeLogConfig(inner),
-                crate::error::UpdateDistributionErrorKind::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
-                crate::error::UpdateDistributionErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
-                crate::error::UpdateDistributionErrorKind::RealtimeLogConfigOwnerMismatch(inner) => Error::RealtimeLogConfigOwnerMismatch(inner),
-                crate::error::UpdateDistributionErrorKind::TooManyCacheBehaviors(inner) => Error::TooManyCacheBehaviors(inner),
-                crate::error::UpdateDistributionErrorKind::TooManyCertificates(inner) => Error::TooManyCertificates(inner),
-                crate::error::UpdateDistributionErrorKind::TooManyCookieNamesInWhiteList(inner) => Error::TooManyCookieNamesInWhiteList(inner),
-                crate::error::UpdateDistributionErrorKind::TooManyDistributionCnamEs(inner) => Error::TooManyDistributionCnamEs(inner),
-                crate::error::UpdateDistributionErrorKind::TooManyDistributionsAssociatedToCachePolicy(inner) => Error::TooManyDistributionsAssociatedToCachePolicy(inner),
-                crate::error::UpdateDistributionErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner) => Error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner),
-                crate::error::UpdateDistributionErrorKind::TooManyDistributionsAssociatedToKeyGroup(inner) => Error::TooManyDistributionsAssociatedToKeyGroup(inner),
-                crate::error::UpdateDistributionErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy(inner) => Error::TooManyDistributionsAssociatedToOriginRequestPolicy(inner),
-                crate::error::UpdateDistributionErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner) => Error::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner),
-                crate::error::UpdateDistributionErrorKind::TooManyDistributionsWithFunctionAssociations(inner) => Error::TooManyDistributionsWithFunctionAssociations(inner),
-                crate::error::UpdateDistributionErrorKind::TooManyDistributionsWithLambdaAssociations(inner) => Error::TooManyDistributionsWithLambdaAssociations(inner),
-                crate::error::UpdateDistributionErrorKind::TooManyDistributionsWithSingleFunctionArn(inner) => Error::TooManyDistributionsWithSingleFunctionArn(inner),
-                crate::error::UpdateDistributionErrorKind::TooManyFunctionAssociations(inner) => Error::TooManyFunctionAssociations(inner),
-                crate::error::UpdateDistributionErrorKind::TooManyHeadersInForwardedValues(inner) => Error::TooManyHeadersInForwardedValues(inner),
-                crate::error::UpdateDistributionErrorKind::TooManyKeyGroupsAssociatedToDistribution(inner) => Error::TooManyKeyGroupsAssociatedToDistribution(inner),
-                crate::error::UpdateDistributionErrorKind::TooManyLambdaFunctionAssociations(inner) => Error::TooManyLambdaFunctionAssociations(inner),
-                crate::error::UpdateDistributionErrorKind::TooManyOriginCustomHeaders(inner) => Error::TooManyOriginCustomHeaders(inner),
-                crate::error::UpdateDistributionErrorKind::TooManyOriginGroupsPerDistribution(inner) => Error::TooManyOriginGroupsPerDistribution(inner),
-                crate::error::UpdateDistributionErrorKind::TooManyOrigins(inner) => Error::TooManyOrigins(inner),
-                crate::error::UpdateDistributionErrorKind::TooManyQueryStringParameters(inner) => Error::TooManyQueryStringParameters(inner),
-                crate::error::UpdateDistributionErrorKind::TooManyTrustedSigners(inner) => Error::TooManyTrustedSigners(inner),
-                crate::error::UpdateDistributionErrorKind::TrustedKeyGroupDoesNotExist(inner) => Error::TrustedKeyGroupDoesNotExist(inner),
-                crate::error::UpdateDistributionErrorKind::TrustedSignerDoesNotExist(inner) => Error::TrustedSignerDoesNotExist(inner),
-                crate::error::UpdateDistributionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateDistributionError> for Error {
+    fn from(err: crate::error::UpdateDistributionError) -> Self {
+        match err.kind {
+            crate::error::UpdateDistributionErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::UpdateDistributionErrorKind::CnameAlreadyExists(inner) => Error::CnameAlreadyExists(inner),
+            crate::error::UpdateDistributionErrorKind::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner) => Error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner),
+            crate::error::UpdateDistributionErrorKind::IllegalOriginAccessConfiguration(inner) => Error::IllegalOriginAccessConfiguration(inner),
+            crate::error::UpdateDistributionErrorKind::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
+            crate::error::UpdateDistributionErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+            crate::error::UpdateDistributionErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::UpdateDistributionErrorKind::InvalidDefaultRootObject(inner) => Error::InvalidDefaultRootObject(inner),
+            crate::error::UpdateDistributionErrorKind::InvalidDomainNameForOriginAccessControl(inner) => Error::InvalidDomainNameForOriginAccessControl(inner),
+            crate::error::UpdateDistributionErrorKind::InvalidErrorCode(inner) => Error::InvalidErrorCode(inner),
+            crate::error::UpdateDistributionErrorKind::InvalidForwardCookies(inner) => Error::InvalidForwardCookies(inner),
+            crate::error::UpdateDistributionErrorKind::InvalidFunctionAssociation(inner) => Error::InvalidFunctionAssociation(inner),
+            crate::error::UpdateDistributionErrorKind::InvalidGeoRestrictionParameter(inner) => Error::InvalidGeoRestrictionParameter(inner),
+            crate::error::UpdateDistributionErrorKind::InvalidHeadersForS3Origin(inner) => Error::InvalidHeadersForS3Origin(inner),
+            crate::error::UpdateDistributionErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::error::UpdateDistributionErrorKind::InvalidLambdaFunctionAssociation(inner) => Error::InvalidLambdaFunctionAssociation(inner),
+            crate::error::UpdateDistributionErrorKind::InvalidLocationCode(inner) => Error::InvalidLocationCode(inner),
+            crate::error::UpdateDistributionErrorKind::InvalidMinimumProtocolVersion(inner) => Error::InvalidMinimumProtocolVersion(inner),
+            crate::error::UpdateDistributionErrorKind::InvalidOriginAccessControl(inner) => Error::InvalidOriginAccessControl(inner),
+            crate::error::UpdateDistributionErrorKind::InvalidOriginAccessIdentity(inner) => Error::InvalidOriginAccessIdentity(inner),
+            crate::error::UpdateDistributionErrorKind::InvalidOriginKeepaliveTimeout(inner) => Error::InvalidOriginKeepaliveTimeout(inner),
+            crate::error::UpdateDistributionErrorKind::InvalidOriginReadTimeout(inner) => Error::InvalidOriginReadTimeout(inner),
+            crate::error::UpdateDistributionErrorKind::InvalidQueryStringParameters(inner) => Error::InvalidQueryStringParameters(inner),
+            crate::error::UpdateDistributionErrorKind::InvalidRelativePath(inner) => Error::InvalidRelativePath(inner),
+            crate::error::UpdateDistributionErrorKind::InvalidRequiredProtocol(inner) => Error::InvalidRequiredProtocol(inner),
+            crate::error::UpdateDistributionErrorKind::InvalidResponseCode(inner) => Error::InvalidResponseCode(inner),
+            crate::error::UpdateDistributionErrorKind::InvalidTtlOrder(inner) => Error::InvalidTtlOrder(inner),
+            crate::error::UpdateDistributionErrorKind::InvalidViewerCertificate(inner) => Error::InvalidViewerCertificate(inner),
+            crate::error::UpdateDistributionErrorKind::InvalidWebAclId(inner) => Error::InvalidWebAclId(inner),
+            crate::error::UpdateDistributionErrorKind::MissingBody(inner) => Error::MissingBody(inner),
+            crate::error::UpdateDistributionErrorKind::NoSuchCachePolicy(inner) => Error::NoSuchCachePolicy(inner),
+            crate::error::UpdateDistributionErrorKind::NoSuchDistribution(inner) => Error::NoSuchDistribution(inner),
+            crate::error::UpdateDistributionErrorKind::NoSuchFieldLevelEncryptionConfig(inner) => Error::NoSuchFieldLevelEncryptionConfig(inner),
+            crate::error::UpdateDistributionErrorKind::NoSuchOrigin(inner) => Error::NoSuchOrigin(inner),
+            crate::error::UpdateDistributionErrorKind::NoSuchOriginRequestPolicy(inner) => Error::NoSuchOriginRequestPolicy(inner),
+            crate::error::UpdateDistributionErrorKind::NoSuchRealtimeLogConfig(inner) => Error::NoSuchRealtimeLogConfig(inner),
+            crate::error::UpdateDistributionErrorKind::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
+            crate::error::UpdateDistributionErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::error::UpdateDistributionErrorKind::RealtimeLogConfigOwnerMismatch(inner) => Error::RealtimeLogConfigOwnerMismatch(inner),
+            crate::error::UpdateDistributionErrorKind::TooManyCacheBehaviors(inner) => Error::TooManyCacheBehaviors(inner),
+            crate::error::UpdateDistributionErrorKind::TooManyCertificates(inner) => Error::TooManyCertificates(inner),
+            crate::error::UpdateDistributionErrorKind::TooManyCookieNamesInWhiteList(inner) => Error::TooManyCookieNamesInWhiteList(inner),
+            crate::error::UpdateDistributionErrorKind::TooManyDistributionCnamEs(inner) => Error::TooManyDistributionCnamEs(inner),
+            crate::error::UpdateDistributionErrorKind::TooManyDistributionsAssociatedToCachePolicy(inner) => Error::TooManyDistributionsAssociatedToCachePolicy(inner),
+            crate::error::UpdateDistributionErrorKind::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner) => Error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(inner),
+            crate::error::UpdateDistributionErrorKind::TooManyDistributionsAssociatedToKeyGroup(inner) => Error::TooManyDistributionsAssociatedToKeyGroup(inner),
+            crate::error::UpdateDistributionErrorKind::TooManyDistributionsAssociatedToOriginRequestPolicy(inner) => Error::TooManyDistributionsAssociatedToOriginRequestPolicy(inner),
+            crate::error::UpdateDistributionErrorKind::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner) => Error::TooManyDistributionsAssociatedToResponseHeadersPolicy(inner),
+            crate::error::UpdateDistributionErrorKind::TooManyDistributionsWithFunctionAssociations(inner) => Error::TooManyDistributionsWithFunctionAssociations(inner),
+            crate::error::UpdateDistributionErrorKind::TooManyDistributionsWithLambdaAssociations(inner) => Error::TooManyDistributionsWithLambdaAssociations(inner),
+            crate::error::UpdateDistributionErrorKind::TooManyDistributionsWithSingleFunctionArn(inner) => Error::TooManyDistributionsWithSingleFunctionArn(inner),
+            crate::error::UpdateDistributionErrorKind::TooManyFunctionAssociations(inner) => Error::TooManyFunctionAssociations(inner),
+            crate::error::UpdateDistributionErrorKind::TooManyHeadersInForwardedValues(inner) => Error::TooManyHeadersInForwardedValues(inner),
+            crate::error::UpdateDistributionErrorKind::TooManyKeyGroupsAssociatedToDistribution(inner) => Error::TooManyKeyGroupsAssociatedToDistribution(inner),
+            crate::error::UpdateDistributionErrorKind::TooManyLambdaFunctionAssociations(inner) => Error::TooManyLambdaFunctionAssociations(inner),
+            crate::error::UpdateDistributionErrorKind::TooManyOriginCustomHeaders(inner) => Error::TooManyOriginCustomHeaders(inner),
+            crate::error::UpdateDistributionErrorKind::TooManyOriginGroupsPerDistribution(inner) => Error::TooManyOriginGroupsPerDistribution(inner),
+            crate::error::UpdateDistributionErrorKind::TooManyOrigins(inner) => Error::TooManyOrigins(inner),
+            crate::error::UpdateDistributionErrorKind::TooManyQueryStringParameters(inner) => Error::TooManyQueryStringParameters(inner),
+            crate::error::UpdateDistributionErrorKind::TooManyTrustedSigners(inner) => Error::TooManyTrustedSigners(inner),
+            crate::error::UpdateDistributionErrorKind::TrustedKeyGroupDoesNotExist(inner) => Error::TrustedKeyGroupDoesNotExist(inner),
+            crate::error::UpdateDistributionErrorKind::TrustedSignerDoesNotExist(inner) => Error::TrustedSignerDoesNotExist(inner),
+            crate::error::UpdateDistributionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -3077,21 +3593,28 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::UpdateFieldLevelEncryptionConfigErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-                crate::error::UpdateFieldLevelEncryptionConfigErrorKind::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
-                crate::error::UpdateFieldLevelEncryptionConfigErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
-                crate::error::UpdateFieldLevelEncryptionConfigErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
-                crate::error::UpdateFieldLevelEncryptionConfigErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
-                crate::error::UpdateFieldLevelEncryptionConfigErrorKind::NoSuchFieldLevelEncryptionConfig(inner) => Error::NoSuchFieldLevelEncryptionConfig(inner),
-                crate::error::UpdateFieldLevelEncryptionConfigErrorKind::NoSuchFieldLevelEncryptionProfile(inner) => Error::NoSuchFieldLevelEncryptionProfile(inner),
-                crate::error::UpdateFieldLevelEncryptionConfigErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
-                crate::error::UpdateFieldLevelEncryptionConfigErrorKind::QueryArgProfileEmpty(inner) => Error::QueryArgProfileEmpty(inner),
-                crate::error::UpdateFieldLevelEncryptionConfigErrorKind::TooManyFieldLevelEncryptionContentTypeProfiles(inner) => Error::TooManyFieldLevelEncryptionContentTypeProfiles(inner),
-                crate::error::UpdateFieldLevelEncryptionConfigErrorKind::TooManyFieldLevelEncryptionQueryArgProfiles(inner) => Error::TooManyFieldLevelEncryptionQueryArgProfiles(inner),
-                crate::error::UpdateFieldLevelEncryptionConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateFieldLevelEncryptionConfigError> for Error {
+    fn from(err: crate::error::UpdateFieldLevelEncryptionConfigError) -> Self {
+        match err.kind {
+            crate::error::UpdateFieldLevelEncryptionConfigErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::UpdateFieldLevelEncryptionConfigErrorKind::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
+            crate::error::UpdateFieldLevelEncryptionConfigErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+            crate::error::UpdateFieldLevelEncryptionConfigErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::UpdateFieldLevelEncryptionConfigErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::error::UpdateFieldLevelEncryptionConfigErrorKind::NoSuchFieldLevelEncryptionConfig(inner) => Error::NoSuchFieldLevelEncryptionConfig(inner),
+            crate::error::UpdateFieldLevelEncryptionConfigErrorKind::NoSuchFieldLevelEncryptionProfile(inner) => Error::NoSuchFieldLevelEncryptionProfile(inner),
+            crate::error::UpdateFieldLevelEncryptionConfigErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::error::UpdateFieldLevelEncryptionConfigErrorKind::QueryArgProfileEmpty(inner) => Error::QueryArgProfileEmpty(inner),
+            crate::error::UpdateFieldLevelEncryptionConfigErrorKind::TooManyFieldLevelEncryptionContentTypeProfiles(inner) => Error::TooManyFieldLevelEncryptionContentTypeProfiles(inner),
+            crate::error::UpdateFieldLevelEncryptionConfigErrorKind::TooManyFieldLevelEncryptionQueryArgProfiles(inner) => Error::TooManyFieldLevelEncryptionQueryArgProfiles(inner),
+            crate::error::UpdateFieldLevelEncryptionConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -3108,22 +3631,29 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::UpdateFieldLevelEncryptionProfileErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-                crate::error::UpdateFieldLevelEncryptionProfileErrorKind::FieldLevelEncryptionProfileAlreadyExists(inner) => Error::FieldLevelEncryptionProfileAlreadyExists(inner),
-                crate::error::UpdateFieldLevelEncryptionProfileErrorKind::FieldLevelEncryptionProfileSizeExceeded(inner) => Error::FieldLevelEncryptionProfileSizeExceeded(inner),
-                crate::error::UpdateFieldLevelEncryptionProfileErrorKind::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
-                crate::error::UpdateFieldLevelEncryptionProfileErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
-                crate::error::UpdateFieldLevelEncryptionProfileErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
-                crate::error::UpdateFieldLevelEncryptionProfileErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
-                crate::error::UpdateFieldLevelEncryptionProfileErrorKind::NoSuchFieldLevelEncryptionProfile(inner) => Error::NoSuchFieldLevelEncryptionProfile(inner),
-                crate::error::UpdateFieldLevelEncryptionProfileErrorKind::NoSuchPublicKey(inner) => Error::NoSuchPublicKey(inner),
-                crate::error::UpdateFieldLevelEncryptionProfileErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
-                crate::error::UpdateFieldLevelEncryptionProfileErrorKind::TooManyFieldLevelEncryptionEncryptionEntities(inner) => Error::TooManyFieldLevelEncryptionEncryptionEntities(inner),
-                crate::error::UpdateFieldLevelEncryptionProfileErrorKind::TooManyFieldLevelEncryptionFieldPatterns(inner) => Error::TooManyFieldLevelEncryptionFieldPatterns(inner),
-                crate::error::UpdateFieldLevelEncryptionProfileErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateFieldLevelEncryptionProfileError> for Error {
+    fn from(err: crate::error::UpdateFieldLevelEncryptionProfileError) -> Self {
+        match err.kind {
+            crate::error::UpdateFieldLevelEncryptionProfileErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::UpdateFieldLevelEncryptionProfileErrorKind::FieldLevelEncryptionProfileAlreadyExists(inner) => Error::FieldLevelEncryptionProfileAlreadyExists(inner),
+            crate::error::UpdateFieldLevelEncryptionProfileErrorKind::FieldLevelEncryptionProfileSizeExceeded(inner) => Error::FieldLevelEncryptionProfileSizeExceeded(inner),
+            crate::error::UpdateFieldLevelEncryptionProfileErrorKind::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
+            crate::error::UpdateFieldLevelEncryptionProfileErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+            crate::error::UpdateFieldLevelEncryptionProfileErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::UpdateFieldLevelEncryptionProfileErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::error::UpdateFieldLevelEncryptionProfileErrorKind::NoSuchFieldLevelEncryptionProfile(inner) => Error::NoSuchFieldLevelEncryptionProfile(inner),
+            crate::error::UpdateFieldLevelEncryptionProfileErrorKind::NoSuchPublicKey(inner) => Error::NoSuchPublicKey(inner),
+            crate::error::UpdateFieldLevelEncryptionProfileErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::error::UpdateFieldLevelEncryptionProfileErrorKind::TooManyFieldLevelEncryptionEncryptionEntities(inner) => Error::TooManyFieldLevelEncryptionEncryptionEntities(inner),
+            crate::error::UpdateFieldLevelEncryptionProfileErrorKind::TooManyFieldLevelEncryptionFieldPatterns(inner) => Error::TooManyFieldLevelEncryptionFieldPatterns(inner),
+            crate::error::UpdateFieldLevelEncryptionProfileErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -3134,31 +3664,36 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateFunctionError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::UpdateFunctionErrorKind::FunctionSizeLimitExceeded(inner) => {
-                        Error::FunctionSizeLimitExceeded(inner)
-                    }
-                    crate::error::UpdateFunctionErrorKind::InvalidArgument(inner) => {
-                        Error::InvalidArgument(inner)
-                    }
-                    crate::error::UpdateFunctionErrorKind::InvalidIfMatchVersion(inner) => {
-                        Error::InvalidIfMatchVersion(inner)
-                    }
-                    crate::error::UpdateFunctionErrorKind::NoSuchFunctionExists(inner) => {
-                        Error::NoSuchFunctionExists(inner)
-                    }
-                    crate::error::UpdateFunctionErrorKind::PreconditionFailed(inner) => {
-                        Error::PreconditionFailed(inner)
-                    }
-                    crate::error::UpdateFunctionErrorKind::UnsupportedOperation(inner) => {
-                        Error::UnsupportedOperation(inner)
-                    }
-                    crate::error::UpdateFunctionErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateFunctionError> for Error {
+    fn from(err: crate::error::UpdateFunctionError) -> Self {
+        match err.kind {
+            crate::error::UpdateFunctionErrorKind::FunctionSizeLimitExceeded(inner) => {
+                Error::FunctionSizeLimitExceeded(inner)
+            }
+            crate::error::UpdateFunctionErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::UpdateFunctionErrorKind::InvalidIfMatchVersion(inner) => {
+                Error::InvalidIfMatchVersion(inner)
+            }
+            crate::error::UpdateFunctionErrorKind::NoSuchFunctionExists(inner) => {
+                Error::NoSuchFunctionExists(inner)
+            }
+            crate::error::UpdateFunctionErrorKind::PreconditionFailed(inner) => {
+                Error::PreconditionFailed(inner)
+            }
+            crate::error::UpdateFunctionErrorKind::UnsupportedOperation(inner) => {
+                Error::UnsupportedOperation(inner)
+            }
+            crate::error::UpdateFunctionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -3169,31 +3704,36 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateKeyGroupError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::UpdateKeyGroupErrorKind::InvalidArgument(inner) => {
-                        Error::InvalidArgument(inner)
-                    }
-                    crate::error::UpdateKeyGroupErrorKind::InvalidIfMatchVersion(inner) => {
-                        Error::InvalidIfMatchVersion(inner)
-                    }
-                    crate::error::UpdateKeyGroupErrorKind::KeyGroupAlreadyExists(inner) => {
-                        Error::KeyGroupAlreadyExists(inner)
-                    }
-                    crate::error::UpdateKeyGroupErrorKind::NoSuchResource(inner) => {
-                        Error::NoSuchResource(inner)
-                    }
-                    crate::error::UpdateKeyGroupErrorKind::PreconditionFailed(inner) => {
-                        Error::PreconditionFailed(inner)
-                    }
-                    crate::error::UpdateKeyGroupErrorKind::TooManyPublicKeysInKeyGroup(inner) => {
-                        Error::TooManyPublicKeysInKeyGroup(inner)
-                    }
-                    crate::error::UpdateKeyGroupErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateKeyGroupError> for Error {
+    fn from(err: crate::error::UpdateKeyGroupError) -> Self {
+        match err.kind {
+            crate::error::UpdateKeyGroupErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::UpdateKeyGroupErrorKind::InvalidIfMatchVersion(inner) => {
+                Error::InvalidIfMatchVersion(inner)
+            }
+            crate::error::UpdateKeyGroupErrorKind::KeyGroupAlreadyExists(inner) => {
+                Error::KeyGroupAlreadyExists(inner)
+            }
+            crate::error::UpdateKeyGroupErrorKind::NoSuchResource(inner) => {
+                Error::NoSuchResource(inner)
+            }
+            crate::error::UpdateKeyGroupErrorKind::PreconditionFailed(inner) => {
+                Error::PreconditionFailed(inner)
+            }
+            crate::error::UpdateKeyGroupErrorKind::TooManyPublicKeysInKeyGroup(inner) => {
+                Error::TooManyPublicKeysInKeyGroup(inner)
+            }
+            crate::error::UpdateKeyGroupErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -3206,17 +3746,40 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateOriginAccessControlError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::UpdateOriginAccessControlErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-                crate::error::UpdateOriginAccessControlErrorKind::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
-                crate::error::UpdateOriginAccessControlErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
-                crate::error::UpdateOriginAccessControlErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
-                crate::error::UpdateOriginAccessControlErrorKind::NoSuchOriginAccessControl(inner) => Error::NoSuchOriginAccessControl(inner),
-                crate::error::UpdateOriginAccessControlErrorKind::OriginAccessControlAlreadyExists(inner) => Error::OriginAccessControlAlreadyExists(inner),
-                crate::error::UpdateOriginAccessControlErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
-                crate::error::UpdateOriginAccessControlErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateOriginAccessControlError> for Error {
+    fn from(err: crate::error::UpdateOriginAccessControlError) -> Self {
+        match err.kind {
+            crate::error::UpdateOriginAccessControlErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::UpdateOriginAccessControlErrorKind::IllegalUpdate(inner) => {
+                Error::IllegalUpdate(inner)
+            }
+            crate::error::UpdateOriginAccessControlErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::UpdateOriginAccessControlErrorKind::InvalidIfMatchVersion(inner) => {
+                Error::InvalidIfMatchVersion(inner)
+            }
+            crate::error::UpdateOriginAccessControlErrorKind::NoSuchOriginAccessControl(inner) => {
+                Error::NoSuchOriginAccessControl(inner)
+            }
+            crate::error::UpdateOriginAccessControlErrorKind::OriginAccessControlAlreadyExists(
+                inner,
+            ) => Error::OriginAccessControlAlreadyExists(inner),
+            crate::error::UpdateOriginAccessControlErrorKind::PreconditionFailed(inner) => {
+                Error::PreconditionFailed(inner)
+            }
+            crate::error::UpdateOriginAccessControlErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -3229,21 +3792,28 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateOriginRequestPolicyError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::UpdateOriginRequestPolicyErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-                crate::error::UpdateOriginRequestPolicyErrorKind::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
-                crate::error::UpdateOriginRequestPolicyErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
-                crate::error::UpdateOriginRequestPolicyErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
-                crate::error::UpdateOriginRequestPolicyErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
-                crate::error::UpdateOriginRequestPolicyErrorKind::NoSuchOriginRequestPolicy(inner) => Error::NoSuchOriginRequestPolicy(inner),
-                crate::error::UpdateOriginRequestPolicyErrorKind::OriginRequestPolicyAlreadyExists(inner) => Error::OriginRequestPolicyAlreadyExists(inner),
-                crate::error::UpdateOriginRequestPolicyErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
-                crate::error::UpdateOriginRequestPolicyErrorKind::TooManyCookiesInOriginRequestPolicy(inner) => Error::TooManyCookiesInOriginRequestPolicy(inner),
-                crate::error::UpdateOriginRequestPolicyErrorKind::TooManyHeadersInOriginRequestPolicy(inner) => Error::TooManyHeadersInOriginRequestPolicy(inner),
-                crate::error::UpdateOriginRequestPolicyErrorKind::TooManyQueryStringsInOriginRequestPolicy(inner) => Error::TooManyQueryStringsInOriginRequestPolicy(inner),
-                crate::error::UpdateOriginRequestPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateOriginRequestPolicyError> for Error {
+    fn from(err: crate::error::UpdateOriginRequestPolicyError) -> Self {
+        match err.kind {
+            crate::error::UpdateOriginRequestPolicyErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::UpdateOriginRequestPolicyErrorKind::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
+            crate::error::UpdateOriginRequestPolicyErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+            crate::error::UpdateOriginRequestPolicyErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::UpdateOriginRequestPolicyErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::error::UpdateOriginRequestPolicyErrorKind::NoSuchOriginRequestPolicy(inner) => Error::NoSuchOriginRequestPolicy(inner),
+            crate::error::UpdateOriginRequestPolicyErrorKind::OriginRequestPolicyAlreadyExists(inner) => Error::OriginRequestPolicyAlreadyExists(inner),
+            crate::error::UpdateOriginRequestPolicyErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::error::UpdateOriginRequestPolicyErrorKind::TooManyCookiesInOriginRequestPolicy(inner) => Error::TooManyCookiesInOriginRequestPolicy(inner),
+            crate::error::UpdateOriginRequestPolicyErrorKind::TooManyHeadersInOriginRequestPolicy(inner) => Error::TooManyHeadersInOriginRequestPolicy(inner),
+            crate::error::UpdateOriginRequestPolicyErrorKind::TooManyQueryStringsInOriginRequestPolicy(inner) => Error::TooManyQueryStringsInOriginRequestPolicy(inner),
+            crate::error::UpdateOriginRequestPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -3253,36 +3823,40 @@ where
 {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdatePublicKeyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::UpdatePublicKeyErrorKind::AccessDenied(inner) => {
-                    Error::AccessDenied(inner)
-                }
-                crate::error::UpdatePublicKeyErrorKind::CannotChangeImmutablePublicKeyFields(
-                    inner,
-                ) => Error::CannotChangeImmutablePublicKeyFields(inner),
-                crate::error::UpdatePublicKeyErrorKind::IllegalUpdate(inner) => {
-                    Error::IllegalUpdate(inner)
-                }
-                crate::error::UpdatePublicKeyErrorKind::InvalidArgument(inner) => {
-                    Error::InvalidArgument(inner)
-                }
-                crate::error::UpdatePublicKeyErrorKind::InvalidIfMatchVersion(inner) => {
-                    Error::InvalidIfMatchVersion(inner)
-                }
-                crate::error::UpdatePublicKeyErrorKind::NoSuchPublicKey(inner) => {
-                    Error::NoSuchPublicKey(inner)
-                }
-                crate::error::UpdatePublicKeyErrorKind::PreconditionFailed(inner) => {
-                    Error::PreconditionFailed(inner)
-                }
-                crate::error::UpdatePublicKeyErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdatePublicKeyError> for Error {
+    fn from(err: crate::error::UpdatePublicKeyError) -> Self {
+        match err.kind {
+            crate::error::UpdatePublicKeyErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::UpdatePublicKeyErrorKind::CannotChangeImmutablePublicKeyFields(inner) => {
+                Error::CannotChangeImmutablePublicKeyFields(inner)
+            }
+            crate::error::UpdatePublicKeyErrorKind::IllegalUpdate(inner) => {
+                Error::IllegalUpdate(inner)
+            }
+            crate::error::UpdatePublicKeyErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::UpdatePublicKeyErrorKind::InvalidIfMatchVersion(inner) => {
+                Error::InvalidIfMatchVersion(inner)
+            }
+            crate::error::UpdatePublicKeyErrorKind::NoSuchPublicKey(inner) => {
+                Error::NoSuchPublicKey(inner)
+            }
+            crate::error::UpdatePublicKeyErrorKind::PreconditionFailed(inner) => {
+                Error::PreconditionFailed(inner)
+            }
+            crate::error::UpdatePublicKeyErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -3296,22 +3870,27 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::UpdateRealtimeLogConfigErrorKind::AccessDenied(inner) => {
-                        Error::AccessDenied(inner)
-                    }
-                    crate::error::UpdateRealtimeLogConfigErrorKind::InvalidArgument(inner) => {
-                        Error::InvalidArgument(inner)
-                    }
-                    crate::error::UpdateRealtimeLogConfigErrorKind::NoSuchRealtimeLogConfig(
-                        inner,
-                    ) => Error::NoSuchRealtimeLogConfig(inner),
-                    crate::error::UpdateRealtimeLogConfigErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateRealtimeLogConfigError> for Error {
+    fn from(err: crate::error::UpdateRealtimeLogConfigError) -> Self {
+        match err.kind {
+            crate::error::UpdateRealtimeLogConfigErrorKind::AccessDenied(inner) => {
+                Error::AccessDenied(inner)
+            }
+            crate::error::UpdateRealtimeLogConfigErrorKind::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::UpdateRealtimeLogConfigErrorKind::NoSuchRealtimeLogConfig(inner) => {
+                Error::NoSuchRealtimeLogConfig(inner)
+            }
+            crate::error::UpdateRealtimeLogConfigErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -3324,20 +3903,27 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateResponseHeadersPolicyError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::UpdateResponseHeadersPolicyErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-                crate::error::UpdateResponseHeadersPolicyErrorKind::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
-                crate::error::UpdateResponseHeadersPolicyErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
-                crate::error::UpdateResponseHeadersPolicyErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
-                crate::error::UpdateResponseHeadersPolicyErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
-                crate::error::UpdateResponseHeadersPolicyErrorKind::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
-                crate::error::UpdateResponseHeadersPolicyErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
-                crate::error::UpdateResponseHeadersPolicyErrorKind::ResponseHeadersPolicyAlreadyExists(inner) => Error::ResponseHeadersPolicyAlreadyExists(inner),
-                crate::error::UpdateResponseHeadersPolicyErrorKind::TooLongCspInResponseHeadersPolicy(inner) => Error::TooLongCspInResponseHeadersPolicy(inner),
-                crate::error::UpdateResponseHeadersPolicyErrorKind::TooManyCustomHeadersInResponseHeadersPolicy(inner) => Error::TooManyCustomHeadersInResponseHeadersPolicy(inner),
-                crate::error::UpdateResponseHeadersPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateResponseHeadersPolicyError> for Error {
+    fn from(err: crate::error::UpdateResponseHeadersPolicyError) -> Self {
+        match err.kind {
+            crate::error::UpdateResponseHeadersPolicyErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::UpdateResponseHeadersPolicyErrorKind::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
+            crate::error::UpdateResponseHeadersPolicyErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+            crate::error::UpdateResponseHeadersPolicyErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::UpdateResponseHeadersPolicyErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::error::UpdateResponseHeadersPolicyErrorKind::NoSuchResponseHeadersPolicy(inner) => Error::NoSuchResponseHeadersPolicy(inner),
+            crate::error::UpdateResponseHeadersPolicyErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::error::UpdateResponseHeadersPolicyErrorKind::ResponseHeadersPolicyAlreadyExists(inner) => Error::ResponseHeadersPolicyAlreadyExists(inner),
+            crate::error::UpdateResponseHeadersPolicyErrorKind::TooLongCspInResponseHeadersPolicy(inner) => Error::TooLongCspInResponseHeadersPolicy(inner),
+            crate::error::UpdateResponseHeadersPolicyErrorKind::TooManyCustomHeadersInResponseHeadersPolicy(inner) => Error::TooManyCustomHeadersInResponseHeadersPolicy(inner),
+            crate::error::UpdateResponseHeadersPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -3350,24 +3936,31 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::UpdateStreamingDistributionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::UpdateStreamingDistributionErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
-                crate::error::UpdateStreamingDistributionErrorKind::CnameAlreadyExists(inner) => Error::CnameAlreadyExists(inner),
-                crate::error::UpdateStreamingDistributionErrorKind::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
-                crate::error::UpdateStreamingDistributionErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
-                crate::error::UpdateStreamingDistributionErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
-                crate::error::UpdateStreamingDistributionErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
-                crate::error::UpdateStreamingDistributionErrorKind::InvalidOriginAccessControl(inner) => Error::InvalidOriginAccessControl(inner),
-                crate::error::UpdateStreamingDistributionErrorKind::InvalidOriginAccessIdentity(inner) => Error::InvalidOriginAccessIdentity(inner),
-                crate::error::UpdateStreamingDistributionErrorKind::MissingBody(inner) => Error::MissingBody(inner),
-                crate::error::UpdateStreamingDistributionErrorKind::NoSuchStreamingDistribution(inner) => Error::NoSuchStreamingDistribution(inner),
-                crate::error::UpdateStreamingDistributionErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
-                crate::error::UpdateStreamingDistributionErrorKind::TooManyStreamingDistributionCnamEs(inner) => Error::TooManyStreamingDistributionCnamEs(inner),
-                crate::error::UpdateStreamingDistributionErrorKind::TooManyTrustedSigners(inner) => Error::TooManyTrustedSigners(inner),
-                crate::error::UpdateStreamingDistributionErrorKind::TrustedSignerDoesNotExist(inner) => Error::TrustedSignerDoesNotExist(inner),
-                crate::error::UpdateStreamingDistributionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::UpdateStreamingDistributionError> for Error {
+    fn from(err: crate::error::UpdateStreamingDistributionError) -> Self {
+        match err.kind {
+            crate::error::UpdateStreamingDistributionErrorKind::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::error::UpdateStreamingDistributionErrorKind::CnameAlreadyExists(inner) => Error::CnameAlreadyExists(inner),
+            crate::error::UpdateStreamingDistributionErrorKind::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
+            crate::error::UpdateStreamingDistributionErrorKind::InconsistentQuantities(inner) => Error::InconsistentQuantities(inner),
+            crate::error::UpdateStreamingDistributionErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::UpdateStreamingDistributionErrorKind::InvalidIfMatchVersion(inner) => Error::InvalidIfMatchVersion(inner),
+            crate::error::UpdateStreamingDistributionErrorKind::InvalidOriginAccessControl(inner) => Error::InvalidOriginAccessControl(inner),
+            crate::error::UpdateStreamingDistributionErrorKind::InvalidOriginAccessIdentity(inner) => Error::InvalidOriginAccessIdentity(inner),
+            crate::error::UpdateStreamingDistributionErrorKind::MissingBody(inner) => Error::MissingBody(inner),
+            crate::error::UpdateStreamingDistributionErrorKind::NoSuchStreamingDistribution(inner) => Error::NoSuchStreamingDistribution(inner),
+            crate::error::UpdateStreamingDistributionErrorKind::PreconditionFailed(inner) => Error::PreconditionFailed(inner),
+            crate::error::UpdateStreamingDistributionErrorKind::TooManyStreamingDistributionCnamEs(inner) => Error::TooManyStreamingDistributionCnamEs(inner),
+            crate::error::UpdateStreamingDistributionErrorKind::TooManyTrustedSigners(inner) => Error::TooManyTrustedSigners(inner),
+            crate::error::UpdateStreamingDistributionErrorKind::TrustedSignerDoesNotExist(inner) => Error::TrustedSignerDoesNotExist(inner),
+            crate::error::UpdateStreamingDistributionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }

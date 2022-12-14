@@ -40,16 +40,21 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetRawMessageContentErrorKind::ResourceNotFoundException(
-                        inner,
-                    ) => Error::ResourceNotFoundException(inner),
-                    crate::error::GetRawMessageContentErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetRawMessageContentError> for Error {
+    fn from(err: crate::error::GetRawMessageContentError) -> Self {
+        match err.kind {
+            crate::error::GetRawMessageContentErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::GetRawMessageContentErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -63,25 +68,30 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::PutRawMessageContentErrorKind::InvalidContentLocation(inner) => {
-                        Error::InvalidContentLocation(inner)
-                    }
-                    crate::error::PutRawMessageContentErrorKind::MessageFrozen(inner) => {
-                        Error::MessageFrozen(inner)
-                    }
-                    crate::error::PutRawMessageContentErrorKind::MessageRejected(inner) => {
-                        Error::MessageRejected(inner)
-                    }
-                    crate::error::PutRawMessageContentErrorKind::ResourceNotFoundException(
-                        inner,
-                    ) => Error::ResourceNotFoundException(inner),
-                    crate::error::PutRawMessageContentErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::PutRawMessageContentError> for Error {
+    fn from(err: crate::error::PutRawMessageContentError) -> Self {
+        match err.kind {
+            crate::error::PutRawMessageContentErrorKind::InvalidContentLocation(inner) => {
+                Error::InvalidContentLocation(inner)
+            }
+            crate::error::PutRawMessageContentErrorKind::MessageFrozen(inner) => {
+                Error::MessageFrozen(inner)
+            }
+            crate::error::PutRawMessageContentErrorKind::MessageRejected(inner) => {
+                Error::MessageRejected(inner)
+            }
+            crate::error::PutRawMessageContentErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::PutRawMessageContentErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }

@@ -464,6 +464,18 @@ pub struct AttachCustomerManagedPolicyReferenceToPermissionSetError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError
+    for AttachCustomerManagedPolicyReferenceToPermissionSetError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AttachCustomerManagedPolicyReferenceToPermissionSetErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AttachCustomerManagedPolicyReferenceToPermissionSet` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -665,6 +677,16 @@ pub struct AttachManagedPolicyToPermissionSetError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for AttachManagedPolicyToPermissionSetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: AttachManagedPolicyToPermissionSetErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `AttachManagedPolicyToPermissionSet` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -855,6 +877,14 @@ pub struct CreateAccountAssignmentError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreateAccountAssignmentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateAccountAssignmentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreateAccountAssignment` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1019,6 +1049,18 @@ pub struct CreateInstanceAccessControlAttributeConfigurationError {
     pub kind: CreateInstanceAccessControlAttributeConfigurationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for CreateInstanceAccessControlAttributeConfigurationError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreateInstanceAccessControlAttributeConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `CreateInstanceAccessControlAttributeConfiguration` operation.
 #[non_exhaustive]
@@ -1207,6 +1249,14 @@ pub struct CreatePermissionSetError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for CreatePermissionSetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: CreatePermissionSetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `CreatePermissionSet` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1366,6 +1416,14 @@ pub struct DeleteAccountAssignmentError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeleteAccountAssignmentError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteAccountAssignmentErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeleteAccountAssignment` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -1517,6 +1575,16 @@ pub struct DeleteInlinePolicyFromPermissionSetError {
     pub kind: DeleteInlinePolicyFromPermissionSetErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for DeleteInlinePolicyFromPermissionSetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteInlinePolicyFromPermissionSetErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteInlinePolicyFromPermissionSet` operation.
 #[non_exhaustive]
@@ -1694,6 +1762,18 @@ pub struct DeleteInstanceAccessControlAttributeConfigurationError {
     pub kind: DeleteInstanceAccessControlAttributeConfigurationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for DeleteInstanceAccessControlAttributeConfigurationError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeleteInstanceAccessControlAttributeConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DeleteInstanceAccessControlAttributeConfiguration` operation.
 #[non_exhaustive]
@@ -1882,6 +1962,18 @@ pub struct DeletePermissionsBoundaryFromPermissionSetError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError
+    for DeletePermissionsBoundaryFromPermissionSetError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeletePermissionsBoundaryFromPermissionSetErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeletePermissionsBoundaryFromPermissionSet` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2046,6 +2138,14 @@ pub struct DeletePermissionSetError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DeletePermissionSetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DeletePermissionSetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DeletePermissionSet` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2193,6 +2293,18 @@ pub struct DescribeAccountAssignmentCreationStatusError {
     pub kind: DescribeAccountAssignmentCreationStatusErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for DescribeAccountAssignmentCreationStatusError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeAccountAssignmentCreationStatusErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeAccountAssignmentCreationStatus` operation.
 #[non_exhaustive]
@@ -2358,6 +2470,18 @@ pub struct DescribeAccountAssignmentDeletionStatusError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError
+    for DescribeAccountAssignmentDeletionStatusError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeAccountAssignmentDeletionStatusErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribeAccountAssignmentDeletionStatus` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2521,6 +2645,18 @@ pub struct DescribeInstanceAccessControlAttributeConfigurationError {
     pub kind: DescribeInstanceAccessControlAttributeConfigurationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for DescribeInstanceAccessControlAttributeConfigurationError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribeInstanceAccessControlAttributeConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribeInstanceAccessControlAttributeConfiguration` operation.
 #[non_exhaustive]
@@ -2696,6 +2832,14 @@ pub struct DescribePermissionSetError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DescribePermissionSetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribePermissionSetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DescribePermissionSet` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -2836,6 +2980,18 @@ pub struct DescribePermissionSetProvisioningStatusError {
     pub kind: DescribePermissionSetProvisioningStatusErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for DescribePermissionSetProvisioningStatusError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DescribePermissionSetProvisioningStatusErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DescribePermissionSetProvisioningStatus` operation.
 #[non_exhaustive]
@@ -3000,6 +3156,18 @@ pub struct DetachCustomerManagedPolicyReferenceFromPermissionSetError {
     pub kind: DetachCustomerManagedPolicyReferenceFromPermissionSetErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for DetachCustomerManagedPolicyReferenceFromPermissionSetError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DetachCustomerManagedPolicyReferenceFromPermissionSetErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `DetachCustomerManagedPolicyReferenceFromPermissionSet` operation.
 #[non_exhaustive]
@@ -3187,6 +3355,16 @@ pub struct DetachManagedPolicyFromPermissionSetError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for DetachManagedPolicyFromPermissionSetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: DetachManagedPolicyFromPermissionSetErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `DetachManagedPolicyFromPermissionSet` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3366,6 +3544,16 @@ pub struct GetInlinePolicyForPermissionSetError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for GetInlinePolicyForPermissionSetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetInlinePolicyForPermissionSetErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `GetInlinePolicyForPermissionSet` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3519,6 +3707,16 @@ pub struct GetPermissionsBoundaryForPermissionSetError {
     pub kind: GetPermissionsBoundaryForPermissionSetErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for GetPermissionsBoundaryForPermissionSetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: GetPermissionsBoundaryForPermissionSetErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `GetPermissionsBoundaryForPermissionSet` operation.
 #[non_exhaustive]
@@ -3684,6 +3882,16 @@ pub struct ListAccountAssignmentCreationStatusError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListAccountAssignmentCreationStatusError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListAccountAssignmentCreationStatusErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListAccountAssignmentCreationStatus` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -3847,6 +4055,16 @@ pub struct ListAccountAssignmentDeletionStatusError {
     pub kind: ListAccountAssignmentDeletionStatusErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListAccountAssignmentDeletionStatusError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListAccountAssignmentDeletionStatusErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListAccountAssignmentDeletionStatus` operation.
 #[non_exhaustive]
@@ -4012,6 +4230,14 @@ pub struct ListAccountAssignmentsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListAccountAssignmentsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListAccountAssignmentsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListAccountAssignments` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4152,6 +4378,18 @@ pub struct ListAccountsForProvisionedPermissionSetError {
     pub kind: ListAccountsForProvisionedPermissionSetErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for ListAccountsForProvisionedPermissionSetError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListAccountsForProvisionedPermissionSetErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListAccountsForProvisionedPermissionSet` operation.
 #[non_exhaustive]
@@ -4316,6 +4554,18 @@ pub struct ListCustomerManagedPolicyReferencesInPermissionSetError {
     pub kind: ListCustomerManagedPolicyReferencesInPermissionSetErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for ListCustomerManagedPolicyReferencesInPermissionSetError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListCustomerManagedPolicyReferencesInPermissionSetErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListCustomerManagedPolicyReferencesInPermissionSet` operation.
 #[non_exhaustive]
@@ -4489,6 +4739,14 @@ pub struct ListInstancesError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListInstancesError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListInstancesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListInstances` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4605,6 +4863,16 @@ pub struct ListManagedPoliciesInPermissionSetError {
     pub kind: ListManagedPoliciesInPermissionSetErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListManagedPoliciesInPermissionSetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListManagedPoliciesInPermissionSetErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListManagedPoliciesInPermissionSet` operation.
 #[non_exhaustive]
@@ -4770,6 +5038,16 @@ pub struct ListPermissionSetProvisioningStatusError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListPermissionSetProvisioningStatusError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListPermissionSetProvisioningStatusErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListPermissionSetProvisioningStatus` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -4934,6 +5212,14 @@ pub struct ListPermissionSetsError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListPermissionSetsError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListPermissionSetsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListPermissionSets` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5070,6 +5356,16 @@ pub struct ListPermissionSetsProvisionedToAccountError {
     pub kind: ListPermissionSetsProvisionedToAccountErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ListPermissionSetsProvisionedToAccountError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListPermissionSetsProvisionedToAccountErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ListPermissionSetsProvisionedToAccount` operation.
 #[non_exhaustive]
@@ -5235,6 +5531,14 @@ pub struct ListTagsForResourceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `ListTagsForResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -5371,6 +5675,14 @@ pub struct ProvisionPermissionSetError {
     pub kind: ProvisionPermissionSetErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for ProvisionPermissionSetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: ProvisionPermissionSetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `ProvisionPermissionSet` operation.
 #[non_exhaustive]
@@ -5523,6 +5835,16 @@ pub struct PutInlinePolicyToPermissionSetError {
     pub kind: PutInlinePolicyToPermissionSetErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PutInlinePolicyToPermissionSetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutInlinePolicyToPermissionSetErrorKind::Unhandled(crate::error::Unhandled::new(
+                source,
+            )),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `PutInlinePolicyToPermissionSet` operation.
 #[non_exhaustive]
@@ -5701,6 +6023,16 @@ pub struct PutPermissionsBoundaryToPermissionSetError {
     pub kind: PutPermissionsBoundaryToPermissionSetErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for PutPermissionsBoundaryToPermissionSetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: PutPermissionsBoundaryToPermissionSetErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `PutPermissionsBoundaryToPermissionSet` operation.
 #[non_exhaustive]
@@ -5881,6 +6213,14 @@ pub struct TagResourceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `TagResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6025,6 +6365,14 @@ pub struct UntagResourceError {
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
 }
+impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
+}
 /// Types of errors that can occur for the `UntagResource` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -6160,6 +6508,18 @@ pub struct UpdateInstanceAccessControlAttributeConfigurationError {
     pub kind: UpdateInstanceAccessControlAttributeConfigurationErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError
+    for UpdateInstanceAccessControlAttributeConfigurationError
+{
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdateInstanceAccessControlAttributeConfigurationErrorKind::Unhandled(
+                crate::error::Unhandled::new(source),
+            ),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdateInstanceAccessControlAttributeConfiguration` operation.
 #[non_exhaustive]
@@ -6347,6 +6707,14 @@ pub struct UpdatePermissionSetError {
     pub kind: UpdatePermissionSetErrorKind,
     /// Additional metadata about the error, including error code, message, and request ID.
     pub(crate) meta: aws_smithy_types::Error,
+}
+impl aws_smithy_http::result::CreateUnhandledError for UpdatePermissionSetError {
+    fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+        Self {
+            kind: UpdatePermissionSetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default(),
+        }
+    }
 }
 /// Types of errors that can occur for the `UpdatePermissionSet` operation.
 #[non_exhaustive]

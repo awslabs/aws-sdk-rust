@@ -86,22 +86,27 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AddTagsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::AddTagsErrorKind::AccessPointNotFoundException(inner) => {
-                        Error::AccessPointNotFoundException(inner)
-                    }
-                    crate::error::AddTagsErrorKind::DuplicateTagKeysException(inner) => {
-                        Error::DuplicateTagKeysException(inner)
-                    }
-                    crate::error::AddTagsErrorKind::TooManyTagsException(inner) => {
-                        Error::TooManyTagsException(inner)
-                    }
-                    crate::error::AddTagsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::AddTagsError> for Error {
+    fn from(err: crate::error::AddTagsError) -> Self {
+        match err.kind {
+            crate::error::AddTagsErrorKind::AccessPointNotFoundException(inner) => {
+                Error::AccessPointNotFoundException(inner)
+            }
+            crate::error::AddTagsErrorKind::DuplicateTagKeysException(inner) => {
+                Error::DuplicateTagKeysException(inner)
+            }
+            crate::error::AddTagsErrorKind::TooManyTagsException(inner) => {
+                Error::TooManyTagsException(inner)
+            }
+            crate::error::AddTagsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -118,13 +123,20 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::ApplySecurityGroupsToLoadBalancerErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
-                crate::error::ApplySecurityGroupsToLoadBalancerErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
-                crate::error::ApplySecurityGroupsToLoadBalancerErrorKind::InvalidSecurityGroupException(inner) => Error::InvalidSecurityGroupException(inner),
-                crate::error::ApplySecurityGroupsToLoadBalancerErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ApplySecurityGroupsToLoadBalancerError> for Error {
+    fn from(err: crate::error::ApplySecurityGroupsToLoadBalancerError) -> Self {
+        match err.kind {
+            crate::error::ApplySecurityGroupsToLoadBalancerErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
+            crate::error::ApplySecurityGroupsToLoadBalancerErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
+            crate::error::ApplySecurityGroupsToLoadBalancerErrorKind::InvalidSecurityGroupException(inner) => Error::InvalidSecurityGroupException(inner),
+            crate::error::ApplySecurityGroupsToLoadBalancerErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -137,14 +149,21 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::AttachLoadBalancerToSubnetsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::AttachLoadBalancerToSubnetsErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
-                crate::error::AttachLoadBalancerToSubnetsErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
-                crate::error::AttachLoadBalancerToSubnetsErrorKind::InvalidSubnetException(inner) => Error::InvalidSubnetException(inner),
-                crate::error::AttachLoadBalancerToSubnetsErrorKind::SubnetNotFoundException(inner) => Error::SubnetNotFoundException(inner),
-                crate::error::AttachLoadBalancerToSubnetsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::AttachLoadBalancerToSubnetsError> for Error {
+    fn from(err: crate::error::AttachLoadBalancerToSubnetsError) -> Self {
+        match err.kind {
+            crate::error::AttachLoadBalancerToSubnetsErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
+            crate::error::AttachLoadBalancerToSubnetsErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
+            crate::error::AttachLoadBalancerToSubnetsErrorKind::InvalidSubnetException(inner) => Error::InvalidSubnetException(inner),
+            crate::error::AttachLoadBalancerToSubnetsErrorKind::SubnetNotFoundException(inner) => Error::SubnetNotFoundException(inner),
+            crate::error::AttachLoadBalancerToSubnetsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -158,16 +177,21 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ConfigureHealthCheckErrorKind::AccessPointNotFoundException(
-                        inner,
-                    ) => Error::AccessPointNotFoundException(inner),
-                    crate::error::ConfigureHealthCheckErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ConfigureHealthCheckError> for Error {
+    fn from(err: crate::error::ConfigureHealthCheckError) -> Self {
+        match err.kind {
+            crate::error::ConfigureHealthCheckErrorKind::AccessPointNotFoundException(inner) => {
+                Error::AccessPointNotFoundException(inner)
+            }
+            crate::error::ConfigureHealthCheckErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -184,14 +208,21 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::CreateAppCookieStickinessPolicyErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
-                crate::error::CreateAppCookieStickinessPolicyErrorKind::DuplicatePolicyNameException(inner) => Error::DuplicatePolicyNameException(inner),
-                crate::error::CreateAppCookieStickinessPolicyErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
-                crate::error::CreateAppCookieStickinessPolicyErrorKind::TooManyPoliciesException(inner) => Error::TooManyPoliciesException(inner),
-                crate::error::CreateAppCookieStickinessPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateAppCookieStickinessPolicyError> for Error {
+    fn from(err: crate::error::CreateAppCookieStickinessPolicyError) -> Self {
+        match err.kind {
+            crate::error::CreateAppCookieStickinessPolicyErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
+            crate::error::CreateAppCookieStickinessPolicyErrorKind::DuplicatePolicyNameException(inner) => Error::DuplicatePolicyNameException(inner),
+            crate::error::CreateAppCookieStickinessPolicyErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
+            crate::error::CreateAppCookieStickinessPolicyErrorKind::TooManyPoliciesException(inner) => Error::TooManyPoliciesException(inner),
+            crate::error::CreateAppCookieStickinessPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -208,14 +239,21 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::CreateLBCookieStickinessPolicyErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
-                crate::error::CreateLBCookieStickinessPolicyErrorKind::DuplicatePolicyNameException(inner) => Error::DuplicatePolicyNameException(inner),
-                crate::error::CreateLBCookieStickinessPolicyErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
-                crate::error::CreateLBCookieStickinessPolicyErrorKind::TooManyPoliciesException(inner) => Error::TooManyPoliciesException(inner),
-                crate::error::CreateLBCookieStickinessPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateLBCookieStickinessPolicyError> for Error {
+    fn from(err: crate::error::CreateLBCookieStickinessPolicyError) -> Self {
+        match err.kind {
+            crate::error::CreateLBCookieStickinessPolicyErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
+            crate::error::CreateLBCookieStickinessPolicyErrorKind::DuplicatePolicyNameException(inner) => Error::DuplicatePolicyNameException(inner),
+            crate::error::CreateLBCookieStickinessPolicyErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
+            crate::error::CreateLBCookieStickinessPolicyErrorKind::TooManyPoliciesException(inner) => Error::TooManyPoliciesException(inner),
+            crate::error::CreateLBCookieStickinessPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -227,51 +265,55 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateLoadBalancerError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::CreateLoadBalancerErrorKind::CertificateNotFoundException(inner) => {
-                    Error::CertificateNotFoundException(inner)
-                }
-                crate::error::CreateLoadBalancerErrorKind::DuplicateAccessPointNameException(
-                    inner,
-                ) => Error::DuplicateAccessPointNameException(inner),
-                crate::error::CreateLoadBalancerErrorKind::DuplicateTagKeysException(inner) => {
-                    Error::DuplicateTagKeysException(inner)
-                }
-                crate::error::CreateLoadBalancerErrorKind::InvalidConfigurationRequestException(
-                    inner,
-                ) => Error::InvalidConfigurationRequestException(inner),
-                crate::error::CreateLoadBalancerErrorKind::InvalidSchemeException(inner) => {
-                    Error::InvalidSchemeException(inner)
-                }
-                crate::error::CreateLoadBalancerErrorKind::InvalidSecurityGroupException(inner) => {
-                    Error::InvalidSecurityGroupException(inner)
-                }
-                crate::error::CreateLoadBalancerErrorKind::InvalidSubnetException(inner) => {
-                    Error::InvalidSubnetException(inner)
-                }
-                crate::error::CreateLoadBalancerErrorKind::OperationNotPermittedException(
-                    inner,
-                ) => Error::OperationNotPermittedException(inner),
-                crate::error::CreateLoadBalancerErrorKind::SubnetNotFoundException(inner) => {
-                    Error::SubnetNotFoundException(inner)
-                }
-                crate::error::CreateLoadBalancerErrorKind::TooManyAccessPointsException(inner) => {
-                    Error::TooManyAccessPointsException(inner)
-                }
-                crate::error::CreateLoadBalancerErrorKind::TooManyTagsException(inner) => {
-                    Error::TooManyTagsException(inner)
-                }
-                crate::error::CreateLoadBalancerErrorKind::UnsupportedProtocolException(inner) => {
-                    Error::UnsupportedProtocolException(inner)
-                }
-                crate::error::CreateLoadBalancerErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateLoadBalancerError> for Error {
+    fn from(err: crate::error::CreateLoadBalancerError) -> Self {
+        match err.kind {
+            crate::error::CreateLoadBalancerErrorKind::CertificateNotFoundException(inner) => {
+                Error::CertificateNotFoundException(inner)
+            }
+            crate::error::CreateLoadBalancerErrorKind::DuplicateAccessPointNameException(inner) => {
+                Error::DuplicateAccessPointNameException(inner)
+            }
+            crate::error::CreateLoadBalancerErrorKind::DuplicateTagKeysException(inner) => {
+                Error::DuplicateTagKeysException(inner)
+            }
+            crate::error::CreateLoadBalancerErrorKind::InvalidConfigurationRequestException(
+                inner,
+            ) => Error::InvalidConfigurationRequestException(inner),
+            crate::error::CreateLoadBalancerErrorKind::InvalidSchemeException(inner) => {
+                Error::InvalidSchemeException(inner)
+            }
+            crate::error::CreateLoadBalancerErrorKind::InvalidSecurityGroupException(inner) => {
+                Error::InvalidSecurityGroupException(inner)
+            }
+            crate::error::CreateLoadBalancerErrorKind::InvalidSubnetException(inner) => {
+                Error::InvalidSubnetException(inner)
+            }
+            crate::error::CreateLoadBalancerErrorKind::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::error::CreateLoadBalancerErrorKind::SubnetNotFoundException(inner) => {
+                Error::SubnetNotFoundException(inner)
+            }
+            crate::error::CreateLoadBalancerErrorKind::TooManyAccessPointsException(inner) => {
+                Error::TooManyAccessPointsException(inner)
+            }
+            crate::error::CreateLoadBalancerErrorKind::TooManyTagsException(inner) => {
+                Error::TooManyTagsException(inner)
+            }
+            crate::error::CreateLoadBalancerErrorKind::UnsupportedProtocolException(inner) => {
+                Error::UnsupportedProtocolException(inner)
+            }
+            crate::error::CreateLoadBalancerErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -284,15 +326,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateLoadBalancerListenersError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::CreateLoadBalancerListenersErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
-                crate::error::CreateLoadBalancerListenersErrorKind::CertificateNotFoundException(inner) => Error::CertificateNotFoundException(inner),
-                crate::error::CreateLoadBalancerListenersErrorKind::DuplicateListenerException(inner) => Error::DuplicateListenerException(inner),
-                crate::error::CreateLoadBalancerListenersErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
-                crate::error::CreateLoadBalancerListenersErrorKind::UnsupportedProtocolException(inner) => Error::UnsupportedProtocolException(inner),
-                crate::error::CreateLoadBalancerListenersErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateLoadBalancerListenersError> for Error {
+    fn from(err: crate::error::CreateLoadBalancerListenersError) -> Self {
+        match err.kind {
+            crate::error::CreateLoadBalancerListenersErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
+            crate::error::CreateLoadBalancerListenersErrorKind::CertificateNotFoundException(inner) => Error::CertificateNotFoundException(inner),
+            crate::error::CreateLoadBalancerListenersErrorKind::DuplicateListenerException(inner) => Error::DuplicateListenerException(inner),
+            crate::error::CreateLoadBalancerListenersErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
+            crate::error::CreateLoadBalancerListenersErrorKind::UnsupportedProtocolException(inner) => Error::UnsupportedProtocolException(inner),
+            crate::error::CreateLoadBalancerListenersErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -305,15 +354,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::CreateLoadBalancerPolicyError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::CreateLoadBalancerPolicyErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
-                crate::error::CreateLoadBalancerPolicyErrorKind::DuplicatePolicyNameException(inner) => Error::DuplicatePolicyNameException(inner),
-                crate::error::CreateLoadBalancerPolicyErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
-                crate::error::CreateLoadBalancerPolicyErrorKind::PolicyTypeNotFoundException(inner) => Error::PolicyTypeNotFoundException(inner),
-                crate::error::CreateLoadBalancerPolicyErrorKind::TooManyPoliciesException(inner) => Error::TooManyPoliciesException(inner),
-                crate::error::CreateLoadBalancerPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::CreateLoadBalancerPolicyError> for Error {
+    fn from(err: crate::error::CreateLoadBalancerPolicyError) -> Self {
+        match err.kind {
+            crate::error::CreateLoadBalancerPolicyErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
+            crate::error::CreateLoadBalancerPolicyErrorKind::DuplicatePolicyNameException(inner) => Error::DuplicatePolicyNameException(inner),
+            crate::error::CreateLoadBalancerPolicyErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
+            crate::error::CreateLoadBalancerPolicyErrorKind::PolicyTypeNotFoundException(inner) => Error::PolicyTypeNotFoundException(inner),
+            crate::error::CreateLoadBalancerPolicyErrorKind::TooManyPoliciesException(inner) => Error::TooManyPoliciesException(inner),
+            crate::error::CreateLoadBalancerPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -326,13 +382,18 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DeleteLoadBalancerErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteLoadBalancerError> for Error {
+    fn from(err: crate::error::DeleteLoadBalancerError) -> Self {
+        match err.kind {
+            crate::error::DeleteLoadBalancerErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -345,11 +406,22 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteLoadBalancerListenersError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::DeleteLoadBalancerListenersErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
-                crate::error::DeleteLoadBalancerListenersErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteLoadBalancerListenersError> for Error {
+    fn from(err: crate::error::DeleteLoadBalancerListenersError) -> Self {
+        match err.kind {
+            crate::error::DeleteLoadBalancerListenersErrorKind::AccessPointNotFoundException(
+                inner,
+            ) => Error::AccessPointNotFoundException(inner),
+            crate::error::DeleteLoadBalancerListenersErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -362,12 +434,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DeleteLoadBalancerPolicyError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::DeleteLoadBalancerPolicyErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
-                crate::error::DeleteLoadBalancerPolicyErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
-                crate::error::DeleteLoadBalancerPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteLoadBalancerPolicyError> for Error {
+    fn from(err: crate::error::DeleteLoadBalancerPolicyError) -> Self {
+        match err.kind {
+            crate::error::DeleteLoadBalancerPolicyErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
+            crate::error::DeleteLoadBalancerPolicyErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
+            crate::error::DeleteLoadBalancerPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -388,12 +467,19 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::DeregisterInstancesFromLoadBalancerErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
-                crate::error::DeregisterInstancesFromLoadBalancerErrorKind::InvalidEndPointException(inner) => Error::InvalidEndPointException(inner),
-                crate::error::DeregisterInstancesFromLoadBalancerErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeregisterInstancesFromLoadBalancerError> for Error {
+    fn from(err: crate::error::DeregisterInstancesFromLoadBalancerError) -> Self {
+        match err.kind {
+            crate::error::DeregisterInstancesFromLoadBalancerErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
+            crate::error::DeregisterInstancesFromLoadBalancerErrorKind::InvalidEndPointException(inner) => Error::InvalidEndPointException(inner),
+            crate::error::DeregisterInstancesFromLoadBalancerErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -407,13 +493,18 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DescribeAccountLimitsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeAccountLimitsError> for Error {
+    fn from(err: crate::error::DescribeAccountLimitsError) -> Self {
+        match err.kind {
+            crate::error::DescribeAccountLimitsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -427,19 +518,24 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DescribeInstanceHealthErrorKind::AccessPointNotFoundException(
-                        inner,
-                    ) => Error::AccessPointNotFoundException(inner),
-                    crate::error::DescribeInstanceHealthErrorKind::InvalidEndPointException(
-                        inner,
-                    ) => Error::InvalidEndPointException(inner),
-                    crate::error::DescribeInstanceHealthErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeInstanceHealthError> for Error {
+    fn from(err: crate::error::DescribeInstanceHealthError) -> Self {
+        match err.kind {
+            crate::error::DescribeInstanceHealthErrorKind::AccessPointNotFoundException(inner) => {
+                Error::AccessPointNotFoundException(inner)
+            }
+            crate::error::DescribeInstanceHealthErrorKind::InvalidEndPointException(inner) => {
+                Error::InvalidEndPointException(inner)
+            }
+            crate::error::DescribeInstanceHealthErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -456,12 +552,19 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::DescribeLoadBalancerAttributesErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
-                crate::error::DescribeLoadBalancerAttributesErrorKind::LoadBalancerAttributeNotFoundException(inner) => Error::LoadBalancerAttributeNotFoundException(inner),
-                crate::error::DescribeLoadBalancerAttributesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeLoadBalancerAttributesError> for Error {
+    fn from(err: crate::error::DescribeLoadBalancerAttributesError) -> Self {
+        match err.kind {
+            crate::error::DescribeLoadBalancerAttributesErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
+            crate::error::DescribeLoadBalancerAttributesErrorKind::LoadBalancerAttributeNotFoundException(inner) => Error::LoadBalancerAttributeNotFoundException(inner),
+            crate::error::DescribeLoadBalancerAttributesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -474,12 +577,25 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DescribeLoadBalancerPoliciesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::DescribeLoadBalancerPoliciesErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
-                crate::error::DescribeLoadBalancerPoliciesErrorKind::PolicyNotFoundException(inner) => Error::PolicyNotFoundException(inner),
-                crate::error::DescribeLoadBalancerPoliciesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeLoadBalancerPoliciesError> for Error {
+    fn from(err: crate::error::DescribeLoadBalancerPoliciesError) -> Self {
+        match err.kind {
+            crate::error::DescribeLoadBalancerPoliciesErrorKind::AccessPointNotFoundException(
+                inner,
+            ) => Error::AccessPointNotFoundException(inner),
+            crate::error::DescribeLoadBalancerPoliciesErrorKind::PolicyNotFoundException(inner) => {
+                Error::PolicyNotFoundException(inner)
+            }
+            crate::error::DescribeLoadBalancerPoliciesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -496,11 +612,22 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::DescribeLoadBalancerPolicyTypesErrorKind::PolicyTypeNotFoundException(inner) => Error::PolicyTypeNotFoundException(inner),
-                crate::error::DescribeLoadBalancerPolicyTypesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeLoadBalancerPolicyTypesError> for Error {
+    fn from(err: crate::error::DescribeLoadBalancerPolicyTypesError) -> Self {
+        match err.kind {
+            crate::error::DescribeLoadBalancerPolicyTypesErrorKind::PolicyTypeNotFoundException(
+                inner,
+            ) => Error::PolicyTypeNotFoundException(inner),
+            crate::error::DescribeLoadBalancerPolicyTypesErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -514,19 +641,24 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DescribeLoadBalancersErrorKind::AccessPointNotFoundException(
-                        inner,
-                    ) => Error::AccessPointNotFoundException(inner),
-                    crate::error::DescribeLoadBalancersErrorKind::DependencyThrottleException(
-                        inner,
-                    ) => Error::DependencyThrottleException(inner),
-                    crate::error::DescribeLoadBalancersErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeLoadBalancersError> for Error {
+    fn from(err: crate::error::DescribeLoadBalancersError) -> Self {
+        match err.kind {
+            crate::error::DescribeLoadBalancersErrorKind::AccessPointNotFoundException(inner) => {
+                Error::AccessPointNotFoundException(inner)
+            }
+            crate::error::DescribeLoadBalancersErrorKind::DependencyThrottleException(inner) => {
+                Error::DependencyThrottleException(inner)
+            }
+            crate::error::DescribeLoadBalancersErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -537,16 +669,21 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeTagsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DescribeTagsErrorKind::AccessPointNotFoundException(inner) => {
-                        Error::AccessPointNotFoundException(inner)
-                    }
-                    crate::error::DescribeTagsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DescribeTagsError> for Error {
+    fn from(err: crate::error::DescribeTagsError) -> Self {
+        match err.kind {
+            crate::error::DescribeTagsErrorKind::AccessPointNotFoundException(inner) => {
+                Error::AccessPointNotFoundException(inner)
+            }
+            crate::error::DescribeTagsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -559,12 +696,19 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::DetachLoadBalancerFromSubnetsError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::DetachLoadBalancerFromSubnetsErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
-                crate::error::DetachLoadBalancerFromSubnetsErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
-                crate::error::DetachLoadBalancerFromSubnetsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DetachLoadBalancerFromSubnetsError> for Error {
+    fn from(err: crate::error::DetachLoadBalancerFromSubnetsError) -> Self {
+        match err.kind {
+            crate::error::DetachLoadBalancerFromSubnetsErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
+            crate::error::DetachLoadBalancerFromSubnetsErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
+            crate::error::DetachLoadBalancerFromSubnetsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -585,12 +729,19 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::DisableAvailabilityZonesForLoadBalancerErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
-                crate::error::DisableAvailabilityZonesForLoadBalancerErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
-                crate::error::DisableAvailabilityZonesForLoadBalancerErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DisableAvailabilityZonesForLoadBalancerError> for Error {
+    fn from(err: crate::error::DisableAvailabilityZonesForLoadBalancerError) -> Self {
+        match err.kind {
+            crate::error::DisableAvailabilityZonesForLoadBalancerErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
+            crate::error::DisableAvailabilityZonesForLoadBalancerErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
+            crate::error::DisableAvailabilityZonesForLoadBalancerErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -611,11 +762,18 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::EnableAvailabilityZonesForLoadBalancerErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
-                crate::error::EnableAvailabilityZonesForLoadBalancerErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::EnableAvailabilityZonesForLoadBalancerError> for Error {
+    fn from(err: crate::error::EnableAvailabilityZonesForLoadBalancerError) -> Self {
+        match err.kind {
+            crate::error::EnableAvailabilityZonesForLoadBalancerErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
+            crate::error::EnableAvailabilityZonesForLoadBalancerErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -628,13 +786,20 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::ModifyLoadBalancerAttributesError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::ModifyLoadBalancerAttributesErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
-                crate::error::ModifyLoadBalancerAttributesErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
-                crate::error::ModifyLoadBalancerAttributesErrorKind::LoadBalancerAttributeNotFoundException(inner) => Error::LoadBalancerAttributeNotFoundException(inner),
-                crate::error::ModifyLoadBalancerAttributesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ModifyLoadBalancerAttributesError> for Error {
+    fn from(err: crate::error::ModifyLoadBalancerAttributesError) -> Self {
+        match err.kind {
+            crate::error::ModifyLoadBalancerAttributesErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
+            crate::error::ModifyLoadBalancerAttributesErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
+            crate::error::ModifyLoadBalancerAttributesErrorKind::LoadBalancerAttributeNotFoundException(inner) => Error::LoadBalancerAttributeNotFoundException(inner),
+            crate::error::ModifyLoadBalancerAttributesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -651,12 +816,19 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::RegisterInstancesWithLoadBalancerErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
-                crate::error::RegisterInstancesWithLoadBalancerErrorKind::InvalidEndPointException(inner) => Error::InvalidEndPointException(inner),
-                crate::error::RegisterInstancesWithLoadBalancerErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::RegisterInstancesWithLoadBalancerError> for Error {
+    fn from(err: crate::error::RegisterInstancesWithLoadBalancerError) -> Self {
+        match err.kind {
+            crate::error::RegisterInstancesWithLoadBalancerErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
+            crate::error::RegisterInstancesWithLoadBalancerErrorKind::InvalidEndPointException(inner) => Error::InvalidEndPointException(inner),
+            crate::error::RegisterInstancesWithLoadBalancerErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -667,16 +839,21 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::RemoveTagsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::RemoveTagsErrorKind::AccessPointNotFoundException(inner) => {
-                        Error::AccessPointNotFoundException(inner)
-                    }
-                    crate::error::RemoveTagsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::RemoveTagsError> for Error {
+    fn from(err: crate::error::RemoveTagsError) -> Self {
+        match err.kind {
+            crate::error::RemoveTagsErrorKind::AccessPointNotFoundException(inner) => {
+                Error::AccessPointNotFoundException(inner)
+            }
+            crate::error::RemoveTagsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -697,15 +874,22 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::SetLoadBalancerListenerSSLCertificateErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
-                crate::error::SetLoadBalancerListenerSSLCertificateErrorKind::CertificateNotFoundException(inner) => Error::CertificateNotFoundException(inner),
-                crate::error::SetLoadBalancerListenerSSLCertificateErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
-                crate::error::SetLoadBalancerListenerSSLCertificateErrorKind::ListenerNotFoundException(inner) => Error::ListenerNotFoundException(inner),
-                crate::error::SetLoadBalancerListenerSSLCertificateErrorKind::UnsupportedProtocolException(inner) => Error::UnsupportedProtocolException(inner),
-                crate::error::SetLoadBalancerListenerSSLCertificateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::SetLoadBalancerListenerSSLCertificateError> for Error {
+    fn from(err: crate::error::SetLoadBalancerListenerSSLCertificateError) -> Self {
+        match err.kind {
+            crate::error::SetLoadBalancerListenerSSLCertificateErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
+            crate::error::SetLoadBalancerListenerSSLCertificateErrorKind::CertificateNotFoundException(inner) => Error::CertificateNotFoundException(inner),
+            crate::error::SetLoadBalancerListenerSSLCertificateErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
+            crate::error::SetLoadBalancerListenerSSLCertificateErrorKind::ListenerNotFoundException(inner) => Error::ListenerNotFoundException(inner),
+            crate::error::SetLoadBalancerListenerSSLCertificateErrorKind::UnsupportedProtocolException(inner) => Error::UnsupportedProtocolException(inner),
+            crate::error::SetLoadBalancerListenerSSLCertificateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -726,13 +910,20 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::SetLoadBalancerPoliciesForBackendServerErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
-                crate::error::SetLoadBalancerPoliciesForBackendServerErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
-                crate::error::SetLoadBalancerPoliciesForBackendServerErrorKind::PolicyNotFoundException(inner) => Error::PolicyNotFoundException(inner),
-                crate::error::SetLoadBalancerPoliciesForBackendServerErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::SetLoadBalancerPoliciesForBackendServerError> for Error {
+    fn from(err: crate::error::SetLoadBalancerPoliciesForBackendServerError) -> Self {
+        match err.kind {
+            crate::error::SetLoadBalancerPoliciesForBackendServerErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
+            crate::error::SetLoadBalancerPoliciesForBackendServerErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
+            crate::error::SetLoadBalancerPoliciesForBackendServerErrorKind::PolicyNotFoundException(inner) => Error::PolicyNotFoundException(inner),
+            crate::error::SetLoadBalancerPoliciesForBackendServerErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
@@ -749,14 +940,21 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::SetLoadBalancerPoliciesOfListenerErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
-                crate::error::SetLoadBalancerPoliciesOfListenerErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
-                crate::error::SetLoadBalancerPoliciesOfListenerErrorKind::ListenerNotFoundException(inner) => Error::ListenerNotFoundException(inner),
-                crate::error::SetLoadBalancerPoliciesOfListenerErrorKind::PolicyNotFoundException(inner) => Error::PolicyNotFoundException(inner),
-                crate::error::SetLoadBalancerPoliciesOfListenerErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::SetLoadBalancerPoliciesOfListenerError> for Error {
+    fn from(err: crate::error::SetLoadBalancerPoliciesOfListenerError) -> Self {
+        match err.kind {
+            crate::error::SetLoadBalancerPoliciesOfListenerErrorKind::AccessPointNotFoundException(inner) => Error::AccessPointNotFoundException(inner),
+            crate::error::SetLoadBalancerPoliciesOfListenerErrorKind::InvalidConfigurationRequestException(inner) => Error::InvalidConfigurationRequestException(inner),
+            crate::error::SetLoadBalancerPoliciesOfListenerErrorKind::ListenerNotFoundException(inner) => Error::ListenerNotFoundException(inner),
+            crate::error::SetLoadBalancerPoliciesOfListenerErrorKind::PolicyNotFoundException(inner) => Error::PolicyNotFoundException(inner),
+            crate::error::SetLoadBalancerPoliciesOfListenerErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }

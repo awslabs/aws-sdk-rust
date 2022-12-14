@@ -50,34 +50,39 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteObjectError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::DeleteObjectErrorKind::AccessDeniedException(inner) => {
-                        Error::AccessDeniedException(inner)
-                    }
-                    crate::error::DeleteObjectErrorKind::IllegalArgumentException(inner) => {
-                        Error::IllegalArgumentException(inner)
-                    }
-                    crate::error::DeleteObjectErrorKind::ResourceNotFoundException(inner) => {
-                        Error::ResourceNotFoundException(inner)
-                    }
-                    crate::error::DeleteObjectErrorKind::RetryableException(inner) => {
-                        Error::RetryableException(inner)
-                    }
-                    crate::error::DeleteObjectErrorKind::ServiceInternalException(inner) => {
-                        Error::ServiceInternalException(inner)
-                    }
-                    crate::error::DeleteObjectErrorKind::ServiceUnavailableException(inner) => {
-                        Error::ServiceUnavailableException(inner)
-                    }
-                    crate::error::DeleteObjectErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::DeleteObjectErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::DeleteObjectError> for Error {
+    fn from(err: crate::error::DeleteObjectError) -> Self {
+        match err.kind {
+            crate::error::DeleteObjectErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::DeleteObjectErrorKind::IllegalArgumentException(inner) => {
+                Error::IllegalArgumentException(inner)
+            }
+            crate::error::DeleteObjectErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::DeleteObjectErrorKind::RetryableException(inner) => {
+                Error::RetryableException(inner)
+            }
+            crate::error::DeleteObjectErrorKind::ServiceInternalException(inner) => {
+                Error::ServiceInternalException(inner)
+            }
+            crate::error::DeleteObjectErrorKind::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::error::DeleteObjectErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::DeleteObjectErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -88,34 +93,39 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetChunkError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetChunkErrorKind::AccessDeniedException(inner) => {
-                        Error::AccessDeniedException(inner)
-                    }
-                    crate::error::GetChunkErrorKind::IllegalArgumentException(inner) => {
-                        Error::IllegalArgumentException(inner)
-                    }
-                    crate::error::GetChunkErrorKind::KmsInvalidKeyUsageException(inner) => {
-                        Error::KmsInvalidKeyUsageException(inner)
-                    }
-                    crate::error::GetChunkErrorKind::ResourceNotFoundException(inner) => {
-                        Error::ResourceNotFoundException(inner)
-                    }
-                    crate::error::GetChunkErrorKind::RetryableException(inner) => {
-                        Error::RetryableException(inner)
-                    }
-                    crate::error::GetChunkErrorKind::ServiceInternalException(inner) => {
-                        Error::ServiceInternalException(inner)
-                    }
-                    crate::error::GetChunkErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::GetChunkErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetChunkError> for Error {
+    fn from(err: crate::error::GetChunkError) -> Self {
+        match err.kind {
+            crate::error::GetChunkErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::GetChunkErrorKind::IllegalArgumentException(inner) => {
+                Error::IllegalArgumentException(inner)
+            }
+            crate::error::GetChunkErrorKind::KmsInvalidKeyUsageException(inner) => {
+                Error::KmsInvalidKeyUsageException(inner)
+            }
+            crate::error::GetChunkErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::GetChunkErrorKind::RetryableException(inner) => {
+                Error::RetryableException(inner)
+            }
+            crate::error::GetChunkErrorKind::ServiceInternalException(inner) => {
+                Error::ServiceInternalException(inner)
+            }
+            crate::error::GetChunkErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::GetChunkErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -128,37 +138,42 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::GetObjectMetadataErrorKind::AccessDeniedException(inner) => {
-                        Error::AccessDeniedException(inner)
-                    }
-                    crate::error::GetObjectMetadataErrorKind::IllegalArgumentException(inner) => {
-                        Error::IllegalArgumentException(inner)
-                    }
-                    crate::error::GetObjectMetadataErrorKind::KmsInvalidKeyUsageException(
-                        inner,
-                    ) => Error::KmsInvalidKeyUsageException(inner),
-                    crate::error::GetObjectMetadataErrorKind::ResourceNotFoundException(inner) => {
-                        Error::ResourceNotFoundException(inner)
-                    }
-                    crate::error::GetObjectMetadataErrorKind::RetryableException(inner) => {
-                        Error::RetryableException(inner)
-                    }
-                    crate::error::GetObjectMetadataErrorKind::ServiceInternalException(inner) => {
-                        Error::ServiceInternalException(inner)
-                    }
-                    crate::error::GetObjectMetadataErrorKind::ServiceUnavailableException(
-                        inner,
-                    ) => Error::ServiceUnavailableException(inner),
-                    crate::error::GetObjectMetadataErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::GetObjectMetadataErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::GetObjectMetadataError> for Error {
+    fn from(err: crate::error::GetObjectMetadataError) -> Self {
+        match err.kind {
+            crate::error::GetObjectMetadataErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::GetObjectMetadataErrorKind::IllegalArgumentException(inner) => {
+                Error::IllegalArgumentException(inner)
+            }
+            crate::error::GetObjectMetadataErrorKind::KmsInvalidKeyUsageException(inner) => {
+                Error::KmsInvalidKeyUsageException(inner)
+            }
+            crate::error::GetObjectMetadataErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::GetObjectMetadataErrorKind::RetryableException(inner) => {
+                Error::RetryableException(inner)
+            }
+            crate::error::GetObjectMetadataErrorKind::ServiceInternalException(inner) => {
+                Error::ServiceInternalException(inner)
+            }
+            crate::error::GetObjectMetadataErrorKind::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::error::GetObjectMetadataErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::GetObjectMetadataErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -169,31 +184,36 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListChunksError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListChunksErrorKind::AccessDeniedException(inner) => {
-                        Error::AccessDeniedException(inner)
-                    }
-                    crate::error::ListChunksErrorKind::IllegalArgumentException(inner) => {
-                        Error::IllegalArgumentException(inner)
-                    }
-                    crate::error::ListChunksErrorKind::ResourceNotFoundException(inner) => {
-                        Error::ResourceNotFoundException(inner)
-                    }
-                    crate::error::ListChunksErrorKind::RetryableException(inner) => {
-                        Error::RetryableException(inner)
-                    }
-                    crate::error::ListChunksErrorKind::ServiceInternalException(inner) => {
-                        Error::ServiceInternalException(inner)
-                    }
-                    crate::error::ListChunksErrorKind::ServiceUnavailableException(inner) => {
-                        Error::ServiceUnavailableException(inner)
-                    }
-                    crate::error::ListChunksErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListChunksError> for Error {
+    fn from(err: crate::error::ListChunksError) -> Self {
+        match err.kind {
+            crate::error::ListChunksErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::ListChunksErrorKind::IllegalArgumentException(inner) => {
+                Error::IllegalArgumentException(inner)
+            }
+            crate::error::ListChunksErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::ListChunksErrorKind::RetryableException(inner) => {
+                Error::RetryableException(inner)
+            }
+            crate::error::ListChunksErrorKind::ServiceInternalException(inner) => {
+                Error::ServiceInternalException(inner)
+            }
+            crate::error::ListChunksErrorKind::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::error::ListChunksErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -204,37 +224,42 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListObjectsError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::ListObjectsErrorKind::AccessDeniedException(inner) => {
-                        Error::AccessDeniedException(inner)
-                    }
-                    crate::error::ListObjectsErrorKind::IllegalArgumentException(inner) => {
-                        Error::IllegalArgumentException(inner)
-                    }
-                    crate::error::ListObjectsErrorKind::KmsInvalidKeyUsageException(inner) => {
-                        Error::KmsInvalidKeyUsageException(inner)
-                    }
-                    crate::error::ListObjectsErrorKind::ResourceNotFoundException(inner) => {
-                        Error::ResourceNotFoundException(inner)
-                    }
-                    crate::error::ListObjectsErrorKind::RetryableException(inner) => {
-                        Error::RetryableException(inner)
-                    }
-                    crate::error::ListObjectsErrorKind::ServiceInternalException(inner) => {
-                        Error::ServiceInternalException(inner)
-                    }
-                    crate::error::ListObjectsErrorKind::ServiceUnavailableException(inner) => {
-                        Error::ServiceUnavailableException(inner)
-                    }
-                    crate::error::ListObjectsErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::ListObjectsErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::ListObjectsError> for Error {
+    fn from(err: crate::error::ListObjectsError) -> Self {
+        match err.kind {
+            crate::error::ListObjectsErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::ListObjectsErrorKind::IllegalArgumentException(inner) => {
+                Error::IllegalArgumentException(inner)
+            }
+            crate::error::ListObjectsErrorKind::KmsInvalidKeyUsageException(inner) => {
+                Error::KmsInvalidKeyUsageException(inner)
+            }
+            crate::error::ListObjectsErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::ListObjectsErrorKind::RetryableException(inner) => {
+                Error::RetryableException(inner)
+            }
+            crate::error::ListObjectsErrorKind::ServiceInternalException(inner) => {
+                Error::ServiceInternalException(inner)
+            }
+            crate::error::ListObjectsErrorKind::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::error::ListObjectsErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::ListObjectsErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -247,39 +272,43 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::NotifyObjectCompleteError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::NotifyObjectCompleteErrorKind::AccessDeniedException(inner) => {
-                    Error::AccessDeniedException(inner)
-                }
-                crate::error::NotifyObjectCompleteErrorKind::IllegalArgumentException(inner) => {
-                    Error::IllegalArgumentException(inner)
-                }
-                crate::error::NotifyObjectCompleteErrorKind::KmsInvalidKeyUsageException(inner) => {
-                    Error::KmsInvalidKeyUsageException(inner)
-                }
-                crate::error::NotifyObjectCompleteErrorKind::NotReadableInputStreamException(
-                    inner,
-                ) => Error::NotReadableInputStreamException(inner),
-                crate::error::NotifyObjectCompleteErrorKind::RetryableException(inner) => {
-                    Error::RetryableException(inner)
-                }
-                crate::error::NotifyObjectCompleteErrorKind::ServiceInternalException(inner) => {
-                    Error::ServiceInternalException(inner)
-                }
-                crate::error::NotifyObjectCompleteErrorKind::ServiceUnavailableException(inner) => {
-                    Error::ServiceUnavailableException(inner)
-                }
-                crate::error::NotifyObjectCompleteErrorKind::ThrottlingException(inner) => {
-                    Error::ThrottlingException(inner)
-                }
-                crate::error::NotifyObjectCompleteErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::NotifyObjectCompleteError> for Error {
+    fn from(err: crate::error::NotifyObjectCompleteError) -> Self {
+        match err.kind {
+            crate::error::NotifyObjectCompleteErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::NotifyObjectCompleteErrorKind::IllegalArgumentException(inner) => {
+                Error::IllegalArgumentException(inner)
+            }
+            crate::error::NotifyObjectCompleteErrorKind::KmsInvalidKeyUsageException(inner) => {
+                Error::KmsInvalidKeyUsageException(inner)
+            }
+            crate::error::NotifyObjectCompleteErrorKind::NotReadableInputStreamException(inner) => {
+                Error::NotReadableInputStreamException(inner)
+            }
+            crate::error::NotifyObjectCompleteErrorKind::RetryableException(inner) => {
+                Error::RetryableException(inner)
+            }
+            crate::error::NotifyObjectCompleteErrorKind::ServiceInternalException(inner) => {
+                Error::ServiceInternalException(inner)
+            }
+            crate::error::NotifyObjectCompleteErrorKind::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::error::NotifyObjectCompleteErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::NotifyObjectCompleteErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -290,37 +319,42 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::PutChunkError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::PutChunkErrorKind::AccessDeniedException(inner) => {
-                        Error::AccessDeniedException(inner)
-                    }
-                    crate::error::PutChunkErrorKind::IllegalArgumentException(inner) => {
-                        Error::IllegalArgumentException(inner)
-                    }
-                    crate::error::PutChunkErrorKind::KmsInvalidKeyUsageException(inner) => {
-                        Error::KmsInvalidKeyUsageException(inner)
-                    }
-                    crate::error::PutChunkErrorKind::NotReadableInputStreamException(inner) => {
-                        Error::NotReadableInputStreamException(inner)
-                    }
-                    crate::error::PutChunkErrorKind::RetryableException(inner) => {
-                        Error::RetryableException(inner)
-                    }
-                    crate::error::PutChunkErrorKind::ServiceInternalException(inner) => {
-                        Error::ServiceInternalException(inner)
-                    }
-                    crate::error::PutChunkErrorKind::ServiceUnavailableException(inner) => {
-                        Error::ServiceUnavailableException(inner)
-                    }
-                    crate::error::PutChunkErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::PutChunkErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::PutChunkError> for Error {
+    fn from(err: crate::error::PutChunkError) -> Self {
+        match err.kind {
+            crate::error::PutChunkErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::PutChunkErrorKind::IllegalArgumentException(inner) => {
+                Error::IllegalArgumentException(inner)
+            }
+            crate::error::PutChunkErrorKind::KmsInvalidKeyUsageException(inner) => {
+                Error::KmsInvalidKeyUsageException(inner)
+            }
+            crate::error::PutChunkErrorKind::NotReadableInputStreamException(inner) => {
+                Error::NotReadableInputStreamException(inner)
+            }
+            crate::error::PutChunkErrorKind::RetryableException(inner) => {
+                Error::RetryableException(inner)
+            }
+            crate::error::PutChunkErrorKind::ServiceInternalException(inner) => {
+                Error::ServiceInternalException(inner)
+            }
+            crate::error::PutChunkErrorKind::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::error::PutChunkErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::PutChunkErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -331,37 +365,42 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::PutObjectError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::PutObjectErrorKind::AccessDeniedException(inner) => {
-                        Error::AccessDeniedException(inner)
-                    }
-                    crate::error::PutObjectErrorKind::IllegalArgumentException(inner) => {
-                        Error::IllegalArgumentException(inner)
-                    }
-                    crate::error::PutObjectErrorKind::KmsInvalidKeyUsageException(inner) => {
-                        Error::KmsInvalidKeyUsageException(inner)
-                    }
-                    crate::error::PutObjectErrorKind::NotReadableInputStreamException(inner) => {
-                        Error::NotReadableInputStreamException(inner)
-                    }
-                    crate::error::PutObjectErrorKind::RetryableException(inner) => {
-                        Error::RetryableException(inner)
-                    }
-                    crate::error::PutObjectErrorKind::ServiceInternalException(inner) => {
-                        Error::ServiceInternalException(inner)
-                    }
-                    crate::error::PutObjectErrorKind::ServiceUnavailableException(inner) => {
-                        Error::ServiceUnavailableException(inner)
-                    }
-                    crate::error::PutObjectErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::PutObjectErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::PutObjectError> for Error {
+    fn from(err: crate::error::PutObjectError) -> Self {
+        match err.kind {
+            crate::error::PutObjectErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::PutObjectErrorKind::IllegalArgumentException(inner) => {
+                Error::IllegalArgumentException(inner)
+            }
+            crate::error::PutObjectErrorKind::KmsInvalidKeyUsageException(inner) => {
+                Error::KmsInvalidKeyUsageException(inner)
+            }
+            crate::error::PutObjectErrorKind::NotReadableInputStreamException(inner) => {
+                Error::NotReadableInputStreamException(inner)
+            }
+            crate::error::PutObjectErrorKind::RetryableException(inner) => {
+                Error::RetryableException(inner)
+            }
+            crate::error::PutObjectErrorKind::ServiceInternalException(inner) => {
+                Error::ServiceInternalException(inner)
+            }
+            crate::error::PutObjectErrorKind::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::error::PutObjectErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::PutObjectErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -372,37 +411,42 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::StartObjectError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::StartObjectErrorKind::AccessDeniedException(inner) => {
-                        Error::AccessDeniedException(inner)
-                    }
-                    crate::error::StartObjectErrorKind::DataAlreadyExistsException(inner) => {
-                        Error::DataAlreadyExistsException(inner)
-                    }
-                    crate::error::StartObjectErrorKind::IllegalArgumentException(inner) => {
-                        Error::IllegalArgumentException(inner)
-                    }
-                    crate::error::StartObjectErrorKind::ResourceNotFoundException(inner) => {
-                        Error::ResourceNotFoundException(inner)
-                    }
-                    crate::error::StartObjectErrorKind::RetryableException(inner) => {
-                        Error::RetryableException(inner)
-                    }
-                    crate::error::StartObjectErrorKind::ServiceInternalException(inner) => {
-                        Error::ServiceInternalException(inner)
-                    }
-                    crate::error::StartObjectErrorKind::ServiceUnavailableException(inner) => {
-                        Error::ServiceUnavailableException(inner)
-                    }
-                    crate::error::StartObjectErrorKind::ThrottlingException(inner) => {
-                        Error::ThrottlingException(inner)
-                    }
-                    crate::error::StartObjectErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::StartObjectError> for Error {
+    fn from(err: crate::error::StartObjectError) -> Self {
+        match err.kind {
+            crate::error::StartObjectErrorKind::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::StartObjectErrorKind::DataAlreadyExistsException(inner) => {
+                Error::DataAlreadyExistsException(inner)
+            }
+            crate::error::StartObjectErrorKind::IllegalArgumentException(inner) => {
+                Error::IllegalArgumentException(inner)
+            }
+            crate::error::StartObjectErrorKind::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::StartObjectErrorKind::RetryableException(inner) => {
+                Error::RetryableException(inner)
+            }
+            crate::error::StartObjectErrorKind::ServiceInternalException(inner) => {
+                Error::ServiceInternalException(inner)
+            }
+            crate::error::StartObjectErrorKind::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::error::StartObjectErrorKind::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::StartObjectErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }

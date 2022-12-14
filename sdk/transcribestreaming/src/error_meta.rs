@@ -41,15 +41,34 @@ where
         >,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::StartMedicalStreamTranscriptionErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-                crate::error::StartMedicalStreamTranscriptionErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
-                crate::error::StartMedicalStreamTranscriptionErrorKind::InternalFailureException(inner) => Error::InternalFailureException(inner),
-                crate::error::StartMedicalStreamTranscriptionErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-                crate::error::StartMedicalStreamTranscriptionErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-                crate::error::StartMedicalStreamTranscriptionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::StartMedicalStreamTranscriptionError> for Error {
+    fn from(err: crate::error::StartMedicalStreamTranscriptionError) -> Self {
+        match err.kind {
+            crate::error::StartMedicalStreamTranscriptionErrorKind::ServiceUnavailableException(
+                inner,
+            ) => Error::ServiceUnavailableException(inner),
+            crate::error::StartMedicalStreamTranscriptionErrorKind::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::error::StartMedicalStreamTranscriptionErrorKind::InternalFailureException(
+                inner,
+            ) => Error::InternalFailureException(inner),
+            crate::error::StartMedicalStreamTranscriptionErrorKind::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::error::StartMedicalStreamTranscriptionErrorKind::LimitExceededException(
+                inner,
+            ) => Error::LimitExceededException(inner),
+            crate::error::StartMedicalStreamTranscriptionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -62,30 +81,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::StartStreamTranscriptionError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context
-                .into_err()
-                .kind
-            {
-                crate::error::StartStreamTranscriptionErrorKind::ServiceUnavailableException(
-                    inner,
-                ) => Error::ServiceUnavailableException(inner),
-                crate::error::StartStreamTranscriptionErrorKind::BadRequestException(inner) => {
-                    Error::BadRequestException(inner)
-                }
-                crate::error::StartStreamTranscriptionErrorKind::InternalFailureException(
-                    inner,
-                ) => Error::InternalFailureException(inner),
-                crate::error::StartStreamTranscriptionErrorKind::ConflictException(inner) => {
-                    Error::ConflictException(inner)
-                }
-                crate::error::StartStreamTranscriptionErrorKind::LimitExceededException(inner) => {
-                    Error::LimitExceededException(inner)
-                }
-                crate::error::StartStreamTranscriptionErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                }
-            },
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::StartStreamTranscriptionError> for Error {
+    fn from(err: crate::error::StartStreamTranscriptionError) -> Self {
+        match err.kind {
+            crate::error::StartStreamTranscriptionErrorKind::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::error::StartStreamTranscriptionErrorKind::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::error::StartStreamTranscriptionErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::StartStreamTranscriptionErrorKind::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::error::StartStreamTranscriptionErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::StartStreamTranscriptionErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -96,13 +119,18 @@ where
     fn from(err: aws_smithy_http::result::SdkError<crate::error::AudioStreamError, R>) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::AudioStreamErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::AudioStreamError> for Error {
+    fn from(err: crate::error::AudioStreamError) -> Self {
+        match err.kind {
+            crate::error::AudioStreamErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -115,15 +143,34 @@ where
         err: aws_smithy_http::result::SdkError<crate::error::MedicalTranscriptResultStreamError, R>,
     ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => match context.into_err().kind {
-                crate::error::MedicalTranscriptResultStreamErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
-                crate::error::MedicalTranscriptResultStreamErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-                crate::error::MedicalTranscriptResultStreamErrorKind::InternalFailureException(inner) => Error::InternalFailureException(inner),
-                crate::error::MedicalTranscriptResultStreamErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-                crate::error::MedicalTranscriptResultStreamErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-                crate::error::MedicalTranscriptResultStreamErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::MedicalTranscriptResultStreamError> for Error {
+    fn from(err: crate::error::MedicalTranscriptResultStreamError) -> Self {
+        match err.kind {
+            crate::error::MedicalTranscriptResultStreamErrorKind::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::error::MedicalTranscriptResultStreamErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::MedicalTranscriptResultStreamErrorKind::InternalFailureException(
+                inner,
+            ) => Error::InternalFailureException(inner),
+            crate::error::MedicalTranscriptResultStreamErrorKind::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::error::MedicalTranscriptResultStreamErrorKind::ServiceUnavailableException(
+                inner,
+            ) => Error::ServiceUnavailableException(inner),
+            crate::error::MedicalTranscriptResultStreamErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
@@ -137,28 +184,33 @@ where
     ) -> Self {
         match err {
             aws_smithy_http::result::SdkError::ServiceError(context) => {
-                match context.into_err().kind {
-                    crate::error::TranscriptResultStreamErrorKind::BadRequestException(inner) => {
-                        Error::BadRequestException(inner)
-                    }
-                    crate::error::TranscriptResultStreamErrorKind::LimitExceededException(
-                        inner,
-                    ) => Error::LimitExceededException(inner),
-                    crate::error::TranscriptResultStreamErrorKind::InternalFailureException(
-                        inner,
-                    ) => Error::InternalFailureException(inner),
-                    crate::error::TranscriptResultStreamErrorKind::ConflictException(inner) => {
-                        Error::ConflictException(inner)
-                    }
-                    crate::error::TranscriptResultStreamErrorKind::ServiceUnavailableException(
-                        inner,
-                    ) => Error::ServiceUnavailableException(inner),
-                    crate::error::TranscriptResultStreamErrorKind::Unhandled(inner) => {
-                        Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-                    }
-                }
+                Self::from(context.into_err())
             }
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+        }
+    }
+}
+impl From<crate::error::TranscriptResultStreamError> for Error {
+    fn from(err: crate::error::TranscriptResultStreamError) -> Self {
+        match err.kind {
+            crate::error::TranscriptResultStreamErrorKind::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::error::TranscriptResultStreamErrorKind::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::TranscriptResultStreamErrorKind::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::error::TranscriptResultStreamErrorKind::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::error::TranscriptResultStreamErrorKind::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::error::TranscriptResultStreamErrorKind::Unhandled(inner) => {
+                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            }
         }
     }
 }
