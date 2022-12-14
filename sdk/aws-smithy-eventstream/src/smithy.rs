@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use crate::error::Error;
+use crate::error::{Error, ErrorKind};
 use crate::frame::{Header, HeaderValue, Message};
 use crate::str_bytes::StrBytes;
 use aws_smithy_types::{Blob, DateTime};
@@ -16,11 +16,12 @@ macro_rules! expect_shape_fn {
         pub fn $fn_name(header: &Header) -> Result<$result_typ, Error> {
             match header.value() {
                 HeaderValue::$val_typ($val_name) => Ok($val_expr),
-                _ => Err(Error::Unmarshalling(format!(
+                _ => Err(ErrorKind::Unmarshalling(format!(
                     "expected '{}' header value to be {}",
                     header.name().as_str(),
                     stringify!($val_typ)
-                ))),
+                ))
+                .into()),
             }
         }
     };
@@ -72,15 +73,16 @@ fn expect_header_str_value<'a>(
 ) -> Result<&'a StrBytes, Error> {
     match header {
         Some(header) => Ok(header.value().as_string().map_err(|value| {
-            Error::Unmarshalling(format!(
+            Error::from(ErrorKind::Unmarshalling(format!(
                 "expected response {} header to be string, received {:?}",
                 name, value
-            ))
+            )))
         })?),
-        None => Err(Error::Unmarshalling(format!(
+        None => Err(ErrorKind::Unmarshalling(format!(
             "expected response to include {} header, but it was missing",
             name
-        ))),
+        ))
+        .into()),
     }
 }
 
@@ -111,10 +113,11 @@ pub fn parse_response_headers(message: &Message) -> Result<ResponseHeaders<'_>, 
         } else if message_type.as_str() == "exception" {
             expect_header_str_value(exception_type, ":exception-type")?
         } else {
-            return Err(Error::Unmarshalling(format!(
+            return Err(ErrorKind::Unmarshalling(format!(
                 "unrecognized `:message-type`: {}",
                 message_type.as_str()
-            )));
+            ))
+            .into());
         },
     })
 }

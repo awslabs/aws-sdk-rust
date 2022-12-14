@@ -27,7 +27,7 @@ impl aws_smithy_eventstream::frame::UnmarshallMessage
                     let mut builder = crate::model::RecordsEvent::builder();
                     let content_type = response_headers.content_type().unwrap_or_default();
                     if content_type != "application/octet-stream" {
-                        return Err(aws_smithy_eventstream::error::Error::Unmarshalling(format!(
+                        return Err(aws_smithy_eventstream::error::Error::unmarshalling(format!(
                                                 "expected :content-type to be 'application/octet-stream', but was '{}'",
                                                 content_type
                                             )));
@@ -45,7 +45,7 @@ impl aws_smithy_eventstream::frame::UnmarshallMessage
                             &message.payload()[..],
                         )
                         .map_err(|err| {
-                            aws_smithy_eventstream::error::Error::Unmarshalling(format!(
+                            aws_smithy_eventstream::error::Error::unmarshalling(format!(
                                 "failed to unmarshall details: {}",
                                 err
                             ))
@@ -62,7 +62,7 @@ impl aws_smithy_eventstream::frame::UnmarshallMessage
                             &message.payload()[..],
                         )
                         .map_err(|err| {
-                            aws_smithy_eventstream::error::Error::Unmarshalling(format!(
+                            aws_smithy_eventstream::error::Error::unmarshalling(format!(
                                 "failed to unmarshall details: {}",
                                 err
                             ))
@@ -101,7 +101,7 @@ impl aws_smithy_eventstream::frame::UnmarshallMessage
                 ))
             }
             value => {
-                return Err(aws_smithy_eventstream::error::Error::Unmarshalling(
+                return Err(aws_smithy_eventstream::error::Error::unmarshalling(
                     format!("unrecognized :message-type: {}", value),
                 ));
             }
