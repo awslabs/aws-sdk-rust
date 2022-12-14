@@ -7,6 +7,7 @@
 
 use aws_sdk_sts::error::AssumeRoleErrorKind;
 use aws_sdk_sts::middleware::DefaultMiddleware;
+use aws_sdk_sts::model::PolicyDescriptorType;
 use aws_sdk_sts::operation::AssumeRole;
 use aws_smithy_client::erase::DynConnector;
 use aws_smithy_http::result::SdkError;
@@ -76,6 +77,8 @@ pub struct AssumeRoleProviderBuilder {
     region: Option<Region>,
     conf: Option<ProviderConfig>,
     session_length: Option<Duration>,
+    policy: Option<String>,
+    policy_arns: Option<Vec<PolicyDescriptorType>>,
 }
 
 impl AssumeRoleProviderBuilder {
@@ -94,6 +97,8 @@ impl AssumeRoleProviderBuilder {
             session_length: None,
             region: None,
             conf: None,
+            policy: None,
+            policy_arns: None,
         }
     }
 
@@ -115,6 +120,26 @@ impl AssumeRoleProviderBuilder {
     /// name is also used in the ARN of the assumed role principal.
     pub fn session_name(mut self, name: impl Into<String>) -> Self {
         self.session_name = Some(name.into());
+        self
+    }
+
+    /// Set an IAM policy in JSON format that you want to use as an inline session policy.
+    ///
+    /// This parameter is optional
+    /// For more information, see
+    /// [policy](aws_sdk_sts::input::assume_role_input::Builder::policy_arns)
+    pub fn policy(mut self, policy: impl Into<String>) -> Self {
+        self.policy = Some(policy.into());
+        self
+    }
+
+    /// Set the Amazon Resource Names (ARNs) of the IAM managed policies that you want to use as managed session policies.
+    ///
+    /// This parameter is optional.
+    /// For more information, see
+    /// [policy_arns](aws_sdk_sts::input::assume_role_input::Builder::policy_arns)
+    pub fn policy_arns(mut self, policy_arns: Vec<PolicyDescriptorType>) -> Self {
+        self.policy_arns = Some(policy_arns);
         self
     }
 
@@ -188,6 +213,8 @@ impl AssumeRoleProviderBuilder {
             .set_role_arn(Some(self.role_arn))
             .set_external_id(self.external_id)
             .set_role_session_name(Some(session_name))
+            .set_policy(self.policy)
+            .set_policy_arns(self.policy_arns)
             .set_duration_seconds(self.session_length.map(|dur| dur.as_secs() as i32))
             .build()
             .expect("operation is valid");
