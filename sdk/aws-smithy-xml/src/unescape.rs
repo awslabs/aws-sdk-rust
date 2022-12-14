@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use crate::decode::XmlError;
+use crate::decode::XmlDecodeError;
 use std::borrow::Cow;
 
 /// Unescape XML encoded characters
@@ -15,7 +15,7 @@ use std::borrow::Cow;
 ///
 /// If no escape sequences are present, Cow<&'str> will be returned, avoiding the need
 /// to copy the String.
-pub fn unescape(s: &str) -> Result<Cow<str>, XmlError> {
+pub fn unescape(s: &str) -> Result<Cow<str>, XmlDecodeError> {
     // no &, no need to escape anything
     if !s.contains('&') {
         return Ok(Cow::Borrowed(s));
@@ -47,33 +47,27 @@ pub fn unescape(s: &str) -> Result<Cow<str>, XmlError> {
                             // e.g. &#123;
                             (entity, 10)
                         } else {
-                            return Err(XmlError::InvalidEscape {
-                                esc: entity.to_string(),
-                            });
+                            return Err(XmlDecodeError::invalid_escape(entity));
                         };
                         let char_code = u32::from_str_radix(entity, radix).map_err(|_| {
-                            XmlError::InvalidEscape {
-                                esc: format!(
-                                    "Expected numeric escape in base {}; got: {}",
-                                    radix, &entity
-                                ),
-                            }
+                            XmlDecodeError::invalid_escape(format!(
+                                "expected numeric escape in base {}; got: {}",
+                                radix, &entity
+                            ))
                         })?;
-                        let chr =
-                            std::char::from_u32(char_code).ok_or(XmlError::InvalidEscape {
-                                esc: format!("invalid char code: {}", char_code),
-                            })?;
+                        let chr = std::char::from_u32(char_code).ok_or_else(|| {
+                            XmlDecodeError::invalid_escape(format!(
+                                "invalid char code: {}",
+                                char_code
+                            ))
+                        })?;
                         res.push(chr);
                     }
                 }
                 // push everything from the `;` to the next `&`
                 res.push_str(&section[idx + 1..])
             }
-            None => {
-                return Err(XmlError::InvalidEscape {
-                    esc: "Unterminated pattern".to_string(),
-                })
-            }
+            None => return Err(XmlDecodeError::invalid_escape("unterminated pattern")),
         }
     }
     Ok(Cow::Owned(res))

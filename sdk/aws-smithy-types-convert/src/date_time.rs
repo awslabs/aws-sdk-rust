@@ -12,25 +12,41 @@ use aws_smithy_types::DateTime;
 use std::error::Error as StdError;
 use std::fmt;
 
-/// Conversion error
-#[non_exhaustive]
 #[derive(Debug)]
-pub enum Error {
+enum ErrorKind {
     /// Conversion failed because the value being converted is out of range for its destination
-    #[non_exhaustive]
     OutOfRange(Box<dyn StdError + Send + Sync + 'static>),
 }
 
-impl StdError for Error {}
+/// Conversion error
+#[derive(Debug)]
+pub struct Error {
+    kind: ErrorKind,
+}
+
+impl Error {
+    fn out_of_range(source: impl Into<Box<dyn StdError + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ErrorKind::OutOfRange(source.into()),
+        }
+    }
+}
+
+impl StdError for Error {
+    fn source(&self) -> Option<&(dyn StdError + 'static)> {
+        match &self.kind {
+            ErrorKind::OutOfRange(source) => Some(source.as_ref() as _),
+        }
+    }
+}
 
 impl fmt::Display for Error {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        match self {
-            Self::OutOfRange(cause) => {
+        match self.kind {
+            ErrorKind::OutOfRange(_) => {
                 write!(
                     f,
-                    "conversion failed because the value is out of range for its destination: {}",
-                    cause
+                    "conversion failed because the value is out of range for its destination",
                 )
             }
         }
@@ -101,7 +117,7 @@ pub trait DateTimeExt {
 
     /// Converts a [`DateTime`] to a [`time::OffsetDateTime`].
     ///
-    /// Returns an [`Error::OutOfRange`] if the time is after
+    /// Returns an [`Error`] if the time is after
     /// `9999-12-31T23:59:59.999Z` or before `-9999-01-01T00:00:00.000Z`.
     #[cfg(feature = "convert-time")]
     fn to_time(&self) -> Result<time::OffsetDateTime, Error>;
@@ -115,15 +131,11 @@ impl DateTimeExt for DateTime {
     #[cfg(feature = "convert-chrono")]
     fn to_chrono_utc(&self) -> Result<chrono::DateTime<chrono::Utc>, Error> {
         match chrono::NaiveDateTime::from_timestamp_opt(self.secs(), self.subsec_nanos()) {
-            None => {
-                let err: Box<dyn StdError + Send + Sync + 'static> = format!(
-                    "Out-of-range seconds {} or invalid nanoseconds {}",
-                    self.secs(),
-                    self.subsec_nanos()
-                )
-                .into();
-                Err(Error::OutOfRange(err))
-            }
+            None => Err(Error::out_of_range(format!(
+                "out-of-range seconds {} or invalid nanoseconds {}",
+                self.secs(),
+                self.subsec_nanos()
+            ))),
             Some(dt) => Ok(chrono::DateTime::<chrono::Utc>::from_utc(dt, chrono::Utc)),
         }
     }
@@ -140,8 +152,9 @@ impl DateTimeExt for DateTime {
 
     #[cfg(feature = "convert-time")]
     fn to_time(&self) -> Result<time::OffsetDateTime, Error> {
-        time::OffsetDateTime::from_unix_timestamp_nanos(self.as_nanos())
-            .map_err(|err| Error::OutOfRange(err.into()))
+        time::OffsetDateTime::from_unix_timestamp_nanos(self.as_nanos()).map_err(|err| Error {
+            kind: ErrorKind::OutOfRange(err.into()),
+        })
     }
 
     #[cfg(feature = "convert-time")]
@@ -158,7 +171,7 @@ mod test {
     use chrono::Timelike;
 
     #[cfg(feature = "convert-time")]
-    use super::Error;
+    use super::{Error, ErrorKind};
 
     #[test]
     #[cfg(feature = "convert-chrono")]
@@ -257,8 +270,18 @@ mod test {
         assert_eq!(expected, date_time.to_time().unwrap());
 
         let date_time = DateTime::from_secs_and_nanos(i64::MAX, 0);
-        assert!(matches!(date_time.to_time(), Err(Error::OutOfRange(_))));
+        assert!(matches!(
+            date_time.to_time(),
+            Err(Error {
+                kind: ErrorKind::OutOfRange(_)
+            })
+        ));
         let date_time = DateTime::from_secs_and_nanos(i64::MIN, 0);
-        assert!(matches!(date_time.to_time(), Err(Error::OutOfRange(_))));
+        assert!(matches!(
+            date_time.to_time(),
+            Err(Error {
+                kind: ErrorKind::OutOfRange(_)
+            })
+        ));
     }
 }

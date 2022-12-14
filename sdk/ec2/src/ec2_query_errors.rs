@@ -4,17 +4,17 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_smithy_xml::decode::{try_data, Document, ScopedDecoder, XmlError};
+use aws_smithy_xml::decode::{try_data, Document, ScopedDecoder, XmlDecodeError};
 use std::convert::TryFrom;
 
 #[allow(unused)]
-pub fn body_is_error(body: &[u8]) -> Result<bool, XmlError> {
+pub fn body_is_error(body: &[u8]) -> Result<bool, XmlDecodeError> {
     let mut doc = Document::try_from(body)?;
     let scoped = doc.root_element()?;
     Ok(scoped.start_el().matches("Response"))
 }
 
-pub fn parse_generic_error(body: &[u8]) -> Result<aws_smithy_types::Error, XmlError> {
+pub fn parse_generic_error(body: &[u8]) -> Result<aws_smithy_types::Error, XmlDecodeError> {
     let mut doc = Document::try_from(body)?;
     let mut root = doc.root_element()?;
     let mut err_builder = aws_smithy_types::Error::builder();
@@ -47,12 +47,14 @@ pub fn parse_generic_error(body: &[u8]) -> Result<aws_smithy_types::Error, XmlEr
 }
 
 #[allow(unused)]
-pub fn error_scope<'a, 'b>(doc: &'a mut Document<'b>) -> Result<ScopedDecoder<'b, 'a>, XmlError> {
+pub fn error_scope<'a, 'b>(
+    doc: &'a mut Document<'b>,
+) -> Result<ScopedDecoder<'b, 'a>, XmlDecodeError> {
     let root = doc
         .next_start_element()
-        .ok_or_else(|| XmlError::custom("no root found searching for an Error"))?;
+        .ok_or_else(|| XmlDecodeError::custom("no root found searching for an Error"))?;
     if !root.matches("Response") {
-        return Err(XmlError::custom("expected Response as root"));
+        return Err(XmlDecodeError::custom("expected Response as root"));
     }
 
     while let Some(el) = doc.next_start_element() {
@@ -65,7 +67,7 @@ pub fn error_scope<'a, 'b>(doc: &'a mut Document<'b>) -> Result<ScopedDecoder<'b
         }
         // otherwise, ignore it
     }
-    Err(XmlError::custom("No Error found inside of Response"))
+    Err(XmlDecodeError::custom("no error found inside of response"))
 }
 
 #[cfg(test)]

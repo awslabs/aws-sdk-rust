@@ -7,17 +7,21 @@
 //! generating malformed XML a compile error
 
 use crate::escape::escape;
+use std::error::Error as StdError;
 use std::fmt::{self, Display, Formatter, Write};
 
 // currently there's actually no way that encoding can fail but give it time :-)
+#[non_exhaustive]
 #[derive(Debug)]
-pub enum Error {}
+pub struct XmlEncodeError {}
 
-impl Display for Error {
+impl Display for XmlEncodeError {
     fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
-        write!(f, "Xml Encoding Error")
+        write!(f, "error encoding XML")
     }
 }
+
+impl StdError for XmlEncodeError {}
 
 /// XmlWriter Abstraction
 ///

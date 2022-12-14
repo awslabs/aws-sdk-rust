@@ -4,8 +4,7 @@
  */
 
 use aws_smithy_protocol_test::{validate_body, MediaType};
-use aws_smithy_xml::encode;
-use aws_smithy_xml::encode::ScopeWriter;
+use aws_smithy_xml::encode::{ScopeWriter, XmlEncodeError, XmlWriter};
 
 // @namespace http://www.example.com
 struct WithNamespace {
@@ -19,10 +18,10 @@ struct Nested {
     inner: WithNamespace,
 }
 
-fn serialize_nested(nested: &Nested) -> Result<String, aws_smithy_xml::encode::Error> {
+fn serialize_nested(nested: &Nested) -> Result<String, XmlEncodeError> {
     let mut out = String::new();
     {
-        let mut writer = encode::XmlWriter::new(&mut out);
+        let mut writer = XmlWriter::new(&mut out);
         let mut start_el = writer.start_el("Nested");
         start_el.write_attribute("a", &nested.a);
         let mut tag = start_el.finish();
@@ -32,12 +31,10 @@ fn serialize_nested(nested: &Nested) -> Result<String, aws_smithy_xml::encode::E
     Ok(out)
 }
 
-fn serialize_with_namespace(
-    with_namespace: &WithNamespace,
-) -> Result<String, aws_smithy_xml::encode::Error> {
+fn serialize_with_namespace(with_namespace: &WithNamespace) -> Result<String, XmlEncodeError> {
     let mut out = String::new();
     {
-        let mut writer = encode::XmlWriter::new(&mut out);
+        let mut writer = XmlWriter::new(&mut out);
         let root = writer.start_el("MyStructure");
         let mut root_scope = root.write_ns("http://foo.com", None).finish();
         with_namespace_inner(&mut root_scope, with_namespace);
