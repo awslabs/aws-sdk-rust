@@ -2,6 +2,6 @@
   "name": "imds-default-chain",
   "docs": "IMDS isn't specifically configured but is loaded as part of the default chain. This has the exact same HTTP traffic as imds_no_iam_role, they are equivalent.",
   "result": {
-    "ErrorContains": "The credential provider was not enabled"
+    "ErrorContains": "the credential provider was not enabled"
   }
 }

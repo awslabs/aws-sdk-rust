@@ -13,11 +13,29 @@ use crate::imds::client::{ImdsError, LazyClient};
 use crate::json_credentials::{parse_json_credentials, JsonCredentials, RefreshableCredentials};
 use crate::provider_config::ProviderConfig;
 use aws_smithy_client::SdkError;
-use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_types::credentials::{future, CredentialsError, ProvideCredentials};
 use aws_types::os_shim_internal::Env;
 use aws_types::{credentials, Credentials};
 use std::borrow::Cow;
+use std::error::Error as StdError;
+use std::fmt;
+
+#[derive(Debug)]
+struct ImdsCommunicationError {
+    source: Box<dyn StdError + Send + Sync + 'static>,
+}
+
+impl fmt::Display for ImdsCommunicationError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "could not communicate with IMDS")
+    }
+}
+
+impl StdError for ImdsCommunicationError {
+    fn source(&self) -> Option<&(dyn StdError + 'static)> {
+        Some(self.source.as_ref())
+    }
+}
 
 /// IMDSv2 Credentials Provider
 ///
@@ -138,11 +156,10 @@ impl ImdsCredentialsProvider {
                 );
                 Err(CredentialsError::not_loaded("received 404 from IMDS"))
             }
-            Err(ImdsError::FailedToLoadToken(ref err @ SdkError::DispatchFailure(_))) => {
-                Err(CredentialsError::not_loaded(format!(
-                    "could not communicate with IMDS: {}",
-                    DisplayErrorContext(&err)
-                )))
+            Err(ImdsError::FailedToLoadToken(err @ SdkError::DispatchFailure(_))) => {
+                Err(CredentialsError::not_loaded(ImdsCommunicationError {
+                    source: err.into(),
+                }))
             }
             Err(other) => Err(CredentialsError::provider_error(other)),
         }

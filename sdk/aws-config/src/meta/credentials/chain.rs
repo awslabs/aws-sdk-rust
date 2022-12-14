@@ -82,12 +82,12 @@ impl CredentialsProviderChain {
                     tracing::debug!(provider = %name, "loaded credentials");
                     return Ok(credentials);
                 }
-                Err(CredentialsError::CredentialsNotLoaded { context, .. }) => {
-                    tracing::debug!(provider = %name, context = %context, "provider in chain did not provide credentials");
+                Err(err @ CredentialsError::CredentialsNotLoaded(_)) => {
+                    tracing::debug!(provider = %name, context = %DisplayErrorContext(&err), "provider in chain did not provide credentials");
                 }
-                Err(e) => {
-                    tracing::warn!(provider = %name, error = %DisplayErrorContext(&e), "provider failed to provide credentials");
-                    return Err(e);
+                Err(err) => {
+                    tracing::warn!(provider = %name, error = %DisplayErrorContext(&err), "provider failed to provide credentials");
+                    return Err(err);
                 }
             }
         }

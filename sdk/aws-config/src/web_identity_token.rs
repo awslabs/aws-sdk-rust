@@ -266,6 +266,7 @@ mod test {
     };
     use aws_sdk_sts::Region;
     use aws_smithy_async::rt::sleep::TokioSleep;
+    use aws_smithy_types::error::display::DisplayErrorContext;
     use aws_types::credentials::CredentialsError;
     use aws_types::os_shim_internal::{Env, Fs};
     use std::collections::HashMap;
@@ -308,7 +309,7 @@ mod test {
             .await
             .expect_err("should fail, provider not loaded");
         assert!(
-            format!("{}", err).contains("AWS_ROLE_ARN"),
+            format!("{}", DisplayErrorContext(&err)).contains("AWS_ROLE_ARN"),
             "`{}` did not contain expected string",
             err
         );

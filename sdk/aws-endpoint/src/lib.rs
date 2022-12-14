@@ -24,7 +24,6 @@ use http::header::HeaderName;
 use http::{HeaderValue, Uri};
 use std::error::Error;
 use std::fmt;
-use std::fmt::{Debug, Display, Formatter};
 use std::str::FromStr;
 use std::sync::Arc;
 
@@ -100,19 +99,41 @@ impl ResolveEndpoint<Params> for EndpointShim {
 pub struct AwsEndpointStage;
 
 #[derive(Debug)]
-pub enum AwsEndpointStageError {
+enum AwsEndpointStageErrorKind {
     NoEndpointResolver,
-    NoRegion,
     EndpointResolutionError(BoxError),
 }
 
-impl Display for AwsEndpointStageError {
-    fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
-        Debug::fmt(self, f)
+#[derive(Debug)]
+pub struct AwsEndpointStageError {
+    kind: AwsEndpointStageErrorKind,
+}
+
+impl fmt::Display for AwsEndpointStageError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        use AwsEndpointStageErrorKind::*;
+        match &self.kind {
+            NoEndpointResolver => write!(f, "endpoint resolution failed: no endpoint resolver"),
+            EndpointResolutionError(_) => write!(f, "endpoint resolution failed"),
+        }
     }
 }
 
-impl Error for AwsEndpointStageError {}
+impl Error for AwsEndpointStageError {
+    fn source(&self) -> Option<&(dyn Error + 'static)> {
+        use AwsEndpointStageErrorKind::*;
+        match &self.kind {
+            EndpointResolutionError(source) => Some(source.as_ref() as _),
+            NoEndpointResolver => None,
+        }
+    }
+}
+
+impl From<AwsEndpointStageErrorKind> for AwsEndpointStageError {
+    fn from(kind: AwsEndpointStageErrorKind) -> Self {
+        Self { kind }
+    }
+}
 
 impl MapRequest for AwsEndpointStage {
     type Error = AwsEndpointStageError;
@@ -121,7 +142,7 @@ impl MapRequest for AwsEndpointStage {
         request.augment(|mut http_req, props| {
             let endpoint_result = props
                 .get_mut::<aws_smithy_http::endpoint::Result>()
-                .ok_or(AwsEndpointStageError::NoEndpointResolver)?;
+                .ok_or(AwsEndpointStageErrorKind::NoEndpointResolver)?;
             let endpoint = match endpoint_result {
                 // downgrade the mut ref to a shared ref
                 Ok(_endpoint) => props.get::<aws_smithy_http::endpoint::Result>()
@@ -131,25 +152,25 @@ impl MapRequest for AwsEndpointStage {
                 Err(e) => {
                     // We need to own the error to return it, so take it and leave a stub error in
                     // its place
-                    return Err(AwsEndpointStageError::EndpointResolutionError(std::mem::replace(
+                    return Err(AwsEndpointStageErrorKind::EndpointResolutionError(std::mem::replace(
                         e,
                         ResolveEndpointError::message("the original error was directly returned")
-                    ).into()));
+                    ).into()).into());
                 }
             };
             let (uri, signing_scope_override, signing_service_override) = smithy_to_aws(endpoint)
-                .map_err(|err| AwsEndpointStageError::EndpointResolutionError(err))?;
+                .map_err(|err| AwsEndpointStageErrorKind::EndpointResolutionError(err))?;
             tracing::debug!(endpoint = ?endpoint, base_region = ?signing_scope_override, "resolved endpoint");
             apply_endpoint(http_req.uri_mut(), &uri, props.get::<EndpointPrefix>())
-                .map_err(|err|AwsEndpointStageError::EndpointResolutionError(err.into()))?;
+                .map_err(|err| AwsEndpointStageErrorKind::EndpointResolutionError(err.into()))?;
             for (header_name, header_values) in endpoint.headers() {
                 http_req.headers_mut().remove(header_name);
                 for value in header_values {
                     http_req.headers_mut().insert(
                         HeaderName::from_str(header_name)
-                            .map_err(|err|AwsEndpointStageError::EndpointResolutionError(err.into()))?,
+                            .map_err(|err| AwsEndpointStageErrorKind::EndpointResolutionError(err.into()))?,
                         HeaderValue::from_str(value)
-                            .map_err(|err|AwsEndpointStageError::EndpointResolutionError(err.into()))?,
+                            .map_err(|err| AwsEndpointStageErrorKind::EndpointResolutionError(err.into()))?,
                     );
                 }
             }

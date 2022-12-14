@@ -54,7 +54,7 @@ impl CredentialsStage {
             }
             // if we get another error class, there is probably something actually wrong that the user will
             // want to know about
-            Err(other) => return Err(CredentialsStageError::CredentialsLoadingError(other)),
+            Err(other) => return Err(other.into()),
         }
         Ok(request)
     }
@@ -67,34 +67,28 @@ mod error {
 
     /// Failures that can occur in the credentials middleware.
     #[derive(Debug)]
-    pub enum CredentialsStageError {
-        /// No credentials provider was found in the property bag for the operation.
-        MissingCredentialsProvider,
-        /// Failed to load credentials with the credential provider in the property bag.
-        CredentialsLoadingError(CredentialsError),
+    pub struct CredentialsStageError {
+        source: CredentialsError,
     }
 
-    impl StdError for CredentialsStageError {}
+    impl StdError for CredentialsStageError {
+        fn source(&self) -> Option<&(dyn StdError + 'static)> {
+            Some(&self.source as _)
+        }
+    }
 
     impl fmt::Display for CredentialsStageError {
         fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-            use CredentialsStageError::*;
-            match self {
-                MissingCredentialsProvider => {
-                    write!(f, "No credentials provider in the property bag")
-                }
-                CredentialsLoadingError(err) => write!(
-                    f,
-                    "Failed to load credentials from the credentials provider: {}",
-                    err
-                ),
-            }
+            write!(
+                f,
+                "failed to load credentials from the credentials provider"
+            )
         }
     }
 
     impl From<CredentialsError> for CredentialsStageError {
-        fn from(err: CredentialsError) -> Self {
-            CredentialsStageError::CredentialsLoadingError(err)
+        fn from(source: CredentialsError) -> Self {
+            CredentialsStageError { source }
         }
     }
 }

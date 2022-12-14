@@ -1,4 +1,4 @@
-smithy_rs_revision = '8dfe5a1f70526b413ce3c82a7bc84e50258afc06'
+smithy_rs_revision = '543cac37b2085aa173a4d25d7df7da63cc81887c'
 aws_doc_sdk_examples_revision = 'f88a0edba3961f9d978bf1727054c9414e4fca2b'
 
 [manual_interventions]
@@ -6,17 +6,17 @@ crates_to_remove = []
 [crates.aws-config]
 category = 'AwsRuntime'
 version = '0.51.0'
-source_hash = 'c2518d5a864c1f8a49a5cd65b2bd7cfb6b2dbedc5198c6d4090579bd6bc868fe'
+source_hash = '0a2533b8b9605cdce7b4a3c2cecdca9e656e8690698b08927de06c943b2c154f'
 
 [crates.aws-endpoint]
 category = 'AwsRuntime'
 version = '0.51.0'
-source_hash = '1e072a906540a81be17224c64cdde8dec14b4abb42bbe78768743379e6db23fb'
+source_hash = '6aad5c732c04983be2e83f1b720a523206d2aaebbbbe76e7cc03be0309c46cb0'
 
 [crates.aws-http]
 category = 'AwsRuntime'
 version = '0.51.0'
-source_hash = '647ff46570be35c867a6283fe143c54e91037ba03ed3c111d0137bfdcc6993c3'
+source_hash = 'd379c1da4a9610f1d017ec3cd2b7e6dc0171744b4aac53ed6d7de1a32d0c9eda'
 
 [crates.aws-hyper]
 category = 'AwsRuntime'
@@ -1412,7 +1412,7 @@ model_hash = 'bab0cd4285368a2d69b8c64141d5de444d49babbc60b9aa708b19ad63d045a55'
 [crates.aws-sdk-polly]
 category = 'AwsSdk'
 version = '0.22.0'
-source_hash = 'ba7fbee169da838613c49aacc4b56e360e1aa73cdbabdaa6b869182814b31947'
+source_hash = 'de7572ca8ea84c337d945ce001796ff4dfc9e6d8ad166d1bd2f944c670d2a739'
 model_hash = '770500534bd84befcf19585c6283e4b0f18c50d7092713150aa9261dd82dbf6f'
 
 [crates.aws-sdk-pricing]
@@ -1574,7 +1574,7 @@ model_hash = '88b9f998ab950f38b993469fde2bb4e53e6b839cb958e040fec26919dbc4d3a4'
 [crates.aws-sdk-s3]
 category = 'AwsSdk'
 version = '0.22.0'
-source_hash = 'eeb64e17478b1327ea07b5632dce9783ec71c1f0b5e3d0214e624776a7a9099b'
+source_hash = '2cec4f52b6c5976f7c419122398dd26a2f95a12b04a9548beb6a0e2d6fa7b00c'
 model_hash = 'a3ff4830ff752075255af9cae9fd5f84516585c38000817c8ec1898e5eb35ff0'
 
 [crates.aws-sdk-s3control]
@@ -1916,7 +1916,7 @@ model_hash = 'a9e91de5a22903f92c1f17f2f9d3a91c076d6f2169244c58cd73430b071077e2'
 [crates.aws-sig-auth]
 category = 'AwsRuntime'
 version = '0.51.0'
-source_hash = '17daa0750c9e4cfb1bea2e9feff538ff1d4c440ebb02c4ebada7f285f3b0b3a4'
+source_hash = '9f614be9c8fc86df93344ac1551b3211bf270e5bd4522465e4e875bb359e5d37'
 
 [crates.aws-sigv4]
 category = 'AwsRuntime'
@@ -1986,7 +1986,7 @@ source_hash = '93e2d026c01ef27615b2e7505eb5b3c433538b9cd86bc52ac00ff18d1e9d75e5'
 [crates.aws-types]
 category = 'AwsRuntime'
 version = '0.51.0'
-source_hash = 'cc62b5585f118e3ce4d4c51c82d0ac51b837f2159d4193ab7d61836c9ffc54ba'
+source_hash = 'd221af9d2a6e178f50099f06e81268a9cdc6a00eb8186afac45f704237a31a0c'
 [release.crates]
 aws-sdk-accessanalyzer = '0.22.0'
 aws-sdk-account = '0.22.0'
