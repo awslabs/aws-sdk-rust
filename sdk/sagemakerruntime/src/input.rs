@@ -155,7 +155,7 @@ impl InvokeEndpointInput {
             fn uri_base(_input: &crate::input::InvokeEndpointInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.endpoint_name;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "endpoint_name", details: "cannot be empty or unset" })?;
-                let endpoint_name = aws_smithy_http::label::fmt_string(input_1, false);
+                let endpoint_name = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if endpoint_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "endpoint_name", details: "cannot be empty or unset" })
                             }
@@ -333,7 +333,7 @@ impl InvokeEndpointAsyncInput {
             fn uri_base(_input: &crate::input::InvokeEndpointAsyncInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.endpoint_name;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "endpoint_name", details: "cannot be empty or unset" })?;
-                let endpoint_name = aws_smithy_http::label::fmt_string(input_2, false);
+                let endpoint_name = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if endpoint_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "endpoint_name", details: "cannot be empty or unset" })
                             }

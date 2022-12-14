@@ -51,13 +51,13 @@ impl CancelJobRunInput {
             fn uri_base(_input: &crate::input::CancelJobRunInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.virtual_cluster_id;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_cluster_id", details: "cannot be empty or unset" })?;
-                let virtual_cluster_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let virtual_cluster_id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_cluster_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_cluster_id", details: "cannot be empty or unset" })
                             }
                 let input_2 = &_input.id;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
-                let id = aws_smithy_http::label::fmt_string(input_2, false);
+                let id = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
                             }
@@ -259,7 +259,7 @@ impl CreateManagedEndpointInput {
             fn uri_base(_input: &crate::input::CreateManagedEndpointInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.virtual_cluster_id;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_cluster_id", details: "cannot be empty or unset" })?;
-                let virtual_cluster_id = aws_smithy_http::label::fmt_string(input_3, false);
+                let virtual_cluster_id = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_cluster_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_cluster_id", details: "cannot be empty or unset" })
                             }
@@ -512,13 +512,13 @@ impl DeleteManagedEndpointInput {
             fn uri_base(_input: &crate::input::DeleteManagedEndpointInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_4 = &_input.virtual_cluster_id;
                 let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_cluster_id", details: "cannot be empty or unset" })?;
-                let virtual_cluster_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let virtual_cluster_id = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_cluster_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_cluster_id", details: "cannot be empty or unset" })
                             }
                 let input_5 = &_input.id;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
-                let id = aws_smithy_http::label::fmt_string(input_5, false);
+                let id = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
                             }
@@ -615,7 +615,7 @@ impl DeleteVirtualClusterInput {
             fn uri_base(_input: &crate::input::DeleteVirtualClusterInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_6 = &_input.id;
                 let input_6 = input_6.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
-                let id = aws_smithy_http::label::fmt_string(input_6, false);
+                let id = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
                             }
@@ -724,13 +724,13 @@ impl DescribeJobRunInput {
             fn uri_base(_input: &crate::input::DescribeJobRunInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_7 = &_input.virtual_cluster_id;
                 let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_cluster_id", details: "cannot be empty or unset" })?;
-                let virtual_cluster_id = aws_smithy_http::label::fmt_string(input_7, false);
+                let virtual_cluster_id = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_cluster_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_cluster_id", details: "cannot be empty or unset" })
                             }
                 let input_8 = &_input.id;
                 let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
-                let id = aws_smithy_http::label::fmt_string(input_8, false);
+                let id = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
                             }
@@ -839,13 +839,13 @@ impl DescribeManagedEndpointInput {
             fn uri_base(_input: &crate::input::DescribeManagedEndpointInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_9 = &_input.virtual_cluster_id;
                 let input_9 = input_9.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_cluster_id", details: "cannot be empty or unset" })?;
-                let virtual_cluster_id = aws_smithy_http::label::fmt_string(input_9, false);
+                let virtual_cluster_id = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_cluster_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_cluster_id", details: "cannot be empty or unset" })
                             }
                 let input_10 = &_input.id;
                 let input_10 = input_10.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
-                let id = aws_smithy_http::label::fmt_string(input_10, false);
+                let id = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
                             }
@@ -942,7 +942,7 @@ impl DescribeVirtualClusterInput {
             fn uri_base(_input: &crate::input::DescribeVirtualClusterInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_11 = &_input.id;
                 let input_11 = input_11.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
-                let id = aws_smithy_http::label::fmt_string(input_11, false);
+                let id = aws_smithy_http::label::fmt_string(input_11, aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
                             }
@@ -1117,7 +1117,7 @@ impl ListJobRunsInput {
             fn uri_base(_input: &crate::input::ListJobRunsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_12 = &_input.virtual_cluster_id;
                 let input_12 = input_12.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_cluster_id", details: "cannot be empty or unset" })?;
-                let virtual_cluster_id = aws_smithy_http::label::fmt_string(input_12, false);
+                let virtual_cluster_id = aws_smithy_http::label::fmt_string(input_12, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_cluster_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_cluster_id", details: "cannot be empty or unset" })
                             }
@@ -1323,7 +1323,7 @@ impl ListManagedEndpointsInput {
             fn uri_base(_input: &crate::input::ListManagedEndpointsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_20 = &_input.virtual_cluster_id;
                 let input_20 = input_20.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_cluster_id", details: "cannot be empty or unset" })?;
-                let virtual_cluster_id = aws_smithy_http::label::fmt_string(input_20, false);
+                let virtual_cluster_id = aws_smithy_http::label::fmt_string(input_20, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_cluster_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_cluster_id", details: "cannot be empty or unset" })
                             }
@@ -1447,7 +1447,7 @@ impl ListTagsForResourceInput {
             fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_29 = &_input.resource_arn;
                 let input_29 = input_29.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_29, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_29, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -1834,7 +1834,7 @@ impl StartJobRunInput {
             fn uri_base(_input: &crate::input::StartJobRunInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_38 = &_input.virtual_cluster_id;
                 let input_38 = input_38.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_cluster_id", details: "cannot be empty or unset" })?;
-                let virtual_cluster_id = aws_smithy_http::label::fmt_string(input_38, false);
+                let virtual_cluster_id = aws_smithy_http::label::fmt_string(input_38, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_cluster_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_cluster_id", details: "cannot be empty or unset" })
                             }
@@ -1953,7 +1953,7 @@ impl TagResourceInput {
             fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_39 = &_input.resource_arn;
                 let input_39 = input_39.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_39, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_39, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -2072,7 +2072,7 @@ impl UntagResourceInput {
             fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_40 = &_input.resource_arn;
                 let input_40 = input_40.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_40, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_40, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }

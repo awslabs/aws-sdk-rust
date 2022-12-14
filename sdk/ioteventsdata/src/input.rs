@@ -859,7 +859,7 @@ impl DescribeAlarmInput {
             fn uri_base(_input: &crate::input::DescribeAlarmInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.alarm_model_name;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "alarm_model_name", details: "cannot be empty or unset" })?;
-                let alarm_model_name = aws_smithy_http::label::fmt_string(input_1, false);
+                let alarm_model_name = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if alarm_model_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "alarm_model_name", details: "cannot be empty or unset" })
                             }
@@ -976,7 +976,7 @@ impl DescribeDetectorInput {
             fn uri_base(_input: &crate::input::DescribeDetectorInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.detector_model_name;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "detector_model_name", details: "cannot be empty or unset" })?;
-                let detector_model_name = aws_smithy_http::label::fmt_string(input_3, false);
+                let detector_model_name = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if detector_model_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "detector_model_name", details: "cannot be empty or unset" })
                             }
@@ -1105,7 +1105,7 @@ impl ListAlarmsInput {
             fn uri_base(_input: &crate::input::ListAlarmsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_5 = &_input.alarm_model_name;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "alarm_model_name", details: "cannot be empty or unset" })?;
-                let alarm_model_name = aws_smithy_http::label::fmt_string(input_5, false);
+                let alarm_model_name = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if alarm_model_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "alarm_model_name", details: "cannot be empty or unset" })
                             }
@@ -1249,7 +1249,7 @@ impl ListDetectorsInput {
             fn uri_base(_input: &crate::input::ListDetectorsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_8 = &_input.detector_model_name;
                 let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "detector_model_name", details: "cannot be empty or unset" })?;
-                let detector_model_name = aws_smithy_http::label::fmt_string(input_8, false);
+                let detector_model_name = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
                 if detector_model_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "detector_model_name", details: "cannot be empty or unset" })
                             }

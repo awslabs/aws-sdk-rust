@@ -86,7 +86,7 @@ impl CreateDatasetInput {
             fn uri_base(_input: &crate::input::CreateDatasetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.project_name;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })?;
-                let project_name = aws_smithy_http::label::fmt_string(input_1, false);
+                let project_name = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if project_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })
                             }
@@ -261,7 +261,7 @@ impl CreateModelInput {
             fn uri_base(_input: &crate::input::CreateModelInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.project_name;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })?;
-                let project_name = aws_smithy_http::label::fmt_string(input_2, false);
+                let project_name = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if project_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })
                             }
@@ -509,13 +509,13 @@ impl DeleteDatasetInput {
             fn uri_base(_input: &crate::input::DeleteDatasetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.project_name;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })?;
-                let project_name = aws_smithy_http::label::fmt_string(input_3, false);
+                let project_name = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if project_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })
                             }
                 let input_4 = &_input.dataset_type;
                 let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "dataset_type", details: "cannot be empty or unset" })?;
-                let dataset_type = aws_smithy_http::label::fmt_string(input_4, false);
+                let dataset_type = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if dataset_type.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "dataset_type", details: "cannot be empty or unset" })
                             }
@@ -644,13 +644,13 @@ impl DeleteModelInput {
             fn uri_base(_input: &crate::input::DeleteModelInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_5 = &_input.project_name;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })?;
-                let project_name = aws_smithy_http::label::fmt_string(input_5, false);
+                let project_name = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if project_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })
                             }
                 let input_6 = &_input.model_version;
                 let input_6 = input_6.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "model_version", details: "cannot be empty or unset" })?;
-                let model_version = aws_smithy_http::label::fmt_string(input_6, false);
+                let model_version = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if model_version.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "model_version", details: "cannot be empty or unset" })
                             }
@@ -767,7 +767,7 @@ impl DeleteProjectInput {
             fn uri_base(_input: &crate::input::DeleteProjectInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_7 = &_input.project_name;
                 let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })?;
-                let project_name = aws_smithy_http::label::fmt_string(input_7, false);
+                let project_name = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
                 if project_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })
                             }
@@ -877,13 +877,13 @@ impl DescribeDatasetInput {
             fn uri_base(_input: &crate::input::DescribeDatasetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_8 = &_input.project_name;
                 let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })?;
-                let project_name = aws_smithy_http::label::fmt_string(input_8, false);
+                let project_name = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
                 if project_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })
                             }
                 let input_9 = &_input.dataset_type;
                 let input_9 = input_9.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "dataset_type", details: "cannot be empty or unset" })?;
-                let dataset_type = aws_smithy_http::label::fmt_string(input_9, false);
+                let dataset_type = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
                 if dataset_type.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "dataset_type", details: "cannot be empty or unset" })
                             }
@@ -992,13 +992,13 @@ impl DescribeModelInput {
             fn uri_base(_input: &crate::input::DescribeModelInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_10 = &_input.project_name;
                 let input_10 = input_10.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })?;
-                let project_name = aws_smithy_http::label::fmt_string(input_10, false);
+                let project_name = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Default);
                 if project_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })
                             }
                 let input_11 = &_input.model_version;
                 let input_11 = input_11.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "model_version", details: "cannot be empty or unset" })?;
-                let model_version = aws_smithy_http::label::fmt_string(input_11, false);
+                let model_version = aws_smithy_http::label::fmt_string(input_11, aws_smithy_http::label::EncodingStrategy::Default);
                 if model_version.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "model_version", details: "cannot be empty or unset" })
                             }
@@ -1107,13 +1107,13 @@ impl DescribeModelPackagingJobInput {
             fn uri_base(_input: &crate::input::DescribeModelPackagingJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_12 = &_input.project_name;
                 let input_12 = input_12.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })?;
-                let project_name = aws_smithy_http::label::fmt_string(input_12, false);
+                let project_name = aws_smithy_http::label::fmt_string(input_12, aws_smithy_http::label::EncodingStrategy::Default);
                 if project_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })
                             }
                 let input_13 = &_input.job_name;
                 let input_13 = input_13.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "job_name", details: "cannot be empty or unset" })?;
-                let job_name = aws_smithy_http::label::fmt_string(input_13, false);
+                let job_name = aws_smithy_http::label::fmt_string(input_13, aws_smithy_http::label::EncodingStrategy::Default);
                 if job_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "job_name", details: "cannot be empty or unset" })
                             }
@@ -1210,7 +1210,7 @@ impl DescribeProjectInput {
             fn uri_base(_input: &crate::input::DescribeProjectInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_14 = &_input.project_name;
                 let input_14 = input_14.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })?;
-                let project_name = aws_smithy_http::label::fmt_string(input_14, false);
+                let project_name = aws_smithy_http::label::fmt_string(input_14, aws_smithy_http::label::EncodingStrategy::Default);
                 if project_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })
                             }
@@ -1344,13 +1344,13 @@ impl DetectAnomaliesInput {
             fn uri_base(_input: &crate::input::DetectAnomaliesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_15 = &_input.project_name;
                 let input_15 = input_15.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })?;
-                let project_name = aws_smithy_http::label::fmt_string(input_15, false);
+                let project_name = aws_smithy_http::label::fmt_string(input_15, aws_smithy_http::label::EncodingStrategy::Default);
                 if project_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })
                             }
                 let input_16 = &_input.model_version;
                 let input_16 = input_16.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "model_version", details: "cannot be empty or unset" })?;
-                let model_version = aws_smithy_http::label::fmt_string(input_16, false);
+                let model_version = aws_smithy_http::label::fmt_string(input_16, aws_smithy_http::label::EncodingStrategy::Default);
                 if model_version.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "model_version", details: "cannot be empty or unset" })
                             }
@@ -1549,13 +1549,13 @@ impl ListDatasetEntriesInput {
             fn uri_base(_input: &crate::input::ListDatasetEntriesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_17 = &_input.project_name;
                 let input_17 = input_17.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })?;
-                let project_name = aws_smithy_http::label::fmt_string(input_17, false);
+                let project_name = aws_smithy_http::label::fmt_string(input_17, aws_smithy_http::label::EncodingStrategy::Default);
                 if project_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })
                             }
                 let input_18 = &_input.dataset_type;
                 let input_18 = input_18.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "dataset_type", details: "cannot be empty or unset" })?;
-                let dataset_type = aws_smithy_http::label::fmt_string(input_18, false);
+                let dataset_type = aws_smithy_http::label::fmt_string(input_18, aws_smithy_http::label::EncodingStrategy::Default);
                 if dataset_type.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "dataset_type", details: "cannot be empty or unset" })
                             }
@@ -1702,7 +1702,7 @@ impl ListModelPackagingJobsInput {
             fn uri_base(_input: &crate::input::ListModelPackagingJobsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_26 = &_input.project_name;
                 let input_26 = input_26.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })?;
-                let project_name = aws_smithy_http::label::fmt_string(input_26, false);
+                let project_name = aws_smithy_http::label::fmt_string(input_26, aws_smithy_http::label::EncodingStrategy::Default);
                 if project_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })
                             }
@@ -1834,7 +1834,7 @@ impl ListModelsInput {
             fn uri_base(_input: &crate::input::ListModelsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_29 = &_input.project_name;
                 let input_29 = input_29.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })?;
-                let project_name = aws_smithy_http::label::fmt_string(input_29, false);
+                let project_name = aws_smithy_http::label::fmt_string(input_29, aws_smithy_http::label::EncodingStrategy::Default);
                 if project_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })
                             }
@@ -2056,7 +2056,7 @@ impl ListTagsForResourceInput {
             fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_34 = &_input.resource_arn;
                 let input_34 = input_34.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_34, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_34, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -2208,13 +2208,13 @@ impl StartModelInput {
             fn uri_base(_input: &crate::input::StartModelInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_35 = &_input.project_name;
                 let input_35 = input_35.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })?;
-                let project_name = aws_smithy_http::label::fmt_string(input_35, false);
+                let project_name = aws_smithy_http::label::fmt_string(input_35, aws_smithy_http::label::EncodingStrategy::Default);
                 if project_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })
                             }
                 let input_36 = &_input.model_version;
                 let input_36 = input_36.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "model_version", details: "cannot be empty or unset" })?;
-                let model_version = aws_smithy_http::label::fmt_string(input_36, false);
+                let model_version = aws_smithy_http::label::fmt_string(input_36, aws_smithy_http::label::EncodingStrategy::Default);
                 if model_version.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "model_version", details: "cannot be empty or unset" })
                             }
@@ -2383,7 +2383,7 @@ impl StartModelPackagingJobInput {
             fn uri_base(_input: &crate::input::StartModelPackagingJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_37 = &_input.project_name;
                 let input_37 = input_37.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })?;
-                let project_name = aws_smithy_http::label::fmt_string(input_37, false);
+                let project_name = aws_smithy_http::label::fmt_string(input_37, aws_smithy_http::label::EncodingStrategy::Default);
                 if project_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })
                             }
@@ -2516,13 +2516,13 @@ impl StopModelInput {
             fn uri_base(_input: &crate::input::StopModelInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_38 = &_input.project_name;
                 let input_38 = input_38.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })?;
-                let project_name = aws_smithy_http::label::fmt_string(input_38, false);
+                let project_name = aws_smithy_http::label::fmt_string(input_38, aws_smithy_http::label::EncodingStrategy::Default);
                 if project_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })
                             }
                 let input_39 = &_input.model_version;
                 let input_39 = input_39.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "model_version", details: "cannot be empty or unset" })?;
-                let model_version = aws_smithy_http::label::fmt_string(input_39, false);
+                let model_version = aws_smithy_http::label::fmt_string(input_39, aws_smithy_http::label::EncodingStrategy::Default);
                 if model_version.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "model_version", details: "cannot be empty or unset" })
                             }
@@ -2638,7 +2638,7 @@ impl TagResourceInput {
             fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_40 = &_input.resource_arn;
                 let input_40 = input_40.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_40, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_40, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -2757,7 +2757,7 @@ impl UntagResourceInput {
             fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_41 = &_input.resource_arn;
                 let input_41 = input_41.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_41, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_41, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -2907,13 +2907,13 @@ impl UpdateDatasetEntriesInput {
             fn uri_base(_input: &crate::input::UpdateDatasetEntriesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_44 = &_input.project_name;
                 let input_44 = input_44.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })?;
-                let project_name = aws_smithy_http::label::fmt_string(input_44, false);
+                let project_name = aws_smithy_http::label::fmt_string(input_44, aws_smithy_http::label::EncodingStrategy::Default);
                 if project_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "project_name", details: "cannot be empty or unset" })
                             }
                 let input_45 = &_input.dataset_type;
                 let input_45 = input_45.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "dataset_type", details: "cannot be empty or unset" })?;
-                let dataset_type = aws_smithy_http::label::fmt_string(input_45, false);
+                let dataset_type = aws_smithy_http::label::fmt_string(input_45, aws_smithy_http::label::EncodingStrategy::Default);
                 if dataset_type.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "dataset_type", details: "cannot be empty or unset" })
                             }

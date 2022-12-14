@@ -1392,7 +1392,7 @@ impl DeleteActionTargetInput {
             fn uri_base(_input: &crate::input::DeleteActionTargetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.action_target_arn;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "action_target_arn", details: "cannot be empty or unset" })?;
-                let action_target_arn = aws_smithy_http::label::fmt_string(input_1, true);
+                let action_target_arn = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if action_target_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "action_target_arn", details: "cannot be empty or unset" })
                             }
@@ -1489,7 +1489,7 @@ impl DeleteFindingAggregatorInput {
             fn uri_base(_input: &crate::input::DeleteFindingAggregatorInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.finding_aggregator_arn;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "finding_aggregator_arn", details: "cannot be empty or unset" })?;
-                let finding_aggregator_arn = aws_smithy_http::label::fmt_string(input_2, true);
+                let finding_aggregator_arn = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if finding_aggregator_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "finding_aggregator_arn", details: "cannot be empty or unset" })
                             }
@@ -1586,7 +1586,7 @@ impl DeleteInsightInput {
             fn uri_base(_input: &crate::input::DeleteInsightInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.insight_arn;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "insight_arn", details: "cannot be empty or unset" })?;
-                let insight_arn = aws_smithy_http::label::fmt_string(input_3, true);
+                let insight_arn = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if insight_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "insight_arn", details: "cannot be empty or unset" })
                             }
@@ -2467,7 +2467,7 @@ impl DescribeStandardsControlsInput {
             fn uri_base(_input: &crate::input::DescribeStandardsControlsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_8 = &_input.standards_subscription_arn;
                 let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "standards_subscription_arn", details: "cannot be empty or unset" })?;
-                let standards_subscription_arn = aws_smithy_http::label::fmt_string(input_8, true);
+                let standards_subscription_arn = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if standards_subscription_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "standards_subscription_arn", details: "cannot be empty or unset" })
                             }
@@ -2575,7 +2575,7 @@ impl DisableImportFindingsForProductInput {
             fn uri_base(_input: &crate::input::DisableImportFindingsForProductInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_10 = &_input.product_subscription_arn;
                 let input_10 = input_10.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "product_subscription_arn", details: "cannot be empty or unset" })?;
-                let product_subscription_arn = aws_smithy_http::label::fmt_string(input_10, true);
+                let product_subscription_arn = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if product_subscription_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "product_subscription_arn", details: "cannot be empty or unset" })
                             }
@@ -3616,7 +3616,7 @@ impl GetFindingAggregatorInput {
             fn uri_base(_input: &crate::input::GetFindingAggregatorInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_11 = &_input.finding_aggregator_arn;
                 let input_11 = input_11.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "finding_aggregator_arn", details: "cannot be empty or unset" })?;
-                let finding_aggregator_arn = aws_smithy_http::label::fmt_string(input_11, true);
+                let finding_aggregator_arn = aws_smithy_http::label::fmt_string(input_11, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if finding_aggregator_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "finding_aggregator_arn", details: "cannot be empty or unset" })
                             }
@@ -3857,7 +3857,7 @@ impl GetInsightResultsInput {
             fn uri_base(_input: &crate::input::GetInsightResultsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_12 = &_input.insight_arn;
                 let input_12 = input_12.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "insight_arn", details: "cannot be empty or unset" })?;
-                let insight_arn = aws_smithy_http::label::fmt_string(input_12, true);
+                let insight_arn = aws_smithy_http::label::fmt_string(input_12, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if insight_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "insight_arn", details: "cannot be empty or unset" })
                             }
@@ -5043,7 +5043,7 @@ impl ListTagsForResourceInput {
             fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_18 = &_input.resource_arn;
                 let input_18 = input_18.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_18, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_18, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -5158,7 +5158,7 @@ impl TagResourceInput {
             fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_19 = &_input.resource_arn;
                 let input_19 = input_19.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_19, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_19, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -5277,7 +5277,7 @@ impl UntagResourceInput {
             fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_20 = &_input.resource_arn;
                 let input_20 = input_20.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_20, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_20, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -5408,7 +5408,7 @@ impl UpdateActionTargetInput {
             fn uri_base(_input: &crate::input::UpdateActionTargetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_23 = &_input.action_target_arn;
                 let input_23 = input_23.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "action_target_arn", details: "cannot be empty or unset" })?;
-                let action_target_arn = aws_smithy_http::label::fmt_string(input_23, true);
+                let action_target_arn = aws_smithy_http::label::fmt_string(input_23, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if action_target_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "action_target_arn", details: "cannot be empty or unset" })
                             }
@@ -5805,7 +5805,7 @@ impl UpdateInsightInput {
             fn uri_base(_input: &crate::input::UpdateInsightInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_24 = &_input.insight_arn;
                 let input_24 = input_24.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "insight_arn", details: "cannot be empty or unset" })?;
-                let insight_arn = aws_smithy_http::label::fmt_string(input_24, true);
+                let insight_arn = aws_smithy_http::label::fmt_string(input_24, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if insight_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "insight_arn", details: "cannot be empty or unset" })
                             }
@@ -6144,7 +6144,7 @@ impl UpdateStandardsControlInput {
             fn uri_base(_input: &crate::input::UpdateStandardsControlInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_25 = &_input.standards_control_arn;
                 let input_25 = input_25.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "standards_control_arn", details: "cannot be empty or unset" })?;
-                let standards_control_arn = aws_smithy_http::label::fmt_string(input_25, true);
+                let standards_control_arn = aws_smithy_http::label::fmt_string(input_25, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if standards_control_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "standards_control_arn", details: "cannot be empty or unset" })
                             }

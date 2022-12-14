@@ -78,7 +78,7 @@ impl CreateMemberInput {
             fn uri_base(_input: &crate::input::CreateMemberInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.network_id;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "network_id", details: "cannot be empty or unset" })?;
-                let network_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let network_id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "network_id", details: "cannot be empty or unset" })
                             }
@@ -458,7 +458,7 @@ impl CreateNodeInput {
             fn uri_base(_input: &crate::input::CreateNodeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.network_id;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "network_id", details: "cannot be empty or unset" })?;
-                let network_id = aws_smithy_http::label::fmt_string(input_2, false);
+                let network_id = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "network_id", details: "cannot be empty or unset" })
                             }
@@ -632,7 +632,7 @@ impl CreateProposalInput {
             fn uri_base(_input: &crate::input::CreateProposalInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.network_id;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "network_id", details: "cannot be empty or unset" })?;
-                let network_id = aws_smithy_http::label::fmt_string(input_3, false);
+                let network_id = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "network_id", details: "cannot be empty or unset" })
                             }
@@ -745,13 +745,13 @@ impl DeleteMemberInput {
             fn uri_base(_input: &crate::input::DeleteMemberInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_4 = &_input.network_id;
                 let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "network_id", details: "cannot be empty or unset" })?;
-                let network_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let network_id = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "network_id", details: "cannot be empty or unset" })
                             }
                 let input_5 = &_input.member_id;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "member_id", details: "cannot be empty or unset" })?;
-                let member_id = aws_smithy_http::label::fmt_string(input_5, false);
+                let member_id = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if member_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "member_id", details: "cannot be empty or unset" })
                             }
@@ -886,13 +886,13 @@ impl DeleteNodeInput {
             fn uri_base(_input: &crate::input::DeleteNodeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_6 = &_input.network_id;
                 let input_6 = input_6.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "network_id", details: "cannot be empty or unset" })?;
-                let network_id = aws_smithy_http::label::fmt_string(input_6, false);
+                let network_id = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "network_id", details: "cannot be empty or unset" })
                             }
                 let input_7 = &_input.node_id;
                 let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "node_id", details: "cannot be empty or unset" })?;
-                let node_id = aws_smithy_http::label::fmt_string(input_7, false);
+                let node_id = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
                 if node_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "node_id", details: "cannot be empty or unset" })
                             }
@@ -1009,13 +1009,13 @@ impl GetMemberInput {
             fn uri_base(_input: &crate::input::GetMemberInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_9 = &_input.network_id;
                 let input_9 = input_9.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "network_id", details: "cannot be empty or unset" })?;
-                let network_id = aws_smithy_http::label::fmt_string(input_9, false);
+                let network_id = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
                 if network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "network_id", details: "cannot be empty or unset" })
                             }
                 let input_10 = &_input.member_id;
                 let input_10 = input_10.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "member_id", details: "cannot be empty or unset" })?;
-                let member_id = aws_smithy_http::label::fmt_string(input_10, false);
+                let member_id = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Default);
                 if member_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "member_id", details: "cannot be empty or unset" })
                             }
@@ -1112,7 +1112,7 @@ impl GetNetworkInput {
             fn uri_base(_input: &crate::input::GetNetworkInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_11 = &_input.network_id;
                 let input_11 = input_11.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "network_id", details: "cannot be empty or unset" })?;
-                let network_id = aws_smithy_http::label::fmt_string(input_11, false);
+                let network_id = aws_smithy_http::label::fmt_string(input_11, aws_smithy_http::label::EncodingStrategy::Default);
                 if network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "network_id", details: "cannot be empty or unset" })
                             }
@@ -1235,13 +1235,13 @@ impl GetNodeInput {
             fn uri_base(_input: &crate::input::GetNodeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_12 = &_input.network_id;
                 let input_12 = input_12.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "network_id", details: "cannot be empty or unset" })?;
-                let network_id = aws_smithy_http::label::fmt_string(input_12, false);
+                let network_id = aws_smithy_http::label::fmt_string(input_12, aws_smithy_http::label::EncodingStrategy::Default);
                 if network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "network_id", details: "cannot be empty or unset" })
                             }
                 let input_13 = &_input.node_id;
                 let input_13 = input_13.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "node_id", details: "cannot be empty or unset" })?;
-                let node_id = aws_smithy_http::label::fmt_string(input_13, false);
+                let node_id = aws_smithy_http::label::fmt_string(input_13, aws_smithy_http::label::EncodingStrategy::Default);
                 if node_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "node_id", details: "cannot be empty or unset" })
                             }
@@ -1358,13 +1358,13 @@ impl GetProposalInput {
             fn uri_base(_input: &crate::input::GetProposalInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_15 = &_input.network_id;
                 let input_15 = input_15.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "network_id", details: "cannot be empty or unset" })?;
-                let network_id = aws_smithy_http::label::fmt_string(input_15, false);
+                let network_id = aws_smithy_http::label::fmt_string(input_15, aws_smithy_http::label::EncodingStrategy::Default);
                 if network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "network_id", details: "cannot be empty or unset" })
                             }
                 let input_16 = &_input.proposal_id;
                 let input_16 = input_16.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "proposal_id", details: "cannot be empty or unset" })?;
-                let proposal_id = aws_smithy_http::label::fmt_string(input_16, false);
+                let proposal_id = aws_smithy_http::label::fmt_string(input_16, aws_smithy_http::label::EncodingStrategy::Default);
                 if proposal_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "proposal_id", details: "cannot be empty or unset" })
                             }
@@ -1635,7 +1635,7 @@ impl ListMembersInput {
             fn uri_base(_input: &crate::input::ListMembersInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_19 = &_input.network_id;
                 let input_19 = input_19.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "network_id", details: "cannot be empty or unset" })?;
-                let network_id = aws_smithy_http::label::fmt_string(input_19, false);
+                let network_id = aws_smithy_http::label::fmt_string(input_19, aws_smithy_http::label::EncodingStrategy::Default);
                 if network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "network_id", details: "cannot be empty or unset" })
                             }
@@ -1963,7 +1963,7 @@ impl ListNodesInput {
             fn uri_base(_input: &crate::input::ListNodesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_30 = &_input.network_id;
                 let input_30 = input_30.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "network_id", details: "cannot be empty or unset" })?;
-                let network_id = aws_smithy_http::label::fmt_string(input_30, false);
+                let network_id = aws_smithy_http::label::fmt_string(input_30, aws_smithy_http::label::EncodingStrategy::Default);
                 if network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "network_id", details: "cannot be empty or unset" })
                             }
@@ -2101,7 +2101,7 @@ impl ListProposalsInput {
             fn uri_base(_input: &crate::input::ListProposalsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_35 = &_input.network_id;
                 let input_35 = input_35.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "network_id", details: "cannot be empty or unset" })?;
-                let network_id = aws_smithy_http::label::fmt_string(input_35, false);
+                let network_id = aws_smithy_http::label::fmt_string(input_35, aws_smithy_http::label::EncodingStrategy::Default);
                 if network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "network_id", details: "cannot be empty or unset" })
                             }
@@ -2245,13 +2245,13 @@ impl ListProposalVotesInput {
             fn uri_base(_input: &crate::input::ListProposalVotesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_38 = &_input.network_id;
                 let input_38 = input_38.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "network_id", details: "cannot be empty or unset" })?;
-                let network_id = aws_smithy_http::label::fmt_string(input_38, false);
+                let network_id = aws_smithy_http::label::fmt_string(input_38, aws_smithy_http::label::EncodingStrategy::Default);
                 if network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "network_id", details: "cannot be empty or unset" })
                             }
                 let input_39 = &_input.proposal_id;
                 let input_39 = input_39.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "proposal_id", details: "cannot be empty or unset" })?;
-                let proposal_id = aws_smithy_http::label::fmt_string(input_39, false);
+                let proposal_id = aws_smithy_http::label::fmt_string(input_39, aws_smithy_http::label::EncodingStrategy::Default);
                 if proposal_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "proposal_id", details: "cannot be empty or unset" })
                             }
@@ -2359,7 +2359,7 @@ impl ListTagsForResourceInput {
             fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_42 = &_input.resource_arn;
                 let input_42 = input_42.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_42, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_42, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -2456,7 +2456,7 @@ impl RejectInvitationInput {
             fn uri_base(_input: &crate::input::RejectInvitationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_43 = &_input.invitation_id;
                 let input_43 = input_43.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "invitation_id", details: "cannot be empty or unset" })?;
-                let invitation_id = aws_smithy_http::label::fmt_string(input_43, false);
+                let invitation_id = aws_smithy_http::label::fmt_string(input_43, aws_smithy_http::label::EncodingStrategy::Default);
                 if invitation_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "invitation_id", details: "cannot be empty or unset" })
                             }
@@ -2571,7 +2571,7 @@ impl TagResourceInput {
             fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_44 = &_input.resource_arn;
                 let input_44 = input_44.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_44, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_44, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -2690,7 +2690,7 @@ impl UntagResourceInput {
             fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_45 = &_input.resource_arn;
                 let input_45 = input_45.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_45, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_45, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -2821,13 +2821,13 @@ impl UpdateMemberInput {
             fn uri_base(_input: &crate::input::UpdateMemberInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_48 = &_input.network_id;
                 let input_48 = input_48.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "network_id", details: "cannot be empty or unset" })?;
-                let network_id = aws_smithy_http::label::fmt_string(input_48, false);
+                let network_id = aws_smithy_http::label::fmt_string(input_48, aws_smithy_http::label::EncodingStrategy::Default);
                 if network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "network_id", details: "cannot be empty or unset" })
                             }
                 let input_49 = &_input.member_id;
                 let input_49 = input_49.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "member_id", details: "cannot be empty or unset" })?;
-                let member_id = aws_smithy_http::label::fmt_string(input_49, false);
+                let member_id = aws_smithy_http::label::fmt_string(input_49, aws_smithy_http::label::EncodingStrategy::Default);
                 if member_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "member_id", details: "cannot be empty or unset" })
                             }
@@ -2966,13 +2966,13 @@ impl UpdateNodeInput {
             fn uri_base(_input: &crate::input::UpdateNodeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_50 = &_input.network_id;
                 let input_50 = input_50.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "network_id", details: "cannot be empty or unset" })?;
-                let network_id = aws_smithy_http::label::fmt_string(input_50, false);
+                let network_id = aws_smithy_http::label::fmt_string(input_50, aws_smithy_http::label::EncodingStrategy::Default);
                 if network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "network_id", details: "cannot be empty or unset" })
                             }
                 let input_51 = &_input.node_id;
                 let input_51 = input_51.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "node_id", details: "cannot be empty or unset" })?;
-                let node_id = aws_smithy_http::label::fmt_string(input_51, false);
+                let node_id = aws_smithy_http::label::fmt_string(input_51, aws_smithy_http::label::EncodingStrategy::Default);
                 if node_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "node_id", details: "cannot be empty or unset" })
                             }
@@ -3109,13 +3109,13 @@ impl VoteOnProposalInput {
             fn uri_base(_input: &crate::input::VoteOnProposalInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_52 = &_input.network_id;
                 let input_52 = input_52.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "network_id", details: "cannot be empty or unset" })?;
-                let network_id = aws_smithy_http::label::fmt_string(input_52, false);
+                let network_id = aws_smithy_http::label::fmt_string(input_52, aws_smithy_http::label::EncodingStrategy::Default);
                 if network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "network_id", details: "cannot be empty or unset" })
                             }
                 let input_53 = &_input.proposal_id;
                 let input_53 = input_53.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "proposal_id", details: "cannot be empty or unset" })?;
-                let proposal_id = aws_smithy_http::label::fmt_string(input_53, false);
+                let proposal_id = aws_smithy_http::label::fmt_string(input_53, aws_smithy_http::label::EncodingStrategy::Default);
                 if proposal_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "proposal_id", details: "cannot be empty or unset" })
                             }

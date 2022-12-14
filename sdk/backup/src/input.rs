@@ -192,7 +192,7 @@ impl CreateBackupSelectionInput {
             fn uri_base(_input: &crate::input::CreateBackupSelectionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.backup_plan_id;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_plan_id", details: "cannot be empty or unset" })?;
-                let backup_plan_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let backup_plan_id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_plan_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_plan_id", details: "cannot be empty or unset" })
                             }
@@ -337,7 +337,7 @@ impl CreateBackupVaultInput {
             fn uri_base(_input: &crate::input::CreateBackupVaultInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.backup_vault_name;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })?;
-                let backup_vault_name = aws_smithy_http::label::fmt_string(input_2, false);
+                let backup_vault_name = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })
                             }
@@ -764,7 +764,7 @@ impl DeleteBackupPlanInput {
             fn uri_base(_input: &crate::input::DeleteBackupPlanInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.backup_plan_id;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_plan_id", details: "cannot be empty or unset" })?;
-                let backup_plan_id = aws_smithy_http::label::fmt_string(input_3, false);
+                let backup_plan_id = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_plan_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_plan_id", details: "cannot be empty or unset" })
                             }
@@ -873,13 +873,13 @@ impl DeleteBackupSelectionInput {
             fn uri_base(_input: &crate::input::DeleteBackupSelectionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_4 = &_input.backup_plan_id;
                 let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_plan_id", details: "cannot be empty or unset" })?;
-                let backup_plan_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let backup_plan_id = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_plan_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_plan_id", details: "cannot be empty or unset" })
                             }
                 let input_5 = &_input.selection_id;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "selection_id", details: "cannot be empty or unset" })?;
-                let selection_id = aws_smithy_http::label::fmt_string(input_5, false);
+                let selection_id = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if selection_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "selection_id", details: "cannot be empty or unset" })
                             }
@@ -976,7 +976,7 @@ impl DeleteBackupVaultInput {
             fn uri_base(_input: &crate::input::DeleteBackupVaultInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_6 = &_input.backup_vault_name;
                 let input_6 = input_6.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })?;
-                let backup_vault_name = aws_smithy_http::label::fmt_string(input_6, false);
+                let backup_vault_name = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })
                             }
@@ -1073,7 +1073,7 @@ impl DeleteBackupVaultAccessPolicyInput {
             fn uri_base(_input: &crate::input::DeleteBackupVaultAccessPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_7 = &_input.backup_vault_name;
                 let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })?;
-                let backup_vault_name = aws_smithy_http::label::fmt_string(input_7, false);
+                let backup_vault_name = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })
                             }
@@ -1170,7 +1170,7 @@ impl DeleteBackupVaultLockConfigurationInput {
             fn uri_base(_input: &crate::input::DeleteBackupVaultLockConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_8 = &_input.backup_vault_name;
                 let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })?;
-                let backup_vault_name = aws_smithy_http::label::fmt_string(input_8, false);
+                let backup_vault_name = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })
                             }
@@ -1267,7 +1267,7 @@ impl DeleteBackupVaultNotificationsInput {
             fn uri_base(_input: &crate::input::DeleteBackupVaultNotificationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_9 = &_input.backup_vault_name;
                 let input_9 = input_9.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })?;
-                let backup_vault_name = aws_smithy_http::label::fmt_string(input_9, false);
+                let backup_vault_name = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })
                             }
@@ -1364,7 +1364,7 @@ impl DeleteFrameworkInput {
             fn uri_base(_input: &crate::input::DeleteFrameworkInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_10 = &_input.framework_name;
                 let input_10 = input_10.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "framework_name", details: "cannot be empty or unset" })?;
-                let framework_name = aws_smithy_http::label::fmt_string(input_10, false);
+                let framework_name = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Default);
                 if framework_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "framework_name", details: "cannot be empty or unset" })
                             }
@@ -1473,13 +1473,13 @@ impl DeleteRecoveryPointInput {
             fn uri_base(_input: &crate::input::DeleteRecoveryPointInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_11 = &_input.backup_vault_name;
                 let input_11 = input_11.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })?;
-                let backup_vault_name = aws_smithy_http::label::fmt_string(input_11, false);
+                let backup_vault_name = aws_smithy_http::label::fmt_string(input_11, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })
                             }
                 let input_12 = &_input.recovery_point_arn;
                 let input_12 = input_12.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "recovery_point_arn", details: "cannot be empty or unset" })?;
-                let recovery_point_arn = aws_smithy_http::label::fmt_string(input_12, false);
+                let recovery_point_arn = aws_smithy_http::label::fmt_string(input_12, aws_smithy_http::label::EncodingStrategy::Default);
                 if recovery_point_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "recovery_point_arn", details: "cannot be empty or unset" })
                             }
@@ -1576,7 +1576,7 @@ impl DeleteReportPlanInput {
             fn uri_base(_input: &crate::input::DeleteReportPlanInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_13 = &_input.report_plan_name;
                 let input_13 = input_13.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "report_plan_name", details: "cannot be empty or unset" })?;
-                let report_plan_name = aws_smithy_http::label::fmt_string(input_13, false);
+                let report_plan_name = aws_smithy_http::label::fmt_string(input_13, aws_smithy_http::label::EncodingStrategy::Default);
                 if report_plan_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "report_plan_name", details: "cannot be empty or unset" })
                             }
@@ -1673,7 +1673,7 @@ impl DescribeBackupJobInput {
             fn uri_base(_input: &crate::input::DescribeBackupJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_14 = &_input.backup_job_id;
                 let input_14 = input_14.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_job_id", details: "cannot be empty or unset" })?;
-                let backup_job_id = aws_smithy_http::label::fmt_string(input_14, false);
+                let backup_job_id = aws_smithy_http::label::fmt_string(input_14, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_job_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_job_id", details: "cannot be empty or unset" })
                             }
@@ -1770,7 +1770,7 @@ impl DescribeBackupVaultInput {
             fn uri_base(_input: &crate::input::DescribeBackupVaultInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_15 = &_input.backup_vault_name;
                 let input_15 = input_15.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })?;
-                let backup_vault_name = aws_smithy_http::label::fmt_string(input_15, false);
+                let backup_vault_name = aws_smithy_http::label::fmt_string(input_15, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })
                             }
@@ -1867,7 +1867,7 @@ impl DescribeCopyJobInput {
             fn uri_base(_input: &crate::input::DescribeCopyJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_16 = &_input.copy_job_id;
                 let input_16 = input_16.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "copy_job_id", details: "cannot be empty or unset" })?;
-                let copy_job_id = aws_smithy_http::label::fmt_string(input_16, false);
+                let copy_job_id = aws_smithy_http::label::fmt_string(input_16, aws_smithy_http::label::EncodingStrategy::Default);
                 if copy_job_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "copy_job_id", details: "cannot be empty or unset" })
                             }
@@ -1964,7 +1964,7 @@ impl DescribeFrameworkInput {
             fn uri_base(_input: &crate::input::DescribeFrameworkInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_17 = &_input.framework_name;
                 let input_17 = input_17.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "framework_name", details: "cannot be empty or unset" })?;
-                let framework_name = aws_smithy_http::label::fmt_string(input_17, false);
+                let framework_name = aws_smithy_http::label::fmt_string(input_17, aws_smithy_http::label::EncodingStrategy::Default);
                 if framework_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "framework_name", details: "cannot be empty or unset" })
                             }
@@ -2140,7 +2140,7 @@ impl DescribeProtectedResourceInput {
             fn uri_base(_input: &crate::input::DescribeProtectedResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_18 = &_input.resource_arn;
                 let input_18 = input_18.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_18, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_18, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -2249,13 +2249,13 @@ impl DescribeRecoveryPointInput {
             fn uri_base(_input: &crate::input::DescribeRecoveryPointInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_19 = &_input.backup_vault_name;
                 let input_19 = input_19.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })?;
-                let backup_vault_name = aws_smithy_http::label::fmt_string(input_19, false);
+                let backup_vault_name = aws_smithy_http::label::fmt_string(input_19, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })
                             }
                 let input_20 = &_input.recovery_point_arn;
                 let input_20 = input_20.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "recovery_point_arn", details: "cannot be empty or unset" })?;
-                let recovery_point_arn = aws_smithy_http::label::fmt_string(input_20, false);
+                let recovery_point_arn = aws_smithy_http::label::fmt_string(input_20, aws_smithy_http::label::EncodingStrategy::Default);
                 if recovery_point_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "recovery_point_arn", details: "cannot be empty or unset" })
                             }
@@ -2431,7 +2431,7 @@ impl DescribeReportJobInput {
             fn uri_base(_input: &crate::input::DescribeReportJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_21 = &_input.report_job_id;
                 let input_21 = input_21.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "report_job_id", details: "cannot be empty or unset" })?;
-                let report_job_id = aws_smithy_http::label::fmt_string(input_21, false);
+                let report_job_id = aws_smithy_http::label::fmt_string(input_21, aws_smithy_http::label::EncodingStrategy::Default);
                 if report_job_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "report_job_id", details: "cannot be empty or unset" })
                             }
@@ -2528,7 +2528,7 @@ impl DescribeReportPlanInput {
             fn uri_base(_input: &crate::input::DescribeReportPlanInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_22 = &_input.report_plan_name;
                 let input_22 = input_22.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "report_plan_name", details: "cannot be empty or unset" })?;
-                let report_plan_name = aws_smithy_http::label::fmt_string(input_22, false);
+                let report_plan_name = aws_smithy_http::label::fmt_string(input_22, aws_smithy_http::label::EncodingStrategy::Default);
                 if report_plan_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "report_plan_name", details: "cannot be empty or unset" })
                             }
@@ -2625,7 +2625,7 @@ impl DescribeRestoreJobInput {
             fn uri_base(_input: &crate::input::DescribeRestoreJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_23 = &_input.restore_job_id;
                 let input_23 = input_23.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "restore_job_id", details: "cannot be empty or unset" })?;
-                let restore_job_id = aws_smithy_http::label::fmt_string(input_23, false);
+                let restore_job_id = aws_smithy_http::label::fmt_string(input_23, aws_smithy_http::label::EncodingStrategy::Default);
                 if restore_job_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "restore_job_id", details: "cannot be empty or unset" })
                             }
@@ -2734,13 +2734,13 @@ impl DisassociateRecoveryPointInput {
             fn uri_base(_input: &crate::input::DisassociateRecoveryPointInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_24 = &_input.backup_vault_name;
                 let input_24 = input_24.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })?;
-                let backup_vault_name = aws_smithy_http::label::fmt_string(input_24, false);
+                let backup_vault_name = aws_smithy_http::label::fmt_string(input_24, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })
                             }
                 let input_25 = &_input.recovery_point_arn;
                 let input_25 = input_25.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "recovery_point_arn", details: "cannot be empty or unset" })?;
-                let recovery_point_arn = aws_smithy_http::label::fmt_string(input_25, false);
+                let recovery_point_arn = aws_smithy_http::label::fmt_string(input_25, aws_smithy_http::label::EncodingStrategy::Default);
                 if recovery_point_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "recovery_point_arn", details: "cannot be empty or unset" })
                             }
@@ -2837,7 +2837,7 @@ impl ExportBackupPlanTemplateInput {
             fn uri_base(_input: &crate::input::ExportBackupPlanTemplateInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_26 = &_input.backup_plan_id;
                 let input_26 = input_26.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_plan_id", details: "cannot be empty or unset" })?;
-                let backup_plan_id = aws_smithy_http::label::fmt_string(input_26, false);
+                let backup_plan_id = aws_smithy_http::label::fmt_string(input_26, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_plan_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_plan_id", details: "cannot be empty or unset" })
                             }
@@ -2946,7 +2946,7 @@ impl GetBackupPlanInput {
             fn uri_base(_input: &crate::input::GetBackupPlanInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_27 = &_input.backup_plan_id;
                 let input_27 = input_27.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_plan_id", details: "cannot be empty or unset" })?;
-                let backup_plan_id = aws_smithy_http::label::fmt_string(input_27, false);
+                let backup_plan_id = aws_smithy_http::label::fmt_string(input_27, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_plan_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_plan_id", details: "cannot be empty or unset" })
                             }
@@ -3146,7 +3146,7 @@ impl GetBackupPlanFromTemplateInput {
             fn uri_base(_input: &crate::input::GetBackupPlanFromTemplateInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_29 = &_input.backup_plan_template_id;
                 let input_29 = input_29.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_plan_template_id", details: "cannot be empty or unset" })?;
-                let backup_plan_template_id = aws_smithy_http::label::fmt_string(input_29, false);
+                let backup_plan_template_id = aws_smithy_http::label::fmt_string(input_29, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_plan_template_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_plan_template_id", details: "cannot be empty or unset" })
                             }
@@ -3255,13 +3255,13 @@ impl GetBackupSelectionInput {
             fn uri_base(_input: &crate::input::GetBackupSelectionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_30 = &_input.backup_plan_id;
                 let input_30 = input_30.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_plan_id", details: "cannot be empty or unset" })?;
-                let backup_plan_id = aws_smithy_http::label::fmt_string(input_30, false);
+                let backup_plan_id = aws_smithy_http::label::fmt_string(input_30, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_plan_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_plan_id", details: "cannot be empty or unset" })
                             }
                 let input_31 = &_input.selection_id;
                 let input_31 = input_31.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "selection_id", details: "cannot be empty or unset" })?;
-                let selection_id = aws_smithy_http::label::fmt_string(input_31, false);
+                let selection_id = aws_smithy_http::label::fmt_string(input_31, aws_smithy_http::label::EncodingStrategy::Default);
                 if selection_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "selection_id", details: "cannot be empty or unset" })
                             }
@@ -3358,7 +3358,7 @@ impl GetBackupVaultAccessPolicyInput {
             fn uri_base(_input: &crate::input::GetBackupVaultAccessPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_32 = &_input.backup_vault_name;
                 let input_32 = input_32.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })?;
-                let backup_vault_name = aws_smithy_http::label::fmt_string(input_32, false);
+                let backup_vault_name = aws_smithy_http::label::fmt_string(input_32, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })
                             }
@@ -3455,7 +3455,7 @@ impl GetBackupVaultNotificationsInput {
             fn uri_base(_input: &crate::input::GetBackupVaultNotificationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_33 = &_input.backup_vault_name;
                 let input_33 = input_33.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })?;
-                let backup_vault_name = aws_smithy_http::label::fmt_string(input_33, false);
+                let backup_vault_name = aws_smithy_http::label::fmt_string(input_33, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })
                             }
@@ -3564,13 +3564,13 @@ impl GetRecoveryPointRestoreMetadataInput {
             fn uri_base(_input: &crate::input::GetRecoveryPointRestoreMetadataInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_34 = &_input.backup_vault_name;
                 let input_34 = input_34.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })?;
-                let backup_vault_name = aws_smithy_http::label::fmt_string(input_34, false);
+                let backup_vault_name = aws_smithy_http::label::fmt_string(input_34, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })
                             }
                 let input_35 = &_input.recovery_point_arn;
                 let input_35 = input_35.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "recovery_point_arn", details: "cannot be empty or unset" })?;
-                let recovery_point_arn = aws_smithy_http::label::fmt_string(input_35, false);
+                let recovery_point_arn = aws_smithy_http::label::fmt_string(input_35, aws_smithy_http::label::EncodingStrategy::Default);
                 if recovery_point_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "recovery_point_arn", details: "cannot be empty or unset" })
                             }
@@ -4292,7 +4292,7 @@ impl ListBackupPlanVersionsInput {
             fn uri_base(_input: &crate::input::ListBackupPlanVersionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_52 = &_input.backup_plan_id;
                 let input_52 = input_52.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_plan_id", details: "cannot be empty or unset" })?;
-                let backup_plan_id = aws_smithy_http::label::fmt_string(input_52, false);
+                let backup_plan_id = aws_smithy_http::label::fmt_string(input_52, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_plan_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_plan_id", details: "cannot be empty or unset" })
                             }
@@ -4424,7 +4424,7 @@ impl ListBackupSelectionsInput {
             fn uri_base(_input: &crate::input::ListBackupSelectionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_55 = &_input.backup_plan_id;
                 let input_55 = input_55.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_plan_id", details: "cannot be empty or unset" })?;
-                let backup_plan_id = aws_smithy_http::label::fmt_string(input_55, false);
+                let backup_plan_id = aws_smithy_http::label::fmt_string(input_55, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_plan_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_plan_id", details: "cannot be empty or unset" })
                             }
@@ -5239,7 +5239,7 @@ impl ListRecoveryPointsByBackupVaultInput {
             fn uri_base(_input: &crate::input::ListRecoveryPointsByBackupVaultInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_75 = &_input.backup_vault_name;
                 let input_75 = input_75.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })?;
-                let backup_vault_name = aws_smithy_http::label::fmt_string(input_75, false);
+                let backup_vault_name = aws_smithy_http::label::fmt_string(input_75, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })
                             }
@@ -5390,7 +5390,7 @@ impl ListRecoveryPointsByResourceInput {
             fn uri_base(_input: &crate::input::ListRecoveryPointsByResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_83 = &_input.resource_arn;
                 let input_83 = input_83.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_83, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_83, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -6016,7 +6016,7 @@ impl ListTagsInput {
             fn uri_base(_input: &crate::input::ListTagsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_102 = &_input.resource_arn;
                 let input_102 = input_102.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_102, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_102, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -6136,7 +6136,7 @@ impl PutBackupVaultAccessPolicyInput {
             fn uri_base(_input: &crate::input::PutBackupVaultAccessPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_105 = &_input.backup_vault_name;
                 let input_105 = input_105.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })?;
-                let backup_vault_name = aws_smithy_http::label::fmt_string(input_105, false);
+                let backup_vault_name = aws_smithy_http::label::fmt_string(input_105, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })
                             }
@@ -6287,7 +6287,7 @@ impl PutBackupVaultLockConfigurationInput {
             fn uri_base(_input: &crate::input::PutBackupVaultLockConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_106 = &_input.backup_vault_name;
                 let input_106 = input_106.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })?;
-                let backup_vault_name = aws_smithy_http::label::fmt_string(input_106, false);
+                let backup_vault_name = aws_smithy_http::label::fmt_string(input_106, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })
                             }
@@ -6438,7 +6438,7 @@ impl PutBackupVaultNotificationsInput {
             fn uri_base(_input: &crate::input::PutBackupVaultNotificationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_107 = &_input.backup_vault_name;
                 let input_107 = input_107.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })?;
-                let backup_vault_name = aws_smithy_http::label::fmt_string(input_107, false);
+                let backup_vault_name = aws_smithy_http::label::fmt_string(input_107, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })
                             }
@@ -6922,7 +6922,7 @@ impl StartReportJobInput {
             fn uri_base(_input: &crate::input::StartReportJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_108 = &_input.report_plan_name;
                 let input_108 = input_108.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "report_plan_name", details: "cannot be empty or unset" })?;
-                let report_plan_name = aws_smithy_http::label::fmt_string(input_108, false);
+                let report_plan_name = aws_smithy_http::label::fmt_string(input_108, aws_smithy_http::label::EncodingStrategy::Default);
                 if report_plan_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "report_plan_name", details: "cannot be empty or unset" })
                             }
@@ -7222,7 +7222,7 @@ impl StopBackupJobInput {
             fn uri_base(_input: &crate::input::StopBackupJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_109 = &_input.backup_job_id;
                 let input_109 = input_109.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_job_id", details: "cannot be empty or unset" })?;
-                let backup_job_id = aws_smithy_http::label::fmt_string(input_109, false);
+                let backup_job_id = aws_smithy_http::label::fmt_string(input_109, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_job_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_job_id", details: "cannot be empty or unset" })
                             }
@@ -7337,7 +7337,7 @@ impl TagResourceInput {
             fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_110 = &_input.resource_arn;
                 let input_110 = input_110.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_110, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_110, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -7456,7 +7456,7 @@ impl UntagResourceInput {
             fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_111 = &_input.resource_arn;
                 let input_111 = input_111.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_111, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_111, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -7569,7 +7569,7 @@ impl UpdateBackupPlanInput {
             fn uri_base(_input: &crate::input::UpdateBackupPlanInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_112 = &_input.backup_plan_id;
                 let input_112 = input_112.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_plan_id", details: "cannot be empty or unset" })?;
-                let backup_plan_id = aws_smithy_http::label::fmt_string(input_112, false);
+                let backup_plan_id = aws_smithy_http::label::fmt_string(input_112, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_plan_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_plan_id", details: "cannot be empty or unset" })
                             }
@@ -7715,7 +7715,7 @@ impl UpdateFrameworkInput {
             fn uri_base(_input: &crate::input::UpdateFrameworkInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_113 = &_input.framework_name;
                 let input_113 = input_113.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "framework_name", details: "cannot be empty or unset" })?;
-                let framework_name = aws_smithy_http::label::fmt_string(input_113, false);
+                let framework_name = aws_smithy_http::label::fmt_string(input_113, aws_smithy_http::label::EncodingStrategy::Default);
                 if framework_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "framework_name", details: "cannot be empty or unset" })
                             }
@@ -7943,13 +7943,13 @@ impl UpdateRecoveryPointLifecycleInput {
             fn uri_base(_input: &crate::input::UpdateRecoveryPointLifecycleInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_114 = &_input.backup_vault_name;
                 let input_114 = input_114.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })?;
-                let backup_vault_name = aws_smithy_http::label::fmt_string(input_114, false);
+                let backup_vault_name = aws_smithy_http::label::fmt_string(input_114, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_vault_name", details: "cannot be empty or unset" })
                             }
                 let input_115 = &_input.recovery_point_arn;
                 let input_115 = input_115.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "recovery_point_arn", details: "cannot be empty or unset" })?;
-                let recovery_point_arn = aws_smithy_http::label::fmt_string(input_115, false);
+                let recovery_point_arn = aws_smithy_http::label::fmt_string(input_115, aws_smithy_http::label::EncodingStrategy::Default);
                 if recovery_point_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "recovery_point_arn", details: "cannot be empty or unset" })
                             }
@@ -8224,7 +8224,7 @@ impl UpdateReportPlanInput {
             fn uri_base(_input: &crate::input::UpdateReportPlanInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_116 = &_input.report_plan_name;
                 let input_116 = input_116.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "report_plan_name", details: "cannot be empty or unset" })?;
-                let report_plan_name = aws_smithy_http::label::fmt_string(input_116, false);
+                let report_plan_name = aws_smithy_http::label::fmt_string(input_116, aws_smithy_http::label::EncodingStrategy::Default);
                 if report_plan_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "report_plan_name", details: "cannot be empty or unset" })
                             }

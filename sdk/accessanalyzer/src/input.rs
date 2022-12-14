@@ -161,7 +161,7 @@ impl CancelPolicyGenerationInput {
             fn uri_base(_input: &crate::input::CancelPolicyGenerationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.job_id;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "job_id", details: "cannot be empty or unset" })?;
-                let job_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let job_id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if job_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "job_id", details: "cannot be empty or unset" })
                             }
@@ -589,7 +589,7 @@ impl CreateArchiveRuleInput {
             fn uri_base(_input: &crate::input::CreateArchiveRuleInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.analyzer_name;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "analyzer_name", details: "cannot be empty or unset" })?;
-                let analyzer_name = aws_smithy_http::label::fmt_string(input_2, false);
+                let analyzer_name = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if analyzer_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "analyzer_name", details: "cannot be empty or unset" })
                             }
@@ -705,7 +705,7 @@ impl DeleteAnalyzerInput {
             fn uri_base(_input: &crate::input::DeleteAnalyzerInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.analyzer_name;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "analyzer_name", details: "cannot be empty or unset" })?;
-                let analyzer_name = aws_smithy_http::label::fmt_string(input_3, false);
+                let analyzer_name = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if analyzer_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "analyzer_name", details: "cannot be empty or unset" })
                             }
@@ -837,13 +837,13 @@ impl DeleteArchiveRuleInput {
             fn uri_base(_input: &crate::input::DeleteArchiveRuleInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_5 = &_input.analyzer_name;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "analyzer_name", details: "cannot be empty or unset" })?;
-                let analyzer_name = aws_smithy_http::label::fmt_string(input_5, false);
+                let analyzer_name = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if analyzer_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "analyzer_name", details: "cannot be empty or unset" })
                             }
                 let input_6 = &_input.rule_name;
                 let input_6 = input_6.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "rule_name", details: "cannot be empty or unset" })?;
-                let rule_name = aws_smithy_http::label::fmt_string(input_6, false);
+                let rule_name = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if rule_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "rule_name", details: "cannot be empty or unset" })
                             }
@@ -960,7 +960,7 @@ impl GetAccessPreviewInput {
             fn uri_base(_input: &crate::input::GetAccessPreviewInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_8 = &_input.access_preview_id;
                 let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "access_preview_id", details: "cannot be empty or unset" })?;
-                let access_preview_id = aws_smithy_http::label::fmt_string(input_8, false);
+                let access_preview_id = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
                 if access_preview_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "access_preview_id", details: "cannot be empty or unset" })
                             }
@@ -1179,7 +1179,7 @@ impl GetAnalyzerInput {
             fn uri_base(_input: &crate::input::GetAnalyzerInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_12 = &_input.analyzer_name;
                 let input_12 = input_12.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "analyzer_name", details: "cannot be empty or unset" })?;
-                let analyzer_name = aws_smithy_http::label::fmt_string(input_12, false);
+                let analyzer_name = aws_smithy_http::label::fmt_string(input_12, aws_smithy_http::label::EncodingStrategy::Default);
                 if analyzer_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "analyzer_name", details: "cannot be empty or unset" })
                             }
@@ -1288,13 +1288,13 @@ impl GetArchiveRuleInput {
             fn uri_base(_input: &crate::input::GetArchiveRuleInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_13 = &_input.analyzer_name;
                 let input_13 = input_13.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "analyzer_name", details: "cannot be empty or unset" })?;
-                let analyzer_name = aws_smithy_http::label::fmt_string(input_13, false);
+                let analyzer_name = aws_smithy_http::label::fmt_string(input_13, aws_smithy_http::label::EncodingStrategy::Default);
                 if analyzer_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "analyzer_name", details: "cannot be empty or unset" })
                             }
                 let input_14 = &_input.rule_name;
                 let input_14 = input_14.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "rule_name", details: "cannot be empty or unset" })?;
-                let rule_name = aws_smithy_http::label::fmt_string(input_14, false);
+                let rule_name = aws_smithy_http::label::fmt_string(input_14, aws_smithy_http::label::EncodingStrategy::Default);
                 if rule_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "rule_name", details: "cannot be empty or unset" })
                             }
@@ -1403,7 +1403,7 @@ impl GetFindingInput {
             fn uri_base(_input: &crate::input::GetFindingInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_15 = &_input.id;
                 let input_15 = input_15.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
-                let id = aws_smithy_http::label::fmt_string(input_15, false);
+                let id = aws_smithy_http::label::fmt_string(input_15, aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
                             }
@@ -1536,7 +1536,7 @@ impl GetGeneratedPolicyInput {
             fn uri_base(_input: &crate::input::GetGeneratedPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_17 = &_input.job_id;
                 let input_17 = input_17.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "job_id", details: "cannot be empty or unset" })?;
-                let job_id = aws_smithy_http::label::fmt_string(input_17, false);
+                let job_id = aws_smithy_http::label::fmt_string(input_17, aws_smithy_http::label::EncodingStrategy::Default);
                 if job_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "job_id", details: "cannot be empty or unset" })
                             }
@@ -1698,7 +1698,7 @@ impl ListAccessPreviewFindingsInput {
             fn uri_base(_input: &crate::input::ListAccessPreviewFindingsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_20 = &_input.access_preview_id;
                 let input_20 = input_20.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "access_preview_id", details: "cannot be empty or unset" })?;
-                let access_preview_id = aws_smithy_http::label::fmt_string(input_20, false);
+                let access_preview_id = aws_smithy_http::label::fmt_string(input_20, aws_smithy_http::label::EncodingStrategy::Default);
                 if access_preview_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "access_preview_id", details: "cannot be empty or unset" })
                             }
@@ -2212,7 +2212,7 @@ impl ListArchiveRulesInput {
             fn uri_base(_input: &crate::input::ListArchiveRulesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_27 = &_input.analyzer_name;
                 let input_27 = input_27.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "analyzer_name", details: "cannot be empty or unset" })?;
-                let analyzer_name = aws_smithy_http::label::fmt_string(input_27, false);
+                let analyzer_name = aws_smithy_http::label::fmt_string(input_27, aws_smithy_http::label::EncodingStrategy::Default);
                 if analyzer_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "analyzer_name", details: "cannot be empty or unset" })
                             }
@@ -2598,7 +2598,7 @@ impl ListTagsForResourceInput {
             fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_33 = &_input.resource_arn;
                 let input_33 = input_33.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_33, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_33, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -2944,7 +2944,7 @@ impl TagResourceInput {
             fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_34 = &_input.resource_arn;
                 let input_34 = input_34.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_34, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_34, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -3063,7 +3063,7 @@ impl UntagResourceInput {
             fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_35 = &_input.resource_arn;
                 let input_35 = input_35.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_35, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_35, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -3215,13 +3215,13 @@ impl UpdateArchiveRuleInput {
             fn uri_base(_input: &crate::input::UpdateArchiveRuleInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_38 = &_input.analyzer_name;
                 let input_38 = input_38.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "analyzer_name", details: "cannot be empty or unset" })?;
-                let analyzer_name = aws_smithy_http::label::fmt_string(input_38, false);
+                let analyzer_name = aws_smithy_http::label::fmt_string(input_38, aws_smithy_http::label::EncodingStrategy::Default);
                 if analyzer_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "analyzer_name", details: "cannot be empty or unset" })
                             }
                 let input_39 = &_input.rule_name;
                 let input_39 = input_39.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "rule_name", details: "cannot be empty or unset" })?;
-                let rule_name = aws_smithy_http::label::fmt_string(input_39, false);
+                let rule_name = aws_smithy_http::label::fmt_string(input_39, aws_smithy_http::label::EncodingStrategy::Default);
                 if rule_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "rule_name", details: "cannot be empty or unset" })
                             }

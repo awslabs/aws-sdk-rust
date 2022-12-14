@@ -57,7 +57,7 @@ impl AddFlowMediaStreamsInput {
             fn uri_base(_input: &crate::input::AddFlowMediaStreamsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.flow_arn;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_1, false);
+                let flow_arn = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if flow_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
                             }
@@ -176,7 +176,7 @@ impl AddFlowOutputsInput {
             fn uri_base(_input: &crate::input::AddFlowOutputsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.flow_arn;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_2, false);
+                let flow_arn = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if flow_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
                             }
@@ -295,7 +295,7 @@ impl AddFlowSourcesInput {
             fn uri_base(_input: &crate::input::AddFlowSourcesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.flow_arn;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_3, false);
+                let flow_arn = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if flow_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
                             }
@@ -414,7 +414,7 @@ impl AddFlowVpcInterfacesInput {
             fn uri_base(_input: &crate::input::AddFlowVpcInterfacesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_4 = &_input.flow_arn;
                 let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_4, false);
+                let flow_arn = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if flow_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
                             }
@@ -747,7 +747,7 @@ impl DeleteFlowInput {
             fn uri_base(_input: &crate::input::DeleteFlowInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_5 = &_input.flow_arn;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_5, false);
+                let flow_arn = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if flow_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
                             }
@@ -844,7 +844,7 @@ impl DescribeFlowInput {
             fn uri_base(_input: &crate::input::DescribeFlowInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_6 = &_input.flow_arn;
                 let input_6 = input_6.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_6, false);
+                let flow_arn = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if flow_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
                             }
@@ -941,7 +941,7 @@ impl DescribeOfferingInput {
             fn uri_base(_input: &crate::input::DescribeOfferingInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_7 = &_input.offering_arn;
                 let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "offering_arn", details: "cannot be empty or unset" })?;
-                let offering_arn = aws_smithy_http::label::fmt_string(input_7, false);
+                let offering_arn = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
                 if offering_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "offering_arn", details: "cannot be empty or unset" })
                             }
@@ -1038,7 +1038,7 @@ impl DescribeReservationInput {
             fn uri_base(_input: &crate::input::DescribeReservationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_8 = &_input.reservation_arn;
                 let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "reservation_arn", details: "cannot be empty or unset" })?;
-                let reservation_arn = aws_smithy_http::label::fmt_string(input_8, false);
+                let reservation_arn = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
                 if reservation_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "reservation_arn", details: "cannot be empty or unset" })
                             }
@@ -1153,7 +1153,7 @@ impl GrantFlowEntitlementsInput {
             fn uri_base(_input: &crate::input::GrantFlowEntitlementsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_9 = &_input.flow_arn;
                 let input_9 = input_9.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_9, false);
+                let flow_arn = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
                 if flow_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
                             }
@@ -1714,7 +1714,7 @@ impl ListTagsForResourceInput {
             fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_14 = &_input.resource_arn;
                 let input_14 = input_14.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_14, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_14, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -1835,7 +1835,7 @@ impl PurchaseOfferingInput {
             fn uri_base(_input: &crate::input::PurchaseOfferingInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_15 = &_input.offering_arn;
                 let input_15 = input_15.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "offering_arn", details: "cannot be empty or unset" })?;
-                let offering_arn = aws_smithy_http::label::fmt_string(input_15, false);
+                let offering_arn = aws_smithy_http::label::fmt_string(input_15, aws_smithy_http::label::EncodingStrategy::Default);
                 if offering_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "offering_arn", details: "cannot be empty or unset" })
                             }
@@ -1948,13 +1948,13 @@ impl RemoveFlowMediaStreamInput {
             fn uri_base(_input: &crate::input::RemoveFlowMediaStreamInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_16 = &_input.flow_arn;
                 let input_16 = input_16.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_16, false);
+                let flow_arn = aws_smithy_http::label::fmt_string(input_16, aws_smithy_http::label::EncodingStrategy::Default);
                 if flow_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
                             }
                 let input_17 = &_input.media_stream_name;
                 let input_17 = input_17.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "media_stream_name", details: "cannot be empty or unset" })?;
-                let media_stream_name = aws_smithy_http::label::fmt_string(input_17, false);
+                let media_stream_name = aws_smithy_http::label::fmt_string(input_17, aws_smithy_http::label::EncodingStrategy::Default);
                 if media_stream_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "media_stream_name", details: "cannot be empty or unset" })
                             }
@@ -2063,13 +2063,13 @@ impl RemoveFlowOutputInput {
             fn uri_base(_input: &crate::input::RemoveFlowOutputInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_18 = &_input.flow_arn;
                 let input_18 = input_18.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_18, false);
+                let flow_arn = aws_smithy_http::label::fmt_string(input_18, aws_smithy_http::label::EncodingStrategy::Default);
                 if flow_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
                             }
                 let input_19 = &_input.output_arn;
                 let input_19 = input_19.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "output_arn", details: "cannot be empty or unset" })?;
-                let output_arn = aws_smithy_http::label::fmt_string(input_19, false);
+                let output_arn = aws_smithy_http::label::fmt_string(input_19, aws_smithy_http::label::EncodingStrategy::Default);
                 if output_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "output_arn", details: "cannot be empty or unset" })
                             }
@@ -2178,13 +2178,13 @@ impl RemoveFlowSourceInput {
             fn uri_base(_input: &crate::input::RemoveFlowSourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_20 = &_input.flow_arn;
                 let input_20 = input_20.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_20, false);
+                let flow_arn = aws_smithy_http::label::fmt_string(input_20, aws_smithy_http::label::EncodingStrategy::Default);
                 if flow_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
                             }
                 let input_21 = &_input.source_arn;
                 let input_21 = input_21.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "source_arn", details: "cannot be empty or unset" })?;
-                let source_arn = aws_smithy_http::label::fmt_string(input_21, false);
+                let source_arn = aws_smithy_http::label::fmt_string(input_21, aws_smithy_http::label::EncodingStrategy::Default);
                 if source_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "source_arn", details: "cannot be empty or unset" })
                             }
@@ -2293,13 +2293,13 @@ impl RemoveFlowVpcInterfaceInput {
             fn uri_base(_input: &crate::input::RemoveFlowVpcInterfaceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_22 = &_input.flow_arn;
                 let input_22 = input_22.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_22, false);
+                let flow_arn = aws_smithy_http::label::fmt_string(input_22, aws_smithy_http::label::EncodingStrategy::Default);
                 if flow_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
                             }
                 let input_23 = &_input.vpc_interface_name;
                 let input_23 = input_23.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vpc_interface_name", details: "cannot be empty or unset" })?;
-                let vpc_interface_name = aws_smithy_http::label::fmt_string(input_23, false);
+                let vpc_interface_name = aws_smithy_http::label::fmt_string(input_23, aws_smithy_http::label::EncodingStrategy::Default);
                 if vpc_interface_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vpc_interface_name", details: "cannot be empty or unset" })
                             }
@@ -2408,13 +2408,13 @@ impl RevokeFlowEntitlementInput {
             fn uri_base(_input: &crate::input::RevokeFlowEntitlementInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_24 = &_input.flow_arn;
                 let input_24 = input_24.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_24, false);
+                let flow_arn = aws_smithy_http::label::fmt_string(input_24, aws_smithy_http::label::EncodingStrategy::Default);
                 if flow_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
                             }
                 let input_25 = &_input.entitlement_arn;
                 let input_25 = input_25.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "entitlement_arn", details: "cannot be empty or unset" })?;
-                let entitlement_arn = aws_smithy_http::label::fmt_string(input_25, false);
+                let entitlement_arn = aws_smithy_http::label::fmt_string(input_25, aws_smithy_http::label::EncodingStrategy::Default);
                 if entitlement_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "entitlement_arn", details: "cannot be empty or unset" })
                             }
@@ -2511,7 +2511,7 @@ impl StartFlowInput {
             fn uri_base(_input: &crate::input::StartFlowInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_26 = &_input.flow_arn;
                 let input_26 = input_26.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_26, false);
+                let flow_arn = aws_smithy_http::label::fmt_string(input_26, aws_smithy_http::label::EncodingStrategy::Default);
                 if flow_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
                             }
@@ -2608,7 +2608,7 @@ impl StopFlowInput {
             fn uri_base(_input: &crate::input::StopFlowInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_27 = &_input.flow_arn;
                 let input_27 = input_27.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_27, false);
+                let flow_arn = aws_smithy_http::label::fmt_string(input_27, aws_smithy_http::label::EncodingStrategy::Default);
                 if flow_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
                             }
@@ -2723,7 +2723,7 @@ impl TagResourceInput {
             fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_28 = &_input.resource_arn;
                 let input_28 = input_28.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_28, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_28, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -2842,7 +2842,7 @@ impl UntagResourceInput {
             fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_29 = &_input.resource_arn;
                 let input_29 = input_29.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_29, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_29, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -2973,7 +2973,7 @@ impl UpdateFlowInput {
             fn uri_base(_input: &crate::input::UpdateFlowInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_32 = &_input.flow_arn;
                 let input_32 = input_32.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_32, false);
+                let flow_arn = aws_smithy_http::label::fmt_string(input_32, aws_smithy_http::label::EncodingStrategy::Default);
                 if flow_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
                             }
@@ -3140,13 +3140,13 @@ impl UpdateFlowEntitlementInput {
             fn uri_base(_input: &crate::input::UpdateFlowEntitlementInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_33 = &_input.flow_arn;
                 let input_33 = input_33.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_33, false);
+                let flow_arn = aws_smithy_http::label::fmt_string(input_33, aws_smithy_http::label::EncodingStrategy::Default);
                 if flow_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
                             }
                 let input_34 = &_input.entitlement_arn;
                 let input_34 = input_34.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "entitlement_arn", details: "cannot be empty or unset" })?;
-                let entitlement_arn = aws_smithy_http::label::fmt_string(input_34, false);
+                let entitlement_arn = aws_smithy_http::label::fmt_string(input_34, aws_smithy_http::label::EncodingStrategy::Default);
                 if entitlement_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "entitlement_arn", details: "cannot be empty or unset" })
                             }
@@ -3320,13 +3320,13 @@ impl UpdateFlowMediaStreamInput {
             fn uri_base(_input: &crate::input::UpdateFlowMediaStreamInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_35 = &_input.flow_arn;
                 let input_35 = input_35.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_35, false);
+                let flow_arn = aws_smithy_http::label::fmt_string(input_35, aws_smithy_http::label::EncodingStrategy::Default);
                 if flow_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
                             }
                 let input_36 = &_input.media_stream_name;
                 let input_36 = input_36.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "media_stream_name", details: "cannot be empty or unset" })?;
-                let media_stream_name = aws_smithy_http::label::fmt_string(input_36, false);
+                let media_stream_name = aws_smithy_http::label::fmt_string(input_36, aws_smithy_http::label::EncodingStrategy::Default);
                 if media_stream_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "media_stream_name", details: "cannot be empty or unset" })
                             }
@@ -3636,13 +3636,13 @@ impl UpdateFlowOutputInput {
             fn uri_base(_input: &crate::input::UpdateFlowOutputInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_37 = &_input.flow_arn;
                 let input_37 = input_37.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_37, false);
+                let flow_arn = aws_smithy_http::label::fmt_string(input_37, aws_smithy_http::label::EncodingStrategy::Default);
                 if flow_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
                             }
                 let input_38 = &_input.output_arn;
                 let input_38 = input_38.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "output_arn", details: "cannot be empty or unset" })?;
-                let output_arn = aws_smithy_http::label::fmt_string(input_38, false);
+                let output_arn = aws_smithy_http::label::fmt_string(input_38, aws_smithy_http::label::EncodingStrategy::Default);
                 if output_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "output_arn", details: "cannot be empty or unset" })
                             }
@@ -3972,13 +3972,13 @@ impl UpdateFlowSourceInput {
             fn uri_base(_input: &crate::input::UpdateFlowSourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_39 = &_input.flow_arn;
                 let input_39 = input_39.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })?;
-                let flow_arn = aws_smithy_http::label::fmt_string(input_39, false);
+                let flow_arn = aws_smithy_http::label::fmt_string(input_39, aws_smithy_http::label::EncodingStrategy::Default);
                 if flow_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "flow_arn", details: "cannot be empty or unset" })
                             }
                 let input_40 = &_input.source_arn;
                 let input_40 = input_40.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "source_arn", details: "cannot be empty or unset" })?;
-                let source_arn = aws_smithy_http::label::fmt_string(input_40, false);
+                let source_arn = aws_smithy_http::label::fmt_string(input_40, aws_smithy_http::label::EncodingStrategy::Default);
                 if source_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "source_arn", details: "cannot be empty or unset" })
                             }

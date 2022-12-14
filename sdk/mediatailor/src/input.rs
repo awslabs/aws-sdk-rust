@@ -225,7 +225,7 @@ impl CreateChannelInput {
             fn uri_base(_input: &crate::input::CreateChannelInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.channel_name;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "channel_name", details: "cannot be empty or unset" })?;
-                let channel_name = aws_smithy_http::label::fmt_string(input_1, false);
+                let channel_name = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if channel_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "channel_name", details: "cannot be empty or unset" })
                             }
@@ -374,13 +374,13 @@ impl CreateLiveSourceInput {
             fn uri_base(_input: &crate::input::CreateLiveSourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.source_location_name;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "source_location_name", details: "cannot be empty or unset" })?;
-                let source_location_name = aws_smithy_http::label::fmt_string(input_2, false);
+                let source_location_name = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if source_location_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "source_location_name", details: "cannot be empty or unset" })
                             }
                 let input_3 = &_input.live_source_name;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "live_source_name", details: "cannot be empty or unset" })?;
-                let live_source_name = aws_smithy_http::label::fmt_string(input_3, false);
+                let live_source_name = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if live_source_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "live_source_name", details: "cannot be empty or unset" })
                             }
@@ -529,13 +529,13 @@ impl CreatePrefetchScheduleInput {
             fn uri_base(_input: &crate::input::CreatePrefetchScheduleInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_4 = &_input.playback_configuration_name;
                 let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "playback_configuration_name", details: "cannot be empty or unset" })?;
-                let playback_configuration_name = aws_smithy_http::label::fmt_string(input_4, false);
+                let playback_configuration_name = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if playback_configuration_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "playback_configuration_name", details: "cannot be empty or unset" })
                             }
                 let input_5 = &_input.name;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })?;
-                let name = aws_smithy_http::label::fmt_string(input_5, false);
+                let name = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })
                             }
@@ -714,13 +714,13 @@ impl CreateProgramInput {
             fn uri_base(_input: &crate::input::CreateProgramInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_6 = &_input.channel_name;
                 let input_6 = input_6.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "channel_name", details: "cannot be empty or unset" })?;
-                let channel_name = aws_smithy_http::label::fmt_string(input_6, false);
+                let channel_name = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if channel_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "channel_name", details: "cannot be empty or unset" })
                             }
                 let input_7 = &_input.program_name;
                 let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "program_name", details: "cannot be empty or unset" })?;
-                let program_name = aws_smithy_http::label::fmt_string(input_7, false);
+                let program_name = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
                 if program_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "program_name", details: "cannot be empty or unset" })
                             }
@@ -893,7 +893,7 @@ impl CreateSourceLocationInput {
             fn uri_base(_input: &crate::input::CreateSourceLocationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_8 = &_input.source_location_name;
                 let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "source_location_name", details: "cannot be empty or unset" })?;
-                let source_location_name = aws_smithy_http::label::fmt_string(input_8, false);
+                let source_location_name = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
                 if source_location_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "source_location_name", details: "cannot be empty or unset" })
                             }
@@ -1042,13 +1042,13 @@ impl CreateVodSourceInput {
             fn uri_base(_input: &crate::input::CreateVodSourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_9 = &_input.source_location_name;
                 let input_9 = input_9.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "source_location_name", details: "cannot be empty or unset" })?;
-                let source_location_name = aws_smithy_http::label::fmt_string(input_9, false);
+                let source_location_name = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
                 if source_location_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "source_location_name", details: "cannot be empty or unset" })
                             }
                 let input_10 = &_input.vod_source_name;
                 let input_10 = input_10.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vod_source_name", details: "cannot be empty or unset" })?;
-                let vod_source_name = aws_smithy_http::label::fmt_string(input_10, false);
+                let vod_source_name = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Default);
                 if vod_source_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vod_source_name", details: "cannot be empty or unset" })
                             }
@@ -1149,7 +1149,7 @@ impl DeleteChannelInput {
             fn uri_base(_input: &crate::input::DeleteChannelInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_11 = &_input.channel_name;
                 let input_11 = input_11.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "channel_name", details: "cannot be empty or unset" })?;
-                let channel_name = aws_smithy_http::label::fmt_string(input_11, false);
+                let channel_name = aws_smithy_http::label::fmt_string(input_11, aws_smithy_http::label::EncodingStrategy::Default);
                 if channel_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "channel_name", details: "cannot be empty or unset" })
                             }
@@ -1246,7 +1246,7 @@ impl DeleteChannelPolicyInput {
             fn uri_base(_input: &crate::input::DeleteChannelPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_12 = &_input.channel_name;
                 let input_12 = input_12.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "channel_name", details: "cannot be empty or unset" })?;
-                let channel_name = aws_smithy_http::label::fmt_string(input_12, false);
+                let channel_name = aws_smithy_http::label::fmt_string(input_12, aws_smithy_http::label::EncodingStrategy::Default);
                 if channel_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "channel_name", details: "cannot be empty or unset" })
                             }
@@ -1355,13 +1355,13 @@ impl DeleteLiveSourceInput {
             fn uri_base(_input: &crate::input::DeleteLiveSourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_13 = &_input.source_location_name;
                 let input_13 = input_13.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "source_location_name", details: "cannot be empty or unset" })?;
-                let source_location_name = aws_smithy_http::label::fmt_string(input_13, false);
+                let source_location_name = aws_smithy_http::label::fmt_string(input_13, aws_smithy_http::label::EncodingStrategy::Default);
                 if source_location_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "source_location_name", details: "cannot be empty or unset" })
                             }
                 let input_14 = &_input.live_source_name;
                 let input_14 = input_14.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "live_source_name", details: "cannot be empty or unset" })?;
-                let live_source_name = aws_smithy_http::label::fmt_string(input_14, false);
+                let live_source_name = aws_smithy_http::label::fmt_string(input_14, aws_smithy_http::label::EncodingStrategy::Default);
                 if live_source_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "live_source_name", details: "cannot be empty or unset" })
                             }
@@ -1458,7 +1458,7 @@ impl DeletePlaybackConfigurationInput {
             fn uri_base(_input: &crate::input::DeletePlaybackConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_15 = &_input.name;
                 let input_15 = input_15.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })?;
-                let name = aws_smithy_http::label::fmt_string(input_15, false);
+                let name = aws_smithy_http::label::fmt_string(input_15, aws_smithy_http::label::EncodingStrategy::Default);
                 if name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })
                             }
@@ -1567,13 +1567,13 @@ impl DeletePrefetchScheduleInput {
             fn uri_base(_input: &crate::input::DeletePrefetchScheduleInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_16 = &_input.playback_configuration_name;
                 let input_16 = input_16.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "playback_configuration_name", details: "cannot be empty or unset" })?;
-                let playback_configuration_name = aws_smithy_http::label::fmt_string(input_16, false);
+                let playback_configuration_name = aws_smithy_http::label::fmt_string(input_16, aws_smithy_http::label::EncodingStrategy::Default);
                 if playback_configuration_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "playback_configuration_name", details: "cannot be empty or unset" })
                             }
                 let input_17 = &_input.name;
                 let input_17 = input_17.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })?;
-                let name = aws_smithy_http::label::fmt_string(input_17, false);
+                let name = aws_smithy_http::label::fmt_string(input_17, aws_smithy_http::label::EncodingStrategy::Default);
                 if name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })
                             }
@@ -1682,13 +1682,13 @@ impl DeleteProgramInput {
             fn uri_base(_input: &crate::input::DeleteProgramInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_18 = &_input.channel_name;
                 let input_18 = input_18.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "channel_name", details: "cannot be empty or unset" })?;
-                let channel_name = aws_smithy_http::label::fmt_string(input_18, false);
+                let channel_name = aws_smithy_http::label::fmt_string(input_18, aws_smithy_http::label::EncodingStrategy::Default);
                 if channel_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "channel_name", details: "cannot be empty or unset" })
                             }
                 let input_19 = &_input.program_name;
                 let input_19 = input_19.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "program_name", details: "cannot be empty or unset" })?;
-                let program_name = aws_smithy_http::label::fmt_string(input_19, false);
+                let program_name = aws_smithy_http::label::fmt_string(input_19, aws_smithy_http::label::EncodingStrategy::Default);
                 if program_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "program_name", details: "cannot be empty or unset" })
                             }
@@ -1785,7 +1785,7 @@ impl DeleteSourceLocationInput {
             fn uri_base(_input: &crate::input::DeleteSourceLocationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_20 = &_input.source_location_name;
                 let input_20 = input_20.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "source_location_name", details: "cannot be empty or unset" })?;
-                let source_location_name = aws_smithy_http::label::fmt_string(input_20, false);
+                let source_location_name = aws_smithy_http::label::fmt_string(input_20, aws_smithy_http::label::EncodingStrategy::Default);
                 if source_location_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "source_location_name", details: "cannot be empty or unset" })
                             }
@@ -1894,13 +1894,13 @@ impl DeleteVodSourceInput {
             fn uri_base(_input: &crate::input::DeleteVodSourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_21 = &_input.source_location_name;
                 let input_21 = input_21.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "source_location_name", details: "cannot be empty or unset" })?;
-                let source_location_name = aws_smithy_http::label::fmt_string(input_21, false);
+                let source_location_name = aws_smithy_http::label::fmt_string(input_21, aws_smithy_http::label::EncodingStrategy::Default);
                 if source_location_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "source_location_name", details: "cannot be empty or unset" })
                             }
                 let input_22 = &_input.vod_source_name;
                 let input_22 = input_22.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vod_source_name", details: "cannot be empty or unset" })?;
-                let vod_source_name = aws_smithy_http::label::fmt_string(input_22, false);
+                let vod_source_name = aws_smithy_http::label::fmt_string(input_22, aws_smithy_http::label::EncodingStrategy::Default);
                 if vod_source_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vod_source_name", details: "cannot be empty or unset" })
                             }
@@ -1997,7 +1997,7 @@ impl DescribeChannelInput {
             fn uri_base(_input: &crate::input::DescribeChannelInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_23 = &_input.channel_name;
                 let input_23 = input_23.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "channel_name", details: "cannot be empty or unset" })?;
-                let channel_name = aws_smithy_http::label::fmt_string(input_23, false);
+                let channel_name = aws_smithy_http::label::fmt_string(input_23, aws_smithy_http::label::EncodingStrategy::Default);
                 if channel_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "channel_name", details: "cannot be empty or unset" })
                             }
@@ -2106,13 +2106,13 @@ impl DescribeLiveSourceInput {
             fn uri_base(_input: &crate::input::DescribeLiveSourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_24 = &_input.source_location_name;
                 let input_24 = input_24.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "source_location_name", details: "cannot be empty or unset" })?;
-                let source_location_name = aws_smithy_http::label::fmt_string(input_24, false);
+                let source_location_name = aws_smithy_http::label::fmt_string(input_24, aws_smithy_http::label::EncodingStrategy::Default);
                 if source_location_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "source_location_name", details: "cannot be empty or unset" })
                             }
                 let input_25 = &_input.live_source_name;
                 let input_25 = input_25.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "live_source_name", details: "cannot be empty or unset" })?;
-                let live_source_name = aws_smithy_http::label::fmt_string(input_25, false);
+                let live_source_name = aws_smithy_http::label::fmt_string(input_25, aws_smithy_http::label::EncodingStrategy::Default);
                 if live_source_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "live_source_name", details: "cannot be empty or unset" })
                             }
@@ -2221,13 +2221,13 @@ impl DescribeProgramInput {
             fn uri_base(_input: &crate::input::DescribeProgramInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_26 = &_input.channel_name;
                 let input_26 = input_26.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "channel_name", details: "cannot be empty or unset" })?;
-                let channel_name = aws_smithy_http::label::fmt_string(input_26, false);
+                let channel_name = aws_smithy_http::label::fmt_string(input_26, aws_smithy_http::label::EncodingStrategy::Default);
                 if channel_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "channel_name", details: "cannot be empty or unset" })
                             }
                 let input_27 = &_input.program_name;
                 let input_27 = input_27.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "program_name", details: "cannot be empty or unset" })?;
-                let program_name = aws_smithy_http::label::fmt_string(input_27, false);
+                let program_name = aws_smithy_http::label::fmt_string(input_27, aws_smithy_http::label::EncodingStrategy::Default);
                 if program_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "program_name", details: "cannot be empty or unset" })
                             }
@@ -2324,7 +2324,7 @@ impl DescribeSourceLocationInput {
             fn uri_base(_input: &crate::input::DescribeSourceLocationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_28 = &_input.source_location_name;
                 let input_28 = input_28.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "source_location_name", details: "cannot be empty or unset" })?;
-                let source_location_name = aws_smithy_http::label::fmt_string(input_28, false);
+                let source_location_name = aws_smithy_http::label::fmt_string(input_28, aws_smithy_http::label::EncodingStrategy::Default);
                 if source_location_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "source_location_name", details: "cannot be empty or unset" })
                             }
@@ -2433,13 +2433,13 @@ impl DescribeVodSourceInput {
             fn uri_base(_input: &crate::input::DescribeVodSourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_29 = &_input.source_location_name;
                 let input_29 = input_29.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "source_location_name", details: "cannot be empty or unset" })?;
-                let source_location_name = aws_smithy_http::label::fmt_string(input_29, false);
+                let source_location_name = aws_smithy_http::label::fmt_string(input_29, aws_smithy_http::label::EncodingStrategy::Default);
                 if source_location_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "source_location_name", details: "cannot be empty or unset" })
                             }
                 let input_30 = &_input.vod_source_name;
                 let input_30 = input_30.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vod_source_name", details: "cannot be empty or unset" })?;
-                let vod_source_name = aws_smithy_http::label::fmt_string(input_30, false);
+                let vod_source_name = aws_smithy_http::label::fmt_string(input_30, aws_smithy_http::label::EncodingStrategy::Default);
                 if vod_source_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vod_source_name", details: "cannot be empty or unset" })
                             }
@@ -2536,7 +2536,7 @@ impl GetChannelPolicyInput {
             fn uri_base(_input: &crate::input::GetChannelPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_31 = &_input.channel_name;
                 let input_31 = input_31.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "channel_name", details: "cannot be empty or unset" })?;
-                let channel_name = aws_smithy_http::label::fmt_string(input_31, false);
+                let channel_name = aws_smithy_http::label::fmt_string(input_31, aws_smithy_http::label::EncodingStrategy::Default);
                 if channel_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "channel_name", details: "cannot be empty or unset" })
                             }
@@ -2670,7 +2670,7 @@ impl GetChannelScheduleInput {
             fn uri_base(_input: &crate::input::GetChannelScheduleInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_32 = &_input.channel_name;
                 let input_32 = input_32.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "channel_name", details: "cannot be empty or unset" })?;
-                let channel_name = aws_smithy_http::label::fmt_string(input_32, false);
+                let channel_name = aws_smithy_http::label::fmt_string(input_32, aws_smithy_http::label::EncodingStrategy::Default);
                 if channel_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "channel_name", details: "cannot be empty or unset" })
                             }
@@ -2781,7 +2781,7 @@ impl GetPlaybackConfigurationInput {
             fn uri_base(_input: &crate::input::GetPlaybackConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_35 = &_input.name;
                 let input_35 = input_35.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })?;
-                let name = aws_smithy_http::label::fmt_string(input_35, false);
+                let name = aws_smithy_http::label::fmt_string(input_35, aws_smithy_http::label::EncodingStrategy::Default);
                 if name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })
                             }
@@ -2890,13 +2890,13 @@ impl GetPrefetchScheduleInput {
             fn uri_base(_input: &crate::input::GetPrefetchScheduleInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_36 = &_input.playback_configuration_name;
                 let input_36 = input_36.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "playback_configuration_name", details: "cannot be empty or unset" })?;
-                let playback_configuration_name = aws_smithy_http::label::fmt_string(input_36, false);
+                let playback_configuration_name = aws_smithy_http::label::fmt_string(input_36, aws_smithy_http::label::EncodingStrategy::Default);
                 if playback_configuration_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "playback_configuration_name", details: "cannot be empty or unset" })
                             }
                 let input_37 = &_input.name;
                 let input_37 = input_37.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })?;
-                let name = aws_smithy_http::label::fmt_string(input_37, false);
+                let name = aws_smithy_http::label::fmt_string(input_37, aws_smithy_http::label::EncodingStrategy::Default);
                 if name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })
                             }
@@ -3263,7 +3263,7 @@ impl ListLiveSourcesInput {
             fn uri_base(_input: &crate::input::ListLiveSourcesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_41 = &_input.source_location_name;
                 let input_41 = input_41.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "source_location_name", details: "cannot be empty or unset" })?;
-                let source_location_name = aws_smithy_http::label::fmt_string(input_41, false);
+                let source_location_name = aws_smithy_http::label::fmt_string(input_41, aws_smithy_http::label::EncodingStrategy::Default);
                 if source_location_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "source_location_name", details: "cannot be empty or unset" })
                             }
@@ -3529,7 +3529,7 @@ impl ListPrefetchSchedulesInput {
             fn uri_base(_input: &crate::input::ListPrefetchSchedulesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_44 = &_input.playback_configuration_name;
                 let input_44 = input_44.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "playback_configuration_name", details: "cannot be empty or unset" })?;
-                let playback_configuration_name = aws_smithy_http::label::fmt_string(input_44, false);
+                let playback_configuration_name = aws_smithy_http::label::fmt_string(input_44, aws_smithy_http::label::EncodingStrategy::Default);
                 if playback_configuration_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "playback_configuration_name", details: "cannot be empty or unset" })
                             }
@@ -3745,7 +3745,7 @@ impl ListTagsForResourceInput {
             fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_46 = &_input.resource_arn;
                 let input_46 = input_46.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_46, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_46, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -3867,7 +3867,7 @@ impl ListVodSourcesInput {
             fn uri_base(_input: &crate::input::ListVodSourcesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_47 = &_input.source_location_name;
                 let input_47 = input_47.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "source_location_name", details: "cannot be empty or unset" })?;
-                let source_location_name = aws_smithy_http::label::fmt_string(input_47, false);
+                let source_location_name = aws_smithy_http::label::fmt_string(input_47, aws_smithy_http::label::EncodingStrategy::Default);
                 if source_location_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "source_location_name", details: "cannot be empty or unset" })
                             }
@@ -3987,7 +3987,7 @@ impl PutChannelPolicyInput {
             fn uri_base(_input: &crate::input::PutChannelPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_49 = &_input.channel_name;
                 let input_49 = input_49.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "channel_name", details: "cannot be empty or unset" })?;
-                let channel_name = aws_smithy_http::label::fmt_string(input_49, false);
+                let channel_name = aws_smithy_http::label::fmt_string(input_49, aws_smithy_http::label::EncodingStrategy::Default);
                 if channel_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "channel_name", details: "cannot be empty or unset" })
                             }
@@ -4352,7 +4352,7 @@ impl StartChannelInput {
             fn uri_base(_input: &crate::input::StartChannelInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_50 = &_input.channel_name;
                 let input_50 = input_50.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "channel_name", details: "cannot be empty or unset" })?;
-                let channel_name = aws_smithy_http::label::fmt_string(input_50, false);
+                let channel_name = aws_smithy_http::label::fmt_string(input_50, aws_smithy_http::label::EncodingStrategy::Default);
                 if channel_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "channel_name", details: "cannot be empty or unset" })
                             }
@@ -4449,7 +4449,7 @@ impl StopChannelInput {
             fn uri_base(_input: &crate::input::StopChannelInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_51 = &_input.channel_name;
                 let input_51 = input_51.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "channel_name", details: "cannot be empty or unset" })?;
-                let channel_name = aws_smithy_http::label::fmt_string(input_51, false);
+                let channel_name = aws_smithy_http::label::fmt_string(input_51, aws_smithy_http::label::EncodingStrategy::Default);
                 if channel_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "channel_name", details: "cannot be empty or unset" })
                             }
@@ -4564,7 +4564,7 @@ impl TagResourceInput {
             fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_52 = &_input.resource_arn;
                 let input_52 = input_52.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_52, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_52, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -4683,7 +4683,7 @@ impl UntagResourceInput {
             fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_53 = &_input.resource_arn;
                 let input_53 = input_53.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_53, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_53, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -4820,7 +4820,7 @@ impl UpdateChannelInput {
             fn uri_base(_input: &crate::input::UpdateChannelInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_56 = &_input.channel_name;
                 let input_56 = input_56.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "channel_name", details: "cannot be empty or unset" })?;
-                let channel_name = aws_smithy_http::label::fmt_string(input_56, false);
+                let channel_name = aws_smithy_http::label::fmt_string(input_56, aws_smithy_http::label::EncodingStrategy::Default);
                 if channel_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "channel_name", details: "cannot be empty or unset" })
                             }
@@ -4951,13 +4951,13 @@ impl UpdateLiveSourceInput {
             fn uri_base(_input: &crate::input::UpdateLiveSourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_57 = &_input.source_location_name;
                 let input_57 = input_57.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "source_location_name", details: "cannot be empty or unset" })?;
-                let source_location_name = aws_smithy_http::label::fmt_string(input_57, false);
+                let source_location_name = aws_smithy_http::label::fmt_string(input_57, aws_smithy_http::label::EncodingStrategy::Default);
                 if source_location_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "source_location_name", details: "cannot be empty or unset" })
                             }
                 let input_58 = &_input.live_source_name;
                 let input_58 = input_58.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "live_source_name", details: "cannot be empty or unset" })?;
-                let live_source_name = aws_smithy_http::label::fmt_string(input_58, false);
+                let live_source_name = aws_smithy_http::label::fmt_string(input_58, aws_smithy_http::label::EncodingStrategy::Default);
                 if live_source_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "live_source_name", details: "cannot be empty or unset" })
                             }
@@ -5112,7 +5112,7 @@ impl UpdateSourceLocationInput {
             fn uri_base(_input: &crate::input::UpdateSourceLocationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_59 = &_input.source_location_name;
                 let input_59 = input_59.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "source_location_name", details: "cannot be empty or unset" })?;
-                let source_location_name = aws_smithy_http::label::fmt_string(input_59, false);
+                let source_location_name = aws_smithy_http::label::fmt_string(input_59, aws_smithy_http::label::EncodingStrategy::Default);
                 if source_location_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "source_location_name", details: "cannot be empty or unset" })
                             }
@@ -5243,13 +5243,13 @@ impl UpdateVodSourceInput {
             fn uri_base(_input: &crate::input::UpdateVodSourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_60 = &_input.source_location_name;
                 let input_60 = input_60.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "source_location_name", details: "cannot be empty or unset" })?;
-                let source_location_name = aws_smithy_http::label::fmt_string(input_60, false);
+                let source_location_name = aws_smithy_http::label::fmt_string(input_60, aws_smithy_http::label::EncodingStrategy::Default);
                 if source_location_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "source_location_name", details: "cannot be empty or unset" })
                             }
                 let input_61 = &_input.vod_source_name;
                 let input_61 = input_61.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vod_source_name", details: "cannot be empty or unset" })?;
-                let vod_source_name = aws_smithy_http::label::fmt_string(input_61, false);
+                let vod_source_name = aws_smithy_http::label::fmt_string(input_61, aws_smithy_http::label::EncodingStrategy::Default);
                 if vod_source_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vod_source_name", details: "cannot be empty or unset" })
                             }

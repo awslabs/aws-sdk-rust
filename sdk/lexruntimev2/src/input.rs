@@ -75,25 +75,25 @@ impl DeleteSessionInput {
             fn uri_base(_input: &crate::input::DeleteSessionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.bot_id;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "bot_id", details: "cannot be empty or unset" })?;
-                let bot_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let bot_id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if bot_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "bot_id", details: "cannot be empty or unset" })
                             }
                 let input_2 = &_input.bot_alias_id;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "bot_alias_id", details: "cannot be empty or unset" })?;
-                let bot_alias_id = aws_smithy_http::label::fmt_string(input_2, false);
+                let bot_alias_id = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if bot_alias_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "bot_alias_id", details: "cannot be empty or unset" })
                             }
                 let input_3 = &_input.locale_id;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "locale_id", details: "cannot be empty or unset" })?;
-                let locale_id = aws_smithy_http::label::fmt_string(input_3, false);
+                let locale_id = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if locale_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "locale_id", details: "cannot be empty or unset" })
                             }
                 let input_4 = &_input.session_id;
                 let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "session_id", details: "cannot be empty or unset" })?;
-                let session_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let session_id = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if session_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "session_id", details: "cannot be empty or unset" })
                             }
@@ -226,25 +226,25 @@ impl GetSessionInput {
             fn uri_base(_input: &crate::input::GetSessionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_5 = &_input.bot_id;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "bot_id", details: "cannot be empty or unset" })?;
-                let bot_id = aws_smithy_http::label::fmt_string(input_5, false);
+                let bot_id = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if bot_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "bot_id", details: "cannot be empty or unset" })
                             }
                 let input_6 = &_input.bot_alias_id;
                 let input_6 = input_6.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "bot_alias_id", details: "cannot be empty or unset" })?;
-                let bot_alias_id = aws_smithy_http::label::fmt_string(input_6, false);
+                let bot_alias_id = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if bot_alias_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "bot_alias_id", details: "cannot be empty or unset" })
                             }
                 let input_7 = &_input.locale_id;
                 let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "locale_id", details: "cannot be empty or unset" })?;
-                let locale_id = aws_smithy_http::label::fmt_string(input_7, false);
+                let locale_id = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
                 if locale_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "locale_id", details: "cannot be empty or unset" })
                             }
                 let input_8 = &_input.session_id;
                 let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "session_id", details: "cannot be empty or unset" })?;
-                let session_id = aws_smithy_http::label::fmt_string(input_8, false);
+                let session_id = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
                 if session_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "session_id", details: "cannot be empty or unset" })
                             }
@@ -445,25 +445,25 @@ impl PutSessionInput {
             fn uri_base(_input: &crate::input::PutSessionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_9 = &_input.bot_id;
                 let input_9 = input_9.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "bot_id", details: "cannot be empty or unset" })?;
-                let bot_id = aws_smithy_http::label::fmt_string(input_9, false);
+                let bot_id = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
                 if bot_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "bot_id", details: "cannot be empty or unset" })
                             }
                 let input_10 = &_input.bot_alias_id;
                 let input_10 = input_10.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "bot_alias_id", details: "cannot be empty or unset" })?;
-                let bot_alias_id = aws_smithy_http::label::fmt_string(input_10, false);
+                let bot_alias_id = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Default);
                 if bot_alias_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "bot_alias_id", details: "cannot be empty or unset" })
                             }
                 let input_11 = &_input.locale_id;
                 let input_11 = input_11.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "locale_id", details: "cannot be empty or unset" })?;
-                let locale_id = aws_smithy_http::label::fmt_string(input_11, false);
+                let locale_id = aws_smithy_http::label::fmt_string(input_11, aws_smithy_http::label::EncodingStrategy::Default);
                 if locale_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "locale_id", details: "cannot be empty or unset" })
                             }
                 let input_12 = &_input.session_id;
                 let input_12 = input_12.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "session_id", details: "cannot be empty or unset" })?;
-                let session_id = aws_smithy_http::label::fmt_string(input_12, false);
+                let session_id = aws_smithy_http::label::fmt_string(input_12, aws_smithy_http::label::EncodingStrategy::Default);
                 if session_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "session_id", details: "cannot be empty or unset" })
                             }
@@ -645,25 +645,25 @@ impl RecognizeTextInput {
             fn uri_base(_input: &crate::input::RecognizeTextInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_13 = &_input.bot_id;
                 let input_13 = input_13.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "bot_id", details: "cannot be empty or unset" })?;
-                let bot_id = aws_smithy_http::label::fmt_string(input_13, false);
+                let bot_id = aws_smithy_http::label::fmt_string(input_13, aws_smithy_http::label::EncodingStrategy::Default);
                 if bot_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "bot_id", details: "cannot be empty or unset" })
                             }
                 let input_14 = &_input.bot_alias_id;
                 let input_14 = input_14.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "bot_alias_id", details: "cannot be empty or unset" })?;
-                let bot_alias_id = aws_smithy_http::label::fmt_string(input_14, false);
+                let bot_alias_id = aws_smithy_http::label::fmt_string(input_14, aws_smithy_http::label::EncodingStrategy::Default);
                 if bot_alias_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "bot_alias_id", details: "cannot be empty or unset" })
                             }
                 let input_15 = &_input.locale_id;
                 let input_15 = input_15.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "locale_id", details: "cannot be empty or unset" })?;
-                let locale_id = aws_smithy_http::label::fmt_string(input_15, false);
+                let locale_id = aws_smithy_http::label::fmt_string(input_15, aws_smithy_http::label::EncodingStrategy::Default);
                 if locale_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "locale_id", details: "cannot be empty or unset" })
                             }
                 let input_16 = &_input.session_id;
                 let input_16 = input_16.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "session_id", details: "cannot be empty or unset" })?;
-                let session_id = aws_smithy_http::label::fmt_string(input_16, false);
+                let session_id = aws_smithy_http::label::fmt_string(input_16, aws_smithy_http::label::EncodingStrategy::Default);
                 if session_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "session_id", details: "cannot be empty or unset" })
                             }
@@ -925,25 +925,25 @@ impl RecognizeUtteranceInput {
             fn uri_base(_input: &crate::input::RecognizeUtteranceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_17 = &_input.bot_id;
                 let input_17 = input_17.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "bot_id", details: "cannot be empty or unset" })?;
-                let bot_id = aws_smithy_http::label::fmt_string(input_17, false);
+                let bot_id = aws_smithy_http::label::fmt_string(input_17, aws_smithy_http::label::EncodingStrategy::Default);
                 if bot_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "bot_id", details: "cannot be empty or unset" })
                             }
                 let input_18 = &_input.bot_alias_id;
                 let input_18 = input_18.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "bot_alias_id", details: "cannot be empty or unset" })?;
-                let bot_alias_id = aws_smithy_http::label::fmt_string(input_18, false);
+                let bot_alias_id = aws_smithy_http::label::fmt_string(input_18, aws_smithy_http::label::EncodingStrategy::Default);
                 if bot_alias_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "bot_alias_id", details: "cannot be empty or unset" })
                             }
                 let input_19 = &_input.locale_id;
                 let input_19 = input_19.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "locale_id", details: "cannot be empty or unset" })?;
-                let locale_id = aws_smithy_http::label::fmt_string(input_19, false);
+                let locale_id = aws_smithy_http::label::fmt_string(input_19, aws_smithy_http::label::EncodingStrategy::Default);
                 if locale_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "locale_id", details: "cannot be empty or unset" })
                             }
                 let input_20 = &_input.session_id;
                 let input_20 = input_20.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "session_id", details: "cannot be empty or unset" })?;
-                let session_id = aws_smithy_http::label::fmt_string(input_20, false);
+                let session_id = aws_smithy_http::label::fmt_string(input_20, aws_smithy_http::label::EncodingStrategy::Default);
                 if session_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "session_id", details: "cannot be empty or unset" })
                             }

@@ -57,7 +57,7 @@ impl AddNotificationChannelsInput {
             fn uri_base(_input: &crate::input::AddNotificationChannelsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.profiling_group_name;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(input_1, false);
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })
                             }
@@ -234,7 +234,7 @@ impl BatchGetFrameMetricDataInput {
             fn uri_base(_input: &crate::input::BatchGetFrameMetricDataInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.profiling_group_name;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(input_2, false);
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })
                             }
@@ -404,7 +404,7 @@ impl ConfigureAgentInput {
             fn uri_base(_input: &crate::input::ConfigureAgentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_7 = &_input.profiling_group_name;
                 let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(input_7, false);
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })
                             }
@@ -665,7 +665,7 @@ impl DeleteProfilingGroupInput {
             fn uri_base(_input: &crate::input::DeleteProfilingGroupInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_9 = &_input.profiling_group_name;
                 let input_9 = input_9.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(input_9, false);
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })
                             }
@@ -762,7 +762,7 @@ impl DescribeProfilingGroupInput {
             fn uri_base(_input: &crate::input::DescribeProfilingGroupInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_10 = &_input.profiling_group_name;
                 let input_10 = input_10.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(input_10, false);
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })
                             }
@@ -992,7 +992,7 @@ impl GetNotificationConfigurationInput {
             fn uri_base(_input: &crate::input::GetNotificationConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_14 = &_input.profiling_group_name;
                 let input_14 = input_14.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(input_14, false);
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_14, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })
                             }
@@ -1089,7 +1089,7 @@ impl GetPolicyInput {
             fn uri_base(_input: &crate::input::GetPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_15 = &_input.profiling_group_name;
                 let input_15 = input_15.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(input_15, false);
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_15, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })
                             }
@@ -1260,7 +1260,7 @@ impl GetProfileInput {
             fn uri_base(_input: &crate::input::GetProfileInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_16 = &_input.profiling_group_name;
                 let input_16 = input_16.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(input_16, false);
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_16, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })
                             }
@@ -1437,7 +1437,7 @@ impl GetRecommendationsInput {
             fn uri_base(_input: &crate::input::GetRecommendationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_21 = &_input.profiling_group_name;
                 let input_21 = input_21.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(input_21, false);
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_21, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })
                             }
@@ -1612,7 +1612,7 @@ impl ListFindingsReportsInput {
             fn uri_base(_input: &crate::input::ListFindingsReportsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_25 = &_input.profiling_group_name;
                 let input_25 = input_25.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(input_25, false);
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_25, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })
                             }
@@ -1815,7 +1815,7 @@ impl ListProfileTimesInput {
             fn uri_base(_input: &crate::input::ListProfileTimesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_31 = &_input.profiling_group_name;
                 let input_31 = input_31.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(input_31, false);
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_31, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })
                             }
@@ -2068,7 +2068,7 @@ impl ListTagsForResourceInput {
             fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_41 = &_input.resource_arn;
                 let input_41 = input_41.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_41, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_41, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -2212,7 +2212,7 @@ impl PostAgentProfileInput {
             fn uri_base(_input: &crate::input::PostAgentProfileInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_42 = &_input.profiling_group_name;
                 let input_42 = input_42.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(input_42, false);
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_42, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })
                             }
@@ -2364,13 +2364,13 @@ impl PutPermissionInput {
             fn uri_base(_input: &crate::input::PutPermissionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_44 = &_input.profiling_group_name;
                 let input_44 = input_44.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(input_44, false);
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_44, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })
                             }
                 let input_45 = &_input.action_group;
                 let input_45 = input_45.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "action_group", details: "cannot be empty or unset" })?;
-                let action_group = aws_smithy_http::label::fmt_string(input_45, false);
+                let action_group = aws_smithy_http::label::fmt_string(input_45, aws_smithy_http::label::EncodingStrategy::Default);
                 if action_group.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "action_group", details: "cannot be empty or unset" })
                             }
@@ -2483,13 +2483,13 @@ impl RemoveNotificationChannelInput {
             fn uri_base(_input: &crate::input::RemoveNotificationChannelInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_46 = &_input.profiling_group_name;
                 let input_46 = input_46.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(input_46, false);
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_46, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })
                             }
                 let input_47 = &_input.channel_id;
                 let input_47 = input_47.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "channel_id", details: "cannot be empty or unset" })?;
-                let channel_id = aws_smithy_http::label::fmt_string(input_47, false);
+                let channel_id = aws_smithy_http::label::fmt_string(input_47, aws_smithy_http::label::EncodingStrategy::Default);
                 if channel_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "channel_id", details: "cannot be empty or unset" })
                             }
@@ -2610,13 +2610,13 @@ impl RemovePermissionInput {
             fn uri_base(_input: &crate::input::RemovePermissionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_48 = &_input.profiling_group_name;
                 let input_48 = input_48.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(input_48, false);
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_48, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })
                             }
                 let input_49 = &_input.action_group;
                 let input_49 = input_49.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "action_group", details: "cannot be empty or unset" })?;
-                let action_group = aws_smithy_http::label::fmt_string(input_49, false);
+                let action_group = aws_smithy_http::label::fmt_string(input_49, aws_smithy_http::label::EncodingStrategy::Default);
                 if action_group.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "action_group", details: "cannot be empty or unset" })
                             }
@@ -2757,13 +2757,13 @@ impl SubmitFeedbackInput {
             fn uri_base(_input: &crate::input::SubmitFeedbackInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_51 = &_input.profiling_group_name;
                 let input_51 = input_51.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(input_51, false);
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_51, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })
                             }
                 let input_52 = &_input.anomaly_instance_id;
                 let input_52 = input_52.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "anomaly_instance_id", details: "cannot be empty or unset" })?;
-                let anomaly_instance_id = aws_smithy_http::label::fmt_string(input_52, false);
+                let anomaly_instance_id = aws_smithy_http::label::fmt_string(input_52, aws_smithy_http::label::EncodingStrategy::Default);
                 if anomaly_instance_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "anomaly_instance_id", details: "cannot be empty or unset" })
                             }
@@ -2882,7 +2882,7 @@ impl TagResourceInput {
             fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_53 = &_input.resource_arn;
                 let input_53 = input_53.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_53, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_53, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -3001,7 +3001,7 @@ impl UntagResourceInput {
             fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_54 = &_input.resource_arn;
                 let input_54 = input_54.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_54, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_54, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -3120,7 +3120,7 @@ impl UpdateProfilingGroupInput {
             fn uri_base(_input: &crate::input::UpdateProfilingGroupInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_57 = &_input.profiling_group_name;
                 let input_57 = input_57.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })?;
-                let profiling_group_name = aws_smithy_http::label::fmt_string(input_57, false);
+                let profiling_group_name = aws_smithy_http::label::fmt_string(input_57, aws_smithy_http::label::EncodingStrategy::Default);
                 if profiling_group_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "profiling_group_name", details: "cannot be empty or unset" })
                             }

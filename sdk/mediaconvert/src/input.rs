@@ -134,7 +134,7 @@ impl CancelJobInput {
             fn uri_base(_input: &crate::input::CancelJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.id;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
-                let id = aws_smithy_http::label::fmt_string(input_1, false);
+                let id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
                             }
@@ -1018,7 +1018,7 @@ impl DeleteJobTemplateInput {
             fn uri_base(_input: &crate::input::DeleteJobTemplateInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.name;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })?;
-                let name = aws_smithy_http::label::fmt_string(input_2, false);
+                let name = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })
                             }
@@ -1194,7 +1194,7 @@ impl DeletePresetInput {
             fn uri_base(_input: &crate::input::DeletePresetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.name;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })?;
-                let name = aws_smithy_http::label::fmt_string(input_3, false);
+                let name = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })
                             }
@@ -1291,7 +1291,7 @@ impl DeleteQueueInput {
             fn uri_base(_input: &crate::input::DeleteQueueInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_4 = &_input.name;
                 let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })?;
-                let name = aws_smithy_http::label::fmt_string(input_4, false);
+                let name = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })
                             }
@@ -1508,7 +1508,7 @@ impl DisassociateCertificateInput {
             fn uri_base(_input: &crate::input::DisassociateCertificateInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_5 = &_input.arn;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "arn", details: "cannot be empty or unset" })?;
-                let arn = aws_smithy_http::label::fmt_string(input_5, false);
+                let arn = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "arn", details: "cannot be empty or unset" })
                             }
@@ -1605,7 +1605,7 @@ impl GetJobInput {
             fn uri_base(_input: &crate::input::GetJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_6 = &_input.id;
                 let input_6 = input_6.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
-                let id = aws_smithy_http::label::fmt_string(input_6, false);
+                let id = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
                             }
@@ -1702,7 +1702,7 @@ impl GetJobTemplateInput {
             fn uri_base(_input: &crate::input::GetJobTemplateInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_7 = &_input.name;
                 let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })?;
-                let name = aws_smithy_http::label::fmt_string(input_7, false);
+                let name = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
                 if name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })
                             }
@@ -1878,7 +1878,7 @@ impl GetPresetInput {
             fn uri_base(_input: &crate::input::GetPresetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_8 = &_input.name;
                 let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })?;
-                let name = aws_smithy_http::label::fmt_string(input_8, false);
+                let name = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
                 if name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })
                             }
@@ -1975,7 +1975,7 @@ impl GetQueueInput {
             fn uri_base(_input: &crate::input::GetQueueInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_9 = &_input.name;
                 let input_9 = input_9.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })?;
-                let name = aws_smithy_http::label::fmt_string(input_9, false);
+                let name = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
                 if name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })
                             }
@@ -2697,7 +2697,7 @@ impl ListTagsForResourceInput {
             fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_25 = &_input.arn;
                 let input_25 = input_25.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "arn", details: "cannot be empty or unset" })?;
-                let arn = aws_smithy_http::label::fmt_string(input_25, false);
+                let arn = aws_smithy_http::label::fmt_string(input_25, aws_smithy_http::label::EncodingStrategy::Default);
                 if arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "arn", details: "cannot be empty or unset" })
                             }
@@ -3020,7 +3020,7 @@ impl UntagResourceInput {
             fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_26 = &_input.arn;
                 let input_26 = input_26.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "arn", details: "cannot be empty or unset" })?;
-                let arn = aws_smithy_http::label::fmt_string(input_26, false);
+                let arn = aws_smithy_http::label::fmt_string(input_26, aws_smithy_http::label::EncodingStrategy::Default);
                 if arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "arn", details: "cannot be empty or unset" })
                             }
@@ -3224,7 +3224,7 @@ impl UpdateJobTemplateInput {
             fn uri_base(_input: &crate::input::UpdateJobTemplateInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_27 = &_input.name;
                 let input_27 = input_27.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })?;
-                let name = aws_smithy_http::label::fmt_string(input_27, false);
+                let name = aws_smithy_http::label::fmt_string(input_27, aws_smithy_http::label::EncodingStrategy::Default);
                 if name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })
                             }
@@ -3361,7 +3361,7 @@ impl UpdatePresetInput {
             fn uri_base(_input: &crate::input::UpdatePresetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_28 = &_input.name;
                 let input_28 = input_28.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })?;
-                let name = aws_smithy_http::label::fmt_string(input_28, false);
+                let name = aws_smithy_http::label::fmt_string(input_28, aws_smithy_http::label::EncodingStrategy::Default);
                 if name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })
                             }
@@ -3498,7 +3498,7 @@ impl UpdateQueueInput {
             fn uri_base(_input: &crate::input::UpdateQueueInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_29 = &_input.name;
                 let input_29 = input_29.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })?;
-                let name = aws_smithy_http::label::fmt_string(input_29, false);
+                let name = aws_smithy_http::label::fmt_string(input_29, aws_smithy_http::label::EncodingStrategy::Default);
                 if name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })
                             }

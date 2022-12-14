@@ -39,7 +39,7 @@ impl CancelJobInput {
             fn uri_base(_input: &crate::input::CancelJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.job_arn;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "job_arn", details: "cannot be empty or unset" })?;
-                let job_arn = aws_smithy_http::label::fmt_string(input_1, false);
+                let job_arn = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if job_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "job_arn", details: "cannot be empty or unset" })
                             }
@@ -151,7 +151,7 @@ impl CancelQuantumTaskInput {
             fn uri_base(_input: &crate::input::CancelQuantumTaskInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.quantum_task_arn;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "quantum_task_arn", details: "cannot be empty or unset" })?;
-                let quantum_task_arn = aws_smithy_http::label::fmt_string(input_2, false);
+                let quantum_task_arn = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if quantum_task_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "quantum_task_arn", details: "cannot be empty or unset" })
                             }
@@ -700,7 +700,7 @@ impl GetDeviceInput {
             fn uri_base(_input: &crate::input::GetDeviceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.device_arn;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "device_arn", details: "cannot be empty or unset" })?;
-                let device_arn = aws_smithy_http::label::fmt_string(input_3, false);
+                let device_arn = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if device_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "device_arn", details: "cannot be empty or unset" })
                             }
@@ -797,7 +797,7 @@ impl GetJobInput {
             fn uri_base(_input: &crate::input::GetJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_4 = &_input.job_arn;
                 let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "job_arn", details: "cannot be empty or unset" })?;
-                let job_arn = aws_smithy_http::label::fmt_string(input_4, false);
+                let job_arn = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if job_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "job_arn", details: "cannot be empty or unset" })
                             }
@@ -894,7 +894,7 @@ impl GetQuantumTaskInput {
             fn uri_base(_input: &crate::input::GetQuantumTaskInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_5 = &_input.quantum_task_arn;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "quantum_task_arn", details: "cannot be empty or unset" })?;
-                let quantum_task_arn = aws_smithy_http::label::fmt_string(input_5, false);
+                let quantum_task_arn = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if quantum_task_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "quantum_task_arn", details: "cannot be empty or unset" })
                             }
@@ -991,7 +991,7 @@ impl ListTagsForResourceInput {
             fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_6 = &_input.resource_arn;
                 let input_6 = input_6.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_6, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -1481,7 +1481,7 @@ impl TagResourceInput {
             fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_7 = &_input.resource_arn;
                 let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_7, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -1600,7 +1600,7 @@ impl UntagResourceInput {
             fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_8 = &_input.resource_arn;
                 let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_8, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }

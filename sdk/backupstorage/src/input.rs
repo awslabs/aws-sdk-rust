@@ -51,13 +51,13 @@ impl DeleteObjectInput {
             fn uri_base(_input: &crate::input::DeleteObjectInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.backup_job_id;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_job_id", details: "cannot be empty or unset" })?;
-                let backup_job_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let backup_job_id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_job_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_job_id", details: "cannot be empty or unset" })
                             }
                 let input_2 = &_input.object_name;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "object_name", details: "cannot be empty or unset" })?;
-                let object_name = aws_smithy_http::label::fmt_string(input_2, false);
+                let object_name = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if object_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "object_name", details: "cannot be empty or unset" })
                             }
@@ -166,13 +166,13 @@ impl GetChunkInput {
             fn uri_base(_input: &crate::input::GetChunkInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.storage_job_id;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "storage_job_id", details: "cannot be empty or unset" })?;
-                let storage_job_id = aws_smithy_http::label::fmt_string(input_3, false);
+                let storage_job_id = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if storage_job_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "storage_job_id", details: "cannot be empty or unset" })
                             }
                 let input_4 = &_input.chunk_token;
                 let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "chunk_token", details: "cannot be empty or unset" })?;
-                let chunk_token = aws_smithy_http::label::fmt_string(input_4, false);
+                let chunk_token = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if chunk_token.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "chunk_token", details: "cannot be empty or unset" })
                             }
@@ -281,13 +281,13 @@ impl GetObjectMetadataInput {
             fn uri_base(_input: &crate::input::GetObjectMetadataInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_5 = &_input.storage_job_id;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "storage_job_id", details: "cannot be empty or unset" })?;
-                let storage_job_id = aws_smithy_http::label::fmt_string(input_5, false);
+                let storage_job_id = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if storage_job_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "storage_job_id", details: "cannot be empty or unset" })
                             }
                 let input_6 = &_input.object_token;
                 let input_6 = input_6.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "object_token", details: "cannot be empty or unset" })?;
-                let object_token = aws_smithy_http::label::fmt_string(input_6, false);
+                let object_token = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if object_token.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "object_token", details: "cannot be empty or unset" })
                             }
@@ -421,13 +421,13 @@ impl ListChunksInput {
             fn uri_base(_input: &crate::input::ListChunksInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_7 = &_input.storage_job_id;
                 let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "storage_job_id", details: "cannot be empty or unset" })?;
-                let storage_job_id = aws_smithy_http::label::fmt_string(input_7, false);
+                let storage_job_id = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
                 if storage_job_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "storage_job_id", details: "cannot be empty or unset" })
                             }
                 let input_8 = &_input.object_token;
                 let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "object_token", details: "cannot be empty or unset" })?;
-                let object_token = aws_smithy_http::label::fmt_string(input_8, false);
+                let object_token = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
                 if object_token.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "object_token", details: "cannot be empty or unset" })
                             }
@@ -608,7 +608,7 @@ impl ListObjectsInput {
             fn uri_base(_input: &crate::input::ListObjectsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_10 = &_input.storage_job_id;
                 let input_10 = input_10.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "storage_job_id", details: "cannot be empty or unset" })?;
-                let storage_job_id = aws_smithy_http::label::fmt_string(input_10, false);
+                let storage_job_id = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Default);
                 if storage_job_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "storage_job_id", details: "cannot be empty or unset" })
                             }
@@ -826,13 +826,13 @@ impl NotifyObjectCompleteInput {
             fn uri_base(_input: &crate::input::NotifyObjectCompleteInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_16 = &_input.backup_job_id;
                 let input_16 = input_16.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_job_id", details: "cannot be empty or unset" })?;
-                let backup_job_id = aws_smithy_http::label::fmt_string(input_16, false);
+                let backup_job_id = aws_smithy_http::label::fmt_string(input_16, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_job_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_job_id", details: "cannot be empty or unset" })
                             }
                 let input_17 = &_input.upload_id;
                 let input_17 = input_17.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "upload_id", details: "cannot be empty or unset" })?;
-                let upload_id = aws_smithy_http::label::fmt_string(input_17, false);
+                let upload_id = aws_smithy_http::label::fmt_string(input_17, aws_smithy_http::label::EncodingStrategy::Default);
                 if upload_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "upload_id", details: "cannot be empty or unset" })
                             }
@@ -1034,13 +1034,13 @@ impl PutChunkInput {
             fn uri_base(_input: &crate::input::PutChunkInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_23 = &_input.backup_job_id;
                 let input_23 = input_23.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_job_id", details: "cannot be empty or unset" })?;
-                let backup_job_id = aws_smithy_http::label::fmt_string(input_23, false);
+                let backup_job_id = aws_smithy_http::label::fmt_string(input_23, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_job_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_job_id", details: "cannot be empty or unset" })
                             }
                 let input_24 = &_input.upload_id;
                 let input_24 = input_24.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "upload_id", details: "cannot be empty or unset" })?;
-                let upload_id = aws_smithy_http::label::fmt_string(input_24, false);
+                let upload_id = aws_smithy_http::label::fmt_string(input_24, aws_smithy_http::label::EncodingStrategy::Default);
                 if upload_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "upload_id", details: "cannot be empty or unset" })
                             }
@@ -1274,13 +1274,13 @@ impl PutObjectInput {
             fn uri_base(_input: &crate::input::PutObjectInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_28 = &_input.backup_job_id;
                 let input_28 = input_28.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_job_id", details: "cannot be empty or unset" })?;
-                let backup_job_id = aws_smithy_http::label::fmt_string(input_28, false);
+                let backup_job_id = aws_smithy_http::label::fmt_string(input_28, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_job_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_job_id", details: "cannot be empty or unset" })
                             }
                 let input_29 = &_input.object_name;
                 let input_29 = input_29.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "object_name", details: "cannot be empty or unset" })?;
-                let object_name = aws_smithy_http::label::fmt_string(input_29, false);
+                let object_name = aws_smithy_http::label::fmt_string(input_29, aws_smithy_http::label::EncodingStrategy::Default);
                 if object_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "object_name", details: "cannot be empty or unset" })
                             }
@@ -1435,13 +1435,13 @@ impl StartObjectInput {
             fn uri_base(_input: &crate::input::StartObjectInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_35 = &_input.backup_job_id;
                 let input_35 = input_35.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "backup_job_id", details: "cannot be empty or unset" })?;
-                let backup_job_id = aws_smithy_http::label::fmt_string(input_35, false);
+                let backup_job_id = aws_smithy_http::label::fmt_string(input_35, aws_smithy_http::label::EncodingStrategy::Default);
                 if backup_job_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "backup_job_id", details: "cannot be empty or unset" })
                             }
                 let input_36 = &_input.object_name;
                 let input_36 = input_36.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "object_name", details: "cannot be empty or unset" })?;
-                let object_name = aws_smithy_http::label::fmt_string(input_36, false);
+                let object_name = aws_smithy_http::label::fmt_string(input_36, aws_smithy_http::label::EncodingStrategy::Default);
                 if object_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "object_name", details: "cannot be empty or unset" })
                             }

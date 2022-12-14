@@ -6,7 +6,7 @@
 use percent_encoding::{AsciiSet, CONTROLS};
 
 /// base set of characters that must be URL encoded
-pub const BASE_SET: &AsciiSet = &CONTROLS
+pub(crate) const BASE_SET: &AsciiSet = &CONTROLS
     .add(b' ')
     .add(b'/')
     // RFC-3986 §3.3 allows sub-delims (defined in section2.2) to be in the path component.

@@ -39,7 +39,7 @@ impl AcceptAttachmentInput {
             fn uri_base(_input: &crate::input::AcceptAttachmentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.attachment_id;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "attachment_id", details: "cannot be empty or unset" })?;
-                let attachment_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let attachment_id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if attachment_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "attachment_id", details: "cannot be empty or unset" })
                             }
@@ -172,7 +172,7 @@ impl AssociateConnectPeerInput {
             fn uri_base(_input: &crate::input::AssociateConnectPeerInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.global_network_id;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_2, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
@@ -309,7 +309,7 @@ impl AssociateCustomerGatewayInput {
             fn uri_base(_input: &crate::input::AssociateCustomerGatewayInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.global_network_id;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_3, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
@@ -434,7 +434,7 @@ impl AssociateLinkInput {
             fn uri_base(_input: &crate::input::AssociateLinkInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_4 = &_input.global_network_id;
                 let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
@@ -571,7 +571,7 @@ impl AssociateTransitGatewayConnectPeerInput {
             fn uri_base(_input: &crate::input::AssociateTransitGatewayConnectPeerInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_5 = &_input.global_network_id;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_5, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
@@ -916,7 +916,7 @@ impl CreateConnectionInput {
             fn uri_base(_input: &crate::input::CreateConnectionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_6 = &_input.global_network_id;
                 let input_6 = input_6.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_6, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
@@ -1473,7 +1473,7 @@ impl CreateDeviceInput {
             fn uri_base(_input: &crate::input::CreateDeviceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_7 = &_input.global_network_id;
                 let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_7, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
@@ -1773,7 +1773,7 @@ impl CreateLinkInput {
             fn uri_base(_input: &crate::input::CreateLinkInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_8 = &_input.global_network_id;
                 let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_8, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
@@ -1928,7 +1928,7 @@ impl CreateSiteInput {
             fn uri_base(_input: &crate::input::CreateSiteInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_9 = &_input.global_network_id;
                 let input_9 = input_9.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_9, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
@@ -2619,7 +2619,7 @@ impl DeleteAttachmentInput {
             fn uri_base(_input: &crate::input::DeleteAttachmentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_10 = &_input.attachment_id;
                 let input_10 = input_10.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "attachment_id", details: "cannot be empty or unset" })?;
-                let attachment_id = aws_smithy_http::label::fmt_string(input_10, false);
+                let attachment_id = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Default);
                 if attachment_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "attachment_id", details: "cannot be empty or unset" })
                             }
@@ -2728,13 +2728,13 @@ impl DeleteConnectionInput {
             fn uri_base(_input: &crate::input::DeleteConnectionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_11 = &_input.global_network_id;
                 let input_11 = input_11.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_11, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_11, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
                 let input_12 = &_input.connection_id;
                 let input_12 = input_12.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "connection_id", details: "cannot be empty or unset" })?;
-                let connection_id = aws_smithy_http::label::fmt_string(input_12, false);
+                let connection_id = aws_smithy_http::label::fmt_string(input_12, aws_smithy_http::label::EncodingStrategy::Default);
                 if connection_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "connection_id", details: "cannot be empty or unset" })
                             }
@@ -2831,7 +2831,7 @@ impl DeleteConnectPeerInput {
             fn uri_base(_input: &crate::input::DeleteConnectPeerInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_13 = &_input.connect_peer_id;
                 let input_13 = input_13.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "connect_peer_id", details: "cannot be empty or unset" })?;
-                let connect_peer_id = aws_smithy_http::label::fmt_string(input_13, false);
+                let connect_peer_id = aws_smithy_http::label::fmt_string(input_13, aws_smithy_http::label::EncodingStrategy::Default);
                 if connect_peer_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "connect_peer_id", details: "cannot be empty or unset" })
                             }
@@ -2928,7 +2928,7 @@ impl DeleteCoreNetworkInput {
             fn uri_base(_input: &crate::input::DeleteCoreNetworkInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_14 = &_input.core_network_id;
                 let input_14 = input_14.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "core_network_id", details: "cannot be empty or unset" })?;
-                let core_network_id = aws_smithy_http::label::fmt_string(input_14, false);
+                let core_network_id = aws_smithy_http::label::fmt_string(input_14, aws_smithy_http::label::EncodingStrategy::Default);
                 if core_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "core_network_id", details: "cannot be empty or unset" })
                             }
@@ -3037,7 +3037,7 @@ impl DeleteCoreNetworkPolicyVersionInput {
             fn uri_base(_input: &crate::input::DeleteCoreNetworkPolicyVersionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_15 = &_input.core_network_id;
                 let input_15 = input_15.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "core_network_id", details: "cannot be empty or unset" })?;
-                let core_network_id = aws_smithy_http::label::fmt_string(input_15, false);
+                let core_network_id = aws_smithy_http::label::fmt_string(input_15, aws_smithy_http::label::EncodingStrategy::Default);
                 if core_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "core_network_id", details: "cannot be empty or unset" })
                             }
@@ -3152,13 +3152,13 @@ impl DeleteDeviceInput {
             fn uri_base(_input: &crate::input::DeleteDeviceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_17 = &_input.global_network_id;
                 let input_17 = input_17.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_17, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_17, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
                 let input_18 = &_input.device_id;
                 let input_18 = input_18.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "device_id", details: "cannot be empty or unset" })?;
-                let device_id = aws_smithy_http::label::fmt_string(input_18, false);
+                let device_id = aws_smithy_http::label::fmt_string(input_18, aws_smithy_http::label::EncodingStrategy::Default);
                 if device_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "device_id", details: "cannot be empty or unset" })
                             }
@@ -3255,7 +3255,7 @@ impl DeleteGlobalNetworkInput {
             fn uri_base(_input: &crate::input::DeleteGlobalNetworkInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_19 = &_input.global_network_id;
                 let input_19 = input_19.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_19, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_19, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
@@ -3364,13 +3364,13 @@ impl DeleteLinkInput {
             fn uri_base(_input: &crate::input::DeleteLinkInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_20 = &_input.global_network_id;
                 let input_20 = input_20.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_20, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_20, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
                 let input_21 = &_input.link_id;
                 let input_21 = input_21.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "link_id", details: "cannot be empty or unset" })?;
-                let link_id = aws_smithy_http::label::fmt_string(input_21, false);
+                let link_id = aws_smithy_http::label::fmt_string(input_21, aws_smithy_http::label::EncodingStrategy::Default);
                 if link_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "link_id", details: "cannot be empty or unset" })
                             }
@@ -3467,7 +3467,7 @@ impl DeletePeeringInput {
             fn uri_base(_input: &crate::input::DeletePeeringInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_22 = &_input.peering_id;
                 let input_22 = input_22.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "peering_id", details: "cannot be empty or unset" })?;
-                let peering_id = aws_smithy_http::label::fmt_string(input_22, false);
+                let peering_id = aws_smithy_http::label::fmt_string(input_22, aws_smithy_http::label::EncodingStrategy::Default);
                 if peering_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "peering_id", details: "cannot be empty or unset" })
                             }
@@ -3564,7 +3564,7 @@ impl DeleteResourcePolicyInput {
             fn uri_base(_input: &crate::input::DeleteResourcePolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_23 = &_input.resource_arn;
                 let input_23 = input_23.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_23, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_23, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -3673,13 +3673,13 @@ impl DeleteSiteInput {
             fn uri_base(_input: &crate::input::DeleteSiteInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_24 = &_input.global_network_id;
                 let input_24 = input_24.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_24, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_24, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
                 let input_25 = &_input.site_id;
                 let input_25 = input_25.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "site_id", details: "cannot be empty or unset" })?;
-                let site_id = aws_smithy_http::label::fmt_string(input_25, false);
+                let site_id = aws_smithy_http::label::fmt_string(input_25, aws_smithy_http::label::EncodingStrategy::Default);
                 if site_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "site_id", details: "cannot be empty or unset" })
                             }
@@ -3788,13 +3788,13 @@ impl DeregisterTransitGatewayInput {
             fn uri_base(_input: &crate::input::DeregisterTransitGatewayInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_26 = &_input.global_network_id;
                 let input_26 = input_26.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_26, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_26, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
                 let input_27 = &_input.transit_gateway_arn;
                 let input_27 = input_27.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "transit_gateway_arn", details: "cannot be empty or unset" })?;
-                let transit_gateway_arn = aws_smithy_http::label::fmt_string(input_27, false);
+                let transit_gateway_arn = aws_smithy_http::label::fmt_string(input_27, aws_smithy_http::label::EncodingStrategy::Default);
                 if transit_gateway_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "transit_gateway_arn", details: "cannot be empty or unset" })
                             }
@@ -4040,13 +4040,13 @@ impl DisassociateConnectPeerInput {
             fn uri_base(_input: &crate::input::DisassociateConnectPeerInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_32 = &_input.global_network_id;
                 let input_32 = input_32.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_32, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_32, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
                 let input_33 = &_input.connect_peer_id;
                 let input_33 = input_33.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "connect_peer_id", details: "cannot be empty or unset" })?;
-                let connect_peer_id = aws_smithy_http::label::fmt_string(input_33, false);
+                let connect_peer_id = aws_smithy_http::label::fmt_string(input_33, aws_smithy_http::label::EncodingStrategy::Default);
                 if connect_peer_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "connect_peer_id", details: "cannot be empty or unset" })
                             }
@@ -4155,13 +4155,13 @@ impl DisassociateCustomerGatewayInput {
             fn uri_base(_input: &crate::input::DisassociateCustomerGatewayInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_34 = &_input.global_network_id;
                 let input_34 = input_34.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_34, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_34, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
                 let input_35 = &_input.customer_gateway_arn;
                 let input_35 = input_35.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "customer_gateway_arn", details: "cannot be empty or unset" })?;
-                let customer_gateway_arn = aws_smithy_http::label::fmt_string(input_35, false);
+                let customer_gateway_arn = aws_smithy_http::label::fmt_string(input_35, aws_smithy_http::label::EncodingStrategy::Default);
                 if customer_gateway_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "customer_gateway_arn", details: "cannot be empty or unset" })
                             }
@@ -4282,7 +4282,7 @@ impl DisassociateLinkInput {
             fn uri_base(_input: &crate::input::DisassociateLinkInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_36 = &_input.global_network_id;
                 let input_36 = input_36.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_36, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_36, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
@@ -4402,13 +4402,13 @@ impl DisassociateTransitGatewayConnectPeerInput {
             fn uri_base(_input: &crate::input::DisassociateTransitGatewayConnectPeerInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_39 = &_input.global_network_id;
                 let input_39 = input_39.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_39, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_39, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
                 let input_40 = &_input.transit_gateway_connect_peer_arn;
                 let input_40 = input_40.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "transit_gateway_connect_peer_arn", details: "cannot be empty or unset" })?;
-                let transit_gateway_connect_peer_arn = aws_smithy_http::label::fmt_string(input_40, false);
+                let transit_gateway_connect_peer_arn = aws_smithy_http::label::fmt_string(input_40, aws_smithy_http::label::EncodingStrategy::Default);
                 if transit_gateway_connect_peer_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "transit_gateway_connect_peer_arn", details: "cannot be empty or unset" })
                             }
@@ -4517,7 +4517,7 @@ impl ExecuteCoreNetworkChangeSetInput {
             fn uri_base(_input: &crate::input::ExecuteCoreNetworkChangeSetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_41 = &_input.core_network_id;
                 let input_41 = input_41.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "core_network_id", details: "cannot be empty or unset" })?;
-                let core_network_id = aws_smithy_http::label::fmt_string(input_41, false);
+                let core_network_id = aws_smithy_http::label::fmt_string(input_41, aws_smithy_http::label::EncodingStrategy::Default);
                 if core_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "core_network_id", details: "cannot be empty or unset" })
                             }
@@ -4620,7 +4620,7 @@ impl GetConnectAttachmentInput {
             fn uri_base(_input: &crate::input::GetConnectAttachmentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_43 = &_input.attachment_id;
                 let input_43 = input_43.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "attachment_id", details: "cannot be empty or unset" })?;
-                let attachment_id = aws_smithy_http::label::fmt_string(input_43, false);
+                let attachment_id = aws_smithy_http::label::fmt_string(input_43, aws_smithy_http::label::EncodingStrategy::Default);
                 if attachment_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "attachment_id", details: "cannot be empty or unset" })
                             }
@@ -4771,7 +4771,7 @@ impl GetConnectionsInput {
             fn uri_base(_input: &crate::input::GetConnectionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_44 = &_input.global_network_id;
                 let input_44 = input_44.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_44, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_44, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
@@ -4887,7 +4887,7 @@ impl GetConnectPeerInput {
             fn uri_base(_input: &crate::input::GetConnectPeerInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_50 = &_input.connect_peer_id;
                 let input_50 = input_50.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "connect_peer_id", details: "cannot be empty or unset" })?;
-                let connect_peer_id = aws_smithy_http::label::fmt_string(input_50, false);
+                let connect_peer_id = aws_smithy_http::label::fmt_string(input_50, aws_smithy_http::label::EncodingStrategy::Default);
                 if connect_peer_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "connect_peer_id", details: "cannot be empty or unset" })
                             }
@@ -5026,7 +5026,7 @@ impl GetConnectPeerAssociationsInput {
             fn uri_base(_input: &crate::input::GetConnectPeerAssociationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_51 = &_input.global_network_id;
                 let input_51 = input_51.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_51, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_51, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
@@ -5139,7 +5139,7 @@ impl GetCoreNetworkInput {
             fn uri_base(_input: &crate::input::GetCoreNetworkInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_56 = &_input.core_network_id;
                 let input_56 = input_56.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "core_network_id", details: "cannot be empty or unset" })?;
-                let core_network_id = aws_smithy_http::label::fmt_string(input_56, false);
+                let core_network_id = aws_smithy_http::label::fmt_string(input_56, aws_smithy_http::label::EncodingStrategy::Default);
                 if core_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "core_network_id", details: "cannot be empty or unset" })
                             }
@@ -5272,7 +5272,7 @@ impl GetCoreNetworkChangeEventsInput {
             fn uri_base(_input: &crate::input::GetCoreNetworkChangeEventsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_57 = &_input.core_network_id;
                 let input_57 = input_57.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "core_network_id", details: "cannot be empty or unset" })?;
-                let core_network_id = aws_smithy_http::label::fmt_string(input_57, false);
+                let core_network_id = aws_smithy_http::label::fmt_string(input_57, aws_smithy_http::label::EncodingStrategy::Default);
                 if core_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "core_network_id", details: "cannot be empty or unset" })
                             }
@@ -5422,7 +5422,7 @@ impl GetCoreNetworkChangeSetInput {
             fn uri_base(_input: &crate::input::GetCoreNetworkChangeSetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_61 = &_input.core_network_id;
                 let input_61 = input_61.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "core_network_id", details: "cannot be empty or unset" })?;
-                let core_network_id = aws_smithy_http::label::fmt_string(input_61, false);
+                let core_network_id = aws_smithy_http::label::fmt_string(input_61, aws_smithy_http::label::EncodingStrategy::Default);
                 if core_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "core_network_id", details: "cannot be empty or unset" })
                             }
@@ -5560,7 +5560,7 @@ impl GetCoreNetworkPolicyInput {
             fn uri_base(_input: &crate::input::GetCoreNetworkPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_65 = &_input.core_network_id;
                 let input_65 = input_65.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "core_network_id", details: "cannot be empty or unset" })?;
-                let core_network_id = aws_smithy_http::label::fmt_string(input_65, false);
+                let core_network_id = aws_smithy_http::label::fmt_string(input_65, aws_smithy_http::label::EncodingStrategy::Default);
                 if core_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "core_network_id", details: "cannot be empty or unset" })
                             }
@@ -5710,7 +5710,7 @@ impl GetCustomerGatewayAssociationsInput {
             fn uri_base(_input: &crate::input::GetCustomerGatewayAssociationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_68 = &_input.global_network_id;
                 let input_68 = input_68.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_68, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_68, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
@@ -5877,7 +5877,7 @@ impl GetDevicesInput {
             fn uri_base(_input: &crate::input::GetDevicesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_73 = &_input.global_network_id;
                 let input_73 = input_73.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_73, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_73, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
@@ -6041,7 +6041,7 @@ impl GetLinkAssociationsInput {
             fn uri_base(_input: &crate::input::GetLinkAssociationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_79 = &_input.global_network_id;
                 let input_79 = input_79.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_79, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_79, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
@@ -6233,7 +6233,7 @@ impl GetLinksInput {
             fn uri_base(_input: &crate::input::GetLinksInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_84 = &_input.global_network_id;
                 let input_84 = input_84.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_84, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_84, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
@@ -6435,7 +6435,7 @@ impl GetNetworkResourceCountsInput {
             fn uri_base(_input: &crate::input::GetNetworkResourceCountsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_92 = &_input.global_network_id;
                 let input_92 = input_92.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_92, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_92, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
@@ -6686,7 +6686,7 @@ impl GetNetworkResourceRelationshipsInput {
             fn uri_base(_input: &crate::input::GetNetworkResourceRelationshipsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_96 = &_input.global_network_id;
                 let input_96 = input_96.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_96, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_96, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
@@ -6952,7 +6952,7 @@ impl GetNetworkResourcesInput {
             fn uri_base(_input: &crate::input::GetNetworkResourcesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_105 = &_input.global_network_id;
                 let input_105 = input_105.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_105, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_105, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
@@ -7234,7 +7234,7 @@ impl GetNetworkRoutesInput {
             fn uri_base(_input: &crate::input::GetNetworkRoutesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_114 = &_input.global_network_id;
                 let input_114 = input_114.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_114, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_114, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
@@ -7475,7 +7475,7 @@ impl GetNetworkTelemetryInput {
             fn uri_base(_input: &crate::input::GetNetworkTelemetryInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_115 = &_input.global_network_id;
                 let input_115 = input_115.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_115, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_115, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
@@ -7601,7 +7601,7 @@ impl GetResourcePolicyInput {
             fn uri_base(_input: &crate::input::GetResourcePolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_124 = &_input.resource_arn;
                 let input_124 = input_124.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_124, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_124, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -7710,13 +7710,13 @@ impl GetRouteAnalysisInput {
             fn uri_base(_input: &crate::input::GetRouteAnalysisInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_125 = &_input.global_network_id;
                 let input_125 = input_125.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_125, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_125, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
                 let input_126 = &_input.route_analysis_id;
                 let input_126 = input_126.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "route_analysis_id", details: "cannot be empty or unset" })?;
-                let route_analysis_id = aws_smithy_http::label::fmt_string(input_126, false);
+                let route_analysis_id = aws_smithy_http::label::fmt_string(input_126, aws_smithy_http::label::EncodingStrategy::Default);
                 if route_analysis_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "route_analysis_id", details: "cannot be empty or unset" })
                             }
@@ -7855,7 +7855,7 @@ impl GetSitesInput {
             fn uri_base(_input: &crate::input::GetSitesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_127 = &_input.global_network_id;
                 let input_127 = input_127.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_127, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_127, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
@@ -7968,7 +7968,7 @@ impl GetSiteToSiteVpnAttachmentInput {
             fn uri_base(_input: &crate::input::GetSiteToSiteVpnAttachmentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_132 = &_input.attachment_id;
                 let input_132 = input_132.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "attachment_id", details: "cannot be empty or unset" })?;
-                let attachment_id = aws_smithy_http::label::fmt_string(input_132, false);
+                let attachment_id = aws_smithy_http::label::fmt_string(input_132, aws_smithy_http::label::EncodingStrategy::Default);
                 if attachment_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "attachment_id", details: "cannot be empty or unset" })
                             }
@@ -8107,7 +8107,7 @@ impl GetTransitGatewayConnectPeerAssociationsInput {
             fn uri_base(_input: &crate::input::GetTransitGatewayConnectPeerAssociationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_133 = &_input.global_network_id;
                 let input_133 = input_133.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_133, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_133, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
@@ -8220,7 +8220,7 @@ impl GetTransitGatewayPeeringInput {
             fn uri_base(_input: &crate::input::GetTransitGatewayPeeringInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_138 = &_input.peering_id;
                 let input_138 = input_138.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "peering_id", details: "cannot be empty or unset" })?;
-                let peering_id = aws_smithy_http::label::fmt_string(input_138, false);
+                let peering_id = aws_smithy_http::label::fmt_string(input_138, aws_smithy_http::label::EncodingStrategy::Default);
                 if peering_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "peering_id", details: "cannot be empty or unset" })
                             }
@@ -8359,7 +8359,7 @@ impl GetTransitGatewayRegistrationsInput {
             fn uri_base(_input: &crate::input::GetTransitGatewayRegistrationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_139 = &_input.global_network_id;
                 let input_139 = input_139.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_139, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_139, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
@@ -8472,7 +8472,7 @@ impl GetTransitGatewayRouteTableAttachmentInput {
             fn uri_base(_input: &crate::input::GetTransitGatewayRouteTableAttachmentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_144 = &_input.attachment_id;
                 let input_144 = input_144.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "attachment_id", details: "cannot be empty or unset" })?;
-                let attachment_id = aws_smithy_http::label::fmt_string(input_144, false);
+                let attachment_id = aws_smithy_http::label::fmt_string(input_144, aws_smithy_http::label::EncodingStrategy::Default);
                 if attachment_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "attachment_id", details: "cannot be empty or unset" })
                             }
@@ -8569,7 +8569,7 @@ impl GetVpcAttachmentInput {
             fn uri_base(_input: &crate::input::GetVpcAttachmentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_145 = &_input.attachment_id;
                 let input_145 = input_145.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "attachment_id", details: "cannot be empty or unset" })?;
-                let attachment_id = aws_smithy_http::label::fmt_string(input_145, false);
+                let attachment_id = aws_smithy_http::label::fmt_string(input_145, aws_smithy_http::label::EncodingStrategy::Default);
                 if attachment_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "attachment_id", details: "cannot be empty or unset" })
                             }
@@ -9008,7 +9008,7 @@ impl ListCoreNetworkPolicyVersionsInput {
             fn uri_base(_input: &crate::input::ListCoreNetworkPolicyVersionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_156 = &_input.core_network_id;
                 let input_156 = input_156.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "core_network_id", details: "cannot be empty or unset" })?;
-                let core_network_id = aws_smithy_http::label::fmt_string(input_156, false);
+                let core_network_id = aws_smithy_http::label::fmt_string(input_156, aws_smithy_http::label::EncodingStrategy::Default);
                 if core_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "core_network_id", details: "cannot be empty or unset" })
                             }
@@ -9518,7 +9518,7 @@ impl ListTagsForResourceInput {
             fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_169 = &_input.resource_arn;
                 let input_169 = input_169.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_169, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_169, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -9666,7 +9666,7 @@ impl PutCoreNetworkPolicyInput {
             fn uri_base(_input: &crate::input::PutCoreNetworkPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_170 = &_input.core_network_id;
                 let input_170 = input_170.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "core_network_id", details: "cannot be empty or unset" })?;
-                let core_network_id = aws_smithy_http::label::fmt_string(input_170, false);
+                let core_network_id = aws_smithy_http::label::fmt_string(input_170, aws_smithy_http::label::EncodingStrategy::Default);
                 if core_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "core_network_id", details: "cannot be empty or unset" })
                             }
@@ -9779,7 +9779,7 @@ impl PutResourcePolicyInput {
             fn uri_base(_input: &crate::input::PutResourcePolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_171 = &_input.resource_arn;
                 let input_171 = input_171.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_171, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_171, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -9892,7 +9892,7 @@ impl RegisterTransitGatewayInput {
             fn uri_base(_input: &crate::input::RegisterTransitGatewayInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_172 = &_input.global_network_id;
                 let input_172 = input_172.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_172, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_172, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
@@ -9993,7 +9993,7 @@ impl RejectAttachmentInput {
             fn uri_base(_input: &crate::input::RejectAttachmentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_173 = &_input.attachment_id;
                 let input_173 = input_173.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "attachment_id", details: "cannot be empty or unset" })?;
-                let attachment_id = aws_smithy_http::label::fmt_string(input_173, false);
+                let attachment_id = aws_smithy_http::label::fmt_string(input_173, aws_smithy_http::label::EncodingStrategy::Default);
                 if attachment_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "attachment_id", details: "cannot be empty or unset" })
                             }
@@ -10102,7 +10102,7 @@ impl RestoreCoreNetworkPolicyVersionInput {
             fn uri_base(_input: &crate::input::RestoreCoreNetworkPolicyVersionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_174 = &_input.core_network_id;
                 let input_174 = input_174.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "core_network_id", details: "cannot be empty or unset" })?;
-                let core_network_id = aws_smithy_http::label::fmt_string(input_174, false);
+                let core_network_id = aws_smithy_http::label::fmt_string(input_174, aws_smithy_http::label::EncodingStrategy::Default);
                 if core_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "core_network_id", details: "cannot be empty or unset" })
                             }
@@ -10350,7 +10350,7 @@ impl StartRouteAnalysisInput {
             fn uri_base(_input: &crate::input::StartRouteAnalysisInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_176 = &_input.global_network_id;
                 let input_176 = input_176.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_176, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_176, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
@@ -10469,7 +10469,7 @@ impl TagResourceInput {
             fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_177 = &_input.resource_arn;
                 let input_177 = input_177.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_177, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_177, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -10588,7 +10588,7 @@ impl UntagResourceInput {
             fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_178 = &_input.resource_arn;
                 let input_178 = input_178.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_178, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_178, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -10745,13 +10745,13 @@ impl UpdateConnectionInput {
             fn uri_base(_input: &crate::input::UpdateConnectionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_181 = &_input.global_network_id;
                 let input_181 = input_181.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_181, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_181, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
                 let input_182 = &_input.connection_id;
                 let input_182 = input_182.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "connection_id", details: "cannot be empty or unset" })?;
-                let connection_id = aws_smithy_http::label::fmt_string(input_182, false);
+                let connection_id = aws_smithy_http::label::fmt_string(input_182, aws_smithy_http::label::EncodingStrategy::Default);
                 if connection_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "connection_id", details: "cannot be empty or unset" })
                             }
@@ -10864,7 +10864,7 @@ impl UpdateCoreNetworkInput {
             fn uri_base(_input: &crate::input::UpdateCoreNetworkInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_183 = &_input.core_network_id;
                 let input_183 = input_183.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "core_network_id", details: "cannot be empty or unset" })?;
-                let core_network_id = aws_smithy_http::label::fmt_string(input_183, false);
+                let core_network_id = aws_smithy_http::label::fmt_string(input_183, aws_smithy_http::label::EncodingStrategy::Default);
                 if core_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "core_network_id", details: "cannot be empty or unset" })
                             }
@@ -11081,13 +11081,13 @@ impl UpdateDeviceInput {
             fn uri_base(_input: &crate::input::UpdateDeviceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_184 = &_input.global_network_id;
                 let input_184 = input_184.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_184, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_184, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
                 let input_185 = &_input.device_id;
                 let input_185 = input_185.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "device_id", details: "cannot be empty or unset" })?;
-                let device_id = aws_smithy_http::label::fmt_string(input_185, false);
+                let device_id = aws_smithy_http::label::fmt_string(input_185, aws_smithy_http::label::EncodingStrategy::Default);
                 if device_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "device_id", details: "cannot be empty or unset" })
                             }
@@ -11202,7 +11202,7 @@ impl UpdateGlobalNetworkInput {
             fn uri_base(_input: &crate::input::UpdateGlobalNetworkInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_186 = &_input.global_network_id;
                 let input_186 = input_186.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_186, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_186, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
@@ -11369,13 +11369,13 @@ impl UpdateLinkInput {
             fn uri_base(_input: &crate::input::UpdateLinkInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_187 = &_input.global_network_id;
                 let input_187 = input_187.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_187, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_187, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
                 let input_188 = &_input.link_id;
                 let input_188 = input_188.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "link_id", details: "cannot be empty or unset" })?;
-                let link_id = aws_smithy_http::label::fmt_string(input_188, false);
+                let link_id = aws_smithy_http::label::fmt_string(input_188, aws_smithy_http::label::EncodingStrategy::Default);
                 if link_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "link_id", details: "cannot be empty or unset" })
                             }
@@ -11506,13 +11506,13 @@ impl UpdateNetworkResourceMetadataInput {
             fn uri_base(_input: &crate::input::UpdateNetworkResourceMetadataInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_189 = &_input.global_network_id;
                 let input_189 = input_189.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_189, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_189, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
                 let input_190 = &_input.resource_arn;
                 let input_190 = input_190.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_190, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_190, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -11661,13 +11661,13 @@ impl UpdateSiteInput {
             fn uri_base(_input: &crate::input::UpdateSiteInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_191 = &_input.global_network_id;
                 let input_191 = input_191.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })?;
-                let global_network_id = aws_smithy_http::label::fmt_string(input_191, false);
+                let global_network_id = aws_smithy_http::label::fmt_string(input_191, aws_smithy_http::label::EncodingStrategy::Default);
                 if global_network_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "global_network_id", details: "cannot be empty or unset" })
                             }
                 let input_192 = &_input.site_id;
                 let input_192 = input_192.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "site_id", details: "cannot be empty or unset" })?;
-                let site_id = aws_smithy_http::label::fmt_string(input_192, false);
+                let site_id = aws_smithy_http::label::fmt_string(input_192, aws_smithy_http::label::EncodingStrategy::Default);
                 if site_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "site_id", details: "cannot be empty or unset" })
                             }
@@ -11816,7 +11816,7 @@ impl UpdateVpcAttachmentInput {
             fn uri_base(_input: &crate::input::UpdateVpcAttachmentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_193 = &_input.attachment_id;
                 let input_193 = input_193.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "attachment_id", details: "cannot be empty or unset" })?;
-                let attachment_id = aws_smithy_http::label::fmt_string(input_193, false);
+                let attachment_id = aws_smithy_http::label::fmt_string(input_193, aws_smithy_http::label::EncodingStrategy::Default);
                 if attachment_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "attachment_id", details: "cannot be empty or unset" })
                             }

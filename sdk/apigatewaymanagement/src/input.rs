@@ -39,7 +39,7 @@ impl DeleteConnectionInput {
             fn uri_base(_input: &crate::input::DeleteConnectionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.connection_id;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "connection_id", details: "cannot be empty or unset" })?;
-                let connection_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let connection_id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if connection_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "connection_id", details: "cannot be empty or unset" })
                             }
@@ -136,7 +136,7 @@ impl GetConnectionInput {
             fn uri_base(_input: &crate::input::GetConnectionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.connection_id;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "connection_id", details: "cannot be empty or unset" })?;
-                let connection_id = aws_smithy_http::label::fmt_string(input_2, false);
+                let connection_id = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if connection_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "connection_id", details: "cannot be empty or unset" })
                             }
@@ -245,7 +245,7 @@ impl PostToConnectionInput {
             fn uri_base(_input: &crate::input::PostToConnectionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.connection_id;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "connection_id", details: "cannot be empty or unset" })?;
-                let connection_id = aws_smithy_http::label::fmt_string(input_3, false);
+                let connection_id = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if connection_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "connection_id", details: "cannot be empty or unset" })
                             }

@@ -39,7 +39,7 @@ impl DeleteHumanLoopInput {
             fn uri_base(_input: &crate::input::DeleteHumanLoopInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.human_loop_name;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "human_loop_name", details: "cannot be empty or unset" })?;
-                let human_loop_name = aws_smithy_http::label::fmt_string(input_1, false);
+                let human_loop_name = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if human_loop_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "human_loop_name", details: "cannot be empty or unset" })
                             }
@@ -136,7 +136,7 @@ impl DescribeHumanLoopInput {
             fn uri_base(_input: &crate::input::DescribeHumanLoopInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.human_loop_name;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "human_loop_name", details: "cannot be empty or unset" })?;
-                let human_loop_name = aws_smithy_http::label::fmt_string(input_2, false);
+                let human_loop_name = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if human_loop_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "human_loop_name", details: "cannot be empty or unset" })
                             }

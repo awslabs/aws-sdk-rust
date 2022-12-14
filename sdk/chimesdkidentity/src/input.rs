@@ -191,7 +191,7 @@ impl CreateAppInstanceAdminInput {
             fn uri_base(_input: &crate::input::CreateAppInstanceAdminInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.app_instance_arn;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_arn", details: "cannot be empty or unset" })?;
-                let app_instance_arn = aws_smithy_http::label::fmt_string(input_1, false);
+                let app_instance_arn = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_instance_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_arn", details: "cannot be empty or unset" })
                             }
@@ -456,7 +456,7 @@ impl DeleteAppInstanceInput {
             fn uri_base(_input: &crate::input::DeleteAppInstanceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.app_instance_arn;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_arn", details: "cannot be empty or unset" })?;
-                let app_instance_arn = aws_smithy_http::label::fmt_string(input_2, false);
+                let app_instance_arn = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_instance_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_arn", details: "cannot be empty or unset" })
                             }
@@ -565,13 +565,13 @@ impl DeleteAppInstanceAdminInput {
             fn uri_base(_input: &crate::input::DeleteAppInstanceAdminInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.app_instance_arn;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_arn", details: "cannot be empty or unset" })?;
-                let app_instance_arn = aws_smithy_http::label::fmt_string(input_3, false);
+                let app_instance_arn = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_instance_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_arn", details: "cannot be empty or unset" })
                             }
                 let input_4 = &_input.app_instance_admin_arn;
                 let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_admin_arn", details: "cannot be empty or unset" })?;
-                let app_instance_admin_arn = aws_smithy_http::label::fmt_string(input_4, false);
+                let app_instance_admin_arn = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_instance_admin_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_admin_arn", details: "cannot be empty or unset" })
                             }
@@ -668,7 +668,7 @@ impl DeleteAppInstanceUserInput {
             fn uri_base(_input: &crate::input::DeleteAppInstanceUserInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_5 = &_input.app_instance_user_arn;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_user_arn", details: "cannot be empty or unset" })?;
-                let app_instance_user_arn = aws_smithy_http::label::fmt_string(input_5, false);
+                let app_instance_user_arn = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_instance_user_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_user_arn", details: "cannot be empty or unset" })
                             }
@@ -777,13 +777,13 @@ impl DeregisterAppInstanceUserEndpointInput {
             fn uri_base(_input: &crate::input::DeregisterAppInstanceUserEndpointInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_6 = &_input.app_instance_user_arn;
                 let input_6 = input_6.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_user_arn", details: "cannot be empty or unset" })?;
-                let app_instance_user_arn = aws_smithy_http::label::fmt_string(input_6, false);
+                let app_instance_user_arn = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_instance_user_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_user_arn", details: "cannot be empty or unset" })
                             }
                 let input_7 = &_input.endpoint_id;
                 let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "endpoint_id", details: "cannot be empty or unset" })?;
-                let endpoint_id = aws_smithy_http::label::fmt_string(input_7, false);
+                let endpoint_id = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
                 if endpoint_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "endpoint_id", details: "cannot be empty or unset" })
                             }
@@ -880,7 +880,7 @@ impl DescribeAppInstanceInput {
             fn uri_base(_input: &crate::input::DescribeAppInstanceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_8 = &_input.app_instance_arn;
                 let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_arn", details: "cannot be empty or unset" })?;
-                let app_instance_arn = aws_smithy_http::label::fmt_string(input_8, false);
+                let app_instance_arn = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_instance_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_arn", details: "cannot be empty or unset" })
                             }
@@ -989,13 +989,13 @@ impl DescribeAppInstanceAdminInput {
             fn uri_base(_input: &crate::input::DescribeAppInstanceAdminInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_9 = &_input.app_instance_arn;
                 let input_9 = input_9.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_arn", details: "cannot be empty or unset" })?;
-                let app_instance_arn = aws_smithy_http::label::fmt_string(input_9, false);
+                let app_instance_arn = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_instance_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_arn", details: "cannot be empty or unset" })
                             }
                 let input_10 = &_input.app_instance_admin_arn;
                 let input_10 = input_10.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_admin_arn", details: "cannot be empty or unset" })?;
-                let app_instance_admin_arn = aws_smithy_http::label::fmt_string(input_10, false);
+                let app_instance_admin_arn = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_instance_admin_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_admin_arn", details: "cannot be empty or unset" })
                             }
@@ -1092,7 +1092,7 @@ impl DescribeAppInstanceUserInput {
             fn uri_base(_input: &crate::input::DescribeAppInstanceUserInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_11 = &_input.app_instance_user_arn;
                 let input_11 = input_11.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_user_arn", details: "cannot be empty or unset" })?;
-                let app_instance_user_arn = aws_smithy_http::label::fmt_string(input_11, false);
+                let app_instance_user_arn = aws_smithy_http::label::fmt_string(input_11, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_instance_user_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_user_arn", details: "cannot be empty or unset" })
                             }
@@ -1201,13 +1201,13 @@ impl DescribeAppInstanceUserEndpointInput {
             fn uri_base(_input: &crate::input::DescribeAppInstanceUserEndpointInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_12 = &_input.app_instance_user_arn;
                 let input_12 = input_12.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_user_arn", details: "cannot be empty or unset" })?;
-                let app_instance_user_arn = aws_smithy_http::label::fmt_string(input_12, false);
+                let app_instance_user_arn = aws_smithy_http::label::fmt_string(input_12, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_instance_user_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_user_arn", details: "cannot be empty or unset" })
                             }
                 let input_13 = &_input.endpoint_id;
                 let input_13 = input_13.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "endpoint_id", details: "cannot be empty or unset" })?;
-                let endpoint_id = aws_smithy_http::label::fmt_string(input_13, false);
+                let endpoint_id = aws_smithy_http::label::fmt_string(input_13, aws_smithy_http::label::EncodingStrategy::Default);
                 if endpoint_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "endpoint_id", details: "cannot be empty or unset" })
                             }
@@ -1304,7 +1304,7 @@ impl GetAppInstanceRetentionSettingsInput {
             fn uri_base(_input: &crate::input::GetAppInstanceRetentionSettingsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_14 = &_input.app_instance_arn;
                 let input_14 = input_14.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_arn", details: "cannot be empty or unset" })?;
-                let app_instance_arn = aws_smithy_http::label::fmt_string(input_14, false);
+                let app_instance_arn = aws_smithy_http::label::fmt_string(input_14, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_instance_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_arn", details: "cannot be empty or unset" })
                             }
@@ -1425,7 +1425,7 @@ impl ListAppInstanceAdminsInput {
             fn uri_base(_input: &crate::input::ListAppInstanceAdminsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_15 = &_input.app_instance_arn;
                 let input_15 = input_15.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_arn", details: "cannot be empty or unset" })?;
-                let app_instance_arn = aws_smithy_http::label::fmt_string(input_15, false);
+                let app_instance_arn = aws_smithy_http::label::fmt_string(input_15, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_instance_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_arn", details: "cannot be empty or unset" })
                             }
@@ -1671,7 +1671,7 @@ impl ListAppInstanceUserEndpointsInput {
             fn uri_base(_input: &crate::input::ListAppInstanceUserEndpointsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_20 = &_input.app_instance_user_arn;
                 let input_20 = input_20.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_user_arn", details: "cannot be empty or unset" })?;
-                let app_instance_user_arn = aws_smithy_http::label::fmt_string(input_20, false);
+                let app_instance_user_arn = aws_smithy_http::label::fmt_string(input_20, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_instance_user_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_user_arn", details: "cannot be empty or unset" })
                             }
@@ -2019,7 +2019,7 @@ impl PutAppInstanceRetentionSettingsInput {
             fn uri_base(_input: &crate::input::PutAppInstanceRetentionSettingsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_27 = &_input.app_instance_arn;
                 let input_27 = input_27.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_arn", details: "cannot be empty or unset" })?;
-                let app_instance_arn = aws_smithy_http::label::fmt_string(input_27, false);
+                let app_instance_arn = aws_smithy_http::label::fmt_string(input_27, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_instance_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_arn", details: "cannot be empty or unset" })
                             }
@@ -2207,7 +2207,7 @@ impl RegisterAppInstanceUserEndpointInput {
             fn uri_base(_input: &crate::input::RegisterAppInstanceUserEndpointInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_28 = &_input.app_instance_user_arn;
                 let input_28 = input_28.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_user_arn", details: "cannot be empty or unset" })?;
-                let app_instance_user_arn = aws_smithy_http::label::fmt_string(input_28, false);
+                let app_instance_user_arn = aws_smithy_http::label::fmt_string(input_28, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_instance_user_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_user_arn", details: "cannot be empty or unset" })
                             }
@@ -2570,7 +2570,7 @@ impl UpdateAppInstanceInput {
             fn uri_base(_input: &crate::input::UpdateAppInstanceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_29 = &_input.app_instance_arn;
                 let input_29 = input_29.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_arn", details: "cannot be empty or unset" })?;
-                let app_instance_arn = aws_smithy_http::label::fmt_string(input_29, false);
+                let app_instance_arn = aws_smithy_http::label::fmt_string(input_29, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_instance_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_arn", details: "cannot be empty or unset" })
                             }
@@ -2695,7 +2695,7 @@ impl UpdateAppInstanceUserInput {
             fn uri_base(_input: &crate::input::UpdateAppInstanceUserInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_30 = &_input.app_instance_user_arn;
                 let input_30 = input_30.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_user_arn", details: "cannot be empty or unset" })?;
-                let app_instance_user_arn = aws_smithy_http::label::fmt_string(input_30, false);
+                let app_instance_user_arn = aws_smithy_http::label::fmt_string(input_30, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_instance_user_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_user_arn", details: "cannot be empty or unset" })
                             }
@@ -2832,13 +2832,13 @@ impl UpdateAppInstanceUserEndpointInput {
             fn uri_base(_input: &crate::input::UpdateAppInstanceUserEndpointInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_31 = &_input.app_instance_user_arn;
                 let input_31 = input_31.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_user_arn", details: "cannot be empty or unset" })?;
-                let app_instance_user_arn = aws_smithy_http::label::fmt_string(input_31, false);
+                let app_instance_user_arn = aws_smithy_http::label::fmt_string(input_31, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_instance_user_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_instance_user_arn", details: "cannot be empty or unset" })
                             }
                 let input_32 = &_input.endpoint_id;
                 let input_32 = input_32.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "endpoint_id", details: "cannot be empty or unset" })?;
-                let endpoint_id = aws_smithy_http::label::fmt_string(input_32, false);
+                let endpoint_id = aws_smithy_http::label::fmt_string(input_32, aws_smithy_http::label::EncodingStrategy::Default);
                 if endpoint_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "endpoint_id", details: "cannot be empty or unset" })
                             }

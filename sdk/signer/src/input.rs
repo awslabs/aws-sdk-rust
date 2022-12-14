@@ -99,7 +99,7 @@ impl AddProfilePermissionInput {
             fn uri_base(_input: &crate::input::AddProfilePermissionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.profile_name;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "profile_name", details: "cannot be empty or unset" })?;
-                let profile_name = aws_smithy_http::label::fmt_string(input_1, false);
+                let profile_name = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if profile_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "profile_name", details: "cannot be empty or unset" })
                             }
@@ -200,7 +200,7 @@ impl CancelSigningProfileInput {
             fn uri_base(_input: &crate::input::CancelSigningProfileInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.profile_name;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "profile_name", details: "cannot be empty or unset" })?;
-                let profile_name = aws_smithy_http::label::fmt_string(input_2, false);
+                let profile_name = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if profile_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "profile_name", details: "cannot be empty or unset" })
                             }
@@ -297,7 +297,7 @@ impl DescribeSigningJobInput {
             fn uri_base(_input: &crate::input::DescribeSigningJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.job_id;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "job_id", details: "cannot be empty or unset" })?;
-                let job_id = aws_smithy_http::label::fmt_string(input_3, false);
+                let job_id = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if job_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "job_id", details: "cannot be empty or unset" })
                             }
@@ -394,7 +394,7 @@ impl GetSigningPlatformInput {
             fn uri_base(_input: &crate::input::GetSigningPlatformInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_4 = &_input.platform_id;
                 let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "platform_id", details: "cannot be empty or unset" })?;
-                let platform_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let platform_id = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if platform_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "platform_id", details: "cannot be empty or unset" })
                             }
@@ -503,7 +503,7 @@ impl GetSigningProfileInput {
             fn uri_base(_input: &crate::input::GetSigningProfileInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_5 = &_input.profile_name;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "profile_name", details: "cannot be empty or unset" })?;
-                let profile_name = aws_smithy_http::label::fmt_string(input_5, false);
+                let profile_name = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if profile_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "profile_name", details: "cannot be empty or unset" })
                             }
@@ -620,7 +620,7 @@ impl ListProfilePermissionsInput {
             fn uri_base(_input: &crate::input::ListProfilePermissionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_7 = &_input.profile_name;
                 let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "profile_name", details: "cannot be empty or unset" })?;
-                let profile_name = aws_smithy_http::label::fmt_string(input_7, false);
+                let profile_name = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
                 if profile_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "profile_name", details: "cannot be empty or unset" })
                             }
@@ -1272,7 +1272,7 @@ impl ListTagsForResourceInput {
             fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_27 = &_input.resource_arn;
                 let input_27 = input_27.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_27, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_27, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -1453,7 +1453,7 @@ impl PutSigningProfileInput {
             fn uri_base(_input: &crate::input::PutSigningProfileInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_28 = &_input.profile_name;
                 let input_28 = input_28.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "profile_name", details: "cannot be empty or unset" })?;
-                let profile_name = aws_smithy_http::label::fmt_string(input_28, false);
+                let profile_name = aws_smithy_http::label::fmt_string(input_28, aws_smithy_http::label::EncodingStrategy::Default);
                 if profile_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "profile_name", details: "cannot be empty or unset" })
                             }
@@ -1578,13 +1578,13 @@ impl RemoveProfilePermissionInput {
             fn uri_base(_input: &crate::input::RemoveProfilePermissionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_29 = &_input.profile_name;
                 let input_29 = input_29.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "profile_name", details: "cannot be empty or unset" })?;
-                let profile_name = aws_smithy_http::label::fmt_string(input_29, false);
+                let profile_name = aws_smithy_http::label::fmt_string(input_29, aws_smithy_http::label::EncodingStrategy::Default);
                 if profile_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "profile_name", details: "cannot be empty or unset" })
                             }
                 let input_30 = &_input.statement_id;
                 let input_30 = input_30.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "statement_id", details: "cannot be empty or unset" })?;
-                let statement_id = aws_smithy_http::label::fmt_string(input_30, false);
+                let statement_id = aws_smithy_http::label::fmt_string(input_30, aws_smithy_http::label::EncodingStrategy::Default);
                 if statement_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "statement_id", details: "cannot be empty or unset" })
                             }
@@ -1713,7 +1713,7 @@ impl RevokeSignatureInput {
             fn uri_base(_input: &crate::input::RevokeSignatureInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_32 = &_input.job_id;
                 let input_32 = input_32.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "job_id", details: "cannot be empty or unset" })?;
-                let job_id = aws_smithy_http::label::fmt_string(input_32, false);
+                let job_id = aws_smithy_http::label::fmt_string(input_32, aws_smithy_http::label::EncodingStrategy::Default);
                 if job_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "job_id", details: "cannot be empty or unset" })
                             }
@@ -1850,7 +1850,7 @@ impl RevokeSigningProfileInput {
             fn uri_base(_input: &crate::input::RevokeSigningProfileInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_33 = &_input.profile_name;
                 let input_33 = input_33.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "profile_name", details: "cannot be empty or unset" })?;
-                let profile_name = aws_smithy_http::label::fmt_string(input_33, false);
+                let profile_name = aws_smithy_http::label::fmt_string(input_33, aws_smithy_http::label::EncodingStrategy::Default);
                 if profile_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "profile_name", details: "cannot be empty or unset" })
                             }
@@ -2115,7 +2115,7 @@ impl TagResourceInput {
             fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_34 = &_input.resource_arn;
                 let input_34 = input_34.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_34, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_34, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -2234,7 +2234,7 @@ impl UntagResourceInput {
             fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_35 = &_input.resource_arn;
                 let input_35 = input_35.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_35, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_35, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }

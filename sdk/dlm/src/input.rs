@@ -188,7 +188,7 @@ impl DeleteLifecyclePolicyInput {
             fn uri_base(_input: &crate::input::DeleteLifecyclePolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.policy_id;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "policy_id", details: "cannot be empty or unset" })?;
-                let policy_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let policy_id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if policy_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "policy_id", details: "cannot be empty or unset" })
                             }
@@ -482,7 +482,7 @@ impl GetLifecyclePolicyInput {
             fn uri_base(_input: &crate::input::GetLifecyclePolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_11 = &_input.policy_id;
                 let input_11 = input_11.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "policy_id", details: "cannot be empty or unset" })?;
-                let policy_id = aws_smithy_http::label::fmt_string(input_11, false);
+                let policy_id = aws_smithy_http::label::fmt_string(input_11, aws_smithy_http::label::EncodingStrategy::Default);
                 if policy_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "policy_id", details: "cannot be empty or unset" })
                             }
@@ -579,7 +579,7 @@ impl ListTagsForResourceInput {
             fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_12 = &_input.resource_arn;
                 let input_12 = input_12.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_12, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_12, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -694,7 +694,7 @@ impl TagResourceInput {
             fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_13 = &_input.resource_arn;
                 let input_13 = input_13.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_13, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_13, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -813,7 +813,7 @@ impl UntagResourceInput {
             fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_14 = &_input.resource_arn;
                 let input_14 = input_14.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_14, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_14, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -968,7 +968,7 @@ impl UpdateLifecyclePolicyInput {
             fn uri_base(_input: &crate::input::UpdateLifecyclePolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_17 = &_input.policy_id;
                 let input_17 = input_17.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "policy_id", details: "cannot be empty or unset" })?;
-                let policy_id = aws_smithy_http::label::fmt_string(input_17, false);
+                let policy_id = aws_smithy_http::label::fmt_string(input_17, aws_smithy_http::label::EncodingStrategy::Default);
                 if policy_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "policy_id", details: "cannot be empty or unset" })
                             }

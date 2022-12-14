@@ -51,7 +51,7 @@ impl DeleteObjectInput {
             fn uri_base(_input: &crate::input::DeleteObjectInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.path;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "path", details: "cannot be empty or unset" })?;
-                let path = aws_smithy_http::label::fmt_string(input_1, true);
+                let path = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if path.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "path", details: "cannot be empty or unset" })
                             }
@@ -160,7 +160,7 @@ impl DescribeObjectInput {
             fn uri_base(_input: &crate::input::DescribeObjectInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.path;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "path", details: "cannot be empty or unset" })?;
-                let path = aws_smithy_http::label::fmt_string(input_2, true);
+                let path = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if path.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "path", details: "cannot be empty or unset" })
                             }
@@ -293,7 +293,7 @@ impl GetObjectInput {
             fn uri_base(_input: &crate::input::GetObjectInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.path;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "path", details: "cannot be empty or unset" })?;
-                let path = aws_smithy_http::label::fmt_string(input_3, true);
+                let path = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if path.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "path", details: "cannot be empty or unset" })
                             }
@@ -625,7 +625,7 @@ impl PutObjectInput {
             fn uri_base(_input: &crate::input::PutObjectInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_7 = &_input.path;
                 let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "path", details: "cannot be empty or unset" })?;
-                let path = aws_smithy_http::label::fmt_string(input_7, true);
+                let path = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if path.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "path", details: "cannot be empty or unset" })
                             }

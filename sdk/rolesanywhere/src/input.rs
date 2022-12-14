@@ -373,7 +373,7 @@ impl DeleteCrlInput {
             fn uri_base(_input: &crate::input::DeleteCrlInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.crl_id;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "crl_id", details: "cannot be empty or unset" })?;
-                let crl_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let crl_id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if crl_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "crl_id", details: "cannot be empty or unset" })
                             }
@@ -470,7 +470,7 @@ impl DeleteProfileInput {
             fn uri_base(_input: &crate::input::DeleteProfileInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.profile_id;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "profile_id", details: "cannot be empty or unset" })?;
-                let profile_id = aws_smithy_http::label::fmt_string(input_2, false);
+                let profile_id = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if profile_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "profile_id", details: "cannot be empty or unset" })
                             }
@@ -567,7 +567,7 @@ impl DeleteTrustAnchorInput {
             fn uri_base(_input: &crate::input::DeleteTrustAnchorInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.trust_anchor_id;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "trust_anchor_id", details: "cannot be empty or unset" })?;
-                let trust_anchor_id = aws_smithy_http::label::fmt_string(input_3, false);
+                let trust_anchor_id = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if trust_anchor_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "trust_anchor_id", details: "cannot be empty or unset" })
                             }
@@ -664,7 +664,7 @@ impl DisableCrlInput {
             fn uri_base(_input: &crate::input::DisableCrlInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_4 = &_input.crl_id;
                 let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "crl_id", details: "cannot be empty or unset" })?;
-                let crl_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let crl_id = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if crl_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "crl_id", details: "cannot be empty or unset" })
                             }
@@ -761,7 +761,7 @@ impl DisableProfileInput {
             fn uri_base(_input: &crate::input::DisableProfileInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_5 = &_input.profile_id;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "profile_id", details: "cannot be empty or unset" })?;
-                let profile_id = aws_smithy_http::label::fmt_string(input_5, false);
+                let profile_id = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if profile_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "profile_id", details: "cannot be empty or unset" })
                             }
@@ -858,7 +858,7 @@ impl DisableTrustAnchorInput {
             fn uri_base(_input: &crate::input::DisableTrustAnchorInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_6 = &_input.trust_anchor_id;
                 let input_6 = input_6.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "trust_anchor_id", details: "cannot be empty or unset" })?;
-                let trust_anchor_id = aws_smithy_http::label::fmt_string(input_6, false);
+                let trust_anchor_id = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if trust_anchor_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "trust_anchor_id", details: "cannot be empty or unset" })
                             }
@@ -955,7 +955,7 @@ impl EnableCrlInput {
             fn uri_base(_input: &crate::input::EnableCrlInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_7 = &_input.crl_id;
                 let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "crl_id", details: "cannot be empty or unset" })?;
-                let crl_id = aws_smithy_http::label::fmt_string(input_7, false);
+                let crl_id = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
                 if crl_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "crl_id", details: "cannot be empty or unset" })
                             }
@@ -1052,7 +1052,7 @@ impl EnableProfileInput {
             fn uri_base(_input: &crate::input::EnableProfileInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_8 = &_input.profile_id;
                 let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "profile_id", details: "cannot be empty or unset" })?;
-                let profile_id = aws_smithy_http::label::fmt_string(input_8, false);
+                let profile_id = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
                 if profile_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "profile_id", details: "cannot be empty or unset" })
                             }
@@ -1149,7 +1149,7 @@ impl EnableTrustAnchorInput {
             fn uri_base(_input: &crate::input::EnableTrustAnchorInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_9 = &_input.trust_anchor_id;
                 let input_9 = input_9.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "trust_anchor_id", details: "cannot be empty or unset" })?;
-                let trust_anchor_id = aws_smithy_http::label::fmt_string(input_9, false);
+                let trust_anchor_id = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
                 if trust_anchor_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "trust_anchor_id", details: "cannot be empty or unset" })
                             }
@@ -1246,7 +1246,7 @@ impl GetCrlInput {
             fn uri_base(_input: &crate::input::GetCrlInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_10 = &_input.crl_id;
                 let input_10 = input_10.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "crl_id", details: "cannot be empty or unset" })?;
-                let crl_id = aws_smithy_http::label::fmt_string(input_10, false);
+                let crl_id = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Default);
                 if crl_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "crl_id", details: "cannot be empty or unset" })
                             }
@@ -1343,7 +1343,7 @@ impl GetProfileInput {
             fn uri_base(_input: &crate::input::GetProfileInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_11 = &_input.profile_id;
                 let input_11 = input_11.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "profile_id", details: "cannot be empty or unset" })?;
-                let profile_id = aws_smithy_http::label::fmt_string(input_11, false);
+                let profile_id = aws_smithy_http::label::fmt_string(input_11, aws_smithy_http::label::EncodingStrategy::Default);
                 if profile_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "profile_id", details: "cannot be empty or unset" })
                             }
@@ -1440,7 +1440,7 @@ impl GetSubjectInput {
             fn uri_base(_input: &crate::input::GetSubjectInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_12 = &_input.subject_id;
                 let input_12 = input_12.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "subject_id", details: "cannot be empty or unset" })?;
-                let subject_id = aws_smithy_http::label::fmt_string(input_12, false);
+                let subject_id = aws_smithy_http::label::fmt_string(input_12, aws_smithy_http::label::EncodingStrategy::Default);
                 if subject_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "subject_id", details: "cannot be empty or unset" })
                             }
@@ -1537,7 +1537,7 @@ impl GetTrustAnchorInput {
             fn uri_base(_input: &crate::input::GetTrustAnchorInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_13 = &_input.trust_anchor_id;
                 let input_13 = input_13.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "trust_anchor_id", details: "cannot be empty or unset" })?;
-                let trust_anchor_id = aws_smithy_http::label::fmt_string(input_13, false);
+                let trust_anchor_id = aws_smithy_http::label::fmt_string(input_13, aws_smithy_http::label::EncodingStrategy::Default);
                 if trust_anchor_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "trust_anchor_id", details: "cannot be empty or unset" })
                             }
@@ -2588,7 +2588,7 @@ impl UpdateCrlInput {
             fn uri_base(_input: &crate::input::UpdateCrlInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_23 = &_input.crl_id;
                 let input_23 = input_23.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "crl_id", details: "cannot be empty or unset" })?;
-                let crl_id = aws_smithy_http::label::fmt_string(input_23, false);
+                let crl_id = aws_smithy_http::label::fmt_string(input_23, aws_smithy_http::label::EncodingStrategy::Default);
                 if crl_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "crl_id", details: "cannot be empty or unset" })
                             }
@@ -2761,7 +2761,7 @@ impl UpdateProfileInput {
             fn uri_base(_input: &crate::input::UpdateProfileInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_24 = &_input.profile_id;
                 let input_24 = input_24.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "profile_id", details: "cannot be empty or unset" })?;
-                let profile_id = aws_smithy_http::label::fmt_string(input_24, false);
+                let profile_id = aws_smithy_http::label::fmt_string(input_24, aws_smithy_http::label::EncodingStrategy::Default);
                 if profile_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "profile_id", details: "cannot be empty or unset" })
                             }
@@ -2886,7 +2886,7 @@ impl UpdateTrustAnchorInput {
             fn uri_base(_input: &crate::input::UpdateTrustAnchorInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_25 = &_input.trust_anchor_id;
                 let input_25 = input_25.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "trust_anchor_id", details: "cannot be empty or unset" })?;
-                let trust_anchor_id = aws_smithy_http::label::fmt_string(input_25, false);
+                let trust_anchor_id = aws_smithy_http::label::fmt_string(input_25, aws_smithy_http::label::EncodingStrategy::Default);
                 if trust_anchor_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "trust_anchor_id", details: "cannot be empty or unset" })
                             }

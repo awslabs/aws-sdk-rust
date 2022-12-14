@@ -51,7 +51,7 @@ impl DeleteThingShadowInput {
             fn uri_base(_input: &crate::input::DeleteThingShadowInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.thing_name;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "thing_name", details: "cannot be empty or unset" })?;
-                let thing_name = aws_smithy_http::label::fmt_string(input_1, false);
+                let thing_name = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if thing_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "thing_name", details: "cannot be empty or unset" })
                             }
@@ -156,7 +156,7 @@ impl GetRetainedMessageInput {
             fn uri_base(_input: &crate::input::GetRetainedMessageInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.topic;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "topic", details: "cannot be empty or unset" })?;
-                let topic = aws_smithy_http::label::fmt_string(input_3, false);
+                let topic = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if topic.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "topic", details: "cannot be empty or unset" })
                             }
@@ -265,7 +265,7 @@ impl GetThingShadowInput {
             fn uri_base(_input: &crate::input::GetThingShadowInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_4 = &_input.thing_name;
                 let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "thing_name", details: "cannot be empty or unset" })?;
-                let thing_name = aws_smithy_http::label::fmt_string(input_4, false);
+                let thing_name = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if thing_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "thing_name", details: "cannot be empty or unset" })
                             }
@@ -394,7 +394,7 @@ impl ListNamedShadowsForThingInput {
             fn uri_base(_input: &crate::input::ListNamedShadowsForThingInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_6 = &_input.thing_name;
                 let input_6 = input_6.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "thing_name", details: "cannot be empty or unset" })?;
-                let thing_name = aws_smithy_http::label::fmt_string(input_6, false);
+                let thing_name = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if thing_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "thing_name", details: "cannot be empty or unset" })
                             }
@@ -663,7 +663,7 @@ impl PublishInput {
             fn uri_base(_input: &crate::input::PublishInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_10 = &_input.topic;
                 let input_10 = input_10.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "topic", details: "cannot be empty or unset" })?;
-                let topic = aws_smithy_http::label::fmt_string(input_10, false);
+                let topic = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Default);
                 if topic.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "topic", details: "cannot be empty or unset" })
                             }
@@ -799,7 +799,7 @@ impl UpdateThingShadowInput {
             fn uri_base(_input: &crate::input::UpdateThingShadowInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_11 = &_input.thing_name;
                 let input_11 = input_11.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "thing_name", details: "cannot be empty or unset" })?;
-                let thing_name = aws_smithy_http::label::fmt_string(input_11, false);
+                let thing_name = aws_smithy_http::label::fmt_string(input_11, aws_smithy_http::label::EncodingStrategy::Default);
                 if thing_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "thing_name", details: "cannot be empty or unset" })
                             }

@@ -120,13 +120,13 @@ impl CreateGatewayRouteInput {
             fn uri_base(_input: &crate::input::CreateGatewayRouteInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.mesh_name;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_1, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
                 let input_2 = &_input.virtual_gateway_name;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_gateway_name", details: "cannot be empty or unset" })?;
-                let virtual_gateway_name = aws_smithy_http::label::fmt_string(input_2, false);
+                let virtual_gateway_name = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_gateway_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_gateway_name", details: "cannot be empty or unset" })
                             }
@@ -456,13 +456,13 @@ impl CreateRouteInput {
             fn uri_base(_input: &crate::input::CreateRouteInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_4 = &_input.mesh_name;
                 let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_4, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
                 let input_5 = &_input.virtual_router_name;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_router_name", details: "cannot be empty or unset" })?;
-                let virtual_router_name = aws_smithy_http::label::fmt_string(input_5, false);
+                let virtual_router_name = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_router_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_router_name", details: "cannot be empty or unset" })
                             }
@@ -640,7 +640,7 @@ impl CreateVirtualGatewayInput {
             fn uri_base(_input: &crate::input::CreateVirtualGatewayInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_7 = &_input.mesh_name;
                 let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_7, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
@@ -818,7 +818,7 @@ impl CreateVirtualNodeInput {
             fn uri_base(_input: &crate::input::CreateVirtualNodeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_9 = &_input.mesh_name;
                 let input_9 = input_9.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_9, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
@@ -996,7 +996,7 @@ impl CreateVirtualRouterInput {
             fn uri_base(_input: &crate::input::CreateVirtualRouterInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_11 = &_input.mesh_name;
                 let input_11 = input_11.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_11, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_11, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
@@ -1174,7 +1174,7 @@ impl CreateVirtualServiceInput {
             fn uri_base(_input: &crate::input::CreateVirtualServiceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_13 = &_input.mesh_name;
                 let input_13 = input_13.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_13, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_13, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
@@ -1319,19 +1319,19 @@ impl DeleteGatewayRouteInput {
             fn uri_base(_input: &crate::input::DeleteGatewayRouteInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_15 = &_input.mesh_name;
                 let input_15 = input_15.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_15, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_15, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
                 let input_16 = &_input.virtual_gateway_name;
                 let input_16 = input_16.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_gateway_name", details: "cannot be empty or unset" })?;
-                let virtual_gateway_name = aws_smithy_http::label::fmt_string(input_16, false);
+                let virtual_gateway_name = aws_smithy_http::label::fmt_string(input_16, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_gateway_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_gateway_name", details: "cannot be empty or unset" })
                             }
                 let input_17 = &_input.gateway_route_name;
                 let input_17 = input_17.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "gateway_route_name", details: "cannot be empty or unset" })?;
-                let gateway_route_name = aws_smithy_http::label::fmt_string(input_17, false);
+                let gateway_route_name = aws_smithy_http::label::fmt_string(input_17, aws_smithy_http::label::EncodingStrategy::Default);
                 if gateway_route_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "gateway_route_name", details: "cannot be empty or unset" })
                             }
@@ -1436,7 +1436,7 @@ impl DeleteMeshInput {
             fn uri_base(_input: &crate::input::DeleteMeshInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_19 = &_input.mesh_name;
                 let input_19 = input_19.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_19, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_19, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
@@ -1569,19 +1569,19 @@ impl DeleteRouteInput {
             fn uri_base(_input: &crate::input::DeleteRouteInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_20 = &_input.mesh_name;
                 let input_20 = input_20.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_20, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_20, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
                 let input_21 = &_input.virtual_router_name;
                 let input_21 = input_21.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_router_name", details: "cannot be empty or unset" })?;
-                let virtual_router_name = aws_smithy_http::label::fmt_string(input_21, false);
+                let virtual_router_name = aws_smithy_http::label::fmt_string(input_21, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_router_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_router_name", details: "cannot be empty or unset" })
                             }
                 let input_22 = &_input.route_name;
                 let input_22 = input_22.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "route_name", details: "cannot be empty or unset" })?;
-                let route_name = aws_smithy_http::label::fmt_string(input_22, false);
+                let route_name = aws_smithy_http::label::fmt_string(input_22, aws_smithy_http::label::EncodingStrategy::Default);
                 if route_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "route_name", details: "cannot be empty or unset" })
                             }
@@ -1710,13 +1710,13 @@ impl DeleteVirtualGatewayInput {
             fn uri_base(_input: &crate::input::DeleteVirtualGatewayInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_24 = &_input.mesh_name;
                 let input_24 = input_24.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_24, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_24, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
                 let input_25 = &_input.virtual_gateway_name;
                 let input_25 = input_25.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_gateway_name", details: "cannot be empty or unset" })?;
-                let virtual_gateway_name = aws_smithy_http::label::fmt_string(input_25, false);
+                let virtual_gateway_name = aws_smithy_http::label::fmt_string(input_25, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_gateway_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_gateway_name", details: "cannot be empty or unset" })
                             }
@@ -1845,13 +1845,13 @@ impl DeleteVirtualNodeInput {
             fn uri_base(_input: &crate::input::DeleteVirtualNodeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_27 = &_input.mesh_name;
                 let input_27 = input_27.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_27, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_27, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
                 let input_28 = &_input.virtual_node_name;
                 let input_28 = input_28.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_node_name", details: "cannot be empty or unset" })?;
-                let virtual_node_name = aws_smithy_http::label::fmt_string(input_28, false);
+                let virtual_node_name = aws_smithy_http::label::fmt_string(input_28, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_node_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_node_name", details: "cannot be empty or unset" })
                             }
@@ -1980,13 +1980,13 @@ impl DeleteVirtualRouterInput {
             fn uri_base(_input: &crate::input::DeleteVirtualRouterInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_30 = &_input.mesh_name;
                 let input_30 = input_30.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_30, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_30, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
                 let input_31 = &_input.virtual_router_name;
                 let input_31 = input_31.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_router_name", details: "cannot be empty or unset" })?;
-                let virtual_router_name = aws_smithy_http::label::fmt_string(input_31, false);
+                let virtual_router_name = aws_smithy_http::label::fmt_string(input_31, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_router_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_router_name", details: "cannot be empty or unset" })
                             }
@@ -2115,13 +2115,13 @@ impl DeleteVirtualServiceInput {
             fn uri_base(_input: &crate::input::DeleteVirtualServiceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_33 = &_input.mesh_name;
                 let input_33 = input_33.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_33, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_33, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
                 let input_34 = &_input.virtual_service_name;
                 let input_34 = input_34.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_service_name", details: "cannot be empty or unset" })?;
-                let virtual_service_name = aws_smithy_http::label::fmt_string(input_34, false);
+                let virtual_service_name = aws_smithy_http::label::fmt_string(input_34, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_service_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_service_name", details: "cannot be empty or unset" })
                             }
@@ -2262,19 +2262,19 @@ impl DescribeGatewayRouteInput {
             fn uri_base(_input: &crate::input::DescribeGatewayRouteInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_36 = &_input.mesh_name;
                 let input_36 = input_36.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_36, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_36, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
                 let input_37 = &_input.virtual_gateway_name;
                 let input_37 = input_37.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_gateway_name", details: "cannot be empty or unset" })?;
-                let virtual_gateway_name = aws_smithy_http::label::fmt_string(input_37, false);
+                let virtual_gateway_name = aws_smithy_http::label::fmt_string(input_37, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_gateway_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_gateway_name", details: "cannot be empty or unset" })
                             }
                 let input_38 = &_input.gateway_route_name;
                 let input_38 = input_38.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "gateway_route_name", details: "cannot be empty or unset" })?;
-                let gateway_route_name = aws_smithy_http::label::fmt_string(input_38, false);
+                let gateway_route_name = aws_smithy_http::label::fmt_string(input_38, aws_smithy_http::label::EncodingStrategy::Default);
                 if gateway_route_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "gateway_route_name", details: "cannot be empty or unset" })
                             }
@@ -2391,7 +2391,7 @@ impl DescribeMeshInput {
             fn uri_base(_input: &crate::input::DescribeMeshInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_40 = &_input.mesh_name;
                 let input_40 = input_40.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_40, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_40, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
@@ -2532,19 +2532,19 @@ impl DescribeRouteInput {
             fn uri_base(_input: &crate::input::DescribeRouteInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_42 = &_input.mesh_name;
                 let input_42 = input_42.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_42, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_42, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
                 let input_43 = &_input.virtual_router_name;
                 let input_43 = input_43.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_router_name", details: "cannot be empty or unset" })?;
-                let virtual_router_name = aws_smithy_http::label::fmt_string(input_43, false);
+                let virtual_router_name = aws_smithy_http::label::fmt_string(input_43, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_router_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_router_name", details: "cannot be empty or unset" })
                             }
                 let input_44 = &_input.route_name;
                 let input_44 = input_44.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "route_name", details: "cannot be empty or unset" })?;
-                let route_name = aws_smithy_http::label::fmt_string(input_44, false);
+                let route_name = aws_smithy_http::label::fmt_string(input_44, aws_smithy_http::label::EncodingStrategy::Default);
                 if route_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "route_name", details: "cannot be empty or unset" })
                             }
@@ -2673,13 +2673,13 @@ impl DescribeVirtualGatewayInput {
             fn uri_base(_input: &crate::input::DescribeVirtualGatewayInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_46 = &_input.mesh_name;
                 let input_46 = input_46.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_46, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_46, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
                 let input_47 = &_input.virtual_gateway_name;
                 let input_47 = input_47.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_gateway_name", details: "cannot be empty or unset" })?;
-                let virtual_gateway_name = aws_smithy_http::label::fmt_string(input_47, false);
+                let virtual_gateway_name = aws_smithy_http::label::fmt_string(input_47, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_gateway_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_gateway_name", details: "cannot be empty or unset" })
                             }
@@ -2808,13 +2808,13 @@ impl DescribeVirtualNodeInput {
             fn uri_base(_input: &crate::input::DescribeVirtualNodeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_49 = &_input.mesh_name;
                 let input_49 = input_49.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_49, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_49, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
                 let input_50 = &_input.virtual_node_name;
                 let input_50 = input_50.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_node_name", details: "cannot be empty or unset" })?;
-                let virtual_node_name = aws_smithy_http::label::fmt_string(input_50, false);
+                let virtual_node_name = aws_smithy_http::label::fmt_string(input_50, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_node_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_node_name", details: "cannot be empty or unset" })
                             }
@@ -2943,13 +2943,13 @@ impl DescribeVirtualRouterInput {
             fn uri_base(_input: &crate::input::DescribeVirtualRouterInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_52 = &_input.mesh_name;
                 let input_52 = input_52.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_52, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_52, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
                 let input_53 = &_input.virtual_router_name;
                 let input_53 = input_53.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_router_name", details: "cannot be empty or unset" })?;
-                let virtual_router_name = aws_smithy_http::label::fmt_string(input_53, false);
+                let virtual_router_name = aws_smithy_http::label::fmt_string(input_53, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_router_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_router_name", details: "cannot be empty or unset" })
                             }
@@ -3078,13 +3078,13 @@ impl DescribeVirtualServiceInput {
             fn uri_base(_input: &crate::input::DescribeVirtualServiceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_55 = &_input.mesh_name;
                 let input_55 = input_55.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_55, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_55, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
                 let input_56 = &_input.virtual_service_name;
                 let input_56 = input_56.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_service_name", details: "cannot be empty or unset" })?;
-                let virtual_service_name = aws_smithy_http::label::fmt_string(input_56, false);
+                let virtual_service_name = aws_smithy_http::label::fmt_string(input_56, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_service_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_service_name", details: "cannot be empty or unset" })
                             }
@@ -3237,13 +3237,13 @@ impl ListGatewayRoutesInput {
             fn uri_base(_input: &crate::input::ListGatewayRoutesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_58 = &_input.mesh_name;
                 let input_58 = input_58.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_58, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_58, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
                 let input_59 = &_input.virtual_gateway_name;
                 let input_59 = input_59.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_gateway_name", details: "cannot be empty or unset" })?;
-                let virtual_gateway_name = aws_smithy_http::label::fmt_string(input_59, false);
+                let virtual_gateway_name = aws_smithy_http::label::fmt_string(input_59, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_gateway_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_gateway_name", details: "cannot be empty or unset" })
                             }
@@ -3520,13 +3520,13 @@ impl ListRoutesInput {
             fn uri_base(_input: &crate::input::ListRoutesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_65 = &_input.mesh_name;
                 let input_65 = input_65.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_65, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_65, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
                 let input_66 = &_input.virtual_router_name;
                 let input_66 = input_66.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_router_name", details: "cannot be empty or unset" })?;
-                let virtual_router_name = aws_smithy_http::label::fmt_string(input_66, false);
+                let virtual_router_name = aws_smithy_http::label::fmt_string(input_66, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_router_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_router_name", details: "cannot be empty or unset" })
                             }
@@ -3802,7 +3802,7 @@ impl ListVirtualGatewaysInput {
             fn uri_base(_input: &crate::input::ListVirtualGatewaysInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_73 = &_input.mesh_name;
                 let input_73 = input_73.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_73, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_73, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
@@ -3949,7 +3949,7 @@ impl ListVirtualNodesInput {
             fn uri_base(_input: &crate::input::ListVirtualNodesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_77 = &_input.mesh_name;
                 let input_77 = input_77.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_77, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_77, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
@@ -4096,7 +4096,7 @@ impl ListVirtualRoutersInput {
             fn uri_base(_input: &crate::input::ListVirtualRoutersInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_81 = &_input.mesh_name;
                 let input_81 = input_81.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_81, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_81, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
@@ -4243,7 +4243,7 @@ impl ListVirtualServicesInput {
             fn uri_base(_input: &crate::input::ListVirtualServicesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_85 = &_input.mesh_name;
                 let input_85 = input_85.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_85, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_85, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
@@ -4659,19 +4659,19 @@ impl UpdateGatewayRouteInput {
             fn uri_base(_input: &crate::input::UpdateGatewayRouteInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_91 = &_input.mesh_name;
                 let input_91 = input_91.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_91, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_91, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
                 let input_92 = &_input.virtual_gateway_name;
                 let input_92 = input_92.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_gateway_name", details: "cannot be empty or unset" })?;
-                let virtual_gateway_name = aws_smithy_http::label::fmt_string(input_92, false);
+                let virtual_gateway_name = aws_smithy_http::label::fmt_string(input_92, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_gateway_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_gateway_name", details: "cannot be empty or unset" })
                             }
                 let input_93 = &_input.gateway_route_name;
                 let input_93 = input_93.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "gateway_route_name", details: "cannot be empty or unset" })?;
-                let gateway_route_name = aws_smithy_http::label::fmt_string(input_93, false);
+                let gateway_route_name = aws_smithy_http::label::fmt_string(input_93, aws_smithy_http::label::EncodingStrategy::Default);
                 if gateway_route_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "gateway_route_name", details: "cannot be empty or unset" })
                             }
@@ -4807,7 +4807,7 @@ impl UpdateMeshInput {
             fn uri_base(_input: &crate::input::UpdateMeshInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_95 = &_input.mesh_name;
                 let input_95 = input_95.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_95, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_95, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
@@ -4971,19 +4971,19 @@ impl UpdateRouteInput {
             fn uri_base(_input: &crate::input::UpdateRouteInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_96 = &_input.mesh_name;
                 let input_96 = input_96.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_96, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_96, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
                 let input_97 = &_input.virtual_router_name;
                 let input_97 = input_97.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_router_name", details: "cannot be empty or unset" })?;
-                let virtual_router_name = aws_smithy_http::label::fmt_string(input_97, false);
+                let virtual_router_name = aws_smithy_http::label::fmt_string(input_97, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_router_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_router_name", details: "cannot be empty or unset" })
                             }
                 let input_98 = &_input.route_name;
                 let input_98 = input_98.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "route_name", details: "cannot be empty or unset" })?;
-                let route_name = aws_smithy_http::label::fmt_string(input_98, false);
+                let route_name = aws_smithy_http::label::fmt_string(input_98, aws_smithy_http::label::EncodingStrategy::Default);
                 if route_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "route_name", details: "cannot be empty or unset" })
                             }
@@ -5143,13 +5143,13 @@ impl UpdateVirtualGatewayInput {
             fn uri_base(_input: &crate::input::UpdateVirtualGatewayInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_100 = &_input.mesh_name;
                 let input_100 = input_100.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_100, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_100, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
                 let input_101 = &_input.virtual_gateway_name;
                 let input_101 = input_101.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_gateway_name", details: "cannot be empty or unset" })?;
-                let virtual_gateway_name = aws_smithy_http::label::fmt_string(input_101, false);
+                let virtual_gateway_name = aws_smithy_http::label::fmt_string(input_101, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_gateway_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_gateway_name", details: "cannot be empty or unset" })
                             }
@@ -5309,13 +5309,13 @@ impl UpdateVirtualNodeInput {
             fn uri_base(_input: &crate::input::UpdateVirtualNodeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_103 = &_input.mesh_name;
                 let input_103 = input_103.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_103, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_103, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
                 let input_104 = &_input.virtual_node_name;
                 let input_104 = input_104.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_node_name", details: "cannot be empty or unset" })?;
-                let virtual_node_name = aws_smithy_http::label::fmt_string(input_104, false);
+                let virtual_node_name = aws_smithy_http::label::fmt_string(input_104, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_node_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_node_name", details: "cannot be empty or unset" })
                             }
@@ -5475,13 +5475,13 @@ impl UpdateVirtualRouterInput {
             fn uri_base(_input: &crate::input::UpdateVirtualRouterInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_106 = &_input.mesh_name;
                 let input_106 = input_106.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_106, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_106, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
                 let input_107 = &_input.virtual_router_name;
                 let input_107 = input_107.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_router_name", details: "cannot be empty or unset" })?;
-                let virtual_router_name = aws_smithy_http::label::fmt_string(input_107, false);
+                let virtual_router_name = aws_smithy_http::label::fmt_string(input_107, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_router_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_router_name", details: "cannot be empty or unset" })
                             }
@@ -5641,13 +5641,13 @@ impl UpdateVirtualServiceInput {
             fn uri_base(_input: &crate::input::UpdateVirtualServiceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_109 = &_input.mesh_name;
                 let input_109 = input_109.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })?;
-                let mesh_name = aws_smithy_http::label::fmt_string(input_109, false);
+                let mesh_name = aws_smithy_http::label::fmt_string(input_109, aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mesh_name", details: "cannot be empty or unset" })
                             }
                 let input_110 = &_input.virtual_service_name;
                 let input_110 = input_110.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_service_name", details: "cannot be empty or unset" })?;
-                let virtual_service_name = aws_smithy_http::label::fmt_string(input_110, false);
+                let virtual_service_name = aws_smithy_http::label::fmt_string(input_110, aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_service_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "virtual_service_name", details: "cannot be empty or unset" })
                             }

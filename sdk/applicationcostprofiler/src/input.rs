@@ -39,7 +39,7 @@ impl DeleteReportDefinitionInput {
             fn uri_base(_input: &crate::input::DeleteReportDefinitionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.report_id;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "report_id", details: "cannot be empty or unset" })?;
-                let report_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let report_id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if report_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "report_id", details: "cannot be empty or unset" })
                             }
@@ -136,7 +136,7 @@ impl GetReportDefinitionInput {
             fn uri_base(_input: &crate::input::GetReportDefinitionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.report_id;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "report_id", details: "cannot be empty or unset" })?;
-                let report_id = aws_smithy_http::label::fmt_string(input_2, false);
+                let report_id = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if report_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "report_id", details: "cannot be empty or unset" })
                             }
@@ -633,7 +633,7 @@ impl UpdateReportDefinitionInput {
             fn uri_base(_input: &crate::input::UpdateReportDefinitionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_5 = &_input.report_id;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "report_id", details: "cannot be empty or unset" })?;
-                let report_id = aws_smithy_http::label::fmt_string(input_5, false);
+                let report_id = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if report_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "report_id", details: "cannot be empty or unset" })
                             }

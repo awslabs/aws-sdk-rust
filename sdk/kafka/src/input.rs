@@ -57,7 +57,7 @@ impl BatchAssociateScramSecretInput {
             fn uri_base(_input: &crate::input::BatchAssociateScramSecretInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.cluster_arn;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })?;
-                let cluster_arn = aws_smithy_http::label::fmt_string(input_1, false);
+                let cluster_arn = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if cluster_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })
                             }
@@ -176,7 +176,7 @@ impl BatchDisassociateScramSecretInput {
             fn uri_base(_input: &crate::input::BatchDisassociateScramSecretInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.cluster_arn;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })?;
-                let cluster_arn = aws_smithy_http::label::fmt_string(input_2, false);
+                let cluster_arn = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if cluster_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })
                             }
@@ -793,7 +793,7 @@ impl DeleteClusterInput {
             fn uri_base(_input: &crate::input::DeleteClusterInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.cluster_arn;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })?;
-                let cluster_arn = aws_smithy_http::label::fmt_string(input_3, false);
+                let cluster_arn = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if cluster_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })
                             }
@@ -898,7 +898,7 @@ impl DeleteConfigurationInput {
             fn uri_base(_input: &crate::input::DeleteConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_5 = &_input.arn;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "arn", details: "cannot be empty or unset" })?;
-                let arn = aws_smithy_http::label::fmt_string(input_5, false);
+                let arn = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "arn", details: "cannot be empty or unset" })
                             }
@@ -995,7 +995,7 @@ impl DescribeClusterInput {
             fn uri_base(_input: &crate::input::DescribeClusterInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_6 = &_input.cluster_arn;
                 let input_6 = input_6.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })?;
-                let cluster_arn = aws_smithy_http::label::fmt_string(input_6, false);
+                let cluster_arn = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if cluster_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })
                             }
@@ -1092,7 +1092,7 @@ impl DescribeClusterOperationInput {
             fn uri_base(_input: &crate::input::DescribeClusterOperationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_7 = &_input.cluster_operation_arn;
                 let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_operation_arn", details: "cannot be empty or unset" })?;
-                let cluster_operation_arn = aws_smithy_http::label::fmt_string(input_7, false);
+                let cluster_operation_arn = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
                 if cluster_operation_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_operation_arn", details: "cannot be empty or unset" })
                             }
@@ -1189,7 +1189,7 @@ impl DescribeClusterV2Input {
             fn uri_base(_input: &crate::input::DescribeClusterV2Input, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_8 = &_input.cluster_arn;
                 let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })?;
-                let cluster_arn = aws_smithy_http::label::fmt_string(input_8, false);
+                let cluster_arn = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
                 if cluster_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })
                             }
@@ -1286,7 +1286,7 @@ impl DescribeConfigurationInput {
             fn uri_base(_input: &crate::input::DescribeConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_9 = &_input.arn;
                 let input_9 = input_9.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "arn", details: "cannot be empty or unset" })?;
-                let arn = aws_smithy_http::label::fmt_string(input_9, false);
+                let arn = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
                 if arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "arn", details: "cannot be empty or unset" })
                             }
@@ -1396,7 +1396,7 @@ impl DescribeConfigurationRevisionInput {
             fn uri_base(_input: &crate::input::DescribeConfigurationRevisionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_10 = &_input.arn;
                 let input_10 = input_10.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "arn", details: "cannot be empty or unset" })?;
-                let arn = aws_smithy_http::label::fmt_string(input_10, false);
+                let arn = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Default);
                 if arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "arn", details: "cannot be empty or unset" })
                             }
@@ -1498,7 +1498,7 @@ impl GetBootstrapBrokersInput {
             fn uri_base(_input: &crate::input::GetBootstrapBrokersInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_12 = &_input.cluster_arn;
                 let input_12 = input_12.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })?;
-                let cluster_arn = aws_smithy_http::label::fmt_string(input_12, false);
+                let cluster_arn = aws_smithy_http::label::fmt_string(input_12, aws_smithy_http::label::EncodingStrategy::Default);
                 if cluster_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })
                             }
@@ -1719,7 +1719,7 @@ impl ListClusterOperationsInput {
             fn uri_base(_input: &crate::input::ListClusterOperationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_14 = &_input.cluster_arn;
                 let input_14 = input_14.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })?;
-                let cluster_arn = aws_smithy_http::label::fmt_string(input_14, false);
+                let cluster_arn = aws_smithy_http::label::fmt_string(input_14, aws_smithy_http::label::EncodingStrategy::Default);
                 if cluster_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })
                             }
@@ -2127,7 +2127,7 @@ impl ListConfigurationRevisionsInput {
             fn uri_base(_input: &crate::input::ListConfigurationRevisionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_21 = &_input.arn;
                 let input_21 = input_21.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "arn", details: "cannot be empty or unset" })?;
-                let arn = aws_smithy_http::label::fmt_string(input_21, false);
+                let arn = aws_smithy_http::label::fmt_string(input_21, aws_smithy_http::label::EncodingStrategy::Default);
                 if arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "arn", details: "cannot be empty or unset" })
                             }
@@ -2490,7 +2490,7 @@ impl ListNodesInput {
             fn uri_base(_input: &crate::input::ListNodesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_25 = &_input.cluster_arn;
                 let input_25 = input_25.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })?;
-                let cluster_arn = aws_smithy_http::label::fmt_string(input_25, false);
+                let cluster_arn = aws_smithy_http::label::fmt_string(input_25, aws_smithy_http::label::EncodingStrategy::Default);
                 if cluster_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })
                             }
@@ -2623,7 +2623,7 @@ impl ListScramSecretsInput {
             fn uri_base(_input: &crate::input::ListScramSecretsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_27 = &_input.cluster_arn;
                 let input_27 = input_27.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })?;
-                let cluster_arn = aws_smithy_http::label::fmt_string(input_27, false);
+                let cluster_arn = aws_smithy_http::label::fmt_string(input_27, aws_smithy_http::label::EncodingStrategy::Default);
                 if cluster_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })
                             }
@@ -2731,7 +2731,7 @@ impl ListTagsForResourceInput {
             fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_29 = &_input.resource_arn;
                 let input_29 = input_29.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_29, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_29, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -2846,7 +2846,7 @@ impl RebootBrokerInput {
             fn uri_base(_input: &crate::input::RebootBrokerInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_30 = &_input.cluster_arn;
                 let input_30 = input_30.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })?;
-                let cluster_arn = aws_smithy_http::label::fmt_string(input_30, false);
+                let cluster_arn = aws_smithy_http::label::fmt_string(input_30, aws_smithy_http::label::EncodingStrategy::Default);
                 if cluster_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })
                             }
@@ -2965,7 +2965,7 @@ impl TagResourceInput {
             fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_31 = &_input.resource_arn;
                 let input_31 = input_31.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_31, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_31, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -3096,7 +3096,7 @@ impl UntagResourceInput {
             fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_32 = &_input.resource_arn;
                 let input_32 = input_32.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_32, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_32, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -3228,7 +3228,7 @@ impl UpdateBrokerCountInput {
             fn uri_base(_input: &crate::input::UpdateBrokerCountInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_35 = &_input.cluster_arn;
                 let input_35 = input_35.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })?;
-                let cluster_arn = aws_smithy_http::label::fmt_string(input_35, false);
+                let cluster_arn = aws_smithy_http::label::fmt_string(input_35, aws_smithy_http::label::EncodingStrategy::Default);
                 if cluster_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })
                             }
@@ -3359,7 +3359,7 @@ impl UpdateBrokerStorageInput {
             fn uri_base(_input: &crate::input::UpdateBrokerStorageInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_36 = &_input.cluster_arn;
                 let input_36 = input_36.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })?;
-                let cluster_arn = aws_smithy_http::label::fmt_string(input_36, false);
+                let cluster_arn = aws_smithy_http::label::fmt_string(input_36, aws_smithy_http::label::EncodingStrategy::Default);
                 if cluster_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })
                             }
@@ -3484,7 +3484,7 @@ impl UpdateBrokerTypeInput {
             fn uri_base(_input: &crate::input::UpdateBrokerTypeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_37 = &_input.cluster_arn;
                 let input_37 = input_37.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })?;
-                let cluster_arn = aws_smithy_http::label::fmt_string(input_37, false);
+                let cluster_arn = aws_smithy_http::label::fmt_string(input_37, aws_smithy_http::label::EncodingStrategy::Default);
                 if cluster_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })
                             }
@@ -3609,7 +3609,7 @@ impl UpdateClusterConfigurationInput {
             fn uri_base(_input: &crate::input::UpdateClusterConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_38 = &_input.cluster_arn;
                 let input_38 = input_38.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })?;
-                let cluster_arn = aws_smithy_http::label::fmt_string(input_38, false);
+                let cluster_arn = aws_smithy_http::label::fmt_string(input_38, aws_smithy_http::label::EncodingStrategy::Default);
                 if cluster_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })
                             }
@@ -3746,7 +3746,7 @@ impl UpdateClusterKafkaVersionInput {
             fn uri_base(_input: &crate::input::UpdateClusterKafkaVersionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_39 = &_input.cluster_arn;
                 let input_39 = input_39.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })?;
-                let cluster_arn = aws_smithy_http::label::fmt_string(input_39, false);
+                let cluster_arn = aws_smithy_http::label::fmt_string(input_39, aws_smithy_http::label::EncodingStrategy::Default);
                 if cluster_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })
                             }
@@ -3879,7 +3879,7 @@ impl UpdateConfigurationInput {
             fn uri_base(_input: &crate::input::UpdateConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_40 = &_input.arn;
                 let input_40 = input_40.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "arn", details: "cannot be empty or unset" })?;
-                let arn = aws_smithy_http::label::fmt_string(input_40, false);
+                let arn = aws_smithy_http::label::fmt_string(input_40, aws_smithy_http::label::EncodingStrategy::Default);
                 if arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "arn", details: "cannot be empty or unset" })
                             }
@@ -4004,7 +4004,7 @@ impl UpdateConnectivityInput {
             fn uri_base(_input: &crate::input::UpdateConnectivityInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_41 = &_input.cluster_arn;
                 let input_41 = input_41.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })?;
-                let cluster_arn = aws_smithy_http::label::fmt_string(input_41, false);
+                let cluster_arn = aws_smithy_http::label::fmt_string(input_41, aws_smithy_http::label::EncodingStrategy::Default);
                 if cluster_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })
                             }
@@ -4153,7 +4153,7 @@ impl UpdateMonitoringInput {
             fn uri_base(_input: &crate::input::UpdateMonitoringInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_42 = &_input.cluster_arn;
                 let input_42 = input_42.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })?;
-                let cluster_arn = aws_smithy_http::label::fmt_string(input_42, false);
+                let cluster_arn = aws_smithy_http::label::fmt_string(input_42, aws_smithy_http::label::EncodingStrategy::Default);
                 if cluster_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })
                             }
@@ -4290,7 +4290,7 @@ impl UpdateSecurityInput {
             fn uri_base(_input: &crate::input::UpdateSecurityInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_43 = &_input.cluster_arn;
                 let input_43 = input_43.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })?;
-                let cluster_arn = aws_smithy_http::label::fmt_string(input_43, false);
+                let cluster_arn = aws_smithy_http::label::fmt_string(input_43, aws_smithy_http::label::EncodingStrategy::Default);
                 if cluster_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "cluster_arn", details: "cannot be empty or unset" })
                             }

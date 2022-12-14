@@ -57,7 +57,7 @@ impl BatchGetFieldInput {
             fn uri_base(_input: &crate::input::BatchGetFieldInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.domain_id;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })?;
-                let domain_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let domain_id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if domain_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })
                             }
@@ -188,13 +188,13 @@ impl BatchPutFieldOptionsInput {
             fn uri_base(_input: &crate::input::BatchPutFieldOptionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.domain_id;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })?;
-                let domain_id = aws_smithy_http::label::fmt_string(input_2, false);
+                let domain_id = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if domain_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })
                             }
                 let input_3 = &_input.field_id;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "field_id", details: "cannot be empty or unset" })?;
-                let field_id = aws_smithy_http::label::fmt_string(input_3, false);
+                let field_id = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if field_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "field_id", details: "cannot be empty or unset" })
                             }
@@ -340,7 +340,7 @@ impl CreateCaseInput {
             fn uri_base(_input: &crate::input::CreateCaseInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_4 = &_input.domain_id;
                 let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })?;
-                let domain_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let domain_id = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if domain_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })
                             }
@@ -572,7 +572,7 @@ impl CreateFieldInput {
             fn uri_base(_input: &crate::input::CreateFieldInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_5 = &_input.domain_id;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })?;
-                let domain_id = aws_smithy_http::label::fmt_string(input_5, false);
+                let domain_id = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if domain_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })
                             }
@@ -697,7 +697,7 @@ impl CreateLayoutInput {
             fn uri_base(_input: &crate::input::CreateLayoutInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_6 = &_input.domain_id;
                 let input_6 = input_6.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })?;
-                let domain_id = aws_smithy_http::label::fmt_string(input_6, false);
+                let domain_id = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if domain_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })
                             }
@@ -834,13 +834,13 @@ impl CreateRelatedItemInput {
             fn uri_base(_input: &crate::input::CreateRelatedItemInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_7 = &_input.domain_id;
                 let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })?;
-                let domain_id = aws_smithy_http::label::fmt_string(input_7, false);
+                let domain_id = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
                 if domain_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })
                             }
                 let input_8 = &_input.case_id;
                 let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "case_id", details: "cannot be empty or unset" })?;
-                let case_id = aws_smithy_http::label::fmt_string(input_8, false);
+                let case_id = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
                 if case_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "case_id", details: "cannot be empty or unset" })
                             }
@@ -995,7 +995,7 @@ impl CreateTemplateInput {
             fn uri_base(_input: &crate::input::CreateTemplateInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_9 = &_input.domain_id;
                 let input_9 = input_9.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })?;
-                let domain_id = aws_smithy_http::label::fmt_string(input_9, false);
+                let domain_id = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
                 if domain_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })
                             }
@@ -1138,13 +1138,13 @@ impl GetCaseInput {
             fn uri_base(_input: &crate::input::GetCaseInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_10 = &_input.domain_id;
                 let input_10 = input_10.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })?;
-                let domain_id = aws_smithy_http::label::fmt_string(input_10, false);
+                let domain_id = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Default);
                 if domain_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })
                             }
                 let input_11 = &_input.case_id;
                 let input_11 = input_11.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "case_id", details: "cannot be empty or unset" })?;
-                let case_id = aws_smithy_http::label::fmt_string(input_11, false);
+                let case_id = aws_smithy_http::label::fmt_string(input_11, aws_smithy_http::label::EncodingStrategy::Default);
                 if case_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "case_id", details: "cannot be empty or unset" })
                             }
@@ -1245,7 +1245,7 @@ impl GetCaseEventConfigurationInput {
             fn uri_base(_input: &crate::input::GetCaseEventConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_12 = &_input.domain_id;
                 let input_12 = input_12.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })?;
-                let domain_id = aws_smithy_http::label::fmt_string(input_12, false);
+                let domain_id = aws_smithy_http::label::fmt_string(input_12, aws_smithy_http::label::EncodingStrategy::Default);
                 if domain_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })
                             }
@@ -1342,7 +1342,7 @@ impl GetDomainInput {
             fn uri_base(_input: &crate::input::GetDomainInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_13 = &_input.domain_id;
                 let input_13 = input_13.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })?;
-                let domain_id = aws_smithy_http::label::fmt_string(input_13, false);
+                let domain_id = aws_smithy_http::label::fmt_string(input_13, aws_smithy_http::label::EncodingStrategy::Default);
                 if domain_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })
                             }
@@ -1451,13 +1451,13 @@ impl GetLayoutInput {
             fn uri_base(_input: &crate::input::GetLayoutInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_14 = &_input.domain_id;
                 let input_14 = input_14.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })?;
-                let domain_id = aws_smithy_http::label::fmt_string(input_14, false);
+                let domain_id = aws_smithy_http::label::fmt_string(input_14, aws_smithy_http::label::EncodingStrategy::Default);
                 if domain_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })
                             }
                 let input_15 = &_input.layout_id;
                 let input_15 = input_15.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "layout_id", details: "cannot be empty or unset" })?;
-                let layout_id = aws_smithy_http::label::fmt_string(input_15, false);
+                let layout_id = aws_smithy_http::label::fmt_string(input_15, aws_smithy_http::label::EncodingStrategy::Default);
                 if layout_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "layout_id", details: "cannot be empty or unset" })
                             }
@@ -1566,13 +1566,13 @@ impl GetTemplateInput {
             fn uri_base(_input: &crate::input::GetTemplateInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_16 = &_input.domain_id;
                 let input_16 = input_16.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })?;
-                let domain_id = aws_smithy_http::label::fmt_string(input_16, false);
+                let domain_id = aws_smithy_http::label::fmt_string(input_16, aws_smithy_http::label::EncodingStrategy::Default);
                 if domain_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })
                             }
                 let input_17 = &_input.template_id;
                 let input_17 = input_17.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "template_id", details: "cannot be empty or unset" })?;
-                let template_id = aws_smithy_http::label::fmt_string(input_17, false);
+                let template_id = aws_smithy_http::label::fmt_string(input_17, aws_smithy_http::label::EncodingStrategy::Default);
                 if template_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "template_id", details: "cannot be empty or unset" })
                             }
@@ -1705,7 +1705,7 @@ impl ListCasesForContactInput {
             fn uri_base(_input: &crate::input::ListCasesForContactInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_18 = &_input.domain_id;
                 let input_18 = input_18.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })?;
-                let domain_id = aws_smithy_http::label::fmt_string(input_18, false);
+                let domain_id = aws_smithy_http::label::fmt_string(input_18, aws_smithy_http::label::EncodingStrategy::Default);
                 if domain_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })
                             }
@@ -1974,13 +1974,13 @@ impl ListFieldOptionsInput {
             fn uri_base(_input: &crate::input::ListFieldOptionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_21 = &_input.domain_id;
                 let input_21 = input_21.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })?;
-                let domain_id = aws_smithy_http::label::fmt_string(input_21, false);
+                let domain_id = aws_smithy_http::label::fmt_string(input_21, aws_smithy_http::label::EncodingStrategy::Default);
                 if domain_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })
                             }
                 let input_22 = &_input.field_id;
                 let input_22 = input_22.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "field_id", details: "cannot be empty or unset" })?;
-                let field_id = aws_smithy_http::label::fmt_string(input_22, false);
+                let field_id = aws_smithy_http::label::fmt_string(input_22, aws_smithy_http::label::EncodingStrategy::Default);
                 if field_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "field_id", details: "cannot be empty or unset" })
                             }
@@ -2117,7 +2117,7 @@ impl ListFieldsInput {
             fn uri_base(_input: &crate::input::ListFieldsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_27 = &_input.domain_id;
                 let input_27 = input_27.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })?;
-                let domain_id = aws_smithy_http::label::fmt_string(input_27, false);
+                let domain_id = aws_smithy_http::label::fmt_string(input_27, aws_smithy_http::label::EncodingStrategy::Default);
                 if domain_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })
                             }
@@ -2249,7 +2249,7 @@ impl ListLayoutsInput {
             fn uri_base(_input: &crate::input::ListLayoutsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_30 = &_input.domain_id;
                 let input_30 = input_30.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })?;
-                let domain_id = aws_smithy_http::label::fmt_string(input_30, false);
+                let domain_id = aws_smithy_http::label::fmt_string(input_30, aws_smithy_http::label::EncodingStrategy::Default);
                 if domain_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })
                             }
@@ -2357,7 +2357,7 @@ impl ListTagsForResourceInput {
             fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_33 = &_input.arn;
                 let input_33 = input_33.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "arn", details: "cannot be empty or unset" })?;
-                let arn = aws_smithy_http::label::fmt_string(input_33, false);
+                let arn = aws_smithy_http::label::fmt_string(input_33, aws_smithy_http::label::EncodingStrategy::Default);
                 if arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "arn", details: "cannot be empty or unset" })
                             }
@@ -2478,7 +2478,7 @@ impl ListTemplatesInput {
             fn uri_base(_input: &crate::input::ListTemplatesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_34 = &_input.domain_id;
                 let input_34 = input_34.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })?;
-                let domain_id = aws_smithy_http::label::fmt_string(input_34, false);
+                let domain_id = aws_smithy_http::label::fmt_string(input_34, aws_smithy_http::label::EncodingStrategy::Default);
                 if domain_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })
                             }
@@ -2598,7 +2598,7 @@ impl PutCaseEventConfigurationInput {
             fn uri_base(_input: &crate::input::PutCaseEventConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_37 = &_input.domain_id;
                 let input_37 = input_37.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })?;
-                let domain_id = aws_smithy_http::label::fmt_string(input_37, false);
+                let domain_id = aws_smithy_http::label::fmt_string(input_37, aws_smithy_http::label::EncodingStrategy::Default);
                 if domain_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })
                             }
@@ -2783,7 +2783,7 @@ impl SearchCasesInput {
             fn uri_base(_input: &crate::input::SearchCasesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_38 = &_input.domain_id;
                 let input_38 = input_38.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })?;
-                let domain_id = aws_smithy_http::label::fmt_string(input_38, false);
+                let domain_id = aws_smithy_http::label::fmt_string(input_38, aws_smithy_http::label::EncodingStrategy::Default);
                 if domain_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })
                             }
@@ -2938,13 +2938,13 @@ impl SearchRelatedItemsInput {
             fn uri_base(_input: &crate::input::SearchRelatedItemsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_39 = &_input.domain_id;
                 let input_39 = input_39.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })?;
-                let domain_id = aws_smithy_http::label::fmt_string(input_39, false);
+                let domain_id = aws_smithy_http::label::fmt_string(input_39, aws_smithy_http::label::EncodingStrategy::Default);
                 if domain_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })
                             }
                 let input_40 = &_input.case_id;
                 let input_40 = input_40.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "case_id", details: "cannot be empty or unset" })?;
-                let case_id = aws_smithy_http::label::fmt_string(input_40, false);
+                let case_id = aws_smithy_http::label::fmt_string(input_40, aws_smithy_http::label::EncodingStrategy::Default);
                 if case_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "case_id", details: "cannot be empty or unset" })
                             }
@@ -3063,7 +3063,7 @@ impl TagResourceInput {
             fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_41 = &_input.arn;
                 let input_41 = input_41.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "arn", details: "cannot be empty or unset" })?;
-                let arn = aws_smithy_http::label::fmt_string(input_41, false);
+                let arn = aws_smithy_http::label::fmt_string(input_41, aws_smithy_http::label::EncodingStrategy::Default);
                 if arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "arn", details: "cannot be empty or unset" })
                             }
@@ -3182,7 +3182,7 @@ impl UntagResourceInput {
             fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_42 = &_input.arn;
                 let input_42 = input_42.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "arn", details: "cannot be empty or unset" })?;
-                let arn = aws_smithy_http::label::fmt_string(input_42, false);
+                let arn = aws_smithy_http::label::fmt_string(input_42, aws_smithy_http::label::EncodingStrategy::Default);
                 if arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "arn", details: "cannot be empty or unset" })
                             }
@@ -3319,13 +3319,13 @@ impl UpdateCaseInput {
             fn uri_base(_input: &crate::input::UpdateCaseInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_45 = &_input.domain_id;
                 let input_45 = input_45.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })?;
-                let domain_id = aws_smithy_http::label::fmt_string(input_45, false);
+                let domain_id = aws_smithy_http::label::fmt_string(input_45, aws_smithy_http::label::EncodingStrategy::Default);
                 if domain_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })
                             }
                 let input_46 = &_input.case_id;
                 let input_46 = input_46.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "case_id", details: "cannot be empty or unset" })?;
-                let case_id = aws_smithy_http::label::fmt_string(input_46, false);
+                let case_id = aws_smithy_http::label::fmt_string(input_46, aws_smithy_http::label::EncodingStrategy::Default);
                 if case_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "case_id", details: "cannot be empty or unset" })
                             }
@@ -3462,13 +3462,13 @@ impl UpdateFieldInput {
             fn uri_base(_input: &crate::input::UpdateFieldInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_47 = &_input.domain_id;
                 let input_47 = input_47.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })?;
-                let domain_id = aws_smithy_http::label::fmt_string(input_47, false);
+                let domain_id = aws_smithy_http::label::fmt_string(input_47, aws_smithy_http::label::EncodingStrategy::Default);
                 if domain_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })
                             }
                 let input_48 = &_input.field_id;
                 let input_48 = input_48.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "field_id", details: "cannot be empty or unset" })?;
-                let field_id = aws_smithy_http::label::fmt_string(input_48, false);
+                let field_id = aws_smithy_http::label::fmt_string(input_48, aws_smithy_http::label::EncodingStrategy::Default);
                 if field_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "field_id", details: "cannot be empty or unset" })
                             }
@@ -3605,13 +3605,13 @@ impl UpdateLayoutInput {
             fn uri_base(_input: &crate::input::UpdateLayoutInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_49 = &_input.domain_id;
                 let input_49 = input_49.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })?;
-                let domain_id = aws_smithy_http::label::fmt_string(input_49, false);
+                let domain_id = aws_smithy_http::label::fmt_string(input_49, aws_smithy_http::label::EncodingStrategy::Default);
                 if domain_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })
                             }
                 let input_50 = &_input.layout_id;
                 let input_50 = input_50.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "layout_id", details: "cannot be empty or unset" })?;
-                let layout_id = aws_smithy_http::label::fmt_string(input_50, false);
+                let layout_id = aws_smithy_http::label::fmt_string(input_50, aws_smithy_http::label::EncodingStrategy::Default);
                 if layout_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "layout_id", details: "cannot be empty or unset" })
                             }
@@ -3778,13 +3778,13 @@ impl UpdateTemplateInput {
             fn uri_base(_input: &crate::input::UpdateTemplateInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_51 = &_input.domain_id;
                 let input_51 = input_51.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })?;
-                let domain_id = aws_smithy_http::label::fmt_string(input_51, false);
+                let domain_id = aws_smithy_http::label::fmt_string(input_51, aws_smithy_http::label::EncodingStrategy::Default);
                 if domain_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "domain_id", details: "cannot be empty or unset" })
                             }
                 let input_52 = &_input.template_id;
                 let input_52 = input_52.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "template_id", details: "cannot be empty or unset" })?;
-                let template_id = aws_smithy_http::label::fmt_string(input_52, false);
+                let template_id = aws_smithy_http::label::fmt_string(input_52, aws_smithy_http::label::EncodingStrategy::Default);
                 if template_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "template_id", details: "cannot be empty or unset" })
                             }

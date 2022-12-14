@@ -59,7 +59,7 @@ impl AssociateLensesInput {
             fn uri_base(_input: &crate::input::AssociateLensesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.workload_id;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })?;
-                let workload_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let workload_id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if workload_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })
                             }
@@ -199,7 +199,7 @@ impl CreateLensShareInput {
             fn uri_base(_input: &crate::input::CreateLensShareInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.lens_alias;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "lens_alias", details: "cannot be empty or unset" })?;
-                let lens_alias = aws_smithy_http::label::fmt_string(input_2, false);
+                let lens_alias = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if lens_alias.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "lens_alias", details: "cannot be empty or unset" })
                             }
@@ -352,7 +352,7 @@ impl CreateLensVersionInput {
             fn uri_base(_input: &crate::input::CreateLensVersionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.lens_alias;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "lens_alias", details: "cannot be empty or unset" })?;
-                let lens_alias = aws_smithy_http::label::fmt_string(input_3, false);
+                let lens_alias = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if lens_alias.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "lens_alias", details: "cannot be empty or unset" })
                             }
@@ -488,7 +488,7 @@ impl CreateMilestoneInput {
             fn uri_base(_input: &crate::input::CreateMilestoneInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_4 = &_input.workload_id;
                 let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })?;
-                let workload_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let workload_id = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if workload_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })
                             }
@@ -1004,7 +1004,7 @@ impl CreateWorkloadShareInput {
             fn uri_base(_input: &crate::input::CreateWorkloadShareInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_5 = &_input.workload_id;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })?;
-                let workload_id = aws_smithy_http::label::fmt_string(input_5, false);
+                let workload_id = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if workload_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })
                             }
@@ -1144,7 +1144,7 @@ impl DeleteLensInput {
             fn uri_base(_input: &crate::input::DeleteLensInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_6 = &_input.lens_alias;
                 let input_6 = input_6.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "lens_alias", details: "cannot be empty or unset" })?;
-                let lens_alias = aws_smithy_http::label::fmt_string(input_6, false);
+                let lens_alias = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if lens_alias.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "lens_alias", details: "cannot be empty or unset" })
                             }
@@ -1291,13 +1291,13 @@ impl DeleteLensShareInput {
             fn uri_base(_input: &crate::input::DeleteLensShareInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_9 = &_input.lens_alias;
                 let input_9 = input_9.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "lens_alias", details: "cannot be empty or unset" })?;
-                let lens_alias = aws_smithy_http::label::fmt_string(input_9, false);
+                let lens_alias = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
                 if lens_alias.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "lens_alias", details: "cannot be empty or unset" })
                             }
                 let input_10 = &_input.share_id;
                 let input_10 = input_10.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "share_id", details: "cannot be empty or unset" })?;
-                let share_id = aws_smithy_http::label::fmt_string(input_10, false);
+                let share_id = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Default);
                 if share_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "share_id", details: "cannot be empty or unset" })
                             }
@@ -1423,7 +1423,7 @@ impl DeleteWorkloadInput {
             fn uri_base(_input: &crate::input::DeleteWorkloadInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_12 = &_input.workload_id;
                 let input_12 = input_12.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })?;
-                let workload_id = aws_smithy_http::label::fmt_string(input_12, false);
+                let workload_id = aws_smithy_http::label::fmt_string(input_12, aws_smithy_http::label::EncodingStrategy::Default);
                 if workload_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })
                             }
@@ -1561,13 +1561,13 @@ impl DeleteWorkloadShareInput {
             fn uri_base(_input: &crate::input::DeleteWorkloadShareInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_14 = &_input.workload_id;
                 let input_14 = input_14.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })?;
-                let workload_id = aws_smithy_http::label::fmt_string(input_14, false);
+                let workload_id = aws_smithy_http::label::fmt_string(input_14, aws_smithy_http::label::EncodingStrategy::Default);
                 if workload_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })
                             }
                 let input_15 = &_input.share_id;
                 let input_15 = input_15.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "share_id", details: "cannot be empty or unset" })?;
-                let share_id = aws_smithy_http::label::fmt_string(input_15, false);
+                let share_id = aws_smithy_http::label::fmt_string(input_15, aws_smithy_http::label::EncodingStrategy::Default);
                 if share_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "share_id", details: "cannot be empty or unset" })
                             }
@@ -1692,7 +1692,7 @@ impl DisassociateLensesInput {
             fn uri_base(_input: &crate::input::DisassociateLensesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_17 = &_input.workload_id;
                 let input_17 = input_17.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })?;
-                let workload_id = aws_smithy_http::label::fmt_string(input_17, false);
+                let workload_id = aws_smithy_http::label::fmt_string(input_17, aws_smithy_http::label::EncodingStrategy::Default);
                 if workload_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })
                             }
@@ -1811,7 +1811,7 @@ impl ExportLensInput {
             fn uri_base(_input: &crate::input::ExportLensInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_18 = &_input.lens_alias;
                 let input_18 = input_18.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "lens_alias", details: "cannot be empty or unset" })?;
-                let lens_alias = aws_smithy_http::label::fmt_string(input_18, false);
+                let lens_alias = aws_smithy_http::label::fmt_string(input_18, aws_smithy_http::label::EncodingStrategy::Default);
                 if lens_alias.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "lens_alias", details: "cannot be empty or unset" })
                             }
@@ -1961,19 +1961,19 @@ impl GetAnswerInput {
             fn uri_base(_input: &crate::input::GetAnswerInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_20 = &_input.workload_id;
                 let input_20 = input_20.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })?;
-                let workload_id = aws_smithy_http::label::fmt_string(input_20, false);
+                let workload_id = aws_smithy_http::label::fmt_string(input_20, aws_smithy_http::label::EncodingStrategy::Default);
                 if workload_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })
                             }
                 let input_21 = &_input.lens_alias;
                 let input_21 = input_21.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "lens_alias", details: "cannot be empty or unset" })?;
-                let lens_alias = aws_smithy_http::label::fmt_string(input_21, false);
+                let lens_alias = aws_smithy_http::label::fmt_string(input_21, aws_smithy_http::label::EncodingStrategy::Default);
                 if lens_alias.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "lens_alias", details: "cannot be empty or unset" })
                             }
                 let input_22 = &_input.question_id;
                 let input_22 = input_22.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "question_id", details: "cannot be empty or unset" })?;
-                let question_id = aws_smithy_http::label::fmt_string(input_22, false);
+                let question_id = aws_smithy_http::label::fmt_string(input_22, aws_smithy_http::label::EncodingStrategy::Default);
                 if question_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "question_id", details: "cannot be empty or unset" })
                             }
@@ -2096,7 +2096,7 @@ impl GetLensInput {
             fn uri_base(_input: &crate::input::GetLensInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_23 = &_input.lens_alias;
                 let input_23 = input_23.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "lens_alias", details: "cannot be empty or unset" })?;
-                let lens_alias = aws_smithy_http::label::fmt_string(input_23, false);
+                let lens_alias = aws_smithy_http::label::fmt_string(input_23, aws_smithy_http::label::EncodingStrategy::Default);
                 if lens_alias.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "lens_alias", details: "cannot be empty or unset" })
                             }
@@ -2234,13 +2234,13 @@ impl GetLensReviewInput {
             fn uri_base(_input: &crate::input::GetLensReviewInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_25 = &_input.workload_id;
                 let input_25 = input_25.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })?;
-                let workload_id = aws_smithy_http::label::fmt_string(input_25, false);
+                let workload_id = aws_smithy_http::label::fmt_string(input_25, aws_smithy_http::label::EncodingStrategy::Default);
                 if workload_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })
                             }
                 let input_26 = &_input.lens_alias;
                 let input_26 = input_26.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "lens_alias", details: "cannot be empty or unset" })?;
-                let lens_alias = aws_smithy_http::label::fmt_string(input_26, false);
+                let lens_alias = aws_smithy_http::label::fmt_string(input_26, aws_smithy_http::label::EncodingStrategy::Default);
                 if lens_alias.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "lens_alias", details: "cannot be empty or unset" })
                             }
@@ -2378,13 +2378,13 @@ impl GetLensReviewReportInput {
             fn uri_base(_input: &crate::input::GetLensReviewReportInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_27 = &_input.workload_id;
                 let input_27 = input_27.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })?;
-                let workload_id = aws_smithy_http::label::fmt_string(input_27, false);
+                let workload_id = aws_smithy_http::label::fmt_string(input_27, aws_smithy_http::label::EncodingStrategy::Default);
                 if workload_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })
                             }
                 let input_28 = &_input.lens_alias;
                 let input_28 = input_28.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "lens_alias", details: "cannot be empty or unset" })?;
-                let lens_alias = aws_smithy_http::label::fmt_string(input_28, false);
+                let lens_alias = aws_smithy_http::label::fmt_string(input_28, aws_smithy_http::label::EncodingStrategy::Default);
                 if lens_alias.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "lens_alias", details: "cannot be empty or unset" })
                             }
@@ -2519,7 +2519,7 @@ impl GetLensVersionDifferenceInput {
             fn uri_base(_input: &crate::input::GetLensVersionDifferenceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_29 = &_input.lens_alias;
                 let input_29 = input_29.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "lens_alias", details: "cannot be empty or unset" })?;
-                let lens_alias = aws_smithy_http::label::fmt_string(input_29, false);
+                let lens_alias = aws_smithy_http::label::fmt_string(input_29, aws_smithy_http::label::EncodingStrategy::Default);
                 if lens_alias.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "lens_alias", details: "cannot be empty or unset" })
                             }
@@ -2642,7 +2642,7 @@ impl GetMilestoneInput {
             fn uri_base(_input: &crate::input::GetMilestoneInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_32 = &_input.workload_id;
                 let input_32 = input_32.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })?;
-                let workload_id = aws_smithy_http::label::fmt_string(input_32, false);
+                let workload_id = aws_smithy_http::label::fmt_string(input_32, aws_smithy_http::label::EncodingStrategy::Default);
                 if workload_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })
                             }
@@ -2744,7 +2744,7 @@ impl GetWorkloadInput {
             fn uri_base(_input: &crate::input::GetWorkloadInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_34 = &_input.workload_id;
                 let input_34 = input_34.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })?;
-                let workload_id = aws_smithy_http::label::fmt_string(input_34, false);
+                let workload_id = aws_smithy_http::label::fmt_string(input_34, aws_smithy_http::label::EncodingStrategy::Default);
                 if workload_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })
                             }
@@ -3065,13 +3065,13 @@ impl ListAnswersInput {
             fn uri_base(_input: &crate::input::ListAnswersInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_35 = &_input.workload_id;
                 let input_35 = input_35.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })?;
-                let workload_id = aws_smithy_http::label::fmt_string(input_35, false);
+                let workload_id = aws_smithy_http::label::fmt_string(input_35, aws_smithy_http::label::EncodingStrategy::Default);
                 if workload_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })
                             }
                 let input_36 = &_input.lens_alias;
                 let input_36 = input_36.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "lens_alias", details: "cannot be empty or unset" })?;
-                let lens_alias = aws_smithy_http::label::fmt_string(input_36, false);
+                let lens_alias = aws_smithy_http::label::fmt_string(input_36, aws_smithy_http::label::EncodingStrategy::Default);
                 if lens_alias.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "lens_alias", details: "cannot be empty or unset" })
                             }
@@ -3417,13 +3417,13 @@ impl ListLensReviewImprovementsInput {
             fn uri_base(_input: &crate::input::ListLensReviewImprovementsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_43 = &_input.workload_id;
                 let input_43 = input_43.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })?;
-                let workload_id = aws_smithy_http::label::fmt_string(input_43, false);
+                let workload_id = aws_smithy_http::label::fmt_string(input_43, aws_smithy_http::label::EncodingStrategy::Default);
                 if workload_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })
                             }
                 let input_44 = &_input.lens_alias;
                 let input_44 = input_44.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "lens_alias", details: "cannot be empty or unset" })?;
-                let lens_alias = aws_smithy_http::label::fmt_string(input_44, false);
+                let lens_alias = aws_smithy_http::label::fmt_string(input_44, aws_smithy_http::label::EncodingStrategy::Default);
                 if lens_alias.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "lens_alias", details: "cannot be empty or unset" })
                             }
@@ -3577,7 +3577,7 @@ impl ListLensReviewsInput {
             fn uri_base(_input: &crate::input::ListLensReviewsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_47 = &_input.workload_id;
                 let input_47 = input_47.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })?;
-                let workload_id = aws_smithy_http::label::fmt_string(input_47, false);
+                let workload_id = aws_smithy_http::label::fmt_string(input_47, aws_smithy_http::label::EncodingStrategy::Default);
                 if workload_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })
                             }
@@ -3743,7 +3743,7 @@ impl ListLensSharesInput {
             fn uri_base(_input: &crate::input::ListLensSharesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_49 = &_input.lens_alias;
                 let input_49 = input_49.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "lens_alias", details: "cannot be empty or unset" })?;
-                let lens_alias = aws_smithy_http::label::fmt_string(input_49, false);
+                let lens_alias = aws_smithy_http::label::fmt_string(input_49, aws_smithy_http::label::EncodingStrategy::Default);
                 if lens_alias.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "lens_alias", details: "cannot be empty or unset" })
                             }
@@ -3882,7 +3882,7 @@ impl ListMilestonesInput {
             fn uri_base(_input: &crate::input::ListMilestonesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_53 = &_input.workload_id;
                 let input_53 = input_53.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })?;
-                let workload_id = aws_smithy_http::label::fmt_string(input_53, false);
+                let workload_id = aws_smithy_http::label::fmt_string(input_53, aws_smithy_http::label::EncodingStrategy::Default);
                 if workload_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })
                             }
@@ -4263,7 +4263,7 @@ impl ListTagsForResourceInput {
             fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_58 = &_input.workload_arn;
                 let input_58 = input_58.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workload_arn", details: "cannot be empty or unset" })?;
-                let workload_arn = aws_smithy_http::label::fmt_string(input_58, false);
+                let workload_arn = aws_smithy_http::label::fmt_string(input_58, aws_smithy_http::label::EncodingStrategy::Default);
                 if workload_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workload_arn", details: "cannot be empty or unset" })
                             }
@@ -4529,7 +4529,7 @@ impl ListWorkloadSharesInput {
             fn uri_base(_input: &crate::input::ListWorkloadSharesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_59 = &_input.workload_id;
                 let input_59 = input_59.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })?;
-                let workload_id = aws_smithy_http::label::fmt_string(input_59, false);
+                let workload_id = aws_smithy_http::label::fmt_string(input_59, aws_smithy_http::label::EncodingStrategy::Default);
                 if workload_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })
                             }
@@ -4661,7 +4661,7 @@ impl TagResourceInput {
             fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_63 = &_input.workload_arn;
                 let input_63 = input_63.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workload_arn", details: "cannot be empty or unset" })?;
-                let workload_arn = aws_smithy_http::label::fmt_string(input_63, false);
+                let workload_arn = aws_smithy_http::label::fmt_string(input_63, aws_smithy_http::label::EncodingStrategy::Default);
                 if workload_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workload_arn", details: "cannot be empty or unset" })
                             }
@@ -4780,7 +4780,7 @@ impl UntagResourceInput {
             fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_64 = &_input.workload_arn;
                 let input_64 = input_64.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workload_arn", details: "cannot be empty or unset" })?;
-                let workload_arn = aws_smithy_http::label::fmt_string(input_64, false);
+                let workload_arn = aws_smithy_http::label::fmt_string(input_64, aws_smithy_http::label::EncodingStrategy::Default);
                 if workload_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workload_arn", details: "cannot be empty or unset" })
                             }
@@ -4992,19 +4992,19 @@ impl UpdateAnswerInput {
             fn uri_base(_input: &crate::input::UpdateAnswerInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_67 = &_input.workload_id;
                 let input_67 = input_67.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })?;
-                let workload_id = aws_smithy_http::label::fmt_string(input_67, false);
+                let workload_id = aws_smithy_http::label::fmt_string(input_67, aws_smithy_http::label::EncodingStrategy::Default);
                 if workload_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })
                             }
                 let input_68 = &_input.lens_alias;
                 let input_68 = input_68.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "lens_alias", details: "cannot be empty or unset" })?;
-                let lens_alias = aws_smithy_http::label::fmt_string(input_68, false);
+                let lens_alias = aws_smithy_http::label::fmt_string(input_68, aws_smithy_http::label::EncodingStrategy::Default);
                 if lens_alias.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "lens_alias", details: "cannot be empty or unset" })
                             }
                 let input_69 = &_input.question_id;
                 let input_69 = input_69.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "question_id", details: "cannot be empty or unset" })?;
-                let question_id = aws_smithy_http::label::fmt_string(input_69, false);
+                let question_id = aws_smithy_http::label::fmt_string(input_69, aws_smithy_http::label::EncodingStrategy::Default);
                 if question_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "question_id", details: "cannot be empty or unset" })
                             }
@@ -5248,13 +5248,13 @@ impl UpdateLensReviewInput {
             fn uri_base(_input: &crate::input::UpdateLensReviewInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_70 = &_input.workload_id;
                 let input_70 = input_70.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })?;
-                let workload_id = aws_smithy_http::label::fmt_string(input_70, false);
+                let workload_id = aws_smithy_http::label::fmt_string(input_70, aws_smithy_http::label::EncodingStrategy::Default);
                 if workload_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })
                             }
                 let input_71 = &_input.lens_alias;
                 let input_71 = input_71.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "lens_alias", details: "cannot be empty or unset" })?;
-                let lens_alias = aws_smithy_http::label::fmt_string(input_71, false);
+                let lens_alias = aws_smithy_http::label::fmt_string(input_71, aws_smithy_http::label::EncodingStrategy::Default);
                 if lens_alias.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "lens_alias", details: "cannot be empty or unset" })
                             }
@@ -5367,7 +5367,7 @@ impl UpdateShareInvitationInput {
             fn uri_base(_input: &crate::input::UpdateShareInvitationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_72 = &_input.share_invitation_id;
                 let input_72 = input_72.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "share_invitation_id", details: "cannot be empty or unset" })?;
-                let share_invitation_id = aws_smithy_http::label::fmt_string(input_72, false);
+                let share_invitation_id = aws_smithy_http::label::fmt_string(input_72, aws_smithy_http::label::EncodingStrategy::Default);
                 if share_invitation_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "share_invitation_id", details: "cannot be empty or unset" })
                             }
@@ -5725,7 +5725,7 @@ impl UpdateWorkloadInput {
             fn uri_base(_input: &crate::input::UpdateWorkloadInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_73 = &_input.workload_id;
                 let input_73 = input_73.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })?;
-                let workload_id = aws_smithy_http::label::fmt_string(input_73, false);
+                let workload_id = aws_smithy_http::label::fmt_string(input_73, aws_smithy_http::label::EncodingStrategy::Default);
                 if workload_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })
                             }
@@ -5850,13 +5850,13 @@ impl UpdateWorkloadShareInput {
             fn uri_base(_input: &crate::input::UpdateWorkloadShareInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_74 = &_input.workload_id;
                 let input_74 = input_74.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })?;
-                let workload_id = aws_smithy_http::label::fmt_string(input_74, false);
+                let workload_id = aws_smithy_http::label::fmt_string(input_74, aws_smithy_http::label::EncodingStrategy::Default);
                 if workload_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })
                             }
                 let input_75 = &_input.share_id;
                 let input_75 = input_75.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "share_id", details: "cannot be empty or unset" })?;
-                let share_id = aws_smithy_http::label::fmt_string(input_75, false);
+                let share_id = aws_smithy_http::label::fmt_string(input_75, aws_smithy_http::label::EncodingStrategy::Default);
                 if share_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "share_id", details: "cannot be empty or unset" })
                             }
@@ -6007,13 +6007,13 @@ impl UpgradeLensReviewInput {
             fn uri_base(_input: &crate::input::UpgradeLensReviewInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_76 = &_input.workload_id;
                 let input_76 = input_76.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })?;
-                let workload_id = aws_smithy_http::label::fmt_string(input_76, false);
+                let workload_id = aws_smithy_http::label::fmt_string(input_76, aws_smithy_http::label::EncodingStrategy::Default);
                 if workload_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workload_id", details: "cannot be empty or unset" })
                             }
                 let input_77 = &_input.lens_alias;
                 let input_77 = input_77.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "lens_alias", details: "cannot be empty or unset" })?;
-                let lens_alias = aws_smithy_http::label::fmt_string(input_77, false);
+                let lens_alias = aws_smithy_http::label::fmt_string(input_77, aws_smithy_http::label::EncodingStrategy::Default);
                 if lens_alias.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "lens_alias", details: "cannot be empty or unset" })
                             }

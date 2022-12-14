@@ -582,7 +582,7 @@ impl CreateReplicationConfigurationInput {
             fn uri_base(_input: &crate::input::CreateReplicationConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.source_file_system_id;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "source_file_system_id", details: "cannot be empty or unset" })?;
-                let source_file_system_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let source_file_system_id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if source_file_system_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "source_file_system_id", details: "cannot be empty or unset" })
                             }
@@ -701,7 +701,7 @@ impl CreateTagsInput {
             fn uri_base(_input: &crate::input::CreateTagsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.file_system_id;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "file_system_id", details: "cannot be empty or unset" })?;
-                let file_system_id = aws_smithy_http::label::fmt_string(input_2, false);
+                let file_system_id = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if file_system_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "file_system_id", details: "cannot be empty or unset" })
                             }
@@ -802,7 +802,7 @@ impl DeleteAccessPointInput {
             fn uri_base(_input: &crate::input::DeleteAccessPointInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.access_point_id;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "access_point_id", details: "cannot be empty or unset" })?;
-                let access_point_id = aws_smithy_http::label::fmt_string(input_3, false);
+                let access_point_id = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if access_point_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "access_point_id", details: "cannot be empty or unset" })
                             }
@@ -899,7 +899,7 @@ impl DeleteFileSystemInput {
             fn uri_base(_input: &crate::input::DeleteFileSystemInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_4 = &_input.file_system_id;
                 let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "file_system_id", details: "cannot be empty or unset" })?;
-                let file_system_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let file_system_id = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if file_system_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "file_system_id", details: "cannot be empty or unset" })
                             }
@@ -996,7 +996,7 @@ impl DeleteFileSystemPolicyInput {
             fn uri_base(_input: &crate::input::DeleteFileSystemPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_5 = &_input.file_system_id;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "file_system_id", details: "cannot be empty or unset" })?;
-                let file_system_id = aws_smithy_http::label::fmt_string(input_5, false);
+                let file_system_id = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if file_system_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "file_system_id", details: "cannot be empty or unset" })
                             }
@@ -1093,7 +1093,7 @@ impl DeleteMountTargetInput {
             fn uri_base(_input: &crate::input::DeleteMountTargetInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_6 = &_input.mount_target_id;
                 let input_6 = input_6.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mount_target_id", details: "cannot be empty or unset" })?;
-                let mount_target_id = aws_smithy_http::label::fmt_string(input_6, false);
+                let mount_target_id = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if mount_target_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mount_target_id", details: "cannot be empty or unset" })
                             }
@@ -1190,7 +1190,7 @@ impl DeleteReplicationConfigurationInput {
             fn uri_base(_input: &crate::input::DeleteReplicationConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_7 = &_input.source_file_system_id;
                 let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "source_file_system_id", details: "cannot be empty or unset" })?;
-                let source_file_system_id = aws_smithy_http::label::fmt_string(input_7, false);
+                let source_file_system_id = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
                 if source_file_system_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "source_file_system_id", details: "cannot be empty or unset" })
                             }
@@ -1305,7 +1305,7 @@ impl DeleteTagsInput {
             fn uri_base(_input: &crate::input::DeleteTagsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_8 = &_input.file_system_id;
                 let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "file_system_id", details: "cannot be empty or unset" })?;
-                let file_system_id = aws_smithy_http::label::fmt_string(input_8, false);
+                let file_system_id = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
                 if file_system_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "file_system_id", details: "cannot be empty or unset" })
                             }
@@ -1657,7 +1657,7 @@ impl DescribeBackupPolicyInput {
             fn uri_base(_input: &crate::input::DescribeBackupPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_13 = &_input.file_system_id;
                 let input_13 = input_13.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "file_system_id", details: "cannot be empty or unset" })?;
-                let file_system_id = aws_smithy_http::label::fmt_string(input_13, false);
+                let file_system_id = aws_smithy_http::label::fmt_string(input_13, aws_smithy_http::label::EncodingStrategy::Default);
                 if file_system_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "file_system_id", details: "cannot be empty or unset" })
                             }
@@ -1754,7 +1754,7 @@ impl DescribeFileSystemPolicyInput {
             fn uri_base(_input: &crate::input::DescribeFileSystemPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_14 = &_input.file_system_id;
                 let input_14 = input_14.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "file_system_id", details: "cannot be empty or unset" })?;
-                let file_system_id = aws_smithy_http::label::fmt_string(input_14, false);
+                let file_system_id = aws_smithy_http::label::fmt_string(input_14, aws_smithy_http::label::EncodingStrategy::Default);
                 if file_system_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "file_system_id", details: "cannot be empty or unset" })
                             }
@@ -1995,7 +1995,7 @@ impl DescribeLifecycleConfigurationInput {
             fn uri_base(_input: &crate::input::DescribeLifecycleConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_19 = &_input.file_system_id;
                 let input_19 = input_19.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "file_system_id", details: "cannot be empty or unset" })?;
-                let file_system_id = aws_smithy_http::label::fmt_string(input_19, false);
+                let file_system_id = aws_smithy_http::label::fmt_string(input_19, aws_smithy_http::label::EncodingStrategy::Default);
                 if file_system_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "file_system_id", details: "cannot be empty or unset" })
                             }
@@ -2251,7 +2251,7 @@ impl DescribeMountTargetSecurityGroupsInput {
             fn uri_base(_input: &crate::input::DescribeMountTargetSecurityGroupsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_25 = &_input.mount_target_id;
                 let input_25 = input_25.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mount_target_id", details: "cannot be empty or unset" })?;
-                let mount_target_id = aws_smithy_http::label::fmt_string(input_25, false);
+                let mount_target_id = aws_smithy_http::label::fmt_string(input_25, aws_smithy_http::label::EncodingStrategy::Default);
                 if mount_target_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mount_target_id", details: "cannot be empty or unset" })
                             }
@@ -2501,7 +2501,7 @@ impl DescribeTagsInput {
             fn uri_base(_input: &crate::input::DescribeTagsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_29 = &_input.file_system_id;
                 let input_29 = input_29.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "file_system_id", details: "cannot be empty or unset" })?;
-                let file_system_id = aws_smithy_http::label::fmt_string(input_29, false);
+                let file_system_id = aws_smithy_http::label::fmt_string(input_29, aws_smithy_http::label::EncodingStrategy::Default);
                 if file_system_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "file_system_id", details: "cannot be empty or unset" })
                             }
@@ -2633,7 +2633,7 @@ impl ListTagsForResourceInput {
             fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_32 = &_input.resource_id;
                 let input_32 = input_32.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_id", details: "cannot be empty or unset" })?;
-                let resource_id = aws_smithy_http::label::fmt_string(input_32, false);
+                let resource_id = aws_smithy_http::label::fmt_string(input_32, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_id", details: "cannot be empty or unset" })
                             }
@@ -2759,7 +2759,7 @@ impl ModifyMountTargetSecurityGroupsInput {
             fn uri_base(_input: &crate::input::ModifyMountTargetSecurityGroupsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_35 = &_input.mount_target_id;
                 let input_35 = input_35.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "mount_target_id", details: "cannot be empty or unset" })?;
-                let mount_target_id = aws_smithy_http::label::fmt_string(input_35, false);
+                let mount_target_id = aws_smithy_http::label::fmt_string(input_35, aws_smithy_http::label::EncodingStrategy::Default);
                 if mount_target_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "mount_target_id", details: "cannot be empty or unset" })
                             }
@@ -2971,7 +2971,7 @@ impl PutBackupPolicyInput {
             fn uri_base(_input: &crate::input::PutBackupPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_36 = &_input.file_system_id;
                 let input_36 = input_36.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "file_system_id", details: "cannot be empty or unset" })?;
-                let file_system_id = aws_smithy_http::label::fmt_string(input_36, false);
+                let file_system_id = aws_smithy_http::label::fmt_string(input_36, aws_smithy_http::label::EncodingStrategy::Default);
                 if file_system_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "file_system_id", details: "cannot be empty or unset" })
                             }
@@ -3097,7 +3097,7 @@ impl PutFileSystemPolicyInput {
             fn uri_base(_input: &crate::input::PutFileSystemPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_37 = &_input.file_system_id;
                 let input_37 = input_37.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "file_system_id", details: "cannot be empty or unset" })?;
-                let file_system_id = aws_smithy_http::label::fmt_string(input_37, false);
+                let file_system_id = aws_smithy_http::label::fmt_string(input_37, aws_smithy_http::label::EncodingStrategy::Default);
                 if file_system_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "file_system_id", details: "cannot be empty or unset" })
                             }
@@ -3228,7 +3228,7 @@ impl PutLifecycleConfigurationInput {
             fn uri_base(_input: &crate::input::PutLifecycleConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_38 = &_input.file_system_id;
                 let input_38 = input_38.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "file_system_id", details: "cannot be empty or unset" })?;
-                let file_system_id = aws_smithy_http::label::fmt_string(input_38, false);
+                let file_system_id = aws_smithy_http::label::fmt_string(input_38, aws_smithy_http::label::EncodingStrategy::Default);
                 if file_system_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "file_system_id", details: "cannot be empty or unset" })
                             }
@@ -3347,7 +3347,7 @@ impl TagResourceInput {
             fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_39 = &_input.resource_id;
                 let input_39 = input_39.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_id", details: "cannot be empty or unset" })?;
-                let resource_id = aws_smithy_http::label::fmt_string(input_39, false);
+                let resource_id = aws_smithy_http::label::fmt_string(input_39, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_id", details: "cannot be empty or unset" })
                             }
@@ -3466,7 +3466,7 @@ impl UntagResourceInput {
             fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_40 = &_input.resource_id;
                 let input_40 = input_40.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_id", details: "cannot be empty or unset" })?;
-                let resource_id = aws_smithy_http::label::fmt_string(input_40, false);
+                let resource_id = aws_smithy_http::label::fmt_string(input_40, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_id", details: "cannot be empty or unset" })
                             }
@@ -3597,7 +3597,7 @@ impl UpdateFileSystemInput {
             fn uri_base(_input: &crate::input::UpdateFileSystemInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_43 = &_input.file_system_id;
                 let input_43 = input_43.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "file_system_id", details: "cannot be empty or unset" })?;
-                let file_system_id = aws_smithy_http::label::fmt_string(input_43, false);
+                let file_system_id = aws_smithy_http::label::fmt_string(input_43, aws_smithy_http::label::EncodingStrategy::Default);
                 if file_system_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "file_system_id", details: "cannot be empty or unset" })
                             }

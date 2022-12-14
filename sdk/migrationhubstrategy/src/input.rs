@@ -39,7 +39,7 @@ impl GetApplicationComponentDetailsInput {
             fn uri_base(_input: &crate::input::GetApplicationComponentDetailsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.application_component_id;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "application_component_id", details: "cannot be empty or unset" })?;
-                let application_component_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let application_component_id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if application_component_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "application_component_id", details: "cannot be empty or unset" })
                             }
@@ -136,7 +136,7 @@ impl GetApplicationComponentStrategiesInput {
             fn uri_base(_input: &crate::input::GetApplicationComponentStrategiesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.application_component_id;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "application_component_id", details: "cannot be empty or unset" })?;
-                let application_component_id = aws_smithy_http::label::fmt_string(input_2, false);
+                let application_component_id = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if application_component_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "application_component_id", details: "cannot be empty or unset" })
                             }
@@ -233,7 +233,7 @@ impl GetAssessmentInput {
             fn uri_base(_input: &crate::input::GetAssessmentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.id;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
-                let id = aws_smithy_http::label::fmt_string(input_3, false);
+                let id = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
                             }
@@ -330,7 +330,7 @@ impl GetImportFileTaskInput {
             fn uri_base(_input: &crate::input::GetImportFileTaskInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_4 = &_input.id;
                 let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
-                let id = aws_smithy_http::label::fmt_string(input_4, false);
+                let id = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
                             }
@@ -585,7 +585,7 @@ impl GetRecommendationReportDetailsInput {
             fn uri_base(_input: &crate::input::GetRecommendationReportDetailsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_5 = &_input.id;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
-                let id = aws_smithy_http::label::fmt_string(input_5, false);
+                let id = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
                             }
@@ -706,7 +706,7 @@ impl GetServerDetailsInput {
             fn uri_base(_input: &crate::input::GetServerDetailsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_6 = &_input.server_id;
                 let input_6 = input_6.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "server_id", details: "cannot be empty or unset" })?;
-                let server_id = aws_smithy_http::label::fmt_string(input_6, false);
+                let server_id = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if server_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "server_id", details: "cannot be empty or unset" })
                             }
@@ -814,7 +814,7 @@ impl GetServerStrategiesInput {
             fn uri_base(_input: &crate::input::GetServerStrategiesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_9 = &_input.server_id;
                 let input_9 = input_9.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "server_id", details: "cannot be empty or unset" })?;
-                let server_id = aws_smithy_http::label::fmt_string(input_9, false);
+                let server_id = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
                 if server_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "server_id", details: "cannot be empty or unset" })
                             }

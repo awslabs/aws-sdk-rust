@@ -164,7 +164,7 @@ impl DeleteRecordInput {
             fn uri_base(_input: &crate::input::DeleteRecordInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.feature_group_name;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "feature_group_name", details: "cannot be empty or unset" })?;
-                let feature_group_name = aws_smithy_http::label::fmt_string(input_1, false);
+                let feature_group_name = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if feature_group_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "feature_group_name", details: "cannot be empty or unset" })
                             }
@@ -302,7 +302,7 @@ impl GetRecordInput {
             fn uri_base(_input: &crate::input::GetRecordInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_4 = &_input.feature_group_name;
                 let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "feature_group_name", details: "cannot be empty or unset" })?;
-                let feature_group_name = aws_smithy_http::label::fmt_string(input_4, false);
+                let feature_group_name = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if feature_group_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "feature_group_name", details: "cannot be empty or unset" })
                             }
@@ -440,7 +440,7 @@ impl PutRecordInput {
             fn uri_base(_input: &crate::input::PutRecordInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_8 = &_input.feature_group_name;
                 let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "feature_group_name", details: "cannot be empty or unset" })?;
-                let feature_group_name = aws_smithy_http::label::fmt_string(input_8, false);
+                let feature_group_name = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
                 if feature_group_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "feature_group_name", details: "cannot be empty or unset" })
                             }

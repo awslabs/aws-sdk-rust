@@ -184,7 +184,7 @@ impl DeleteProjectInput {
             fn uri_base(_input: &crate::input::DeleteProjectInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_4 = &_input.project_id;
                 let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "project_id", details: "cannot be empty or unset" })?;
-                let project_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let project_id = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if project_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "project_id", details: "cannot be empty or unset" })
                             }
@@ -281,7 +281,7 @@ impl DescribeBundleInput {
             fn uri_base(_input: &crate::input::DescribeBundleInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_5 = &_input.bundle_id;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "bundle_id", details: "cannot be empty or unset" })?;
-                let bundle_id = aws_smithy_http::label::fmt_string(input_5, false);
+                let bundle_id = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if bundle_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "bundle_id", details: "cannot be empty or unset" })
                             }
@@ -517,7 +517,7 @@ impl ExportBundleInput {
             fn uri_base(_input: &crate::input::ExportBundleInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_7 = &_input.bundle_id;
                 let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "bundle_id", details: "cannot be empty or unset" })?;
-                let bundle_id = aws_smithy_http::label::fmt_string(input_7, false);
+                let bundle_id = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
                 if bundle_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "bundle_id", details: "cannot be empty or unset" })
                             }
@@ -625,7 +625,7 @@ impl ExportProjectInput {
             fn uri_base(_input: &crate::input::ExportProjectInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_10 = &_input.project_id;
                 let input_10 = input_10.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "project_id", details: "cannot be empty or unset" })?;
-                let project_id = aws_smithy_http::label::fmt_string(input_10, false);
+                let project_id = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Default);
                 if project_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "project_id", details: "cannot be empty or unset" })
                             }

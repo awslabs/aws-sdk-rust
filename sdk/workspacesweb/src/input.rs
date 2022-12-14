@@ -51,7 +51,7 @@ impl AssociateBrowserSettingsInput {
             fn uri_base(_input: &crate::input::AssociateBrowserSettingsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.portal_arn;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "portal_arn", details: "cannot be empty or unset" })?;
-                let portal_arn = aws_smithy_http::label::fmt_string(input_1, true);
+                let portal_arn = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if portal_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "portal_arn", details: "cannot be empty or unset" })
                             }
@@ -168,7 +168,7 @@ impl AssociateNetworkSettingsInput {
             fn uri_base(_input: &crate::input::AssociateNetworkSettingsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.portal_arn;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "portal_arn", details: "cannot be empty or unset" })?;
-                let portal_arn = aws_smithy_http::label::fmt_string(input_3, true);
+                let portal_arn = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if portal_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "portal_arn", details: "cannot be empty or unset" })
                             }
@@ -285,7 +285,7 @@ impl AssociateTrustStoreInput {
             fn uri_base(_input: &crate::input::AssociateTrustStoreInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_5 = &_input.portal_arn;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "portal_arn", details: "cannot be empty or unset" })?;
-                let portal_arn = aws_smithy_http::label::fmt_string(input_5, true);
+                let portal_arn = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if portal_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "portal_arn", details: "cannot be empty or unset" })
                             }
@@ -402,7 +402,7 @@ impl AssociateUserSettingsInput {
             fn uri_base(_input: &crate::input::AssociateUserSettingsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_7 = &_input.portal_arn;
                 let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "portal_arn", details: "cannot be empty or unset" })?;
-                let portal_arn = aws_smithy_http::label::fmt_string(input_7, true);
+                let portal_arn = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if portal_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "portal_arn", details: "cannot be empty or unset" })
                             }
@@ -1565,7 +1565,7 @@ impl DeleteBrowserSettingsInput {
             fn uri_base(_input: &crate::input::DeleteBrowserSettingsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_9 = &_input.browser_settings_arn;
                 let input_9 = input_9.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "browser_settings_arn", details: "cannot be empty or unset" })?;
-                let browser_settings_arn = aws_smithy_http::label::fmt_string(input_9, true);
+                let browser_settings_arn = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if browser_settings_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "browser_settings_arn", details: "cannot be empty or unset" })
                             }
@@ -1662,7 +1662,7 @@ impl DeleteIdentityProviderInput {
             fn uri_base(_input: &crate::input::DeleteIdentityProviderInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_10 = &_input.identity_provider_arn;
                 let input_10 = input_10.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "identity_provider_arn", details: "cannot be empty or unset" })?;
-                let identity_provider_arn = aws_smithy_http::label::fmt_string(input_10, true);
+                let identity_provider_arn = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if identity_provider_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "identity_provider_arn", details: "cannot be empty or unset" })
                             }
@@ -1759,7 +1759,7 @@ impl DeleteNetworkSettingsInput {
             fn uri_base(_input: &crate::input::DeleteNetworkSettingsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_11 = &_input.network_settings_arn;
                 let input_11 = input_11.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "network_settings_arn", details: "cannot be empty or unset" })?;
-                let network_settings_arn = aws_smithy_http::label::fmt_string(input_11, true);
+                let network_settings_arn = aws_smithy_http::label::fmt_string(input_11, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if network_settings_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "network_settings_arn", details: "cannot be empty or unset" })
                             }
@@ -1856,7 +1856,7 @@ impl DeletePortalInput {
             fn uri_base(_input: &crate::input::DeletePortalInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_12 = &_input.portal_arn;
                 let input_12 = input_12.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "portal_arn", details: "cannot be empty or unset" })?;
-                let portal_arn = aws_smithy_http::label::fmt_string(input_12, true);
+                let portal_arn = aws_smithy_http::label::fmt_string(input_12, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if portal_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "portal_arn", details: "cannot be empty or unset" })
                             }
@@ -1953,7 +1953,7 @@ impl DeleteTrustStoreInput {
             fn uri_base(_input: &crate::input::DeleteTrustStoreInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_13 = &_input.trust_store_arn;
                 let input_13 = input_13.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "trust_store_arn", details: "cannot be empty or unset" })?;
-                let trust_store_arn = aws_smithy_http::label::fmt_string(input_13, true);
+                let trust_store_arn = aws_smithy_http::label::fmt_string(input_13, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if trust_store_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "trust_store_arn", details: "cannot be empty or unset" })
                             }
@@ -2050,7 +2050,7 @@ impl DeleteUserSettingsInput {
             fn uri_base(_input: &crate::input::DeleteUserSettingsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_14 = &_input.user_settings_arn;
                 let input_14 = input_14.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "user_settings_arn", details: "cannot be empty or unset" })?;
-                let user_settings_arn = aws_smithy_http::label::fmt_string(input_14, true);
+                let user_settings_arn = aws_smithy_http::label::fmt_string(input_14, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if user_settings_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "user_settings_arn", details: "cannot be empty or unset" })
                             }
@@ -2147,7 +2147,7 @@ impl DisassociateBrowserSettingsInput {
             fn uri_base(_input: &crate::input::DisassociateBrowserSettingsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_15 = &_input.portal_arn;
                 let input_15 = input_15.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "portal_arn", details: "cannot be empty or unset" })?;
-                let portal_arn = aws_smithy_http::label::fmt_string(input_15, true);
+                let portal_arn = aws_smithy_http::label::fmt_string(input_15, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if portal_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "portal_arn", details: "cannot be empty or unset" })
                             }
@@ -2244,7 +2244,7 @@ impl DisassociateNetworkSettingsInput {
             fn uri_base(_input: &crate::input::DisassociateNetworkSettingsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_16 = &_input.portal_arn;
                 let input_16 = input_16.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "portal_arn", details: "cannot be empty or unset" })?;
-                let portal_arn = aws_smithy_http::label::fmt_string(input_16, true);
+                let portal_arn = aws_smithy_http::label::fmt_string(input_16, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if portal_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "portal_arn", details: "cannot be empty or unset" })
                             }
@@ -2341,7 +2341,7 @@ impl DisassociateTrustStoreInput {
             fn uri_base(_input: &crate::input::DisassociateTrustStoreInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_17 = &_input.portal_arn;
                 let input_17 = input_17.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "portal_arn", details: "cannot be empty or unset" })?;
-                let portal_arn = aws_smithy_http::label::fmt_string(input_17, true);
+                let portal_arn = aws_smithy_http::label::fmt_string(input_17, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if portal_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "portal_arn", details: "cannot be empty or unset" })
                             }
@@ -2438,7 +2438,7 @@ impl DisassociateUserSettingsInput {
             fn uri_base(_input: &crate::input::DisassociateUserSettingsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_18 = &_input.portal_arn;
                 let input_18 = input_18.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "portal_arn", details: "cannot be empty or unset" })?;
-                let portal_arn = aws_smithy_http::label::fmt_string(input_18, true);
+                let portal_arn = aws_smithy_http::label::fmt_string(input_18, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if portal_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "portal_arn", details: "cannot be empty or unset" })
                             }
@@ -2535,7 +2535,7 @@ impl GetBrowserSettingsInput {
             fn uri_base(_input: &crate::input::GetBrowserSettingsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_19 = &_input.browser_settings_arn;
                 let input_19 = input_19.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "browser_settings_arn", details: "cannot be empty or unset" })?;
-                let browser_settings_arn = aws_smithy_http::label::fmt_string(input_19, true);
+                let browser_settings_arn = aws_smithy_http::label::fmt_string(input_19, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if browser_settings_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "browser_settings_arn", details: "cannot be empty or unset" })
                             }
@@ -2632,7 +2632,7 @@ impl GetIdentityProviderInput {
             fn uri_base(_input: &crate::input::GetIdentityProviderInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_20 = &_input.identity_provider_arn;
                 let input_20 = input_20.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "identity_provider_arn", details: "cannot be empty or unset" })?;
-                let identity_provider_arn = aws_smithy_http::label::fmt_string(input_20, true);
+                let identity_provider_arn = aws_smithy_http::label::fmt_string(input_20, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if identity_provider_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "identity_provider_arn", details: "cannot be empty or unset" })
                             }
@@ -2729,7 +2729,7 @@ impl GetNetworkSettingsInput {
             fn uri_base(_input: &crate::input::GetNetworkSettingsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_21 = &_input.network_settings_arn;
                 let input_21 = input_21.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "network_settings_arn", details: "cannot be empty or unset" })?;
-                let network_settings_arn = aws_smithy_http::label::fmt_string(input_21, true);
+                let network_settings_arn = aws_smithy_http::label::fmt_string(input_21, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if network_settings_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "network_settings_arn", details: "cannot be empty or unset" })
                             }
@@ -2826,7 +2826,7 @@ impl GetPortalInput {
             fn uri_base(_input: &crate::input::GetPortalInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_22 = &_input.portal_arn;
                 let input_22 = input_22.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "portal_arn", details: "cannot be empty or unset" })?;
-                let portal_arn = aws_smithy_http::label::fmt_string(input_22, true);
+                let portal_arn = aws_smithy_http::label::fmt_string(input_22, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if portal_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "portal_arn", details: "cannot be empty or unset" })
                             }
@@ -2923,7 +2923,7 @@ impl GetPortalServiceProviderMetadataInput {
             fn uri_base(_input: &crate::input::GetPortalServiceProviderMetadataInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_23 = &_input.portal_arn;
                 let input_23 = input_23.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "portal_arn", details: "cannot be empty or unset" })?;
-                let portal_arn = aws_smithy_http::label::fmt_string(input_23, true);
+                let portal_arn = aws_smithy_http::label::fmt_string(input_23, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if portal_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "portal_arn", details: "cannot be empty or unset" })
                             }
@@ -3020,7 +3020,7 @@ impl GetTrustStoreInput {
             fn uri_base(_input: &crate::input::GetTrustStoreInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_24 = &_input.trust_store_arn;
                 let input_24 = input_24.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "trust_store_arn", details: "cannot be empty or unset" })?;
-                let trust_store_arn = aws_smithy_http::label::fmt_string(input_24, true);
+                let trust_store_arn = aws_smithy_http::label::fmt_string(input_24, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if trust_store_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "trust_store_arn", details: "cannot be empty or unset" })
                             }
@@ -3129,7 +3129,7 @@ impl GetTrustStoreCertificateInput {
             fn uri_base(_input: &crate::input::GetTrustStoreCertificateInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_25 = &_input.trust_store_arn;
                 let input_25 = input_25.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "trust_store_arn", details: "cannot be empty or unset" })?;
-                let trust_store_arn = aws_smithy_http::label::fmt_string(input_25, true);
+                let trust_store_arn = aws_smithy_http::label::fmt_string(input_25, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if trust_store_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "trust_store_arn", details: "cannot be empty or unset" })
                             }
@@ -3234,7 +3234,7 @@ impl GetUserSettingsInput {
             fn uri_base(_input: &crate::input::GetUserSettingsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_27 = &_input.user_settings_arn;
                 let input_27 = input_27.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "user_settings_arn", details: "cannot be empty or unset" })?;
-                let user_settings_arn = aws_smithy_http::label::fmt_string(input_27, true);
+                let user_settings_arn = aws_smithy_http::label::fmt_string(input_27, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if user_settings_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "user_settings_arn", details: "cannot be empty or unset" })
                             }
@@ -3469,7 +3469,7 @@ impl ListIdentityProvidersInput {
             fn uri_base(_input: &crate::input::ListIdentityProvidersInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_30 = &_input.portal_arn;
                 let input_30 = input_30.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "portal_arn", details: "cannot be empty or unset" })?;
-                let portal_arn = aws_smithy_http::label::fmt_string(input_30, true);
+                let portal_arn = aws_smithy_http::label::fmt_string(input_30, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if portal_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "portal_arn", details: "cannot be empty or unset" })
                             }
@@ -3805,7 +3805,7 @@ impl ListTagsForResourceInput {
             fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_37 = &_input.resource_arn;
                 let input_37 = input_37.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_37, true);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_37, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -3926,7 +3926,7 @@ impl ListTrustStoreCertificatesInput {
             fn uri_base(_input: &crate::input::ListTrustStoreCertificatesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_38 = &_input.trust_store_arn;
                 let input_38 = input_38.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "trust_store_arn", details: "cannot be empty or unset" })?;
-                let trust_store_arn = aws_smithy_http::label::fmt_string(input_38, true);
+                let trust_store_arn = aws_smithy_http::label::fmt_string(input_38, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if trust_store_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "trust_store_arn", details: "cannot be empty or unset" })
                             }
@@ -4297,7 +4297,7 @@ impl TagResourceInput {
             fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_45 = &_input.resource_arn;
                 let input_45 = input_45.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_45, true);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_45, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -4416,7 +4416,7 @@ impl UntagResourceInput {
             fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_46 = &_input.resource_arn;
                 let input_46 = input_46.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_46, true);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_46, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -4552,7 +4552,7 @@ impl UpdateBrowserSettingsInput {
             fn uri_base(_input: &crate::input::UpdateBrowserSettingsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_49 = &_input.browser_settings_arn;
                 let input_49 = input_49.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "browser_settings_arn", details: "cannot be empty or unset" })?;
-                let browser_settings_arn = aws_smithy_http::label::fmt_string(input_49, true);
+                let browser_settings_arn = aws_smithy_http::label::fmt_string(input_49, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if browser_settings_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "browser_settings_arn", details: "cannot be empty or unset" })
                             }
@@ -4792,7 +4792,7 @@ impl UpdateIdentityProviderInput {
             fn uri_base(_input: &crate::input::UpdateIdentityProviderInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_50 = &_input.identity_provider_arn;
                 let input_50 = input_50.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "identity_provider_arn", details: "cannot be empty or unset" })?;
-                let identity_provider_arn = aws_smithy_http::label::fmt_string(input_50, true);
+                let identity_provider_arn = aws_smithy_http::label::fmt_string(input_50, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if identity_provider_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "identity_provider_arn", details: "cannot be empty or unset" })
                             }
@@ -4958,7 +4958,7 @@ impl UpdateNetworkSettingsInput {
             fn uri_base(_input: &crate::input::UpdateNetworkSettingsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_51 = &_input.network_settings_arn;
                 let input_51 = input_51.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "network_settings_arn", details: "cannot be empty or unset" })?;
-                let network_settings_arn = aws_smithy_http::label::fmt_string(input_51, true);
+                let network_settings_arn = aws_smithy_http::label::fmt_string(input_51, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if network_settings_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "network_settings_arn", details: "cannot be empty or unset" })
                             }
@@ -5071,7 +5071,7 @@ impl UpdatePortalInput {
             fn uri_base(_input: &crate::input::UpdatePortalInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_52 = &_input.portal_arn;
                 let input_52 = input_52.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "portal_arn", details: "cannot be empty or unset" })?;
-                let portal_arn = aws_smithy_http::label::fmt_string(input_52, true);
+                let portal_arn = aws_smithy_http::label::fmt_string(input_52, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if portal_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "portal_arn", details: "cannot be empty or unset" })
                             }
@@ -5225,7 +5225,7 @@ impl UpdateTrustStoreInput {
             fn uri_base(_input: &crate::input::UpdateTrustStoreInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_53 = &_input.trust_store_arn;
                 let input_53 = input_53.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "trust_store_arn", details: "cannot be empty or unset" })?;
-                let trust_store_arn = aws_smithy_http::label::fmt_string(input_53, true);
+                let trust_store_arn = aws_smithy_http::label::fmt_string(input_53, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if trust_store_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "trust_store_arn", details: "cannot be empty or unset" })
                             }
@@ -5427,7 +5427,7 @@ impl UpdateUserSettingsInput {
             fn uri_base(_input: &crate::input::UpdateUserSettingsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_54 = &_input.user_settings_arn;
                 let input_54 = input_54.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "user_settings_arn", details: "cannot be empty or unset" })?;
-                let user_settings_arn = aws_smithy_http::label::fmt_string(input_54, true);
+                let user_settings_arn = aws_smithy_http::label::fmt_string(input_54, aws_smithy_http::label::EncodingStrategy::Greedy);
                 if user_settings_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "user_settings_arn", details: "cannot be empty or unset" })
                             }

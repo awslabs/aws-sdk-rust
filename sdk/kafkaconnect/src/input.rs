@@ -540,7 +540,7 @@ impl DeleteConnectorInput {
             fn uri_base(_input: &crate::input::DeleteConnectorInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.connector_arn;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "connector_arn", details: "cannot be empty or unset" })?;
-                let connector_arn = aws_smithy_http::label::fmt_string(input_1, false);
+                let connector_arn = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if connector_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "connector_arn", details: "cannot be empty or unset" })
                             }
@@ -645,7 +645,7 @@ impl DeleteCustomPluginInput {
             fn uri_base(_input: &crate::input::DeleteCustomPluginInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.custom_plugin_arn;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "custom_plugin_arn", details: "cannot be empty or unset" })?;
-                let custom_plugin_arn = aws_smithy_http::label::fmt_string(input_3, false);
+                let custom_plugin_arn = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if custom_plugin_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "custom_plugin_arn", details: "cannot be empty or unset" })
                             }
@@ -742,7 +742,7 @@ impl DescribeConnectorInput {
             fn uri_base(_input: &crate::input::DescribeConnectorInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_4 = &_input.connector_arn;
                 let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "connector_arn", details: "cannot be empty or unset" })?;
-                let connector_arn = aws_smithy_http::label::fmt_string(input_4, false);
+                let connector_arn = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if connector_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "connector_arn", details: "cannot be empty or unset" })
                             }
@@ -839,7 +839,7 @@ impl DescribeCustomPluginInput {
             fn uri_base(_input: &crate::input::DescribeCustomPluginInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_5 = &_input.custom_plugin_arn;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "custom_plugin_arn", details: "cannot be empty or unset" })?;
-                let custom_plugin_arn = aws_smithy_http::label::fmt_string(input_5, false);
+                let custom_plugin_arn = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if custom_plugin_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "custom_plugin_arn", details: "cannot be empty or unset" })
                             }
@@ -936,7 +936,7 @@ impl DescribeWorkerConfigurationInput {
             fn uri_base(_input: &crate::input::DescribeWorkerConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_6 = &_input.worker_configuration_arn;
                 let input_6 = input_6.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "worker_configuration_arn", details: "cannot be empty or unset" })?;
-                let worker_configuration_arn = aws_smithy_http::label::fmt_string(input_6, false);
+                let worker_configuration_arn = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if worker_configuration_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "worker_configuration_arn", details: "cannot be empty or unset" })
                             }
@@ -1417,7 +1417,7 @@ impl UpdateConnectorInput {
             fn uri_base(_input: &crate::input::UpdateConnectorInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_11 = &_input.connector_arn;
                 let input_11 = input_11.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "connector_arn", details: "cannot be empty or unset" })?;
-                let connector_arn = aws_smithy_http::label::fmt_string(input_11, false);
+                let connector_arn = aws_smithy_http::label::fmt_string(input_11, aws_smithy_http::label::EncodingStrategy::Default);
                 if connector_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "connector_arn", details: "cannot be empty or unset" })
                             }

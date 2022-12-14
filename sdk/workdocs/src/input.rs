@@ -63,13 +63,13 @@ impl AbortDocumentVersionUploadInput {
             fn uri_base(_input: &crate::input::AbortDocumentVersionUploadInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.document_id;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "document_id", details: "cannot be empty or unset" })?;
-                let document_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let document_id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if document_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "document_id", details: "cannot be empty or unset" })
                             }
                 let input_2 = &_input.version_id;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "version_id", details: "cannot be empty or unset" })?;
-                let version_id = aws_smithy_http::label::fmt_string(input_2, false);
+                let version_id = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if version_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "version_id", details: "cannot be empty or unset" })
                             }
@@ -179,7 +179,7 @@ impl ActivateUserInput {
             fn uri_base(_input: &crate::input::ActivateUserInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.user_id;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "user_id", details: "cannot be empty or unset" })?;
-                let user_id = aws_smithy_http::label::fmt_string(input_3, false);
+                let user_id = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if user_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "user_id", details: "cannot be empty or unset" })
                             }
@@ -319,7 +319,7 @@ impl AddResourcePermissionsInput {
             fn uri_base(_input: &crate::input::AddResourcePermissionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_4 = &_input.resource_id;
                 let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_id", details: "cannot be empty or unset" })?;
-                let resource_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let resource_id = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_id", details: "cannot be empty or unset" })
                             }
@@ -506,13 +506,13 @@ impl CreateCommentInput {
             fn uri_base(_input: &crate::input::CreateCommentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_5 = &_input.document_id;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "document_id", details: "cannot be empty or unset" })?;
-                let document_id = aws_smithy_http::label::fmt_string(input_5, false);
+                let document_id = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if document_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "document_id", details: "cannot be empty or unset" })
                             }
                 let input_6 = &_input.version_id;
                 let input_6 = input_6.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "version_id", details: "cannot be empty or unset" })?;
-                let version_id = aws_smithy_http::label::fmt_string(input_6, false);
+                let version_id = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if version_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "version_id", details: "cannot be empty or unset" })
                             }
@@ -656,7 +656,7 @@ impl CreateCustomMetadataInput {
             fn uri_base(_input: &crate::input::CreateCustomMetadataInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_7 = &_input.resource_id;
                 let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_id", details: "cannot be empty or unset" })?;
-                let resource_id = aws_smithy_http::label::fmt_string(input_7, false);
+                let resource_id = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_id", details: "cannot be empty or unset" })
                             }
@@ -916,7 +916,7 @@ impl CreateLabelsInput {
             fn uri_base(_input: &crate::input::CreateLabelsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_9 = &_input.resource_id;
                 let input_9 = input_9.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_id", details: "cannot be empty or unset" })?;
-                let resource_id = aws_smithy_http::label::fmt_string(input_9, false);
+                let resource_id = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_id", details: "cannot be empty or unset" })
                             }
@@ -1054,7 +1054,7 @@ impl CreateNotificationSubscriptionInput {
             fn uri_base(_input: &crate::input::CreateNotificationSubscriptionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_10 = &_input.organization_id;
                 let input_10 = input_10.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "organization_id", details: "cannot be empty or unset" })?;
-                let organization_id = aws_smithy_http::label::fmt_string(input_10, false);
+                let organization_id = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Default);
                 if organization_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "organization_id", details: "cannot be empty or unset" })
                             }
@@ -1359,7 +1359,7 @@ impl DeactivateUserInput {
             fn uri_base(_input: &crate::input::DeactivateUserInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_11 = &_input.user_id;
                 let input_11 = input_11.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "user_id", details: "cannot be empty or unset" })?;
-                let user_id = aws_smithy_http::label::fmt_string(input_11, false);
+                let user_id = aws_smithy_http::label::fmt_string(input_11, aws_smithy_http::label::EncodingStrategy::Default);
                 if user_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "user_id", details: "cannot be empty or unset" })
                             }
@@ -1493,19 +1493,19 @@ impl DeleteCommentInput {
             fn uri_base(_input: &crate::input::DeleteCommentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_12 = &_input.document_id;
                 let input_12 = input_12.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "document_id", details: "cannot be empty or unset" })?;
-                let document_id = aws_smithy_http::label::fmt_string(input_12, false);
+                let document_id = aws_smithy_http::label::fmt_string(input_12, aws_smithy_http::label::EncodingStrategy::Default);
                 if document_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "document_id", details: "cannot be empty or unset" })
                             }
                 let input_13 = &_input.version_id;
                 let input_13 = input_13.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "version_id", details: "cannot be empty or unset" })?;
-                let version_id = aws_smithy_http::label::fmt_string(input_13, false);
+                let version_id = aws_smithy_http::label::fmt_string(input_13, aws_smithy_http::label::EncodingStrategy::Default);
                 if version_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "version_id", details: "cannot be empty or unset" })
                             }
                 let input_14 = &_input.comment_id;
                 let input_14 = input_14.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "comment_id", details: "cannot be empty or unset" })?;
-                let comment_id = aws_smithy_http::label::fmt_string(input_14, false);
+                let comment_id = aws_smithy_http::label::fmt_string(input_14, aws_smithy_http::label::EncodingStrategy::Default);
                 if comment_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "comment_id", details: "cannot be empty or unset" })
                             }
@@ -1658,7 +1658,7 @@ impl DeleteCustomMetadataInput {
             fn uri_base(_input: &crate::input::DeleteCustomMetadataInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_15 = &_input.resource_id;
                 let input_15 = input_15.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_id", details: "cannot be empty or unset" })?;
-                let resource_id = aws_smithy_http::label::fmt_string(input_15, false);
+                let resource_id = aws_smithy_http::label::fmt_string(input_15, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_id", details: "cannot be empty or unset" })
                             }
@@ -1784,7 +1784,7 @@ impl DeleteDocumentInput {
             fn uri_base(_input: &crate::input::DeleteDocumentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_19 = &_input.document_id;
                 let input_19 = input_19.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "document_id", details: "cannot be empty or unset" })?;
-                let document_id = aws_smithy_http::label::fmt_string(input_19, false);
+                let document_id = aws_smithy_http::label::fmt_string(input_19, aws_smithy_http::label::EncodingStrategy::Default);
                 if document_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "document_id", details: "cannot be empty or unset" })
                             }
@@ -1894,7 +1894,7 @@ impl DeleteFolderInput {
             fn uri_base(_input: &crate::input::DeleteFolderInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_20 = &_input.folder_id;
                 let input_20 = input_20.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "folder_id", details: "cannot be empty or unset" })?;
-                let folder_id = aws_smithy_http::label::fmt_string(input_20, false);
+                let folder_id = aws_smithy_http::label::fmt_string(input_20, aws_smithy_http::label::EncodingStrategy::Default);
                 if folder_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "folder_id", details: "cannot be empty or unset" })
                             }
@@ -2004,7 +2004,7 @@ impl DeleteFolderContentsInput {
             fn uri_base(_input: &crate::input::DeleteFolderContentsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_21 = &_input.folder_id;
                 let input_21 = input_21.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "folder_id", details: "cannot be empty or unset" })?;
-                let folder_id = aws_smithy_http::label::fmt_string(input_21, false);
+                let folder_id = aws_smithy_http::label::fmt_string(input_21, aws_smithy_http::label::EncodingStrategy::Default);
                 if folder_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "folder_id", details: "cannot be empty or unset" })
                             }
@@ -2145,7 +2145,7 @@ impl DeleteLabelsInput {
             fn uri_base(_input: &crate::input::DeleteLabelsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_22 = &_input.resource_id;
                 let input_22 = input_22.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_id", details: "cannot be empty or unset" })?;
-                let resource_id = aws_smithy_http::label::fmt_string(input_22, false);
+                let resource_id = aws_smithy_http::label::fmt_string(input_22, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_id", details: "cannot be empty or unset" })
                             }
@@ -2268,13 +2268,13 @@ impl DeleteNotificationSubscriptionInput {
             fn uri_base(_input: &crate::input::DeleteNotificationSubscriptionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_25 = &_input.organization_id;
                 let input_25 = input_25.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "organization_id", details: "cannot be empty or unset" })?;
-                let organization_id = aws_smithy_http::label::fmt_string(input_25, false);
+                let organization_id = aws_smithy_http::label::fmt_string(input_25, aws_smithy_http::label::EncodingStrategy::Default);
                 if organization_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "organization_id", details: "cannot be empty or unset" })
                             }
                 let input_26 = &_input.subscription_id;
                 let input_26 = input_26.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "subscription_id", details: "cannot be empty or unset" })?;
-                let subscription_id = aws_smithy_http::label::fmt_string(input_26, false);
+                let subscription_id = aws_smithy_http::label::fmt_string(input_26, aws_smithy_http::label::EncodingStrategy::Default);
                 if subscription_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "subscription_id", details: "cannot be empty or unset" })
                             }
@@ -2383,7 +2383,7 @@ impl DeleteUserInput {
             fn uri_base(_input: &crate::input::DeleteUserInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_27 = &_input.user_id;
                 let input_27 = input_27.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "user_id", details: "cannot be empty or unset" })?;
-                let user_id = aws_smithy_http::label::fmt_string(input_27, false);
+                let user_id = aws_smithy_http::label::fmt_string(input_27, aws_smithy_http::label::EncodingStrategy::Default);
                 if user_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "user_id", details: "cannot be empty or unset" })
                             }
@@ -2762,13 +2762,13 @@ impl DescribeCommentsInput {
             fn uri_base(_input: &crate::input::DescribeCommentsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_36 = &_input.document_id;
                 let input_36 = input_36.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "document_id", details: "cannot be empty or unset" })?;
-                let document_id = aws_smithy_http::label::fmt_string(input_36, false);
+                let document_id = aws_smithy_http::label::fmt_string(input_36, aws_smithy_http::label::EncodingStrategy::Default);
                 if document_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "document_id", details: "cannot be empty or unset" })
                             }
                 let input_37 = &_input.version_id;
                 let input_37 = input_37.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "version_id", details: "cannot be empty or unset" })?;
-                let version_id = aws_smithy_http::label::fmt_string(input_37, false);
+                let version_id = aws_smithy_http::label::fmt_string(input_37, aws_smithy_http::label::EncodingStrategy::Default);
                 if version_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "version_id", details: "cannot be empty or unset" })
                             }
@@ -2937,7 +2937,7 @@ impl DescribeDocumentVersionsInput {
             fn uri_base(_input: &crate::input::DescribeDocumentVersionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_40 = &_input.document_id;
                 let input_40 = input_40.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "document_id", details: "cannot be empty or unset" })?;
-                let document_id = aws_smithy_http::label::fmt_string(input_40, false);
+                let document_id = aws_smithy_http::label::fmt_string(input_40, aws_smithy_http::label::EncodingStrategy::Default);
                 if document_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "document_id", details: "cannot be empty or unset" })
                             }
@@ -3136,7 +3136,7 @@ impl DescribeFolderContentsInput {
             fn uri_base(_input: &crate::input::DescribeFolderContentsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_45 = &_input.folder_id;
                 let input_45 = input_45.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "folder_id", details: "cannot be empty or unset" })?;
-                let folder_id = aws_smithy_http::label::fmt_string(input_45, false);
+                let folder_id = aws_smithy_http::label::fmt_string(input_45, aws_smithy_http::label::EncodingStrategy::Default);
                 if folder_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "folder_id", details: "cannot be empty or unset" })
                             }
@@ -3438,7 +3438,7 @@ impl DescribeNotificationSubscriptionsInput {
             fn uri_base(_input: &crate::input::DescribeNotificationSubscriptionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_56 = &_input.organization_id;
                 let input_56 = input_56.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "organization_id", details: "cannot be empty or unset" })?;
-                let organization_id = aws_smithy_http::label::fmt_string(input_56, false);
+                let organization_id = aws_smithy_http::label::fmt_string(input_56, aws_smithy_http::label::EncodingStrategy::Default);
                 if organization_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "organization_id", details: "cannot be empty or unset" })
                             }
@@ -3594,7 +3594,7 @@ impl DescribeResourcePermissionsInput {
             fn uri_base(_input: &crate::input::DescribeResourcePermissionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_59 = &_input.resource_id;
                 let input_59 = input_59.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_id", details: "cannot be empty or unset" })?;
-                let resource_id = aws_smithy_http::label::fmt_string(input_59, false);
+                let resource_id = aws_smithy_http::label::fmt_string(input_59, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_id", details: "cannot be empty or unset" })
                             }
@@ -4182,7 +4182,7 @@ impl GetDocumentInput {
             fn uri_base(_input: &crate::input::GetDocumentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_74 = &_input.document_id;
                 let input_74 = input_74.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "document_id", details: "cannot be empty or unset" })?;
-                let document_id = aws_smithy_http::label::fmt_string(input_74, false);
+                let document_id = aws_smithy_http::label::fmt_string(input_74, aws_smithy_http::label::EncodingStrategy::Default);
                 if document_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "document_id", details: "cannot be empty or unset" })
                             }
@@ -4336,7 +4336,7 @@ impl GetDocumentPathInput {
             fn uri_base(_input: &crate::input::GetDocumentPathInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_75 = &_input.document_id;
                 let input_75 = input_75.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "document_id", details: "cannot be empty or unset" })?;
-                let document_id = aws_smithy_http::label::fmt_string(input_75, false);
+                let document_id = aws_smithy_http::label::fmt_string(input_75, aws_smithy_http::label::EncodingStrategy::Default);
                 if document_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "document_id", details: "cannot be empty or unset" })
                             }
@@ -4497,13 +4497,13 @@ impl GetDocumentVersionInput {
             fn uri_base(_input: &crate::input::GetDocumentVersionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_79 = &_input.document_id;
                 let input_79 = input_79.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "document_id", details: "cannot be empty or unset" })?;
-                let document_id = aws_smithy_http::label::fmt_string(input_79, false);
+                let document_id = aws_smithy_http::label::fmt_string(input_79, aws_smithy_http::label::EncodingStrategy::Default);
                 if document_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "document_id", details: "cannot be empty or unset" })
                             }
                 let input_80 = &_input.version_id;
                 let input_80 = input_80.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "version_id", details: "cannot be empty or unset" })?;
-                let version_id = aws_smithy_http::label::fmt_string(input_80, false);
+                let version_id = aws_smithy_http::label::fmt_string(input_80, aws_smithy_http::label::EncodingStrategy::Default);
                 if version_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "version_id", details: "cannot be empty or unset" })
                             }
@@ -4637,7 +4637,7 @@ impl GetFolderInput {
             fn uri_base(_input: &crate::input::GetFolderInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_82 = &_input.folder_id;
                 let input_82 = input_82.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "folder_id", details: "cannot be empty or unset" })?;
-                let folder_id = aws_smithy_http::label::fmt_string(input_82, false);
+                let folder_id = aws_smithy_http::label::fmt_string(input_82, aws_smithy_http::label::EncodingStrategy::Default);
                 if folder_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "folder_id", details: "cannot be empty or unset" })
                             }
@@ -4791,7 +4791,7 @@ impl GetFolderPathInput {
             fn uri_base(_input: &crate::input::GetFolderPathInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_83 = &_input.folder_id;
                 let input_83 = input_83.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "folder_id", details: "cannot be empty or unset" })?;
-                let folder_id = aws_smithy_http::label::fmt_string(input_83, false);
+                let folder_id = aws_smithy_http::label::fmt_string(input_83, aws_smithy_http::label::EncodingStrategy::Default);
                 if folder_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "folder_id", details: "cannot be empty or unset" })
                             }
@@ -5252,7 +5252,7 @@ impl RemoveAllResourcePermissionsInput {
             fn uri_base(_input: &crate::input::RemoveAllResourcePermissionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_91 = &_input.resource_id;
                 let input_91 = input_91.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_id", details: "cannot be empty or unset" })?;
-                let resource_id = aws_smithy_http::label::fmt_string(input_91, false);
+                let resource_id = aws_smithy_http::label::fmt_string(input_91, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_id", details: "cannot be empty or unset" })
                             }
@@ -5386,13 +5386,13 @@ impl RemoveResourcePermissionInput {
             fn uri_base(_input: &crate::input::RemoveResourcePermissionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_92 = &_input.resource_id;
                 let input_92 = input_92.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_id", details: "cannot be empty or unset" })?;
-                let resource_id = aws_smithy_http::label::fmt_string(input_92, false);
+                let resource_id = aws_smithy_http::label::fmt_string(input_92, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_id", details: "cannot be empty or unset" })
                             }
                 let input_93 = &_input.principal_id;
                 let input_93 = input_93.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "principal_id", details: "cannot be empty or unset" })?;
-                let principal_id = aws_smithy_http::label::fmt_string(input_93, false);
+                let principal_id = aws_smithy_http::label::fmt_string(input_93, aws_smithy_http::label::EncodingStrategy::Default);
                 if principal_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "principal_id", details: "cannot be empty or unset" })
                             }
@@ -5546,7 +5546,7 @@ impl UpdateDocumentInput {
             fn uri_base(_input: &crate::input::UpdateDocumentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_95 = &_input.document_id;
                 let input_95 = input_95.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "document_id", details: "cannot be empty or unset" })?;
-                let document_id = aws_smithy_http::label::fmt_string(input_95, false);
+                let document_id = aws_smithy_http::label::fmt_string(input_95, aws_smithy_http::label::EncodingStrategy::Default);
                 if document_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "document_id", details: "cannot be empty or unset" })
                             }
@@ -5684,13 +5684,13 @@ impl UpdateDocumentVersionInput {
             fn uri_base(_input: &crate::input::UpdateDocumentVersionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_96 = &_input.document_id;
                 let input_96 = input_96.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "document_id", details: "cannot be empty or unset" })?;
-                let document_id = aws_smithy_http::label::fmt_string(input_96, false);
+                let document_id = aws_smithy_http::label::fmt_string(input_96, aws_smithy_http::label::EncodingStrategy::Default);
                 if document_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "document_id", details: "cannot be empty or unset" })
                             }
                 let input_97 = &_input.version_id;
                 let input_97 = input_97.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "version_id", details: "cannot be empty or unset" })?;
-                let version_id = aws_smithy_http::label::fmt_string(input_97, false);
+                let version_id = aws_smithy_http::label::fmt_string(input_97, aws_smithy_http::label::EncodingStrategy::Default);
                 if version_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "version_id", details: "cannot be empty or unset" })
                             }
@@ -5840,7 +5840,7 @@ impl UpdateFolderInput {
             fn uri_base(_input: &crate::input::UpdateFolderInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_98 = &_input.folder_id;
                 let input_98 = input_98.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "folder_id", details: "cannot be empty or unset" })?;
-                let folder_id = aws_smithy_http::label::fmt_string(input_98, false);
+                let folder_id = aws_smithy_http::label::fmt_string(input_98, aws_smithy_http::label::EncodingStrategy::Default);
                 if folder_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "folder_id", details: "cannot be empty or unset" })
                             }
@@ -6038,7 +6038,7 @@ impl UpdateUserInput {
             fn uri_base(_input: &crate::input::UpdateUserInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_99 = &_input.user_id;
                 let input_99 = input_99.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "user_id", details: "cannot be empty or unset" })?;
-                let user_id = aws_smithy_http::label::fmt_string(input_99, false);
+                let user_id = aws_smithy_http::label::fmt_string(input_99, aws_smithy_http::label::EncodingStrategy::Default);
                 if user_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "user_id", details: "cannot be empty or unset" })
                             }

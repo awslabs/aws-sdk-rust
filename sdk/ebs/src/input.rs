@@ -89,7 +89,7 @@ impl CompleteSnapshotInput {
             fn uri_base(_input: &crate::input::CompleteSnapshotInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.snapshot_id;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "snapshot_id", details: "cannot be empty or unset" })?;
-                let snapshot_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let snapshot_id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if snapshot_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "snapshot_id", details: "cannot be empty or unset" })
                             }
@@ -215,7 +215,7 @@ impl GetSnapshotBlockInput {
             fn uri_base(_input: &crate::input::GetSnapshotBlockInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.snapshot_id;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "snapshot_id", details: "cannot be empty or unset" })?;
-                let snapshot_id = aws_smithy_http::label::fmt_string(input_2, false);
+                let snapshot_id = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if snapshot_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "snapshot_id", details: "cannot be empty or unset" })
                             }
@@ -392,7 +392,7 @@ impl ListChangedBlocksInput {
             fn uri_base(_input: &crate::input::ListChangedBlocksInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_5 = &_input.second_snapshot_id;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "second_snapshot_id", details: "cannot be empty or unset" })?;
-                let second_snapshot_id = aws_smithy_http::label::fmt_string(input_5, false);
+                let second_snapshot_id = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if second_snapshot_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "second_snapshot_id", details: "cannot be empty or unset" })
                             }
@@ -550,7 +550,7 @@ impl ListSnapshotBlocksInput {
             fn uri_base(_input: &crate::input::ListSnapshotBlocksInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_10 = &_input.snapshot_id;
                 let input_10 = input_10.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "snapshot_id", details: "cannot be empty or unset" })?;
-                let snapshot_id = aws_smithy_http::label::fmt_string(input_10, false);
+                let snapshot_id = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Default);
                 if snapshot_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "snapshot_id", details: "cannot be empty or unset" })
                             }
@@ -742,7 +742,7 @@ impl PutSnapshotBlockInput {
             fn uri_base(_input: &crate::input::PutSnapshotBlockInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_14 = &_input.snapshot_id;
                 let input_14 = input_14.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "snapshot_id", details: "cannot be empty or unset" })?;
-                let snapshot_id = aws_smithy_http::label::fmt_string(input_14, false);
+                let snapshot_id = aws_smithy_http::label::fmt_string(input_14, aws_smithy_http::label::EncodingStrategy::Default);
                 if snapshot_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "snapshot_id", details: "cannot be empty or unset" })
                             }

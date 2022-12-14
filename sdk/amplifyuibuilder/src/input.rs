@@ -78,13 +78,13 @@ impl CreateComponentInput {
             fn uri_base(_input: &crate::input::CreateComponentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.app_id;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })?;
-                let app_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let app_id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })
                             }
                 let input_2 = &_input.environment_name;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })?;
-                let environment_name = aws_smithy_http::label::fmt_string(input_2, false);
+                let environment_name = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if environment_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })
                             }
@@ -232,13 +232,13 @@ impl CreateFormInput {
             fn uri_base(_input: &crate::input::CreateFormInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_4 = &_input.app_id;
                 let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })?;
-                let app_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let app_id = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })
                             }
                 let input_5 = &_input.environment_name;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })?;
-                let environment_name = aws_smithy_http::label::fmt_string(input_5, false);
+                let environment_name = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if environment_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })
                             }
@@ -386,13 +386,13 @@ impl CreateThemeInput {
             fn uri_base(_input: &crate::input::CreateThemeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_7 = &_input.app_id;
                 let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })?;
-                let app_id = aws_smithy_http::label::fmt_string(input_7, false);
+                let app_id = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })
                             }
                 let input_8 = &_input.environment_name;
                 let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })?;
-                let environment_name = aws_smithy_http::label::fmt_string(input_8, false);
+                let environment_name = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
                 if environment_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })
                             }
@@ -525,19 +525,19 @@ impl DeleteComponentInput {
             fn uri_base(_input: &crate::input::DeleteComponentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_10 = &_input.app_id;
                 let input_10 = input_10.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })?;
-                let app_id = aws_smithy_http::label::fmt_string(input_10, false);
+                let app_id = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })
                             }
                 let input_11 = &_input.environment_name;
                 let input_11 = input_11.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })?;
-                let environment_name = aws_smithy_http::label::fmt_string(input_11, false);
+                let environment_name = aws_smithy_http::label::fmt_string(input_11, aws_smithy_http::label::EncodingStrategy::Default);
                 if environment_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })
                             }
                 let input_12 = &_input.id;
                 let input_12 = input_12.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
-                let id = aws_smithy_http::label::fmt_string(input_12, false);
+                let id = aws_smithy_http::label::fmt_string(input_12, aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
                             }
@@ -658,19 +658,19 @@ impl DeleteFormInput {
             fn uri_base(_input: &crate::input::DeleteFormInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_13 = &_input.app_id;
                 let input_13 = input_13.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })?;
-                let app_id = aws_smithy_http::label::fmt_string(input_13, false);
+                let app_id = aws_smithy_http::label::fmt_string(input_13, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })
                             }
                 let input_14 = &_input.environment_name;
                 let input_14 = input_14.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })?;
-                let environment_name = aws_smithy_http::label::fmt_string(input_14, false);
+                let environment_name = aws_smithy_http::label::fmt_string(input_14, aws_smithy_http::label::EncodingStrategy::Default);
                 if environment_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })
                             }
                 let input_15 = &_input.id;
                 let input_15 = input_15.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
-                let id = aws_smithy_http::label::fmt_string(input_15, false);
+                let id = aws_smithy_http::label::fmt_string(input_15, aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
                             }
@@ -791,19 +791,19 @@ impl DeleteThemeInput {
             fn uri_base(_input: &crate::input::DeleteThemeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_16 = &_input.app_id;
                 let input_16 = input_16.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })?;
-                let app_id = aws_smithy_http::label::fmt_string(input_16, false);
+                let app_id = aws_smithy_http::label::fmt_string(input_16, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })
                             }
                 let input_17 = &_input.environment_name;
                 let input_17 = input_17.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })?;
-                let environment_name = aws_smithy_http::label::fmt_string(input_17, false);
+                let environment_name = aws_smithy_http::label::fmt_string(input_17, aws_smithy_http::label::EncodingStrategy::Default);
                 if environment_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })
                             }
                 let input_18 = &_input.id;
                 let input_18 = input_18.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
-                let id = aws_smithy_http::label::fmt_string(input_18, false);
+                let id = aws_smithy_http::label::fmt_string(input_18, aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
                             }
@@ -912,7 +912,7 @@ impl ExchangeCodeForTokenInput {
             fn uri_base(_input: &crate::input::ExchangeCodeForTokenInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_19 = &_input.provider;
                 let input_19 = input_19.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "provider", details: "cannot be empty or unset" })?;
-                let provider = aws_smithy_http::label::fmt_string(input_19, false);
+                let provider = aws_smithy_http::label::fmt_string(input_19, aws_smithy_http::label::EncodingStrategy::Default);
                 if provider.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "provider", details: "cannot be empty or unset" })
                             }
@@ -1037,13 +1037,13 @@ impl ExportComponentsInput {
             fn uri_base(_input: &crate::input::ExportComponentsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_20 = &_input.app_id;
                 let input_20 = input_20.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })?;
-                let app_id = aws_smithy_http::label::fmt_string(input_20, false);
+                let app_id = aws_smithy_http::label::fmt_string(input_20, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })
                             }
                 let input_21 = &_input.environment_name;
                 let input_21 = input_21.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })?;
-                let environment_name = aws_smithy_http::label::fmt_string(input_21, false);
+                let environment_name = aws_smithy_http::label::fmt_string(input_21, aws_smithy_http::label::EncodingStrategy::Default);
                 if environment_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })
                             }
@@ -1172,13 +1172,13 @@ impl ExportFormsInput {
             fn uri_base(_input: &crate::input::ExportFormsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_23 = &_input.app_id;
                 let input_23 = input_23.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })?;
-                let app_id = aws_smithy_http::label::fmt_string(input_23, false);
+                let app_id = aws_smithy_http::label::fmt_string(input_23, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })
                             }
                 let input_24 = &_input.environment_name;
                 let input_24 = input_24.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })?;
-                let environment_name = aws_smithy_http::label::fmt_string(input_24, false);
+                let environment_name = aws_smithy_http::label::fmt_string(input_24, aws_smithy_http::label::EncodingStrategy::Default);
                 if environment_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })
                             }
@@ -1307,13 +1307,13 @@ impl ExportThemesInput {
             fn uri_base(_input: &crate::input::ExportThemesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_26 = &_input.app_id;
                 let input_26 = input_26.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })?;
-                let app_id = aws_smithy_http::label::fmt_string(input_26, false);
+                let app_id = aws_smithy_http::label::fmt_string(input_26, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })
                             }
                 let input_27 = &_input.environment_name;
                 let input_27 = input_27.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })?;
-                let environment_name = aws_smithy_http::label::fmt_string(input_27, false);
+                let environment_name = aws_smithy_http::label::fmt_string(input_27, aws_smithy_http::label::EncodingStrategy::Default);
                 if environment_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })
                             }
@@ -1442,19 +1442,19 @@ impl GetComponentInput {
             fn uri_base(_input: &crate::input::GetComponentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_29 = &_input.app_id;
                 let input_29 = input_29.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })?;
-                let app_id = aws_smithy_http::label::fmt_string(input_29, false);
+                let app_id = aws_smithy_http::label::fmt_string(input_29, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })
                             }
                 let input_30 = &_input.environment_name;
                 let input_30 = input_30.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })?;
-                let environment_name = aws_smithy_http::label::fmt_string(input_30, false);
+                let environment_name = aws_smithy_http::label::fmt_string(input_30, aws_smithy_http::label::EncodingStrategy::Default);
                 if environment_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })
                             }
                 let input_31 = &_input.id;
                 let input_31 = input_31.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
-                let id = aws_smithy_http::label::fmt_string(input_31, false);
+                let id = aws_smithy_http::label::fmt_string(input_31, aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
                             }
@@ -1575,19 +1575,19 @@ impl GetFormInput {
             fn uri_base(_input: &crate::input::GetFormInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_32 = &_input.app_id;
                 let input_32 = input_32.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })?;
-                let app_id = aws_smithy_http::label::fmt_string(input_32, false);
+                let app_id = aws_smithy_http::label::fmt_string(input_32, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })
                             }
                 let input_33 = &_input.environment_name;
                 let input_33 = input_33.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })?;
-                let environment_name = aws_smithy_http::label::fmt_string(input_33, false);
+                let environment_name = aws_smithy_http::label::fmt_string(input_33, aws_smithy_http::label::EncodingStrategy::Default);
                 if environment_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })
                             }
                 let input_34 = &_input.id;
                 let input_34 = input_34.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
-                let id = aws_smithy_http::label::fmt_string(input_34, false);
+                let id = aws_smithy_http::label::fmt_string(input_34, aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
                             }
@@ -1696,13 +1696,13 @@ impl GetMetadataInput {
             fn uri_base(_input: &crate::input::GetMetadataInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_35 = &_input.app_id;
                 let input_35 = input_35.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })?;
-                let app_id = aws_smithy_http::label::fmt_string(input_35, false);
+                let app_id = aws_smithy_http::label::fmt_string(input_35, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })
                             }
                 let input_36 = &_input.environment_name;
                 let input_36 = input_36.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })?;
-                let environment_name = aws_smithy_http::label::fmt_string(input_36, false);
+                let environment_name = aws_smithy_http::label::fmt_string(input_36, aws_smithy_http::label::EncodingStrategy::Default);
                 if environment_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })
                             }
@@ -1823,19 +1823,19 @@ impl GetThemeInput {
             fn uri_base(_input: &crate::input::GetThemeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_37 = &_input.app_id;
                 let input_37 = input_37.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })?;
-                let app_id = aws_smithy_http::label::fmt_string(input_37, false);
+                let app_id = aws_smithy_http::label::fmt_string(input_37, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })
                             }
                 let input_38 = &_input.environment_name;
                 let input_38 = input_38.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })?;
-                let environment_name = aws_smithy_http::label::fmt_string(input_38, false);
+                let environment_name = aws_smithy_http::label::fmt_string(input_38, aws_smithy_http::label::EncodingStrategy::Default);
                 if environment_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })
                             }
                 let input_39 = &_input.id;
                 let input_39 = input_39.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
-                let id = aws_smithy_http::label::fmt_string(input_39, false);
+                let id = aws_smithy_http::label::fmt_string(input_39, aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
                             }
@@ -1969,13 +1969,13 @@ impl ListComponentsInput {
             fn uri_base(_input: &crate::input::ListComponentsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_40 = &_input.app_id;
                 let input_40 = input_40.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })?;
-                let app_id = aws_smithy_http::label::fmt_string(input_40, false);
+                let app_id = aws_smithy_http::label::fmt_string(input_40, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })
                             }
                 let input_41 = &_input.environment_name;
                 let input_41 = input_41.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })?;
-                let environment_name = aws_smithy_http::label::fmt_string(input_41, false);
+                let environment_name = aws_smithy_http::label::fmt_string(input_41, aws_smithy_http::label::EncodingStrategy::Default);
                 if environment_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })
                             }
@@ -2120,13 +2120,13 @@ impl ListFormsInput {
             fn uri_base(_input: &crate::input::ListFormsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_43 = &_input.app_id;
                 let input_43 = input_43.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })?;
-                let app_id = aws_smithy_http::label::fmt_string(input_43, false);
+                let app_id = aws_smithy_http::label::fmt_string(input_43, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })
                             }
                 let input_44 = &_input.environment_name;
                 let input_44 = input_44.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })?;
-                let environment_name = aws_smithy_http::label::fmt_string(input_44, false);
+                let environment_name = aws_smithy_http::label::fmt_string(input_44, aws_smithy_http::label::EncodingStrategy::Default);
                 if environment_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })
                             }
@@ -2271,13 +2271,13 @@ impl ListThemesInput {
             fn uri_base(_input: &crate::input::ListThemesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_46 = &_input.app_id;
                 let input_46 = input_46.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })?;
-                let app_id = aws_smithy_http::label::fmt_string(input_46, false);
+                let app_id = aws_smithy_http::label::fmt_string(input_46, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })
                             }
                 let input_47 = &_input.environment_name;
                 let input_47 = input_47.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })?;
-                let environment_name = aws_smithy_http::label::fmt_string(input_47, false);
+                let environment_name = aws_smithy_http::label::fmt_string(input_47, aws_smithy_http::label::EncodingStrategy::Default);
                 if environment_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })
                             }
@@ -2421,19 +2421,19 @@ impl PutMetadataFlagInput {
             fn uri_base(_input: &crate::input::PutMetadataFlagInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_49 = &_input.app_id;
                 let input_49 = input_49.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })?;
-                let app_id = aws_smithy_http::label::fmt_string(input_49, false);
+                let app_id = aws_smithy_http::label::fmt_string(input_49, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })
                             }
                 let input_50 = &_input.environment_name;
                 let input_50 = input_50.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })?;
-                let environment_name = aws_smithy_http::label::fmt_string(input_50, false);
+                let environment_name = aws_smithy_http::label::fmt_string(input_50, aws_smithy_http::label::EncodingStrategy::Default);
                 if environment_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })
                             }
                 let input_51 = &_input.feature_name;
                 let input_51 = input_51.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "feature_name", details: "cannot be empty or unset" })?;
-                let feature_name = aws_smithy_http::label::fmt_string(input_51, false);
+                let feature_name = aws_smithy_http::label::fmt_string(input_51, aws_smithy_http::label::EncodingStrategy::Default);
                 if feature_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "feature_name", details: "cannot be empty or unset" })
                             }
@@ -2546,7 +2546,7 @@ impl RefreshTokenInput {
             fn uri_base(_input: &crate::input::RefreshTokenInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_52 = &_input.provider;
                 let input_52 = input_52.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "provider", details: "cannot be empty or unset" })?;
-                let provider = aws_smithy_http::label::fmt_string(input_52, false);
+                let provider = aws_smithy_http::label::fmt_string(input_52, aws_smithy_http::label::EncodingStrategy::Default);
                 if provider.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "provider", details: "cannot be empty or unset" })
                             }
@@ -2698,19 +2698,19 @@ impl UpdateComponentInput {
             fn uri_base(_input: &crate::input::UpdateComponentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_53 = &_input.app_id;
                 let input_53 = input_53.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })?;
-                let app_id = aws_smithy_http::label::fmt_string(input_53, false);
+                let app_id = aws_smithy_http::label::fmt_string(input_53, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })
                             }
                 let input_54 = &_input.environment_name;
                 let input_54 = input_54.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })?;
-                let environment_name = aws_smithy_http::label::fmt_string(input_54, false);
+                let environment_name = aws_smithy_http::label::fmt_string(input_54, aws_smithy_http::label::EncodingStrategy::Default);
                 if environment_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })
                             }
                 let input_55 = &_input.id;
                 let input_55 = input_55.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
-                let id = aws_smithy_http::label::fmt_string(input_55, false);
+                let id = aws_smithy_http::label::fmt_string(input_55, aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
                             }
@@ -2870,19 +2870,19 @@ impl UpdateFormInput {
             fn uri_base(_input: &crate::input::UpdateFormInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_57 = &_input.app_id;
                 let input_57 = input_57.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })?;
-                let app_id = aws_smithy_http::label::fmt_string(input_57, false);
+                let app_id = aws_smithy_http::label::fmt_string(input_57, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })
                             }
                 let input_58 = &_input.environment_name;
                 let input_58 = input_58.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })?;
-                let environment_name = aws_smithy_http::label::fmt_string(input_58, false);
+                let environment_name = aws_smithy_http::label::fmt_string(input_58, aws_smithy_http::label::EncodingStrategy::Default);
                 if environment_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })
                             }
                 let input_59 = &_input.id;
                 let input_59 = input_59.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
-                let id = aws_smithy_http::label::fmt_string(input_59, false);
+                let id = aws_smithy_http::label::fmt_string(input_59, aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
                             }
@@ -3042,19 +3042,19 @@ impl UpdateThemeInput {
             fn uri_base(_input: &crate::input::UpdateThemeInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_61 = &_input.app_id;
                 let input_61 = input_61.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })?;
-                let app_id = aws_smithy_http::label::fmt_string(input_61, false);
+                let app_id = aws_smithy_http::label::fmt_string(input_61, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "app_id", details: "cannot be empty or unset" })
                             }
                 let input_62 = &_input.environment_name;
                 let input_62 = input_62.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })?;
-                let environment_name = aws_smithy_http::label::fmt_string(input_62, false);
+                let environment_name = aws_smithy_http::label::fmt_string(input_62, aws_smithy_http::label::EncodingStrategy::Default);
                 if environment_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "environment_name", details: "cannot be empty or unset" })
                             }
                 let input_63 = &_input.id;
                 let input_63 = input_63.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })?;
-                let id = aws_smithy_http::label::fmt_string(input_63, false);
+                let id = aws_smithy_http::label::fmt_string(input_63, aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "id", details: "cannot be empty or unset" })
                             }

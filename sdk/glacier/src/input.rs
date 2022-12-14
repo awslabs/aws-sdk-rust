@@ -66,19 +66,19 @@ impl AbortMultipartUploadInput {
             fn uri_base(_input: &crate::input::AbortMultipartUploadInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.account_id;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
                 let input_2 = &_input.vault_name;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_2, false);
+                let vault_name = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
                             }
                 let input_3 = &_input.upload_id;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "upload_id", details: "cannot be empty or unset" })?;
-                let upload_id = aws_smithy_http::label::fmt_string(input_3, false);
+                let upload_id = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if upload_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "upload_id", details: "cannot be empty or unset" })
                             }
@@ -194,13 +194,13 @@ impl AbortVaultLockInput {
             fn uri_base(_input: &crate::input::AbortVaultLockInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_4 = &_input.account_id;
                 let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
                 let input_5 = &_input.vault_name;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_5, false);
+                let vault_name = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
                             }
@@ -334,13 +334,13 @@ impl AddTagsToVaultInput {
             fn uri_base(_input: &crate::input::AddTagsToVaultInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_6 = &_input.account_id;
                 let input_6 = input_6.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_6, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
                 let input_7 = &_input.vault_name;
                 let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_7, false);
+                let vault_name = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
                 if vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
                             }
@@ -502,19 +502,19 @@ impl CompleteMultipartUploadInput {
             fn uri_base(_input: &crate::input::CompleteMultipartUploadInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_8 = &_input.account_id;
                 let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_8, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
                 let input_9 = &_input.vault_name;
                 let input_9 = input_9.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_9, false);
+                let vault_name = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
                 if vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
                             }
                 let input_10 = &_input.upload_id;
                 let input_10 = input_10.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "upload_id", details: "cannot be empty or unset" })?;
-                let upload_id = aws_smithy_http::label::fmt_string(input_10, false);
+                let upload_id = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Default);
                 if upload_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "upload_id", details: "cannot be empty or unset" })
                             }
@@ -643,19 +643,19 @@ impl CompleteVaultLockInput {
             fn uri_base(_input: &crate::input::CompleteVaultLockInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_11 = &_input.account_id;
                 let input_11 = input_11.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_11, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_11, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
                 let input_12 = &_input.vault_name;
                 let input_12 = input_12.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_12, false);
+                let vault_name = aws_smithy_http::label::fmt_string(input_12, aws_smithy_http::label::EncodingStrategy::Default);
                 if vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
                             }
                 let input_13 = &_input.lock_id;
                 let input_13 = input_13.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "lock_id", details: "cannot be empty or unset" })?;
-                let lock_id = aws_smithy_http::label::fmt_string(input_13, false);
+                let lock_id = aws_smithy_http::label::fmt_string(input_13, aws_smithy_http::label::EncodingStrategy::Default);
                 if lock_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "lock_id", details: "cannot be empty or unset" })
                             }
@@ -771,13 +771,13 @@ impl CreateVaultInput {
             fn uri_base(_input: &crate::input::CreateVaultInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_14 = &_input.account_id;
                 let input_14 = input_14.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_14, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_14, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
                 let input_15 = &_input.vault_name;
                 let input_15 = input_15.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_15, false);
+                let vault_name = aws_smithy_http::label::fmt_string(input_15, aws_smithy_http::label::EncodingStrategy::Default);
                 if vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
                             }
@@ -905,19 +905,19 @@ impl DeleteArchiveInput {
             fn uri_base(_input: &crate::input::DeleteArchiveInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_16 = &_input.account_id;
                 let input_16 = input_16.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_16, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_16, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
                 let input_17 = &_input.vault_name;
                 let input_17 = input_17.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_17, false);
+                let vault_name = aws_smithy_http::label::fmt_string(input_17, aws_smithy_http::label::EncodingStrategy::Default);
                 if vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
                             }
                 let input_18 = &_input.archive_id;
                 let input_18 = input_18.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "archive_id", details: "cannot be empty or unset" })?;
-                let archive_id = aws_smithy_http::label::fmt_string(input_18, false);
+                let archive_id = aws_smithy_http::label::fmt_string(input_18, aws_smithy_http::label::EncodingStrategy::Default);
                 if archive_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "archive_id", details: "cannot be empty or unset" })
                             }
@@ -1033,13 +1033,13 @@ impl DeleteVaultInput {
             fn uri_base(_input: &crate::input::DeleteVaultInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_19 = &_input.account_id;
                 let input_19 = input_19.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_19, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_19, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
                 let input_20 = &_input.vault_name;
                 let input_20 = input_20.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_20, false);
+                let vault_name = aws_smithy_http::label::fmt_string(input_20, aws_smithy_http::label::EncodingStrategy::Default);
                 if vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
                             }
@@ -1155,13 +1155,13 @@ impl DeleteVaultAccessPolicyInput {
             fn uri_base(_input: &crate::input::DeleteVaultAccessPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_21 = &_input.account_id;
                 let input_21 = input_21.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_21, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_21, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
                 let input_22 = &_input.vault_name;
                 let input_22 = input_22.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_22, false);
+                let vault_name = aws_smithy_http::label::fmt_string(input_22, aws_smithy_http::label::EncodingStrategy::Default);
                 if vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
                             }
@@ -1277,13 +1277,13 @@ impl DeleteVaultNotificationsInput {
             fn uri_base(_input: &crate::input::DeleteVaultNotificationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_23 = &_input.account_id;
                 let input_23 = input_23.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_23, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_23, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
                 let input_24 = &_input.vault_name;
                 let input_24 = input_24.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_24, false);
+                let vault_name = aws_smithy_http::label::fmt_string(input_24, aws_smithy_http::label::EncodingStrategy::Default);
                 if vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
                             }
@@ -1411,19 +1411,19 @@ impl DescribeJobInput {
             fn uri_base(_input: &crate::input::DescribeJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_25 = &_input.account_id;
                 let input_25 = input_25.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_25, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_25, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
                 let input_26 = &_input.vault_name;
                 let input_26 = input_26.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_26, false);
+                let vault_name = aws_smithy_http::label::fmt_string(input_26, aws_smithy_http::label::EncodingStrategy::Default);
                 if vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
                             }
                 let input_27 = &_input.job_id;
                 let input_27 = input_27.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "job_id", details: "cannot be empty or unset" })?;
-                let job_id = aws_smithy_http::label::fmt_string(input_27, false);
+                let job_id = aws_smithy_http::label::fmt_string(input_27, aws_smithy_http::label::EncodingStrategy::Default);
                 if job_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "job_id", details: "cannot be empty or unset" })
                             }
@@ -1539,13 +1539,13 @@ impl DescribeVaultInput {
             fn uri_base(_input: &crate::input::DescribeVaultInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_28 = &_input.account_id;
                 let input_28 = input_28.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_28, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_28, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
                 let input_29 = &_input.vault_name;
                 let input_29 = input_29.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_29, false);
+                let vault_name = aws_smithy_http::label::fmt_string(input_29, aws_smithy_http::label::EncodingStrategy::Default);
                 if vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
                             }
@@ -1649,7 +1649,7 @@ impl GetDataRetrievalPolicyInput {
             fn uri_base(_input: &crate::input::GetDataRetrievalPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_30 = &_input.account_id;
                 let input_30 = input_30.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_30, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_30, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
@@ -1803,19 +1803,19 @@ impl GetJobOutputInput {
             fn uri_base(_input: &crate::input::GetJobOutputInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_31 = &_input.account_id;
                 let input_31 = input_31.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_31, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_31, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
                 let input_32 = &_input.vault_name;
                 let input_32 = input_32.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_32, false);
+                let vault_name = aws_smithy_http::label::fmt_string(input_32, aws_smithy_http::label::EncodingStrategy::Default);
                 if vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
                             }
                 let input_33 = &_input.job_id;
                 let input_33 = input_33.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "job_id", details: "cannot be empty or unset" })?;
-                let job_id = aws_smithy_http::label::fmt_string(input_33, false);
+                let job_id = aws_smithy_http::label::fmt_string(input_33, aws_smithy_http::label::EncodingStrategy::Default);
                 if job_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "job_id", details: "cannot be empty or unset" })
                             }
@@ -1932,13 +1932,13 @@ impl GetVaultAccessPolicyInput {
             fn uri_base(_input: &crate::input::GetVaultAccessPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_34 = &_input.account_id;
                 let input_34 = input_34.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_34, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_34, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
                 let input_35 = &_input.vault_name;
                 let input_35 = input_35.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_35, false);
+                let vault_name = aws_smithy_http::label::fmt_string(input_35, aws_smithy_http::label::EncodingStrategy::Default);
                 if vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
                             }
@@ -2054,13 +2054,13 @@ impl GetVaultLockInput {
             fn uri_base(_input: &crate::input::GetVaultLockInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_36 = &_input.account_id;
                 let input_36 = input_36.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_36, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_36, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
                 let input_37 = &_input.vault_name;
                 let input_37 = input_37.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_37, false);
+                let vault_name = aws_smithy_http::label::fmt_string(input_37, aws_smithy_http::label::EncodingStrategy::Default);
                 if vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
                             }
@@ -2176,13 +2176,13 @@ impl GetVaultNotificationsInput {
             fn uri_base(_input: &crate::input::GetVaultNotificationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_38 = &_input.account_id;
                 let input_38 = input_38.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_38, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_38, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
                 let input_39 = &_input.vault_name;
                 let input_39 = input_39.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_39, false);
+                let vault_name = aws_smithy_http::label::fmt_string(input_39, aws_smithy_http::label::EncodingStrategy::Default);
                 if vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
                             }
@@ -2310,13 +2310,13 @@ impl InitiateJobInput {
             fn uri_base(_input: &crate::input::InitiateJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_40 = &_input.account_id;
                 let input_40 = input_40.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_40, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_40, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
                 let input_41 = &_input.vault_name;
                 let input_41 = input_41.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_41, false);
+                let vault_name = aws_smithy_http::label::fmt_string(input_41, aws_smithy_http::label::EncodingStrategy::Default);
                 if vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
                             }
@@ -2462,13 +2462,13 @@ impl InitiateMultipartUploadInput {
             fn uri_base(_input: &crate::input::InitiateMultipartUploadInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_42 = &_input.account_id;
                 let input_42 = input_42.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_42, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_42, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
                 let input_43 = &_input.vault_name;
                 let input_43 = input_43.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_43, false);
+                let vault_name = aws_smithy_http::label::fmt_string(input_43, aws_smithy_http::label::EncodingStrategy::Default);
                 if vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
                             }
@@ -2597,13 +2597,13 @@ impl InitiateVaultLockInput {
             fn uri_base(_input: &crate::input::InitiateVaultLockInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_44 = &_input.account_id;
                 let input_44 = input_44.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_44, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_44, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
                 let input_45 = &_input.vault_name;
                 let input_45 = input_45.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_45, false);
+                let vault_name = aws_smithy_http::label::fmt_string(input_45, aws_smithy_http::label::EncodingStrategy::Default);
                 if vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
                             }
@@ -2771,13 +2771,13 @@ impl ListJobsInput {
             fn uri_base(_input: &crate::input::ListJobsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_46 = &_input.account_id;
                 let input_46 = input_46.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_46, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_46, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
                 let input_47 = &_input.vault_name;
                 let input_47 = input_47.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_47, false);
+                let vault_name = aws_smithy_http::label::fmt_string(input_47, aws_smithy_http::label::EncodingStrategy::Default);
                 if vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
                             }
@@ -2934,13 +2934,13 @@ impl ListMultipartUploadsInput {
             fn uri_base(_input: &crate::input::ListMultipartUploadsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_52 = &_input.account_id;
                 let input_52 = input_52.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_52, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_52, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
                 let input_53 = &_input.vault_name;
                 let input_53 = input_53.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_53, false);
+                let vault_name = aws_smithy_http::label::fmt_string(input_53, aws_smithy_http::label::EncodingStrategy::Default);
                 if vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
                             }
@@ -3103,19 +3103,19 @@ impl ListPartsInput {
             fn uri_base(_input: &crate::input::ListPartsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_56 = &_input.account_id;
                 let input_56 = input_56.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_56, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_56, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
                 let input_57 = &_input.vault_name;
                 let input_57 = input_57.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_57, false);
+                let vault_name = aws_smithy_http::label::fmt_string(input_57, aws_smithy_http::label::EncodingStrategy::Default);
                 if vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
                             }
                 let input_58 = &_input.upload_id;
                 let input_58 = input_58.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "upload_id", details: "cannot be empty or unset" })?;
-                let upload_id = aws_smithy_http::label::fmt_string(input_58, false);
+                let upload_id = aws_smithy_http::label::fmt_string(input_58, aws_smithy_http::label::EncodingStrategy::Default);
                 if upload_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "upload_id", details: "cannot be empty or unset" })
                             }
@@ -3230,7 +3230,7 @@ impl ListProvisionedCapacityInput {
             fn uri_base(_input: &crate::input::ListProvisionedCapacityInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_61 = &_input.account_id;
                 let input_61 = input_61.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_61, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_61, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
@@ -3346,13 +3346,13 @@ impl ListTagsForVaultInput {
             fn uri_base(_input: &crate::input::ListTagsForVaultInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_62 = &_input.account_id;
                 let input_62 = input_62.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_62, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_62, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
                 let input_63 = &_input.vault_name;
                 let input_63 = input_63.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_63, false);
+                let vault_name = aws_smithy_http::label::fmt_string(input_63, aws_smithy_http::label::EncodingStrategy::Default);
                 if vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
                             }
@@ -3480,7 +3480,7 @@ impl ListVaultsInput {
             fn uri_base(_input: &crate::input::ListVaultsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_64 = &_input.account_id;
                 let input_64 = input_64.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_64, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_64, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
@@ -3595,7 +3595,7 @@ impl PurchaseProvisionedCapacityInput {
             fn uri_base(_input: &crate::input::PurchaseProvisionedCapacityInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_67 = &_input.account_id;
                 let input_67 = input_67.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_67, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_67, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
@@ -3729,13 +3729,13 @@ impl RemoveTagsFromVaultInput {
             fn uri_base(_input: &crate::input::RemoveTagsFromVaultInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_68 = &_input.account_id;
                 let input_68 = input_68.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_68, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_68, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
                 let input_69 = &_input.vault_name;
                 let input_69 = input_69.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_69, false);
+                let vault_name = aws_smithy_http::label::fmt_string(input_69, aws_smithy_http::label::EncodingStrategy::Default);
                 if vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
                             }
@@ -3861,7 +3861,7 @@ impl SetDataRetrievalPolicyInput {
             fn uri_base(_input: &crate::input::SetDataRetrievalPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_70 = &_input.account_id;
                 let input_70 = input_70.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_70, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_70, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
@@ -3993,13 +3993,13 @@ impl SetVaultAccessPolicyInput {
             fn uri_base(_input: &crate::input::SetVaultAccessPolicyInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_71 = &_input.account_id;
                 let input_71 = input_71.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_71, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_71, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
                 let input_72 = &_input.vault_name;
                 let input_72 = input_72.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_72, false);
+                let vault_name = aws_smithy_http::label::fmt_string(input_72, aws_smithy_http::label::EncodingStrategy::Default);
                 if vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
                             }
@@ -4131,13 +4131,13 @@ impl SetVaultNotificationsInput {
             fn uri_base(_input: &crate::input::SetVaultNotificationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_73 = &_input.account_id;
                 let input_73 = input_73.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_73, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_73, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
                 let input_74 = &_input.vault_name;
                 let input_74 = input_74.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_74, false);
+                let vault_name = aws_smithy_http::label::fmt_string(input_74, aws_smithy_http::label::EncodingStrategy::Default);
                 if vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
                             }
@@ -4294,13 +4294,13 @@ impl UploadArchiveInput {
             fn uri_base(_input: &crate::input::UploadArchiveInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_75 = &_input.account_id;
                 let input_75 = input_75.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_75, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_75, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
                 let input_76 = &_input.vault_name;
                 let input_76 = input_76.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_76, false);
+                let vault_name = aws_smithy_http::label::fmt_string(input_76, aws_smithy_http::label::EncodingStrategy::Default);
                 if vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
                             }
@@ -4474,19 +4474,19 @@ impl UploadMultipartPartInput {
             fn uri_base(_input: &crate::input::UploadMultipartPartInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_77 = &_input.account_id;
                 let input_77 = input_77.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })?;
-                let account_id = aws_smithy_http::label::fmt_string(input_77, false);
+                let account_id = aws_smithy_http::label::fmt_string(input_77, aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "account_id", details: "cannot be empty or unset" })
                             }
                 let input_78 = &_input.vault_name;
                 let input_78 = input_78.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })?;
-                let vault_name = aws_smithy_http::label::fmt_string(input_78, false);
+                let vault_name = aws_smithy_http::label::fmt_string(input_78, aws_smithy_http::label::EncodingStrategy::Default);
                 if vault_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "vault_name", details: "cannot be empty or unset" })
                             }
                 let input_79 = &_input.upload_id;
                 let input_79 = input_79.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "upload_id", details: "cannot be empty or unset" })?;
-                let upload_id = aws_smithy_http::label::fmt_string(input_79, false);
+                let upload_id = aws_smithy_http::label::fmt_string(input_79, aws_smithy_http::label::EncodingStrategy::Default);
                 if upload_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "upload_id", details: "cannot be empty or unset" })
                             }

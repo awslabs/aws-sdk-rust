@@ -39,7 +39,7 @@ impl GetRawMessageContentInput {
             fn uri_base(_input: &crate::input::GetRawMessageContentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.message_id;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "message_id", details: "cannot be empty or unset" })?;
-                let message_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let message_id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if message_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "message_id", details: "cannot be empty or unset" })
                             }
@@ -148,7 +148,7 @@ impl PutRawMessageContentInput {
             fn uri_base(_input: &crate::input::PutRawMessageContentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.message_id;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "message_id", details: "cannot be empty or unset" })?;
-                let message_id = aws_smithy_http::label::fmt_string(input_2, false);
+                let message_id = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if message_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "message_id", details: "cannot be empty or unset" })
                             }

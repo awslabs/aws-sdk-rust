@@ -519,7 +519,7 @@ impl DeleteMediaCapturePipelineInput {
             fn uri_base(_input: &crate::input::DeleteMediaCapturePipelineInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.media_pipeline_id;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "media_pipeline_id", details: "cannot be empty or unset" })?;
-                let media_pipeline_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let media_pipeline_id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if media_pipeline_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "media_pipeline_id", details: "cannot be empty or unset" })
                             }
@@ -616,7 +616,7 @@ impl DeleteMediaPipelineInput {
             fn uri_base(_input: &crate::input::DeleteMediaPipelineInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.media_pipeline_id;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "media_pipeline_id", details: "cannot be empty or unset" })?;
-                let media_pipeline_id = aws_smithy_http::label::fmt_string(input_2, false);
+                let media_pipeline_id = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if media_pipeline_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "media_pipeline_id", details: "cannot be empty or unset" })
                             }
@@ -713,7 +713,7 @@ impl GetMediaCapturePipelineInput {
             fn uri_base(_input: &crate::input::GetMediaCapturePipelineInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.media_pipeline_id;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "media_pipeline_id", details: "cannot be empty or unset" })?;
-                let media_pipeline_id = aws_smithy_http::label::fmt_string(input_3, false);
+                let media_pipeline_id = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if media_pipeline_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "media_pipeline_id", details: "cannot be empty or unset" })
                             }
@@ -810,7 +810,7 @@ impl GetMediaPipelineInput {
             fn uri_base(_input: &crate::input::GetMediaPipelineInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_4 = &_input.media_pipeline_id;
                 let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "media_pipeline_id", details: "cannot be empty or unset" })?;
-                let media_pipeline_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let media_pipeline_id = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if media_pipeline_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "media_pipeline_id", details: "cannot be empty or unset" })
                             }

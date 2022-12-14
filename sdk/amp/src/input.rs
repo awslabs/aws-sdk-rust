@@ -66,7 +66,7 @@ impl CreateAlertManagerDefinitionInput {
             fn uri_base(_input: &crate::input::CreateAlertManagerDefinitionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.workspace_id;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workspace_id", details: "cannot be empty or unset" })?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let workspace_id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if workspace_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workspace_id", details: "cannot be empty or unset" })
                             }
@@ -194,7 +194,7 @@ impl CreateLoggingConfigurationInput {
             fn uri_base(_input: &crate::input::CreateLoggingConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.workspace_id;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workspace_id", details: "cannot be empty or unset" })?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_2, false);
+                let workspace_id = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if workspace_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workspace_id", details: "cannot be empty or unset" })
                             }
@@ -352,7 +352,7 @@ impl CreateRuleGroupsNamespaceInput {
             fn uri_base(_input: &crate::input::CreateRuleGroupsNamespaceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.workspace_id;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workspace_id", details: "cannot be empty or unset" })?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_3, false);
+                let workspace_id = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if workspace_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workspace_id", details: "cannot be empty or unset" })
                             }
@@ -596,7 +596,7 @@ impl DeleteAlertManagerDefinitionInput {
             fn uri_base(_input: &crate::input::DeleteAlertManagerDefinitionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_4 = &_input.workspace_id;
                 let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workspace_id", details: "cannot be empty or unset" })?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let workspace_id = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if workspace_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workspace_id", details: "cannot be empty or unset" })
                             }
@@ -716,7 +716,7 @@ impl DeleteLoggingConfigurationInput {
             fn uri_base(_input: &crate::input::DeleteLoggingConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_6 = &_input.workspace_id;
                 let input_6 = input_6.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workspace_id", details: "cannot be empty or unset" })?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_6, false);
+                let workspace_id = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if workspace_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workspace_id", details: "cannot be empty or unset" })
                             }
@@ -848,13 +848,13 @@ impl DeleteRuleGroupsNamespaceInput {
             fn uri_base(_input: &crate::input::DeleteRuleGroupsNamespaceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_8 = &_input.workspace_id;
                 let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workspace_id", details: "cannot be empty or unset" })?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_8, false);
+                let workspace_id = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
                 if workspace_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workspace_id", details: "cannot be empty or unset" })
                             }
                 let input_9 = &_input.name;
                 let input_9 = input_9.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })?;
-                let name = aws_smithy_http::label::fmt_string(input_9, false);
+                let name = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
                 if name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })
                             }
@@ -974,7 +974,7 @@ impl DeleteWorkspaceInput {
             fn uri_base(_input: &crate::input::DeleteWorkspaceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_11 = &_input.workspace_id;
                 let input_11 = input_11.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workspace_id", details: "cannot be empty or unset" })?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_11, false);
+                let workspace_id = aws_smithy_http::label::fmt_string(input_11, aws_smithy_http::label::EncodingStrategy::Default);
                 if workspace_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workspace_id", details: "cannot be empty or unset" })
                             }
@@ -1079,7 +1079,7 @@ impl DescribeAlertManagerDefinitionInput {
             fn uri_base(_input: &crate::input::DescribeAlertManagerDefinitionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_13 = &_input.workspace_id;
                 let input_13 = input_13.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workspace_id", details: "cannot be empty or unset" })?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_13, false);
+                let workspace_id = aws_smithy_http::label::fmt_string(input_13, aws_smithy_http::label::EncodingStrategy::Default);
                 if workspace_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workspace_id", details: "cannot be empty or unset" })
                             }
@@ -1176,7 +1176,7 @@ impl DescribeLoggingConfigurationInput {
             fn uri_base(_input: &crate::input::DescribeLoggingConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_14 = &_input.workspace_id;
                 let input_14 = input_14.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workspace_id", details: "cannot be empty or unset" })?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_14, false);
+                let workspace_id = aws_smithy_http::label::fmt_string(input_14, aws_smithy_http::label::EncodingStrategy::Default);
                 if workspace_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workspace_id", details: "cannot be empty or unset" })
                             }
@@ -1285,13 +1285,13 @@ impl DescribeRuleGroupsNamespaceInput {
             fn uri_base(_input: &crate::input::DescribeRuleGroupsNamespaceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_15 = &_input.workspace_id;
                 let input_15 = input_15.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workspace_id", details: "cannot be empty or unset" })?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_15, false);
+                let workspace_id = aws_smithy_http::label::fmt_string(input_15, aws_smithy_http::label::EncodingStrategy::Default);
                 if workspace_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workspace_id", details: "cannot be empty or unset" })
                             }
                 let input_16 = &_input.name;
                 let input_16 = input_16.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })?;
-                let name = aws_smithy_http::label::fmt_string(input_16, false);
+                let name = aws_smithy_http::label::fmt_string(input_16, aws_smithy_http::label::EncodingStrategy::Default);
                 if name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })
                             }
@@ -1388,7 +1388,7 @@ impl DescribeWorkspaceInput {
             fn uri_base(_input: &crate::input::DescribeWorkspaceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_17 = &_input.workspace_id;
                 let input_17 = input_17.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workspace_id", details: "cannot be empty or unset" })?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_17, false);
+                let workspace_id = aws_smithy_http::label::fmt_string(input_17, aws_smithy_http::label::EncodingStrategy::Default);
                 if workspace_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workspace_id", details: "cannot be empty or unset" })
                             }
@@ -1521,7 +1521,7 @@ impl ListRuleGroupsNamespacesInput {
             fn uri_base(_input: &crate::input::ListRuleGroupsNamespacesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_18 = &_input.workspace_id;
                 let input_18 = input_18.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workspace_id", details: "cannot be empty or unset" })?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_18, false);
+                let workspace_id = aws_smithy_http::label::fmt_string(input_18, aws_smithy_http::label::EncodingStrategy::Default);
                 if workspace_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workspace_id", details: "cannot be empty or unset" })
                             }
@@ -1632,7 +1632,7 @@ impl ListTagsForResourceInput {
             fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_22 = &_input.resource_arn;
                 let input_22 = input_22.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_22, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_22, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -1885,7 +1885,7 @@ impl PutAlertManagerDefinitionInput {
             fn uri_base(_input: &crate::input::PutAlertManagerDefinitionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_26 = &_input.workspace_id;
                 let input_26 = input_26.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workspace_id", details: "cannot be empty or unset" })?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_26, false);
+                let workspace_id = aws_smithy_http::label::fmt_string(input_26, aws_smithy_http::label::EncodingStrategy::Default);
                 if workspace_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workspace_id", details: "cannot be empty or unset" })
                             }
@@ -2025,13 +2025,13 @@ impl PutRuleGroupsNamespaceInput {
             fn uri_base(_input: &crate::input::PutRuleGroupsNamespaceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_27 = &_input.workspace_id;
                 let input_27 = input_27.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workspace_id", details: "cannot be empty or unset" })?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_27, false);
+                let workspace_id = aws_smithy_http::label::fmt_string(input_27, aws_smithy_http::label::EncodingStrategy::Default);
                 if workspace_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workspace_id", details: "cannot be empty or unset" })
                             }
                 let input_28 = &_input.name;
                 let input_28 = input_28.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })?;
-                let name = aws_smithy_http::label::fmt_string(input_28, false);
+                let name = aws_smithy_http::label::fmt_string(input_28, aws_smithy_http::label::EncodingStrategy::Default);
                 if name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })
                             }
@@ -2150,7 +2150,7 @@ impl TagResourceInput {
             fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_29 = &_input.resource_arn;
                 let input_29 = input_29.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_29, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_29, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -2269,7 +2269,7 @@ impl UntagResourceInput {
             fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_30 = &_input.resource_arn;
                 let input_30 = input_30.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_30, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_30, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -2403,7 +2403,7 @@ impl UpdateLoggingConfigurationInput {
             fn uri_base(_input: &crate::input::UpdateLoggingConfigurationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_33 = &_input.workspace_id;
                 let input_33 = input_33.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workspace_id", details: "cannot be empty or unset" })?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_33, false);
+                let workspace_id = aws_smithy_http::label::fmt_string(input_33, aws_smithy_http::label::EncodingStrategy::Default);
                 if workspace_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workspace_id", details: "cannot be empty or unset" })
                             }
@@ -2531,7 +2531,7 @@ impl UpdateWorkspaceAliasInput {
             fn uri_base(_input: &crate::input::UpdateWorkspaceAliasInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_34 = &_input.workspace_id;
                 let input_34 = input_34.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "workspace_id", details: "cannot be empty or unset" })?;
-                let workspace_id = aws_smithy_http::label::fmt_string(input_34, false);
+                let workspace_id = aws_smithy_http::label::fmt_string(input_34, aws_smithy_http::label::EncodingStrategy::Default);
                 if workspace_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "workspace_id", details: "cannot be empty or unset" })
                             }

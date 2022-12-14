@@ -207,7 +207,7 @@ impl CreateRegistryInput {
             fn uri_base(_input: &crate::input::CreateRegistryInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.registry_name;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "registry_name", details: "cannot be empty or unset" })?;
-                let registry_name = aws_smithy_http::label::fmt_string(input_1, false);
+                let registry_name = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if registry_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "registry_name", details: "cannot be empty or unset" })
                             }
@@ -374,13 +374,13 @@ impl CreateSchemaInput {
             fn uri_base(_input: &crate::input::CreateSchemaInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.registry_name;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "registry_name", details: "cannot be empty or unset" })?;
-                let registry_name = aws_smithy_http::label::fmt_string(input_2, false);
+                let registry_name = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if registry_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "registry_name", details: "cannot be empty or unset" })
                             }
                 let input_3 = &_input.schema_name;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "schema_name", details: "cannot be empty or unset" })?;
-                let schema_name = aws_smithy_http::label::fmt_string(input_3, false);
+                let schema_name = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if schema_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "schema_name", details: "cannot be empty or unset" })
                             }
@@ -481,7 +481,7 @@ impl DeleteDiscovererInput {
             fn uri_base(_input: &crate::input::DeleteDiscovererInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_4 = &_input.discoverer_id;
                 let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "discoverer_id", details: "cannot be empty or unset" })?;
-                let discoverer_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let discoverer_id = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if discoverer_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "discoverer_id", details: "cannot be empty or unset" })
                             }
@@ -578,7 +578,7 @@ impl DeleteRegistryInput {
             fn uri_base(_input: &crate::input::DeleteRegistryInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_5 = &_input.registry_name;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "registry_name", details: "cannot be empty or unset" })?;
-                let registry_name = aws_smithy_http::label::fmt_string(input_5, false);
+                let registry_name = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if registry_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "registry_name", details: "cannot be empty or unset" })
                             }
@@ -786,13 +786,13 @@ impl DeleteSchemaInput {
             fn uri_base(_input: &crate::input::DeleteSchemaInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_7 = &_input.registry_name;
                 let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "registry_name", details: "cannot be empty or unset" })?;
-                let registry_name = aws_smithy_http::label::fmt_string(input_7, false);
+                let registry_name = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
                 if registry_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "registry_name", details: "cannot be empty or unset" })
                             }
                 let input_8 = &_input.schema_name;
                 let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "schema_name", details: "cannot be empty or unset" })?;
-                let schema_name = aws_smithy_http::label::fmt_string(input_8, false);
+                let schema_name = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
                 if schema_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "schema_name", details: "cannot be empty or unset" })
                             }
@@ -913,19 +913,19 @@ impl DeleteSchemaVersionInput {
             fn uri_base(_input: &crate::input::DeleteSchemaVersionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_9 = &_input.registry_name;
                 let input_9 = input_9.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "registry_name", details: "cannot be empty or unset" })?;
-                let registry_name = aws_smithy_http::label::fmt_string(input_9, false);
+                let registry_name = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
                 if registry_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "registry_name", details: "cannot be empty or unset" })
                             }
                 let input_10 = &_input.schema_name;
                 let input_10 = input_10.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "schema_name", details: "cannot be empty or unset" })?;
-                let schema_name = aws_smithy_http::label::fmt_string(input_10, false);
+                let schema_name = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Default);
                 if schema_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "schema_name", details: "cannot be empty or unset" })
                             }
                 let input_11 = &_input.schema_version;
                 let input_11 = input_11.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "schema_version", details: "cannot be empty or unset" })?;
-                let schema_version = aws_smithy_http::label::fmt_string(input_11, false);
+                let schema_version = aws_smithy_http::label::fmt_string(input_11, aws_smithy_http::label::EncodingStrategy::Default);
                 if schema_version.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "schema_version", details: "cannot be empty or unset" })
                             }
@@ -1058,19 +1058,19 @@ impl DescribeCodeBindingInput {
             fn uri_base(_input: &crate::input::DescribeCodeBindingInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_12 = &_input.registry_name;
                 let input_12 = input_12.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "registry_name", details: "cannot be empty or unset" })?;
-                let registry_name = aws_smithy_http::label::fmt_string(input_12, false);
+                let registry_name = aws_smithy_http::label::fmt_string(input_12, aws_smithy_http::label::EncodingStrategy::Default);
                 if registry_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "registry_name", details: "cannot be empty or unset" })
                             }
                 let input_13 = &_input.schema_name;
                 let input_13 = input_13.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "schema_name", details: "cannot be empty or unset" })?;
-                let schema_name = aws_smithy_http::label::fmt_string(input_13, false);
+                let schema_name = aws_smithy_http::label::fmt_string(input_13, aws_smithy_http::label::EncodingStrategy::Default);
                 if schema_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "schema_name", details: "cannot be empty or unset" })
                             }
                 let input_14 = &_input.language;
                 let input_14 = input_14.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "language", details: "cannot be empty or unset" })?;
-                let language = aws_smithy_http::label::fmt_string(input_14, false);
+                let language = aws_smithy_http::label::fmt_string(input_14, aws_smithy_http::label::EncodingStrategy::Default);
                 if language.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "language", details: "cannot be empty or unset" })
                             }
@@ -1175,7 +1175,7 @@ impl DescribeDiscovererInput {
             fn uri_base(_input: &crate::input::DescribeDiscovererInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_16 = &_input.discoverer_id;
                 let input_16 = input_16.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "discoverer_id", details: "cannot be empty or unset" })?;
-                let discoverer_id = aws_smithy_http::label::fmt_string(input_16, false);
+                let discoverer_id = aws_smithy_http::label::fmt_string(input_16, aws_smithy_http::label::EncodingStrategy::Default);
                 if discoverer_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "discoverer_id", details: "cannot be empty or unset" })
                             }
@@ -1272,7 +1272,7 @@ impl DescribeRegistryInput {
             fn uri_base(_input: &crate::input::DescribeRegistryInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_17 = &_input.registry_name;
                 let input_17 = input_17.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "registry_name", details: "cannot be empty or unset" })?;
-                let registry_name = aws_smithy_http::label::fmt_string(input_17, false);
+                let registry_name = aws_smithy_http::label::fmt_string(input_17, aws_smithy_http::label::EncodingStrategy::Default);
                 if registry_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "registry_name", details: "cannot be empty or unset" })
                             }
@@ -1393,13 +1393,13 @@ impl DescribeSchemaInput {
             fn uri_base(_input: &crate::input::DescribeSchemaInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_18 = &_input.registry_name;
                 let input_18 = input_18.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "registry_name", details: "cannot be empty or unset" })?;
-                let registry_name = aws_smithy_http::label::fmt_string(input_18, false);
+                let registry_name = aws_smithy_http::label::fmt_string(input_18, aws_smithy_http::label::EncodingStrategy::Default);
                 if registry_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "registry_name", details: "cannot be empty or unset" })
                             }
                 let input_19 = &_input.schema_name;
                 let input_19 = input_19.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "schema_name", details: "cannot be empty or unset" })?;
-                let schema_name = aws_smithy_http::label::fmt_string(input_19, false);
+                let schema_name = aws_smithy_http::label::fmt_string(input_19, aws_smithy_http::label::EncodingStrategy::Default);
                 if schema_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "schema_name", details: "cannot be empty or unset" })
                             }
@@ -1540,13 +1540,13 @@ impl ExportSchemaInput {
             fn uri_base(_input: &crate::input::ExportSchemaInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_21 = &_input.registry_name;
                 let input_21 = input_21.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "registry_name", details: "cannot be empty or unset" })?;
-                let registry_name = aws_smithy_http::label::fmt_string(input_21, false);
+                let registry_name = aws_smithy_http::label::fmt_string(input_21, aws_smithy_http::label::EncodingStrategy::Default);
                 if registry_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "registry_name", details: "cannot be empty or unset" })
                             }
                 let input_22 = &_input.schema_name;
                 let input_22 = input_22.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "schema_name", details: "cannot be empty or unset" })?;
-                let schema_name = aws_smithy_http::label::fmt_string(input_22, false);
+                let schema_name = aws_smithy_http::label::fmt_string(input_22, aws_smithy_http::label::EncodingStrategy::Default);
                 if schema_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "schema_name", details: "cannot be empty or unset" })
                             }
@@ -1690,19 +1690,19 @@ impl GetCodeBindingSourceInput {
             fn uri_base(_input: &crate::input::GetCodeBindingSourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_25 = &_input.registry_name;
                 let input_25 = input_25.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "registry_name", details: "cannot be empty or unset" })?;
-                let registry_name = aws_smithy_http::label::fmt_string(input_25, false);
+                let registry_name = aws_smithy_http::label::fmt_string(input_25, aws_smithy_http::label::EncodingStrategy::Default);
                 if registry_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "registry_name", details: "cannot be empty or unset" })
                             }
                 let input_26 = &_input.schema_name;
                 let input_26 = input_26.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "schema_name", details: "cannot be empty or unset" })?;
-                let schema_name = aws_smithy_http::label::fmt_string(input_26, false);
+                let schema_name = aws_smithy_http::label::fmt_string(input_26, aws_smithy_http::label::EncodingStrategy::Default);
                 if schema_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "schema_name", details: "cannot be empty or unset" })
                             }
                 let input_27 = &_input.language;
                 let input_27 = input_27.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "language", details: "cannot be empty or unset" })?;
-                let language = aws_smithy_http::label::fmt_string(input_27, false);
+                let language = aws_smithy_http::label::fmt_string(input_27, aws_smithy_http::label::EncodingStrategy::Default);
                 if language.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "language", details: "cannot be empty or unset" })
                             }
@@ -2346,7 +2346,7 @@ impl ListSchemasInput {
             fn uri_base(_input: &crate::input::ListSchemasInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_36 = &_input.registry_name;
                 let input_36 = input_36.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "registry_name", details: "cannot be empty or unset" })?;
-                let registry_name = aws_smithy_http::label::fmt_string(input_36, false);
+                let registry_name = aws_smithy_http::label::fmt_string(input_36, aws_smithy_http::label::EncodingStrategy::Default);
                 if registry_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "registry_name", details: "cannot be empty or unset" })
                             }
@@ -2494,13 +2494,13 @@ impl ListSchemaVersionsInput {
             fn uri_base(_input: &crate::input::ListSchemaVersionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_39 = &_input.registry_name;
                 let input_39 = input_39.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "registry_name", details: "cannot be empty or unset" })?;
-                let registry_name = aws_smithy_http::label::fmt_string(input_39, false);
+                let registry_name = aws_smithy_http::label::fmt_string(input_39, aws_smithy_http::label::EncodingStrategy::Default);
                 if registry_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "registry_name", details: "cannot be empty or unset" })
                             }
                 let input_40 = &_input.schema_name;
                 let input_40 = input_40.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "schema_name", details: "cannot be empty or unset" })?;
-                let schema_name = aws_smithy_http::label::fmt_string(input_40, false);
+                let schema_name = aws_smithy_http::label::fmt_string(input_40, aws_smithy_http::label::EncodingStrategy::Default);
                 if schema_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "schema_name", details: "cannot be empty or unset" })
                             }
@@ -2608,7 +2608,7 @@ impl ListTagsForResourceInput {
             fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_42 = &_input.resource_arn;
                 let input_42 = input_42.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_42, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_42, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -2741,19 +2741,19 @@ impl PutCodeBindingInput {
             fn uri_base(_input: &crate::input::PutCodeBindingInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_43 = &_input.registry_name;
                 let input_43 = input_43.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "registry_name", details: "cannot be empty or unset" })?;
-                let registry_name = aws_smithy_http::label::fmt_string(input_43, false);
+                let registry_name = aws_smithy_http::label::fmt_string(input_43, aws_smithy_http::label::EncodingStrategy::Default);
                 if registry_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "registry_name", details: "cannot be empty or unset" })
                             }
                 let input_44 = &_input.schema_name;
                 let input_44 = input_44.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "schema_name", details: "cannot be empty or unset" })?;
-                let schema_name = aws_smithy_http::label::fmt_string(input_44, false);
+                let schema_name = aws_smithy_http::label::fmt_string(input_44, aws_smithy_http::label::EncodingStrategy::Default);
                 if schema_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "schema_name", details: "cannot be empty or unset" })
                             }
                 let input_45 = &_input.language;
                 let input_45 = input_45.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "language", details: "cannot be empty or unset" })?;
-                let language = aws_smithy_http::label::fmt_string(input_45, false);
+                let language = aws_smithy_http::label::fmt_string(input_45, aws_smithy_http::label::EncodingStrategy::Default);
                 if language.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "language", details: "cannot be empty or unset" })
                             }
@@ -3022,7 +3022,7 @@ impl SearchSchemasInput {
             fn uri_base(_input: &crate::input::SearchSchemasInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_48 = &_input.registry_name;
                 let input_48 = input_48.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "registry_name", details: "cannot be empty or unset" })?;
-                let registry_name = aws_smithy_http::label::fmt_string(input_48, false);
+                let registry_name = aws_smithy_http::label::fmt_string(input_48, aws_smithy_http::label::EncodingStrategy::Default);
                 if registry_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "registry_name", details: "cannot be empty or unset" })
                             }
@@ -3133,7 +3133,7 @@ impl StartDiscovererInput {
             fn uri_base(_input: &crate::input::StartDiscovererInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_51 = &_input.discoverer_id;
                 let input_51 = input_51.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "discoverer_id", details: "cannot be empty or unset" })?;
-                let discoverer_id = aws_smithy_http::label::fmt_string(input_51, false);
+                let discoverer_id = aws_smithy_http::label::fmt_string(input_51, aws_smithy_http::label::EncodingStrategy::Default);
                 if discoverer_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "discoverer_id", details: "cannot be empty or unset" })
                             }
@@ -3230,7 +3230,7 @@ impl StopDiscovererInput {
             fn uri_base(_input: &crate::input::StopDiscovererInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_52 = &_input.discoverer_id;
                 let input_52 = input_52.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "discoverer_id", details: "cannot be empty or unset" })?;
-                let discoverer_id = aws_smithy_http::label::fmt_string(input_52, false);
+                let discoverer_id = aws_smithy_http::label::fmt_string(input_52, aws_smithy_http::label::EncodingStrategy::Default);
                 if discoverer_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "discoverer_id", details: "cannot be empty or unset" })
                             }
@@ -3345,7 +3345,7 @@ impl TagResourceInput {
             fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_53 = &_input.resource_arn;
                 let input_53 = input_53.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_53, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_53, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -3464,7 +3464,7 @@ impl UntagResourceInput {
             fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_54 = &_input.resource_arn;
                 let input_54 = input_54.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_54, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_54, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -3596,7 +3596,7 @@ impl UpdateDiscovererInput {
             fn uri_base(_input: &crate::input::UpdateDiscovererInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_57 = &_input.discoverer_id;
                 let input_57 = input_57.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "discoverer_id", details: "cannot be empty or unset" })?;
-                let discoverer_id = aws_smithy_http::label::fmt_string(input_57, false);
+                let discoverer_id = aws_smithy_http::label::fmt_string(input_57, aws_smithy_http::label::EncodingStrategy::Default);
                 if discoverer_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "discoverer_id", details: "cannot be empty or unset" })
                             }
@@ -3709,7 +3709,7 @@ impl UpdateRegistryInput {
             fn uri_base(_input: &crate::input::UpdateRegistryInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_58 = &_input.registry_name;
                 let input_58 = input_58.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "registry_name", details: "cannot be empty or unset" })?;
-                let registry_name = aws_smithy_http::label::fmt_string(input_58, false);
+                let registry_name = aws_smithy_http::label::fmt_string(input_58, aws_smithy_http::label::EncodingStrategy::Default);
                 if registry_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "registry_name", details: "cannot be empty or unset" })
                             }
@@ -3873,13 +3873,13 @@ impl UpdateSchemaInput {
             fn uri_base(_input: &crate::input::UpdateSchemaInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_59 = &_input.registry_name;
                 let input_59 = input_59.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "registry_name", details: "cannot be empty or unset" })?;
-                let registry_name = aws_smithy_http::label::fmt_string(input_59, false);
+                let registry_name = aws_smithy_http::label::fmt_string(input_59, aws_smithy_http::label::EncodingStrategy::Default);
                 if registry_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "registry_name", details: "cannot be empty or unset" })
                             }
                 let input_60 = &_input.schema_name;
                 let input_60 = input_60.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "schema_name", details: "cannot be empty or unset" })?;
-                let schema_name = aws_smithy_http::label::fmt_string(input_60, false);
+                let schema_name = aws_smithy_http::label::fmt_string(input_60, aws_smithy_http::label::EncodingStrategy::Default);
                 if schema_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "schema_name", details: "cannot be empty or unset" })
                             }

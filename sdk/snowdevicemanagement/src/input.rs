@@ -39,7 +39,7 @@ impl CancelTaskInput {
             fn uri_base(_input: &crate::input::CancelTaskInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.task_id;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "task_id", details: "cannot be empty or unset" })?;
-                let task_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let task_id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if task_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "task_id", details: "cannot be empty or unset" })
                             }
@@ -294,7 +294,7 @@ impl DescribeDeviceInput {
             fn uri_base(_input: &crate::input::DescribeDeviceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.managed_device_id;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "managed_device_id", details: "cannot be empty or unset" })?;
-                let managed_device_id = aws_smithy_http::label::fmt_string(input_2, false);
+                let managed_device_id = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if managed_device_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "managed_device_id", details: "cannot be empty or unset" })
                             }
@@ -409,7 +409,7 @@ impl DescribeDeviceEc2InstancesInput {
             fn uri_base(_input: &crate::input::DescribeDeviceEc2InstancesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.managed_device_id;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "managed_device_id", details: "cannot be empty or unset" })?;
-                let managed_device_id = aws_smithy_http::label::fmt_string(input_3, false);
+                let managed_device_id = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if managed_device_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "managed_device_id", details: "cannot be empty or unset" })
                             }
@@ -522,13 +522,13 @@ impl DescribeExecutionInput {
             fn uri_base(_input: &crate::input::DescribeExecutionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_4 = &_input.task_id;
                 let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "task_id", details: "cannot be empty or unset" })?;
-                let task_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let task_id = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if task_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "task_id", details: "cannot be empty or unset" })
                             }
                 let input_5 = &_input.managed_device_id;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "managed_device_id", details: "cannot be empty or unset" })?;
-                let managed_device_id = aws_smithy_http::label::fmt_string(input_5, false);
+                let managed_device_id = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if managed_device_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "managed_device_id", details: "cannot be empty or unset" })
                             }
@@ -625,7 +625,7 @@ impl DescribeTaskInput {
             fn uri_base(_input: &crate::input::DescribeTaskInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_6 = &_input.task_id;
                 let input_6 = input_6.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "task_id", details: "cannot be empty or unset" })?;
-                let task_id = aws_smithy_http::label::fmt_string(input_6, false);
+                let task_id = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if task_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "task_id", details: "cannot be empty or unset" })
                             }
@@ -758,7 +758,7 @@ impl ListDeviceResourcesInput {
             fn uri_base(_input: &crate::input::ListDeviceResourcesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_7 = &_input.managed_device_id;
                 let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "managed_device_id", details: "cannot be empty or unset" })?;
-                let managed_device_id = aws_smithy_http::label::fmt_string(input_7, false);
+                let managed_device_id = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
                 if managed_device_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "managed_device_id", details: "cannot be empty or unset" })
                             }
@@ -1142,7 +1142,7 @@ impl ListTagsForResourceInput {
             fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_18 = &_input.resource_arn;
                 let input_18 = input_18.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_18, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_18, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -1386,7 +1386,7 @@ impl TagResourceInput {
             fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_22 = &_input.resource_arn;
                 let input_22 = input_22.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_22, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_22, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -1505,7 +1505,7 @@ impl UntagResourceInput {
             fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_23 = &_input.resource_arn;
                 let input_23 = input_23.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_23, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_23, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }

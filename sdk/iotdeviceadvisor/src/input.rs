@@ -152,7 +152,7 @@ impl DeleteSuiteDefinitionInput {
             fn uri_base(_input: &crate::input::DeleteSuiteDefinitionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.suite_definition_id;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "suite_definition_id", details: "cannot be empty or unset" })?;
-                let suite_definition_id = aws_smithy_http::label::fmt_string(input_1, false);
+                let suite_definition_id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if suite_definition_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "suite_definition_id", details: "cannot be empty or unset" })
                             }
@@ -375,7 +375,7 @@ impl GetSuiteDefinitionInput {
             fn uri_base(_input: &crate::input::GetSuiteDefinitionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_4 = &_input.suite_definition_id;
                 let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "suite_definition_id", details: "cannot be empty or unset" })?;
-                let suite_definition_id = aws_smithy_http::label::fmt_string(input_4, false);
+                let suite_definition_id = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if suite_definition_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "suite_definition_id", details: "cannot be empty or unset" })
                             }
@@ -492,13 +492,13 @@ impl GetSuiteRunInput {
             fn uri_base(_input: &crate::input::GetSuiteRunInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_6 = &_input.suite_definition_id;
                 let input_6 = input_6.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "suite_definition_id", details: "cannot be empty or unset" })?;
-                let suite_definition_id = aws_smithy_http::label::fmt_string(input_6, false);
+                let suite_definition_id = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if suite_definition_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "suite_definition_id", details: "cannot be empty or unset" })
                             }
                 let input_7 = &_input.suite_run_id;
                 let input_7 = input_7.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "suite_run_id", details: "cannot be empty or unset" })?;
-                let suite_run_id = aws_smithy_http::label::fmt_string(input_7, false);
+                let suite_run_id = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
                 if suite_run_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "suite_run_id", details: "cannot be empty or unset" })
                             }
@@ -607,13 +607,13 @@ impl GetSuiteRunReportInput {
             fn uri_base(_input: &crate::input::GetSuiteRunReportInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_8 = &_input.suite_definition_id;
                 let input_8 = input_8.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "suite_definition_id", details: "cannot be empty or unset" })?;
-                let suite_definition_id = aws_smithy_http::label::fmt_string(input_8, false);
+                let suite_definition_id = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
                 if suite_definition_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "suite_definition_id", details: "cannot be empty or unset" })
                             }
                 let input_9 = &_input.suite_run_id;
                 let input_9 = input_9.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "suite_run_id", details: "cannot be empty or unset" })?;
-                let suite_run_id = aws_smithy_http::label::fmt_string(input_9, false);
+                let suite_run_id = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
                 if suite_run_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "suite_run_id", details: "cannot be empty or unset" })
                             }
@@ -970,7 +970,7 @@ impl ListTagsForResourceInput {
             fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_14 = &_input.resource_arn;
                 let input_14 = input_14.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_14, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_14, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -1109,7 +1109,7 @@ impl StartSuiteRunInput {
             fn uri_base(_input: &crate::input::StartSuiteRunInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_15 = &_input.suite_definition_id;
                 let input_15 = input_15.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "suite_definition_id", details: "cannot be empty or unset" })?;
-                let suite_definition_id = aws_smithy_http::label::fmt_string(input_15, false);
+                let suite_definition_id = aws_smithy_http::label::fmt_string(input_15, aws_smithy_http::label::EncodingStrategy::Default);
                 if suite_definition_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "suite_definition_id", details: "cannot be empty or unset" })
                             }
@@ -1222,13 +1222,13 @@ impl StopSuiteRunInput {
             fn uri_base(_input: &crate::input::StopSuiteRunInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_16 = &_input.suite_definition_id;
                 let input_16 = input_16.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "suite_definition_id", details: "cannot be empty or unset" })?;
-                let suite_definition_id = aws_smithy_http::label::fmt_string(input_16, false);
+                let suite_definition_id = aws_smithy_http::label::fmt_string(input_16, aws_smithy_http::label::EncodingStrategy::Default);
                 if suite_definition_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "suite_definition_id", details: "cannot be empty or unset" })
                             }
                 let input_17 = &_input.suite_run_id;
                 let input_17 = input_17.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "suite_run_id", details: "cannot be empty or unset" })?;
-                let suite_run_id = aws_smithy_http::label::fmt_string(input_17, false);
+                let suite_run_id = aws_smithy_http::label::fmt_string(input_17, aws_smithy_http::label::EncodingStrategy::Default);
                 if suite_run_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "suite_run_id", details: "cannot be empty or unset" })
                             }
@@ -1343,7 +1343,7 @@ impl TagResourceInput {
             fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_18 = &_input.resource_arn;
                 let input_18 = input_18.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_18, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_18, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -1462,7 +1462,7 @@ impl UntagResourceInput {
             fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_19 = &_input.resource_arn;
                 let input_19 = input_19.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_19, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_19, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -1581,7 +1581,7 @@ impl UpdateSuiteDefinitionInput {
             fn uri_base(_input: &crate::input::UpdateSuiteDefinitionInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_22 = &_input.suite_definition_id;
                 let input_22 = input_22.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "suite_definition_id", details: "cannot be empty or unset" })?;
-                let suite_definition_id = aws_smithy_http::label::fmt_string(input_22, false);
+                let suite_definition_id = aws_smithy_http::label::fmt_string(input_22, aws_smithy_http::label::EncodingStrategy::Default);
                 if suite_definition_id.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "suite_definition_id", details: "cannot be empty or unset" })
                             }

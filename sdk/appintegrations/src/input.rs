@@ -379,7 +379,7 @@ impl DeleteDataIntegrationInput {
             fn uri_base(_input: &crate::input::DeleteDataIntegrationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_1 = &_input.data_integration_identifier;
                 let input_1 = input_1.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "data_integration_identifier", details: "cannot be empty or unset" })?;
-                let data_integration_identifier = aws_smithy_http::label::fmt_string(input_1, false);
+                let data_integration_identifier = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if data_integration_identifier.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "data_integration_identifier", details: "cannot be empty or unset" })
                             }
@@ -476,7 +476,7 @@ impl DeleteEventIntegrationInput {
             fn uri_base(_input: &crate::input::DeleteEventIntegrationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_2 = &_input.name;
                 let input_2 = input_2.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })?;
-                let name = aws_smithy_http::label::fmt_string(input_2, false);
+                let name = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })
                             }
@@ -573,7 +573,7 @@ impl GetDataIntegrationInput {
             fn uri_base(_input: &crate::input::GetDataIntegrationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_3 = &_input.identifier;
                 let input_3 = input_3.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "identifier", details: "cannot be empty or unset" })?;
-                let identifier = aws_smithy_http::label::fmt_string(input_3, false);
+                let identifier = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if identifier.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "identifier", details: "cannot be empty or unset" })
                             }
@@ -670,7 +670,7 @@ impl GetEventIntegrationInput {
             fn uri_base(_input: &crate::input::GetEventIntegrationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_4 = &_input.name;
                 let input_4 = input_4.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })?;
-                let name = aws_smithy_http::label::fmt_string(input_4, false);
+                let name = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })
                             }
@@ -791,7 +791,7 @@ impl ListDataIntegrationAssociationsInput {
             fn uri_base(_input: &crate::input::ListDataIntegrationAssociationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_5 = &_input.data_integration_identifier;
                 let input_5 = input_5.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "data_integration_identifier", details: "cannot be empty or unset" })?;
-                let data_integration_identifier = aws_smithy_http::label::fmt_string(input_5, false);
+                let data_integration_identifier = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if data_integration_identifier.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "data_integration_identifier", details: "cannot be empty or unset" })
                             }
@@ -1037,7 +1037,7 @@ impl ListEventIntegrationAssociationsInput {
             fn uri_base(_input: &crate::input::ListEventIntegrationAssociationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_10 = &_input.event_integration_name;
                 let input_10 = input_10.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "event_integration_name", details: "cannot be empty or unset" })?;
-                let event_integration_name = aws_smithy_http::label::fmt_string(input_10, false);
+                let event_integration_name = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Default);
                 if event_integration_name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "event_integration_name", details: "cannot be empty or unset" })
                             }
@@ -1259,7 +1259,7 @@ impl ListTagsForResourceInput {
             fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_15 = &_input.resource_arn;
                 let input_15 = input_15.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_15, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_15, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -1374,7 +1374,7 @@ impl TagResourceInput {
             fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_16 = &_input.resource_arn;
                 let input_16 = input_16.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_16, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_16, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -1493,7 +1493,7 @@ impl UntagResourceInput {
             fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_17 = &_input.resource_arn;
                 let input_17 = input_17.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(input_17, false);
+                let resource_arn = aws_smithy_http::label::fmt_string(input_17, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "resource_arn", details: "cannot be empty or unset" })
                             }
@@ -1624,7 +1624,7 @@ impl UpdateDataIntegrationInput {
             fn uri_base(_input: &crate::input::UpdateDataIntegrationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_20 = &_input.identifier;
                 let input_20 = input_20.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "identifier", details: "cannot be empty or unset" })?;
-                let identifier = aws_smithy_http::label::fmt_string(input_20, false);
+                let identifier = aws_smithy_http::label::fmt_string(input_20, aws_smithy_http::label::EncodingStrategy::Default);
                 if identifier.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "identifier", details: "cannot be empty or unset" })
                             }
@@ -1737,7 +1737,7 @@ impl UpdateEventIntegrationInput {
             fn uri_base(_input: &crate::input::UpdateEventIntegrationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::BuildError> {
                 let input_21 = &_input.name;
                 let input_21 = input_21.as_ref().ok_or(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })?;
-                let name = aws_smithy_http::label::fmt_string(input_21, false);
+                let name = aws_smithy_http::label::fmt_string(input_21, aws_smithy_http::label::EncodingStrategy::Default);
                 if name.is_empty() {
                                 return Err(aws_smithy_http::operation::BuildError::MissingField { field: "name", details: "cannot be empty or unset" })
                             }
