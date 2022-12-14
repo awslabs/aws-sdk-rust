@@ -4,6 +4,7 @@ pub fn serialize_structure_crate_input_create_browser_settings_input(
     input: &crate::input::CreateBrowserSettingsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.additional_encryption_context {
+        #[allow(unused_mut)]
         let mut object_2 = object.key("additionalEncryptionContext").start_object();
         for (key_3, value_4) in var_1 {
             {
@@ -25,6 +26,7 @@ pub fn serialize_structure_crate_input_create_browser_settings_input(
         let mut array_9 = object.key("tags").start_array();
         for item_10 in var_8 {
             {
+                #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_11, item_10)?;
                 object_11.finish();
@@ -43,6 +45,7 @@ pub fn serialize_structure_crate_input_create_identity_provider_input(
         object.key("clientToken").string(var_12.as_str());
     }
     if let Some(var_13) = &input.identity_provider_details {
+        #[allow(unused_mut)]
         let mut object_14 = object.key("identityProviderDetails").start_object();
         for (key_15, value_16) in var_13 {
             {
@@ -92,6 +95,7 @@ pub fn serialize_structure_crate_input_create_network_settings_input(
         let mut array_28 = object.key("tags").start_array();
         for item_29 in var_27 {
             {
+                #[allow(unused_mut)]
                 let mut object_30 = array_28.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_30, item_29)?;
                 object_30.finish();
@@ -110,6 +114,7 @@ pub fn serialize_structure_crate_input_create_portal_input(
     input: &crate::input::CreatePortalInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_32) = &input.additional_encryption_context {
+        #[allow(unused_mut)]
         let mut object_33 = object.key("additionalEncryptionContext").start_object();
         for (key_34, value_35) in var_32 {
             {
@@ -131,6 +136,7 @@ pub fn serialize_structure_crate_input_create_portal_input(
         let mut array_40 = object.key("tags").start_array();
         for item_41 in var_39 {
             {
+                #[allow(unused_mut)]
                 let mut object_42 = array_40.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_42, item_41)?;
                 object_42.finish();
@@ -163,6 +169,7 @@ pub fn serialize_structure_crate_input_create_trust_store_input(
         let mut array_48 = object.key("tags").start_array();
         for item_49 in var_47 {
             {
+                #[allow(unused_mut)]
                 let mut object_50 = array_48.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_50, item_49)?;
                 object_50.finish();
@@ -208,6 +215,7 @@ pub fn serialize_structure_crate_input_create_user_settings_input(
         let mut array_59 = object.key("tags").start_array();
         for item_60 in var_58 {
             {
+                #[allow(unused_mut)]
                 let mut object_61 = array_59.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_61, item_60)?;
                 object_61.finish();
@@ -232,6 +240,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_65 = object.key("tags").start_array();
         for item_66 in var_64 {
             {
+                #[allow(unused_mut)]
                 let mut object_67 = array_65.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_67, item_66)?;
                 object_67.finish();
@@ -263,6 +272,7 @@ pub fn serialize_structure_crate_input_update_identity_provider_input(
         object.key("clientToken").string(var_70.as_str());
     }
     if let Some(var_71) = &input.identity_provider_details {
+        #[allow(unused_mut)]
         let mut object_72 = object.key("identityProviderDetails").start_object();
         for (key_73, value_74) in var_71 {
             {

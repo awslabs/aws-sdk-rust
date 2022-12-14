@@ -24,6 +24,7 @@ pub fn serialize_structure_crate_input_generate_data_set_input(
         object.key("snsTopicArn").string(var_6.as_str());
     }
     if let Some(var_7) = &input.customer_defined_values {
+        #[allow(unused_mut)]
         let mut object_8 = object.key("customerDefinedValues").start_object();
         for (key_9, value_10) in var_7 {
             {
@@ -62,6 +63,7 @@ pub fn serialize_structure_crate_input_start_support_data_export_input(
         object.key("snsTopicArn").string(var_16.as_str());
     }
     if let Some(var_17) = &input.customer_defined_values {
+        #[allow(unused_mut)]
         let mut object_18 = object.key("customerDefinedValues").start_object();
         for (key_19, value_20) in var_17 {
             {

@@ -29,6 +29,7 @@ pub fn serialize_structure_crate_input_create_gateway_input(
         let mut array_7 = object.key("Tags").start_array();
         for item_8 in var_6 {
             {
+                #[allow(unused_mut)]
                 let mut object_9 = array_7.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_9, item_8)?;
                 object_9.finish();
@@ -112,6 +113,7 @@ pub fn serialize_structure_crate_input_import_hypervisor_configuration_input(
         let mut array_21 = object.key("Tags").start_array();
         for item_22 in var_20 {
             {
+                #[allow(unused_mut)]
                 let mut object_23 = array_21.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_23, item_22)?;
                 object_23.finish();
@@ -228,6 +230,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_39 = object.key("Tags").start_array();
         for item_40 in var_38 {
             {
+                #[allow(unused_mut)]
                 let mut object_41 = array_39.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_41, item_40)?;
                 object_41.finish();

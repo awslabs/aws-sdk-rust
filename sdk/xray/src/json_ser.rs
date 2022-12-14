@@ -29,6 +29,7 @@ pub fn serialize_structure_crate_input_create_group_input(
         object.key("GroupName").string(var_6.as_str());
     }
     if let Some(var_7) = &input.insights_configuration {
+        #[allow(unused_mut)]
         let mut object_8 = object.key("InsightsConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_insights_configuration(
             &mut object_8,
@@ -40,6 +41,7 @@ pub fn serialize_structure_crate_input_create_group_input(
         let mut array_10 = object.key("Tags").start_array();
         for item_11 in var_9 {
             {
+                #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_12, item_11)?;
                 object_12.finish();
@@ -55,6 +57,7 @@ pub fn serialize_structure_crate_input_create_sampling_rule_input(
     input: &crate::input::CreateSamplingRuleInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_13) = &input.sampling_rule {
+        #[allow(unused_mut)]
         let mut object_14 = object.key("SamplingRule").start_object();
         crate::json_ser::serialize_structure_crate_model_sampling_rule(&mut object_14, var_13)?;
         object_14.finish();
@@ -63,6 +66,7 @@ pub fn serialize_structure_crate_input_create_sampling_rule_input(
         let mut array_16 = object.key("Tags").start_array();
         for item_17 in var_15 {
             {
+                #[allow(unused_mut)]
                 let mut object_18 = array_16.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_18, item_17)?;
                 object_18.finish();
@@ -243,6 +247,7 @@ pub fn serialize_structure_crate_input_get_sampling_targets_input(
         let mut array_46 = object.key("SamplingStatisticsDocuments").start_array();
         for item_47 in var_45 {
             {
+                #[allow(unused_mut)]
                 let mut object_48 = array_46.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_sampling_statistics_document(
                     &mut object_48,
@@ -360,6 +365,7 @@ pub fn serialize_structure_crate_input_get_trace_summaries_input(
         object.key("Sampling").boolean(*var_69);
     }
     if let Some(var_70) = &input.sampling_strategy {
+        #[allow(unused_mut)]
         let mut object_71 = object.key("SamplingStrategy").start_object();
         crate::json_ser::serialize_structure_crate_model_sampling_strategy(&mut object_71, var_70)?;
         object_71.finish();
@@ -418,6 +424,7 @@ pub fn serialize_structure_crate_input_put_telemetry_records_input(
         let mut array_82 = object.key("TelemetryRecords").start_array();
         for item_83 in var_81 {
             {
+                #[allow(unused_mut)]
                 let mut object_84 = array_82.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_telemetry_record(
                     &mut object_84,
@@ -458,6 +465,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_90 = object.key("Tags").start_array();
         for item_91 in var_89 {
             {
+                #[allow(unused_mut)]
                 let mut object_92 = array_90.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_92, item_91)?;
                 object_92.finish();
@@ -501,6 +509,7 @@ pub fn serialize_structure_crate_input_update_group_input(
         object.key("GroupName").string(var_99.as_str());
     }
     if let Some(var_100) = &input.insights_configuration {
+        #[allow(unused_mut)]
         let mut object_101 = object.key("InsightsConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_insights_configuration(
             &mut object_101,
@@ -516,6 +525,7 @@ pub fn serialize_structure_crate_input_update_sampling_rule_input(
     input: &crate::input::UpdateSamplingRuleInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_102) = &input.sampling_rule_update {
+        #[allow(unused_mut)]
         let mut object_103 = object.key("SamplingRuleUpdate").start_object();
         crate::json_ser::serialize_structure_crate_model_sampling_rule_update(
             &mut object_103,
@@ -605,6 +615,7 @@ pub fn serialize_structure_crate_model_sampling_rule(
         );
     }
     if let Some(var_116) = &input.attributes {
+        #[allow(unused_mut)]
         let mut object_117 = object.key("Attributes").start_object();
         for (key_118, value_119) in var_116 {
             {
@@ -702,6 +713,7 @@ pub fn serialize_structure_crate_model_telemetry_record(
         );
     }
     if let Some(var_130) = &input.backend_connection_errors {
+        #[allow(unused_mut)]
         let mut object_131 = object.key("BackendConnectionErrors").start_object();
         crate::json_ser::serialize_structure_crate_model_backend_connection_errors(
             &mut object_131,
@@ -759,6 +771,7 @@ pub fn serialize_structure_crate_model_sampling_rule_update(
         object.key("URLPath").string(var_142.as_str());
     }
     if let Some(var_143) = &input.attributes {
+        #[allow(unused_mut)]
         let mut object_144 = object.key("Attributes").start_object();
         for (key_145, value_146) in var_143 {
             {

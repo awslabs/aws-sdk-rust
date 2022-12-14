@@ -39,6 +39,7 @@ pub fn serialize_structure_crate_input_channel_flow_callback_input(
         object.key("CallbackId").string(var_7.as_str());
     }
     if let Some(var_8) = &input.channel_message {
+        #[allow(unused_mut)]
         let mut object_9 = object.key("ChannelMessage").start_object();
         crate::json_ser::serialize_structure_crate_model_channel_message_callback(
             &mut object_9,
@@ -66,6 +67,7 @@ pub fn serialize_structure_crate_input_create_channel_input(
         object.key("ClientRequestToken").string(var_12.as_str());
     }
     if let Some(var_13) = &input.elastic_channel_configuration {
+        #[allow(unused_mut)]
         let mut object_14 = object.key("ElasticChannelConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_elastic_channel_configuration(
             &mut object_14,
@@ -107,6 +109,7 @@ pub fn serialize_structure_crate_input_create_channel_input(
         let mut array_26 = object.key("Tags").start_array();
         for item_27 in var_25 {
             {
+                #[allow(unused_mut)]
                 let mut object_28 = array_26.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_28, item_27)?;
                 object_28.finish();
@@ -144,6 +147,7 @@ pub fn serialize_structure_crate_input_create_channel_flow_input(
         let mut array_34 = object.key("Processors").start_array();
         for item_35 in var_33 {
             {
+                #[allow(unused_mut)]
                 let mut object_36 = array_34.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_processor(
                     &mut object_36,
@@ -158,6 +162,7 @@ pub fn serialize_structure_crate_input_create_channel_flow_input(
         let mut array_38 = object.key("Tags").start_array();
         for item_39 in var_37 {
             {
+                #[allow(unused_mut)]
                 let mut object_40 = array_38.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_40, item_39)?;
                 object_40.finish();
@@ -199,6 +204,7 @@ pub fn serialize_structure_crate_input_put_channel_membership_preferences_input(
     input: &crate::input::PutChannelMembershipPreferencesInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_45) = &input.preferences {
+        #[allow(unused_mut)]
         let mut object_46 = object.key("Preferences").start_object();
         crate::json_ser::serialize_structure_crate_model_channel_membership_preferences(
             &mut object_46,
@@ -227,6 +233,7 @@ pub fn serialize_structure_crate_input_search_channels_input(
         let mut array_49 = object.key("Fields").start_array();
         for item_50 in var_48 {
             {
+                #[allow(unused_mut)]
                 let mut object_51 = array_49.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_search_field(
                     &mut object_51,
@@ -251,9 +258,11 @@ pub fn serialize_structure_crate_input_send_channel_message_input(
         object.key("Content").string(var_53.as_str());
     }
     if let Some(var_54) = &input.message_attributes {
+        #[allow(unused_mut)]
         let mut object_55 = object.key("MessageAttributes").start_object();
         for (key_56, value_57) in var_54 {
             {
+                #[allow(unused_mut)]
                 let mut object_58 = object_55.key(key_56.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_message_attribute_value(
                     &mut object_58,
@@ -271,6 +280,7 @@ pub fn serialize_structure_crate_input_send_channel_message_input(
         object.key("Persistence").string(var_60.as_str());
     }
     if let Some(var_61) = &input.push_notification {
+        #[allow(unused_mut)]
         let mut object_62 = object.key("PushNotification").start_object();
         crate::json_ser::serialize_structure_crate_model_push_notification_configuration(
             &mut object_62,
@@ -298,6 +308,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_67 = object.key("Tags").start_array();
         for item_68 in var_66 {
             {
+                #[allow(unused_mut)]
                 let mut object_69 = array_67.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_69, item_68)?;
                 object_69.finish();
@@ -354,6 +365,7 @@ pub fn serialize_structure_crate_input_update_channel_flow_input(
         let mut array_79 = object.key("Processors").start_array();
         for item_80 in var_78 {
             {
+                #[allow(unused_mut)]
                 let mut object_81 = array_79.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_processor(
                     &mut object_81,
@@ -407,6 +419,7 @@ pub fn serialize_structure_crate_model_channel_message_callback(
         object.key("Metadata").string(var_88.as_str());
     }
     if let Some(var_89) = &input.push_notification {
+        #[allow(unused_mut)]
         let mut object_90 = object.key("PushNotification").start_object();
         crate::json_ser::serialize_structure_crate_model_push_notification_configuration(
             &mut object_90,
@@ -415,9 +428,11 @@ pub fn serialize_structure_crate_model_channel_message_callback(
         object_90.finish();
     }
     if let Some(var_91) = &input.message_attributes {
+        #[allow(unused_mut)]
         let mut object_92 = object.key("MessageAttributes").start_object();
         for (key_93, value_94) in var_91 {
             {
+                #[allow(unused_mut)]
                 let mut object_95 = object_92.key(key_93.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_message_attribute_value(
                     &mut object_95,
@@ -480,6 +495,7 @@ pub fn serialize_structure_crate_model_processor(
         object.key("Name").string(var_102.as_str());
     }
     if let Some(var_103) = &input.configuration {
+        #[allow(unused_mut)]
         let mut object_104 = object.key("Configuration").start_object();
         crate::json_ser::serialize_structure_crate_model_processor_configuration(
             &mut object_104,
@@ -504,6 +520,7 @@ pub fn serialize_structure_crate_model_channel_membership_preferences(
     input: &crate::model::ChannelMembershipPreferences,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_107) = &input.push_notifications {
+        #[allow(unused_mut)]
         let mut object_108 = object.key("PushNotifications").start_object();
         crate::json_ser::serialize_structure_crate_model_push_notification_preferences(
             &mut object_108,
@@ -573,6 +590,7 @@ pub fn serialize_structure_crate_model_processor_configuration(
     input: &crate::model::ProcessorConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_120) = &input.lambda {
+        #[allow(unused_mut)]
         let mut object_121 = object.key("Lambda").start_object();
         crate::json_ser::serialize_structure_crate_model_lambda_configuration(
             &mut object_121,

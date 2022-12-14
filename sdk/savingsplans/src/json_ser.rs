@@ -18,6 +18,7 @@ pub fn serialize_structure_crate_input_create_savings_plan_input(
         object.key("savingsPlanOfferingId").string(var_4.as_str());
     }
     if let Some(var_5) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_6 = object.key("tags").start_object();
         for (key_7, value_8) in var_5 {
             {
@@ -50,6 +51,7 @@ pub fn serialize_structure_crate_input_describe_savings_plan_rates_input(
         let mut array_12 = object.key("filters").start_array();
         for item_13 in var_11 {
             {
+                #[allow(unused_mut)]
                 let mut object_14 = array_12.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_savings_plan_rate_filter(
                     &mut object_14,
@@ -83,6 +85,7 @@ pub fn serialize_structure_crate_input_describe_savings_plans_input(
         let mut array_19 = object.key("filters").start_array();
         for item_20 in var_18 {
             {
+                #[allow(unused_mut)]
                 let mut object_21 = array_19.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_savings_plan_filter(
                     &mut object_21,
@@ -140,6 +143,7 @@ pub fn serialize_structure_crate_input_describe_savings_plans_offering_rates_inp
         let mut array_34 = object.key("filters").start_array();
         for item_35 in var_33 {
             {
+                #[allow(unused_mut)]
                 let mut object_36 = array_34.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_savings_plan_offering_rate_filter_element(&mut object_36, item_35)?;
                 object_36.finish();
@@ -260,6 +264,7 @@ pub fn serialize_structure_crate_input_describe_savings_plans_offerings_input(
         let mut array_69 = object.key("filters").start_array();
         for item_70 in var_68 {
             {
+                #[allow(unused_mut)]
                 let mut object_71 = array_69.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_savings_plan_offering_filter_element(&mut object_71, item_70)?;
                 object_71.finish();
@@ -354,6 +359,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         object.key("resourceArn").string(var_93.as_str());
     }
     if let Some(var_94) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_95 = object.key("tags").start_object();
         for (key_96, value_97) in var_94 {
             {

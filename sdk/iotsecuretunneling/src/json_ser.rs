@@ -62,6 +62,7 @@ pub fn serialize_structure_crate_input_open_tunnel_input(
         let mut array_10 = object.key("tags").start_array();
         for item_11 in var_9 {
             {
+                #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_12, item_11)?;
                 object_12.finish();
@@ -70,6 +71,7 @@ pub fn serialize_structure_crate_input_open_tunnel_input(
         array_10.finish();
     }
     if let Some(var_13) = &input.destination_config {
+        #[allow(unused_mut)]
         let mut object_14 = object.key("destinationConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_destination_config(
             &mut object_14,
@@ -78,6 +80,7 @@ pub fn serialize_structure_crate_input_open_tunnel_input(
         object_14.finish();
     }
     if let Some(var_15) = &input.timeout_config {
+        #[allow(unused_mut)]
         let mut object_16 = object.key("timeoutConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_timeout_config(&mut object_16, var_15)?;
         object_16.finish();
@@ -96,6 +99,7 @@ pub fn serialize_structure_crate_input_rotate_tunnel_access_token_input(
         object.key("clientMode").string(var_18.as_str());
     }
     if let Some(var_19) = &input.destination_config {
+        #[allow(unused_mut)]
         let mut object_20 = object.key("destinationConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_destination_config(
             &mut object_20,
@@ -117,6 +121,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_23 = object.key("tags").start_array();
         for item_24 in var_22 {
             {
+                #[allow(unused_mut)]
                 let mut object_25 = array_23.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_25, item_24)?;
                 object_25.finish();

@@ -10,6 +10,7 @@ pub fn serialize_structure_crate_input_create_call_analytics_category_input(
         let mut array_3 = object.key("Rules").start_array();
         for item_4 in var_2 {
             {
+                #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
                 crate::json_ser::serialize_union_crate_model_rule(&mut object_5, item_4)?;
                 object_5.finish();
@@ -34,6 +35,7 @@ pub fn serialize_structure_crate_input_create_language_model_input(
         object.key("ModelName").string(var_8.as_str());
     }
     if let Some(var_9) = &input.input_data_config {
+        #[allow(unused_mut)]
         let mut object_10 = object.key("InputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_input_data_config(&mut object_10, var_9)?;
         object_10.finish();
@@ -42,6 +44,7 @@ pub fn serialize_structure_crate_input_create_language_model_input(
         let mut array_12 = object.key("Tags").start_array();
         for item_13 in var_11 {
             {
+                #[allow(unused_mut)]
                 let mut object_14 = array_12.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_14, item_13)?;
                 object_14.finish();
@@ -69,6 +72,7 @@ pub fn serialize_structure_crate_input_create_medical_vocabulary_input(
         let mut array_19 = object.key("Tags").start_array();
         for item_20 in var_18 {
             {
+                #[allow(unused_mut)]
                 let mut object_21 = array_19.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_21, item_20)?;
                 object_21.finish();
@@ -105,6 +109,7 @@ pub fn serialize_structure_crate_input_create_vocabulary_input(
         let mut array_29 = object.key("Tags").start_array();
         for item_30 in var_28 {
             {
+                #[allow(unused_mut)]
                 let mut object_31 = array_29.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_31, item_30)?;
                 object_31.finish();
@@ -143,6 +148,7 @@ pub fn serialize_structure_crate_input_create_vocabulary_filter_input(
         let mut array_39 = object.key("Tags").start_array();
         for item_40 in var_38 {
             {
+                #[allow(unused_mut)]
                 let mut object_41 = array_39.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_41, item_40)?;
                 object_41.finish();
@@ -502,6 +508,7 @@ pub fn serialize_structure_crate_input_start_call_analytics_job_input(
         object.key("CallAnalyticsJobName").string(var_88.as_str());
     }
     if let Some(var_89) = &input.media {
+        #[allow(unused_mut)]
         let mut object_90 = object.key("Media").start_object();
         crate::json_ser::serialize_structure_crate_model_media(&mut object_90, var_89)?;
         object_90.finish();
@@ -518,6 +525,7 @@ pub fn serialize_structure_crate_input_start_call_analytics_job_input(
         object.key("DataAccessRoleArn").string(var_93.as_str());
     }
     if let Some(var_94) = &input.settings {
+        #[allow(unused_mut)]
         let mut object_95 = object.key("Settings").start_object();
         crate::json_ser::serialize_structure_crate_model_call_analytics_job_settings(
             &mut object_95,
@@ -529,6 +537,7 @@ pub fn serialize_structure_crate_input_start_call_analytics_job_input(
         let mut array_97 = object.key("ChannelDefinitions").start_array();
         for item_98 in var_96 {
             {
+                #[allow(unused_mut)]
                 let mut object_99 = array_97.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_channel_definition(
                     &mut object_99,
@@ -564,6 +573,7 @@ pub fn serialize_structure_crate_input_start_medical_transcription_job_input(
         object.key("MediaFormat").string(var_103.as_str());
     }
     if let Some(var_104) = &input.media {
+        #[allow(unused_mut)]
         let mut object_105 = object.key("Media").start_object();
         crate::json_ser::serialize_structure_crate_model_media(&mut object_105, var_104)?;
         object_105.finish();
@@ -580,6 +590,7 @@ pub fn serialize_structure_crate_input_start_medical_transcription_job_input(
             .string(var_108.as_str());
     }
     if let Some(var_109) = &input.kms_encryption_context {
+        #[allow(unused_mut)]
         let mut object_110 = object.key("KMSEncryptionContext").start_object();
         for (key_111, value_112) in var_109 {
             {
@@ -589,6 +600,7 @@ pub fn serialize_structure_crate_input_start_medical_transcription_job_input(
         object_110.finish();
     }
     if let Some(var_113) = &input.settings {
+        #[allow(unused_mut)]
         let mut object_114 = object.key("Settings").start_object();
         crate::json_ser::serialize_structure_crate_model_medical_transcription_setting(
             &mut object_114,
@@ -611,6 +623,7 @@ pub fn serialize_structure_crate_input_start_medical_transcription_job_input(
         let mut array_119 = object.key("Tags").start_array();
         for item_120 in var_118 {
             {
+                #[allow(unused_mut)]
                 let mut object_121 = array_119.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_121, item_120)?;
                 object_121.finish();
@@ -641,6 +654,7 @@ pub fn serialize_structure_crate_input_start_transcription_job_input(
         object.key("MediaFormat").string(var_125.as_str());
     }
     if let Some(var_126) = &input.media {
+        #[allow(unused_mut)]
         let mut object_127 = object.key("Media").start_object();
         crate::json_ser::serialize_structure_crate_model_media(&mut object_127, var_126)?;
         object_127.finish();
@@ -657,6 +671,7 @@ pub fn serialize_structure_crate_input_start_transcription_job_input(
             .string(var_130.as_str());
     }
     if let Some(var_131) = &input.kms_encryption_context {
+        #[allow(unused_mut)]
         let mut object_132 = object.key("KMSEncryptionContext").start_object();
         for (key_133, value_134) in var_131 {
             {
@@ -666,16 +681,19 @@ pub fn serialize_structure_crate_input_start_transcription_job_input(
         object_132.finish();
     }
     if let Some(var_135) = &input.settings {
+        #[allow(unused_mut)]
         let mut object_136 = object.key("Settings").start_object();
         crate::json_ser::serialize_structure_crate_model_settings(&mut object_136, var_135)?;
         object_136.finish();
     }
     if let Some(var_137) = &input.model_settings {
+        #[allow(unused_mut)]
         let mut object_138 = object.key("ModelSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_model_settings(&mut object_138, var_137)?;
         object_138.finish();
     }
     if let Some(var_139) = &input.job_execution_settings {
+        #[allow(unused_mut)]
         let mut object_140 = object.key("JobExecutionSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_job_execution_settings(
             &mut object_140,
@@ -684,6 +702,7 @@ pub fn serialize_structure_crate_input_start_transcription_job_input(
         object_140.finish();
     }
     if let Some(var_141) = &input.content_redaction {
+        #[allow(unused_mut)]
         let mut object_142 = object.key("ContentRedaction").start_object();
         crate::json_ser::serialize_structure_crate_model_content_redaction(
             &mut object_142,
@@ -707,6 +726,7 @@ pub fn serialize_structure_crate_input_start_transcription_job_input(
         array_146.finish();
     }
     if let Some(var_148) = &input.subtitles {
+        #[allow(unused_mut)]
         let mut object_149 = object.key("Subtitles").start_object();
         crate::json_ser::serialize_structure_crate_model_subtitles(&mut object_149, var_148)?;
         object_149.finish();
@@ -715,6 +735,7 @@ pub fn serialize_structure_crate_input_start_transcription_job_input(
         let mut array_151 = object.key("Tags").start_array();
         for item_152 in var_150 {
             {
+                #[allow(unused_mut)]
                 let mut object_153 = array_151.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_153, item_152)?;
                 object_153.finish();
@@ -723,9 +744,11 @@ pub fn serialize_structure_crate_input_start_transcription_job_input(
         array_151.finish();
     }
     if let Some(var_154) = &input.language_id_settings {
+        #[allow(unused_mut)]
         let mut object_155 = object.key("LanguageIdSettings").start_object();
         for (key_156, value_157) in var_154 {
             {
+                #[allow(unused_mut)]
                 let mut object_158 = object_155.key(key_156.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_language_id_settings(
                     &mut object_158,
@@ -750,6 +773,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_161 = object.key("Tags").start_array();
         for item_162 in var_160 {
             {
+                #[allow(unused_mut)]
                 let mut object_163 = array_161.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_163, item_162)?;
                 object_163.finish();
@@ -790,6 +814,7 @@ pub fn serialize_structure_crate_input_update_call_analytics_category_input(
         let mut array_170 = object.key("Rules").start_array();
         for item_171 in var_169 {
             {
+                #[allow(unused_mut)]
                 let mut object_172 = array_170.value().start_object();
                 crate::json_ser::serialize_union_crate_model_rule(&mut object_172, item_171)?;
                 object_172.finish();
@@ -871,6 +896,7 @@ pub fn serialize_union_crate_model_rule(
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::Rule::NonTalkTimeFilter(inner) => {
+            #[allow(unused_mut)]
             let mut object_187 = object_5.key("NonTalkTimeFilter").start_object();
             crate::json_ser::serialize_structure_crate_model_non_talk_time_filter(
                 &mut object_187,
@@ -879,6 +905,7 @@ pub fn serialize_union_crate_model_rule(
             object_187.finish();
         }
         crate::model::Rule::InterruptionFilter(inner) => {
+            #[allow(unused_mut)]
             let mut object_188 = object_5.key("InterruptionFilter").start_object();
             crate::json_ser::serialize_structure_crate_model_interruption_filter(
                 &mut object_188,
@@ -887,6 +914,7 @@ pub fn serialize_union_crate_model_rule(
             object_188.finish();
         }
         crate::model::Rule::TranscriptFilter(inner) => {
+            #[allow(unused_mut)]
             let mut object_189 = object_5.key("TranscriptFilter").start_object();
             crate::json_ser::serialize_structure_crate_model_transcript_filter(
                 &mut object_189,
@@ -895,6 +923,7 @@ pub fn serialize_union_crate_model_rule(
             object_189.finish();
         }
         crate::model::Rule::SentimentFilter(inner) => {
+            #[allow(unused_mut)]
             let mut object_190 = object_5.key("SentimentFilter").start_object();
             crate::json_ser::serialize_structure_crate_model_sentiment_filter(
                 &mut object_190,
@@ -972,6 +1001,7 @@ pub fn serialize_structure_crate_model_call_analytics_job_settings(
         object.key("LanguageModelName").string(var_201.as_str());
     }
     if let Some(var_202) = &input.content_redaction {
+        #[allow(unused_mut)]
         let mut object_203 = object.key("ContentRedaction").start_object();
         crate::json_ser::serialize_structure_crate_model_content_redaction(
             &mut object_203,
@@ -989,9 +1019,11 @@ pub fn serialize_structure_crate_model_call_analytics_job_settings(
         array_205.finish();
     }
     if let Some(var_207) = &input.language_id_settings {
+        #[allow(unused_mut)]
         let mut object_208 = object.key("LanguageIdSettings").start_object();
         for (key_209, value_210) in var_207 {
             {
+                #[allow(unused_mut)]
                 let mut object_211 = object_208.key(key_209.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_language_id_settings(
                     &mut object_211,
@@ -1185,6 +1217,7 @@ pub fn serialize_structure_crate_model_non_talk_time_filter(
         );
     }
     if let Some(var_243) = &input.absolute_time_range {
+        #[allow(unused_mut)]
         let mut object_244 = object.key("AbsoluteTimeRange").start_object();
         crate::json_ser::serialize_structure_crate_model_absolute_time_range(
             &mut object_244,
@@ -1193,6 +1226,7 @@ pub fn serialize_structure_crate_model_non_talk_time_filter(
         object_244.finish();
     }
     if let Some(var_245) = &input.relative_time_range {
+        #[allow(unused_mut)]
         let mut object_246 = object.key("RelativeTimeRange").start_object();
         crate::json_ser::serialize_structure_crate_model_relative_time_range(
             &mut object_246,
@@ -1220,6 +1254,7 @@ pub fn serialize_structure_crate_model_interruption_filter(
         object.key("ParticipantRole").string(var_249.as_str());
     }
     if let Some(var_250) = &input.absolute_time_range {
+        #[allow(unused_mut)]
         let mut object_251 = object.key("AbsoluteTimeRange").start_object();
         crate::json_ser::serialize_structure_crate_model_absolute_time_range(
             &mut object_251,
@@ -1228,6 +1263,7 @@ pub fn serialize_structure_crate_model_interruption_filter(
         object_251.finish();
     }
     if let Some(var_252) = &input.relative_time_range {
+        #[allow(unused_mut)]
         let mut object_253 = object.key("RelativeTimeRange").start_object();
         crate::json_ser::serialize_structure_crate_model_relative_time_range(
             &mut object_253,
@@ -1249,6 +1285,7 @@ pub fn serialize_structure_crate_model_transcript_filter(
         object.key("TranscriptFilterType").string(var_255.as_str());
     }
     if let Some(var_256) = &input.absolute_time_range {
+        #[allow(unused_mut)]
         let mut object_257 = object.key("AbsoluteTimeRange").start_object();
         crate::json_ser::serialize_structure_crate_model_absolute_time_range(
             &mut object_257,
@@ -1257,6 +1294,7 @@ pub fn serialize_structure_crate_model_transcript_filter(
         object_257.finish();
     }
     if let Some(var_258) = &input.relative_time_range {
+        #[allow(unused_mut)]
         let mut object_259 = object.key("RelativeTimeRange").start_object();
         crate::json_ser::serialize_structure_crate_model_relative_time_range(
             &mut object_259,
@@ -1296,6 +1334,7 @@ pub fn serialize_structure_crate_model_sentiment_filter(
         array_266.finish();
     }
     if let Some(var_268) = &input.absolute_time_range {
+        #[allow(unused_mut)]
         let mut object_269 = object.key("AbsoluteTimeRange").start_object();
         crate::json_ser::serialize_structure_crate_model_absolute_time_range(
             &mut object_269,
@@ -1304,6 +1343,7 @@ pub fn serialize_structure_crate_model_sentiment_filter(
         object_269.finish();
     }
     if let Some(var_270) = &input.relative_time_range {
+        #[allow(unused_mut)]
         let mut object_271 = object.key("RelativeTimeRange").start_object();
         crate::json_ser::serialize_structure_crate_model_relative_time_range(
             &mut object_271,

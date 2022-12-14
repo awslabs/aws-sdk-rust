@@ -62,6 +62,7 @@ pub fn serialize_structure_crate_input_create_data_source_input(
         object.key("description").string(var_5.as_str());
     }
     if let Some(var_6) = &input.dynamodb_config {
+        #[allow(unused_mut)]
         let mut object_7 = object.key("dynamodbConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_dynamodb_data_source_config(
             &mut object_7,
@@ -70,6 +71,7 @@ pub fn serialize_structure_crate_input_create_data_source_input(
         object_7.finish();
     }
     if let Some(var_8) = &input.elasticsearch_config {
+        #[allow(unused_mut)]
         let mut object_9 = object.key("elasticsearchConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_elasticsearch_data_source_config(
             &mut object_9,
@@ -78,6 +80,7 @@ pub fn serialize_structure_crate_input_create_data_source_input(
         object_9.finish();
     }
     if let Some(var_10) = &input.http_config {
+        #[allow(unused_mut)]
         let mut object_11 = object.key("httpConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_http_data_source_config(
             &mut object_11,
@@ -86,6 +89,7 @@ pub fn serialize_structure_crate_input_create_data_source_input(
         object_11.finish();
     }
     if let Some(var_12) = &input.lambda_config {
+        #[allow(unused_mut)]
         let mut object_13 = object.key("lambdaConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_lambda_data_source_config(
             &mut object_13,
@@ -97,6 +101,7 @@ pub fn serialize_structure_crate_input_create_data_source_input(
         object.key("name").string(var_14.as_str());
     }
     if let Some(var_15) = &input.open_search_service_config {
+        #[allow(unused_mut)]
         let mut object_16 = object.key("openSearchServiceConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_open_search_service_data_source_config(
             &mut object_16,
@@ -105,6 +110,7 @@ pub fn serialize_structure_crate_input_create_data_source_input(
         object_16.finish();
     }
     if let Some(var_17) = &input.relational_database_config {
+        #[allow(unused_mut)]
         let mut object_18 = object.key("relationalDatabaseConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_relational_database_data_source_config(
             &mut object_18,
@@ -168,6 +174,7 @@ pub fn serialize_structure_crate_input_create_function_input(
             .string(var_29.as_str());
     }
     if let Some(var_30) = &input.sync_config {
+        #[allow(unused_mut)]
         let mut object_31 = object.key("syncConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_sync_config(&mut object_31, var_30)?;
         object_31.finish();
@@ -185,6 +192,7 @@ pub fn serialize_structure_crate_input_create_graphql_api_input(
             .start_array();
         for item_34 in var_32 {
             {
+                #[allow(unused_mut)]
                 let mut object_35 = array_33.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_additional_authentication_provider(&mut object_35, item_34)?;
                 object_35.finish();
@@ -196,6 +204,7 @@ pub fn serialize_structure_crate_input_create_graphql_api_input(
         object.key("authenticationType").string(var_36.as_str());
     }
     if let Some(var_37) = &input.lambda_authorizer_config {
+        #[allow(unused_mut)]
         let mut object_38 = object.key("lambdaAuthorizerConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_lambda_authorizer_config(
             &mut object_38,
@@ -204,6 +213,7 @@ pub fn serialize_structure_crate_input_create_graphql_api_input(
         object_38.finish();
     }
     if let Some(var_39) = &input.log_config {
+        #[allow(unused_mut)]
         let mut object_40 = object.key("logConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_log_config(&mut object_40, var_39)?;
         object_40.finish();
@@ -212,6 +222,7 @@ pub fn serialize_structure_crate_input_create_graphql_api_input(
         object.key("name").string(var_41.as_str());
     }
     if let Some(var_42) = &input.open_id_connect_config {
+        #[allow(unused_mut)]
         let mut object_43 = object.key("openIDConnectConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_open_id_connect_config(
             &mut object_43,
@@ -220,6 +231,7 @@ pub fn serialize_structure_crate_input_create_graphql_api_input(
         object_43.finish();
     }
     if let Some(var_44) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_45 = object.key("tags").start_object();
         for (key_46, value_47) in var_44 {
             {
@@ -229,6 +241,7 @@ pub fn serialize_structure_crate_input_create_graphql_api_input(
         object_45.finish();
     }
     if let Some(var_48) = &input.user_pool_config {
+        #[allow(unused_mut)]
         let mut object_49 = object.key("userPoolConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_user_pool_config(&mut object_49, var_48)?;
         object_49.finish();
@@ -244,6 +257,7 @@ pub fn serialize_structure_crate_input_create_resolver_input(
     input: &crate::input::CreateResolverInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_50) = &input.caching_config {
+        #[allow(unused_mut)]
         let mut object_51 = object.key("cachingConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_caching_config(&mut object_51, var_50)?;
         object_51.finish();
@@ -264,6 +278,7 @@ pub fn serialize_structure_crate_input_create_resolver_input(
         );
     }
     if let Some(var_55) = &input.pipeline_config {
+        #[allow(unused_mut)]
         let mut object_56 = object.key("pipelineConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_pipeline_config(&mut object_56, var_55)?;
         object_56.finish();
@@ -277,6 +292,7 @@ pub fn serialize_structure_crate_input_create_resolver_input(
             .string(var_58.as_str());
     }
     if let Some(var_59) = &input.sync_config {
+        #[allow(unused_mut)]
         let mut object_60 = object.key("syncConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_sync_config(&mut object_60, var_59)?;
         object_60.finish();
@@ -327,6 +343,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_66) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_67 = object.key("tags").start_object();
         for (key_68, value_69) in var_66 {
             {
@@ -381,6 +398,7 @@ pub fn serialize_structure_crate_input_update_data_source_input(
         object.key("description").string(var_73.as_str());
     }
     if let Some(var_74) = &input.dynamodb_config {
+        #[allow(unused_mut)]
         let mut object_75 = object.key("dynamodbConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_dynamodb_data_source_config(
             &mut object_75,
@@ -389,6 +407,7 @@ pub fn serialize_structure_crate_input_update_data_source_input(
         object_75.finish();
     }
     if let Some(var_76) = &input.elasticsearch_config {
+        #[allow(unused_mut)]
         let mut object_77 = object.key("elasticsearchConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_elasticsearch_data_source_config(
             &mut object_77,
@@ -397,6 +416,7 @@ pub fn serialize_structure_crate_input_update_data_source_input(
         object_77.finish();
     }
     if let Some(var_78) = &input.http_config {
+        #[allow(unused_mut)]
         let mut object_79 = object.key("httpConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_http_data_source_config(
             &mut object_79,
@@ -405,6 +425,7 @@ pub fn serialize_structure_crate_input_update_data_source_input(
         object_79.finish();
     }
     if let Some(var_80) = &input.lambda_config {
+        #[allow(unused_mut)]
         let mut object_81 = object.key("lambdaConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_lambda_data_source_config(
             &mut object_81,
@@ -413,6 +434,7 @@ pub fn serialize_structure_crate_input_update_data_source_input(
         object_81.finish();
     }
     if let Some(var_82) = &input.open_search_service_config {
+        #[allow(unused_mut)]
         let mut object_83 = object.key("openSearchServiceConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_open_search_service_data_source_config(
             &mut object_83,
@@ -421,6 +443,7 @@ pub fn serialize_structure_crate_input_update_data_source_input(
         object_83.finish();
     }
     if let Some(var_84) = &input.relational_database_config {
+        #[allow(unused_mut)]
         let mut object_85 = object.key("relationalDatabaseConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_relational_database_data_source_config(
             &mut object_85,
@@ -478,6 +501,7 @@ pub fn serialize_structure_crate_input_update_function_input(
             .string(var_94.as_str());
     }
     if let Some(var_95) = &input.sync_config {
+        #[allow(unused_mut)]
         let mut object_96 = object.key("syncConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_sync_config(&mut object_96, var_95)?;
         object_96.finish();
@@ -495,6 +519,7 @@ pub fn serialize_structure_crate_input_update_graphql_api_input(
             .start_array();
         for item_99 in var_97 {
             {
+                #[allow(unused_mut)]
                 let mut object_100 = array_98.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_additional_authentication_provider(&mut object_100, item_99)?;
                 object_100.finish();
@@ -506,6 +531,7 @@ pub fn serialize_structure_crate_input_update_graphql_api_input(
         object.key("authenticationType").string(var_101.as_str());
     }
     if let Some(var_102) = &input.lambda_authorizer_config {
+        #[allow(unused_mut)]
         let mut object_103 = object.key("lambdaAuthorizerConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_lambda_authorizer_config(
             &mut object_103,
@@ -514,6 +540,7 @@ pub fn serialize_structure_crate_input_update_graphql_api_input(
         object_103.finish();
     }
     if let Some(var_104) = &input.log_config {
+        #[allow(unused_mut)]
         let mut object_105 = object.key("logConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_log_config(&mut object_105, var_104)?;
         object_105.finish();
@@ -522,6 +549,7 @@ pub fn serialize_structure_crate_input_update_graphql_api_input(
         object.key("name").string(var_106.as_str());
     }
     if let Some(var_107) = &input.open_id_connect_config {
+        #[allow(unused_mut)]
         let mut object_108 = object.key("openIDConnectConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_open_id_connect_config(
             &mut object_108,
@@ -530,6 +558,7 @@ pub fn serialize_structure_crate_input_update_graphql_api_input(
         object_108.finish();
     }
     if let Some(var_109) = &input.user_pool_config {
+        #[allow(unused_mut)]
         let mut object_110 = object.key("userPoolConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_user_pool_config(
             &mut object_110,
@@ -548,6 +577,7 @@ pub fn serialize_structure_crate_input_update_resolver_input(
     input: &crate::input::UpdateResolverInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_111) = &input.caching_config {
+        #[allow(unused_mut)]
         let mut object_112 = object.key("cachingConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_caching_config(&mut object_112, var_111)?;
         object_112.finish();
@@ -565,6 +595,7 @@ pub fn serialize_structure_crate_input_update_resolver_input(
         );
     }
     if let Some(var_115) = &input.pipeline_config {
+        #[allow(unused_mut)]
         let mut object_116 = object.key("pipelineConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_pipeline_config(&mut object_116, var_115)?;
         object_116.finish();
@@ -580,6 +611,7 @@ pub fn serialize_structure_crate_input_update_resolver_input(
             .string(var_118.as_str());
     }
     if let Some(var_119) = &input.sync_config {
+        #[allow(unused_mut)]
         let mut object_120 = object.key("syncConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_sync_config(&mut object_120, var_119)?;
         object_120.finish();
@@ -616,6 +648,7 @@ pub fn serialize_structure_crate_model_dynamodb_data_source_config(
             .boolean(input.use_caller_credentials);
     }
     if let Some(var_125) = &input.delta_sync_config {
+        #[allow(unused_mut)]
         let mut object_126 = object.key("deltaSyncConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_delta_sync_config(
             &mut object_126,
@@ -650,6 +683,7 @@ pub fn serialize_structure_crate_model_http_data_source_config(
         object.key("endpoint").string(var_129.as_str());
     }
     if let Some(var_130) = &input.authorization_config {
+        #[allow(unused_mut)]
         let mut object_131 = object.key("authorizationConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_authorization_config(
             &mut object_131,
@@ -693,6 +727,7 @@ pub fn serialize_structure_crate_model_relational_database_data_source_config(
             .string(var_135.as_str());
     }
     if let Some(var_136) = &input.rds_http_endpoint_config {
+        #[allow(unused_mut)]
         let mut object_137 = object.key("rdsHttpEndpointConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_rds_http_endpoint_config(
             &mut object_137,
@@ -714,6 +749,7 @@ pub fn serialize_structure_crate_model_sync_config(
         object.key("conflictDetection").string(var_139.as_str());
     }
     if let Some(var_140) = &input.lambda_conflict_handler_config {
+        #[allow(unused_mut)]
         let mut object_141 = object.key("lambdaConflictHandlerConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_lambda_conflict_handler_config(
             &mut object_141,
@@ -732,6 +768,7 @@ pub fn serialize_structure_crate_model_additional_authentication_provider(
         object.key("authenticationType").string(var_142.as_str());
     }
     if let Some(var_143) = &input.open_id_connect_config {
+        #[allow(unused_mut)]
         let mut object_144 = object.key("openIDConnectConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_open_id_connect_config(
             &mut object_144,
@@ -740,6 +777,7 @@ pub fn serialize_structure_crate_model_additional_authentication_provider(
         object_144.finish();
     }
     if let Some(var_145) = &input.user_pool_config {
+        #[allow(unused_mut)]
         let mut object_146 = object.key("userPoolConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_cognito_user_pool_config(
             &mut object_146,
@@ -748,6 +786,7 @@ pub fn serialize_structure_crate_model_additional_authentication_provider(
         object_146.finish();
     }
     if let Some(var_147) = &input.lambda_authorizer_config {
+        #[allow(unused_mut)]
         let mut object_148 = object.key("lambdaAuthorizerConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_lambda_authorizer_config(
             &mut object_148,
@@ -909,6 +948,7 @@ pub fn serialize_structure_crate_model_authorization_config(
         object.key("authorizationType").string(var_166.as_str());
     }
     if let Some(var_167) = &input.aws_iam_config {
+        #[allow(unused_mut)]
         let mut object_168 = object.key("awsIamConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_iam_config(&mut object_168, var_167)?;
         object_168.finish();

@@ -4,6 +4,7 @@ pub fn serialize_structure_crate_input_get_media_input(
     input: &crate::input::GetMediaInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.start_selector {
+        #[allow(unused_mut)]
         let mut object_2 = object.key("StartSelector").start_object();
         crate::json_ser::serialize_structure_crate_model_start_selector(&mut object_2, var_1)?;
         object_2.finish();

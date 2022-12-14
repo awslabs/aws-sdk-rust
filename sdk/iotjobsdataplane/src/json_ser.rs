@@ -4,6 +4,7 @@ pub fn serialize_structure_crate_input_start_next_pending_job_execution_input(
     input: &crate::input::StartNextPendingJobExecutionInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.status_details {
+        #[allow(unused_mut)]
         let mut object_2 = object.key("statusDetails").start_object();
         for (key_3, value_4) in var_1 {
             {
@@ -47,6 +48,7 @@ pub fn serialize_structure_crate_input_update_job_execution_input(
         object.key("status").string(var_10.as_str());
     }
     if let Some(var_11) = &input.status_details {
+        #[allow(unused_mut)]
         let mut object_12 = object.key("statusDetails").start_object();
         for (key_13, value_14) in var_11 {
             {

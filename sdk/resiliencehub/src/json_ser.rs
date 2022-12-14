@@ -10,6 +10,7 @@ pub fn serialize_structure_crate_input_add_draft_app_version_resource_mappings_i
         let mut array_3 = object.key("resourceMappings").start_array();
         for item_4 in var_2 {
             {
+                #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_resource_mapping(
                     &mut object_5,
@@ -43,6 +44,7 @@ pub fn serialize_structure_crate_input_create_app_input(
         object.key("policyArn").string(var_10.as_str());
     }
     if let Some(var_11) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_12 = object.key("tags").start_object();
         for (key_13, value_14) in var_11 {
             {
@@ -92,6 +94,7 @@ pub fn serialize_structure_crate_input_create_recommendation_template_input(
         array_24.finish();
     }
     if let Some(var_26) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_27 = object.key("tags").start_object();
         for (key_28, value_29) in var_26 {
             {
@@ -114,9 +117,11 @@ pub fn serialize_structure_crate_input_create_resiliency_policy_input(
         object.key("dataLocationConstraint").string(var_31.as_str());
     }
     if let Some(var_32) = &input.policy {
+        #[allow(unused_mut)]
         let mut object_33 = object.key("policy").start_object();
         for (key_34, value_35) in var_32 {
             {
+                #[allow(unused_mut)]
                 let mut object_36 = object_33.key(key_34.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_failure_policy(
                     &mut object_36,
@@ -134,6 +139,7 @@ pub fn serialize_structure_crate_input_create_resiliency_policy_input(
         object.key("policyName").string(var_38.as_str());
     }
     if let Some(var_39) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_40 = object.key("tags").start_object();
         for (key_41, value_42) in var_39 {
             {
@@ -294,6 +300,7 @@ pub fn serialize_structure_crate_input_import_resources_to_draft_app_version_inp
         let mut array_67 = object.key("terraformSources").start_array();
         for item_68 in var_66 {
             {
+                #[allow(unused_mut)]
                 let mut object_69 = array_67.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_terraform_source(
                     &mut object_69,
@@ -601,6 +608,7 @@ pub fn serialize_structure_crate_input_start_app_assessment_input(
         object.key("clientToken").string(var_126.as_str());
     }
     if let Some(var_127) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_128 = object.key("tags").start_object();
         for (key_129, value_130) in var_127 {
             {
@@ -617,6 +625,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_131) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_132 = object.key("tags").start_object();
         for (key_133, value_134) in var_131 {
             {
@@ -660,9 +669,11 @@ pub fn serialize_structure_crate_input_update_resiliency_policy_input(
             .string(var_140.as_str());
     }
     if let Some(var_141) = &input.policy {
+        #[allow(unused_mut)]
         let mut object_142 = object.key("policy").start_object();
         for (key_143, value_144) in var_141 {
             {
+                #[allow(unused_mut)]
                 let mut object_145 = object_142.key(key_143.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_failure_policy(
                     &mut object_145,
@@ -708,6 +719,7 @@ pub fn serialize_structure_crate_model_resource_mapping(
         object.key("mappingType").string(var_154.as_str());
     }
     if let Some(var_155) = &input.physical_resource_id {
+        #[allow(unused_mut)]
         let mut object_156 = object.key("physicalResourceId").start_object();
         crate::json_ser::serialize_structure_crate_model_physical_resource_id(
             &mut object_156,

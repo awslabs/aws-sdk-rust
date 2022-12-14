@@ -20,6 +20,7 @@ pub fn serialize_structure_crate_input_accept_direct_connect_gateway_association
             .start_array();
         for item_6 in var_4 {
             {
+                #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_route_filter_prefix(
                     &mut object_7,
@@ -84,6 +85,7 @@ pub fn serialize_structure_crate_input_allocate_hosted_connection_input(
         let mut array_17 = object.key("tags").start_array();
         for item_18 in var_16 {
             {
+                #[allow(unused_mut)]
                 let mut object_19 = array_17.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_19, item_18)?;
                 object_19.finish();
@@ -105,6 +107,7 @@ pub fn serialize_structure_crate_input_allocate_private_virtual_interface_input(
         object.key("ownerAccount").string(var_21.as_str());
     }
     if let Some(var_22) = &input.new_private_virtual_interface_allocation {
+        #[allow(unused_mut)]
         let mut object_23 = object
             .key("newPrivateVirtualInterfaceAllocation")
             .start_object();
@@ -128,6 +131,7 @@ pub fn serialize_structure_crate_input_allocate_public_virtual_interface_input(
         object.key("ownerAccount").string(var_25.as_str());
     }
     if let Some(var_26) = &input.new_public_virtual_interface_allocation {
+        #[allow(unused_mut)]
         let mut object_27 = object
             .key("newPublicVirtualInterfaceAllocation")
             .start_object();
@@ -151,6 +155,7 @@ pub fn serialize_structure_crate_input_allocate_transit_virtual_interface_input(
         object.key("ownerAccount").string(var_29.as_str());
     }
     if let Some(var_30) = &input.new_transit_virtual_interface_allocation {
+        #[allow(unused_mut)]
         let mut object_31 = object
             .key("newTransitVirtualInterfaceAllocation")
             .start_object();
@@ -288,6 +293,7 @@ pub fn serialize_structure_crate_input_create_bgp_peer_input(
         object.key("virtualInterfaceId").string(var_50.as_str());
     }
     if let Some(var_51) = &input.new_bgp_peer {
+        #[allow(unused_mut)]
         let mut object_52 = object.key("newBGPPeer").start_object();
         crate::json_ser::serialize_structure_crate_model_new_bgp_peer(&mut object_52, var_51)?;
         object_52.finish();
@@ -315,6 +321,7 @@ pub fn serialize_structure_crate_input_create_connection_input(
         let mut array_58 = object.key("tags").start_array();
         for item_59 in var_57 {
             {
+                #[allow(unused_mut)]
                 let mut object_60 = array_58.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_60, item_59)?;
                 object_60.finish();
@@ -365,6 +372,7 @@ pub fn serialize_structure_crate_input_create_direct_connect_gateway_association
             .start_array();
         for item_69 in var_67 {
             {
+                #[allow(unused_mut)]
                 let mut object_70 = array_68.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_route_filter_prefix(
                     &mut object_70,
@@ -402,6 +410,7 @@ pub fn serialize_structure_crate_input_create_direct_connect_gateway_association
             .start_array();
         for item_77 in var_75 {
             {
+                #[allow(unused_mut)]
                 let mut object_78 = array_76.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_route_filter_prefix(
                     &mut object_78,
@@ -418,6 +427,7 @@ pub fn serialize_structure_crate_input_create_direct_connect_gateway_association
             .start_array();
         for item_81 in var_79 {
             {
+                #[allow(unused_mut)]
                 let mut object_82 = array_80.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_route_filter_prefix(
                     &mut object_82,
@@ -451,6 +461,7 @@ pub fn serialize_structure_crate_input_create_interconnect_input(
         let mut array_88 = object.key("tags").start_array();
         for item_89 in var_87 {
             {
+                #[allow(unused_mut)]
                 let mut object_90 = array_88.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_90, item_89)?;
                 object_90.finish();
@@ -490,6 +501,7 @@ pub fn serialize_structure_crate_input_create_lag_input(
         let mut array_97 = object.key("tags").start_array();
         for item_98 in var_96 {
             {
+                #[allow(unused_mut)]
                 let mut object_99 = array_97.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_99, item_98)?;
                 object_99.finish();
@@ -501,6 +513,7 @@ pub fn serialize_structure_crate_input_create_lag_input(
         let mut array_101 = object.key("childConnectionTags").start_array();
         for item_102 in var_100 {
             {
+                #[allow(unused_mut)]
                 let mut object_103 = array_101.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_103, item_102)?;
                 object_103.finish();
@@ -525,6 +538,7 @@ pub fn serialize_structure_crate_input_create_private_virtual_interface_input(
         object.key("connectionId").string(var_106.as_str());
     }
     if let Some(var_107) = &input.new_private_virtual_interface {
+        #[allow(unused_mut)]
         let mut object_108 = object.key("newPrivateVirtualInterface").start_object();
         crate::json_ser::serialize_structure_crate_model_new_private_virtual_interface(
             &mut object_108,
@@ -543,6 +557,7 @@ pub fn serialize_structure_crate_input_create_public_virtual_interface_input(
         object.key("connectionId").string(var_109.as_str());
     }
     if let Some(var_110) = &input.new_public_virtual_interface {
+        #[allow(unused_mut)]
         let mut object_111 = object.key("newPublicVirtualInterface").start_object();
         crate::json_ser::serialize_structure_crate_model_new_public_virtual_interface(
             &mut object_111,
@@ -561,6 +576,7 @@ pub fn serialize_structure_crate_input_create_transit_virtual_interface_input(
         object.key("connectionId").string(var_112.as_str());
     }
     if let Some(var_113) = &input.new_transit_virtual_interface {
+        #[allow(unused_mut)]
         let mut object_114 = object.key("newTransitVirtualInterface").start_object();
         crate::json_ser::serialize_structure_crate_model_new_transit_virtual_interface(
             &mut object_114,
@@ -1021,6 +1037,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_186 = object.key("tags").start_array();
         for item_187 in var_185 {
             {
+                #[allow(unused_mut)]
                 let mut object_188 = array_186.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_188, item_187)?;
                 object_188.finish();
@@ -1096,6 +1113,7 @@ pub fn serialize_structure_crate_input_update_direct_connect_gateway_association
             .start_array();
         for item_201 in var_199 {
             {
+                #[allow(unused_mut)]
                 let mut object_202 = array_200.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_route_filter_prefix(
                     &mut object_202,
@@ -1112,6 +1130,7 @@ pub fn serialize_structure_crate_input_update_direct_connect_gateway_association
             .start_array();
         for item_205 in var_203 {
             {
+                #[allow(unused_mut)]
                 let mut object_206 = array_204.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_route_filter_prefix(
                     &mut object_206,
@@ -1233,6 +1252,7 @@ pub fn serialize_structure_crate_model_new_private_virtual_interface_allocation(
         let mut array_224 = object.key("tags").start_array();
         for item_225 in var_223 {
             {
+                #[allow(unused_mut)]
                 let mut object_226 = array_224.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_226, item_225)?;
                 object_226.finish();
@@ -1278,6 +1298,7 @@ pub fn serialize_structure_crate_model_new_public_virtual_interface_allocation(
         let mut array_233 = object.key("routeFilterPrefixes").start_array();
         for item_234 in var_232 {
             {
+                #[allow(unused_mut)]
                 let mut object_235 = array_233.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_route_filter_prefix(
                     &mut object_235,
@@ -1292,6 +1313,7 @@ pub fn serialize_structure_crate_model_new_public_virtual_interface_allocation(
         let mut array_237 = object.key("tags").start_array();
         for item_238 in var_236 {
             {
+                #[allow(unused_mut)]
                 let mut object_239 = array_237.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_239, item_238)?;
                 object_239.finish();
@@ -1343,6 +1365,7 @@ pub fn serialize_structure_crate_model_new_transit_virtual_interface_allocation(
         let mut array_247 = object.key("tags").start_array();
         for item_248 in var_246 {
             {
+                #[allow(unused_mut)]
                 let mut object_249 = array_247.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_249, item_248)?;
                 object_249.finish();
@@ -1427,6 +1450,7 @@ pub fn serialize_structure_crate_model_new_private_virtual_interface(
         let mut array_263 = object.key("tags").start_array();
         for item_264 in var_262 {
             {
+                #[allow(unused_mut)]
                 let mut object_265 = array_263.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_265, item_264)?;
                 object_265.finish();
@@ -1475,6 +1499,7 @@ pub fn serialize_structure_crate_model_new_public_virtual_interface(
         let mut array_273 = object.key("routeFilterPrefixes").start_array();
         for item_274 in var_272 {
             {
+                #[allow(unused_mut)]
                 let mut object_275 = array_273.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_route_filter_prefix(
                     &mut object_275,
@@ -1489,6 +1514,7 @@ pub fn serialize_structure_crate_model_new_public_virtual_interface(
         let mut array_277 = object.key("tags").start_array();
         for item_278 in var_276 {
             {
+                #[allow(unused_mut)]
                 let mut object_279 = array_277.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_279, item_278)?;
                 object_279.finish();
@@ -1545,6 +1571,7 @@ pub fn serialize_structure_crate_model_new_transit_virtual_interface(
         let mut array_288 = object.key("tags").start_array();
         for item_289 in var_287 {
             {
+                #[allow(unused_mut)]
                 let mut object_290 = array_288.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_290, item_289)?;
                 object_290.finish();

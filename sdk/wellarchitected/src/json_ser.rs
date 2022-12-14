@@ -131,6 +131,7 @@ pub fn serialize_structure_crate_input_create_workload_input(
         object.key("ReviewOwner").string(var_32.as_str());
     }
     if let Some(var_33) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_34 = object.key("Tags").start_object();
         for (key_35, value_36) in var_33 {
             {
@@ -191,6 +192,7 @@ pub fn serialize_structure_crate_input_import_lens_input(
         object.key("LensAlias").string(var_46.as_str());
     }
     if let Some(var_47) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_48 = object.key("Tags").start_object();
         for (key_49, value_50) in var_47 {
             {
@@ -261,6 +263,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_56) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_57 = object.key("Tags").start_object();
         for (key_58, value_59) in var_56 {
             {
@@ -277,9 +280,11 @@ pub fn serialize_structure_crate_input_update_answer_input(
     input: &crate::input::UpdateAnswerInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_60) = &input.choice_updates {
+        #[allow(unused_mut)]
         let mut object_61 = object.key("ChoiceUpdates").start_object();
         for (key_62, value_63) in var_60 {
             {
+                #[allow(unused_mut)]
                 let mut object_64 = object_61.key(key_62.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_choice_update(
                     &mut object_64,
@@ -331,6 +336,7 @@ pub fn serialize_structure_crate_input_update_lens_review_input(
         object.key("LensNotes").string(var_71.as_str());
     }
     if let Some(var_72) = &input.pillar_notes {
+        #[allow(unused_mut)]
         let mut object_73 = object.key("PillarNotes").start_object();
         for (key_74, value_75) in var_72 {
             {

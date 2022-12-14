@@ -24,6 +24,7 @@ pub fn serialize_structure_crate_input_create_address_input(
     input: &crate::input::CreateAddressInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_3) = &input.address {
+        #[allow(unused_mut)]
         let mut object_4 = object.key("Address").start_object();
         crate::json_ser::serialize_structure_crate_model_address(&mut object_4, var_3)?;
         object_4.finish();
@@ -39,11 +40,13 @@ pub fn serialize_structure_crate_input_create_cluster_input(
         object.key("JobType").string(var_5.as_str());
     }
     if let Some(var_6) = &input.resources {
+        #[allow(unused_mut)]
         let mut object_7 = object.key("Resources").start_object();
         crate::json_ser::serialize_structure_crate_model_job_resource(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.on_device_service_configuration {
+        #[allow(unused_mut)]
         let mut object_9 = object.key("OnDeviceServiceConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_on_device_service_configuration(
             &mut object_9,
@@ -70,6 +73,7 @@ pub fn serialize_structure_crate_input_create_cluster_input(
         object.key("ShippingOption").string(var_15.as_str());
     }
     if let Some(var_16) = &input.notification {
+        #[allow(unused_mut)]
         let mut object_17 = object.key("Notification").start_object();
         crate::json_ser::serialize_structure_crate_model_notification(&mut object_17, var_16)?;
         object_17.finish();
@@ -78,6 +82,7 @@ pub fn serialize_structure_crate_input_create_cluster_input(
         object.key("ForwardingAddressId").string(var_18.as_str());
     }
     if let Some(var_19) = &input.tax_documents {
+        #[allow(unused_mut)]
         let mut object_20 = object.key("TaxDocuments").start_object();
         crate::json_ser::serialize_structure_crate_model_tax_documents(&mut object_20, var_19)?;
         object_20.finish();
@@ -96,11 +101,13 @@ pub fn serialize_structure_crate_input_create_job_input(
         object.key("JobType").string(var_22.as_str());
     }
     if let Some(var_23) = &input.resources {
+        #[allow(unused_mut)]
         let mut object_24 = object.key("Resources").start_object();
         crate::json_ser::serialize_structure_crate_model_job_resource(&mut object_24, var_23)?;
         object_24.finish();
     }
     if let Some(var_25) = &input.on_device_service_configuration {
+        #[allow(unused_mut)]
         let mut object_26 = object.key("OnDeviceServiceConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_on_device_service_configuration(
             &mut object_26,
@@ -129,6 +136,7 @@ pub fn serialize_structure_crate_input_create_job_input(
         object.key("ShippingOption").string(var_32.as_str());
     }
     if let Some(var_33) = &input.notification {
+        #[allow(unused_mut)]
         let mut object_34 = object.key("Notification").start_object();
         crate::json_ser::serialize_structure_crate_model_notification(&mut object_34, var_33)?;
         object_34.finish();
@@ -143,11 +151,13 @@ pub fn serialize_structure_crate_input_create_job_input(
         object.key("ForwardingAddressId").string(var_37.as_str());
     }
     if let Some(var_38) = &input.tax_documents {
+        #[allow(unused_mut)]
         let mut object_39 = object.key("TaxDocuments").start_object();
         crate::json_ser::serialize_structure_crate_model_tax_documents(&mut object_39, var_38)?;
         object_39.finish();
     }
     if let Some(var_40) = &input.device_configuration {
+        #[allow(unused_mut)]
         let mut object_41 = object.key("DeviceConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_device_configuration(
             &mut object_41,
@@ -376,11 +386,13 @@ pub fn serialize_structure_crate_input_update_cluster_input(
         object.key("Description").string(var_71.as_str());
     }
     if let Some(var_72) = &input.resources {
+        #[allow(unused_mut)]
         let mut object_73 = object.key("Resources").start_object();
         crate::json_ser::serialize_structure_crate_model_job_resource(&mut object_73, var_72)?;
         object_73.finish();
     }
     if let Some(var_74) = &input.on_device_service_configuration {
+        #[allow(unused_mut)]
         let mut object_75 = object.key("OnDeviceServiceConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_on_device_service_configuration(
             &mut object_75,
@@ -395,6 +407,7 @@ pub fn serialize_structure_crate_input_update_cluster_input(
         object.key("ShippingOption").string(var_77.as_str());
     }
     if let Some(var_78) = &input.notification {
+        #[allow(unused_mut)]
         let mut object_79 = object.key("Notification").start_object();
         crate::json_ser::serialize_structure_crate_model_notification(&mut object_79, var_78)?;
         object_79.finish();
@@ -416,16 +429,19 @@ pub fn serialize_structure_crate_input_update_job_input(
         object.key("RoleARN").string(var_82.as_str());
     }
     if let Some(var_83) = &input.notification {
+        #[allow(unused_mut)]
         let mut object_84 = object.key("Notification").start_object();
         crate::json_ser::serialize_structure_crate_model_notification(&mut object_84, var_83)?;
         object_84.finish();
     }
     if let Some(var_85) = &input.resources {
+        #[allow(unused_mut)]
         let mut object_86 = object.key("Resources").start_object();
         crate::json_ser::serialize_structure_crate_model_job_resource(&mut object_86, var_85)?;
         object_86.finish();
     }
     if let Some(var_87) = &input.on_device_service_configuration {
+        #[allow(unused_mut)]
         let mut object_88 = object.key("OnDeviceServiceConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_on_device_service_configuration(
             &mut object_88,
@@ -539,6 +555,7 @@ pub fn serialize_structure_crate_model_job_resource(
         let mut array_113 = object.key("S3Resources").start_array();
         for item_114 in var_112 {
             {
+                #[allow(unused_mut)]
                 let mut object_115 = array_113.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_s3_resource(
                     &mut object_115,
@@ -553,6 +570,7 @@ pub fn serialize_structure_crate_model_job_resource(
         let mut array_117 = object.key("LambdaResources").start_array();
         for item_118 in var_116 {
             {
+                #[allow(unused_mut)]
                 let mut object_119 = array_117.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_lambda_resource(
                     &mut object_119,
@@ -567,6 +585,7 @@ pub fn serialize_structure_crate_model_job_resource(
         let mut array_121 = object.key("Ec2AmiResources").start_array();
         for item_122 in var_120 {
             {
+                #[allow(unused_mut)]
                 let mut object_123 = array_121.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_ec2_ami_resource(
                     &mut object_123,
@@ -585,6 +604,7 @@ pub fn serialize_structure_crate_model_on_device_service_configuration(
     input: &crate::model::OnDeviceServiceConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_124) = &input.nfs_on_device_service {
+        #[allow(unused_mut)]
         let mut object_125 = object.key("NFSOnDeviceService").start_object();
         crate::json_ser::serialize_structure_crate_model_nfs_on_device_service_configuration(
             &mut object_125,
@@ -593,6 +613,7 @@ pub fn serialize_structure_crate_model_on_device_service_configuration(
         object_125.finish();
     }
     if let Some(var_126) = &input.tgw_on_device_service {
+        #[allow(unused_mut)]
         let mut object_127 = object.key("TGWOnDeviceService").start_object();
         crate::json_ser::serialize_structure_crate_model_tgw_on_device_service_configuration(
             &mut object_127,
@@ -630,6 +651,7 @@ pub fn serialize_structure_crate_model_tax_documents(
     input: &crate::model::TaxDocuments,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_132) = &input.ind {
+        #[allow(unused_mut)]
         let mut object_133 = object.key("IND").start_object();
         crate::json_ser::serialize_structure_crate_model_ind_tax_documents(
             &mut object_133,
@@ -645,6 +667,7 @@ pub fn serialize_structure_crate_model_device_configuration(
     input: &crate::model::DeviceConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_134) = &input.snowcone_device_configuration {
+        #[allow(unused_mut)]
         let mut object_135 = object.key("SnowconeDeviceConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_snowcone_device_configuration(
             &mut object_135,
@@ -663,6 +686,7 @@ pub fn serialize_structure_crate_model_s3_resource(
         object.key("BucketArn").string(var_136.as_str());
     }
     if let Some(var_137) = &input.key_range {
+        #[allow(unused_mut)]
         let mut object_138 = object.key("KeyRange").start_object();
         crate::json_ser::serialize_structure_crate_model_key_range(&mut object_138, var_137)?;
         object_138.finish();
@@ -671,6 +695,7 @@ pub fn serialize_structure_crate_model_s3_resource(
         let mut array_140 = object.key("TargetOnDeviceServices").start_array();
         for item_141 in var_139 {
             {
+                #[allow(unused_mut)]
                 let mut object_142 = array_140.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_target_on_device_service(
                     &mut object_142,
@@ -695,6 +720,7 @@ pub fn serialize_structure_crate_model_lambda_resource(
         let mut array_145 = object.key("EventTriggers").start_array();
         for item_146 in var_144 {
             {
+                #[allow(unused_mut)]
                 let mut object_147 = array_145.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_event_trigger_definition(
                     &mut object_147,
@@ -768,6 +794,7 @@ pub fn serialize_structure_crate_model_snowcone_device_configuration(
     input: &crate::model::SnowconeDeviceConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_153) = &input.wireless_connection {
+        #[allow(unused_mut)]
         let mut object_154 = object.key("WirelessConnection").start_object();
         crate::json_ser::serialize_structure_crate_model_wireless_connection(
             &mut object_154,

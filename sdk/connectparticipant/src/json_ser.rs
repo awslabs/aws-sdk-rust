@@ -80,6 +80,7 @@ pub fn serialize_structure_crate_input_get_transcript_input(
         object.key("SortOrder").string(var_15.as_str());
     }
     if let Some(var_16) = &input.start_position {
+        #[allow(unused_mut)]
         let mut object_17 = object.key("StartPosition").start_object();
         crate::json_ser::serialize_structure_crate_model_start_position(&mut object_17, var_16)?;
         object_17.finish();

@@ -16,6 +16,7 @@ pub fn serialize_structure_crate_input_create_data_integration_input(
         object.key("Name").string(var_4.as_str());
     }
     if let Some(var_5) = &input.schedule_config {
+        #[allow(unused_mut)]
         let mut object_6 = object.key("ScheduleConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_schedule_configuration(
             &mut object_6,
@@ -27,6 +28,7 @@ pub fn serialize_structure_crate_input_create_data_integration_input(
         object.key("SourceURI").string(var_7.as_str());
     }
     if let Some(var_8) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_9 = object.key("Tags").start_object();
         for (key_10, value_11) in var_8 {
             {
@@ -52,6 +54,7 @@ pub fn serialize_structure_crate_input_create_event_integration_input(
         object.key("EventBridgeBus").string(var_14.as_str());
     }
     if let Some(var_15) = &input.event_filter {
+        #[allow(unused_mut)]
         let mut object_16 = object.key("EventFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_event_filter(&mut object_16, var_15)?;
         object_16.finish();
@@ -60,6 +63,7 @@ pub fn serialize_structure_crate_input_create_event_integration_input(
         object.key("Name").string(var_17.as_str());
     }
     if let Some(var_18) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_19 = object.key("Tags").start_object();
         for (key_20, value_21) in var_18 {
             {
@@ -76,6 +80,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_22) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_23 = object.key("tags").start_object();
         for (key_24, value_25) in var_22 {
             {

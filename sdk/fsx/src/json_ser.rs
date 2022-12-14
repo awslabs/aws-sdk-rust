@@ -54,6 +54,7 @@ pub fn serialize_structure_crate_input_copy_backup_input(
         let mut array_13 = object.key("Tags").start_array();
         for item_14 in var_12 {
             {
+                #[allow(unused_mut)]
                 let mut object_15 = array_13.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_15, item_14)?;
                 object_15.finish();
@@ -78,6 +79,7 @@ pub fn serialize_structure_crate_input_create_backup_input(
         let mut array_19 = object.key("Tags").start_array();
         for item_20 in var_18 {
             {
+                #[allow(unused_mut)]
                 let mut object_21 = array_19.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_21, item_20)?;
                 object_21.finish();
@@ -114,6 +116,7 @@ pub fn serialize_structure_crate_input_create_data_repository_association_input(
         );
     }
     if let Some(var_28) = &input.s3 {
+        #[allow(unused_mut)]
         let mut object_29 = object.key("S3").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_data_repository_configuration(
             &mut object_29,
@@ -128,6 +131,7 @@ pub fn serialize_structure_crate_input_create_data_repository_association_input(
         let mut array_32 = object.key("Tags").start_array();
         for item_33 in var_31 {
             {
+                #[allow(unused_mut)]
                 let mut object_34 = array_32.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_34, item_33)?;
                 object_34.finish();
@@ -158,6 +162,7 @@ pub fn serialize_structure_crate_input_create_data_repository_task_input(
         object.key("FileSystemId").string(var_39.as_str());
     }
     if let Some(var_40) = &input.report {
+        #[allow(unused_mut)]
         let mut object_41 = object.key("Report").start_object();
         crate::json_ser::serialize_structure_crate_model_completion_report(&mut object_41, var_40)?;
         object_41.finish();
@@ -169,6 +174,7 @@ pub fn serialize_structure_crate_input_create_data_repository_task_input(
         let mut array_44 = object.key("Tags").start_array();
         for item_45 in var_43 {
             {
+                #[allow(unused_mut)]
                 let mut object_46 = array_44.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_46, item_45)?;
                 object_46.finish();
@@ -226,6 +232,7 @@ pub fn serialize_structure_crate_input_create_file_cache_input(
         let mut array_59 = object.key("Tags").start_array();
         for item_60 in var_58 {
             {
+                #[allow(unused_mut)]
                 let mut object_61 = array_59.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_61, item_60)?;
                 object_61.finish();
@@ -242,6 +249,7 @@ pub fn serialize_structure_crate_input_create_file_cache_input(
         object.key("KmsKeyId").string(var_63.as_str());
     }
     if let Some(var_64) = &input.lustre_configuration {
+        #[allow(unused_mut)]
         let mut object_65 = object.key("LustreConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_create_file_cache_lustre_configuration(
             &mut object_65,
@@ -253,6 +261,7 @@ pub fn serialize_structure_crate_input_create_file_cache_input(
         let mut array_67 = object.key("DataRepositoryAssociations").start_array();
         for item_68 in var_66 {
             {
+                #[allow(unused_mut)]
                 let mut object_69 = array_67.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_file_cache_data_repository_association(&mut object_69, item_68)?;
                 object_69.finish();
@@ -304,6 +313,7 @@ pub fn serialize_structure_crate_input_create_file_system_input(
         let mut array_81 = object.key("Tags").start_array();
         for item_82 in var_80 {
             {
+                #[allow(unused_mut)]
                 let mut object_83 = array_81.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_83, item_82)?;
                 object_83.finish();
@@ -315,6 +325,7 @@ pub fn serialize_structure_crate_input_create_file_system_input(
         object.key("KmsKeyId").string(var_84.as_str());
     }
     if let Some(var_85) = &input.windows_configuration {
+        #[allow(unused_mut)]
         let mut object_86 = object.key("WindowsConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_create_file_system_windows_configuration(
             &mut object_86,
@@ -323,6 +334,7 @@ pub fn serialize_structure_crate_input_create_file_system_input(
         object_86.finish();
     }
     if let Some(var_87) = &input.lustre_configuration {
+        #[allow(unused_mut)]
         let mut object_88 = object.key("LustreConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_create_file_system_lustre_configuration(
             &mut object_88,
@@ -331,6 +343,7 @@ pub fn serialize_structure_crate_input_create_file_system_input(
         object_88.finish();
     }
     if let Some(var_89) = &input.ontap_configuration {
+        #[allow(unused_mut)]
         let mut object_90 = object.key("OntapConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_create_file_system_ontap_configuration(
             &mut object_90,
@@ -342,6 +355,7 @@ pub fn serialize_structure_crate_input_create_file_system_input(
         object.key("FileSystemTypeVersion").string(var_91.as_str());
     }
     if let Some(var_92) = &input.open_zfs_configuration {
+        #[allow(unused_mut)]
         let mut object_93 = object.key("OpenZFSConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_create_file_system_open_zfs_configuration(
             &mut object_93,
@@ -384,6 +398,7 @@ pub fn serialize_structure_crate_input_create_file_system_from_backup_input(
         let mut array_103 = object.key("Tags").start_array();
         for item_104 in var_102 {
             {
+                #[allow(unused_mut)]
                 let mut object_105 = array_103.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_105, item_104)?;
                 object_105.finish();
@@ -392,6 +407,7 @@ pub fn serialize_structure_crate_input_create_file_system_from_backup_input(
         array_103.finish();
     }
     if let Some(var_106) = &input.windows_configuration {
+        #[allow(unused_mut)]
         let mut object_107 = object.key("WindowsConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_create_file_system_windows_configuration(
             &mut object_107,
@@ -400,6 +416,7 @@ pub fn serialize_structure_crate_input_create_file_system_from_backup_input(
         object_107.finish();
     }
     if let Some(var_108) = &input.lustre_configuration {
+        #[allow(unused_mut)]
         let mut object_109 = object.key("LustreConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_create_file_system_lustre_configuration(
             &mut object_109,
@@ -417,6 +434,7 @@ pub fn serialize_structure_crate_input_create_file_system_from_backup_input(
         object.key("FileSystemTypeVersion").string(var_112.as_str());
     }
     if let Some(var_113) = &input.open_zfs_configuration {
+        #[allow(unused_mut)]
         let mut object_114 = object.key("OpenZFSConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_create_file_system_open_zfs_configuration(
             &mut object_114,
@@ -450,6 +468,7 @@ pub fn serialize_structure_crate_input_create_snapshot_input(
         let mut array_120 = object.key("Tags").start_array();
         for item_121 in var_119 {
             {
+                #[allow(unused_mut)]
                 let mut object_122 = array_120.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_122, item_121)?;
                 object_122.finish();
@@ -465,6 +484,7 @@ pub fn serialize_structure_crate_input_create_storage_virtual_machine_input(
     input: &crate::input::CreateStorageVirtualMachineInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_123) = &input.active_directory_configuration {
+        #[allow(unused_mut)]
         let mut object_124 = object.key("ActiveDirectoryConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_create_svm_active_directory_configuration(
             &mut object_124,
@@ -488,6 +508,7 @@ pub fn serialize_structure_crate_input_create_storage_virtual_machine_input(
         let mut array_130 = object.key("Tags").start_array();
         for item_131 in var_129 {
             {
+                #[allow(unused_mut)]
                 let mut object_132 = array_130.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_132, item_131)?;
                 object_132.finish();
@@ -517,6 +538,7 @@ pub fn serialize_structure_crate_input_create_volume_input(
         object.key("Name").string(var_136.as_str());
     }
     if let Some(var_137) = &input.ontap_configuration {
+        #[allow(unused_mut)]
         let mut object_138 = object.key("OntapConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_create_ontap_volume_configuration(
             &mut object_138,
@@ -528,6 +550,7 @@ pub fn serialize_structure_crate_input_create_volume_input(
         let mut array_140 = object.key("Tags").start_array();
         for item_141 in var_139 {
             {
+                #[allow(unused_mut)]
                 let mut object_142 = array_140.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_142, item_141)?;
                 object_142.finish();
@@ -536,6 +559,7 @@ pub fn serialize_structure_crate_input_create_volume_input(
         array_140.finish();
     }
     if let Some(var_143) = &input.open_zfs_configuration {
+        #[allow(unused_mut)]
         let mut object_144 = object.key("OpenZFSConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_create_open_zfs_volume_configuration(
             &mut object_144,
@@ -560,6 +584,7 @@ pub fn serialize_structure_crate_input_create_volume_from_backup_input(
         object.key("Name").string(var_147.as_str());
     }
     if let Some(var_148) = &input.ontap_configuration {
+        #[allow(unused_mut)]
         let mut object_149 = object.key("OntapConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_create_ontap_volume_configuration(
             &mut object_149,
@@ -571,6 +596,7 @@ pub fn serialize_structure_crate_input_create_volume_from_backup_input(
         let mut array_151 = object.key("Tags").start_array();
         for item_152 in var_150 {
             {
+                #[allow(unused_mut)]
                 let mut object_153 = array_151.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_153, item_152)?;
                 object_153.finish();
@@ -634,6 +660,7 @@ pub fn serialize_structure_crate_input_delete_file_system_input(
         object.key("ClientRequestToken").string(var_162.as_str());
     }
     if let Some(var_163) = &input.windows_configuration {
+        #[allow(unused_mut)]
         let mut object_164 = object.key("WindowsConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_delete_file_system_windows_configuration(
             &mut object_164,
@@ -642,6 +669,7 @@ pub fn serialize_structure_crate_input_delete_file_system_input(
         object_164.finish();
     }
     if let Some(var_165) = &input.lustre_configuration {
+        #[allow(unused_mut)]
         let mut object_166 = object.key("LustreConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_delete_file_system_lustre_configuration(
             &mut object_166,
@@ -650,6 +678,7 @@ pub fn serialize_structure_crate_input_delete_file_system_input(
         object_166.finish();
     }
     if let Some(var_167) = &input.open_zfs_configuration {
+        #[allow(unused_mut)]
         let mut object_168 = object.key("OpenZFSConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_delete_file_system_open_zfs_configuration(
             &mut object_168,
@@ -699,6 +728,7 @@ pub fn serialize_structure_crate_input_delete_volume_input(
         object.key("VolumeId").string(var_174.as_str());
     }
     if let Some(var_175) = &input.ontap_configuration {
+        #[allow(unused_mut)]
         let mut object_176 = object.key("OntapConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_delete_volume_ontap_configuration(
             &mut object_176,
@@ -707,6 +737,7 @@ pub fn serialize_structure_crate_input_delete_volume_input(
         object_176.finish();
     }
     if let Some(var_177) = &input.open_zfs_configuration {
+        #[allow(unused_mut)]
         let mut object_178 = object.key("OpenZFSConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_delete_volume_open_zfs_configuration(
             &mut object_178,
@@ -734,6 +765,7 @@ pub fn serialize_structure_crate_input_describe_backups_input(
         let mut array_183 = object.key("Filters").start_array();
         for item_184 in var_182 {
             {
+                #[allow(unused_mut)]
                 let mut object_185 = array_183.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_185, item_184)?;
                 object_185.finish();
@@ -770,6 +802,7 @@ pub fn serialize_structure_crate_input_describe_data_repository_associations_inp
         let mut array_192 = object.key("Filters").start_array();
         for item_193 in var_191 {
             {
+                #[allow(unused_mut)]
                 let mut object_194 = array_192.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_194, item_193)?;
                 object_194.finish();
@@ -806,6 +839,7 @@ pub fn serialize_structure_crate_input_describe_data_repository_tasks_input(
         let mut array_201 = object.key("Filters").start_array();
         for item_202 in var_200 {
             {
+                #[allow(unused_mut)]
                 let mut object_203 = array_201.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_data_repository_task_filter(
                     &mut object_203,
@@ -917,6 +951,7 @@ pub fn serialize_structure_crate_input_describe_snapshots_input(
         let mut array_224 = object.key("Filters").start_array();
         for item_225 in var_223 {
             {
+                #[allow(unused_mut)]
                 let mut object_226 = array_224.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_snapshot_filter(
                     &mut object_226,
@@ -956,6 +991,7 @@ pub fn serialize_structure_crate_input_describe_storage_virtual_machines_input(
         let mut array_233 = object.key("Filters").start_array();
         for item_234 in var_232 {
             {
+                #[allow(unused_mut)]
                 let mut object_235 = array_233.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_storage_virtual_machine_filter(
                     &mut object_235,
@@ -995,6 +1031,7 @@ pub fn serialize_structure_crate_input_describe_volumes_input(
         let mut array_242 = object.key("Filters").start_array();
         for item_243 in var_241 {
             {
+                #[allow(unused_mut)]
                 let mut object_244 = array_242.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_volume_filter(
                     &mut object_244,
@@ -1107,6 +1144,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_265 = object.key("Tags").start_array();
         for item_266 in var_264 {
             {
+                #[allow(unused_mut)]
                 let mut object_267 = array_265.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_267, item_266)?;
                 object_267.finish();
@@ -1153,6 +1191,7 @@ pub fn serialize_structure_crate_input_update_data_repository_association_input(
         );
     }
     if let Some(var_275) = &input.s3 {
+        #[allow(unused_mut)]
         let mut object_276 = object.key("S3").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_data_repository_configuration(
             &mut object_276,
@@ -1174,6 +1213,7 @@ pub fn serialize_structure_crate_input_update_file_cache_input(
         object.key("ClientRequestToken").string(var_278.as_str());
     }
     if let Some(var_279) = &input.lustre_configuration {
+        #[allow(unused_mut)]
         let mut object_280 = object.key("LustreConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_update_file_cache_lustre_configuration(
             &mut object_280,
@@ -1201,6 +1241,7 @@ pub fn serialize_structure_crate_input_update_file_system_input(
         );
     }
     if let Some(var_284) = &input.windows_configuration {
+        #[allow(unused_mut)]
         let mut object_285 = object.key("WindowsConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_update_file_system_windows_configuration(
             &mut object_285,
@@ -1209,6 +1250,7 @@ pub fn serialize_structure_crate_input_update_file_system_input(
         object_285.finish();
     }
     if let Some(var_286) = &input.lustre_configuration {
+        #[allow(unused_mut)]
         let mut object_287 = object.key("LustreConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_update_file_system_lustre_configuration(
             &mut object_287,
@@ -1217,6 +1259,7 @@ pub fn serialize_structure_crate_input_update_file_system_input(
         object_287.finish();
     }
     if let Some(var_288) = &input.ontap_configuration {
+        #[allow(unused_mut)]
         let mut object_289 = object.key("OntapConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_update_file_system_ontap_configuration(
             &mut object_289,
@@ -1225,6 +1268,7 @@ pub fn serialize_structure_crate_input_update_file_system_input(
         object_289.finish();
     }
     if let Some(var_290) = &input.open_zfs_configuration {
+        #[allow(unused_mut)]
         let mut object_291 = object.key("OpenZFSConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_update_file_system_open_zfs_configuration(
             &mut object_291,
@@ -1256,6 +1300,7 @@ pub fn serialize_structure_crate_input_update_storage_virtual_machine_input(
     input: &crate::input::UpdateStorageVirtualMachineInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_295) = &input.active_directory_configuration {
+        #[allow(unused_mut)]
         let mut object_296 = object.key("ActiveDirectoryConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_update_svm_active_directory_configuration(
             &mut object_296,
@@ -1288,6 +1333,7 @@ pub fn serialize_structure_crate_input_update_volume_input(
         object.key("VolumeId").string(var_301.as_str());
     }
     if let Some(var_302) = &input.ontap_configuration {
+        #[allow(unused_mut)]
         let mut object_303 = object.key("OntapConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_update_ontap_volume_configuration(
             &mut object_303,
@@ -1299,6 +1345,7 @@ pub fn serialize_structure_crate_input_update_volume_input(
         object.key("Name").string(var_304.as_str());
     }
     if let Some(var_305) = &input.open_zfs_configuration {
+        #[allow(unused_mut)]
         let mut object_306 = object.key("OpenZFSConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_update_open_zfs_volume_configuration(
             &mut object_306,
@@ -1327,6 +1374,7 @@ pub fn serialize_structure_crate_model_s3_data_repository_configuration(
     input: &crate::model::S3DataRepositoryConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_309) = &input.auto_import_policy {
+        #[allow(unused_mut)]
         let mut object_310 = object.key("AutoImportPolicy").start_object();
         crate::json_ser::serialize_structure_crate_model_auto_import_policy(
             &mut object_310,
@@ -1335,6 +1383,7 @@ pub fn serialize_structure_crate_model_s3_data_repository_configuration(
         object_310.finish();
     }
     if let Some(var_311) = &input.auto_export_policy {
+        #[allow(unused_mut)]
         let mut object_312 = object.key("AutoExportPolicy").start_object();
         crate::json_ser::serialize_structure_crate_model_auto_export_policy(
             &mut object_312,
@@ -1383,6 +1432,7 @@ pub fn serialize_structure_crate_model_create_file_cache_lustre_configuration(
             .string(var_319.as_str());
     }
     if let Some(var_320) = &input.metadata_configuration {
+        #[allow(unused_mut)]
         let mut object_321 = object.key("MetadataConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_file_cache_lustre_metadata_configuration(
             &mut object_321,
@@ -1413,6 +1463,7 @@ pub fn serialize_structure_crate_model_file_cache_data_repository_association(
         array_325.finish();
     }
     if let Some(var_327) = &input.nfs {
+        #[allow(unused_mut)]
         let mut object_328 = object.key("NFS").start_object();
         crate::json_ser::serialize_structure_crate_model_file_cache_nfs_configuration(
             &mut object_328,
@@ -1431,6 +1482,7 @@ pub fn serialize_structure_crate_model_create_file_system_windows_configuration(
         object.key("ActiveDirectoryId").string(var_329.as_str());
     }
     if let Some(var_330) = &input.self_managed_active_directory_configuration {
+        #[allow(unused_mut)]
         let mut object_331 = object
             .key("SelfManagedActiveDirectoryConfiguration")
             .start_object();
@@ -1478,6 +1530,7 @@ pub fn serialize_structure_crate_model_create_file_system_windows_configuration(
         array_340.finish();
     }
     if let Some(var_342) = &input.audit_log_configuration {
+        #[allow(unused_mut)]
         let mut object_343 = object.key("AuditLogConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_windows_audit_log_create_configuration(
             &mut object_343,
@@ -1542,6 +1595,7 @@ pub fn serialize_structure_crate_model_create_file_system_lustre_configuration(
         object.key("DataCompressionType").string(var_355.as_str());
     }
     if let Some(var_356) = &input.log_configuration {
+        #[allow(unused_mut)]
         let mut object_357 = object.key("LogConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_lustre_log_create_configuration(
             &mut object_357,
@@ -1550,6 +1604,7 @@ pub fn serialize_structure_crate_model_create_file_system_lustre_configuration(
         object_357.finish();
     }
     if let Some(var_358) = &input.root_squash_configuration {
+        #[allow(unused_mut)]
         let mut object_359 = object.key("RootSquashConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_lustre_root_squash_configuration(
             &mut object_359,
@@ -1587,6 +1642,7 @@ pub fn serialize_structure_crate_model_create_file_system_ontap_configuration(
         object.key("FsxAdminPassword").string(var_364.as_str());
     }
     if let Some(var_365) = &input.disk_iops_configuration {
+        #[allow(unused_mut)]
         let mut object_366 = object.key("DiskIopsConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_disk_iops_configuration(
             &mut object_366,
@@ -1656,6 +1712,7 @@ pub fn serialize_structure_crate_model_create_file_system_open_zfs_configuration
             .string(var_379.as_str());
     }
     if let Some(var_380) = &input.disk_iops_configuration {
+        #[allow(unused_mut)]
         let mut object_381 = object.key("DiskIopsConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_disk_iops_configuration(
             &mut object_381,
@@ -1664,6 +1721,7 @@ pub fn serialize_structure_crate_model_create_file_system_open_zfs_configuration
         object_381.finish();
     }
     if let Some(var_382) = &input.root_volume_configuration {
+        #[allow(unused_mut)]
         let mut object_383 = object.key("RootVolumeConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_open_zfs_create_root_volume_configuration(
             &mut object_383,
@@ -1682,6 +1740,7 @@ pub fn serialize_structure_crate_model_create_svm_active_directory_configuration
         object.key("NetBiosName").string(var_384.as_str());
     }
     if let Some(var_385) = &input.self_managed_active_directory_configuration {
+        #[allow(unused_mut)]
         let mut object_386 = object
             .key("SelfManagedActiveDirectoryConfiguration")
             .start_object();
@@ -1716,6 +1775,7 @@ pub fn serialize_structure_crate_model_create_ontap_volume_configuration(
             .string(var_391.as_str());
     }
     if let Some(var_392) = &input.tiering_policy {
+        #[allow(unused_mut)]
         let mut object_393 = object.key("TieringPolicy").start_object();
         crate::json_ser::serialize_structure_crate_model_tiering_policy(&mut object_393, var_392)?;
         object_393.finish();
@@ -1755,6 +1815,7 @@ pub fn serialize_structure_crate_model_create_open_zfs_volume_configuration(
         object.key("CopyTagsToSnapshots").boolean(*var_399);
     }
     if let Some(var_400) = &input.origin_snapshot {
+        #[allow(unused_mut)]
         let mut object_401 = object.key("OriginSnapshot").start_object();
         crate::json_ser::serialize_structure_crate_model_create_open_zfs_origin_snapshot_configuration(&mut object_401, var_400)?;
         object_401.finish();
@@ -1766,6 +1827,7 @@ pub fn serialize_structure_crate_model_create_open_zfs_volume_configuration(
         let mut array_404 = object.key("NfsExports").start_array();
         for item_405 in var_403 {
             {
+                #[allow(unused_mut)]
                 let mut object_406 = array_404.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_open_zfs_nfs_export(
                     &mut object_406,
@@ -1780,6 +1842,7 @@ pub fn serialize_structure_crate_model_create_open_zfs_volume_configuration(
         let mut array_408 = object.key("UserAndGroupQuotas").start_array();
         for item_409 in var_407 {
             {
+                #[allow(unused_mut)]
                 let mut object_410 = array_408.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_open_zfs_user_or_group_quota(
                     &mut object_410,
@@ -1804,6 +1867,7 @@ pub fn serialize_structure_crate_model_delete_file_system_windows_configuration(
         let mut array_413 = object.key("FinalBackupTags").start_array();
         for item_414 in var_412 {
             {
+                #[allow(unused_mut)]
                 let mut object_415 = array_413.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_415, item_414)?;
                 object_415.finish();
@@ -1825,6 +1889,7 @@ pub fn serialize_structure_crate_model_delete_file_system_lustre_configuration(
         let mut array_418 = object.key("FinalBackupTags").start_array();
         for item_419 in var_417 {
             {
+                #[allow(unused_mut)]
                 let mut object_420 = array_418.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_420, item_419)?;
                 object_420.finish();
@@ -1846,6 +1911,7 @@ pub fn serialize_structure_crate_model_delete_file_system_open_zfs_configuration
         let mut array_423 = object.key("FinalBackupTags").start_array();
         for item_424 in var_422 {
             {
+                #[allow(unused_mut)]
                 let mut object_425 = array_423.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_425, item_424)?;
                 object_425.finish();
@@ -1876,6 +1942,7 @@ pub fn serialize_structure_crate_model_delete_volume_ontap_configuration(
         let mut array_431 = object.key("FinalBackupTags").start_array();
         for item_432 in var_430 {
             {
+                #[allow(unused_mut)]
                 let mut object_433 = array_431.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_433, item_432)?;
                 object_433.finish();
@@ -2036,6 +2103,7 @@ pub fn serialize_structure_crate_model_update_file_system_windows_configuration(
         );
     }
     if let Some(var_462) = &input.self_managed_active_directory_configuration {
+        #[allow(unused_mut)]
         let mut object_463 = object
             .key("SelfManagedActiveDirectoryConfiguration")
             .start_object();
@@ -2043,6 +2111,7 @@ pub fn serialize_structure_crate_model_update_file_system_windows_configuration(
         object_463.finish();
     }
     if let Some(var_464) = &input.audit_log_configuration {
+        #[allow(unused_mut)]
         let mut object_465 = object.key("AuditLogConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_windows_audit_log_create_configuration(
             &mut object_465,
@@ -2080,6 +2149,7 @@ pub fn serialize_structure_crate_model_update_file_system_lustre_configuration(
         object.key("DataCompressionType").string(var_470.as_str());
     }
     if let Some(var_471) = &input.log_configuration {
+        #[allow(unused_mut)]
         let mut object_472 = object.key("LogConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_lustre_log_create_configuration(
             &mut object_472,
@@ -2088,6 +2158,7 @@ pub fn serialize_structure_crate_model_update_file_system_lustre_configuration(
         object_472.finish();
     }
     if let Some(var_473) = &input.root_squash_configuration {
+        #[allow(unused_mut)]
         let mut object_474 = object.key("RootSquashConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_lustre_root_squash_configuration(
             &mut object_474,
@@ -2122,6 +2193,7 @@ pub fn serialize_structure_crate_model_update_file_system_ontap_configuration(
             .string(var_478.as_str());
     }
     if let Some(var_479) = &input.disk_iops_configuration {
+        #[allow(unused_mut)]
         let mut object_480 = object.key("DiskIopsConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_disk_iops_configuration(
             &mut object_480,
@@ -2171,6 +2243,7 @@ pub fn serialize_structure_crate_model_update_file_system_open_zfs_configuration
             .string(var_487.as_str());
     }
     if let Some(var_488) = &input.disk_iops_configuration {
+        #[allow(unused_mut)]
         let mut object_489 = object.key("DiskIopsConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_disk_iops_configuration(
             &mut object_489,
@@ -2186,6 +2259,7 @@ pub fn serialize_structure_crate_model_update_svm_active_directory_configuration
     input: &crate::model::UpdateSvmActiveDirectoryConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_490) = &input.self_managed_active_directory_configuration {
+        #[allow(unused_mut)]
         let mut object_491 = object
             .key("SelfManagedActiveDirectoryConfiguration")
             .start_object();
@@ -2215,6 +2289,7 @@ pub fn serialize_structure_crate_model_update_ontap_volume_configuration(
         object.key("StorageEfficiencyEnabled").boolean(*var_495);
     }
     if let Some(var_496) = &input.tiering_policy {
+        #[allow(unused_mut)]
         let mut object_497 = object.key("TieringPolicy").start_object();
         crate::json_ser::serialize_structure_crate_model_tiering_policy(&mut object_497, var_496)?;
         object_497.finish();
@@ -2251,6 +2326,7 @@ pub fn serialize_structure_crate_model_update_open_zfs_volume_configuration(
         let mut array_503 = object.key("NfsExports").start_array();
         for item_504 in var_502 {
             {
+                #[allow(unused_mut)]
                 let mut object_505 = array_503.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_open_zfs_nfs_export(
                     &mut object_505,
@@ -2265,6 +2341,7 @@ pub fn serialize_structure_crate_model_update_open_zfs_volume_configuration(
         let mut array_507 = object.key("UserAndGroupQuotas").start_array();
         for item_508 in var_506 {
             {
+                #[allow(unused_mut)]
                 let mut object_509 = array_507.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_open_zfs_user_or_group_quota(
                     &mut object_509,
@@ -2465,6 +2542,7 @@ pub fn serialize_structure_crate_model_open_zfs_create_root_volume_configuration
         let mut array_544 = object.key("NfsExports").start_array();
         for item_545 in var_543 {
             {
+                #[allow(unused_mut)]
                 let mut object_546 = array_544.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_open_zfs_nfs_export(
                     &mut object_546,
@@ -2479,6 +2557,7 @@ pub fn serialize_structure_crate_model_open_zfs_create_root_volume_configuration
         let mut array_548 = object.key("UserAndGroupQuotas").start_array();
         for item_549 in var_547 {
             {
+                #[allow(unused_mut)]
                 let mut object_550 = array_548.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_open_zfs_user_or_group_quota(
                     &mut object_550,
@@ -2535,6 +2614,7 @@ pub fn serialize_structure_crate_model_open_zfs_nfs_export(
         let mut array_558 = object.key("ClientConfigurations").start_array();
         for item_559 in var_557 {
             {
+                #[allow(unused_mut)]
                 let mut object_560 = array_558.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_open_zfs_client_configuration(
                     &mut object_560,

@@ -10,6 +10,7 @@ pub fn serialize_structure_crate_input_create_rule_input(
         let mut array_3 = object.key("ResourceTags").start_array();
         for item_4 in var_2 {
             {
+                #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_resource_tag(
                     &mut object_5,
@@ -24,6 +25,7 @@ pub fn serialize_structure_crate_input_create_rule_input(
         object.key("ResourceType").string(var_6.as_str());
     }
     if let Some(var_7) = &input.retention_period {
+        #[allow(unused_mut)]
         let mut object_8 = object.key("RetentionPeriod").start_object();
         crate::json_ser::serialize_structure_crate_model_retention_period(&mut object_8, var_7)?;
         object_8.finish();
@@ -32,6 +34,7 @@ pub fn serialize_structure_crate_input_create_rule_input(
         let mut array_10 = object.key("Tags").start_array();
         for item_11 in var_9 {
             {
+                #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_12, item_11)?;
                 object_12.finish();
@@ -59,6 +62,7 @@ pub fn serialize_structure_crate_input_list_rules_input(
         let mut array_16 = object.key("ResourceTags").start_array();
         for item_17 in var_15 {
             {
+                #[allow(unused_mut)]
                 let mut object_18 = array_16.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_resource_tag(
                     &mut object_18,
@@ -83,6 +87,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_21 = object.key("Tags").start_array();
         for item_22 in var_20 {
             {
+                #[allow(unused_mut)]
                 let mut object_23 = array_21.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_23, item_22)?;
                 object_23.finish();
@@ -104,6 +109,7 @@ pub fn serialize_structure_crate_input_update_rule_input(
         let mut array_26 = object.key("ResourceTags").start_array();
         for item_27 in var_25 {
             {
+                #[allow(unused_mut)]
                 let mut object_28 = array_26.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_resource_tag(
                     &mut object_28,
@@ -118,6 +124,7 @@ pub fn serialize_structure_crate_input_update_rule_input(
         object.key("ResourceType").string(var_29.as_str());
     }
     if let Some(var_30) = &input.retention_period {
+        #[allow(unused_mut)]
         let mut object_31 = object.key("RetentionPeriod").start_object();
         crate::json_ser::serialize_structure_crate_model_retention_period(&mut object_31, var_30)?;
         object_31.finish();

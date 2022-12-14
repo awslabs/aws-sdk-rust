@@ -10,6 +10,7 @@ pub fn serialize_structure_crate_input_create_container_input(
         let mut array_3 = object.key("Tags").start_array();
         for item_4 in var_2 {
             {
+                #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_5, item_4)?;
                 object_5.finish();
@@ -170,6 +171,7 @@ pub fn serialize_structure_crate_input_put_cors_policy_input(
         let mut array_23 = object.key("CorsPolicy").start_array();
         for item_24 in var_22 {
             {
+                #[allow(unused_mut)]
                 let mut object_25 = array_23.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_cors_rule(
                     &mut object_25,
@@ -204,6 +206,7 @@ pub fn serialize_structure_crate_input_put_metric_policy_input(
         object.key("ContainerName").string(var_28.as_str());
     }
     if let Some(var_29) = &input.metric_policy {
+        #[allow(unused_mut)]
         let mut object_30 = object.key("MetricPolicy").start_object();
         crate::json_ser::serialize_structure_crate_model_metric_policy(&mut object_30, var_29)?;
         object_30.finish();
@@ -242,6 +245,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_35 = object.key("Tags").start_array();
         for item_36 in var_34 {
             {
+                #[allow(unused_mut)]
                 let mut object_37 = array_35.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_37, item_36)?;
                 object_37.finish();
@@ -344,6 +348,7 @@ pub fn serialize_structure_crate_model_metric_policy(
         let mut array_58 = object.key("MetricPolicyRules").start_array();
         for item_59 in var_57 {
             {
+                #[allow(unused_mut)]
                 let mut object_60 = array_58.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_metric_policy_rule(
                     &mut object_60,

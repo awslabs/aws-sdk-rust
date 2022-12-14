@@ -13,6 +13,7 @@ pub fn serialize_structure_crate_input_copy_backup_to_region_input(
         let mut array_4 = object.key("TagList").start_array();
         for item_5 in var_3 {
             {
+                #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_6, item_5)?;
                 object_6.finish();
@@ -28,6 +29,7 @@ pub fn serialize_structure_crate_input_create_cluster_input(
     input: &crate::input::CreateClusterInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_7) = &input.backup_retention_policy {
+        #[allow(unused_mut)]
         let mut object_8 = object.key("BackupRetentionPolicy").start_object();
         crate::json_ser::serialize_structure_crate_model_backup_retention_policy(
             &mut object_8,
@@ -54,6 +56,7 @@ pub fn serialize_structure_crate_input_create_cluster_input(
         let mut array_15 = object.key("TagList").start_array();
         for item_16 in var_14 {
             {
+                #[allow(unused_mut)]
                 let mut object_17 = array_15.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_17, item_16)?;
                 object_17.finish();
@@ -133,6 +136,7 @@ pub fn serialize_structure_crate_input_describe_backups_input(
         );
     }
     if let Some(var_29) = &input.filters {
+        #[allow(unused_mut)]
         let mut object_30 = object.key("Filters").start_object();
         for (key_31, value_32) in var_29 {
             {
@@ -158,6 +162,7 @@ pub fn serialize_structure_crate_input_describe_clusters_input(
     input: &crate::input::DescribeClustersInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_36) = &input.filters {
+        #[allow(unused_mut)]
         let mut object_37 = object.key("Filters").start_object();
         for (key_38, value_39) in var_36 {
             {
@@ -237,6 +242,7 @@ pub fn serialize_structure_crate_input_modify_cluster_input(
     input: &crate::input::ModifyClusterInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_52) = &input.backup_retention_policy {
+        #[allow(unused_mut)]
         let mut object_53 = object.key("BackupRetentionPolicy").start_object();
         crate::json_ser::serialize_structure_crate_model_backup_retention_policy(
             &mut object_53,
@@ -271,6 +277,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_58 = object.key("TagList").start_array();
         for item_59 in var_57 {
             {
+                #[allow(unused_mut)]
                 let mut object_60 = array_58.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_60, item_59)?;
                 object_60.finish();

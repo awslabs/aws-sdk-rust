@@ -29,6 +29,7 @@ pub fn serialize_structure_crate_input_describe_dimension_keys_input(
         );
     }
     if let Some(var_7) = &input.group_by {
+        #[allow(unused_mut)]
         let mut object_8 = object.key("GroupBy").start_object();
         crate::json_ser::serialize_structure_crate_model_dimension_group(&mut object_8, var_7)?;
         object_8.finish();
@@ -43,11 +44,13 @@ pub fn serialize_structure_crate_input_describe_dimension_keys_input(
         array_10.finish();
     }
     if let Some(var_12) = &input.partition_by {
+        #[allow(unused_mut)]
         let mut object_13 = object.key("PartitionBy").start_object();
         crate::json_ser::serialize_structure_crate_model_dimension_group(&mut object_13, var_12)?;
         object_13.finish();
     }
     if let Some(var_14) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_15 = object.key("Filter").start_object();
         for (key_16, value_17) in var_14 {
             {
@@ -123,6 +126,7 @@ pub fn serialize_structure_crate_input_get_resource_metrics_input(
         let mut array_32 = object.key("MetricQueries").start_array();
         for item_33 in var_31 {
             {
+                #[allow(unused_mut)]
                 let mut object_34 = array_32.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_metric_query(
                     &mut object_34,
@@ -256,11 +260,13 @@ pub fn serialize_structure_crate_model_metric_query(
         object.key("Metric").string(var_59.as_str());
     }
     if let Some(var_60) = &input.group_by {
+        #[allow(unused_mut)]
         let mut object_61 = object.key("GroupBy").start_object();
         crate::json_ser::serialize_structure_crate_model_dimension_group(&mut object_61, var_60)?;
         object_61.finish();
     }
     if let Some(var_62) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_63 = object.key("Filter").start_object();
         for (key_64, value_65) in var_62 {
             {

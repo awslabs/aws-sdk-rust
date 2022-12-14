@@ -7,6 +7,7 @@ pub fn serialize_structure_crate_input_create_group_input(
         let mut array_2 = object.key("Configuration").start_array();
         for item_3 in var_1 {
             {
+                #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_group_configuration_item(
                     &mut object_4,
@@ -24,11 +25,13 @@ pub fn serialize_structure_crate_input_create_group_input(
         object.key("Name").string(var_6.as_str());
     }
     if let Some(var_7) = &input.resource_query {
+        #[allow(unused_mut)]
         let mut object_8 = object.key("ResourceQuery").start_object();
         crate::json_ser::serialize_structure_crate_model_resource_query(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_10 = object.key("Tags").start_object();
         for (key_11, value_12) in var_9 {
             {
@@ -116,6 +119,7 @@ pub fn serialize_structure_crate_input_list_group_resources_input(
         let mut array_25 = object.key("Filters").start_array();
         for item_26 in var_24 {
             {
+                #[allow(unused_mut)]
                 let mut object_27 = array_25.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_resource_filter(
                     &mut object_27,
@@ -152,6 +156,7 @@ pub fn serialize_structure_crate_input_list_groups_input(
         let mut array_33 = object.key("Filters").start_array();
         for item_34 in var_32 {
             {
+                #[allow(unused_mut)]
                 let mut object_35 = array_33.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_group_filter(
                     &mut object_35,
@@ -173,6 +178,7 @@ pub fn serialize_structure_crate_input_put_group_configuration_input(
         let mut array_37 = object.key("Configuration").start_array();
         for item_38 in var_36 {
             {
+                #[allow(unused_mut)]
                 let mut object_39 = array_37.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_group_configuration_item(
                     &mut object_39,
@@ -203,6 +209,7 @@ pub fn serialize_structure_crate_input_search_resources_input(
         object.key("NextToken").string(var_42.as_str());
     }
     if let Some(var_43) = &input.resource_query {
+        #[allow(unused_mut)]
         let mut object_44 = object.key("ResourceQuery").start_object();
         crate::json_ser::serialize_structure_crate_model_resource_query(&mut object_44, var_43)?;
         object_44.finish();
@@ -215,6 +222,7 @@ pub fn serialize_structure_crate_input_tag_input(
     input: &crate::input::TagInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_45) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_46 = object.key("Tags").start_object();
         for (key_47, value_48) in var_45 {
             {
@@ -288,6 +296,7 @@ pub fn serialize_structure_crate_input_update_group_query_input(
         object.key("GroupName").string(var_60.as_str());
     }
     if let Some(var_61) = &input.resource_query {
+        #[allow(unused_mut)]
         let mut object_62 = object.key("ResourceQuery").start_object();
         crate::json_ser::serialize_structure_crate_model_resource_query(&mut object_62, var_61)?;
         object_62.finish();
@@ -306,6 +315,7 @@ pub fn serialize_structure_crate_model_group_configuration_item(
         let mut array_65 = object.key("Parameters").start_array();
         for item_66 in var_64 {
             {
+                #[allow(unused_mut)]
                 let mut object_67 = array_65.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_group_configuration_parameter(
                     &mut object_67,

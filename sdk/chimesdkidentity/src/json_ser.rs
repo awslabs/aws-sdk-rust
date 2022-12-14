@@ -16,6 +16,7 @@ pub fn serialize_structure_crate_input_create_app_instance_input(
         let mut array_5 = object.key("Tags").start_array();
         for item_6 in var_4 {
             {
+                #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_7, item_6)?;
                 object_7.finish();
@@ -59,6 +60,7 @@ pub fn serialize_structure_crate_input_create_app_instance_user_input(
         let mut array_15 = object.key("Tags").start_array();
         for item_16 in var_14 {
             {
+                #[allow(unused_mut)]
                 let mut object_17 = array_15.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_17, item_16)?;
                 object_17.finish();
@@ -74,6 +76,7 @@ pub fn serialize_structure_crate_input_put_app_instance_retention_settings_input
     input: &crate::input::PutAppInstanceRetentionSettingsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_18) = &input.app_instance_retention_settings {
+        #[allow(unused_mut)]
         let mut object_19 = object.key("AppInstanceRetentionSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_app_instance_retention_settings(
             &mut object_19,
@@ -95,6 +98,7 @@ pub fn serialize_structure_crate_input_register_app_instance_user_endpoint_input
         object.key("ClientRequestToken").string(var_21.as_str());
     }
     if let Some(var_22) = &input.endpoint_attributes {
+        #[allow(unused_mut)]
         let mut object_23 = object.key("EndpointAttributes").start_object();
         crate::json_ser::serialize_structure_crate_model_endpoint_attributes(
             &mut object_23,
@@ -125,6 +129,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_29 = object.key("Tags").start_array();
         for item_30 in var_28 {
             {
+                #[allow(unused_mut)]
                 let mut object_31 = array_29.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_31, item_30)?;
                 object_31.finish();
@@ -211,6 +216,7 @@ pub fn serialize_structure_crate_model_app_instance_retention_settings(
     input: &crate::model::AppInstanceRetentionSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_44) = &input.channel_retention_settings {
+        #[allow(unused_mut)]
         let mut object_45 = object.key("ChannelRetentionSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_channel_retention_settings(
             &mut object_45,

@@ -7,6 +7,7 @@ pub fn serialize_structure_crate_input_add_tags_to_stream_input(
         object.key("StreamName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_3 = object.key("Tags").start_object();
         for (key_4, value_5) in var_2 {
             {
@@ -32,6 +33,7 @@ pub fn serialize_structure_crate_input_create_stream_input(
         );
     }
     if let Some(var_8) = &input.stream_mode_details {
+        #[allow(unused_mut)]
         let mut object_9 = object.key("StreamModeDetails").start_object();
         crate::json_ser::serialize_structure_crate_model_stream_mode_details(&mut object_9, var_8)?;
         object_9.finish();
@@ -248,6 +250,7 @@ pub fn serialize_structure_crate_input_list_shards_input(
             .date_time(var_45, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_46) = &input.shard_filter {
+        #[allow(unused_mut)]
         let mut object_47 = object.key("ShardFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_shard_filter(&mut object_47, var_46)?;
         object_47.finish();
@@ -366,6 +369,7 @@ pub fn serialize_structure_crate_input_put_records_input(
         let mut array_66 = object.key("Records").start_array();
         for item_67 in var_65 {
             {
+                #[allow(unused_mut)]
                 let mut object_68 = array_66.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_put_records_request_entry(
                     &mut object_68,
@@ -489,6 +493,7 @@ pub fn serialize_structure_crate_input_update_stream_mode_input(
         object.key("StreamARN").string(var_88.as_str());
     }
     if let Some(var_89) = &input.stream_mode_details {
+        #[allow(unused_mut)]
         let mut object_90 = object.key("StreamModeDetails").start_object();
         crate::json_ser::serialize_structure_crate_model_stream_mode_details(
             &mut object_90,

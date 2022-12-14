@@ -4,6 +4,7 @@ pub fn serialize_structure_crate_input_finalize_device_claim_input(
     input: &crate::input::FinalizeDeviceClaimInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_2 = object.key("tags").start_object();
         for (key_3, value_4) in var_1 {
             {
@@ -20,6 +21,7 @@ pub fn serialize_structure_crate_input_invoke_device_method_input(
     input: &crate::input::InvokeDeviceMethodInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_5) = &input.device_method {
+        #[allow(unused_mut)]
         let mut object_6 = object.key("deviceMethod").start_object();
         crate::json_ser::serialize_structure_crate_model_device_method(&mut object_6, var_5)?;
         object_6.finish();
@@ -35,6 +37,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_8) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_9 = object.key("tags").start_object();
         for (key_10, value_11) in var_8 {
             {

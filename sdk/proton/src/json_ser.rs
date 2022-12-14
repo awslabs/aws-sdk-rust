@@ -84,6 +84,7 @@ pub fn serialize_structure_crate_input_create_component_input(
         let mut array_16 = object.key("tags").start_array();
         for item_17 in var_15 {
             {
+                #[allow(unused_mut)]
                 let mut object_18 = array_16.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_18, item_17)?;
                 object_18.finish();
@@ -128,6 +129,7 @@ pub fn serialize_structure_crate_input_create_environment_input(
         let mut array_28 = object.key("tags").start_array();
         for item_29 in var_27 {
             {
+                #[allow(unused_mut)]
                 let mut object_30 = array_28.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_30, item_29)?;
                 object_30.finish();
@@ -136,6 +138,7 @@ pub fn serialize_structure_crate_input_create_environment_input(
         array_28.finish();
     }
     if let Some(var_31) = &input.provisioning_repository {
+        #[allow(unused_mut)]
         let mut object_32 = object.key("provisioningRepository").start_object();
         crate::json_ser::serialize_structure_crate_model_repository_branch_input(
             &mut object_32,
@@ -169,6 +172,7 @@ pub fn serialize_structure_crate_input_create_environment_account_connection_inp
         let mut array_39 = object.key("tags").start_array();
         for item_40 in var_38 {
             {
+                #[allow(unused_mut)]
                 let mut object_41 = array_39.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_41, item_40)?;
                 object_41.finish();
@@ -205,6 +209,7 @@ pub fn serialize_structure_crate_input_create_environment_template_input(
         let mut array_49 = object.key("tags").start_array();
         for item_50 in var_48 {
             {
+                #[allow(unused_mut)]
                 let mut object_51 = array_49.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_51, item_50)?;
                 object_51.finish();
@@ -232,6 +237,7 @@ pub fn serialize_structure_crate_input_create_environment_template_version_input
         object.key("majorVersion").string(var_55.as_str());
     }
     if let Some(var_56) = &input.source {
+        #[allow(unused_mut)]
         let mut object_57 = object.key("source").start_object();
         crate::json_ser::serialize_union_crate_model_template_version_source_input(
             &mut object_57,
@@ -243,6 +249,7 @@ pub fn serialize_structure_crate_input_create_environment_template_version_input
         let mut array_59 = object.key("tags").start_array();
         for item_60 in var_58 {
             {
+                #[allow(unused_mut)]
                 let mut object_61 = array_59.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_61, item_60)?;
                 object_61.finish();
@@ -273,6 +280,7 @@ pub fn serialize_structure_crate_input_create_repository_input(
         let mut array_67 = object.key("tags").start_array();
         for item_68 in var_66 {
             {
+                #[allow(unused_mut)]
                 let mut object_69 = array_67.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_69, item_68)?;
                 object_69.finish();
@@ -320,6 +328,7 @@ pub fn serialize_structure_crate_input_create_service_input(
         let mut array_80 = object.key("tags").start_array();
         for item_81 in var_79 {
             {
+                #[allow(unused_mut)]
                 let mut object_82 = array_80.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_82, item_81)?;
                 object_82.finish();
@@ -353,6 +362,7 @@ pub fn serialize_structure_crate_input_create_service_template_input(
         let mut array_89 = object.key("tags").start_array();
         for item_90 in var_88 {
             {
+                #[allow(unused_mut)]
                 let mut object_91 = array_89.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_91, item_90)?;
                 object_91.finish();
@@ -380,6 +390,7 @@ pub fn serialize_structure_crate_input_create_service_template_version_input(
         object.key("majorVersion").string(var_95.as_str());
     }
     if let Some(var_96) = &input.source {
+        #[allow(unused_mut)]
         let mut object_97 = object.key("source").start_object();
         crate::json_ser::serialize_union_crate_model_template_version_source_input(
             &mut object_97,
@@ -391,6 +402,7 @@ pub fn serialize_structure_crate_input_create_service_template_version_input(
         let mut array_99 = object.key("compatibleEnvironmentTemplates").start_array();
         for item_100 in var_98 {
             {
+                #[allow(unused_mut)]
                 let mut object_101 = array_99.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_compatible_environment_template_input(&mut object_101, item_100)?;
                 object_101.finish();
@@ -402,6 +414,7 @@ pub fn serialize_structure_crate_input_create_service_template_version_input(
         let mut array_103 = object.key("tags").start_array();
         for item_104 in var_102 {
             {
+                #[allow(unused_mut)]
                 let mut object_105 = array_103.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_105, item_104)?;
                 object_105.finish();
@@ -855,6 +868,7 @@ pub fn serialize_structure_crate_input_list_environments_input(
         let mut array_179 = object.key("environmentTemplates").start_array();
         for item_180 in var_178 {
             {
+                #[allow(unused_mut)]
                 let mut object_181 = array_179.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_environment_template_filter(
                     &mut object_181,
@@ -1105,6 +1119,7 @@ pub fn serialize_structure_crate_input_notify_resource_deployment_status_change_
         let mut array_221 = object.key("outputs").start_array();
         for item_222 in var_220 {
             {
+                #[allow(unused_mut)]
                 let mut object_223 = array_221.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_output(&mut object_223, item_222)?;
                 object_223.finish();
@@ -1142,6 +1157,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_229 = object.key("tags").start_array();
         for item_230 in var_228 {
             {
+                #[allow(unused_mut)]
                 let mut object_231 = array_229.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_231, item_230)?;
                 object_231.finish();
@@ -1181,6 +1197,7 @@ pub fn serialize_structure_crate_input_update_account_settings_input(
             .string(var_236.as_str());
     }
     if let Some(var_237) = &input.pipeline_provisioning_repository {
+        #[allow(unused_mut)]
         let mut object_238 = object.key("pipelineProvisioningRepository").start_object();
         crate::json_ser::serialize_structure_crate_model_repository_branch_input(
             &mut object_238,
@@ -1255,6 +1272,7 @@ pub fn serialize_structure_crate_input_update_environment_input(
             .string(var_254.as_str());
     }
     if let Some(var_255) = &input.provisioning_repository {
+        #[allow(unused_mut)]
         let mut object_256 = object.key("provisioningRepository").start_object();
         crate::json_ser::serialize_structure_crate_model_repository_branch_input(
             &mut object_256,
@@ -1424,6 +1442,7 @@ pub fn serialize_structure_crate_input_update_service_template_version_input(
         let mut array_292 = object.key("compatibleEnvironmentTemplates").start_array();
         for item_293 in var_291 {
             {
+                #[allow(unused_mut)]
                 let mut object_294 = array_292.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_compatible_environment_template_input(&mut object_294, item_293)?;
                 object_294.finish();
@@ -1503,6 +1522,7 @@ pub fn serialize_union_crate_model_template_version_source_input(
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::TemplateVersionSourceInput::S3(inner) => {
+            #[allow(unused_mut)]
             let mut object_309 = object_57.key("s3").start_object();
             crate::json_ser::serialize_structure_crate_model_s3_object_source(
                 &mut object_309,

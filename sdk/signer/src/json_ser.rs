@@ -26,6 +26,7 @@ pub fn serialize_structure_crate_input_put_signing_profile_input(
     input: &crate::input::PutSigningProfileInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_6) = &input.overrides {
+        #[allow(unused_mut)]
         let mut object_7 = object.key("overrides").start_object();
         crate::json_ser::serialize_structure_crate_model_signing_platform_overrides(
             &mut object_7,
@@ -37,6 +38,7 @@ pub fn serialize_structure_crate_input_put_signing_profile_input(
         object.key("platformId").string(var_8.as_str());
     }
     if let Some(var_9) = &input.signature_validity_period {
+        #[allow(unused_mut)]
         let mut object_10 = object.key("signatureValidityPeriod").start_object();
         crate::json_ser::serialize_structure_crate_model_signature_validity_period(
             &mut object_10,
@@ -45,11 +47,13 @@ pub fn serialize_structure_crate_input_put_signing_profile_input(
         object_10.finish();
     }
     if let Some(var_11) = &input.signing_material {
+        #[allow(unused_mut)]
         let mut object_12 = object.key("signingMaterial").start_object();
         crate::json_ser::serialize_structure_crate_model_signing_material(&mut object_12, var_11)?;
         object_12.finish();
     }
     if let Some(var_13) = &input.signing_parameters {
+        #[allow(unused_mut)]
         let mut object_14 = object.key("signingParameters").start_object();
         for (key_15, value_16) in var_13 {
             {
@@ -59,6 +63,7 @@ pub fn serialize_structure_crate_input_put_signing_profile_input(
         object_14.finish();
     }
     if let Some(var_17) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_18 = object.key("tags").start_object();
         for (key_19, value_20) in var_17 {
             {
@@ -109,6 +114,7 @@ pub fn serialize_structure_crate_input_start_signing_job_input(
         object.key("clientRequestToken").string(var_26.as_str());
     }
     if let Some(var_27) = &input.destination {
+        #[allow(unused_mut)]
         let mut object_28 = object.key("destination").start_object();
         crate::json_ser::serialize_structure_crate_model_destination(&mut object_28, var_27)?;
         object_28.finish();
@@ -120,6 +126,7 @@ pub fn serialize_structure_crate_input_start_signing_job_input(
         object.key("profileOwner").string(var_30.as_str());
     }
     if let Some(var_31) = &input.source {
+        #[allow(unused_mut)]
         let mut object_32 = object.key("source").start_object();
         crate::json_ser::serialize_structure_crate_model_source(&mut object_32, var_31)?;
         object_32.finish();
@@ -132,6 +139,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_33) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_34 = object.key("tags").start_object();
         for (key_35, value_36) in var_33 {
             {
@@ -148,6 +156,7 @@ pub fn serialize_structure_crate_model_signing_platform_overrides(
     input: &crate::model::SigningPlatformOverrides,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_37) = &input.signing_configuration {
+        #[allow(unused_mut)]
         let mut object_38 = object.key("signingConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_signing_configuration_overrides(
             &mut object_38,
@@ -192,6 +201,7 @@ pub fn serialize_structure_crate_model_destination(
     input: &crate::model::Destination,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_42) = &input.s3 {
+        #[allow(unused_mut)]
         let mut object_43 = object.key("s3").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_destination(&mut object_43, var_42)?;
         object_43.finish();
@@ -204,6 +214,7 @@ pub fn serialize_structure_crate_model_source(
     input: &crate::model::Source,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_44) = &input.s3 {
+        #[allow(unused_mut)]
         let mut object_45 = object.key("s3").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_source(&mut object_45, var_44)?;
         object_45.finish();

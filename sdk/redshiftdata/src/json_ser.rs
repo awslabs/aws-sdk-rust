@@ -125,6 +125,7 @@ pub fn serialize_structure_crate_input_execute_statement_input(
         let mut array_30 = object.key("Parameters").start_array();
         for item_31 in var_29 {
             {
+                #[allow(unused_mut)]
                 let mut object_32 = array_30.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_sql_parameter(
                     &mut object_32,

@@ -10,6 +10,7 @@ pub fn serialize_structure_crate_input_create_application_input(
         object.key("Name").string(var_2.as_str());
     }
     if let Some(var_3) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_4 = object.key("Tags").start_object();
         for (key_5, value_6) in var_3 {
             {
@@ -38,6 +39,7 @@ pub fn serialize_structure_crate_input_create_configuration_profile_input(
         object.key("RetrievalRoleArn").string(var_10.as_str());
     }
     if let Some(var_11) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_12 = object.key("Tags").start_object();
         for (key_13, value_14) in var_11 {
             {
@@ -53,6 +55,7 @@ pub fn serialize_structure_crate_input_create_configuration_profile_input(
         let mut array_17 = object.key("Validators").start_array();
         for item_18 in var_16 {
             {
+                #[allow(unused_mut)]
                 let mut object_19 = array_17.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_validator(
                     &mut object_19,
@@ -101,6 +104,7 @@ pub fn serialize_structure_crate_input_create_deployment_strategy_input(
         object.key("ReplicateTo").string(var_25.as_str());
     }
     if let Some(var_26) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_27 = object.key("Tags").start_object();
         for (key_28, value_29) in var_26 {
             {
@@ -123,6 +127,7 @@ pub fn serialize_structure_crate_input_create_environment_input(
         let mut array_32 = object.key("Monitors").start_array();
         for item_33 in var_31 {
             {
+                #[allow(unused_mut)]
                 let mut object_34 = array_32.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_monitor(&mut object_34, item_33)?;
                 object_34.finish();
@@ -134,6 +139,7 @@ pub fn serialize_structure_crate_input_create_environment_input(
         object.key("Name").string(var_35.as_str());
     }
     if let Some(var_36) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_37 = object.key("Tags").start_object();
         for (key_38, value_39) in var_36 {
             {
@@ -150,12 +156,14 @@ pub fn serialize_structure_crate_input_create_extension_input(
     input: &crate::input::CreateExtensionInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_40) = &input.actions {
+        #[allow(unused_mut)]
         let mut object_41 = object.key("Actions").start_object();
         for (key_42, value_43) in var_40 {
             {
                 let mut array_44 = object_41.key(key_42.as_str()).start_array();
                 for item_45 in value_43 {
                     {
+                        #[allow(unused_mut)]
                         let mut object_46 = array_44.value().start_object();
                         crate::json_ser::serialize_structure_crate_model_action(
                             &mut object_46,
@@ -176,9 +184,11 @@ pub fn serialize_structure_crate_input_create_extension_input(
         object.key("Name").string(var_48.as_str());
     }
     if let Some(var_49) = &input.parameters {
+        #[allow(unused_mut)]
         let mut object_50 = object.key("Parameters").start_object();
         for (key_51, value_52) in var_49 {
             {
+                #[allow(unused_mut)]
                 let mut object_53 = object_50.key(key_51.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_parameter(
                     &mut object_53,
@@ -190,6 +200,7 @@ pub fn serialize_structure_crate_input_create_extension_input(
         object_50.finish();
     }
     if let Some(var_54) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_55 = object.key("Tags").start_object();
         for (key_56, value_57) in var_54 {
             {
@@ -215,6 +226,7 @@ pub fn serialize_structure_crate_input_create_extension_association_input(
         );
     }
     if let Some(var_60) = &input.parameters {
+        #[allow(unused_mut)]
         let mut object_61 = object.key("Parameters").start_object();
         for (key_62, value_63) in var_60 {
             {
@@ -227,6 +239,7 @@ pub fn serialize_structure_crate_input_create_extension_association_input(
         object.key("ResourceIdentifier").string(var_64.as_str());
     }
     if let Some(var_65) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_66 = object.key("Tags").start_object();
         for (key_67, value_68) in var_65 {
             {
@@ -255,6 +268,7 @@ pub fn serialize_structure_crate_input_start_deployment_input(
         object.key("Description").string(var_72.as_str());
     }
     if let Some(var_73) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_74 = object.key("Tags").start_object();
         for (key_75, value_76) in var_73 {
             {
@@ -271,6 +285,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_77) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_78 = object.key("Tags").start_object();
         for (key_79, value_80) in var_77 {
             {
@@ -312,6 +327,7 @@ pub fn serialize_structure_crate_input_update_configuration_profile_input(
         let mut array_87 = object.key("Validators").start_array();
         for item_88 in var_86 {
             {
+                #[allow(unused_mut)]
                 let mut object_89 = array_87.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_validator(
                     &mut object_89,
@@ -367,6 +383,7 @@ pub fn serialize_structure_crate_input_update_environment_input(
         let mut array_97 = object.key("Monitors").start_array();
         for item_98 in var_96 {
             {
+                #[allow(unused_mut)]
                 let mut object_99 = array_97.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_monitor(&mut object_99, item_98)?;
                 object_99.finish();
@@ -385,12 +402,14 @@ pub fn serialize_structure_crate_input_update_extension_input(
     input: &crate::input::UpdateExtensionInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_101) = &input.actions {
+        #[allow(unused_mut)]
         let mut object_102 = object.key("Actions").start_object();
         for (key_103, value_104) in var_101 {
             {
                 let mut array_105 = object_102.key(key_103.as_str()).start_array();
                 for item_106 in value_104 {
                     {
+                        #[allow(unused_mut)]
                         let mut object_107 = array_105.value().start_object();
                         crate::json_ser::serialize_structure_crate_model_action(
                             &mut object_107,
@@ -408,9 +427,11 @@ pub fn serialize_structure_crate_input_update_extension_input(
         object.key("Description").string(var_108.as_str());
     }
     if let Some(var_109) = &input.parameters {
+        #[allow(unused_mut)]
         let mut object_110 = object.key("Parameters").start_object();
         for (key_111, value_112) in var_109 {
             {
+                #[allow(unused_mut)]
                 let mut object_113 = object_110.key(key_111.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_parameter(
                     &mut object_113,
@@ -435,6 +456,7 @@ pub fn serialize_structure_crate_input_update_extension_association_input(
     input: &crate::input::UpdateExtensionAssociationInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_115) = &input.parameters {
+        #[allow(unused_mut)]
         let mut object_116 = object.key("Parameters").start_object();
         for (key_117, value_118) in var_115 {
             {

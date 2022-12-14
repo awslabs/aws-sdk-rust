@@ -10,6 +10,7 @@ pub fn serialize_structure_crate_input_add_tags_input(
         let mut array_3 = object.key("TagsList").start_array();
         for item_4 in var_2 {
             {
+                #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_5, item_4)?;
                 object_5.finish();
@@ -44,6 +45,7 @@ pub fn serialize_structure_crate_input_create_event_data_store_input(
         let mut array_10 = object.key("AdvancedEventSelectors").start_array();
         for item_11 in var_9 {
             {
+                #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_advanced_event_selector(
                     &mut object_12,
@@ -73,6 +75,7 @@ pub fn serialize_structure_crate_input_create_event_data_store_input(
         let mut array_18 = object.key("TagsList").start_array();
         for item_19 in var_17 {
             {
+                #[allow(unused_mut)]
                 let mut object_20 = array_18.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_20, item_19)?;
                 object_20.finish();
@@ -126,6 +129,7 @@ pub fn serialize_structure_crate_input_create_trail_input(
         let mut array_33 = object.key("TagsList").start_array();
         for item_34 in var_32 {
             {
+                #[allow(unused_mut)]
                 let mut object_35 = array_33.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_35, item_34)?;
                 object_35.finish();
@@ -442,6 +446,7 @@ pub fn serialize_structure_crate_input_lookup_events_input(
         let mut array_81 = object.key("LookupAttributes").start_array();
         for item_82 in var_80 {
             {
+                #[allow(unused_mut)]
                 let mut object_83 = array_81.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_lookup_attribute(
                     &mut object_83,
@@ -488,6 +493,7 @@ pub fn serialize_structure_crate_input_put_event_selectors_input(
         let mut array_91 = object.key("EventSelectors").start_array();
         for item_92 in var_90 {
             {
+                #[allow(unused_mut)]
                 let mut object_93 = array_91.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_event_selector(
                     &mut object_93,
@@ -502,6 +508,7 @@ pub fn serialize_structure_crate_input_put_event_selectors_input(
         let mut array_95 = object.key("AdvancedEventSelectors").start_array();
         for item_96 in var_94 {
             {
+                #[allow(unused_mut)]
                 let mut object_97 = array_95.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_advanced_event_selector(
                     &mut object_97,
@@ -526,6 +533,7 @@ pub fn serialize_structure_crate_input_put_insight_selectors_input(
         let mut array_100 = object.key("InsightSelectors").start_array();
         for item_101 in var_99 {
             {
+                #[allow(unused_mut)]
                 let mut object_102 = array_100.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_insight_selector(
                     &mut object_102,
@@ -550,6 +558,7 @@ pub fn serialize_structure_crate_input_remove_tags_input(
         let mut array_105 = object.key("TagsList").start_array();
         for item_106 in var_104 {
             {
+                #[allow(unused_mut)]
                 let mut object_107 = array_105.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_107, item_106)?;
                 object_107.finish();
@@ -584,6 +593,7 @@ pub fn serialize_structure_crate_input_start_import_input(
         array_110.finish();
     }
     if let Some(var_112) = &input.import_source {
+        #[allow(unused_mut)]
         let mut object_113 = object.key("ImportSource").start_object();
         crate::json_ser::serialize_structure_crate_model_import_source(&mut object_113, var_112)?;
         object_113.finish();
@@ -658,6 +668,7 @@ pub fn serialize_structure_crate_input_update_event_data_store_input(
         let mut array_124 = object.key("AdvancedEventSelectors").start_array();
         for item_125 in var_123 {
             {
+                #[allow(unused_mut)]
                 let mut object_126 = array_124.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_advanced_event_selector(
                     &mut object_126,
@@ -752,6 +763,7 @@ pub fn serialize_structure_crate_model_advanced_event_selector(
         let mut array_146 = object.key("FieldSelectors").start_array();
         for item_147 in var_145 {
             {
+                #[allow(unused_mut)]
                 let mut object_148 = array_146.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_advanced_field_selector(
                     &mut object_148,
@@ -792,6 +804,7 @@ pub fn serialize_structure_crate_model_event_selector(
         let mut array_154 = object.key("DataResources").start_array();
         for item_155 in var_153 {
             {
+                #[allow(unused_mut)]
                 let mut object_156 = array_154.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_data_resource(
                     &mut object_156,
@@ -829,6 +842,7 @@ pub fn serialize_structure_crate_model_import_source(
     input: &crate::model::ImportSource,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_161) = &input.s3 {
+        #[allow(unused_mut)]
         let mut object_162 = object.key("S3").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_import_source(
             &mut object_162,

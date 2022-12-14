@@ -55,6 +55,7 @@ pub fn serialize_structure_crate_input_associate_signin_delegate_groups_with_acc
         let mut array_11 = object.key("SigninDelegateGroups").start_array();
         for item_12 in var_10 {
             {
+                #[allow(unused_mut)]
                 let mut object_13 = array_11.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_signin_delegate_group(
                     &mut object_13,
@@ -76,6 +77,7 @@ pub fn serialize_structure_crate_input_batch_create_attendee_input(
         let mut array_15 = object.key("Attendees").start_array();
         for item_16 in var_14 {
             {
+                #[allow(unused_mut)]
                 let mut object_17 = array_15.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_create_attendee_request_item(
                     &mut object_17,
@@ -116,6 +118,7 @@ pub fn serialize_structure_crate_input_batch_create_room_membership_input(
         let mut array_23 = object.key("MembershipItemList").start_array();
         for item_24 in var_22 {
             {
+                #[allow(unused_mut)]
                 let mut object_25 = array_23.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_membership_item(
                     &mut object_25,
@@ -185,6 +188,7 @@ pub fn serialize_structure_crate_input_batch_update_phone_number_input(
         let mut array_36 = object.key("UpdatePhoneNumberRequestItems").start_array();
         for item_37 in var_35 {
             {
+                #[allow(unused_mut)]
                 let mut object_38 = array_36.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_update_phone_number_request_item(
                     &mut object_38,
@@ -206,6 +210,7 @@ pub fn serialize_structure_crate_input_batch_update_user_input(
         let mut array_40 = object.key("UpdateUserRequestItems").start_array();
         for item_41 in var_39 {
             {
+                #[allow(unused_mut)]
                 let mut object_42 = array_40.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_update_user_request_item(
                     &mut object_42,
@@ -246,6 +251,7 @@ pub fn serialize_structure_crate_input_create_app_instance_input(
         let mut array_48 = object.key("Tags").start_array();
         for item_49 in var_47 {
             {
+                #[allow(unused_mut)]
                 let mut object_50 = array_48.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_50, item_49)?;
                 object_50.finish();
@@ -289,6 +295,7 @@ pub fn serialize_structure_crate_input_create_app_instance_user_input(
         let mut array_58 = object.key("Tags").start_array();
         for item_59 in var_57 {
             {
+                #[allow(unused_mut)]
                 let mut object_60 = array_58.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_60, item_59)?;
                 object_60.finish();
@@ -310,6 +317,7 @@ pub fn serialize_structure_crate_input_create_attendee_input(
         let mut array_63 = object.key("Tags").start_array();
         for item_64 in var_62 {
             {
+                #[allow(unused_mut)]
                 let mut object_65 = array_63.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_65, item_64)?;
                 object_65.finish();
@@ -359,6 +367,7 @@ pub fn serialize_structure_crate_input_create_channel_input(
         let mut array_75 = object.key("Tags").start_array();
         for item_76 in var_74 {
             {
+                #[allow(unused_mut)]
                 let mut object_77 = array_75.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_77, item_76)?;
                 object_77.finish();
@@ -407,6 +416,7 @@ pub fn serialize_structure_crate_input_create_media_capture_pipeline_input(
     input: &crate::input::CreateMediaCapturePipelineInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_82) = &input.chime_sdk_meeting_configuration {
+        #[allow(unused_mut)]
         let mut object_83 = object.key("ChimeSdkMeetingConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_chime_sdk_meeting_configuration(
             &mut object_83,
@@ -449,6 +459,7 @@ pub fn serialize_structure_crate_input_create_meeting_input(
         object.key("MeetingHostId").string(var_92.as_str());
     }
     if let Some(var_93) = &input.notifications_configuration {
+        #[allow(unused_mut)]
         let mut object_94 = object.key("NotificationsConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_meeting_notification_configuration(
             &mut object_94,
@@ -460,6 +471,7 @@ pub fn serialize_structure_crate_input_create_meeting_input(
         let mut array_96 = object.key("Tags").start_array();
         for item_97 in var_95 {
             {
+                #[allow(unused_mut)]
                 let mut object_98 = array_96.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_98, item_97)?;
                 object_98.finish();
@@ -494,6 +506,7 @@ pub fn serialize_structure_crate_input_create_meeting_with_attendees_input(
         let mut array_103 = object.key("Attendees").start_array();
         for item_104 in var_102 {
             {
+                #[allow(unused_mut)]
                 let mut object_105 = array_103.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_create_attendee_request_item(
                     &mut object_105,
@@ -517,6 +530,7 @@ pub fn serialize_structure_crate_input_create_meeting_with_attendees_input(
         object.key("MeetingHostId").string(var_109.as_str());
     }
     if let Some(var_110) = &input.notifications_configuration {
+        #[allow(unused_mut)]
         let mut object_111 = object.key("NotificationsConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_meeting_notification_configuration(
             &mut object_111,
@@ -528,6 +542,7 @@ pub fn serialize_structure_crate_input_create_meeting_with_attendees_input(
         let mut array_113 = object.key("Tags").start_array();
         for item_114 in var_112 {
             {
+                #[allow(unused_mut)]
                 let mut object_115 = array_113.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_115, item_114)?;
                 object_115.finish();
@@ -580,6 +595,7 @@ pub fn serialize_structure_crate_input_create_proxy_session_input(
         object.key("GeoMatchLevel").string(var_124.as_str());
     }
     if let Some(var_125) = &input.geo_match_params {
+        #[allow(unused_mut)]
         let mut object_126 = object.key("GeoMatchParams").start_object();
         crate::json_ser::serialize_structure_crate_model_geo_match_params(
             &mut object_126,
@@ -644,6 +660,7 @@ pub fn serialize_structure_crate_input_create_sip_media_application_input(
         let mut array_138 = object.key("Endpoints").start_array();
         for item_139 in var_137 {
             {
+                #[allow(unused_mut)]
                 let mut object_140 = array_138.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_sip_media_application_endpoint(
                     &mut object_140,
@@ -668,6 +685,7 @@ pub fn serialize_structure_crate_input_create_sip_media_application_call_input(
         object.key("FromPhoneNumber").string(var_142.as_str());
     }
     if let Some(var_143) = &input.sip_headers {
+        #[allow(unused_mut)]
         let mut object_144 = object.key("SipHeaders").start_object();
         for (key_145, value_146) in var_143 {
             {
@@ -696,6 +714,7 @@ pub fn serialize_structure_crate_input_create_sip_rule_input(
         let mut array_151 = object.key("TargetApplications").start_array();
         for item_152 in var_150 {
             {
+                #[allow(unused_mut)]
                 let mut object_153 = array_151.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_sip_rule_target_application(
                     &mut object_153,
@@ -758,6 +777,7 @@ pub fn serialize_structure_crate_input_create_voice_connector_group_input(
         let mut array_164 = object.key("VoiceConnectorItems").start_array();
         for item_165 in var_163 {
             {
+                #[allow(unused_mut)]
                 let mut object_166 = array_164.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_voice_connector_item(
                     &mut object_166,
@@ -859,6 +879,7 @@ pub fn serialize_structure_crate_input_put_app_instance_retention_settings_input
     input: &crate::input::PutAppInstanceRetentionSettingsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_183) = &input.app_instance_retention_settings {
+        #[allow(unused_mut)]
         let mut object_184 = object.key("AppInstanceRetentionSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_app_instance_retention_settings(
             &mut object_184,
@@ -879,6 +900,7 @@ pub fn serialize_structure_crate_input_put_app_instance_streaming_configurations
             .start_array();
         for item_187 in var_185 {
             {
+                #[allow(unused_mut)]
                 let mut object_188 = array_186.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_app_instance_streaming_configuration(&mut object_188, item_187)?;
                 object_188.finish();
@@ -909,6 +931,7 @@ pub fn serialize_structure_crate_input_put_retention_settings_input(
     input: &crate::input::PutRetentionSettingsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_191) = &input.retention_settings {
+        #[allow(unused_mut)]
         let mut object_192 = object.key("RetentionSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_retention_settings(
             &mut object_192,
@@ -924,6 +947,7 @@ pub fn serialize_structure_crate_input_put_sip_media_application_logging_configu
     input: &crate::input::PutSipMediaApplicationLoggingConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_193) = &input.sip_media_application_logging_configuration {
+        #[allow(unused_mut)]
         let mut object_194 = object
             .key("SipMediaApplicationLoggingConfiguration")
             .start_object();
@@ -938,6 +962,7 @@ pub fn serialize_structure_crate_input_put_voice_connector_emergency_calling_con
     input: &crate::input::PutVoiceConnectorEmergencyCallingConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_195) = &input.emergency_calling_configuration {
+        #[allow(unused_mut)]
         let mut object_196 = object.key("EmergencyCallingConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_emergency_calling_configuration(
             &mut object_196,
@@ -953,6 +978,7 @@ pub fn serialize_structure_crate_input_put_voice_connector_logging_configuration
     input: &crate::input::PutVoiceConnectorLoggingConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_197) = &input.logging_configuration {
+        #[allow(unused_mut)]
         let mut object_198 = object.key("LoggingConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_logging_configuration(
             &mut object_198,
@@ -968,6 +994,7 @@ pub fn serialize_structure_crate_input_put_voice_connector_origination_input(
     input: &crate::input::PutVoiceConnectorOriginationInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_199) = &input.origination {
+        #[allow(unused_mut)]
         let mut object_200 = object.key("Origination").start_object();
         crate::json_ser::serialize_structure_crate_model_origination(&mut object_200, var_199)?;
         object_200.finish();
@@ -1008,6 +1035,7 @@ pub fn serialize_structure_crate_input_put_voice_connector_streaming_configurati
     input: &crate::input::PutVoiceConnectorStreamingConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_207) = &input.streaming_configuration {
+        #[allow(unused_mut)]
         let mut object_208 = object.key("StreamingConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_streaming_configuration(
             &mut object_208,
@@ -1023,6 +1051,7 @@ pub fn serialize_structure_crate_input_put_voice_connector_termination_input(
     input: &crate::input::PutVoiceConnectorTerminationInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_209) = &input.termination {
+        #[allow(unused_mut)]
         let mut object_210 = object.key("Termination").start_object();
         crate::json_ser::serialize_structure_crate_model_termination(&mut object_210, var_209)?;
         object_210.finish();
@@ -1038,6 +1067,7 @@ pub fn serialize_structure_crate_input_put_voice_connector_termination_credentia
         let mut array_212 = object.key("Credentials").start_array();
         for item_213 in var_211 {
             {
+                #[allow(unused_mut)]
                 let mut object_214 = array_212.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_credential(
                     &mut object_214,
@@ -1078,6 +1108,7 @@ pub fn serialize_structure_crate_input_start_meeting_transcription_input(
     input: &crate::input::StartMeetingTranscriptionInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_220) = &input.transcription_configuration {
+        #[allow(unused_mut)]
         let mut object_221 = object.key("TranscriptionConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_transcription_configuration(
             &mut object_221,
@@ -1096,6 +1127,7 @@ pub fn serialize_structure_crate_input_tag_attendee_input(
         let mut array_223 = object.key("Tags").start_array();
         for item_224 in var_222 {
             {
+                #[allow(unused_mut)]
                 let mut object_225 = array_223.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_225, item_224)?;
                 object_225.finish();
@@ -1114,6 +1146,7 @@ pub fn serialize_structure_crate_input_tag_meeting_input(
         let mut array_227 = object.key("Tags").start_array();
         for item_228 in var_226 {
             {
+                #[allow(unused_mut)]
                 let mut object_229 = array_227.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_229, item_228)?;
                 object_229.finish();
@@ -1135,6 +1168,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_232 = object.key("Tags").start_array();
         for item_233 in var_231 {
             {
+                #[allow(unused_mut)]
                 let mut object_234 = array_232.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_234, item_233)?;
                 object_234.finish();
@@ -1214,6 +1248,7 @@ pub fn serialize_structure_crate_input_update_account_settings_input(
     input: &crate::input::UpdateAccountSettingsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_247) = &input.account_settings {
+        #[allow(unused_mut)]
         let mut object_248 = object.key("AccountSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_account_settings(
             &mut object_248,
@@ -1294,6 +1329,7 @@ pub fn serialize_structure_crate_input_update_global_settings_input(
     input: &crate::input::UpdateGlobalSettingsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_259) = &input.business_calling {
+        #[allow(unused_mut)]
         let mut object_260 = object.key("BusinessCalling").start_object();
         crate::json_ser::serialize_structure_crate_model_business_calling_settings(
             &mut object_260,
@@ -1302,6 +1338,7 @@ pub fn serialize_structure_crate_input_update_global_settings_input(
         object_260.finish();
     }
     if let Some(var_261) = &input.voice_connector {
+        #[allow(unused_mut)]
         let mut object_262 = object.key("VoiceConnector").start_object();
         crate::json_ser::serialize_structure_crate_model_voice_connector_settings(
             &mut object_262,
@@ -1385,6 +1422,7 @@ pub fn serialize_structure_crate_input_update_sip_media_application_input(
         let mut array_273 = object.key("Endpoints").start_array();
         for item_274 in var_272 {
             {
+                #[allow(unused_mut)]
                 let mut object_275 = array_273.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_sip_media_application_endpoint(
                     &mut object_275,
@@ -1406,6 +1444,7 @@ pub fn serialize_structure_crate_input_update_sip_media_application_call_input(
     input: &crate::input::UpdateSipMediaApplicationCallInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_277) = &input.arguments {
+        #[allow(unused_mut)]
         let mut object_278 = object.key("Arguments").start_object();
         for (key_279, value_280) in var_277 {
             {
@@ -1431,6 +1470,7 @@ pub fn serialize_structure_crate_input_update_sip_rule_input(
         let mut array_284 = object.key("TargetApplications").start_array();
         for item_285 in var_283 {
             {
+                #[allow(unused_mut)]
                 let mut object_286 = array_284.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_sip_rule_target_application(
                     &mut object_286,
@@ -1449,6 +1489,7 @@ pub fn serialize_structure_crate_input_update_user_input(
     input: &crate::input::UpdateUserInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_287) = &input.alexa_for_business_metadata {
+        #[allow(unused_mut)]
         let mut object_288 = object.key("AlexaForBusinessMetadata").start_object();
         crate::json_ser::serialize_structure_crate_model_alexa_for_business_metadata(
             &mut object_288,
@@ -1470,6 +1511,7 @@ pub fn serialize_structure_crate_input_update_user_settings_input(
     input: &crate::input::UpdateUserSettingsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_291) = &input.user_settings {
+        #[allow(unused_mut)]
         let mut object_292 = object.key("UserSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_user_settings(&mut object_292, var_291)?;
         object_292.finish();
@@ -1501,6 +1543,7 @@ pub fn serialize_structure_crate_input_update_voice_connector_group_input(
         let mut array_297 = object.key("VoiceConnectorItems").start_array();
         for item_298 in var_296 {
             {
+                #[allow(unused_mut)]
                 let mut object_299 = array_297.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_voice_connector_item(
                     &mut object_299,
@@ -1563,6 +1606,7 @@ pub fn serialize_structure_crate_model_create_attendee_request_item(
         let mut array_310 = object.key("Tags").start_array();
         for item_311 in var_309 {
             {
+                #[allow(unused_mut)]
                 let mut object_312 = array_310.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_312, item_311)?;
                 object_312.finish();
@@ -1616,6 +1660,7 @@ pub fn serialize_structure_crate_model_update_user_request_item(
         object.key("UserType").string(var_320.as_str());
     }
     if let Some(var_321) = &input.alexa_for_business_metadata {
+        #[allow(unused_mut)]
         let mut object_322 = object.key("AlexaForBusinessMetadata").start_object();
         crate::json_ser::serialize_structure_crate_model_alexa_for_business_metadata(
             &mut object_322,
@@ -1644,6 +1689,7 @@ pub fn serialize_structure_crate_model_chime_sdk_meeting_configuration(
     input: &crate::model::ChimeSdkMeetingConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_325) = &input.source_configuration {
+        #[allow(unused_mut)]
         let mut object_326 = object.key("SourceConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_source_configuration(
             &mut object_326,
@@ -1652,6 +1698,7 @@ pub fn serialize_structure_crate_model_chime_sdk_meeting_configuration(
         object_326.finish();
     }
     if let Some(var_327) = &input.artifacts_configuration {
+        #[allow(unused_mut)]
         let mut object_328 = object.key("ArtifactsConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_artifacts_configuration(
             &mut object_328,
@@ -1738,6 +1785,7 @@ pub fn serialize_structure_crate_model_app_instance_retention_settings(
     input: &crate::model::AppInstanceRetentionSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_339) = &input.channel_retention_settings {
+        #[allow(unused_mut)]
         let mut object_340 = object.key("ChannelRetentionSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_channel_retention_settings(
             &mut object_340,
@@ -1766,6 +1814,7 @@ pub fn serialize_structure_crate_model_retention_settings(
     input: &crate::model::RetentionSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_343) = &input.room_retention_settings {
+        #[allow(unused_mut)]
         let mut object_344 = object.key("RoomRetentionSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_room_retention_settings(
             &mut object_344,
@@ -1774,6 +1823,7 @@ pub fn serialize_structure_crate_model_retention_settings(
         object_344.finish();
     }
     if let Some(var_345) = &input.conversation_retention_settings {
+        #[allow(unused_mut)]
         let mut object_346 = object.key("ConversationRetentionSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_conversation_retention_settings(
             &mut object_346,
@@ -1804,6 +1854,7 @@ pub fn serialize_structure_crate_model_emergency_calling_configuration(
         let mut array_349 = object.key("DNIS").start_array();
         for item_350 in var_348 {
             {
+                #[allow(unused_mut)]
                 let mut object_351 = array_349.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_dnis_emergency_calling_configuration(&mut object_351, item_350)?;
                 object_351.finish();
@@ -1835,6 +1886,7 @@ pub fn serialize_structure_crate_model_origination(
         let mut array_355 = object.key("Routes").start_array();
         for item_356 in var_354 {
             {
+                #[allow(unused_mut)]
                 let mut object_357 = array_355.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_origination_route(
                     &mut object_357,
@@ -1868,6 +1920,7 @@ pub fn serialize_structure_crate_model_streaming_configuration(
         let mut array_362 = object.key("StreamingNotificationTargets").start_array();
         for item_363 in var_361 {
             {
+                #[allow(unused_mut)]
                 let mut object_364 = array_362.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_streaming_notification_target(
                     &mut object_364,
@@ -1936,6 +1989,7 @@ pub fn serialize_structure_crate_model_transcription_configuration(
     input: &crate::model::TranscriptionConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_376) = &input.engine_transcribe_settings {
+        #[allow(unused_mut)]
         let mut object_377 = object.key("EngineTranscribeSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_engine_transcribe_settings(
             &mut object_377,
@@ -1944,6 +1998,7 @@ pub fn serialize_structure_crate_model_transcription_configuration(
         object_377.finish();
     }
     if let Some(var_378) = &input.engine_transcribe_medical_settings {
+        #[allow(unused_mut)]
         let mut object_379 = object.key("EngineTranscribeMedicalSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_engine_transcribe_medical_settings(
             &mut object_379,
@@ -2007,6 +2062,7 @@ pub fn serialize_structure_crate_model_user_settings(
     input: &crate::model::UserSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_386) = &input.telephony {
+        #[allow(unused_mut)]
         let mut object_387 = object.key("Telephony").start_object();
         crate::json_ser::serialize_structure_crate_model_telephony_settings(
             &mut object_387,
@@ -2022,6 +2078,7 @@ pub fn serialize_structure_crate_model_source_configuration(
     input: &crate::model::SourceConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_388) = &input.selected_video_streams {
+        #[allow(unused_mut)]
         let mut object_389 = object.key("SelectedVideoStreams").start_object();
         crate::json_ser::serialize_structure_crate_model_selected_video_streams(
             &mut object_389,
@@ -2037,6 +2094,7 @@ pub fn serialize_structure_crate_model_artifacts_configuration(
     input: &crate::model::ArtifactsConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_390) = &input.audio {
+        #[allow(unused_mut)]
         let mut object_391 = object.key("Audio").start_object();
         crate::json_ser::serialize_structure_crate_model_audio_artifacts_configuration(
             &mut object_391,
@@ -2045,6 +2103,7 @@ pub fn serialize_structure_crate_model_artifacts_configuration(
         object_391.finish();
     }
     if let Some(var_392) = &input.video {
+        #[allow(unused_mut)]
         let mut object_393 = object.key("Video").start_object();
         crate::json_ser::serialize_structure_crate_model_video_artifacts_configuration(
             &mut object_393,
@@ -2053,6 +2112,7 @@ pub fn serialize_structure_crate_model_artifacts_configuration(
         object_393.finish();
     }
     if let Some(var_394) = &input.content {
+        #[allow(unused_mut)]
         let mut object_395 = object.key("Content").start_object();
         crate::json_ser::serialize_structure_crate_model_content_artifacts_configuration(
             &mut object_395,

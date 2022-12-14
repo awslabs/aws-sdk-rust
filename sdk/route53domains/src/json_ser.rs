@@ -174,6 +174,7 @@ pub fn serialize_structure_crate_input_list_domains_input(
         let mut array_23 = object.key("FilterConditions").start_array();
         for item_24 in var_22 {
             {
+                #[allow(unused_mut)]
                 let mut object_25 = array_23.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter_condition(
                     &mut object_25,
@@ -185,6 +186,7 @@ pub fn serialize_structure_crate_input_list_domains_input(
         array_23.finish();
     }
     if let Some(var_26) = &input.sort_condition {
+        #[allow(unused_mut)]
         let mut object_27 = object.key("SortCondition").start_object();
         crate::json_ser::serialize_structure_crate_model_sort_condition(&mut object_27, var_26)?;
         object_27.finish();
@@ -271,16 +273,19 @@ pub fn serialize_structure_crate_input_register_domain_input(
         object.key("AutoRenew").boolean(*var_40);
     }
     if let Some(var_41) = &input.admin_contact {
+        #[allow(unused_mut)]
         let mut object_42 = object.key("AdminContact").start_object();
         crate::json_ser::serialize_structure_crate_model_contact_detail(&mut object_42, var_41)?;
         object_42.finish();
     }
     if let Some(var_43) = &input.registrant_contact {
+        #[allow(unused_mut)]
         let mut object_44 = object.key("RegistrantContact").start_object();
         crate::json_ser::serialize_structure_crate_model_contact_detail(&mut object_44, var_43)?;
         object_44.finish();
     }
     if let Some(var_45) = &input.tech_contact {
+        #[allow(unused_mut)]
         let mut object_46 = object.key("TechContact").start_object();
         crate::json_ser::serialize_structure_crate_model_contact_detail(&mut object_46, var_45)?;
         object_46.finish();
@@ -371,6 +376,7 @@ pub fn serialize_structure_crate_input_transfer_domain_input(
         let mut array_59 = object.key("Nameservers").start_array();
         for item_60 in var_58 {
             {
+                #[allow(unused_mut)]
                 let mut object_61 = array_59.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_nameserver(
                     &mut object_61,
@@ -388,16 +394,19 @@ pub fn serialize_structure_crate_input_transfer_domain_input(
         object.key("AutoRenew").boolean(*var_63);
     }
     if let Some(var_64) = &input.admin_contact {
+        #[allow(unused_mut)]
         let mut object_65 = object.key("AdminContact").start_object();
         crate::json_ser::serialize_structure_crate_model_contact_detail(&mut object_65, var_64)?;
         object_65.finish();
     }
     if let Some(var_66) = &input.registrant_contact {
+        #[allow(unused_mut)]
         let mut object_67 = object.key("RegistrantContact").start_object();
         crate::json_ser::serialize_structure_crate_model_contact_detail(&mut object_67, var_66)?;
         object_67.finish();
     }
     if let Some(var_68) = &input.tech_contact {
+        #[allow(unused_mut)]
         let mut object_69 = object.key("TechContact").start_object();
         crate::json_ser::serialize_structure_crate_model_contact_detail(&mut object_69, var_68)?;
         object_69.finish();
@@ -437,16 +446,19 @@ pub fn serialize_structure_crate_input_update_domain_contact_input(
         object.key("DomainName").string(var_75.as_str());
     }
     if let Some(var_76) = &input.admin_contact {
+        #[allow(unused_mut)]
         let mut object_77 = object.key("AdminContact").start_object();
         crate::json_ser::serialize_structure_crate_model_contact_detail(&mut object_77, var_76)?;
         object_77.finish();
     }
     if let Some(var_78) = &input.registrant_contact {
+        #[allow(unused_mut)]
         let mut object_79 = object.key("RegistrantContact").start_object();
         crate::json_ser::serialize_structure_crate_model_contact_detail(&mut object_79, var_78)?;
         object_79.finish();
     }
     if let Some(var_80) = &input.tech_contact {
+        #[allow(unused_mut)]
         let mut object_81 = object.key("TechContact").start_object();
         crate::json_ser::serialize_structure_crate_model_contact_detail(&mut object_81, var_80)?;
         object_81.finish();
@@ -487,6 +499,7 @@ pub fn serialize_structure_crate_input_update_domain_nameservers_input(
         let mut array_89 = object.key("Nameservers").start_array();
         for item_90 in var_88 {
             {
+                #[allow(unused_mut)]
                 let mut object_91 = array_89.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_nameserver(
                     &mut object_91,
@@ -511,6 +524,7 @@ pub fn serialize_structure_crate_input_update_tags_for_domain_input(
         let mut array_94 = object.key("TagsToUpdate").start_array();
         for item_95 in var_93 {
             {
+                #[allow(unused_mut)]
                 let mut object_96 = array_94.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_96, item_95)?;
                 object_96.finish();
@@ -629,6 +643,7 @@ pub fn serialize_structure_crate_model_contact_detail(
         let mut array_122 = object.key("ExtraParams").start_array();
         for item_123 in var_121 {
             {
+                #[allow(unused_mut)]
                 let mut object_124 = array_122.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_extra_param(
                     &mut object_124,

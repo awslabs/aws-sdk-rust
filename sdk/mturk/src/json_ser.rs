@@ -122,6 +122,7 @@ pub fn serialize_structure_crate_input_create_hit_input(
         let mut array_24 = object.key("QualificationRequirements").start_array();
         for item_25 in var_23 {
             {
+                #[allow(unused_mut)]
                 let mut object_26 = array_24.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_qualification_requirement(
                     &mut object_26,
@@ -136,11 +137,13 @@ pub fn serialize_structure_crate_input_create_hit_input(
         object.key("UniqueRequestToken").string(var_27.as_str());
     }
     if let Some(var_28) = &input.assignment_review_policy {
+        #[allow(unused_mut)]
         let mut object_29 = object.key("AssignmentReviewPolicy").start_object();
         crate::json_ser::serialize_structure_crate_model_review_policy(&mut object_29, var_28)?;
         object_29.finish();
     }
     if let Some(var_30) = &input.hit_review_policy {
+        #[allow(unused_mut)]
         let mut object_31 = object.key("HITReviewPolicy").start_object();
         crate::json_ser::serialize_structure_crate_model_review_policy(&mut object_31, var_30)?;
         object_31.finish();
@@ -152,6 +155,7 @@ pub fn serialize_structure_crate_input_create_hit_input(
         let mut array_34 = object.key("HITLayoutParameters").start_array();
         for item_35 in var_33 {
             {
+                #[allow(unused_mut)]
                 let mut object_36 = array_34.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_hit_layout_parameter(
                     &mut object_36,
@@ -197,6 +201,7 @@ pub fn serialize_structure_crate_input_create_hit_type_input(
         let mut array_44 = object.key("QualificationRequirements").start_array();
         for item_45 in var_43 {
             {
+                #[allow(unused_mut)]
                 let mut object_46 = array_44.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_qualification_requirement(
                     &mut object_46,
@@ -239,11 +244,13 @@ pub fn serialize_structure_crate_input_create_hit_with_hit_type_input(
         object.key("UniqueRequestToken").string(var_52.as_str());
     }
     if let Some(var_53) = &input.assignment_review_policy {
+        #[allow(unused_mut)]
         let mut object_54 = object.key("AssignmentReviewPolicy").start_object();
         crate::json_ser::serialize_structure_crate_model_review_policy(&mut object_54, var_53)?;
         object_54.finish();
     }
     if let Some(var_55) = &input.hit_review_policy {
+        #[allow(unused_mut)]
         let mut object_56 = object.key("HITReviewPolicy").start_object();
         crate::json_ser::serialize_structure_crate_model_review_policy(&mut object_56, var_55)?;
         object_56.finish();
@@ -255,6 +262,7 @@ pub fn serialize_structure_crate_input_create_hit_with_hit_type_input(
         let mut array_59 = object.key("HITLayoutParameters").start_array();
         for item_60 in var_58 {
             {
+                #[allow(unused_mut)]
                 let mut object_61 = array_59.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_hit_layout_parameter(
                     &mut object_61,
@@ -734,6 +742,7 @@ pub fn serialize_structure_crate_input_send_test_event_notification_input(
     input: &crate::input::SendTestEventNotificationInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_143) = &input.notification {
+        #[allow(unused_mut)]
         let mut object_144 = object.key("Notification").start_object();
         crate::json_ser::serialize_structure_crate_model_notification_specification(
             &mut object_144,
@@ -796,6 +805,7 @@ pub fn serialize_structure_crate_input_update_notification_settings_input(
         object.key("HITTypeId").string(var_152.as_str());
     }
     if let Some(var_153) = &input.notification {
+        #[allow(unused_mut)]
         let mut object_154 = object.key("Notification").start_object();
         crate::json_ser::serialize_structure_crate_model_notification_specification(
             &mut object_154,
@@ -880,6 +890,7 @@ pub fn serialize_structure_crate_model_qualification_requirement(
         let mut array_171 = object.key("LocaleValues").start_array();
         for item_172 in var_170 {
             {
+                #[allow(unused_mut)]
                 let mut object_173 = array_171.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_locale(&mut object_173, item_172)?;
                 object_173.finish();
@@ -907,6 +918,7 @@ pub fn serialize_structure_crate_model_review_policy(
         let mut array_178 = object.key("Parameters").start_array();
         for item_179 in var_177 {
             {
+                #[allow(unused_mut)]
                 let mut object_180 = array_178.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_policy_parameter(
                     &mut object_180,
@@ -991,6 +1003,7 @@ pub fn serialize_structure_crate_model_policy_parameter(
         let mut array_196 = object.key("MapEntries").start_array();
         for item_197 in var_195 {
             {
+                #[allow(unused_mut)]
                 let mut object_198 = array_196.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_parameter_map_entry(
                     &mut object_198,

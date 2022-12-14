@@ -7,6 +7,7 @@ pub fn serialize_structure_crate_input_put_events_input(
         let mut array_2 = object.key("eventList").start_array();
         for item_3 in var_1 {
             {
+                #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_event(&mut object_4, item_3)?;
                 object_4.finish();
@@ -37,6 +38,7 @@ pub fn serialize_structure_crate_input_put_items_input(
         let mut array_10 = object.key("items").start_array();
         for item_11 in var_9 {
             {
+                #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_item(&mut object_12, item_11)?;
                 object_12.finish();
@@ -58,6 +60,7 @@ pub fn serialize_structure_crate_input_put_users_input(
         let mut array_15 = object.key("users").start_array();
         for item_16 in var_14 {
             {
+                #[allow(unused_mut)]
                 let mut object_17 = array_15.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_user(&mut object_17, item_16)?;
                 object_17.finish();

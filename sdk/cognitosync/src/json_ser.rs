@@ -17,6 +17,7 @@ pub fn serialize_structure_crate_input_set_cognito_events_input(
     input: &crate::input::SetCognitoEventsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_3) = &input.events {
+        #[allow(unused_mut)]
         let mut object_4 = object.key("Events").start_object();
         for (key_5, value_6) in var_3 {
             {
@@ -33,11 +34,13 @@ pub fn serialize_structure_crate_input_set_identity_pool_configuration_input(
     input: &crate::input::SetIdentityPoolConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_7) = &input.cognito_streams {
+        #[allow(unused_mut)]
         let mut object_8 = object.key("CognitoStreams").start_object();
         crate::json_ser::serialize_structure_crate_model_cognito_streams(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.push_sync {
+        #[allow(unused_mut)]
         let mut object_10 = object.key("PushSync").start_object();
         crate::json_ser::serialize_structure_crate_model_push_sync(&mut object_10, var_9)?;
         object_10.finish();
@@ -56,6 +59,7 @@ pub fn serialize_structure_crate_input_update_records_input(
         let mut array_13 = object.key("RecordPatches").start_array();
         for item_14 in var_12 {
             {
+                #[allow(unused_mut)]
                 let mut object_15 = array_13.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_record_patch(
                     &mut object_15,

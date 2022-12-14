@@ -26,9 +26,11 @@ pub fn serialize_structure_crate_input_create_access_preview_input(
         object.key("clientToken").string(var_5.as_str());
     }
     if let Some(var_6) = &input.configurations {
+        #[allow(unused_mut)]
         let mut object_7 = object.key("configurations").start_object();
         for (key_8, value_9) in var_6 {
             {
+                #[allow(unused_mut)]
                 let mut object_10 = object_7.key(key_8.as_str()).start_object();
                 crate::json_ser::serialize_union_crate_model_configuration(
                     &mut object_10,
@@ -53,6 +55,7 @@ pub fn serialize_structure_crate_input_create_analyzer_input(
         let mut array_13 = object.key("archiveRules").start_array();
         for item_14 in var_12 {
             {
+                #[allow(unused_mut)]
                 let mut object_15 = array_13.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_inline_archive_rule(
                     &mut object_15,
@@ -67,6 +70,7 @@ pub fn serialize_structure_crate_input_create_analyzer_input(
         object.key("clientToken").string(var_16.as_str());
     }
     if let Some(var_17) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_18 = object.key("tags").start_object();
         for (key_19, value_20) in var_17 {
             {
@@ -89,9 +93,11 @@ pub fn serialize_structure_crate_input_create_archive_rule_input(
         object.key("clientToken").string(var_22.as_str());
     }
     if let Some(var_23) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_24 = object.key("filter").start_object();
         for (key_25, value_26) in var_23 {
             {
+                #[allow(unused_mut)]
                 let mut object_27 = object_24.key(key_25.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_criterion(
                     &mut object_27,
@@ -116,9 +122,11 @@ pub fn serialize_structure_crate_input_list_access_preview_findings_input(
         object.key("analyzerArn").string(var_29.as_str());
     }
     if let Some(var_30) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_31 = object.key("filter").start_object();
         for (key_32, value_33) in var_30 {
             {
+                #[allow(unused_mut)]
                 let mut object_34 = object_31.key(key_32.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_criterion(
                     &mut object_34,
@@ -171,9 +179,11 @@ pub fn serialize_structure_crate_input_list_findings_input(
         object.key("analyzerArn").string(var_41.as_str());
     }
     if let Some(var_42) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_43 = object.key("filter").start_object();
         for (key_44, value_45) in var_42 {
             {
+                #[allow(unused_mut)]
                 let mut object_46 = object_43.key(key_44.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_criterion(
                     &mut object_46,
@@ -194,6 +204,7 @@ pub fn serialize_structure_crate_input_list_findings_input(
         object.key("nextToken").string(var_48.as_str());
     }
     if let Some(var_49) = &input.sort {
+        #[allow(unused_mut)]
         let mut object_50 = object.key("sort").start_object();
         crate::json_ser::serialize_structure_crate_model_sort_criteria(&mut object_50, var_49)?;
         object_50.finish();
@@ -209,6 +220,7 @@ pub fn serialize_structure_crate_input_start_policy_generation_input(
         object.key("clientToken").string(var_51.as_str());
     }
     if let Some(var_52) = &input.cloud_trail_details {
+        #[allow(unused_mut)]
         let mut object_53 = object.key("cloudTrailDetails").start_object();
         crate::json_ser::serialize_structure_crate_model_cloud_trail_details(
             &mut object_53,
@@ -217,6 +229,7 @@ pub fn serialize_structure_crate_input_start_policy_generation_input(
         object_53.finish();
     }
     if let Some(var_54) = &input.policy_generation_details {
+        #[allow(unused_mut)]
         let mut object_55 = object.key("policyGenerationDetails").start_object();
         crate::json_ser::serialize_structure_crate_model_policy_generation_details(
             &mut object_55,
@@ -245,6 +258,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_58) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_59 = object.key("tags").start_object();
         for (key_60, value_61) in var_58 {
             {
@@ -264,9 +278,11 @@ pub fn serialize_structure_crate_input_update_archive_rule_input(
         object.key("clientToken").string(var_62.as_str());
     }
     if let Some(var_63) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_64 = object.key("filter").start_object();
         for (key_65, value_66) in var_63 {
             {
+                #[allow(unused_mut)]
                 let mut object_67 = object_64.key(key_65.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_criterion(
                     &mut object_67,
@@ -335,6 +351,7 @@ pub fn serialize_union_crate_model_configuration(
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::Configuration::IamRole(inner) => {
+            #[allow(unused_mut)]
             let mut object_79 = object_10.key("iamRole").start_object();
             crate::json_ser::serialize_structure_crate_model_iam_role_configuration(
                 &mut object_79,
@@ -343,6 +360,7 @@ pub fn serialize_union_crate_model_configuration(
             object_79.finish();
         }
         crate::model::Configuration::KmsKey(inner) => {
+            #[allow(unused_mut)]
             let mut object_80 = object_10.key("kmsKey").start_object();
             crate::json_ser::serialize_structure_crate_model_kms_key_configuration(
                 &mut object_80,
@@ -351,6 +369,7 @@ pub fn serialize_union_crate_model_configuration(
             object_80.finish();
         }
         crate::model::Configuration::SecretsManagerSecret(inner) => {
+            #[allow(unused_mut)]
             let mut object_81 = object_10.key("secretsManagerSecret").start_object();
             crate::json_ser::serialize_structure_crate_model_secrets_manager_secret_configuration(
                 &mut object_81,
@@ -359,6 +378,7 @@ pub fn serialize_union_crate_model_configuration(
             object_81.finish();
         }
         crate::model::Configuration::S3Bucket(inner) => {
+            #[allow(unused_mut)]
             let mut object_82 = object_10.key("s3Bucket").start_object();
             crate::json_ser::serialize_structure_crate_model_s3_bucket_configuration(
                 &mut object_82,
@@ -367,6 +387,7 @@ pub fn serialize_union_crate_model_configuration(
             object_82.finish();
         }
         crate::model::Configuration::SqsQueue(inner) => {
+            #[allow(unused_mut)]
             let mut object_83 = object_10.key("sqsQueue").start_object();
             crate::json_ser::serialize_structure_crate_model_sqs_queue_configuration(
                 &mut object_83,
@@ -393,9 +414,11 @@ pub fn serialize_structure_crate_model_inline_archive_rule(
         object.key("ruleName").string(var_84.as_str());
     }
     if let Some(var_85) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_86 = object.key("filter").start_object();
         for (key_87, value_88) in var_85 {
             {
+                #[allow(unused_mut)]
                 let mut object_89 = object_86.key(key_87.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_criterion(
                     &mut object_89,
@@ -467,6 +490,7 @@ pub fn serialize_structure_crate_model_cloud_trail_details(
         let mut array_103 = object.key("trails").start_array();
         for item_104 in var_102 {
             {
+                #[allow(unused_mut)]
                 let mut object_105 = array_103.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_trail(&mut object_105, item_104)?;
                 object_105.finish();
@@ -515,6 +539,7 @@ pub fn serialize_structure_crate_model_kms_key_configuration(
     input: &crate::model::KmsKeyConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_111) = &input.key_policies {
+        #[allow(unused_mut)]
         let mut object_112 = object.key("keyPolicies").start_object();
         for (key_113, value_114) in var_111 {
             {
@@ -527,6 +552,7 @@ pub fn serialize_structure_crate_model_kms_key_configuration(
         let mut array_116 = object.key("grants").start_array();
         for item_117 in var_115 {
             {
+                #[allow(unused_mut)]
                 let mut object_118 = array_116.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_kms_grant_configuration(
                     &mut object_118,
@@ -564,6 +590,7 @@ pub fn serialize_structure_crate_model_s3_bucket_configuration(
         let mut array_123 = object.key("bucketAclGrants").start_array();
         for item_124 in var_122 {
             {
+                #[allow(unused_mut)]
                 let mut object_125 = array_123.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_s3_bucket_acl_grant_configuration(
                     &mut object_125,
@@ -575,6 +602,7 @@ pub fn serialize_structure_crate_model_s3_bucket_configuration(
         array_123.finish();
     }
     if let Some(var_126) = &input.bucket_public_access_block {
+        #[allow(unused_mut)]
         let mut object_127 = object.key("bucketPublicAccessBlock").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_public_access_block_configuration(
             &mut object_127,
@@ -583,9 +611,11 @@ pub fn serialize_structure_crate_model_s3_bucket_configuration(
         object_127.finish();
     }
     if let Some(var_128) = &input.access_points {
+        #[allow(unused_mut)]
         let mut object_129 = object.key("accessPoints").start_object();
         for (key_130, value_131) in var_128 {
             {
+                #[allow(unused_mut)]
                 let mut object_132 = object_129.key(key_130.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_s3_access_point_configuration(
                     &mut object_132,
@@ -651,6 +681,7 @@ pub fn serialize_structure_crate_model_kms_grant_configuration(
         object.key("retiringPrincipal").string(var_143.as_str());
     }
     if let Some(var_144) = &input.constraints {
+        #[allow(unused_mut)]
         let mut object_145 = object.key("constraints").start_object();
         crate::json_ser::serialize_structure_crate_model_kms_grant_constraints(
             &mut object_145,
@@ -672,6 +703,7 @@ pub fn serialize_structure_crate_model_s3_bucket_acl_grant_configuration(
         object.key("permission").string(var_147.as_str());
     }
     if let Some(var_148) = &input.grantee {
+        #[allow(unused_mut)]
         let mut object_149 = object.key("grantee").start_object();
         crate::json_ser::serialize_union_crate_model_acl_grantee(&mut object_149, var_148)?;
         object_149.finish();
@@ -700,6 +732,7 @@ pub fn serialize_structure_crate_model_s3_access_point_configuration(
         object.key("accessPointPolicy").string(var_152.as_str());
     }
     if let Some(var_153) = &input.public_access_block {
+        #[allow(unused_mut)]
         let mut object_154 = object.key("publicAccessBlock").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_public_access_block_configuration(
             &mut object_154,
@@ -708,6 +741,7 @@ pub fn serialize_structure_crate_model_s3_access_point_configuration(
         object_154.finish();
     }
     if let Some(var_155) = &input.network_origin {
+        #[allow(unused_mut)]
         let mut object_156 = object.key("networkOrigin").start_object();
         crate::json_ser::serialize_union_crate_model_network_origin_configuration(
             &mut object_156,
@@ -723,6 +757,7 @@ pub fn serialize_structure_crate_model_kms_grant_constraints(
     input: &crate::model::KmsGrantConstraints,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_157) = &input.encryption_context_equals {
+        #[allow(unused_mut)]
         let mut object_158 = object.key("encryptionContextEquals").start_object();
         for (key_159, value_160) in var_157 {
             {
@@ -732,6 +767,7 @@ pub fn serialize_structure_crate_model_kms_grant_constraints(
         object_158.finish();
     }
     if let Some(var_161) = &input.encryption_context_subset {
+        #[allow(unused_mut)]
         let mut object_162 = object.key("encryptionContextSubset").start_object();
         for (key_163, value_164) in var_161 {
             {
@@ -771,6 +807,7 @@ pub fn serialize_union_crate_model_network_origin_configuration(
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::NetworkOriginConfiguration::VpcConfiguration(inner) => {
+            #[allow(unused_mut)]
             let mut object_165 = object_156.key("vpcConfiguration").start_object();
             crate::json_ser::serialize_structure_crate_model_vpc_configuration(
                 &mut object_165,
@@ -779,6 +816,7 @@ pub fn serialize_union_crate_model_network_origin_configuration(
             object_165.finish();
         }
         crate::model::NetworkOriginConfiguration::InternetConfiguration(inner) => {
+            #[allow(unused_mut)]
             let mut object_166 = object_156.key("internetConfiguration").start_object();
             crate::json_ser::serialize_structure_crate_model_internet_configuration(
                 &mut object_166,

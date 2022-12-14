@@ -7,6 +7,7 @@ pub fn serialize_structure_crate_input_get_personalized_ranking_input(
         object.key("campaignArn").string(var_1.as_str());
     }
     if let Some(var_2) = &input.context {
+        #[allow(unused_mut)]
         let mut object_3 = object.key("context").start_object();
         for (key_4, value_5) in var_2 {
             {
@@ -19,6 +20,7 @@ pub fn serialize_structure_crate_input_get_personalized_ranking_input(
         object.key("filterArn").string(var_6.as_str());
     }
     if let Some(var_7) = &input.filter_values {
+        #[allow(unused_mut)]
         let mut object_8 = object.key("filterValues").start_object();
         for (key_9, value_10) in var_7 {
             {
@@ -50,6 +52,7 @@ pub fn serialize_structure_crate_input_get_recommendations_input(
         object.key("campaignArn").string(var_15.as_str());
     }
     if let Some(var_16) = &input.context {
+        #[allow(unused_mut)]
         let mut object_17 = object.key("context").start_object();
         for (key_18, value_19) in var_16 {
             {
@@ -62,6 +65,7 @@ pub fn serialize_structure_crate_input_get_recommendations_input(
         object.key("filterArn").string(var_20.as_str());
     }
     if let Some(var_21) = &input.filter_values {
+        #[allow(unused_mut)]
         let mut object_22 = object.key("filterValues").start_object();
         for (key_23, value_24) in var_21 {
             {
@@ -83,6 +87,7 @@ pub fn serialize_structure_crate_input_get_recommendations_input(
         let mut array_27 = object.key("promotions").start_array();
         for item_28 in var_26 {
             {
+                #[allow(unused_mut)]
                 let mut object_29 = array_27.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_promotion(
                     &mut object_29,
@@ -119,6 +124,7 @@ pub fn serialize_structure_crate_model_promotion(
         object.key("filterArn").string(var_33.as_str());
     }
     if let Some(var_34) = &input.filter_values {
+        #[allow(unused_mut)]
         let mut object_35 = object.key("filterValues").start_object();
         for (key_36, value_37) in var_34 {
             {

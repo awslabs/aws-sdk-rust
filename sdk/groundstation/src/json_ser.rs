@@ -4,6 +4,7 @@ pub fn serialize_structure_crate_input_create_config_input(
     input: &crate::input::CreateConfigInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.config_data {
+        #[allow(unused_mut)]
         let mut object_2 = object.key("configData").start_object();
         crate::json_ser::serialize_union_crate_model_config_type_data(&mut object_2, var_1)?;
         object_2.finish();
@@ -12,6 +13,7 @@ pub fn serialize_structure_crate_input_create_config_input(
         object.key("name").string(var_3.as_str());
     }
     if let Some(var_4) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_5 = object.key("tags").start_object();
         for (key_6, value_7) in var_4 {
             {
@@ -31,6 +33,7 @@ pub fn serialize_structure_crate_input_create_dataflow_endpoint_group_input(
         let mut array_9 = object.key("endpointDetails").start_array();
         for item_10 in var_8 {
             {
+                #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_endpoint_details(
                     &mut object_11,
@@ -42,6 +45,7 @@ pub fn serialize_structure_crate_input_create_dataflow_endpoint_group_input(
         array_9.finish();
     }
     if let Some(var_12) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_13 = object.key("tags").start_object();
         for (key_14, value_15) in var_12 {
             {
@@ -94,6 +98,7 @@ pub fn serialize_structure_crate_input_create_mission_profile_input(
         object.key("name").string(var_24.as_str());
     }
     if let Some(var_25) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_26 = object.key("tags").start_object();
         for (key_27, value_28) in var_25 {
             {
@@ -195,6 +200,7 @@ pub fn serialize_structure_crate_input_reserve_contact_input(
             .date_time(var_46, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_47) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_48 = object.key("tags").start_object();
         for (key_49, value_50) in var_47 {
             {
@@ -211,6 +217,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_51) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_52 = object.key("tags").start_object();
         for (key_53, value_54) in var_51 {
             {
@@ -227,6 +234,7 @@ pub fn serialize_structure_crate_input_update_config_input(
     input: &crate::input::UpdateConfigInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_55) = &input.config_data {
+        #[allow(unused_mut)]
         let mut object_56 = object.key("configData").start_object();
         crate::json_ser::serialize_union_crate_model_config_type_data(&mut object_56, var_55)?;
         object_56.finish();
@@ -289,6 +297,7 @@ pub fn serialize_union_crate_model_config_type_data(
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::ConfigTypeData::AntennaDownlinkConfig(inner) => {
+            #[allow(unused_mut)]
             let mut object_68 = object_2.key("antennaDownlinkConfig").start_object();
             crate::json_ser::serialize_structure_crate_model_antenna_downlink_config(
                 &mut object_68,
@@ -297,6 +306,7 @@ pub fn serialize_union_crate_model_config_type_data(
             object_68.finish();
         }
         crate::model::ConfigTypeData::TrackingConfig(inner) => {
+            #[allow(unused_mut)]
             let mut object_69 = object_2.key("trackingConfig").start_object();
             crate::json_ser::serialize_structure_crate_model_tracking_config(
                 &mut object_69,
@@ -305,6 +315,7 @@ pub fn serialize_union_crate_model_config_type_data(
             object_69.finish();
         }
         crate::model::ConfigTypeData::DataflowEndpointConfig(inner) => {
+            #[allow(unused_mut)]
             let mut object_70 = object_2.key("dataflowEndpointConfig").start_object();
             crate::json_ser::serialize_structure_crate_model_dataflow_endpoint_config(
                 &mut object_70,
@@ -313,6 +324,7 @@ pub fn serialize_union_crate_model_config_type_data(
             object_70.finish();
         }
         crate::model::ConfigTypeData::AntennaDownlinkDemodDecodeConfig(inner) => {
+            #[allow(unused_mut)]
             let mut object_71 = object_2
                 .key("antennaDownlinkDemodDecodeConfig")
                 .start_object();
@@ -323,6 +335,7 @@ pub fn serialize_union_crate_model_config_type_data(
             object_71.finish();
         }
         crate::model::ConfigTypeData::AntennaUplinkConfig(inner) => {
+            #[allow(unused_mut)]
             let mut object_72 = object_2.key("antennaUplinkConfig").start_object();
             crate::json_ser::serialize_structure_crate_model_antenna_uplink_config(
                 &mut object_72,
@@ -331,6 +344,7 @@ pub fn serialize_union_crate_model_config_type_data(
             object_72.finish();
         }
         crate::model::ConfigTypeData::UplinkEchoConfig(inner) => {
+            #[allow(unused_mut)]
             let mut object_73 = object_2.key("uplinkEchoConfig").start_object();
             crate::json_ser::serialize_structure_crate_model_uplink_echo_config(
                 &mut object_73,
@@ -339,6 +353,7 @@ pub fn serialize_union_crate_model_config_type_data(
             object_73.finish();
         }
         crate::model::ConfigTypeData::S3RecordingConfig(inner) => {
+            #[allow(unused_mut)]
             let mut object_74 = object_2.key("s3RecordingConfig").start_object();
             crate::json_ser::serialize_structure_crate_model_s3_recording_config(
                 &mut object_74,
@@ -362,11 +377,13 @@ pub fn serialize_structure_crate_model_endpoint_details(
     input: &crate::model::EndpointDetails,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_75) = &input.security_details {
+        #[allow(unused_mut)]
         let mut object_76 = object.key("securityDetails").start_object();
         crate::json_ser::serialize_structure_crate_model_security_details(&mut object_76, var_75)?;
         object_76.finish();
     }
     if let Some(var_77) = &input.endpoint {
+        #[allow(unused_mut)]
         let mut object_78 = object.key("endpoint").start_object();
         crate::json_ser::serialize_structure_crate_model_dataflow_endpoint(&mut object_78, var_77)?;
         object_78.finish();
@@ -379,6 +396,7 @@ pub fn serialize_structure_crate_model_antenna_downlink_config(
     input: &crate::model::AntennaDownlinkConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_79) = &input.spectrum_config {
+        #[allow(unused_mut)]
         let mut object_80 = object.key("spectrumConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_spectrum_config(&mut object_80, var_79)?;
         object_80.finish();
@@ -414,11 +432,13 @@ pub fn serialize_structure_crate_model_antenna_downlink_demod_decode_config(
     input: &crate::model::AntennaDownlinkDemodDecodeConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_84) = &input.spectrum_config {
+        #[allow(unused_mut)]
         let mut object_85 = object.key("spectrumConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_spectrum_config(&mut object_85, var_84)?;
         object_85.finish();
     }
     if let Some(var_86) = &input.demodulation_config {
+        #[allow(unused_mut)]
         let mut object_87 = object.key("demodulationConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_demodulation_config(
             &mut object_87,
@@ -427,6 +447,7 @@ pub fn serialize_structure_crate_model_antenna_downlink_demod_decode_config(
         object_87.finish();
     }
     if let Some(var_88) = &input.decode_config {
+        #[allow(unused_mut)]
         let mut object_89 = object.key("decodeConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_decode_config(&mut object_89, var_88)?;
         object_89.finish();
@@ -442,6 +463,7 @@ pub fn serialize_structure_crate_model_antenna_uplink_config(
         object.key("transmitDisabled").boolean(*var_90);
     }
     if let Some(var_91) = &input.spectrum_config {
+        #[allow(unused_mut)]
         let mut object_92 = object.key("spectrumConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_uplink_spectrum_config(
             &mut object_92,
@@ -450,6 +472,7 @@ pub fn serialize_structure_crate_model_antenna_uplink_config(
         object_92.finish();
     }
     if let Some(var_93) = &input.target_eirp {
+        #[allow(unused_mut)]
         let mut object_94 = object.key("targetEirp").start_object();
         crate::json_ser::serialize_structure_crate_model_eirp(&mut object_94, var_93)?;
         object_94.finish();
@@ -522,6 +545,7 @@ pub fn serialize_structure_crate_model_dataflow_endpoint(
         object.key("name").string(var_107.as_str());
     }
     if let Some(var_108) = &input.address {
+        #[allow(unused_mut)]
         let mut object_109 = object.key("address").start_object();
         crate::json_ser::serialize_structure_crate_model_socket_address(&mut object_109, var_108)?;
         object_109.finish();
@@ -543,11 +567,13 @@ pub fn serialize_structure_crate_model_spectrum_config(
     input: &crate::model::SpectrumConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_112) = &input.center_frequency {
+        #[allow(unused_mut)]
         let mut object_113 = object.key("centerFrequency").start_object();
         crate::json_ser::serialize_structure_crate_model_frequency(&mut object_113, var_112)?;
         object_113.finish();
     }
     if let Some(var_114) = &input.bandwidth {
+        #[allow(unused_mut)]
         let mut object_115 = object.key("bandwidth").start_object();
         crate::json_ser::serialize_structure_crate_model_frequency_bandwidth(
             &mut object_115,
@@ -586,6 +612,7 @@ pub fn serialize_structure_crate_model_uplink_spectrum_config(
     input: &crate::model::UplinkSpectrumConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_119) = &input.center_frequency {
+        #[allow(unused_mut)]
         let mut object_120 = object.key("centerFrequency").start_object();
         crate::json_ser::serialize_structure_crate_model_frequency(&mut object_120, var_119)?;
         object_120.finish();

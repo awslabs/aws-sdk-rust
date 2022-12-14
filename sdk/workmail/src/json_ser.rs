@@ -90,6 +90,7 @@ pub fn serialize_structure_crate_input_create_availability_configuration_input(
         object.key("DomainName").string(var_17.as_str());
     }
     if let Some(var_18) = &input.ews_provider {
+        #[allow(unused_mut)]
         let mut object_19 = object.key("EwsProvider").start_object();
         crate::json_ser::serialize_structure_crate_model_ews_availability_provider(
             &mut object_19,
@@ -98,6 +99,7 @@ pub fn serialize_structure_crate_input_create_availability_configuration_input(
         object_19.finish();
     }
     if let Some(var_20) = &input.lambda_provider {
+        #[allow(unused_mut)]
         let mut object_21 = object.key("LambdaProvider").start_object();
         crate::json_ser::serialize_structure_crate_model_lambda_availability_provider(
             &mut object_21,
@@ -144,6 +146,7 @@ pub fn serialize_structure_crate_input_create_impersonation_role_input(
         let mut array_30 = object.key("Rules").start_array();
         for item_31 in var_29 {
             {
+                #[allow(unused_mut)]
                 let mut object_32 = array_30.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_impersonation_rule(
                     &mut object_32,
@@ -268,6 +271,7 @@ pub fn serialize_structure_crate_input_create_organization_input(
         let mut array_66 = object.key("Domains").start_array();
         for item_67 in var_65 {
             {
+                #[allow(unused_mut)]
                 let mut object_68 = array_66.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_domain(&mut object_68, item_67)?;
                 object_68.finish();
@@ -1247,6 +1251,7 @@ pub fn serialize_structure_crate_input_put_retention_policy_input(
         let mut array_245 = object.key("FolderConfigurations").start_array();
         for item_246 in var_244 {
             {
+                #[allow(unused_mut)]
                 let mut object_247 = array_245.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_folder_configuration(
                     &mut object_247,
@@ -1350,6 +1355,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_267 = object.key("Tags").start_array();
         for item_268 in var_266 {
             {
+                #[allow(unused_mut)]
                 let mut object_269 = array_267.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_269, item_268)?;
                 object_269.finish();
@@ -1371,6 +1377,7 @@ pub fn serialize_structure_crate_input_test_availability_configuration_input(
         object.key("DomainName").string(var_271.as_str());
     }
     if let Some(var_272) = &input.ews_provider {
+        #[allow(unused_mut)]
         let mut object_273 = object.key("EwsProvider").start_object();
         crate::json_ser::serialize_structure_crate_model_ews_availability_provider(
             &mut object_273,
@@ -1379,6 +1386,7 @@ pub fn serialize_structure_crate_input_test_availability_configuration_input(
         object_273.finish();
     }
     if let Some(var_274) = &input.lambda_provider {
+        #[allow(unused_mut)]
         let mut object_275 = object.key("LambdaProvider").start_object();
         crate::json_ser::serialize_structure_crate_model_lambda_availability_provider(
             &mut object_275,
@@ -1419,6 +1427,7 @@ pub fn serialize_structure_crate_input_update_availability_configuration_input(
         object.key("DomainName").string(var_281.as_str());
     }
     if let Some(var_282) = &input.ews_provider {
+        #[allow(unused_mut)]
         let mut object_283 = object.key("EwsProvider").start_object();
         crate::json_ser::serialize_structure_crate_model_ews_availability_provider(
             &mut object_283,
@@ -1427,6 +1436,7 @@ pub fn serialize_structure_crate_input_update_availability_configuration_input(
         object_283.finish();
     }
     if let Some(var_284) = &input.lambda_provider {
+        #[allow(unused_mut)]
         let mut object_285 = object.key("LambdaProvider").start_object();
         crate::json_ser::serialize_structure_crate_model_lambda_availability_provider(
             &mut object_285,
@@ -1473,6 +1483,7 @@ pub fn serialize_structure_crate_input_update_impersonation_role_input(
         let mut array_294 = object.key("Rules").start_array();
         for item_295 in var_293 {
             {
+                #[allow(unused_mut)]
                 let mut object_296 = array_294.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_impersonation_rule(
                     &mut object_296,
@@ -1631,6 +1642,7 @@ pub fn serialize_structure_crate_input_update_resource_input(
         object.key("Name").string(var_334.as_str());
     }
     if let Some(var_335) = &input.booking_options {
+        #[allow(unused_mut)]
         let mut object_336 = object.key("BookingOptions").start_object();
         crate::json_ser::serialize_structure_crate_model_booking_options(&mut object_336, var_335)?;
         object_336.finish();

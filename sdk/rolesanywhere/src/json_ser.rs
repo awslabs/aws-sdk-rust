@@ -43,6 +43,7 @@ pub fn serialize_structure_crate_input_create_profile_input(
         let mut array_13 = object.key("tags").start_array();
         for item_14 in var_12 {
             {
+                #[allow(unused_mut)]
                 let mut object_15 = array_13.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_15, item_14)?;
                 object_15.finish();
@@ -64,6 +65,7 @@ pub fn serialize_structure_crate_input_create_trust_anchor_input(
         object.key("name").string(var_17.as_str());
     }
     if let Some(var_18) = &input.source {
+        #[allow(unused_mut)]
         let mut object_19 = object.key("source").start_object();
         crate::json_ser::serialize_structure_crate_model_source(&mut object_19, var_18)?;
         object_19.finish();
@@ -72,6 +74,7 @@ pub fn serialize_structure_crate_input_create_trust_anchor_input(
         let mut array_21 = object.key("tags").start_array();
         for item_22 in var_20 {
             {
+                #[allow(unused_mut)]
                 let mut object_23 = array_21.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_23, item_22)?;
                 object_23.finish();
@@ -101,6 +104,7 @@ pub fn serialize_structure_crate_input_import_crl_input(
         let mut array_28 = object.key("tags").start_array();
         for item_29 in var_27 {
             {
+                #[allow(unused_mut)]
                 let mut object_30 = array_28.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_30, item_29)?;
                 object_30.finish();
@@ -125,6 +129,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_34 = object.key("tags").start_array();
         for item_35 in var_33 {
             {
+                #[allow(unused_mut)]
                 let mut object_36 = array_34.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_36, item_35)?;
                 object_36.finish();
@@ -214,6 +219,7 @@ pub fn serialize_structure_crate_input_update_trust_anchor_input(
         object.key("name").string(var_52.as_str());
     }
     if let Some(var_53) = &input.source {
+        #[allow(unused_mut)]
         let mut object_54 = object.key("source").start_object();
         crate::json_ser::serialize_structure_crate_model_source(&mut object_54, var_53)?;
         object_54.finish();
@@ -242,6 +248,7 @@ pub fn serialize_structure_crate_model_source(
         object.key("sourceType").string(var_57.as_str());
     }
     if let Some(var_58) = &input.source_data {
+        #[allow(unused_mut)]
         let mut object_59 = object.key("sourceData").start_object();
         crate::json_ser::serialize_union_crate_model_source_data(&mut object_59, var_58)?;
         object_59.finish();

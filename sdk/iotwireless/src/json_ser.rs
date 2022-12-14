@@ -7,6 +7,7 @@ pub fn serialize_structure_crate_input_associate_aws_account_with_partner_accoun
         object.key("ClientRequestToken").string(var_1.as_str());
     }
     if let Some(var_2) = &input.sidewalk {
+        #[allow(unused_mut)]
         let mut object_3 = object.key("Sidewalk").start_object();
         crate::json_ser::serialize_structure_crate_model_sidewalk_account_info(
             &mut object_3,
@@ -18,6 +19,7 @@ pub fn serialize_structure_crate_input_associate_aws_account_with_partner_accoun
         let mut array_5 = object.key("Tags").start_array();
         for item_6 in var_4 {
             {
+                #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_7, item_6)?;
                 object_7.finish();
@@ -114,6 +116,7 @@ pub fn serialize_structure_crate_input_create_destination_input(
         let mut array_21 = object.key("Tags").start_array();
         for item_22 in var_20 {
             {
+                #[allow(unused_mut)]
                 let mut object_23 = array_21.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_23, item_22)?;
                 object_23.finish();
@@ -132,6 +135,7 @@ pub fn serialize_structure_crate_input_create_device_profile_input(
         object.key("ClientRequestToken").string(var_24.as_str());
     }
     if let Some(var_25) = &input.lo_ra_wan {
+        #[allow(unused_mut)]
         let mut object_26 = object.key("LoRaWAN").start_object();
         crate::json_ser::serialize_structure_crate_model_lo_ra_wan_device_profile(
             &mut object_26,
@@ -146,6 +150,7 @@ pub fn serialize_structure_crate_input_create_device_profile_input(
         let mut array_29 = object.key("Tags").start_array();
         for item_30 in var_28 {
             {
+                #[allow(unused_mut)]
                 let mut object_31 = array_29.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_31, item_30)?;
                 object_31.finish();
@@ -173,6 +178,7 @@ pub fn serialize_structure_crate_input_create_fuota_task_input(
         object.key("FirmwareUpdateRole").string(var_35.as_str());
     }
     if let Some(var_36) = &input.lo_ra_wan {
+        #[allow(unused_mut)]
         let mut object_37 = object.key("LoRaWAN").start_object();
         crate::json_ser::serialize_structure_crate_model_lo_ra_wan_fuota_task(
             &mut object_37,
@@ -187,6 +193,7 @@ pub fn serialize_structure_crate_input_create_fuota_task_input(
         let mut array_40 = object.key("Tags").start_array();
         for item_41 in var_39 {
             {
+                #[allow(unused_mut)]
                 let mut object_42 = array_40.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_42, item_41)?;
                 object_42.finish();
@@ -208,6 +215,7 @@ pub fn serialize_structure_crate_input_create_multicast_group_input(
         object.key("Description").string(var_44.as_str());
     }
     if let Some(var_45) = &input.lo_ra_wan {
+        #[allow(unused_mut)]
         let mut object_46 = object.key("LoRaWAN").start_object();
         crate::json_ser::serialize_structure_crate_model_lo_ra_wan_multicast(
             &mut object_46,
@@ -222,6 +230,7 @@ pub fn serialize_structure_crate_input_create_multicast_group_input(
         let mut array_49 = object.key("Tags").start_array();
         for item_50 in var_48 {
             {
+                #[allow(unused_mut)]
                 let mut object_51 = array_49.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_51, item_50)?;
                 object_51.finish();
@@ -249,6 +258,7 @@ pub fn serialize_structure_crate_input_create_network_analyzer_configuration_inp
         let mut array_56 = object.key("Tags").start_array();
         for item_57 in var_55 {
             {
+                #[allow(unused_mut)]
                 let mut object_58 = array_56.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_58, item_57)?;
                 object_58.finish();
@@ -257,6 +267,7 @@ pub fn serialize_structure_crate_input_create_network_analyzer_configuration_inp
         array_56.finish();
     }
     if let Some(var_59) = &input.trace_content {
+        #[allow(unused_mut)]
         let mut object_60 = object.key("TraceContent").start_object();
         crate::json_ser::serialize_structure_crate_model_trace_content(&mut object_60, var_59)?;
         object_60.finish();
@@ -290,6 +301,7 @@ pub fn serialize_structure_crate_input_create_service_profile_input(
         object.key("ClientRequestToken").string(var_67.as_str());
     }
     if let Some(var_68) = &input.lo_ra_wan {
+        #[allow(unused_mut)]
         let mut object_69 = object.key("LoRaWAN").start_object();
         crate::json_ser::serialize_structure_crate_model_lo_ra_wan_service_profile(
             &mut object_69,
@@ -304,6 +316,7 @@ pub fn serialize_structure_crate_input_create_service_profile_input(
         let mut array_72 = object.key("Tags").start_array();
         for item_73 in var_71 {
             {
+                #[allow(unused_mut)]
                 let mut object_74 = array_72.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_74, item_73)?;
                 object_74.finish();
@@ -328,6 +341,7 @@ pub fn serialize_structure_crate_input_create_wireless_device_input(
         object.key("DestinationName").string(var_77.as_str());
     }
     if let Some(var_78) = &input.lo_ra_wan {
+        #[allow(unused_mut)]
         let mut object_79 = object.key("LoRaWAN").start_object();
         crate::json_ser::serialize_structure_crate_model_lo_ra_wan_device(&mut object_79, var_78)?;
         object_79.finish();
@@ -339,6 +353,7 @@ pub fn serialize_structure_crate_input_create_wireless_device_input(
         let mut array_82 = object.key("Tags").start_array();
         for item_83 in var_81 {
             {
+                #[allow(unused_mut)]
                 let mut object_84 = array_82.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_84, item_83)?;
                 object_84.finish();
@@ -363,6 +378,7 @@ pub fn serialize_structure_crate_input_create_wireless_gateway_input(
         object.key("Description").string(var_87.as_str());
     }
     if let Some(var_88) = &input.lo_ra_wan {
+        #[allow(unused_mut)]
         let mut object_89 = object.key("LoRaWAN").start_object();
         crate::json_ser::serialize_structure_crate_model_lo_ra_wan_gateway(&mut object_89, var_88)?;
         object_89.finish();
@@ -374,6 +390,7 @@ pub fn serialize_structure_crate_input_create_wireless_gateway_input(
         let mut array_92 = object.key("Tags").start_array();
         for item_93 in var_91 {
             {
+                #[allow(unused_mut)]
                 let mut object_94 = array_92.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_94, item_93)?;
                 object_94.finish();
@@ -415,6 +432,7 @@ pub fn serialize_structure_crate_input_create_wireless_gateway_task_definition_i
         let mut array_99 = object.key("Tags").start_array();
         for item_100 in var_98 {
             {
+                #[allow(unused_mut)]
                 let mut object_101 = array_99.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_101, item_100)?;
                 object_101.finish();
@@ -423,6 +441,7 @@ pub fn serialize_structure_crate_input_create_wireless_gateway_task_definition_i
         array_99.finish();
     }
     if let Some(var_102) = &input.update {
+        #[allow(unused_mut)]
         let mut object_103 = object.key("Update").start_object();
         crate::json_ser::serialize_structure_crate_model_update_wireless_gateway_task_create(
             &mut object_103,
@@ -441,6 +460,7 @@ pub fn serialize_structure_crate_input_put_position_configuration_input(
         object.key("Destination").string(var_104.as_str());
     }
     if let Some(var_105) = &input.solvers {
+        #[allow(unused_mut)]
         let mut object_106 = object.key("Solvers").start_object();
         crate::json_ser::serialize_structure_crate_model_position_solver_configurations(
             &mut object_106,
@@ -469,6 +489,7 @@ pub fn serialize_structure_crate_input_send_data_to_multicast_group_input(
         object.key("PayloadData").string(var_108.as_str());
     }
     if let Some(var_109) = &input.wireless_metadata {
+        #[allow(unused_mut)]
         let mut object_110 = object.key("WirelessMetadata").start_object();
         crate::json_ser::serialize_structure_crate_model_multicast_wireless_metadata(
             &mut object_110,
@@ -493,6 +514,7 @@ pub fn serialize_structure_crate_input_send_data_to_wireless_device_input(
         );
     }
     if let Some(var_113) = &input.wireless_metadata {
+        #[allow(unused_mut)]
         let mut object_114 = object.key("WirelessMetadata").start_object();
         crate::json_ser::serialize_structure_crate_model_wireless_metadata(
             &mut object_114,
@@ -514,6 +536,7 @@ pub fn serialize_structure_crate_input_start_bulk_associate_wireless_device_with
         let mut array_117 = object.key("Tags").start_array();
         for item_118 in var_116 {
             {
+                #[allow(unused_mut)]
                 let mut object_119 = array_117.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_119, item_118)?;
                 object_119.finish();
@@ -535,6 +558,7 @@ pub fn serialize_structure_crate_input_start_bulk_disassociate_wireless_device_f
         let mut array_122 = object.key("Tags").start_array();
         for item_123 in var_121 {
             {
+                #[allow(unused_mut)]
                 let mut object_124 = array_122.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_124, item_123)?;
                 object_124.finish();
@@ -550,6 +574,7 @@ pub fn serialize_structure_crate_input_start_fuota_task_input(
     input: &crate::input::StartFuotaTaskInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_125) = &input.lo_ra_wan {
+        #[allow(unused_mut)]
         let mut object_126 = object.key("LoRaWAN").start_object();
         crate::json_ser::serialize_structure_crate_model_lo_ra_wan_start_fuota_task(
             &mut object_126,
@@ -565,6 +590,7 @@ pub fn serialize_structure_crate_input_start_multicast_group_session_input(
     input: &crate::input::StartMulticastGroupSessionInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_127) = &input.lo_ra_wan {
+        #[allow(unused_mut)]
         let mut object_128 = object.key("LoRaWAN").start_object();
         crate::json_ser::serialize_structure_crate_model_lo_ra_wan_multicast_session(
             &mut object_128,
@@ -583,6 +609,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_130 = object.key("Tags").start_array();
         for item_131 in var_129 {
             {
+                #[allow(unused_mut)]
                 let mut object_132 = array_130.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_132, item_131)?;
                 object_132.finish();
@@ -617,16 +644,19 @@ pub fn serialize_structure_crate_input_update_event_configuration_by_resource_ty
     input: &crate::input::UpdateEventConfigurationByResourceTypesInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_137) = &input.connection_status {
+        #[allow(unused_mut)]
         let mut object_138 = object.key("ConnectionStatus").start_object();
         crate::json_ser::serialize_structure_crate_model_connection_status_resource_type_event_configuration(&mut object_138, var_137)?;
         object_138.finish();
     }
     if let Some(var_139) = &input.device_registration_state {
+        #[allow(unused_mut)]
         let mut object_140 = object.key("DeviceRegistrationState").start_object();
         crate::json_ser::serialize_structure_crate_model_device_registration_state_resource_type_event_configuration(&mut object_140, var_139)?;
         object_140.finish();
     }
     if let Some(var_141) = &input.join {
+        #[allow(unused_mut)]
         let mut object_142 = object.key("Join").start_object();
         crate::json_ser::serialize_structure_crate_model_join_resource_type_event_configuration(
             &mut object_142,
@@ -635,11 +665,13 @@ pub fn serialize_structure_crate_input_update_event_configuration_by_resource_ty
         object_142.finish();
     }
     if let Some(var_143) = &input.message_delivery_status {
+        #[allow(unused_mut)]
         let mut object_144 = object.key("MessageDeliveryStatus").start_object();
         crate::json_ser::serialize_structure_crate_model_message_delivery_status_resource_type_event_configuration(&mut object_144, var_143)?;
         object_144.finish();
     }
     if let Some(var_145) = &input.proximity {
+        #[allow(unused_mut)]
         let mut object_146 = object.key("Proximity").start_object();
         crate::json_ser::serialize_structure_crate_model_proximity_resource_type_event_configuration(&mut object_146, var_145)?;
         object_146.finish();
@@ -661,6 +693,7 @@ pub fn serialize_structure_crate_input_update_fuota_task_input(
         object.key("FirmwareUpdateRole").string(var_149.as_str());
     }
     if let Some(var_150) = &input.lo_ra_wan {
+        #[allow(unused_mut)]
         let mut object_151 = object.key("LoRaWAN").start_object();
         crate::json_ser::serialize_structure_crate_model_lo_ra_wan_fuota_task(
             &mut object_151,
@@ -685,6 +718,7 @@ pub fn serialize_structure_crate_input_update_log_levels_by_resource_types_input
         let mut array_155 = object.key("WirelessDeviceLogOptions").start_array();
         for item_156 in var_154 {
             {
+                #[allow(unused_mut)]
                 let mut object_157 = array_155.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_wireless_device_log_option(
                     &mut object_157,
@@ -699,6 +733,7 @@ pub fn serialize_structure_crate_input_update_log_levels_by_resource_types_input
         let mut array_159 = object.key("WirelessGatewayLogOptions").start_array();
         for item_160 in var_158 {
             {
+                #[allow(unused_mut)]
                 let mut object_161 = array_159.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_wireless_gateway_log_option(
                     &mut object_161,
@@ -720,6 +755,7 @@ pub fn serialize_structure_crate_input_update_multicast_group_input(
         object.key("Description").string(var_162.as_str());
     }
     if let Some(var_163) = &input.lo_ra_wan {
+        #[allow(unused_mut)]
         let mut object_164 = object.key("LoRaWAN").start_object();
         crate::json_ser::serialize_structure_crate_model_lo_ra_wan_multicast(
             &mut object_164,
@@ -741,6 +777,7 @@ pub fn serialize_structure_crate_input_update_network_analyzer_configuration_inp
         object.key("Description").string(var_166.as_str());
     }
     if let Some(var_167) = &input.trace_content {
+        #[allow(unused_mut)]
         let mut object_168 = object.key("TraceContent").start_object();
         crate::json_ser::serialize_structure_crate_model_trace_content(&mut object_168, var_167)?;
         object_168.finish();
@@ -789,6 +826,7 @@ pub fn serialize_structure_crate_input_update_partner_account_input(
     input: &crate::input::UpdatePartnerAccountInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_181) = &input.sidewalk {
+        #[allow(unused_mut)]
         let mut object_182 = object.key("Sidewalk").start_object();
         crate::json_ser::serialize_structure_crate_model_sidewalk_update_account(
             &mut object_182,
@@ -823,6 +861,7 @@ pub fn serialize_structure_crate_input_update_resource_event_configuration_input
     input: &crate::input::UpdateResourceEventConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_186) = &input.connection_status {
+        #[allow(unused_mut)]
         let mut object_187 = object.key("ConnectionStatus").start_object();
         crate::json_ser::serialize_structure_crate_model_connection_status_event_configuration(
             &mut object_187,
@@ -831,11 +870,13 @@ pub fn serialize_structure_crate_input_update_resource_event_configuration_input
         object_187.finish();
     }
     if let Some(var_188) = &input.device_registration_state {
+        #[allow(unused_mut)]
         let mut object_189 = object.key("DeviceRegistrationState").start_object();
         crate::json_ser::serialize_structure_crate_model_device_registration_state_event_configuration(&mut object_189, var_188)?;
         object_189.finish();
     }
     if let Some(var_190) = &input.join {
+        #[allow(unused_mut)]
         let mut object_191 = object.key("Join").start_object();
         crate::json_ser::serialize_structure_crate_model_join_event_configuration(
             &mut object_191,
@@ -844,11 +885,13 @@ pub fn serialize_structure_crate_input_update_resource_event_configuration_input
         object_191.finish();
     }
     if let Some(var_192) = &input.message_delivery_status {
+        #[allow(unused_mut)]
         let mut object_193 = object.key("MessageDeliveryStatus").start_object();
         crate::json_ser::serialize_structure_crate_model_message_delivery_status_event_configuration(&mut object_193, var_192)?;
         object_193.finish();
     }
     if let Some(var_194) = &input.proximity {
+        #[allow(unused_mut)]
         let mut object_195 = object.key("Proximity").start_object();
         crate::json_ser::serialize_structure_crate_model_proximity_event_configuration(
             &mut object_195,
@@ -870,6 +913,7 @@ pub fn serialize_structure_crate_input_update_wireless_device_input(
         object.key("DestinationName").string(var_197.as_str());
     }
     if let Some(var_198) = &input.lo_ra_wan {
+        #[allow(unused_mut)]
         let mut object_199 = object.key("LoRaWAN").start_object();
         crate::json_ser::serialize_structure_crate_model_lo_ra_wan_update_device(
             &mut object_199,
@@ -1128,26 +1172,31 @@ pub fn serialize_structure_crate_model_lo_ra_wan_device(
         object.key("ServiceProfileId").string(var_242.as_str());
     }
     if let Some(var_243) = &input.otaa_v1_1 {
+        #[allow(unused_mut)]
         let mut object_244 = object.key("OtaaV1_1").start_object();
         crate::json_ser::serialize_structure_crate_model_otaa_v11(&mut object_244, var_243)?;
         object_244.finish();
     }
     if let Some(var_245) = &input.otaa_v1_0_x {
+        #[allow(unused_mut)]
         let mut object_246 = object.key("OtaaV1_0_x").start_object();
         crate::json_ser::serialize_structure_crate_model_otaa_v10_x(&mut object_246, var_245)?;
         object_246.finish();
     }
     if let Some(var_247) = &input.abp_v1_1 {
+        #[allow(unused_mut)]
         let mut object_248 = object.key("AbpV1_1").start_object();
         crate::json_ser::serialize_structure_crate_model_abp_v11(&mut object_248, var_247)?;
         object_248.finish();
     }
     if let Some(var_249) = &input.abp_v1_0_x {
+        #[allow(unused_mut)]
         let mut object_250 = object.key("AbpV1_0_x").start_object();
         crate::json_ser::serialize_structure_crate_model_abp_v10_x(&mut object_250, var_249)?;
         object_250.finish();
     }
     if let Some(var_251) = &input.f_ports {
+        #[allow(unused_mut)]
         let mut object_252 = object.key("FPorts").start_object();
         crate::json_ser::serialize_structure_crate_model_f_ports(&mut object_252, var_251)?;
         object_252.finish();
@@ -1202,6 +1251,7 @@ pub fn serialize_structure_crate_model_lo_ra_wan_gateway(
         array_264.finish();
     }
     if let Some(var_266) = &input.beaconing {
+        #[allow(unused_mut)]
         let mut object_267 = object.key("Beaconing").start_object();
         crate::json_ser::serialize_structure_crate_model_beaconing(&mut object_267, var_266)?;
         object_267.finish();
@@ -1220,6 +1270,7 @@ pub fn serialize_structure_crate_model_update_wireless_gateway_task_create(
         object.key("UpdateDataRole").string(var_269.as_str());
     }
     if let Some(var_270) = &input.lo_ra_wan {
+        #[allow(unused_mut)]
         let mut object_271 = object.key("LoRaWAN").start_object();
         crate::json_ser::serialize_structure_crate_model_lo_ra_wan_update_gateway_task_create(
             &mut object_271,
@@ -1235,6 +1286,7 @@ pub fn serialize_structure_crate_model_position_solver_configurations(
     input: &crate::model::PositionSolverConfigurations,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_272) = &input.semtech_gnss {
+        #[allow(unused_mut)]
         let mut object_273 = object.key("SemtechGnss").start_object();
         crate::json_ser::serialize_structure_crate_model_semtech_gnss_configuration(
             &mut object_273,
@@ -1250,6 +1302,7 @@ pub fn serialize_structure_crate_model_multicast_wireless_metadata(
     input: &crate::model::MulticastWirelessMetadata,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_274) = &input.lo_ra_wan {
+        #[allow(unused_mut)]
         let mut object_275 = object.key("LoRaWAN").start_object();
         crate::json_ser::serialize_structure_crate_model_lo_ra_wan_multicast_metadata(
             &mut object_275,
@@ -1265,6 +1318,7 @@ pub fn serialize_structure_crate_model_wireless_metadata(
     input: &crate::model::WirelessMetadata,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_276) = &input.lo_ra_wan {
+        #[allow(unused_mut)]
         let mut object_277 = object.key("LoRaWAN").start_object();
         crate::json_ser::serialize_structure_crate_model_lo_ra_wan_send_data_to_device(
             &mut object_277,
@@ -1273,6 +1327,7 @@ pub fn serialize_structure_crate_model_wireless_metadata(
         object_277.finish();
     }
     if let Some(var_278) = &input.sidewalk {
+        #[allow(unused_mut)]
         let mut object_279 = object.key("Sidewalk").start_object();
         crate::json_ser::serialize_structure_crate_model_sidewalk_send_data_to_device(
             &mut object_279,
@@ -1330,6 +1385,7 @@ pub fn serialize_structure_crate_model_connection_status_resource_type_event_con
     input: &crate::model::ConnectionStatusResourceTypeEventConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_285) = &input.lo_ra_wan {
+        #[allow(unused_mut)]
         let mut object_286 = object.key("LoRaWAN").start_object();
         crate::json_ser::serialize_structure_crate_model_lo_ra_wan_connection_status_resource_type_event_configuration(&mut object_286, var_285)?;
         object_286.finish();
@@ -1342,6 +1398,7 @@ pub fn serialize_structure_crate_model_device_registration_state_resource_type_e
     input: &crate::model::DeviceRegistrationStateResourceTypeEventConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_287) = &input.sidewalk {
+        #[allow(unused_mut)]
         let mut object_288 = object.key("Sidewalk").start_object();
         crate::json_ser::serialize_structure_crate_model_sidewalk_resource_type_event_configuration(&mut object_288, var_287)?;
         object_288.finish();
@@ -1354,6 +1411,7 @@ pub fn serialize_structure_crate_model_join_resource_type_event_configuration(
     input: &crate::model::JoinResourceTypeEventConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_289) = &input.lo_ra_wan {
+        #[allow(unused_mut)]
         let mut object_290 = object.key("LoRaWAN").start_object();
         crate::json_ser::serialize_structure_crate_model_lo_ra_wan_join_resource_type_event_configuration(&mut object_290, var_289)?;
         object_290.finish();
@@ -1366,6 +1424,7 @@ pub fn serialize_structure_crate_model_message_delivery_status_resource_type_eve
     input: &crate::model::MessageDeliveryStatusResourceTypeEventConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_291) = &input.sidewalk {
+        #[allow(unused_mut)]
         let mut object_292 = object.key("Sidewalk").start_object();
         crate::json_ser::serialize_structure_crate_model_sidewalk_resource_type_event_configuration(&mut object_292, var_291)?;
         object_292.finish();
@@ -1378,6 +1437,7 @@ pub fn serialize_structure_crate_model_proximity_resource_type_event_configurati
     input: &crate::model::ProximityResourceTypeEventConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_293) = &input.sidewalk {
+        #[allow(unused_mut)]
         let mut object_294 = object.key("Sidewalk").start_object();
         crate::json_ser::serialize_structure_crate_model_sidewalk_resource_type_event_configuration(&mut object_294, var_293)?;
         object_294.finish();
@@ -1399,6 +1459,7 @@ pub fn serialize_structure_crate_model_wireless_device_log_option(
         let mut array_298 = object.key("Events").start_array();
         for item_299 in var_297 {
             {
+                #[allow(unused_mut)]
                 let mut object_300 = array_298.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_wireless_device_event_log_option(
                     &mut object_300,
@@ -1426,6 +1487,7 @@ pub fn serialize_structure_crate_model_wireless_gateway_log_option(
         let mut array_304 = object.key("Events").start_array();
         for item_305 in var_303 {
             {
+                #[allow(unused_mut)]
                 let mut object_306 = array_304.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_wireless_gateway_event_log_option(
                     &mut object_306,
@@ -1454,6 +1516,7 @@ pub fn serialize_structure_crate_model_connection_status_event_configuration(
     input: &crate::model::ConnectionStatusEventConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_308) = &input.lo_ra_wan {
+        #[allow(unused_mut)]
         let mut object_309 = object.key("LoRaWAN").start_object();
         crate::json_ser::serialize_structure_crate_model_lo_ra_wan_connection_status_event_notification_configurations(&mut object_309, var_308)?;
         object_309.finish();
@@ -1471,6 +1534,7 @@ pub fn serialize_structure_crate_model_device_registration_state_event_configura
     input: &crate::model::DeviceRegistrationStateEventConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_311) = &input.sidewalk {
+        #[allow(unused_mut)]
         let mut object_312 = object.key("Sidewalk").start_object();
         crate::json_ser::serialize_structure_crate_model_sidewalk_event_notification_configurations(&mut object_312, var_311)?;
         object_312.finish();
@@ -1488,6 +1552,7 @@ pub fn serialize_structure_crate_model_join_event_configuration(
     input: &crate::model::JoinEventConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_314) = &input.lo_ra_wan {
+        #[allow(unused_mut)]
         let mut object_315 = object.key("LoRaWAN").start_object();
         crate::json_ser::serialize_structure_crate_model_lo_ra_wan_join_event_notification_configurations(&mut object_315, var_314)?;
         object_315.finish();
@@ -1505,6 +1570,7 @@ pub fn serialize_structure_crate_model_message_delivery_status_event_configurati
     input: &crate::model::MessageDeliveryStatusEventConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_317) = &input.sidewalk {
+        #[allow(unused_mut)]
         let mut object_318 = object.key("Sidewalk").start_object();
         crate::json_ser::serialize_structure_crate_model_sidewalk_event_notification_configurations(&mut object_318, var_317)?;
         object_318.finish();
@@ -1522,6 +1588,7 @@ pub fn serialize_structure_crate_model_proximity_event_configuration(
     input: &crate::model::ProximityEventConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_320) = &input.sidewalk {
+        #[allow(unused_mut)]
         let mut object_321 = object.key("Sidewalk").start_object();
         crate::json_ser::serialize_structure_crate_model_sidewalk_event_notification_configurations(&mut object_321, var_320)?;
         object_321.finish();
@@ -1545,11 +1612,13 @@ pub fn serialize_structure_crate_model_lo_ra_wan_update_device(
         object.key("ServiceProfileId").string(var_324.as_str());
     }
     if let Some(var_325) = &input.abp_v1_1 {
+        #[allow(unused_mut)]
         let mut object_326 = object.key("AbpV1_1").start_object();
         crate::json_ser::serialize_structure_crate_model_update_abp_v11(&mut object_326, var_325)?;
         object_326.finish();
     }
     if let Some(var_327) = &input.abp_v1_0_x {
+        #[allow(unused_mut)]
         let mut object_328 = object.key("AbpV1_0_x").start_object();
         crate::json_ser::serialize_structure_crate_model_update_abp_v10_x(
             &mut object_328,
@@ -1558,6 +1627,7 @@ pub fn serialize_structure_crate_model_lo_ra_wan_update_device(
         object_328.finish();
     }
     if let Some(var_329) = &input.f_ports {
+        #[allow(unused_mut)]
         let mut object_330 = object.key("FPorts").start_object();
         crate::json_ser::serialize_structure_crate_model_update_f_ports(&mut object_330, var_329)?;
         object_330.finish();
@@ -1605,6 +1675,7 @@ pub fn serialize_structure_crate_model_abp_v11(
         object.key("DevAddr").string(var_337.as_str());
     }
     if let Some(var_338) = &input.session_keys {
+        #[allow(unused_mut)]
         let mut object_339 = object.key("SessionKeys").start_object();
         crate::json_ser::serialize_structure_crate_model_session_keys_abp_v11(
             &mut object_339,
@@ -1629,6 +1700,7 @@ pub fn serialize_structure_crate_model_abp_v10_x(
         object.key("DevAddr").string(var_341.as_str());
     }
     if let Some(var_342) = &input.session_keys {
+        #[allow(unused_mut)]
         let mut object_343 = object.key("SessionKeys").start_object();
         crate::json_ser::serialize_structure_crate_model_session_keys_abp_v10_x(
             &mut object_343,
@@ -1668,6 +1740,7 @@ pub fn serialize_structure_crate_model_f_ports(
         );
     }
     if let Some(var_348) = &input.positioning {
+        #[allow(unused_mut)]
         let mut object_349 = object.key("Positioning").start_object();
         crate::json_ser::serialize_structure_crate_model_positioning(&mut object_349, var_348)?;
         object_349.finish();
@@ -1714,6 +1787,7 @@ pub fn serialize_structure_crate_model_lo_ra_wan_update_gateway_task_create(
         );
     }
     if let Some(var_356) = &input.current_version {
+        #[allow(unused_mut)]
         let mut object_357 = object.key("CurrentVersion").start_object();
         crate::json_ser::serialize_structure_crate_model_lo_ra_wan_gateway_version(
             &mut object_357,
@@ -1722,6 +1796,7 @@ pub fn serialize_structure_crate_model_lo_ra_wan_update_gateway_task_create(
         object_357.finish();
     }
     if let Some(var_358) = &input.update_version {
+        #[allow(unused_mut)]
         let mut object_359 = object.key("UpdateVersion").start_object();
         crate::json_ser::serialize_structure_crate_model_lo_ra_wan_gateway_version(
             &mut object_359,
@@ -1769,6 +1844,7 @@ pub fn serialize_structure_crate_model_lo_ra_wan_send_data_to_device(
         );
     }
     if let Some(var_364) = &input.participating_gateways {
+        #[allow(unused_mut)]
         let mut object_365 = object.key("ParticipatingGateways").start_object();
         crate::json_ser::serialize_structure_crate_model_participating_gateways(
             &mut object_365,
@@ -1924,6 +2000,7 @@ pub fn serialize_structure_crate_model_update_f_ports(
     input: &crate::model::UpdateFPorts,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_381) = &input.positioning {
+        #[allow(unused_mut)]
         let mut object_382 = object.key("Positioning").start_object();
         crate::json_ser::serialize_structure_crate_model_positioning(&mut object_382, var_381)?;
         object_382.finish();
@@ -2015,6 +2092,7 @@ pub fn serialize_structure_crate_model_participating_gateways(
         let mut array_397 = object.key("GatewayList").start_array();
         for item_398 in var_396 {
             {
+                #[allow(unused_mut)]
                 let mut object_399 = array_397.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_gateway_list_item(
                     &mut object_399,

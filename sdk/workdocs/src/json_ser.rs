@@ -4,6 +4,7 @@ pub fn serialize_structure_crate_input_add_resource_permissions_input(
     input: &crate::input::AddResourcePermissionsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.notification_options {
+        #[allow(unused_mut)]
         let mut object_2 = object.key("NotificationOptions").start_object();
         crate::json_ser::serialize_structure_crate_model_notification_options(
             &mut object_2,
@@ -15,6 +16,7 @@ pub fn serialize_structure_crate_input_add_resource_permissions_input(
         let mut array_4 = object.key("Principals").start_array();
         for item_5 in var_3 {
             {
+                #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_share_principal(
                     &mut object_6,
@@ -57,6 +59,7 @@ pub fn serialize_structure_crate_input_create_custom_metadata_input(
     input: &crate::input::CreateCustomMetadataInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_11) = &input.custom_metadata {
+        #[allow(unused_mut)]
         let mut object_12 = object.key("CustomMetadata").start_object();
         for (key_13, value_14) in var_11 {
             {
@@ -130,6 +133,7 @@ pub fn serialize_structure_crate_input_create_user_input(
         object.key("Password").string(var_26.as_str());
     }
     if let Some(var_27) = &input.storage_rule {
+        #[allow(unused_mut)]
         let mut object_28 = object.key("StorageRule").start_object();
         crate::json_ser::serialize_structure_crate_model_storage_rule_type(&mut object_28, var_27)?;
         object_28.finish();
@@ -239,6 +243,7 @@ pub fn serialize_structure_crate_input_update_user_input(
         object.key("Locale").string(var_48.as_str());
     }
     if let Some(var_49) = &input.storage_rule {
+        #[allow(unused_mut)]
         let mut object_50 = object.key("StorageRule").start_object();
         crate::json_ser::serialize_structure_crate_model_storage_rule_type(&mut object_50, var_49)?;
         object_50.finish();

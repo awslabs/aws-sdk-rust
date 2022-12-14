@@ -10,6 +10,7 @@ pub fn serialize_structure_crate_input_create_cluster_input(
         object.key("ClusterName").string(var_2.as_str());
     }
     if let Some(var_3) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_4 = object.key("Tags").start_object();
         for (key_5, value_6) in var_3 {
             {
@@ -35,6 +36,7 @@ pub fn serialize_structure_crate_input_create_control_panel_input(
         object.key("ControlPanelName").string(var_9.as_str());
     }
     if let Some(var_10) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_11 = object.key("Tags").start_object();
         for (key_12, value_13) in var_10 {
             {
@@ -70,6 +72,7 @@ pub fn serialize_structure_crate_input_create_safety_rule_input(
     input: &crate::input::CreateSafetyRuleInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_18) = &input.assertion_rule {
+        #[allow(unused_mut)]
         let mut object_19 = object.key("AssertionRule").start_object();
         crate::json_ser::serialize_structure_crate_model_new_assertion_rule(
             &mut object_19,
@@ -81,11 +84,13 @@ pub fn serialize_structure_crate_input_create_safety_rule_input(
         object.key("ClientToken").string(var_20.as_str());
     }
     if let Some(var_21) = &input.gating_rule {
+        #[allow(unused_mut)]
         let mut object_22 = object.key("GatingRule").start_object();
         crate::json_ser::serialize_structure_crate_model_new_gating_rule(&mut object_22, var_21)?;
         object_22.finish();
     }
     if let Some(var_23) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_24 = object.key("Tags").start_object();
         for (key_25, value_26) in var_23 {
             {
@@ -102,6 +107,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_27) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_28 = object.key("Tags").start_object();
         for (key_29, value_30) in var_27 {
             {
@@ -144,6 +150,7 @@ pub fn serialize_structure_crate_input_update_safety_rule_input(
     input: &crate::input::UpdateSafetyRuleInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_35) = &input.assertion_rule_update {
+        #[allow(unused_mut)]
         let mut object_36 = object.key("AssertionRuleUpdate").start_object();
         crate::json_ser::serialize_structure_crate_model_assertion_rule_update(
             &mut object_36,
@@ -152,6 +159,7 @@ pub fn serialize_structure_crate_input_update_safety_rule_input(
         object_36.finish();
     }
     if let Some(var_37) = &input.gating_rule_update {
+        #[allow(unused_mut)]
         let mut object_38 = object.key("GatingRuleUpdate").start_object();
         crate::json_ser::serialize_structure_crate_model_gating_rule_update(
             &mut object_38,
@@ -182,6 +190,7 @@ pub fn serialize_structure_crate_model_new_assertion_rule(
         object.key("Name").string(var_43.as_str());
     }
     if let Some(var_44) = &input.rule_config {
+        #[allow(unused_mut)]
         let mut object_45 = object.key("RuleConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_rule_config(&mut object_45, var_44)?;
         object_45.finish();
@@ -215,6 +224,7 @@ pub fn serialize_structure_crate_model_new_gating_rule(
         object.key("Name").string(var_50.as_str());
     }
     if let Some(var_51) = &input.rule_config {
+        #[allow(unused_mut)]
         let mut object_52 = object.key("RuleConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_rule_config(&mut object_52, var_51)?;
         object_52.finish();

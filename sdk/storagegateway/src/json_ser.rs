@@ -28,6 +28,7 @@ pub fn serialize_structure_crate_input_activate_gateway_input(
         let mut array_9 = object.key("Tags").start_array();
         for item_10 in var_8 {
             {
+                #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_11, item_10)?;
                 object_11.finish();
@@ -68,6 +69,7 @@ pub fn serialize_structure_crate_input_add_tags_to_resource_input(
         let mut array_18 = object.key("Tags").start_array();
         for item_19 in var_17 {
             {
+                #[allow(unused_mut)]
                 let mut object_20 = array_18.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_20, item_19)?;
                 object_20.finish();
@@ -157,6 +159,7 @@ pub fn serialize_structure_crate_input_associate_file_system_input(
         let mut array_37 = object.key("Tags").start_array();
         for item_38 in var_36 {
             {
+                #[allow(unused_mut)]
                 let mut object_39 = array_37.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_39, item_38)?;
                 object_39.finish();
@@ -168,11 +171,13 @@ pub fn serialize_structure_crate_input_associate_file_system_input(
         object.key("AuditDestinationARN").string(var_40.as_str());
     }
     if let Some(var_41) = &input.cache_attributes {
+        #[allow(unused_mut)]
         let mut object_42 = object.key("CacheAttributes").start_object();
         crate::json_ser::serialize_structure_crate_model_cache_attributes(&mut object_42, var_41)?;
         object_42.finish();
     }
     if let Some(var_43) = &input.endpoint_network_configuration {
+        #[allow(unused_mut)]
         let mut object_44 = object.key("EndpointNetworkConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_endpoint_network_configuration(
             &mut object_44,
@@ -269,6 +274,7 @@ pub fn serialize_structure_crate_input_create_cachedi_scsi_volume_input(
         let mut array_63 = object.key("Tags").start_array();
         for item_64 in var_62 {
             {
+                #[allow(unused_mut)]
                 let mut object_65 = array_63.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_65, item_64)?;
                 object_65.finish();
@@ -287,6 +293,7 @@ pub fn serialize_structure_crate_input_create_nfs_file_share_input(
         object.key("ClientToken").string(var_66.as_str());
     }
     if let Some(var_67) = &input.nfs_file_share_defaults {
+        #[allow(unused_mut)]
         let mut object_68 = object.key("NFSFileShareDefaults").start_object();
         crate::json_ser::serialize_structure_crate_model_nfs_file_share_defaults(
             &mut object_68,
@@ -340,6 +347,7 @@ pub fn serialize_structure_crate_input_create_nfs_file_share_input(
         let mut array_84 = object.key("Tags").start_array();
         for item_85 in var_83 {
             {
+                #[allow(unused_mut)]
                 let mut object_86 = array_84.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_86, item_85)?;
                 object_86.finish();
@@ -351,6 +359,7 @@ pub fn serialize_structure_crate_input_create_nfs_file_share_input(
         object.key("FileShareName").string(var_87.as_str());
     }
     if let Some(var_88) = &input.cache_attributes {
+        #[allow(unused_mut)]
         let mut object_89 = object.key("CacheAttributes").start_object();
         crate::json_ser::serialize_structure_crate_model_cache_attributes(&mut object_89, var_88)?;
         object_89.finish();
@@ -453,6 +462,7 @@ pub fn serialize_structure_crate_input_create_smb_file_share_input(
         let mut array_120 = object.key("Tags").start_array();
         for item_121 in var_119 {
             {
+                #[allow(unused_mut)]
                 let mut object_122 = array_120.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_122, item_121)?;
                 object_122.finish();
@@ -464,6 +474,7 @@ pub fn serialize_structure_crate_input_create_smb_file_share_input(
         object.key("FileShareName").string(var_123.as_str());
     }
     if let Some(var_124) = &input.cache_attributes {
+        #[allow(unused_mut)]
         let mut object_125 = object.key("CacheAttributes").start_object();
         crate::json_ser::serialize_structure_crate_model_cache_attributes(
             &mut object_125,
@@ -500,6 +511,7 @@ pub fn serialize_structure_crate_input_create_snapshot_input(
         let mut array_133 = object.key("Tags").start_array();
         for item_134 in var_132 {
             {
+                #[allow(unused_mut)]
                 let mut object_135 = array_133.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_135, item_134)?;
                 object_135.finish();
@@ -524,6 +536,7 @@ pub fn serialize_structure_crate_input_create_snapshot_from_volume_recovery_poin
         let mut array_139 = object.key("Tags").start_array();
         for item_140 in var_138 {
             {
+                #[allow(unused_mut)]
                 let mut object_141 = array_139.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_141, item_140)?;
                 object_141.finish();
@@ -568,6 +581,7 @@ pub fn serialize_structure_crate_input_create_storedi_scsi_volume_input(
         let mut array_150 = object.key("Tags").start_array();
         for item_151 in var_149 {
             {
+                #[allow(unused_mut)]
                 let mut object_152 = array_150.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_152, item_151)?;
                 object_152.finish();
@@ -601,6 +615,7 @@ pub fn serialize_structure_crate_input_create_tape_pool_input(
         let mut array_158 = object.key("Tags").start_array();
         for item_159 in var_157 {
             {
+                #[allow(unused_mut)]
                 let mut object_160 = array_158.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_160, item_159)?;
                 object_160.finish();
@@ -652,6 +667,7 @@ pub fn serialize_structure_crate_input_create_tapes_input(
         let mut array_170 = object.key("Tags").start_array();
         for item_171 in var_169 {
             {
+                #[allow(unused_mut)]
                 let mut object_172 = array_170.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_172, item_171)?;
                 object_172.finish();
@@ -694,6 +710,7 @@ pub fn serialize_structure_crate_input_create_tape_with_barcode_input(
         let mut array_180 = object.key("Tags").start_array();
         for item_181 in var_179 {
             {
+                #[allow(unused_mut)]
                 let mut object_182 = array_180.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_182, item_181)?;
                 object_182.finish();
@@ -1524,6 +1541,7 @@ pub fn serialize_structure_crate_input_update_automatic_tape_creation_policy_inp
         let mut array_306 = object.key("AutomaticTapeCreationRules").start_array();
         for item_307 in var_305 {
             {
+                #[allow(unused_mut)]
                 let mut object_308 = array_306.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_automatic_tape_creation_rule(
                     &mut object_308,
@@ -1573,6 +1591,7 @@ pub fn serialize_structure_crate_input_update_bandwidth_rate_limit_schedule_inpu
         let mut array_315 = object.key("BandwidthRateLimitIntervals").start_array();
         for item_316 in var_314 {
             {
+                #[allow(unused_mut)]
                 let mut object_317 = array_315.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_bandwidth_rate_limit_interval(
                     &mut object_317,
@@ -1628,6 +1647,7 @@ pub fn serialize_structure_crate_input_update_file_system_association_input(
         object.key("AuditDestinationARN").string(var_325.as_str());
     }
     if let Some(var_326) = &input.cache_attributes {
+        #[allow(unused_mut)]
         let mut object_327 = object.key("CacheAttributes").start_object();
         crate::json_ser::serialize_structure_crate_model_cache_attributes(
             &mut object_327,
@@ -1718,6 +1738,7 @@ pub fn serialize_structure_crate_input_update_nfs_file_share_input(
         object.key("KMSKey").string(var_341.as_str());
     }
     if let Some(var_342) = &input.nfs_file_share_defaults {
+        #[allow(unused_mut)]
         let mut object_343 = object.key("NFSFileShareDefaults").start_object();
         crate::json_ser::serialize_structure_crate_model_nfs_file_share_defaults(
             &mut object_343,
@@ -1756,6 +1777,7 @@ pub fn serialize_structure_crate_input_update_nfs_file_share_input(
         object.key("FileShareName").string(var_353.as_str());
     }
     if let Some(var_354) = &input.cache_attributes {
+        #[allow(unused_mut)]
         let mut object_355 = object.key("CacheAttributes").start_object();
         crate::json_ser::serialize_structure_crate_model_cache_attributes(
             &mut object_355,
@@ -1843,6 +1865,7 @@ pub fn serialize_structure_crate_input_update_smb_file_share_input(
         object.key("FileShareName").string(var_379.as_str());
     }
     if let Some(var_380) = &input.cache_attributes {
+        #[allow(unused_mut)]
         let mut object_381 = object.key("CacheAttributes").start_object();
         crate::json_ser::serialize_structure_crate_model_cache_attributes(
             &mut object_381,
@@ -1880,6 +1903,7 @@ pub fn serialize_structure_crate_input_update_smb_local_groups_input(
         object.key("GatewayARN").string(var_386.as_str());
     }
     if let Some(var_387) = &input.smb_local_groups {
+        #[allow(unused_mut)]
         let mut object_388 = object.key("SMBLocalGroups").start_object();
         crate::json_ser::serialize_structure_crate_model_smb_local_groups(
             &mut object_388,
@@ -1929,6 +1953,7 @@ pub fn serialize_structure_crate_input_update_snapshot_schedule_input(
         let mut array_396 = object.key("Tags").start_array();
         for item_397 in var_395 {
             {
+                #[allow(unused_mut)]
                 let mut object_398 = array_396.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_398, item_397)?;
                 object_398.finish();

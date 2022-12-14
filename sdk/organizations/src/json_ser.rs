@@ -62,6 +62,7 @@ pub fn serialize_structure_crate_input_create_account_input(
         let mut array_11 = object.key("Tags").start_array();
         for item_12 in var_10 {
             {
+                #[allow(unused_mut)]
                 let mut object_13 = array_11.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_13, item_12)?;
                 object_13.finish();
@@ -92,6 +93,7 @@ pub fn serialize_structure_crate_input_create_gov_cloud_account_input(
         let mut array_19 = object.key("Tags").start_array();
         for item_20 in var_18 {
             {
+                #[allow(unused_mut)]
                 let mut object_21 = array_19.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_21, item_20)?;
                 object_21.finish();
@@ -126,6 +128,7 @@ pub fn serialize_structure_crate_input_create_organizational_unit_input(
         let mut array_26 = object.key("Tags").start_array();
         for item_27 in var_25 {
             {
+                #[allow(unused_mut)]
                 let mut object_28 = array_26.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_28, item_27)?;
                 object_28.finish();
@@ -156,6 +159,7 @@ pub fn serialize_structure_crate_input_create_policy_input(
         let mut array_34 = object.key("Tags").start_array();
         for item_35 in var_33 {
             {
+                #[allow(unused_mut)]
                 let mut object_36 = array_34.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_36, item_35)?;
                 object_36.finish();
@@ -336,6 +340,7 @@ pub fn serialize_structure_crate_input_invite_account_to_organization_input(
     input: &crate::input::InviteAccountToOrganizationInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_57) = &input.target {
+        #[allow(unused_mut)]
         let mut object_58 = object.key("Target").start_object();
         crate::json_ser::serialize_structure_crate_model_handshake_party(&mut object_58, var_57)?;
         object_58.finish();
@@ -347,6 +352,7 @@ pub fn serialize_structure_crate_input_invite_account_to_organization_input(
         let mut array_61 = object.key("Tags").start_array();
         for item_62 in var_60 {
             {
+                #[allow(unused_mut)]
                 let mut object_63 = array_61.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_63, item_62)?;
                 object_63.finish();
@@ -498,6 +504,7 @@ pub fn serialize_structure_crate_input_list_handshakes_for_account_input(
     input: &crate::input::ListHandshakesForAccountInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_86) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_87 = object.key("Filter").start_object();
         crate::json_ser::serialize_structure_crate_model_handshake_filter(&mut object_87, var_86)?;
         object_87.finish();
@@ -519,6 +526,7 @@ pub fn serialize_structure_crate_input_list_handshakes_for_organization_input(
     input: &crate::input::ListHandshakesForOrganizationInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_90) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_91 = object.key("Filter").start_object();
         crate::json_ser::serialize_structure_crate_model_handshake_filter(&mut object_91, var_90)?;
         object_91.finish();
@@ -712,6 +720,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_122 = object.key("Tags").start_array();
         for item_123 in var_121 {
             {
+                #[allow(unused_mut)]
                 let mut object_124 = array_122.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_124, item_123)?;
                 object_124.finish();

@@ -16,6 +16,7 @@ pub fn serialize_structure_crate_input_add_attributes_to_findings_input(
         let mut array_5 = object.key("attributes").start_array();
         for item_6 in var_4 {
             {
+                #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_attribute(&mut object_7, item_6)?;
                 object_7.finish();
@@ -68,6 +69,7 @@ pub fn serialize_structure_crate_input_create_assessment_template_input(
         let mut array_16 = object.key("userAttributesForFindings").start_array();
         for item_17 in var_15 {
             {
+                #[allow(unused_mut)]
                 let mut object_18 = array_16.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_attribute(
                     &mut object_18,
@@ -99,6 +101,7 @@ pub fn serialize_structure_crate_input_create_resource_group_input(
         let mut array_21 = object.key("resourceGroupTags").start_array();
         for item_22 in var_20 {
             {
+                #[allow(unused_mut)]
                 let mut object_23 = array_21.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_resource_group_tag(
                     &mut object_23,
@@ -322,6 +325,7 @@ pub fn serialize_structure_crate_input_list_assessment_run_agents_input(
         object.key("assessmentRunArn").string(var_60.as_str());
     }
     if let Some(var_61) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_62 = object.key("filter").start_object();
         crate::json_ser::serialize_structure_crate_model_agent_filter(&mut object_62, var_61)?;
         object_62.finish();
@@ -352,6 +356,7 @@ pub fn serialize_structure_crate_input_list_assessment_runs_input(
         array_66.finish();
     }
     if let Some(var_68) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_69 = object.key("filter").start_object();
         crate::json_ser::serialize_structure_crate_model_assessment_run_filter(
             &mut object_69,
@@ -376,6 +381,7 @@ pub fn serialize_structure_crate_input_list_assessment_targets_input(
     input: &crate::input::ListAssessmentTargetsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_72) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_73 = object.key("filter").start_object();
         crate::json_ser::serialize_structure_crate_model_assessment_target_filter(
             &mut object_73,
@@ -409,6 +415,7 @@ pub fn serialize_structure_crate_input_list_assessment_templates_input(
         array_77.finish();
     }
     if let Some(var_79) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_80 = object.key("filter").start_object();
         crate::json_ser::serialize_structure_crate_model_assessment_template_filter(
             &mut object_80,
@@ -480,6 +487,7 @@ pub fn serialize_structure_crate_input_list_findings_input(
         array_90.finish();
     }
     if let Some(var_92) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_93 = object.key("filter").start_object();
         crate::json_ser::serialize_structure_crate_model_finding_filter(&mut object_93, var_92)?;
         object_93.finish();
@@ -587,6 +595,7 @@ pub fn serialize_structure_crate_input_set_tags_for_resource_input(
         let mut array_111 = object.key("tags").start_array();
         for item_112 in var_110 {
             {
+                #[allow(unused_mut)]
                 let mut object_113 = array_111.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_113, item_112)?;
                 object_113.finish();
@@ -739,6 +748,7 @@ pub fn serialize_structure_crate_model_assessment_run_filter(
         array_139.finish();
     }
     if let Some(var_141) = &input.duration_range {
+        #[allow(unused_mut)]
         let mut object_142 = object.key("durationRange").start_object();
         crate::json_ser::serialize_structure_crate_model_duration_range(&mut object_142, var_141)?;
         object_142.finish();
@@ -753,16 +763,19 @@ pub fn serialize_structure_crate_model_assessment_run_filter(
         array_144.finish();
     }
     if let Some(var_146) = &input.start_time_range {
+        #[allow(unused_mut)]
         let mut object_147 = object.key("startTimeRange").start_object();
         crate::json_ser::serialize_structure_crate_model_timestamp_range(&mut object_147, var_146)?;
         object_147.finish();
     }
     if let Some(var_148) = &input.completion_time_range {
+        #[allow(unused_mut)]
         let mut object_149 = object.key("completionTimeRange").start_object();
         crate::json_ser::serialize_structure_crate_model_timestamp_range(&mut object_149, var_148)?;
         object_149.finish();
     }
     if let Some(var_150) = &input.state_change_time_range {
+        #[allow(unused_mut)]
         let mut object_151 = object.key("stateChangeTimeRange").start_object();
         crate::json_ser::serialize_structure_crate_model_timestamp_range(&mut object_151, var_150)?;
         object_151.finish();
@@ -790,6 +803,7 @@ pub fn serialize_structure_crate_model_assessment_template_filter(
         object.key("namePattern").string(var_153.as_str());
     }
     if let Some(var_154) = &input.duration_range {
+        #[allow(unused_mut)]
         let mut object_155 = object.key("durationRange").start_object();
         crate::json_ser::serialize_structure_crate_model_duration_range(&mut object_155, var_154)?;
         object_155.finish();
@@ -859,6 +873,7 @@ pub fn serialize_structure_crate_model_finding_filter(
         let mut array_175 = object.key("attributes").start_array();
         for item_176 in var_174 {
             {
+                #[allow(unused_mut)]
                 let mut object_177 = array_175.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_attribute(
                     &mut object_177,
@@ -873,6 +888,7 @@ pub fn serialize_structure_crate_model_finding_filter(
         let mut array_179 = object.key("userAttributes").start_array();
         for item_180 in var_178 {
             {
+                #[allow(unused_mut)]
                 let mut object_181 = array_179.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_attribute(
                     &mut object_181,
@@ -884,6 +900,7 @@ pub fn serialize_structure_crate_model_finding_filter(
         array_179.finish();
     }
     if let Some(var_182) = &input.creation_time_range {
+        #[allow(unused_mut)]
         let mut object_183 = object.key("creationTimeRange").start_object();
         crate::json_ser::serialize_structure_crate_model_timestamp_range(&mut object_183, var_182)?;
         object_183.finish();

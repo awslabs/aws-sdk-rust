@@ -7,6 +7,7 @@ pub fn serialize_structure_crate_input_create_scaling_plan_input(
         object.key("ScalingPlanName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.application_source {
+        #[allow(unused_mut)]
         let mut object_3 = object.key("ApplicationSource").start_object();
         crate::json_ser::serialize_structure_crate_model_application_source(&mut object_3, var_2)?;
         object_3.finish();
@@ -15,6 +16,7 @@ pub fn serialize_structure_crate_input_create_scaling_plan_input(
         let mut array_5 = object.key("ScalingInstructions").start_array();
         for item_6 in var_4 {
             {
+                #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_scaling_instruction(
                     &mut object_7,
@@ -92,6 +94,7 @@ pub fn serialize_structure_crate_input_describe_scaling_plans_input(
         let mut array_19 = object.key("ApplicationSources").start_array();
         for item_20 in var_18 {
             {
+                #[allow(unused_mut)]
                 let mut object_21 = array_19.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_application_source(
                     &mut object_21,
@@ -166,6 +169,7 @@ pub fn serialize_structure_crate_input_update_scaling_plan_input(
         );
     }
     if let Some(var_34) = &input.application_source {
+        #[allow(unused_mut)]
         let mut object_35 = object.key("ApplicationSource").start_object();
         crate::json_ser::serialize_structure_crate_model_application_source(
             &mut object_35,
@@ -177,6 +181,7 @@ pub fn serialize_structure_crate_input_update_scaling_plan_input(
         let mut array_37 = object.key("ScalingInstructions").start_array();
         for item_38 in var_36 {
             {
+                #[allow(unused_mut)]
                 let mut object_39 = array_37.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_scaling_instruction(
                     &mut object_39,
@@ -201,6 +206,7 @@ pub fn serialize_structure_crate_model_application_source(
         let mut array_42 = object.key("TagFilters").start_array();
         for item_43 in var_41 {
             {
+                #[allow(unused_mut)]
                 let mut object_44 = array_42.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag_filter(
                     &mut object_44,
@@ -243,6 +249,7 @@ pub fn serialize_structure_crate_model_scaling_instruction(
         let mut array_51 = object.key("TargetTrackingConfigurations").start_array();
         for item_52 in var_50 {
             {
+                #[allow(unused_mut)]
                 let mut object_53 = array_51.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_target_tracking_configuration(
                     &mut object_53,
@@ -254,6 +261,7 @@ pub fn serialize_structure_crate_model_scaling_instruction(
         array_51.finish();
     }
     if let Some(var_54) = &input.predefined_load_metric_specification {
+        #[allow(unused_mut)]
         let mut object_55 = object
             .key("PredefinedLoadMetricSpecification")
             .start_object();
@@ -264,6 +272,7 @@ pub fn serialize_structure_crate_model_scaling_instruction(
         object_55.finish();
     }
     if let Some(var_56) = &input.customized_load_metric_specification {
+        #[allow(unused_mut)]
         let mut object_57 = object
             .key("CustomizedLoadMetricSpecification")
             .start_object();
@@ -328,6 +337,7 @@ pub fn serialize_structure_crate_model_target_tracking_configuration(
     input: &crate::model::TargetTrackingConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_68) = &input.predefined_scaling_metric_specification {
+        #[allow(unused_mut)]
         let mut object_69 = object
             .key("PredefinedScalingMetricSpecification")
             .start_object();
@@ -338,6 +348,7 @@ pub fn serialize_structure_crate_model_target_tracking_configuration(
         object_69.finish();
     }
     if let Some(var_70) = &input.customized_scaling_metric_specification {
+        #[allow(unused_mut)]
         let mut object_71 = object
             .key("CustomizedScalingMetricSpecification")
             .start_object();
@@ -406,6 +417,7 @@ pub fn serialize_structure_crate_model_customized_load_metric_specification(
         let mut array_82 = object.key("Dimensions").start_array();
         for item_83 in var_81 {
             {
+                #[allow(unused_mut)]
                 let mut object_84 = array_82.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_metric_dimension(
                     &mut object_84,
@@ -454,6 +466,7 @@ pub fn serialize_structure_crate_model_customized_scaling_metric_specification(
         let mut array_92 = object.key("Dimensions").start_array();
         for item_93 in var_91 {
             {
+                #[allow(unused_mut)]
                 let mut object_94 = array_92.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_metric_dimension(
                     &mut object_94,

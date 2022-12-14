@@ -42,6 +42,7 @@ pub fn serialize_structure_crate_input_batch_associate_resources_to_custom_line_
     input: &crate::input::BatchAssociateResourcesToCustomLineItemInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_9) = &input.billing_period_range {
+        #[allow(unused_mut)]
         let mut object_10 = object.key("BillingPeriodRange").start_object();
         crate::json_ser::serialize_structure_crate_model_custom_line_item_billing_period_range(
             &mut object_10,
@@ -69,6 +70,7 @@ pub fn serialize_structure_crate_input_batch_disassociate_resources_from_custom_
     input: &crate::input::BatchDisassociateResourcesFromCustomLineItemInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_15) = &input.billing_period_range {
+        #[allow(unused_mut)]
         let mut object_16 = object.key("BillingPeriodRange").start_object();
         crate::json_ser::serialize_structure_crate_model_custom_line_item_billing_period_range(
             &mut object_16,
@@ -96,11 +98,13 @@ pub fn serialize_structure_crate_input_create_billing_group_input(
     input: &crate::input::CreateBillingGroupInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_21) = &input.account_grouping {
+        #[allow(unused_mut)]
         let mut object_22 = object.key("AccountGrouping").start_object();
         crate::json_ser::serialize_structure_crate_model_account_grouping(&mut object_22, var_21)?;
         object_22.finish();
     }
     if let Some(var_23) = &input.computation_preference {
+        #[allow(unused_mut)]
         let mut object_24 = object.key("ComputationPreference").start_object();
         crate::json_ser::serialize_structure_crate_model_computation_preference(
             &mut object_24,
@@ -118,6 +122,7 @@ pub fn serialize_structure_crate_input_create_billing_group_input(
         object.key("PrimaryAccountId").string(var_27.as_str());
     }
     if let Some(var_28) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_29 = object.key("Tags").start_object();
         for (key_30, value_31) in var_28 {
             {
@@ -137,6 +142,7 @@ pub fn serialize_structure_crate_input_create_custom_line_item_input(
         object.key("BillingGroupArn").string(var_32.as_str());
     }
     if let Some(var_33) = &input.billing_period_range {
+        #[allow(unused_mut)]
         let mut object_34 = object.key("BillingPeriodRange").start_object();
         crate::json_ser::serialize_structure_crate_model_custom_line_item_billing_period_range(
             &mut object_34,
@@ -145,6 +151,7 @@ pub fn serialize_structure_crate_input_create_custom_line_item_input(
         object_34.finish();
     }
     if let Some(var_35) = &input.charge_details {
+        #[allow(unused_mut)]
         let mut object_36 = object.key("ChargeDetails").start_object();
         crate::json_ser::serialize_structure_crate_model_custom_line_item_charge_details(
             &mut object_36,
@@ -159,6 +166,7 @@ pub fn serialize_structure_crate_input_create_custom_line_item_input(
         object.key("Name").string(var_38.as_str());
     }
     if let Some(var_39) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_40 = object.key("Tags").start_object();
         for (key_41, value_42) in var_39 {
             {
@@ -190,6 +198,7 @@ pub fn serialize_structure_crate_input_create_pricing_plan_input(
         array_46.finish();
     }
     if let Some(var_48) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_49 = object.key("Tags").start_object();
         for (key_50, value_51) in var_48 {
             {
@@ -224,6 +233,7 @@ pub fn serialize_structure_crate_input_create_pricing_rule_input(
         object.key("Service").string(var_56.as_str());
     }
     if let Some(var_57) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_58 = object.key("Tags").start_object();
         for (key_59, value_60) in var_57 {
             {
@@ -256,6 +266,7 @@ pub fn serialize_structure_crate_input_delete_custom_line_item_input(
         object.key("Arn").string(var_63.as_str());
     }
     if let Some(var_64) = &input.billing_period_range {
+        #[allow(unused_mut)]
         let mut object_65 = object.key("BillingPeriodRange").start_object();
         crate::json_ser::serialize_structure_crate_model_custom_line_item_billing_period_range(
             &mut object_65,
@@ -332,6 +343,7 @@ pub fn serialize_structure_crate_input_list_account_associations_input(
         object.key("BillingPeriod").string(var_76.as_str());
     }
     if let Some(var_77) = &input.filters {
+        #[allow(unused_mut)]
         let mut object_78 = object.key("Filters").start_object();
         crate::json_ser::serialize_structure_crate_model_list_account_associations_filter(
             &mut object_78,
@@ -353,6 +365,7 @@ pub fn serialize_structure_crate_input_list_billing_group_cost_reports_input(
         object.key("BillingPeriod").string(var_80.as_str());
     }
     if let Some(var_81) = &input.filters {
+        #[allow(unused_mut)]
         let mut object_82 = object.key("Filters").start_object();
         crate::json_ser::serialize_structure_crate_model_list_billing_group_cost_reports_filter(
             &mut object_82,
@@ -380,6 +393,7 @@ pub fn serialize_structure_crate_input_list_billing_groups_input(
         object.key("BillingPeriod").string(var_85.as_str());
     }
     if let Some(var_86) = &input.filters {
+        #[allow(unused_mut)]
         let mut object_87 = object.key("Filters").start_object();
         crate::json_ser::serialize_structure_crate_model_list_billing_groups_filter(
             &mut object_87,
@@ -407,6 +421,7 @@ pub fn serialize_structure_crate_input_list_custom_line_items_input(
         object.key("BillingPeriod").string(var_90.as_str());
     }
     if let Some(var_91) = &input.filters {
+        #[allow(unused_mut)]
         let mut object_92 = object.key("Filters").start_object();
         crate::json_ser::serialize_structure_crate_model_list_custom_line_items_filter(
             &mut object_92,
@@ -434,6 +449,7 @@ pub fn serialize_structure_crate_input_list_pricing_plans_input(
         object.key("BillingPeriod").string(var_95.as_str());
     }
     if let Some(var_96) = &input.filters {
+        #[allow(unused_mut)]
         let mut object_97 = object.key("Filters").start_object();
         crate::json_ser::serialize_structure_crate_model_list_pricing_plans_filter(
             &mut object_97,
@@ -483,6 +499,7 @@ pub fn serialize_structure_crate_input_list_pricing_rules_input(
         object.key("BillingPeriod").string(var_104.as_str());
     }
     if let Some(var_105) = &input.filters {
+        #[allow(unused_mut)]
         let mut object_106 = object.key("Filters").start_object();
         crate::json_ser::serialize_structure_crate_model_list_pricing_rules_filter(
             &mut object_106,
@@ -535,6 +552,7 @@ pub fn serialize_structure_crate_input_list_resources_associated_to_custom_line_
         object.key("BillingPeriod").string(var_114.as_str());
     }
     if let Some(var_115) = &input.filters {
+        #[allow(unused_mut)]
         let mut object_116 = object.key("Filters").start_object();
         crate::json_ser::serialize_structure_crate_model_list_resources_associated_to_custom_line_item_filter(&mut object_116, var_115)?;
         object_116.finish();
@@ -556,6 +574,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_119) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_120 = object.key("Tags").start_object();
         for (key_121, value_122) in var_119 {
             {
@@ -575,6 +594,7 @@ pub fn serialize_structure_crate_input_update_billing_group_input(
         object.key("Arn").string(var_123.as_str());
     }
     if let Some(var_124) = &input.computation_preference {
+        #[allow(unused_mut)]
         let mut object_125 = object.key("ComputationPreference").start_object();
         crate::json_ser::serialize_structure_crate_model_computation_preference(
             &mut object_125,
@@ -602,6 +622,7 @@ pub fn serialize_structure_crate_input_update_custom_line_item_input(
         object.key("Arn").string(var_129.as_str());
     }
     if let Some(var_130) = &input.billing_period_range {
+        #[allow(unused_mut)]
         let mut object_131 = object.key("BillingPeriodRange").start_object();
         crate::json_ser::serialize_structure_crate_model_custom_line_item_billing_period_range(
             &mut object_131,
@@ -610,6 +631,7 @@ pub fn serialize_structure_crate_input_update_custom_line_item_input(
         object_131.finish();
     }
     if let Some(var_132) = &input.charge_details {
+        #[allow(unused_mut)]
         let mut object_133 = object.key("ChargeDetails").start_object();
         crate::json_ser::serialize_structure_crate_model_update_custom_line_item_charge_details(
             &mut object_133,
@@ -715,6 +737,7 @@ pub fn serialize_structure_crate_model_custom_line_item_charge_details(
     input: &crate::model::CustomLineItemChargeDetails,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_150) = &input.flat {
+        #[allow(unused_mut)]
         let mut object_151 = object.key("Flat").start_object();
         crate::json_ser::serialize_structure_crate_model_custom_line_item_flat_charge_details(
             &mut object_151,
@@ -723,6 +746,7 @@ pub fn serialize_structure_crate_model_custom_line_item_charge_details(
         object_151.finish();
     }
     if let Some(var_152) = &input.percentage {
+        #[allow(unused_mut)]
         let mut object_153 = object.key("Percentage").start_object();
         crate::json_ser::serialize_structure_crate_model_custom_line_item_percentage_charge_details(&mut object_153, var_152)?;
         object_153.finish();
@@ -862,11 +886,13 @@ pub fn serialize_structure_crate_model_update_custom_line_item_charge_details(
     input: &crate::model::UpdateCustomLineItemChargeDetails,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_180) = &input.flat {
+        #[allow(unused_mut)]
         let mut object_181 = object.key("Flat").start_object();
         crate::json_ser::serialize_structure_crate_model_update_custom_line_item_flat_charge_details(&mut object_181, var_180)?;
         object_181.finish();
     }
     if let Some(var_182) = &input.percentage {
+        #[allow(unused_mut)]
         let mut object_183 = object.key("Percentage").start_object();
         crate::json_ser::serialize_structure_crate_model_update_custom_line_item_percentage_charge_details(&mut object_183, var_182)?;
         object_183.finish();

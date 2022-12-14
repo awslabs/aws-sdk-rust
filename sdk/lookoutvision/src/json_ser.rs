@@ -4,6 +4,7 @@ pub fn serialize_structure_crate_input_create_dataset_input(
     input: &crate::input::CreateDatasetInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.dataset_source {
+        #[allow(unused_mut)]
         let mut object_2 = object.key("DatasetSource").start_object();
         crate::json_ser::serialize_structure_crate_model_dataset_source(&mut object_2, var_1)?;
         object_2.finish();
@@ -25,6 +26,7 @@ pub fn serialize_structure_crate_input_create_model_input(
         object.key("KmsKeyId").string(var_5.as_str());
     }
     if let Some(var_6) = &input.output_config {
+        #[allow(unused_mut)]
         let mut object_7 = object.key("OutputConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_output_config(&mut object_7, var_6)?;
         object_7.finish();
@@ -33,6 +35,7 @@ pub fn serialize_structure_crate_input_create_model_input(
         let mut array_9 = object.key("Tags").start_array();
         for item_10 in var_8 {
             {
+                #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_11, item_10)?;
                 object_11.finish();
@@ -77,6 +80,7 @@ pub fn serialize_structure_crate_input_start_model_packaging_job_input(
     input: &crate::input::StartModelPackagingJobInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_15) = &input.configuration {
+        #[allow(unused_mut)]
         let mut object_16 = object.key("Configuration").start_object();
         crate::json_ser::serialize_structure_crate_model_model_packaging_configuration(
             &mut object_16,
@@ -104,6 +108,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_21 = object.key("Tags").start_array();
         for item_22 in var_20 {
             {
+                #[allow(unused_mut)]
                 let mut object_23 = array_21.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_23, item_22)?;
                 object_23.finish();
@@ -131,6 +136,7 @@ pub fn serialize_structure_crate_model_dataset_source(
     input: &crate::model::DatasetSource,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_25) = &input.ground_truth_manifest {
+        #[allow(unused_mut)]
         let mut object_26 = object.key("GroundTruthManifest").start_object();
         crate::json_ser::serialize_structure_crate_model_dataset_ground_truth_manifest(
             &mut object_26,
@@ -146,6 +152,7 @@ pub fn serialize_structure_crate_model_output_config(
     input: &crate::model::OutputConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_27) = &input.s3_location {
+        #[allow(unused_mut)]
         let mut object_28 = object.key("S3Location").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_location(&mut object_28, var_27)?;
         object_28.finish();
@@ -171,6 +178,7 @@ pub fn serialize_structure_crate_model_model_packaging_configuration(
     input: &crate::model::ModelPackagingConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_31) = &input.greengrass {
+        #[allow(unused_mut)]
         let mut object_32 = object.key("Greengrass").start_object();
         crate::json_ser::serialize_structure_crate_model_greengrass_configuration(
             &mut object_32,
@@ -186,6 +194,7 @@ pub fn serialize_structure_crate_model_dataset_ground_truth_manifest(
     input: &crate::model::DatasetGroundTruthManifest,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_33) = &input.s3_object {
+        #[allow(unused_mut)]
         let mut object_34 = object.key("S3Object").start_object();
         crate::json_ser::serialize_structure_crate_model_input_s3_object(&mut object_34, var_33)?;
         object_34.finish();
@@ -217,11 +226,13 @@ pub fn serialize_structure_crate_model_greengrass_configuration(
         object.key("TargetDevice").string(var_38.as_str());
     }
     if let Some(var_39) = &input.target_platform {
+        #[allow(unused_mut)]
         let mut object_40 = object.key("TargetPlatform").start_object();
         crate::json_ser::serialize_structure_crate_model_target_platform(&mut object_40, var_39)?;
         object_40.finish();
     }
     if let Some(var_41) = &input.s3_output_location {
+        #[allow(unused_mut)]
         let mut object_42 = object.key("S3OutputLocation").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_location(&mut object_42, var_41)?;
         object_42.finish();
@@ -239,6 +250,7 @@ pub fn serialize_structure_crate_model_greengrass_configuration(
         let mut array_47 = object.key("Tags").start_array();
         for item_48 in var_46 {
             {
+                #[allow(unused_mut)]
                 let mut object_49 = array_47.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_49, item_48)?;
                 object_49.finish();

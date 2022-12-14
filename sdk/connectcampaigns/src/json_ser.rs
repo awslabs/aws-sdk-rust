@@ -7,6 +7,7 @@ pub fn serialize_structure_crate_input_create_campaign_input(
         object.key("connectInstanceId").string(var_1.as_str());
     }
     if let Some(var_2) = &input.dialer_config {
+        #[allow(unused_mut)]
         let mut object_3 = object.key("dialerConfig").start_object();
         crate::json_ser::serialize_union_crate_model_dialer_config(&mut object_3, var_2)?;
         object_3.finish();
@@ -15,6 +16,7 @@ pub fn serialize_structure_crate_input_create_campaign_input(
         object.key("name").string(var_4.as_str());
     }
     if let Some(var_5) = &input.outbound_call_config {
+        #[allow(unused_mut)]
         let mut object_6 = object.key("outboundCallConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_outbound_call_config(
             &mut object_6,
@@ -23,6 +25,7 @@ pub fn serialize_structure_crate_input_create_campaign_input(
         object_6.finish();
     }
     if let Some(var_7) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_8 = object.key("tags").start_object();
         for (key_9, value_10) in var_7 {
             {
@@ -55,6 +58,7 @@ pub fn serialize_structure_crate_input_list_campaigns_input(
     input: &crate::input::ListCampaignsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_14) = &input.filters {
+        #[allow(unused_mut)]
         let mut object_15 = object.key("filters").start_object();
         crate::json_ser::serialize_structure_crate_model_campaign_filters(&mut object_15, var_14)?;
         object_15.finish();
@@ -79,6 +83,7 @@ pub fn serialize_structure_crate_input_put_dial_request_batch_input(
         let mut array_19 = object.key("dialRequests").start_array();
         for item_20 in var_18 {
             {
+                #[allow(unused_mut)]
                 let mut object_21 = array_19.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_dial_request(
                     &mut object_21,
@@ -97,6 +102,7 @@ pub fn serialize_structure_crate_input_start_instance_onboarding_job_input(
     input: &crate::input::StartInstanceOnboardingJobInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_22) = &input.encryption_config {
+        #[allow(unused_mut)]
         let mut object_23 = object.key("encryptionConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_encryption_config(&mut object_23, var_22)?;
         object_23.finish();
@@ -109,6 +115,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_24) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_25 = object.key("tags").start_object();
         for (key_26, value_27) in var_24 {
             {
@@ -125,6 +132,7 @@ pub fn serialize_structure_crate_input_update_campaign_dialer_config_input(
     input: &crate::input::UpdateCampaignDialerConfigInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_28) = &input.dialer_config {
+        #[allow(unused_mut)]
         let mut object_29 = object.key("dialerConfig").start_object();
         crate::json_ser::serialize_union_crate_model_dialer_config(&mut object_29, var_28)?;
         object_29.finish();
@@ -147,6 +155,7 @@ pub fn serialize_structure_crate_input_update_campaign_outbound_call_config_inpu
     input: &crate::input::UpdateCampaignOutboundCallConfigInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_31) = &input.answer_machine_detection_config {
+        #[allow(unused_mut)]
         let mut object_32 = object.key("answerMachineDetectionConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_answer_machine_detection_config(
             &mut object_32,
@@ -171,6 +180,7 @@ pub fn serialize_union_crate_model_dialer_config(
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::DialerConfig::ProgressiveDialerConfig(inner) => {
+            #[allow(unused_mut)]
             let mut object_35 = object_3.key("progressiveDialerConfig").start_object();
             crate::json_ser::serialize_structure_crate_model_progressive_dialer_config(
                 &mut object_35,
@@ -179,6 +189,7 @@ pub fn serialize_union_crate_model_dialer_config(
             object_35.finish();
         }
         crate::model::DialerConfig::PredictiveDialerConfig(inner) => {
+            #[allow(unused_mut)]
             let mut object_36 = object_3.key("predictiveDialerConfig").start_object();
             crate::json_ser::serialize_structure_crate_model_predictive_dialer_config(
                 &mut object_36,
@@ -213,6 +224,7 @@ pub fn serialize_structure_crate_model_outbound_call_config(
         object.key("connectQueueId").string(var_39.as_str());
     }
     if let Some(var_40) = &input.answer_machine_detection_config {
+        #[allow(unused_mut)]
         let mut object_41 = object.key("answerMachineDetectionConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_answer_machine_detection_config(
             &mut object_41,
@@ -228,6 +240,7 @@ pub fn serialize_structure_crate_model_campaign_filters(
     input: &crate::model::CampaignFilters,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_42) = &input.instance_id_filter {
+        #[allow(unused_mut)]
         let mut object_43 = object.key("instanceIdFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_instance_id_filter(
             &mut object_43,
@@ -254,6 +267,7 @@ pub fn serialize_structure_crate_model_dial_request(
             .date_time(var_46, aws_smithy_types::date_time::Format::DateTime)?;
     }
     if let Some(var_47) = &input.attributes {
+        #[allow(unused_mut)]
         let mut object_48 = object.key("attributes").start_object();
         for (key_49, value_50) in var_47 {
             {

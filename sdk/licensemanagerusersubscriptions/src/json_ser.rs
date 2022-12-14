@@ -7,6 +7,7 @@ pub fn serialize_structure_crate_input_associate_user_input(
         object.key("Domain").string(var_1.as_str());
     }
     if let Some(var_2) = &input.identity_provider {
+        #[allow(unused_mut)]
         let mut object_3 = object.key("IdentityProvider").start_object();
         crate::json_ser::serialize_union_crate_model_identity_provider(&mut object_3, var_2)?;
         object_3.finish();
@@ -25,6 +26,7 @@ pub fn serialize_structure_crate_input_deregister_identity_provider_input(
     input: &crate::input::DeregisterIdentityProviderInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_6) = &input.identity_provider {
+        #[allow(unused_mut)]
         let mut object_7 = object.key("IdentityProvider").start_object();
         crate::json_ser::serialize_union_crate_model_identity_provider(&mut object_7, var_6)?;
         object_7.finish();
@@ -43,6 +45,7 @@ pub fn serialize_structure_crate_input_disassociate_user_input(
         object.key("Domain").string(var_9.as_str());
     }
     if let Some(var_10) = &input.identity_provider {
+        #[allow(unused_mut)]
         let mut object_11 = object.key("IdentityProvider").start_object();
         crate::json_ser::serialize_union_crate_model_identity_provider(&mut object_11, var_10)?;
         object_11.finish();
@@ -80,6 +83,7 @@ pub fn serialize_structure_crate_input_list_instances_input(
         let mut array_17 = object.key("Filters").start_array();
         for item_18 in var_16 {
             {
+                #[allow(unused_mut)]
                 let mut object_19 = array_17.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_19, item_18)?;
                 object_19.finish();
@@ -107,6 +111,7 @@ pub fn serialize_structure_crate_input_list_product_subscriptions_input(
         let mut array_23 = object.key("Filters").start_array();
         for item_24 in var_22 {
             {
+                #[allow(unused_mut)]
                 let mut object_25 = array_23.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_25, item_24)?;
                 object_25.finish();
@@ -115,6 +120,7 @@ pub fn serialize_structure_crate_input_list_product_subscriptions_input(
         array_23.finish();
     }
     if let Some(var_26) = &input.identity_provider {
+        #[allow(unused_mut)]
         let mut object_27 = object.key("IdentityProvider").start_object();
         crate::json_ser::serialize_union_crate_model_identity_provider(&mut object_27, var_26)?;
         object_27.finish();
@@ -142,6 +148,7 @@ pub fn serialize_structure_crate_input_list_user_associations_input(
         let mut array_32 = object.key("Filters").start_array();
         for item_33 in var_31 {
             {
+                #[allow(unused_mut)]
                 let mut object_34 = array_32.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_34, item_33)?;
                 object_34.finish();
@@ -150,6 +157,7 @@ pub fn serialize_structure_crate_input_list_user_associations_input(
         array_32.finish();
     }
     if let Some(var_35) = &input.identity_provider {
+        #[allow(unused_mut)]
         let mut object_36 = object.key("IdentityProvider").start_object();
         crate::json_ser::serialize_union_crate_model_identity_provider(&mut object_36, var_35)?;
         object_36.finish();
@@ -174,6 +182,7 @@ pub fn serialize_structure_crate_input_register_identity_provider_input(
     input: &crate::input::RegisterIdentityProviderInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_40) = &input.identity_provider {
+        #[allow(unused_mut)]
         let mut object_41 = object.key("IdentityProvider").start_object();
         crate::json_ser::serialize_union_crate_model_identity_provider(&mut object_41, var_40)?;
         object_41.finish();
@@ -192,6 +201,7 @@ pub fn serialize_structure_crate_input_start_product_subscription_input(
         object.key("Domain").string(var_43.as_str());
     }
     if let Some(var_44) = &input.identity_provider {
+        #[allow(unused_mut)]
         let mut object_45 = object.key("IdentityProvider").start_object();
         crate::json_ser::serialize_union_crate_model_identity_provider(&mut object_45, var_44)?;
         object_45.finish();
@@ -213,6 +223,7 @@ pub fn serialize_structure_crate_input_stop_product_subscription_input(
         object.key("Domain").string(var_48.as_str());
     }
     if let Some(var_49) = &input.identity_provider {
+        #[allow(unused_mut)]
         let mut object_50 = object.key("IdentityProvider").start_object();
         crate::json_ser::serialize_union_crate_model_identity_provider(&mut object_50, var_49)?;
         object_50.finish();
@@ -232,6 +243,7 @@ pub fn serialize_union_crate_model_identity_provider(
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::IdentityProvider::ActiveDirectoryIdentityProvider(inner) => {
+            #[allow(unused_mut)]
             let mut object_53 = object_3
                 .key("ActiveDirectoryIdentityProvider")
                 .start_object();

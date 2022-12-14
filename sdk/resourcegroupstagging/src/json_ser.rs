@@ -71,6 +71,7 @@ pub fn serialize_structure_crate_input_get_resources_input(
         let mut array_20 = object.key("TagFilters").start_array();
         for item_21 in var_19 {
             {
+                #[allow(unused_mut)]
                 let mut object_22 = array_20.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag_filter(
                     &mut object_22,
@@ -167,6 +168,7 @@ pub fn serialize_structure_crate_input_tag_resources_input(
         array_38.finish();
     }
     if let Some(var_40) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_41 = object.key("Tags").start_object();
         for (key_42, value_43) in var_40 {
             {

@@ -4,6 +4,7 @@ pub fn serialize_structure_crate_input_create_environment_input(
     input: &crate::input::CreateEnvironmentInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.airflow_configuration_options {
+        #[allow(unused_mut)]
         let mut object_2 = object.key("AirflowConfigurationOptions").start_object();
         for (key_3, value_4) in var_1 {
             {
@@ -28,6 +29,7 @@ pub fn serialize_structure_crate_input_create_environment_input(
         object.key("KmsKey").string(var_9.as_str());
     }
     if let Some(var_10) = &input.logging_configuration {
+        #[allow(unused_mut)]
         let mut object_11 = object.key("LoggingConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_logging_configuration_input(
             &mut object_11,
@@ -48,6 +50,7 @@ pub fn serialize_structure_crate_input_create_environment_input(
         );
     }
     if let Some(var_14) = &input.network_configuration {
+        #[allow(unused_mut)]
         let mut object_15 = object.key("NetworkConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_network_configuration(
             &mut object_15,
@@ -79,6 +82,7 @@ pub fn serialize_structure_crate_input_create_environment_input(
         object.key("SourceBucketArn").string(var_21.as_str());
     }
     if let Some(var_22) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_23 = object.key("Tags").start_object();
         for (key_24, value_25) in var_22 {
             {
@@ -106,6 +110,7 @@ pub fn serialize_structure_crate_input_publish_metrics_input(
         let mut array_29 = object.key("MetricData").start_array();
         for item_30 in var_28 {
             {
+                #[allow(unused_mut)]
                 let mut object_31 = array_29.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_metric_datum(
                     &mut object_31,
@@ -124,6 +129,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_32) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_33 = object.key("Tags").start_object();
         for (key_34, value_35) in var_32 {
             {
@@ -140,6 +146,7 @@ pub fn serialize_structure_crate_input_update_environment_input(
     input: &crate::input::UpdateEnvironmentInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_36) = &input.airflow_configuration_options {
+        #[allow(unused_mut)]
         let mut object_37 = object.key("AirflowConfigurationOptions").start_object();
         for (key_38, value_39) in var_36 {
             {
@@ -161,6 +168,7 @@ pub fn serialize_structure_crate_input_update_environment_input(
         object.key("ExecutionRoleArn").string(var_43.as_str());
     }
     if let Some(var_44) = &input.logging_configuration {
+        #[allow(unused_mut)]
         let mut object_45 = object.key("LoggingConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_logging_configuration_input(
             &mut object_45,
@@ -181,6 +189,7 @@ pub fn serialize_structure_crate_input_update_environment_input(
         );
     }
     if let Some(var_48) = &input.network_configuration {
+        #[allow(unused_mut)]
         let mut object_49 = object.key("NetworkConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_update_network_configuration_input(
             &mut object_49,
@@ -227,6 +236,7 @@ pub fn serialize_structure_crate_model_logging_configuration_input(
     input: &crate::model::LoggingConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_58) = &input.dag_processing_logs {
+        #[allow(unused_mut)]
         let mut object_59 = object.key("DagProcessingLogs").start_object();
         crate::json_ser::serialize_structure_crate_model_module_logging_configuration_input(
             &mut object_59,
@@ -235,6 +245,7 @@ pub fn serialize_structure_crate_model_logging_configuration_input(
         object_59.finish();
     }
     if let Some(var_60) = &input.scheduler_logs {
+        #[allow(unused_mut)]
         let mut object_61 = object.key("SchedulerLogs").start_object();
         crate::json_ser::serialize_structure_crate_model_module_logging_configuration_input(
             &mut object_61,
@@ -243,6 +254,7 @@ pub fn serialize_structure_crate_model_logging_configuration_input(
         object_61.finish();
     }
     if let Some(var_62) = &input.webserver_logs {
+        #[allow(unused_mut)]
         let mut object_63 = object.key("WebserverLogs").start_object();
         crate::json_ser::serialize_structure_crate_model_module_logging_configuration_input(
             &mut object_63,
@@ -251,6 +263,7 @@ pub fn serialize_structure_crate_model_logging_configuration_input(
         object_63.finish();
     }
     if let Some(var_64) = &input.worker_logs {
+        #[allow(unused_mut)]
         let mut object_65 = object.key("WorkerLogs").start_object();
         crate::json_ser::serialize_structure_crate_model_module_logging_configuration_input(
             &mut object_65,
@@ -259,6 +272,7 @@ pub fn serialize_structure_crate_model_logging_configuration_input(
         object_65.finish();
     }
     if let Some(var_66) = &input.task_logs {
+        #[allow(unused_mut)]
         let mut object_67 = object.key("TaskLogs").start_object();
         crate::json_ser::serialize_structure_crate_model_module_logging_configuration_input(
             &mut object_67,
@@ -310,6 +324,7 @@ pub fn serialize_structure_crate_model_metric_datum(
         let mut array_77 = object.key("Dimensions").start_array();
         for item_78 in var_76 {
             {
+                #[allow(unused_mut)]
                 let mut object_79 = array_77.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_dimension(
                     &mut object_79,
@@ -330,6 +345,7 @@ pub fn serialize_structure_crate_model_metric_datum(
         object.key("Unit").string(var_81.as_str());
     }
     if let Some(var_82) = &input.statistic_values {
+        #[allow(unused_mut)]
         let mut object_83 = object.key("StatisticValues").start_object();
         crate::json_ser::serialize_structure_crate_model_statistic_set(&mut object_83, var_82)?;
         object_83.finish();

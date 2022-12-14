@@ -10,11 +10,13 @@ pub fn serialize_structure_crate_input_create_fhir_datastore_input(
         object.key("DatastoreTypeVersion").string(var_2.as_str());
     }
     if let Some(var_3) = &input.sse_configuration {
+        #[allow(unused_mut)]
         let mut object_4 = object.key("SseConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_sse_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.preload_data_config {
+        #[allow(unused_mut)]
         let mut object_6 = object.key("PreloadDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_preload_data_config(&mut object_6, var_5)?;
         object_6.finish();
@@ -26,6 +28,7 @@ pub fn serialize_structure_crate_input_create_fhir_datastore_input(
         let mut array_9 = object.key("Tags").start_array();
         for item_10 in var_8 {
             {
+                #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_11, item_10)?;
                 object_11.finish();
@@ -87,6 +90,7 @@ pub fn serialize_structure_crate_input_list_fhir_datastores_input(
     input: &crate::input::ListFhirDatastoresInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_18) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_19 = object.key("Filter").start_object();
         crate::json_ser::serialize_structure_crate_model_datastore_filter(&mut object_19, var_18)?;
         object_19.finish();
@@ -191,6 +195,7 @@ pub fn serialize_structure_crate_input_start_fhir_export_job_input(
         object.key("JobName").string(var_37.as_str());
     }
     if let Some(var_38) = &input.output_data_config {
+        #[allow(unused_mut)]
         let mut object_39 = object.key("OutputDataConfig").start_object();
         crate::json_ser::serialize_union_crate_model_output_data_config(&mut object_39, var_38)?;
         object_39.finish();
@@ -215,11 +220,13 @@ pub fn serialize_structure_crate_input_start_fhir_import_job_input(
         object.key("JobName").string(var_43.as_str());
     }
     if let Some(var_44) = &input.input_data_config {
+        #[allow(unused_mut)]
         let mut object_45 = object.key("InputDataConfig").start_object();
         crate::json_ser::serialize_union_crate_model_input_data_config(&mut object_45, var_44)?;
         object_45.finish();
     }
     if let Some(var_46) = &input.job_output_data_config {
+        #[allow(unused_mut)]
         let mut object_47 = object.key("JobOutputDataConfig").start_object();
         crate::json_ser::serialize_union_crate_model_output_data_config(&mut object_47, var_46)?;
         object_47.finish();
@@ -247,6 +254,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_53 = object.key("Tags").start_array();
         for item_54 in var_52 {
             {
+                #[allow(unused_mut)]
                 let mut object_55 = array_53.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_55, item_54)?;
                 object_55.finish();
@@ -281,6 +289,7 @@ pub fn serialize_structure_crate_model_sse_configuration(
     input: &crate::model::SseConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_60) = &input.kms_encryption_config {
+        #[allow(unused_mut)]
         let mut object_61 = object.key("KmsEncryptionConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_kms_encryption_config(
             &mut object_61,
@@ -343,6 +352,7 @@ pub fn serialize_union_crate_model_output_data_config(
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::OutputDataConfig::S3Configuration(inner) => {
+            #[allow(unused_mut)]
             let mut object_69 = object_39.key("S3Configuration").start_object();
             crate::json_ser::serialize_structure_crate_model_s3_configuration(
                 &mut object_69,

@@ -16,6 +16,7 @@ pub fn serialize_structure_crate_input_create_cell_input(
         array_3.finish();
     }
     if let Some(var_5) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_6 = object.key("tags").start_object();
         for (key_7, value_8) in var_5 {
             {
@@ -50,6 +51,7 @@ pub fn serialize_structure_crate_input_create_readiness_check_input(
         object.key("resourceSetName").string(var_11.as_str());
     }
     if let Some(var_12) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_13 = object.key("tags").start_object();
         for (key_14, value_15) in var_12 {
             {
@@ -78,6 +80,7 @@ pub fn serialize_structure_crate_input_create_recovery_group_input(
         object.key("recoveryGroupName").string(var_19.as_str());
     }
     if let Some(var_20) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_21 = object.key("tags").start_object();
         for (key_22, value_23) in var_20 {
             {
@@ -103,6 +106,7 @@ pub fn serialize_structure_crate_input_create_resource_set_input(
         let mut array_27 = object.key("resources").start_array();
         for item_28 in var_26 {
             {
+                #[allow(unused_mut)]
                 let mut object_29 = array_27.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_resource(&mut object_29, item_28)?;
                 object_29.finish();
@@ -111,6 +115,7 @@ pub fn serialize_structure_crate_input_create_resource_set_input(
         array_27.finish();
     }
     if let Some(var_30) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_31 = object.key("tags").start_object();
         for (key_32, value_33) in var_30 {
             {
@@ -127,6 +132,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_34) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_35 = object.key("tags").start_object();
         for (key_36, value_37) in var_34 {
             {
@@ -191,6 +197,7 @@ pub fn serialize_structure_crate_input_update_resource_set_input(
         let mut array_47 = object.key("resources").start_array();
         for item_48 in var_46 {
             {
+                #[allow(unused_mut)]
                 let mut object_49 = array_47.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_resource(&mut object_49, item_48)?;
                 object_49.finish();
@@ -209,6 +216,7 @@ pub fn serialize_structure_crate_model_resource(
         object.key("componentId").string(var_50.as_str());
     }
     if let Some(var_51) = &input.dns_target_resource {
+        #[allow(unused_mut)]
         let mut object_52 = object.key("dnsTargetResource").start_object();
         crate::json_ser::serialize_structure_crate_model_dns_target_resource(
             &mut object_52,
@@ -248,6 +256,7 @@ pub fn serialize_structure_crate_model_dns_target_resource(
         object.key("recordType").string(var_60.as_str());
     }
     if let Some(var_61) = &input.target_resource {
+        #[allow(unused_mut)]
         let mut object_62 = object.key("targetResource").start_object();
         crate::json_ser::serialize_structure_crate_model_target_resource(&mut object_62, var_61)?;
         object_62.finish();
@@ -260,11 +269,13 @@ pub fn serialize_structure_crate_model_target_resource(
     input: &crate::model::TargetResource,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_63) = &input.nlb_resource {
+        #[allow(unused_mut)]
         let mut object_64 = object.key("nLBResource").start_object();
         crate::json_ser::serialize_structure_crate_model_nlb_resource(&mut object_64, var_63)?;
         object_64.finish();
     }
     if let Some(var_65) = &input.r53_resource {
+        #[allow(unused_mut)]
         let mut object_66 = object.key("r53Resource").start_object();
         crate::json_ser::serialize_structure_crate_model_r53_resource_record(
             &mut object_66,

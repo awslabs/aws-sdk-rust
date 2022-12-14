@@ -4,6 +4,7 @@ pub fn serialize_structure_crate_input_create_application_input(
     input: &crate::input::CreateApplicationInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.api_gateway_proxy {
+        #[allow(unused_mut)]
         let mut object_2 = object.key("ApiGatewayProxy").start_object();
         crate::json_ser::serialize_structure_crate_model_api_gateway_proxy_input(
             &mut object_2,
@@ -21,6 +22,7 @@ pub fn serialize_structure_crate_input_create_application_input(
         object.key("ProxyType").string(var_5.as_str());
     }
     if let Some(var_6) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_7 = object.key("Tags").start_object();
         for (key_8, value_9) in var_6 {
             {
@@ -52,6 +54,7 @@ pub fn serialize_structure_crate_input_create_environment_input(
         object.key("NetworkFabricType").string(var_14.as_str());
     }
     if let Some(var_15) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_16 = object.key("Tags").start_object();
         for (key_17, value_18) in var_15 {
             {
@@ -71,6 +74,7 @@ pub fn serialize_structure_crate_input_create_route_input(
         object.key("ClientToken").string(var_19.as_str());
     }
     if let Some(var_20) = &input.default_route {
+        #[allow(unused_mut)]
         let mut object_21 = object.key("DefaultRoute").start_object();
         crate::json_ser::serialize_structure_crate_model_default_route_input(
             &mut object_21,
@@ -85,6 +89,7 @@ pub fn serialize_structure_crate_input_create_route_input(
         object.key("ServiceIdentifier").string(var_23.as_str());
     }
     if let Some(var_24) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_25 = object.key("Tags").start_object();
         for (key_26, value_27) in var_24 {
             {
@@ -94,6 +99,7 @@ pub fn serialize_structure_crate_input_create_route_input(
         object_25.finish();
     }
     if let Some(var_28) = &input.uri_path_route {
+        #[allow(unused_mut)]
         let mut object_29 = object.key("UriPathRoute").start_object();
         crate::json_ser::serialize_structure_crate_model_uri_path_route_input(
             &mut object_29,
@@ -118,6 +124,7 @@ pub fn serialize_structure_crate_input_create_service_input(
         object.key("EndpointType").string(var_32.as_str());
     }
     if let Some(var_33) = &input.lambda_endpoint {
+        #[allow(unused_mut)]
         let mut object_34 = object.key("LambdaEndpoint").start_object();
         crate::json_ser::serialize_structure_crate_model_lambda_endpoint_input(
             &mut object_34,
@@ -129,6 +136,7 @@ pub fn serialize_structure_crate_input_create_service_input(
         object.key("Name").string(var_35.as_str());
     }
     if let Some(var_36) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_37 = object.key("Tags").start_object();
         for (key_38, value_39) in var_36 {
             {
@@ -138,6 +146,7 @@ pub fn serialize_structure_crate_input_create_service_input(
         object_37.finish();
     }
     if let Some(var_40) = &input.url_endpoint {
+        #[allow(unused_mut)]
         let mut object_41 = object.key("UrlEndpoint").start_object();
         crate::json_ser::serialize_structure_crate_model_url_endpoint_input(
             &mut object_41,
@@ -169,6 +178,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_45) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_46 = object.key("Tags").start_object();
         for (key_47, value_48) in var_45 {
             {

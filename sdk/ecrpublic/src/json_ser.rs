@@ -35,6 +35,7 @@ pub fn serialize_structure_crate_input_batch_delete_image_input(
         let mut array_9 = object.key("imageIds").start_array();
         for item_10 in var_8 {
             {
+                #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_image_identifier(
                     &mut object_11,
@@ -81,6 +82,7 @@ pub fn serialize_structure_crate_input_create_repository_input(
         object.key("repositoryName").string(var_18.as_str());
     }
     if let Some(var_19) = &input.catalog_data {
+        #[allow(unused_mut)]
         let mut object_20 = object.key("catalogData").start_object();
         crate::json_ser::serialize_structure_crate_model_repository_catalog_data_input(
             &mut object_20,
@@ -92,6 +94,7 @@ pub fn serialize_structure_crate_input_create_repository_input(
         let mut array_22 = object.key("tags").start_array();
         for item_23 in var_21 {
             {
+                #[allow(unused_mut)]
                 let mut object_24 = array_22.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_24, item_23)?;
                 object_24.finish();
@@ -145,6 +148,7 @@ pub fn serialize_structure_crate_input_describe_images_input(
         let mut array_32 = object.key("imageIds").start_array();
         for item_33 in var_31 {
             {
+                #[allow(unused_mut)]
                 let mut object_34 = array_32.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_image_identifier(
                     &mut object_34,
@@ -328,6 +332,7 @@ pub fn serialize_structure_crate_input_put_repository_catalog_data_input(
         object.key("repositoryName").string(var_64.as_str());
     }
     if let Some(var_65) = &input.catalog_data {
+        #[allow(unused_mut)]
         let mut object_66 = object.key("catalogData").start_object();
         crate::json_ser::serialize_structure_crate_model_repository_catalog_data_input(
             &mut object_66,
@@ -368,6 +373,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_72 = object.key("tags").start_array();
         for item_73 in var_71 {
             {
+                #[allow(unused_mut)]
                 let mut object_74 = array_72.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_74, item_73)?;
                 object_74.finish();

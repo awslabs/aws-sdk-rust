@@ -20,6 +20,7 @@ pub fn serialize_structure_crate_input_add_ip_routes_input(
         let mut array_4 = object.key("IpRoutes").start_array();
         for item_5 in var_3 {
             {
+                #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_ip_route(&mut object_6, item_5)?;
                 object_6.finish();
@@ -46,6 +47,7 @@ pub fn serialize_structure_crate_input_add_region_input(
         object.key("RegionName").string(var_8.as_str());
     }
     if let Some(var_9) = &input.vpc_settings {
+        #[allow(unused_mut)]
         let mut object_10 = object.key("VPCSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_directory_vpc_settings(
             &mut object_10,
@@ -67,6 +69,7 @@ pub fn serialize_structure_crate_input_add_tags_to_resource_input(
         let mut array_13 = object.key("Tags").start_array();
         for item_14 in var_12 {
             {
+                #[allow(unused_mut)]
                 let mut object_15 = array_13.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_15, item_14)?;
                 object_15.finish();
@@ -110,6 +113,7 @@ pub fn serialize_structure_crate_input_connect_directory_input(
         object.key("Size").string(var_22.as_str());
     }
     if let Some(var_23) = &input.connect_settings {
+        #[allow(unused_mut)]
         let mut object_24 = object.key("ConnectSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_directory_connect_settings(
             &mut object_24,
@@ -121,6 +125,7 @@ pub fn serialize_structure_crate_input_connect_directory_input(
         let mut array_26 = object.key("Tags").start_array();
         for item_27 in var_25 {
             {
+                #[allow(unused_mut)]
                 let mut object_28 = array_26.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_28, item_27)?;
                 object_28.finish();
@@ -166,6 +171,7 @@ pub fn serialize_structure_crate_input_create_computer_input(
         let mut array_36 = object.key("ComputerAttributes").start_array();
         for item_37 in var_35 {
             {
+                #[allow(unused_mut)]
                 let mut object_38 = array_36.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_attribute(
                     &mut object_38,
@@ -221,6 +227,7 @@ pub fn serialize_structure_crate_input_create_directory_input(
         object.key("Size").string(var_48.as_str());
     }
     if let Some(var_49) = &input.vpc_settings {
+        #[allow(unused_mut)]
         let mut object_50 = object.key("VpcSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_directory_vpc_settings(
             &mut object_50,
@@ -232,6 +239,7 @@ pub fn serialize_structure_crate_input_create_directory_input(
         let mut array_52 = object.key("Tags").start_array();
         for item_53 in var_51 {
             {
+                #[allow(unused_mut)]
                 let mut object_54 = array_52.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_54, item_53)?;
                 object_54.finish();
@@ -272,6 +280,7 @@ pub fn serialize_structure_crate_input_create_microsoft_ad_input(
         object.key("Description").string(var_60.as_str());
     }
     if let Some(var_61) = &input.vpc_settings {
+        #[allow(unused_mut)]
         let mut object_62 = object.key("VpcSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_directory_vpc_settings(
             &mut object_62,
@@ -286,6 +295,7 @@ pub fn serialize_structure_crate_input_create_microsoft_ad_input(
         let mut array_65 = object.key("Tags").start_array();
         for item_66 in var_64 {
             {
+                #[allow(unused_mut)]
                 let mut object_67 = array_65.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_67, item_66)?;
                 object_67.finish();
@@ -777,6 +787,7 @@ pub fn serialize_structure_crate_input_enable_radius_input(
         object.key("DirectoryId").string(var_154.as_str());
     }
     if let Some(var_155) = &input.radius_settings {
+        #[allow(unused_mut)]
         let mut object_156 = object.key("RadiusSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_radius_settings(&mut object_156, var_155)?;
         object_156.finish();
@@ -919,6 +930,7 @@ pub fn serialize_structure_crate_input_register_certificate_input(
         object.key("Type").string(var_178.as_str());
     }
     if let Some(var_179) = &input.client_cert_auth_settings {
+        #[allow(unused_mut)]
         let mut object_180 = object.key("ClientCertAuthSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_client_cert_auth_settings(
             &mut object_180,
@@ -1037,6 +1049,7 @@ pub fn serialize_structure_crate_input_share_directory_input(
         object.key("ShareNotes").string(var_198.as_str());
     }
     if let Some(var_199) = &input.share_target {
+        #[allow(unused_mut)]
         let mut object_200 = object.key("ShareTarget").start_object();
         crate::json_ser::serialize_structure_crate_model_share_target(&mut object_200, var_199)?;
         object_200.finish();
@@ -1076,6 +1089,7 @@ pub fn serialize_structure_crate_input_unshare_directory_input(
         object.key("DirectoryId").string(var_205.as_str());
     }
     if let Some(var_206) = &input.unshare_target {
+        #[allow(unused_mut)]
         let mut object_207 = object.key("UnshareTarget").start_object();
         crate::json_ser::serialize_structure_crate_model_unshare_target(&mut object_207, var_206)?;
         object_207.finish();
@@ -1129,6 +1143,7 @@ pub fn serialize_structure_crate_input_update_radius_input(
         object.key("DirectoryId").string(var_214.as_str());
     }
     if let Some(var_215) = &input.radius_settings {
+        #[allow(unused_mut)]
         let mut object_216 = object.key("RadiusSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_radius_settings(&mut object_216, var_215)?;
         object_216.finish();
@@ -1147,6 +1162,7 @@ pub fn serialize_structure_crate_input_update_settings_input(
         let mut array_219 = object.key("Settings").start_array();
         for item_220 in var_218 {
             {
+                #[allow(unused_mut)]
                 let mut object_221 = array_219.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_setting(
                     &mut object_221,

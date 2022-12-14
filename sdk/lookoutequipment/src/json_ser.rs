@@ -7,6 +7,7 @@ pub fn serialize_structure_crate_input_create_dataset_input(
         object.key("DatasetName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.dataset_schema {
+        #[allow(unused_mut)]
         let mut object_3 = object.key("DatasetSchema").start_object();
         crate::json_ser::serialize_structure_crate_model_dataset_schema(&mut object_3, var_2)?;
         object_3.finish();
@@ -21,6 +22,7 @@ pub fn serialize_structure_crate_input_create_dataset_input(
         let mut array_7 = object.key("Tags").start_array();
         for item_8 in var_6 {
             {
+                #[allow(unused_mut)]
                 let mut object_9 = array_7.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_9, item_8)?;
                 object_9.finish();
@@ -51,6 +53,7 @@ pub fn serialize_structure_crate_input_create_inference_scheduler_input(
         object.key("DataUploadFrequency").string(var_13.as_str());
     }
     if let Some(var_14) = &input.data_input_configuration {
+        #[allow(unused_mut)]
         let mut object_15 = object.key("DataInputConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_inference_input_configuration(
             &mut object_15,
@@ -59,6 +62,7 @@ pub fn serialize_structure_crate_input_create_inference_scheduler_input(
         object_15.finish();
     }
     if let Some(var_16) = &input.data_output_configuration {
+        #[allow(unused_mut)]
         let mut object_17 = object.key("DataOutputConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_inference_output_configuration(
             &mut object_17,
@@ -79,6 +83,7 @@ pub fn serialize_structure_crate_input_create_inference_scheduler_input(
         let mut array_22 = object.key("Tags").start_array();
         for item_23 in var_21 {
             {
+                #[allow(unused_mut)]
                 let mut object_24 = array_22.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_24, item_23)?;
                 object_24.finish();
@@ -147,6 +152,7 @@ pub fn serialize_structure_crate_input_create_label_group_input(
         let mut array_39 = object.key("Tags").start_array();
         for item_40 in var_38 {
             {
+                #[allow(unused_mut)]
                 let mut object_41 = array_39.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_41, item_40)?;
                 object_41.finish();
@@ -168,11 +174,13 @@ pub fn serialize_structure_crate_input_create_model_input(
         object.key("DatasetName").string(var_43.as_str());
     }
     if let Some(var_44) = &input.dataset_schema {
+        #[allow(unused_mut)]
         let mut object_45 = object.key("DatasetSchema").start_object();
         crate::json_ser::serialize_structure_crate_model_dataset_schema(&mut object_45, var_44)?;
         object_45.finish();
     }
     if let Some(var_46) = &input.labels_input_configuration {
+        #[allow(unused_mut)]
         let mut object_47 = object.key("LabelsInputConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_labels_input_configuration(
             &mut object_47,
@@ -207,6 +215,7 @@ pub fn serialize_structure_crate_input_create_model_input(
         object.key("RoleArn").string(var_53.as_str());
     }
     if let Some(var_54) = &input.data_pre_processing_configuration {
+        #[allow(unused_mut)]
         let mut object_55 = object.key("DataPreProcessingConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_data_pre_processing_configuration(
             &mut object_55,
@@ -221,6 +230,7 @@ pub fn serialize_structure_crate_input_create_model_input(
         let mut array_58 = object.key("Tags").start_array();
         for item_59 in var_57 {
             {
+                #[allow(unused_mut)]
                 let mut object_60 = array_58.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_60, item_59)?;
                 object_60.finish();
@@ -597,6 +607,7 @@ pub fn serialize_structure_crate_input_start_data_ingestion_job_input(
         object.key("DatasetName").string(var_117.as_str());
     }
     if let Some(var_118) = &input.ingestion_input_configuration {
+        #[allow(unused_mut)]
         let mut object_119 = object.key("IngestionInputConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_ingestion_input_configuration(
             &mut object_119,
@@ -648,6 +659,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_126 = object.key("Tags").start_array();
         for item_127 in var_125 {
             {
+                #[allow(unused_mut)]
                 let mut object_128 = array_126.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_128, item_127)?;
                 object_128.finish();
@@ -696,6 +708,7 @@ pub fn serialize_structure_crate_input_update_inference_scheduler_input(
         object.key("DataUploadFrequency").string(var_135.as_str());
     }
     if let Some(var_136) = &input.data_input_configuration {
+        #[allow(unused_mut)]
         let mut object_137 = object.key("DataInputConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_inference_input_configuration(
             &mut object_137,
@@ -704,6 +717,7 @@ pub fn serialize_structure_crate_input_update_inference_scheduler_input(
         object_137.finish();
     }
     if let Some(var_138) = &input.data_output_configuration {
+        #[allow(unused_mut)]
         let mut object_139 = object.key("DataOutputConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_inference_output_configuration(
             &mut object_139,
@@ -764,6 +778,7 @@ pub fn serialize_structure_crate_model_inference_input_configuration(
     input: &crate::model::InferenceInputConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_148) = &input.s3_input_configuration {
+        #[allow(unused_mut)]
         let mut object_149 = object.key("S3InputConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_inference_s3_input_configuration(
             &mut object_149,
@@ -775,6 +790,7 @@ pub fn serialize_structure_crate_model_inference_input_configuration(
         object.key("InputTimeZoneOffset").string(var_150.as_str());
     }
     if let Some(var_151) = &input.inference_input_name_configuration {
+        #[allow(unused_mut)]
         let mut object_152 = object.key("InferenceInputNameConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_inference_input_name_configuration(
             &mut object_152,
@@ -790,6 +806,7 @@ pub fn serialize_structure_crate_model_inference_output_configuration(
     input: &crate::model::InferenceOutputConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_153) = &input.s3_output_configuration {
+        #[allow(unused_mut)]
         let mut object_154 = object.key("S3OutputConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_inference_s3_output_configuration(
             &mut object_154,
@@ -808,6 +825,7 @@ pub fn serialize_structure_crate_model_labels_input_configuration(
     input: &crate::model::LabelsInputConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_156) = &input.s3_input_configuration {
+        #[allow(unused_mut)]
         let mut object_157 = object.key("S3InputConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_labels_s3_input_configuration(
             &mut object_157,
@@ -836,6 +854,7 @@ pub fn serialize_structure_crate_model_ingestion_input_configuration(
     input: &crate::model::IngestionInputConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_160) = &input.s3_input_configuration {
+        #[allow(unused_mut)]
         let mut object_161 = object.key("S3InputConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_ingestion_s3_input_configuration(
             &mut object_161,

@@ -13,6 +13,7 @@ pub fn serialize_structure_crate_input_create_discoverer_input(
         object.key("SourceArn").string(var_2.as_str());
     }
     if let Some(var_3) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_4 = object.key("tags").start_object();
         for (key_5, value_6) in var_3 {
             {
@@ -32,6 +33,7 @@ pub fn serialize_structure_crate_input_create_registry_input(
         object.key("Description").string(var_7.as_str());
     }
     if let Some(var_8) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_9 = object.key("tags").start_object();
         for (key_10, value_11) in var_8 {
             {
@@ -54,6 +56,7 @@ pub fn serialize_structure_crate_input_create_schema_input(
         object.key("Description").string(var_13.as_str());
     }
     if let Some(var_14) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_15 = object.key("tags").start_object();
         for (key_16, value_17) in var_14 {
             {
@@ -105,6 +108,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_25) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_26 = object.key("tags").start_object();
         for (key_27, value_28) in var_25 {
             {

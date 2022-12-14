@@ -13,6 +13,7 @@ pub fn serialize_structure_crate_input_batch_execute_statement_input(
                 let mut array_5 = array_3.value().start_array();
                 for item_6 in item_4 {
                     {
+                        #[allow(unused_mut)]
                         let mut object_7 = array_5.value().start_object();
                         crate::json_ser::serialize_structure_crate_model_sql_parameter(
                             &mut object_7,
@@ -125,6 +126,7 @@ pub fn serialize_structure_crate_input_execute_statement_input(
         let mut array_28 = object.key("parameters").start_array();
         for item_29 in var_27 {
             {
+                #[allow(unused_mut)]
                 let mut object_30 = array_28.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_sql_parameter(
                     &mut object_30,
@@ -139,6 +141,7 @@ pub fn serialize_structure_crate_input_execute_statement_input(
         object.key("resourceArn").string(var_31.as_str());
     }
     if let Some(var_32) = &input.result_set_options {
+        #[allow(unused_mut)]
         let mut object_33 = object.key("resultSetOptions").start_object();
         crate::json_ser::serialize_structure_crate_model_result_set_options(
             &mut object_33,
@@ -185,6 +188,7 @@ pub fn serialize_structure_crate_model_sql_parameter(
         object.key("name").string(var_41.as_str());
     }
     if let Some(var_42) = &input.value {
+        #[allow(unused_mut)]
         let mut object_43 = object.key("value").start_object();
         crate::json_ser::serialize_union_crate_model_field(&mut object_43, var_42)?;
         object_43.finish();
@@ -240,6 +244,7 @@ pub fn serialize_union_crate_model_field(
                 .string_unchecked(&aws_smithy_types::base64::encode(inner));
         }
         crate::model::Field::ArrayValue(inner) => {
+            #[allow(unused_mut)]
             let mut object_47 = object_43.key("arrayValue").start_object();
             crate::json_ser::serialize_union_crate_model_array_value(&mut object_47, inner)?;
             object_47.finish();
@@ -304,6 +309,7 @@ pub fn serialize_union_crate_model_array_value(
             let mut array_56 = object_47.key("arrayValues").start_array();
             for item_57 in inner {
                 {
+                    #[allow(unused_mut)]
                     let mut object_58 = array_56.value().start_object();
                     crate::json_ser::serialize_union_crate_model_array_value(
                         &mut object_58,

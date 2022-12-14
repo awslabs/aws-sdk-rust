@@ -36,6 +36,7 @@ pub fn serialize_structure_crate_input_batch_create_delegation_by_assessment_inp
         let mut array_7 = object.key("createDelegationRequests").start_array();
         for item_8 in var_6 {
             {
+                #[allow(unused_mut)]
                 let mut object_9 = array_7.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_create_delegation_request(
                     &mut object_9,
@@ -92,6 +93,7 @@ pub fn serialize_structure_crate_input_batch_import_evidence_to_assessment_contr
         let mut array_18 = object.key("manualEvidence").start_array();
         for item_19 in var_17 {
             {
+                #[allow(unused_mut)]
                 let mut object_20 = array_18.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_manual_evidence(
                     &mut object_20,
@@ -110,6 +112,7 @@ pub fn serialize_structure_crate_input_create_assessment_input(
     input: &crate::input::CreateAssessmentInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_21) = &input.assessment_reports_destination {
+        #[allow(unused_mut)]
         let mut object_22 = object.key("assessmentReportsDestination").start_object();
         crate::json_ser::serialize_structure_crate_model_assessment_reports_destination(
             &mut object_22,
@@ -130,6 +133,7 @@ pub fn serialize_structure_crate_input_create_assessment_input(
         let mut array_27 = object.key("roles").start_array();
         for item_28 in var_26 {
             {
+                #[allow(unused_mut)]
                 let mut object_29 = array_27.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_role(&mut object_29, item_28)?;
                 object_29.finish();
@@ -138,11 +142,13 @@ pub fn serialize_structure_crate_input_create_assessment_input(
         array_27.finish();
     }
     if let Some(var_30) = &input.scope {
+        #[allow(unused_mut)]
         let mut object_31 = object.key("scope").start_object();
         crate::json_ser::serialize_structure_crate_model_scope(&mut object_31, var_30)?;
         object_31.finish();
     }
     if let Some(var_32) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_33 = object.key("tags").start_object();
         for (key_34, value_35) in var_32 {
             {
@@ -165,6 +171,7 @@ pub fn serialize_structure_crate_input_create_assessment_framework_input(
         let mut array_38 = object.key("controlSets").start_array();
         for item_39 in var_37 {
             {
+                #[allow(unused_mut)]
                 let mut object_40 = array_38.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_create_assessment_framework_control_set(&mut object_40, item_39)?;
                 object_40.finish();
@@ -179,6 +186,7 @@ pub fn serialize_structure_crate_input_create_assessment_framework_input(
         object.key("name").string(var_42.as_str());
     }
     if let Some(var_43) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_44 = object.key("tags").start_object();
         for (key_45, value_46) in var_43 {
             {
@@ -217,6 +225,7 @@ pub fn serialize_structure_crate_input_create_control_input(
         let mut array_52 = object.key("controlMappingSources").start_array();
         for item_53 in var_51 {
             {
+                #[allow(unused_mut)]
                 let mut object_54 = array_52.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_create_control_mapping_source(
                     &mut object_54,
@@ -234,6 +243,7 @@ pub fn serialize_structure_crate_input_create_control_input(
         object.key("name").string(var_56.as_str());
     }
     if let Some(var_57) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_58 = object.key("tags").start_object();
         for (key_59, value_60) in var_57 {
             {
@@ -312,6 +322,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_70) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_71 = object.key("tags").start_object();
         for (key_72, value_73) in var_70 {
             {
@@ -334,6 +345,7 @@ pub fn serialize_structure_crate_input_update_assessment_input(
         object.key("assessmentName").string(var_75.as_str());
     }
     if let Some(var_76) = &input.assessment_reports_destination {
+        #[allow(unused_mut)]
         let mut object_77 = object.key("assessmentReportsDestination").start_object();
         crate::json_ser::serialize_structure_crate_model_assessment_reports_destination(
             &mut object_77,
@@ -345,6 +357,7 @@ pub fn serialize_structure_crate_input_update_assessment_input(
         let mut array_79 = object.key("roles").start_array();
         for item_80 in var_78 {
             {
+                #[allow(unused_mut)]
                 let mut object_81 = array_79.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_role(&mut object_81, item_80)?;
                 object_81.finish();
@@ -353,6 +366,7 @@ pub fn serialize_structure_crate_input_update_assessment_input(
         array_79.finish();
     }
     if let Some(var_82) = &input.scope {
+        #[allow(unused_mut)]
         let mut object_83 = object.key("scope").start_object();
         crate::json_ser::serialize_structure_crate_model_scope(&mut object_83, var_82)?;
         object_83.finish();
@@ -397,6 +411,7 @@ pub fn serialize_structure_crate_input_update_assessment_framework_input(
         let mut array_90 = object.key("controlSets").start_array();
         for item_91 in var_89 {
             {
+                #[allow(unused_mut)]
                 let mut object_92 = array_90.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_update_assessment_framework_control_set(&mut object_92, item_91)?;
                 object_92.finish();
@@ -450,6 +465,7 @@ pub fn serialize_structure_crate_input_update_control_input(
         let mut array_101 = object.key("controlMappingSources").start_array();
         for item_102 in var_100 {
             {
+                #[allow(unused_mut)]
                 let mut object_103 = array_101.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_control_mapping_source(
                     &mut object_103,
@@ -477,6 +493,7 @@ pub fn serialize_structure_crate_input_update_settings_input(
     input: &crate::input::UpdateSettingsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_107) = &input.default_assessment_reports_destination {
+        #[allow(unused_mut)]
         let mut object_108 = object
             .key("defaultAssessmentReportsDestination")
             .start_object();
@@ -490,6 +507,7 @@ pub fn serialize_structure_crate_input_update_settings_input(
         let mut array_110 = object.key("defaultProcessOwners").start_array();
         for item_111 in var_109 {
             {
+                #[allow(unused_mut)]
                 let mut object_112 = array_110.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_role(&mut object_112, item_111)?;
                 object_112.finish();
@@ -579,6 +597,7 @@ pub fn serialize_structure_crate_model_scope(
         let mut array_126 = object.key("awsAccounts").start_array();
         for item_127 in var_125 {
             {
+                #[allow(unused_mut)]
                 let mut object_128 = array_126.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_aws_account(
                     &mut object_128,
@@ -593,6 +612,7 @@ pub fn serialize_structure_crate_model_scope(
         let mut array_130 = object.key("awsServices").start_array();
         for item_131 in var_129 {
             {
+                #[allow(unused_mut)]
                 let mut object_132 = array_130.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_aws_service(
                     &mut object_132,
@@ -617,6 +637,7 @@ pub fn serialize_structure_crate_model_create_assessment_framework_control_set(
         let mut array_135 = object.key("controls").start_array();
         for item_136 in var_134 {
             {
+                #[allow(unused_mut)]
                 let mut object_137 = array_135.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_create_assessment_framework_control(&mut object_137, item_136)?;
                 object_137.finish();
@@ -644,6 +665,7 @@ pub fn serialize_structure_crate_model_create_control_mapping_source(
         object.key("sourceType").string(var_141.as_str());
     }
     if let Some(var_142) = &input.source_keyword {
+        #[allow(unused_mut)]
         let mut object_143 = object.key("sourceKeyword").start_object();
         crate::json_ser::serialize_structure_crate_model_source_keyword(&mut object_143, var_142)?;
         object_143.finish();
@@ -671,6 +693,7 @@ pub fn serialize_structure_crate_model_update_assessment_framework_control_set(
         let mut array_149 = object.key("controls").start_array();
         for item_150 in var_148 {
             {
+                #[allow(unused_mut)]
                 let mut object_151 = array_149.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_create_assessment_framework_control(&mut object_151, item_150)?;
                 object_151.finish();
@@ -701,6 +724,7 @@ pub fn serialize_structure_crate_model_control_mapping_source(
         object.key("sourceType").string(var_156.as_str());
     }
     if let Some(var_157) = &input.source_keyword {
+        #[allow(unused_mut)]
         let mut object_158 = object.key("sourceKeyword").start_object();
         crate::json_ser::serialize_structure_crate_model_source_keyword(&mut object_158, var_157)?;
         object_158.finish();

@@ -49,6 +49,7 @@ pub fn serialize_structure_crate_input_batch_associate_user_stack_input(
         let mut array_9 = object.key("UserStackAssociations").start_array();
         for item_10 in var_8 {
             {
+                #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_user_stack_association(
                     &mut object_11,
@@ -70,6 +71,7 @@ pub fn serialize_structure_crate_input_batch_disassociate_user_stack_input(
         let mut array_13 = object.key("UserStackAssociations").start_array();
         for item_14 in var_12 {
             {
+                #[allow(unused_mut)]
                 let mut object_15 = array_13.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_user_stack_association(
                     &mut object_15,
@@ -118,16 +120,19 @@ pub fn serialize_structure_crate_input_create_app_block_input(
         object.key("DisplayName").string(var_22.as_str());
     }
     if let Some(var_23) = &input.source_s3_location {
+        #[allow(unused_mut)]
         let mut object_24 = object.key("SourceS3Location").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_location(&mut object_24, var_23)?;
         object_24.finish();
     }
     if let Some(var_25) = &input.setup_script_details {
+        #[allow(unused_mut)]
         let mut object_26 = object.key("SetupScriptDetails").start_object();
         crate::json_ser::serialize_structure_crate_model_script_details(&mut object_26, var_25)?;
         object_26.finish();
     }
     if let Some(var_27) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_28 = object.key("Tags").start_object();
         for (key_29, value_30) in var_27 {
             {
@@ -153,6 +158,7 @@ pub fn serialize_structure_crate_input_create_application_input(
         object.key("Description").string(var_33.as_str());
     }
     if let Some(var_34) = &input.icon_s3_location {
+        #[allow(unused_mut)]
         let mut object_35 = object.key("IconS3Location").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_location(&mut object_35, var_34)?;
         object_35.finish();
@@ -188,6 +194,7 @@ pub fn serialize_structure_crate_input_create_application_input(
         object.key("AppBlockArn").string(var_45.as_str());
     }
     if let Some(var_46) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_47 = object.key("Tags").start_object();
         for (key_48, value_49) in var_46 {
             {
@@ -218,6 +225,7 @@ pub fn serialize_structure_crate_input_create_directory_config_input(
         array_52.finish();
     }
     if let Some(var_54) = &input.service_account_credentials {
+        #[allow(unused_mut)]
         let mut object_55 = object.key("ServiceAccountCredentials").start_object();
         crate::json_ser::serialize_structure_crate_model_service_account_credentials(
             &mut object_55,
@@ -248,6 +256,7 @@ pub fn serialize_structure_crate_input_create_entitlement_input(
         let mut array_61 = object.key("Attributes").start_array();
         for item_62 in var_60 {
             {
+                #[allow(unused_mut)]
                 let mut object_63 = array_61.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_entitlement_attribute(
                     &mut object_63,
@@ -281,11 +290,13 @@ pub fn serialize_structure_crate_input_create_fleet_input(
         object.key("FleetType").string(var_68.as_str());
     }
     if let Some(var_69) = &input.compute_capacity {
+        #[allow(unused_mut)]
         let mut object_70 = object.key("ComputeCapacity").start_object();
         crate::json_ser::serialize_structure_crate_model_compute_capacity(&mut object_70, var_69)?;
         object_70.finish();
     }
     if let Some(var_71) = &input.vpc_config {
+        #[allow(unused_mut)]
         let mut object_72 = object.key("VpcConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_vpc_config(&mut object_72, var_71)?;
         object_72.finish();
@@ -312,11 +323,13 @@ pub fn serialize_structure_crate_input_create_fleet_input(
         object.key("EnableDefaultInternetAccess").boolean(*var_77);
     }
     if let Some(var_78) = &input.domain_join_info {
+        #[allow(unused_mut)]
         let mut object_79 = object.key("DomainJoinInfo").start_object();
         crate::json_ser::serialize_structure_crate_model_domain_join_info(&mut object_79, var_78)?;
         object_79.finish();
     }
     if let Some(var_80) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_81 = object.key("Tags").start_object();
         for (key_82, value_83) in var_80 {
             {
@@ -356,6 +369,7 @@ pub fn serialize_structure_crate_input_create_fleet_input(
         array_90.finish();
     }
     if let Some(var_92) = &input.session_script_s3_location {
+        #[allow(unused_mut)]
         let mut object_93 = object.key("SessionScriptS3Location").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_location(&mut object_93, var_92)?;
         object_93.finish();
@@ -386,6 +400,7 @@ pub fn serialize_structure_crate_input_create_image_builder_input(
         object.key("DisplayName").string(var_99.as_str());
     }
     if let Some(var_100) = &input.vpc_config {
+        #[allow(unused_mut)]
         let mut object_101 = object.key("VpcConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_vpc_config(&mut object_101, var_100)?;
         object_101.finish();
@@ -397,6 +412,7 @@ pub fn serialize_structure_crate_input_create_image_builder_input(
         object.key("EnableDefaultInternetAccess").boolean(*var_103);
     }
     if let Some(var_104) = &input.domain_join_info {
+        #[allow(unused_mut)]
         let mut object_105 = object.key("DomainJoinInfo").start_object();
         crate::json_ser::serialize_structure_crate_model_domain_join_info(
             &mut object_105,
@@ -408,6 +424,7 @@ pub fn serialize_structure_crate_input_create_image_builder_input(
         object.key("AppstreamAgentVersion").string(var_106.as_str());
     }
     if let Some(var_107) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_108 = object.key("Tags").start_object();
         for (key_109, value_110) in var_107 {
             {
@@ -420,6 +437,7 @@ pub fn serialize_structure_crate_input_create_image_builder_input(
         let mut array_112 = object.key("AccessEndpoints").start_array();
         for item_113 in var_111 {
             {
+                #[allow(unused_mut)]
                 let mut object_114 = array_112.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_access_endpoint(
                     &mut object_114,
@@ -466,6 +484,7 @@ pub fn serialize_structure_crate_input_create_stack_input(
         let mut array_121 = object.key("StorageConnectors").start_array();
         for item_122 in var_120 {
             {
+                #[allow(unused_mut)]
                 let mut object_123 = array_121.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_storage_connector(
                     &mut object_123,
@@ -486,6 +505,7 @@ pub fn serialize_structure_crate_input_create_stack_input(
         let mut array_127 = object.key("UserSettings").start_array();
         for item_128 in var_126 {
             {
+                #[allow(unused_mut)]
                 let mut object_129 = array_127.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_user_setting(
                     &mut object_129,
@@ -497,6 +517,7 @@ pub fn serialize_structure_crate_input_create_stack_input(
         array_127.finish();
     }
     if let Some(var_130) = &input.application_settings {
+        #[allow(unused_mut)]
         let mut object_131 = object.key("ApplicationSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_application_settings(
             &mut object_131,
@@ -505,6 +526,7 @@ pub fn serialize_structure_crate_input_create_stack_input(
         object_131.finish();
     }
     if let Some(var_132) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_133 = object.key("Tags").start_object();
         for (key_134, value_135) in var_132 {
             {
@@ -517,6 +539,7 @@ pub fn serialize_structure_crate_input_create_stack_input(
         let mut array_137 = object.key("AccessEndpoints").start_array();
         for item_138 in var_136 {
             {
+                #[allow(unused_mut)]
                 let mut object_139 = array_137.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_access_endpoint(
                     &mut object_139,
@@ -537,6 +560,7 @@ pub fn serialize_structure_crate_input_create_stack_input(
         array_141.finish();
     }
     if let Some(var_143) = &input.streaming_experience_settings {
+        #[allow(unused_mut)]
         let mut object_144 = object.key("StreamingExperienceSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_streaming_experience_settings(
             &mut object_144,
@@ -592,6 +616,7 @@ pub fn serialize_structure_crate_input_create_updated_image_input(
         object.key("newImageDisplayName").string(var_154.as_str());
     }
     if let Some(var_155) = &input.new_image_tags {
+        #[allow(unused_mut)]
         let mut object_156 = object.key("newImageTags").start_object();
         for (key_157, value_158) in var_155 {
             {
@@ -1259,6 +1284,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         object.key("ResourceArn").string(var_270.as_str());
     }
     if let Some(var_271) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_272 = object.key("Tags").start_object();
         for (key_273, value_274) in var_271 {
             {
@@ -1303,6 +1329,7 @@ pub fn serialize_structure_crate_input_update_application_input(
         object.key("Description").string(var_281.as_str());
     }
     if let Some(var_282) = &input.icon_s3_location {
+        #[allow(unused_mut)]
         let mut object_283 = object.key("IconS3Location").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_location(&mut object_283, var_282)?;
         object_283.finish();
@@ -1350,6 +1377,7 @@ pub fn serialize_structure_crate_input_update_directory_config_input(
         array_293.finish();
     }
     if let Some(var_295) = &input.service_account_credentials {
+        #[allow(unused_mut)]
         let mut object_296 = object.key("ServiceAccountCredentials").start_object();
         crate::json_ser::serialize_structure_crate_model_service_account_credentials(
             &mut object_296,
@@ -1380,6 +1408,7 @@ pub fn serialize_structure_crate_input_update_entitlement_input(
         let mut array_302 = object.key("Attributes").start_array();
         for item_303 in var_301 {
             {
+                #[allow(unused_mut)]
                 let mut object_304 = array_302.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_entitlement_attribute(
                     &mut object_304,
@@ -1410,6 +1439,7 @@ pub fn serialize_structure_crate_input_update_fleet_input(
         object.key("InstanceType").string(var_308.as_str());
     }
     if let Some(var_309) = &input.compute_capacity {
+        #[allow(unused_mut)]
         let mut object_310 = object.key("ComputeCapacity").start_object();
         crate::json_ser::serialize_structure_crate_model_compute_capacity(
             &mut object_310,
@@ -1418,6 +1448,7 @@ pub fn serialize_structure_crate_input_update_fleet_input(
         object_310.finish();
     }
     if let Some(var_311) = &input.vpc_config {
+        #[allow(unused_mut)]
         let mut object_312 = object.key("VpcConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_vpc_config(&mut object_312, var_311)?;
         object_312.finish();
@@ -1449,6 +1480,7 @@ pub fn serialize_structure_crate_input_update_fleet_input(
         object.key("EnableDefaultInternetAccess").boolean(*var_317);
     }
     if let Some(var_318) = &input.domain_join_info {
+        #[allow(unused_mut)]
         let mut object_319 = object.key("DomainJoinInfo").start_object();
         crate::json_ser::serialize_structure_crate_model_domain_join_info(
             &mut object_319,
@@ -1496,6 +1528,7 @@ pub fn serialize_structure_crate_input_update_fleet_input(
         array_329.finish();
     }
     if let Some(var_331) = &input.session_script_s3_location {
+        #[allow(unused_mut)]
         let mut object_332 = object.key("SessionScriptS3Location").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_location(&mut object_332, var_331)?;
         object_332.finish();
@@ -1514,6 +1547,7 @@ pub fn serialize_structure_crate_input_update_image_permissions_input(
         object.key("SharedAccountId").string(var_334.as_str());
     }
     if let Some(var_335) = &input.image_permissions {
+        #[allow(unused_mut)]
         let mut object_336 = object.key("ImagePermissions").start_object();
         crate::json_ser::serialize_structure_crate_model_image_permissions(
             &mut object_336,
@@ -1541,6 +1575,7 @@ pub fn serialize_structure_crate_input_update_stack_input(
         let mut array_341 = object.key("StorageConnectors").start_array();
         for item_342 in var_340 {
             {
+                #[allow(unused_mut)]
                 let mut object_343 = array_341.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_storage_connector(
                     &mut object_343,
@@ -1575,6 +1610,7 @@ pub fn serialize_structure_crate_input_update_stack_input(
         let mut array_350 = object.key("UserSettings").start_array();
         for item_351 in var_349 {
             {
+                #[allow(unused_mut)]
                 let mut object_352 = array_350.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_user_setting(
                     &mut object_352,
@@ -1586,6 +1622,7 @@ pub fn serialize_structure_crate_input_update_stack_input(
         array_350.finish();
     }
     if let Some(var_353) = &input.application_settings {
+        #[allow(unused_mut)]
         let mut object_354 = object.key("ApplicationSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_application_settings(
             &mut object_354,
@@ -1597,6 +1634,7 @@ pub fn serialize_structure_crate_input_update_stack_input(
         let mut array_356 = object.key("AccessEndpoints").start_array();
         for item_357 in var_355 {
             {
+                #[allow(unused_mut)]
                 let mut object_358 = array_356.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_access_endpoint(
                     &mut object_358,
@@ -1617,6 +1655,7 @@ pub fn serialize_structure_crate_input_update_stack_input(
         array_360.finish();
     }
     if let Some(var_362) = &input.streaming_experience_settings {
+        #[allow(unused_mut)]
         let mut object_363 = object.key("StreamingExperienceSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_streaming_experience_settings(
             &mut object_363,
@@ -1666,6 +1705,7 @@ pub fn serialize_structure_crate_model_script_details(
     input: &crate::model::ScriptDetails,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_369) = &input.script_s3_location {
+        #[allow(unused_mut)]
         let mut object_370 = object.key("ScriptS3Location").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_location(&mut object_370, var_369)?;
         object_370.finish();

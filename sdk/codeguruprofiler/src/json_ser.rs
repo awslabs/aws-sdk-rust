@@ -7,6 +7,7 @@ pub fn serialize_structure_crate_input_add_notification_channels_input(
         let mut array_2 = object.key("channels").start_array();
         for item_3 in var_1 {
             {
+                #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_channel(&mut object_4, item_3)?;
                 object_4.finish();
@@ -25,6 +26,7 @@ pub fn serialize_structure_crate_input_batch_get_frame_metric_data_input(
         let mut array_6 = object.key("frameMetrics").start_array();
         for item_7 in var_5 {
             {
+                #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_frame_metric(
                     &mut object_8,
@@ -46,6 +48,7 @@ pub fn serialize_structure_crate_input_configure_agent_input(
         object.key("fleetInstanceId").string(var_9.as_str());
     }
     if let Some(var_10) = &input.metadata {
+        #[allow(unused_mut)]
         let mut object_11 = object.key("metadata").start_object();
         for (key_12, value_13) in var_10 {
             {
@@ -62,6 +65,7 @@ pub fn serialize_structure_crate_input_create_profiling_group_input(
     input: &crate::input::CreateProfilingGroupInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_14) = &input.agent_orchestration_config {
+        #[allow(unused_mut)]
         let mut object_15 = object.key("agentOrchestrationConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_agent_orchestration_config(
             &mut object_15,
@@ -76,6 +80,7 @@ pub fn serialize_structure_crate_input_create_profiling_group_input(
         object.key("profilingGroupName").string(var_17.as_str());
     }
     if let Some(var_18) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_19 = object.key("tags").start_object();
         for (key_20, value_21) in var_18 {
             {
@@ -124,6 +129,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_28) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_29 = object.key("tags").start_object();
         for (key_30, value_31) in var_28 {
             {
@@ -140,6 +146,7 @@ pub fn serialize_structure_crate_input_update_profiling_group_input(
     input: &crate::input::UpdateProfilingGroupInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_32) = &input.agent_orchestration_config {
+        #[allow(unused_mut)]
         let mut object_33 = object.key("agentOrchestrationConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_agent_orchestration_config(
             &mut object_33,

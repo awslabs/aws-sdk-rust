@@ -15,6 +15,7 @@ pub fn serialize_structure_crate_input_create_identity_pool_input(
         object.key("AllowClassicFlow").boolean(*var_2);
     }
     if let Some(var_3) = &input.supported_login_providers {
+        #[allow(unused_mut)]
         let mut object_4 = object.key("SupportedLoginProviders").start_object();
         for (key_5, value_6) in var_3 {
             {
@@ -39,6 +40,7 @@ pub fn serialize_structure_crate_input_create_identity_pool_input(
         let mut array_12 = object.key("CognitoIdentityProviders").start_array();
         for item_13 in var_11 {
             {
+                #[allow(unused_mut)]
                 let mut object_14 = array_12.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_cognito_identity_provider(
                     &mut object_14,
@@ -59,6 +61,7 @@ pub fn serialize_structure_crate_input_create_identity_pool_input(
         array_16.finish();
     }
     if let Some(var_18) = &input.identity_pool_tags {
+        #[allow(unused_mut)]
         let mut object_19 = object.key("IdentityPoolTags").start_object();
         for (key_20, value_21) in var_18 {
             {
@@ -124,6 +127,7 @@ pub fn serialize_structure_crate_input_get_credentials_for_identity_input(
         object.key("IdentityId").string(var_28.as_str());
     }
     if let Some(var_29) = &input.logins {
+        #[allow(unused_mut)]
         let mut object_30 = object.key("Logins").start_object();
         for (key_31, value_32) in var_29 {
             {
@@ -149,6 +153,7 @@ pub fn serialize_structure_crate_input_get_id_input(
         object.key("IdentityPoolId").string(var_35.as_str());
     }
     if let Some(var_36) = &input.logins {
+        #[allow(unused_mut)]
         let mut object_37 = object.key("Logins").start_object();
         for (key_38, value_39) in var_36 {
             {
@@ -178,6 +183,7 @@ pub fn serialize_structure_crate_input_get_open_id_token_input(
         object.key("IdentityId").string(var_41.as_str());
     }
     if let Some(var_42) = &input.logins {
+        #[allow(unused_mut)]
         let mut object_43 = object.key("Logins").start_object();
         for (key_44, value_45) in var_42 {
             {
@@ -200,6 +206,7 @@ pub fn serialize_structure_crate_input_get_open_id_token_for_developer_identity_
         object.key("IdentityId").string(var_47.as_str());
     }
     if let Some(var_48) = &input.logins {
+        #[allow(unused_mut)]
         let mut object_49 = object.key("Logins").start_object();
         for (key_50, value_51) in var_48 {
             {
@@ -209,6 +216,7 @@ pub fn serialize_structure_crate_input_get_open_id_token_for_developer_identity_
         object_49.finish();
     }
     if let Some(var_52) = &input.principal_tags {
+        #[allow(unused_mut)]
         let mut object_53 = object.key("PrincipalTags").start_object();
         for (key_54, value_55) in var_52 {
             {
@@ -343,6 +351,7 @@ pub fn serialize_structure_crate_input_set_identity_pool_roles_input(
         object.key("IdentityPoolId").string(var_71.as_str());
     }
     if let Some(var_72) = &input.roles {
+        #[allow(unused_mut)]
         let mut object_73 = object.key("Roles").start_object();
         for (key_74, value_75) in var_72 {
             {
@@ -352,9 +361,11 @@ pub fn serialize_structure_crate_input_set_identity_pool_roles_input(
         object_73.finish();
     }
     if let Some(var_76) = &input.role_mappings {
+        #[allow(unused_mut)]
         let mut object_77 = object.key("RoleMappings").start_object();
         for (key_78, value_79) in var_76 {
             {
+                #[allow(unused_mut)]
                 let mut object_80 = object_77.key(key_78.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_role_mapping(
                     &mut object_80,
@@ -382,6 +393,7 @@ pub fn serialize_structure_crate_input_set_principal_tag_attribute_map_input(
         object.key("UseDefaults").boolean(*var_83);
     }
     if let Some(var_84) = &input.principal_tags {
+        #[allow(unused_mut)]
         let mut object_85 = object.key("PrincipalTags").start_object();
         for (key_86, value_87) in var_84 {
             {
@@ -401,6 +413,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         object.key("ResourceArn").string(var_88.as_str());
     }
     if let Some(var_89) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_90 = object.key("Tags").start_object();
         for (key_91, value_92) in var_89 {
             {
@@ -441,6 +454,7 @@ pub fn serialize_structure_crate_input_unlink_identity_input(
         object.key("IdentityId").string(var_97.as_str());
     }
     if let Some(var_98) = &input.logins {
+        #[allow(unused_mut)]
         let mut object_99 = object.key("Logins").start_object();
         for (key_100, value_101) in var_98 {
             {
@@ -499,6 +513,7 @@ pub fn serialize_structure_crate_input_update_identity_pool_input(
         object.key("AllowClassicFlow").boolean(*var_111);
     }
     if let Some(var_112) = &input.supported_login_providers {
+        #[allow(unused_mut)]
         let mut object_113 = object.key("SupportedLoginProviders").start_object();
         for (key_114, value_115) in var_112 {
             {
@@ -523,6 +538,7 @@ pub fn serialize_structure_crate_input_update_identity_pool_input(
         let mut array_121 = object.key("CognitoIdentityProviders").start_array();
         for item_122 in var_120 {
             {
+                #[allow(unused_mut)]
                 let mut object_123 = array_121.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_cognito_identity_provider(
                     &mut object_123,
@@ -543,6 +559,7 @@ pub fn serialize_structure_crate_input_update_identity_pool_input(
         array_125.finish();
     }
     if let Some(var_127) = &input.identity_pool_tags {
+        #[allow(unused_mut)]
         let mut object_128 = object.key("IdentityPoolTags").start_object();
         for (key_129, value_130) in var_127 {
             {
@@ -583,6 +600,7 @@ pub fn serialize_structure_crate_model_role_mapping(
             .string(var_135.as_str());
     }
     if let Some(var_136) = &input.rules_configuration {
+        #[allow(unused_mut)]
         let mut object_137 = object.key("RulesConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_rules_configuration_type(
             &mut object_137,
@@ -601,6 +619,7 @@ pub fn serialize_structure_crate_model_rules_configuration_type(
         let mut array_139 = object.key("Rules").start_array();
         for item_140 in var_138 {
             {
+                #[allow(unused_mut)]
                 let mut object_141 = array_139.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_mapping_rule(
                     &mut object_141,

@@ -20,6 +20,7 @@ pub fn serialize_structure_crate_input_create_changeset_input(
         object.key("clientToken").string(var_3.as_str());
     }
     if let Some(var_4) = &input.format_params {
+        #[allow(unused_mut)]
         let mut object_5 = object.key("formatParams").start_object();
         for (key_6, value_7) in var_4 {
             {
@@ -29,6 +30,7 @@ pub fn serialize_structure_crate_input_create_changeset_input(
         object_5.finish();
     }
     if let Some(var_8) = &input.source_params {
+        #[allow(unused_mut)]
         let mut object_9 = object.key("sourceParams").start_object();
         for (key_10, value_11) in var_8 {
             {
@@ -60,6 +62,7 @@ pub fn serialize_structure_crate_input_create_dataset_input(
         object.key("kind").string(var_16.as_str());
     }
     if let Some(var_17) = &input.owner_info {
+        #[allow(unused_mut)]
         let mut object_18 = object.key("ownerInfo").start_object();
         crate::json_ser::serialize_structure_crate_model_dataset_owner_info(
             &mut object_18,
@@ -68,6 +71,7 @@ pub fn serialize_structure_crate_input_create_dataset_input(
         object_18.finish();
     }
     if let Some(var_19) = &input.permission_group_params {
+        #[allow(unused_mut)]
         let mut object_20 = object.key("permissionGroupParams").start_object();
         crate::json_ser::serialize_structure_crate_model_permission_group_params(
             &mut object_20,
@@ -76,6 +80,7 @@ pub fn serialize_structure_crate_input_create_dataset_input(
         object_20.finish();
     }
     if let Some(var_21) = &input.schema_definition {
+        #[allow(unused_mut)]
         let mut object_22 = object.key("schemaDefinition").start_object();
         crate::json_ser::serialize_structure_crate_model_schema_union(&mut object_22, var_21)?;
         object_22.finish();
@@ -100,6 +105,7 @@ pub fn serialize_structure_crate_input_create_data_view_input(
         object.key("clientToken").string(var_24.as_str());
     }
     if let Some(var_25) = &input.destination_type_params {
+        #[allow(unused_mut)]
         let mut object_26 = object.key("destinationTypeParams").start_object();
         crate::json_ser::serialize_structure_crate_model_data_view_destination_type_params(
             &mut object_26,
@@ -229,6 +235,7 @@ pub fn serialize_structure_crate_input_update_changeset_input(
         object.key("clientToken").string(var_50.as_str());
     }
     if let Some(var_51) = &input.format_params {
+        #[allow(unused_mut)]
         let mut object_52 = object.key("formatParams").start_object();
         for (key_53, value_54) in var_51 {
             {
@@ -238,6 +245,7 @@ pub fn serialize_structure_crate_input_update_changeset_input(
         object_52.finish();
     }
     if let Some(var_55) = &input.source_params {
+        #[allow(unused_mut)]
         let mut object_56 = object.key("sourceParams").start_object();
         for (key_57, value_58) in var_55 {
             {
@@ -269,6 +277,7 @@ pub fn serialize_structure_crate_input_update_dataset_input(
         object.key("kind").string(var_63.as_str());
     }
     if let Some(var_64) = &input.schema_definition {
+        #[allow(unused_mut)]
         let mut object_65 = object.key("schemaDefinition").start_object();
         crate::json_ser::serialize_structure_crate_model_schema_union(&mut object_65, var_64)?;
         object_65.finish();
@@ -353,6 +362,7 @@ pub fn serialize_structure_crate_model_permission_group_params(
         let mut array_83 = object.key("datasetPermissions").start_array();
         for item_84 in var_82 {
             {
+                #[allow(unused_mut)]
                 let mut object_85 = array_83.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_resource_permission(
                     &mut object_85,
@@ -371,6 +381,7 @@ pub fn serialize_structure_crate_model_schema_union(
     input: &crate::model::SchemaUnion,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_86) = &input.tabular_schema_config {
+        #[allow(unused_mut)]
         let mut object_87 = object.key("tabularSchemaConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_schema_definition(&mut object_87, var_86)?;
         object_87.finish();
@@ -391,6 +402,7 @@ pub fn serialize_structure_crate_model_data_view_destination_type_params(
             .string(var_89.as_str());
     }
     if let Some(var_90) = &input.s3_destination_export_file_format_options {
+        #[allow(unused_mut)]
         let mut object_91 = object
             .key("s3DestinationExportFileFormatOptions")
             .start_object();
@@ -422,6 +434,7 @@ pub fn serialize_structure_crate_model_schema_definition(
         let mut array_96 = object.key("columns").start_array();
         for item_97 in var_95 {
             {
+                #[allow(unused_mut)]
                 let mut object_98 = array_96.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_column_definition(
                     &mut object_98,

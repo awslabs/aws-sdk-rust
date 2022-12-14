@@ -7,6 +7,7 @@ pub fn serialize_structure_crate_input_add_tags_input(
         let mut array_2 = object.key("Tags").start_array();
         for item_3 in var_1 {
             {
+                #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_4, item_3)?;
                 object_4.finish();
@@ -58,6 +59,7 @@ pub fn serialize_structure_crate_input_create_data_source_from_rds_input(
         object.key("DataSourceName").string(var_13.as_str());
     }
     if let Some(var_14) = &input.rds_data {
+        #[allow(unused_mut)]
         let mut object_15 = object.key("RDSData").start_object();
         crate::json_ser::serialize_structure_crate_model_rds_data_spec(&mut object_15, var_14)?;
         object_15.finish();
@@ -84,6 +86,7 @@ pub fn serialize_structure_crate_input_create_data_source_from_redshift_input(
         object.key("DataSourceName").string(var_18.as_str());
     }
     if let Some(var_19) = &input.data_spec {
+        #[allow(unused_mut)]
         let mut object_20 = object.key("DataSpec").start_object();
         crate::json_ser::serialize_structure_crate_model_redshift_data_spec(
             &mut object_20,
@@ -113,6 +116,7 @@ pub fn serialize_structure_crate_input_create_data_source_from_s3_input(
         object.key("DataSourceName").string(var_23.as_str());
     }
     if let Some(var_24) = &input.data_spec {
+        #[allow(unused_mut)]
         let mut object_25 = object.key("DataSpec").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_data_spec(&mut object_25, var_24)?;
         object_25.finish();
@@ -158,6 +162,7 @@ pub fn serialize_structure_crate_input_create_ml_model_input(
         object.key("MLModelType").string(var_32.as_str());
     }
     if let Some(var_33) = &input.parameters {
+        #[allow(unused_mut)]
         let mut object_34 = object.key("Parameters").start_object();
         for (key_35, value_36) in var_33 {
             {
@@ -499,6 +504,7 @@ pub fn serialize_structure_crate_input_predict_input(
         object.key("MLModelId").string(var_101.as_str());
     }
     if let Some(var_102) = &input.record {
+        #[allow(unused_mut)]
         let mut object_103 = object.key("Record").start_object();
         for (key_104, value_105) in var_102 {
             {
@@ -589,6 +595,7 @@ pub fn serialize_structure_crate_model_rds_data_spec(
     input: &crate::model::RdsDataSpec,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_118) = &input.database_information {
+        #[allow(unused_mut)]
         let mut object_119 = object.key("DatabaseInformation").start_object();
         crate::json_ser::serialize_structure_crate_model_rds_database(&mut object_119, var_118)?;
         object_119.finish();
@@ -597,6 +604,7 @@ pub fn serialize_structure_crate_model_rds_data_spec(
         object.key("SelectSqlQuery").string(var_120.as_str());
     }
     if let Some(var_121) = &input.database_credentials {
+        #[allow(unused_mut)]
         let mut object_122 = object.key("DatabaseCredentials").start_object();
         crate::json_ser::serialize_structure_crate_model_rds_database_credentials(
             &mut object_122,
@@ -642,6 +650,7 @@ pub fn serialize_structure_crate_model_redshift_data_spec(
     input: &crate::model::RedshiftDataSpec,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_133) = &input.database_information {
+        #[allow(unused_mut)]
         let mut object_134 = object.key("DatabaseInformation").start_object();
         crate::json_ser::serialize_structure_crate_model_redshift_database(
             &mut object_134,
@@ -653,6 +662,7 @@ pub fn serialize_structure_crate_model_redshift_data_spec(
         object.key("SelectSqlQuery").string(var_135.as_str());
     }
     if let Some(var_136) = &input.database_credentials {
+        #[allow(unused_mut)]
         let mut object_137 = object.key("DatabaseCredentials").start_object();
         crate::json_ser::serialize_structure_crate_model_redshift_database_credentials(
             &mut object_137,

@@ -35,6 +35,7 @@ pub fn serialize_structure_crate_input_describe_accelerators_input(
         let mut array_9 = object.key("filters").start_array();
         for item_10 in var_8 {
             {
+                #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_11, item_10)?;
                 object_11.finish();
@@ -59,6 +60,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_13) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_14 = object.key("tags").start_object();
         for (key_15, value_16) in var_13 {
             {

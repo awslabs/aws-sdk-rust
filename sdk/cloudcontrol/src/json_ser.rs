@@ -96,6 +96,7 @@ pub fn serialize_structure_crate_input_list_resource_requests_input(
         object.key("NextToken").string(var_18.as_str());
     }
     if let Some(var_19) = &input.resource_request_status_filter {
+        #[allow(unused_mut)]
         let mut object_20 = object.key("ResourceRequestStatusFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_resource_request_status_filter(
             &mut object_20,

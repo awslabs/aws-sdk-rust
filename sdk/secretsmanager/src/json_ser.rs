@@ -37,6 +37,7 @@ pub fn serialize_structure_crate_input_create_secret_input(
         let mut array_9 = object.key("Tags").start_array();
         for item_10 in var_8 {
             {
+                #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_11, item_10)?;
                 object_11.finish();
@@ -48,6 +49,7 @@ pub fn serialize_structure_crate_input_create_secret_input(
         let mut array_13 = object.key("AddReplicaRegions").start_array();
         for item_14 in var_12 {
             {
+                #[allow(unused_mut)]
                 let mut object_15 = array_13.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_replica_region_type(
                     &mut object_15,
@@ -182,6 +184,7 @@ pub fn serialize_structure_crate_input_list_secrets_input(
         let mut array_36 = object.key("Filters").start_array();
         for item_37 in var_35 {
             {
+                #[allow(unused_mut)]
                 let mut object_38 = array_36.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_38, item_37)?;
                 object_38.finish();
@@ -293,6 +296,7 @@ pub fn serialize_structure_crate_input_replicate_secret_to_regions_input(
         let mut array_60 = object.key("AddReplicaRegions").start_array();
         for item_61 in var_59 {
             {
+                #[allow(unused_mut)]
                 let mut object_62 = array_60.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_replica_region_type(
                     &mut object_62,
@@ -335,6 +339,7 @@ pub fn serialize_structure_crate_input_rotate_secret_input(
         object.key("RotationLambdaARN").string(var_66.as_str());
     }
     if let Some(var_67) = &input.rotation_rules {
+        #[allow(unused_mut)]
         let mut object_68 = object.key("RotationRules").start_object();
         crate::json_ser::serialize_structure_crate_model_rotation_rules_type(
             &mut object_68,
@@ -369,6 +374,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_73 = object.key("Tags").start_array();
         for item_74 in var_72 {
             {
+                #[allow(unused_mut)]
                 let mut object_75 = array_73.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_75, item_74)?;
                 object_75.finish();

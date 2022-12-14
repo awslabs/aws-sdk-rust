@@ -7,6 +7,7 @@ pub fn serialize_structure_crate_input_batch_get_record_input(
         let mut array_2 = object.key("Identifiers").start_array();
         for item_3 in var_1 {
             {
+                #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_batch_get_record_identifier(
                     &mut object_4,
@@ -28,6 +29,7 @@ pub fn serialize_structure_crate_input_put_record_input(
         let mut array_6 = object.key("Record").start_array();
         for item_7 in var_5 {
             {
+                #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_feature_value(
                     &mut object_8,

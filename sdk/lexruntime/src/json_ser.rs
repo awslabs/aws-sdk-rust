@@ -7,6 +7,7 @@ pub fn serialize_structure_crate_input_post_text_input(
         let mut array_2 = object.key("activeContexts").start_array();
         for item_3 in var_1 {
             {
+                #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_active_context(
                     &mut object_4,
@@ -21,6 +22,7 @@ pub fn serialize_structure_crate_input_post_text_input(
         object.key("inputText").string(var_5.as_str());
     }
     if let Some(var_6) = &input.request_attributes {
+        #[allow(unused_mut)]
         let mut object_7 = object.key("requestAttributes").start_object();
         for (key_8, value_9) in var_6 {
             {
@@ -30,6 +32,7 @@ pub fn serialize_structure_crate_input_post_text_input(
         object_7.finish();
     }
     if let Some(var_10) = &input.session_attributes {
+        #[allow(unused_mut)]
         let mut object_11 = object.key("sessionAttributes").start_object();
         for (key_12, value_13) in var_10 {
             {
@@ -49,6 +52,7 @@ pub fn serialize_structure_crate_input_put_session_input(
         let mut array_15 = object.key("activeContexts").start_array();
         for item_16 in var_14 {
             {
+                #[allow(unused_mut)]
                 let mut object_17 = array_15.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_active_context(
                     &mut object_17,
@@ -60,6 +64,7 @@ pub fn serialize_structure_crate_input_put_session_input(
         array_15.finish();
     }
     if let Some(var_18) = &input.dialog_action {
+        #[allow(unused_mut)]
         let mut object_19 = object.key("dialogAction").start_object();
         crate::json_ser::serialize_structure_crate_model_dialog_action(&mut object_19, var_18)?;
         object_19.finish();
@@ -68,6 +73,7 @@ pub fn serialize_structure_crate_input_put_session_input(
         let mut array_21 = object.key("recentIntentSummaryView").start_array();
         for item_22 in var_20 {
             {
+                #[allow(unused_mut)]
                 let mut object_23 = array_21.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_intent_summary(
                     &mut object_23,
@@ -79,6 +85,7 @@ pub fn serialize_structure_crate_input_put_session_input(
         array_21.finish();
     }
     if let Some(var_24) = &input.session_attributes {
+        #[allow(unused_mut)]
         let mut object_25 = object.key("sessionAttributes").start_object();
         for (key_26, value_27) in var_24 {
             {
@@ -98,6 +105,7 @@ pub fn serialize_structure_crate_model_active_context(
         object.key("name").string(var_28.as_str());
     }
     if let Some(var_29) = &input.time_to_live {
+        #[allow(unused_mut)]
         let mut object_30 = object.key("timeToLive").start_object();
         crate::json_ser::serialize_structure_crate_model_active_context_time_to_live(
             &mut object_30,
@@ -106,6 +114,7 @@ pub fn serialize_structure_crate_model_active_context(
         object_30.finish();
     }
     if let Some(var_31) = &input.parameters {
+        #[allow(unused_mut)]
         let mut object_32 = object.key("parameters").start_object();
         for (key_33, value_34) in var_31 {
             {
@@ -128,6 +137,7 @@ pub fn serialize_structure_crate_model_dialog_action(
         object.key("intentName").string(var_36.as_str());
     }
     if let Some(var_37) = &input.slots {
+        #[allow(unused_mut)]
         let mut object_38 = object.key("slots").start_object();
         for (key_39, value_40) in var_37 {
             {
@@ -162,6 +172,7 @@ pub fn serialize_structure_crate_model_intent_summary(
         object.key("checkpointLabel").string(var_46.as_str());
     }
     if let Some(var_47) = &input.slots {
+        #[allow(unused_mut)]
         let mut object_48 = object.key("slots").start_object();
         for (key_49, value_50) in var_47 {
             {

@@ -7,6 +7,7 @@ pub fn serialize_structure_crate_input_create_app_input(
         object.key("accessToken").string(var_1.as_str());
     }
     if let Some(var_2) = &input.auto_branch_creation_config {
+        #[allow(unused_mut)]
         let mut object_3 = object.key("autoBranchCreationConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_auto_branch_creation_config(
             &mut object_3,
@@ -36,6 +37,7 @@ pub fn serialize_structure_crate_input_create_app_input(
         let mut array_11 = object.key("customRules").start_array();
         for item_12 in var_10 {
             {
+                #[allow(unused_mut)]
                 let mut object_13 = array_11.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_custom_rule(
                     &mut object_13,
@@ -62,6 +64,7 @@ pub fn serialize_structure_crate_input_create_app_input(
         object.key("enableBranchAutoDeletion").boolean(*var_18);
     }
     if let Some(var_19) = &input.environment_variables {
+        #[allow(unused_mut)]
         let mut object_20 = object.key("environmentVariables").start_object();
         for (key_21, value_22) in var_19 {
             {
@@ -86,6 +89,7 @@ pub fn serialize_structure_crate_input_create_app_input(
         object.key("repository").string(var_27.as_str());
     }
     if let Some(var_28) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_29 = object.key("tags").start_object();
         for (key_30, value_31) in var_28 {
             {
@@ -151,6 +155,7 @@ pub fn serialize_structure_crate_input_create_branch_input(
         object.key("enablePullRequestPreview").boolean(*var_45);
     }
     if let Some(var_46) = &input.environment_variables {
+        #[allow(unused_mut)]
         let mut object_47 = object.key("environmentVariables").start_object();
         for (key_48, value_49) in var_46 {
             {
@@ -171,6 +176,7 @@ pub fn serialize_structure_crate_input_create_branch_input(
         object.key("stage").string(var_52.as_str());
     }
     if let Some(var_53) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_54 = object.key("tags").start_object();
         for (key_55, value_56) in var_53 {
             {
@@ -190,6 +196,7 @@ pub fn serialize_structure_crate_input_create_deployment_input(
     input: &crate::input::CreateDeploymentInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_58) = &input.file_map {
+        #[allow(unused_mut)]
         let mut object_59 = object.key("fileMap").start_object();
         for (key_60, value_61) in var_58 {
             {
@@ -227,6 +234,7 @@ pub fn serialize_structure_crate_input_create_domain_association_input(
         let mut array_69 = object.key("subDomainSettings").start_array();
         for item_70 in var_68 {
             {
+                #[allow(unused_mut)]
                 let mut object_71 = array_69.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_sub_domain_setting(
                     &mut object_71,
@@ -318,6 +326,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_85) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_86 = object.key("tags").start_object();
         for (key_87, value_88) in var_85 {
             {
@@ -337,6 +346,7 @@ pub fn serialize_structure_crate_input_update_app_input(
         object.key("accessToken").string(var_89.as_str());
     }
     if let Some(var_90) = &input.auto_branch_creation_config {
+        #[allow(unused_mut)]
         let mut object_91 = object.key("autoBranchCreationConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_auto_branch_creation_config(
             &mut object_91,
@@ -366,6 +376,7 @@ pub fn serialize_structure_crate_input_update_app_input(
         let mut array_99 = object.key("customRules").start_array();
         for item_100 in var_98 {
             {
+                #[allow(unused_mut)]
                 let mut object_101 = array_99.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_custom_rule(
                     &mut object_101,
@@ -392,6 +403,7 @@ pub fn serialize_structure_crate_input_update_app_input(
         object.key("enableBranchAutoDeletion").boolean(*var_106);
     }
     if let Some(var_107) = &input.environment_variables {
+        #[allow(unused_mut)]
         let mut object_108 = object.key("environmentVariables").start_object();
         for (key_109, value_110) in var_107 {
             {
@@ -453,6 +465,7 @@ pub fn serialize_structure_crate_input_update_branch_input(
         object.key("enablePullRequestPreview").boolean(*var_125);
     }
     if let Some(var_126) = &input.environment_variables {
+        #[allow(unused_mut)]
         let mut object_127 = object.key("environmentVariables").start_object();
         for (key_128, value_129) in var_126 {
             {
@@ -501,6 +514,7 @@ pub fn serialize_structure_crate_input_update_domain_association_input(
         let mut array_140 = object.key("subDomainSettings").start_array();
         for item_141 in var_139 {
             {
+                #[allow(unused_mut)]
                 let mut object_142 = array_140.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_sub_domain_setting(
                     &mut object_142,
@@ -541,6 +555,7 @@ pub fn serialize_structure_crate_model_auto_branch_creation_config(
         object.key("enableAutoBuild").boolean(*var_147);
     }
     if let Some(var_148) = &input.environment_variables {
+        #[allow(unused_mut)]
         let mut object_149 = object.key("environmentVariables").start_object();
         for (key_150, value_151) in var_148 {
             {

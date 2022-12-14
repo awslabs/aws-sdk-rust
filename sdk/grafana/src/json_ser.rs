@@ -28,6 +28,7 @@ pub fn serialize_structure_crate_input_create_workspace_input(
         object.key("stackSetName").string(var_8.as_str());
     }
     if let Some(var_9) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_10 = object.key("tags").start_object();
         for (key_11, value_12) in var_9 {
             {
@@ -101,6 +102,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_28) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_29 = object.key("tags").start_object();
         for (key_30, value_31) in var_28 {
             {
@@ -120,6 +122,7 @@ pub fn serialize_structure_crate_input_update_permissions_input(
         let mut array_33 = object.key("updateInstructionBatch").start_array();
         for item_34 in var_32 {
             {
+                #[allow(unused_mut)]
                 let mut object_35 = array_33.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_update_instruction(
                     &mut object_35,
@@ -204,6 +207,7 @@ pub fn serialize_structure_crate_input_update_workspace_authentication_input(
         array_53.finish();
     }
     if let Some(var_55) = &input.saml_configuration {
+        #[allow(unused_mut)]
         let mut object_56 = object.key("samlConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_saml_configuration(
             &mut object_56,
@@ -228,6 +232,7 @@ pub fn serialize_structure_crate_model_update_instruction(
         let mut array_60 = object.key("users").start_array();
         for item_61 in var_59 {
             {
+                #[allow(unused_mut)]
                 let mut object_62 = array_60.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_user(&mut object_62, item_61)?;
                 object_62.finish();
@@ -243,11 +248,13 @@ pub fn serialize_structure_crate_model_saml_configuration(
     input: &crate::model::SamlConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_63) = &input.idp_metadata {
+        #[allow(unused_mut)]
         let mut object_64 = object.key("idpMetadata").start_object();
         crate::json_ser::serialize_union_crate_model_idp_metadata(&mut object_64, var_63)?;
         object_64.finish();
     }
     if let Some(var_65) = &input.assertion_attributes {
+        #[allow(unused_mut)]
         let mut object_66 = object.key("assertionAttributes").start_object();
         crate::json_ser::serialize_structure_crate_model_assertion_attributes(
             &mut object_66,
@@ -256,6 +263,7 @@ pub fn serialize_structure_crate_model_saml_configuration(
         object_66.finish();
     }
     if let Some(var_67) = &input.role_values {
+        #[allow(unused_mut)]
         let mut object_68 = object.key("roleValues").start_object();
         crate::json_ser::serialize_structure_crate_model_role_values(&mut object_68, var_67)?;
         object_68.finish();

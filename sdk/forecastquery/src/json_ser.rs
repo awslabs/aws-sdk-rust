@@ -13,6 +13,7 @@ pub fn serialize_structure_crate_input_query_forecast_input(
         object.key("EndDate").string(var_3.as_str());
     }
     if let Some(var_4) = &input.filters {
+        #[allow(unused_mut)]
         let mut object_5 = object.key("Filters").start_object();
         for (key_6, value_7) in var_4 {
             {
@@ -41,6 +42,7 @@ pub fn serialize_structure_crate_input_query_what_if_forecast_input(
         object.key("EndDate").string(var_11.as_str());
     }
     if let Some(var_12) = &input.filters {
+        #[allow(unused_mut)]
         let mut object_13 = object.key("Filters").start_object();
         for (key_14, value_15) in var_12 {
             {

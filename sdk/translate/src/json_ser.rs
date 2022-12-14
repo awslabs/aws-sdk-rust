@@ -10,6 +10,7 @@ pub fn serialize_structure_crate_input_create_parallel_data_input(
         object.key("Description").string(var_2.as_str());
     }
     if let Some(var_3) = &input.parallel_data_config {
+        #[allow(unused_mut)]
         let mut object_4 = object.key("ParallelDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_parallel_data_config(
             &mut object_4,
@@ -18,6 +19,7 @@ pub fn serialize_structure_crate_input_create_parallel_data_input(
         object_4.finish();
     }
     if let Some(var_5) = &input.encryption_key {
+        #[allow(unused_mut)]
         let mut object_6 = object.key("EncryptionKey").start_object();
         crate::json_ser::serialize_structure_crate_model_encryption_key(&mut object_6, var_5)?;
         object_6.finish();
@@ -29,6 +31,7 @@ pub fn serialize_structure_crate_input_create_parallel_data_input(
         let mut array_9 = object.key("Tags").start_array();
         for item_10 in var_8 {
             {
+                #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_11, item_10)?;
                 object_11.finish();
@@ -106,11 +109,13 @@ pub fn serialize_structure_crate_input_import_terminology_input(
         object.key("Description").string(var_20.as_str());
     }
     if let Some(var_21) = &input.terminology_data {
+        #[allow(unused_mut)]
         let mut object_22 = object.key("TerminologyData").start_object();
         crate::json_ser::serialize_structure_crate_model_terminology_data(&mut object_22, var_21)?;
         object_22.finish();
     }
     if let Some(var_23) = &input.encryption_key {
+        #[allow(unused_mut)]
         let mut object_24 = object.key("EncryptionKey").start_object();
         crate::json_ser::serialize_structure_crate_model_encryption_key(&mut object_24, var_23)?;
         object_24.finish();
@@ -119,6 +124,7 @@ pub fn serialize_structure_crate_input_import_terminology_input(
         let mut array_26 = object.key("Tags").start_array();
         for item_27 in var_25 {
             {
+                #[allow(unused_mut)]
                 let mut object_28 = array_26.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_28, item_27)?;
                 object_28.finish();
@@ -195,6 +201,7 @@ pub fn serialize_structure_crate_input_list_text_translation_jobs_input(
     input: &crate::input::ListTextTranslationJobsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_37) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_38 = object.key("Filter").start_object();
         crate::json_ser::serialize_structure_crate_model_text_translation_job_filter(
             &mut object_38,
@@ -222,11 +229,13 @@ pub fn serialize_structure_crate_input_start_text_translation_job_input(
         object.key("JobName").string(var_41.as_str());
     }
     if let Some(var_42) = &input.input_data_config {
+        #[allow(unused_mut)]
         let mut object_43 = object.key("InputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_input_data_config(&mut object_43, var_42)?;
         object_43.finish();
     }
     if let Some(var_44) = &input.output_data_config {
+        #[allow(unused_mut)]
         let mut object_45 = object.key("OutputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_output_data_config(
             &mut object_45,
@@ -271,6 +280,7 @@ pub fn serialize_structure_crate_input_start_text_translation_job_input(
         object.key("ClientToken").string(var_57.as_str());
     }
     if let Some(var_58) = &input.settings {
+        #[allow(unused_mut)]
         let mut object_59 = object.key("Settings").start_object();
         crate::json_ser::serialize_structure_crate_model_translation_settings(
             &mut object_59,
@@ -302,6 +312,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_63 = object.key("Tags").start_array();
         for item_64 in var_62 {
             {
+                #[allow(unused_mut)]
                 let mut object_65 = array_63.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_65, item_64)?;
                 object_65.finish();
@@ -335,6 +346,7 @@ pub fn serialize_structure_crate_input_translate_text_input(
         object.key("TargetLanguageCode").string(var_71.as_str());
     }
     if let Some(var_72) = &input.settings {
+        #[allow(unused_mut)]
         let mut object_73 = object.key("Settings").start_object();
         crate::json_ser::serialize_structure_crate_model_translation_settings(
             &mut object_73,
@@ -375,6 +387,7 @@ pub fn serialize_structure_crate_input_update_parallel_data_input(
         object.key("Description").string(var_79.as_str());
     }
     if let Some(var_80) = &input.parallel_data_config {
+        #[allow(unused_mut)]
         let mut object_81 = object.key("ParallelDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_parallel_data_config(
             &mut object_81,
@@ -489,6 +502,7 @@ pub fn serialize_structure_crate_model_output_data_config(
         object.key("S3Uri").string(var_98.as_str());
     }
     if let Some(var_99) = &input.encryption_key {
+        #[allow(unused_mut)]
         let mut object_100 = object.key("EncryptionKey").start_object();
         crate::json_ser::serialize_structure_crate_model_encryption_key(&mut object_100, var_99)?;
         object_100.finish();

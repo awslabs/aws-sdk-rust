@@ -44,6 +44,7 @@ pub fn serialize_structure_crate_input_create_launch_profile_input(
         object.key("name").string(var_11.as_str());
     }
     if let Some(var_12) = &input.stream_configuration {
+        #[allow(unused_mut)]
         let mut object_13 = object.key("streamConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_stream_configuration_create(
             &mut object_13,
@@ -61,6 +62,7 @@ pub fn serialize_structure_crate_input_create_launch_profile_input(
         array_15.finish();
     }
     if let Some(var_17) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_18 = object.key("tags").start_object();
         for (key_19, value_20) in var_17 {
             {
@@ -86,6 +88,7 @@ pub fn serialize_structure_crate_input_create_streaming_image_input(
         object.key("name").string(var_23.as_str());
     }
     if let Some(var_24) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_25 = object.key("tags").start_object();
         for (key_26, value_27) in var_24 {
             {
@@ -114,6 +117,7 @@ pub fn serialize_structure_crate_input_create_streaming_session_input(
         object.key("streamingImageId").string(var_31.as_str());
     }
     if let Some(var_32) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_33 = object.key("tags").start_object();
         for (key_34, value_35) in var_32 {
             {
@@ -149,6 +153,7 @@ pub fn serialize_structure_crate_input_create_studio_input(
         object.key("displayName").string(var_38.as_str());
     }
     if let Some(var_39) = &input.studio_encryption_configuration {
+        #[allow(unused_mut)]
         let mut object_40 = object.key("studioEncryptionConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_studio_encryption_configuration(
             &mut object_40,
@@ -160,6 +165,7 @@ pub fn serialize_structure_crate_input_create_studio_input(
         object.key("studioName").string(var_41.as_str());
     }
     if let Some(var_42) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_43 = object.key("tags").start_object();
         for (key_44, value_45) in var_42 {
             {
@@ -179,6 +185,7 @@ pub fn serialize_structure_crate_input_create_studio_component_input(
     input: &crate::input::CreateStudioComponentInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_47) = &input.configuration {
+        #[allow(unused_mut)]
         let mut object_48 = object.key("configuration").start_object();
         crate::json_ser::serialize_union_crate_model_studio_component_configuration(
             &mut object_48,
@@ -202,6 +209,7 @@ pub fn serialize_structure_crate_input_create_studio_component_input(
         let mut array_54 = object.key("initializationScripts").start_array();
         for item_55 in var_53 {
             {
+                #[allow(unused_mut)]
                 let mut object_56 = array_54.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_studio_component_initialization_script(&mut object_56, item_55)?;
                 object_56.finish();
@@ -219,6 +227,7 @@ pub fn serialize_structure_crate_input_create_studio_component_input(
         let mut array_60 = object.key("scriptParameters").start_array();
         for item_61 in var_59 {
             {
+                #[allow(unused_mut)]
                 let mut object_62 = array_60.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_script_parameter_key_value(
                     &mut object_62,
@@ -238,6 +247,7 @@ pub fn serialize_structure_crate_input_create_studio_component_input(
         object.key("subtype").string(var_64.as_str());
     }
     if let Some(var_65) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_66 = object.key("tags").start_object();
         for (key_67, value_68) in var_65 {
             {
@@ -263,6 +273,7 @@ pub fn serialize_structure_crate_input_put_launch_profile_members_input(
         let mut array_72 = object.key("members").start_array();
         for item_73 in var_71 {
             {
+                #[allow(unused_mut)]
                 let mut object_74 = array_72.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_new_launch_profile_member(
                     &mut object_74,
@@ -287,6 +298,7 @@ pub fn serialize_structure_crate_input_put_studio_members_input(
         let mut array_77 = object.key("members").start_array();
         for item_78 in var_76 {
             {
+                #[allow(unused_mut)]
                 let mut object_79 = array_77.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_new_studio_member(
                     &mut object_79,
@@ -305,6 +317,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_80) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_81 = object.key("tags").start_object();
         for (key_82, value_83) in var_80 {
             {
@@ -336,6 +349,7 @@ pub fn serialize_structure_crate_input_update_launch_profile_input(
         object.key("name").string(var_88.as_str());
     }
     if let Some(var_89) = &input.stream_configuration {
+        #[allow(unused_mut)]
         let mut object_90 = object.key("streamConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_stream_configuration_create(
             &mut object_90,
@@ -399,6 +413,7 @@ pub fn serialize_structure_crate_input_update_studio_component_input(
     input: &crate::input::UpdateStudioComponentInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_100) = &input.configuration {
+        #[allow(unused_mut)]
         let mut object_101 = object.key("configuration").start_object();
         crate::json_ser::serialize_union_crate_model_studio_component_configuration(
             &mut object_101,
@@ -422,6 +437,7 @@ pub fn serialize_structure_crate_input_update_studio_component_input(
         let mut array_107 = object.key("initializationScripts").start_array();
         for item_108 in var_106 {
             {
+                #[allow(unused_mut)]
                 let mut object_109 = array_107.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_studio_component_initialization_script(&mut object_109, item_108)?;
                 object_109.finish();
@@ -439,6 +455,7 @@ pub fn serialize_structure_crate_input_update_studio_component_input(
         let mut array_113 = object.key("scriptParameters").start_array();
         for item_114 in var_112 {
             {
+                #[allow(unused_mut)]
                 let mut object_115 = array_113.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_script_parameter_key_value(
                     &mut object_115,
@@ -501,6 +518,7 @@ pub fn serialize_structure_crate_model_stream_configuration_create(
         );
     }
     if let Some(var_126) = &input.session_storage {
+        #[allow(unused_mut)]
         let mut object_127 = object.key("sessionStorage").start_object();
         crate::json_ser::serialize_structure_crate_model_stream_configuration_session_storage(
             &mut object_127,
@@ -530,6 +548,7 @@ pub fn serialize_union_crate_model_studio_component_configuration(
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::StudioComponentConfiguration::ActiveDirectoryConfiguration(inner) => {
+            #[allow(unused_mut)]
             let mut object_130 = object_48.key("activeDirectoryConfiguration").start_object();
             crate::json_ser::serialize_structure_crate_model_active_directory_configuration(
                 &mut object_130,
@@ -538,6 +557,7 @@ pub fn serialize_union_crate_model_studio_component_configuration(
             object_130.finish();
         }
         crate::model::StudioComponentConfiguration::ComputeFarmConfiguration(inner) => {
+            #[allow(unused_mut)]
             let mut object_131 = object_48.key("computeFarmConfiguration").start_object();
             crate::json_ser::serialize_structure_crate_model_compute_farm_configuration(
                 &mut object_131,
@@ -546,6 +566,7 @@ pub fn serialize_union_crate_model_studio_component_configuration(
             object_131.finish();
         }
         crate::model::StudioComponentConfiguration::LicenseServiceConfiguration(inner) => {
+            #[allow(unused_mut)]
             let mut object_132 = object_48.key("licenseServiceConfiguration").start_object();
             crate::json_ser::serialize_structure_crate_model_license_service_configuration(
                 &mut object_132,
@@ -554,6 +575,7 @@ pub fn serialize_union_crate_model_studio_component_configuration(
             object_132.finish();
         }
         crate::model::StudioComponentConfiguration::SharedFileSystemConfiguration(inner) => {
+            #[allow(unused_mut)]
             let mut object_133 = object_48
                 .key("sharedFileSystemConfiguration")
                 .start_object();
@@ -639,6 +661,7 @@ pub fn serialize_structure_crate_model_stream_configuration_session_storage(
     input: &crate::model::StreamConfigurationSessionStorage,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_144) = &input.root {
+        #[allow(unused_mut)]
         let mut object_145 = object.key("root").start_object();
         crate::json_ser::serialize_structure_crate_model_streaming_session_storage_root(
             &mut object_145,
@@ -666,6 +689,7 @@ pub fn serialize_structure_crate_model_active_directory_configuration(
         let mut array_150 = object.key("computerAttributes").start_array();
         for item_151 in var_149 {
             {
+                #[allow(unused_mut)]
                 let mut object_152 = array_150.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_active_directory_computer_attribute(&mut object_152, item_151)?;
                 object_152.finish();

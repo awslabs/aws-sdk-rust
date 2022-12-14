@@ -64,6 +64,7 @@ pub fn serialize_structure_crate_input_create_rate_based_rule_input(
         let mut array_12 = object.key("Tags").start_array();
         for item_13 in var_11 {
             {
+                #[allow(unused_mut)]
                 let mut object_14 = array_12.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_14, item_13)?;
                 object_14.finish();
@@ -117,6 +118,7 @@ pub fn serialize_structure_crate_input_create_rule_input(
         let mut array_23 = object.key("Tags").start_array();
         for item_24 in var_22 {
             {
+                #[allow(unused_mut)]
                 let mut object_25 = array_23.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_25, item_24)?;
                 object_25.finish();
@@ -144,6 +146,7 @@ pub fn serialize_structure_crate_input_create_rule_group_input(
         let mut array_30 = object.key("Tags").start_array();
         for item_31 in var_29 {
             {
+                #[allow(unused_mut)]
                 let mut object_32 = array_30.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_32, item_31)?;
                 object_32.finish();
@@ -191,6 +194,7 @@ pub fn serialize_structure_crate_input_create_web_acl_input(
         object.key("MetricName").string(var_38.as_str());
     }
     if let Some(var_39) = &input.default_action {
+        #[allow(unused_mut)]
         let mut object_40 = object.key("DefaultAction").start_object();
         crate::json_ser::serialize_structure_crate_model_waf_action(&mut object_40, var_39)?;
         object_40.finish();
@@ -202,6 +206,7 @@ pub fn serialize_structure_crate_input_create_web_acl_input(
         let mut array_43 = object.key("Tags").start_array();
         for item_44 in var_42 {
             {
+                #[allow(unused_mut)]
                 let mut object_45 = array_43.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_45, item_44)?;
                 object_45.finish();
@@ -551,6 +556,7 @@ pub fn serialize_structure_crate_input_get_sampled_requests_input(
         object.key("RuleId").string(var_91.as_str());
     }
     if let Some(var_92) = &input.time_window {
+        #[allow(unused_mut)]
         let mut object_93 = object.key("TimeWindow").start_object();
         crate::json_ser::serialize_structure_crate_model_time_window(&mut object_93, var_92)?;
         object_93.finish();
@@ -871,6 +877,7 @@ pub fn serialize_structure_crate_input_put_logging_configuration_input(
     input: &crate::input::PutLoggingConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_116) = &input.logging_configuration {
+        #[allow(unused_mut)]
         let mut object_117 = object.key("LoggingConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_logging_configuration(
             &mut object_117,
@@ -905,6 +912,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_122 = object.key("Tags").start_array();
         for item_123 in var_121 {
             {
+                #[allow(unused_mut)]
                 let mut object_124 = array_122.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_124, item_123)?;
                 object_124.finish();
@@ -948,6 +956,7 @@ pub fn serialize_structure_crate_input_update_byte_match_set_input(
         let mut array_132 = object.key("Updates").start_array();
         for item_133 in var_131 {
             {
+                #[allow(unused_mut)]
                 let mut object_134 = array_132.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_byte_match_set_update(
                     &mut object_134,
@@ -975,6 +984,7 @@ pub fn serialize_structure_crate_input_update_geo_match_set_input(
         let mut array_138 = object.key("Updates").start_array();
         for item_139 in var_137 {
             {
+                #[allow(unused_mut)]
                 let mut object_140 = array_138.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_geo_match_set_update(
                     &mut object_140,
@@ -1002,6 +1012,7 @@ pub fn serialize_structure_crate_input_update_ip_set_input(
         let mut array_144 = object.key("Updates").start_array();
         for item_145 in var_143 {
             {
+                #[allow(unused_mut)]
                 let mut object_146 = array_144.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_ip_set_update(
                     &mut object_146,
@@ -1029,6 +1040,7 @@ pub fn serialize_structure_crate_input_update_rate_based_rule_input(
         let mut array_150 = object.key("Updates").start_array();
         for item_151 in var_149 {
             {
+                #[allow(unused_mut)]
                 let mut object_152 = array_150.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_rule_update(
                     &mut object_152,
@@ -1059,6 +1071,7 @@ pub fn serialize_structure_crate_input_update_regex_match_set_input(
         let mut array_155 = object.key("Updates").start_array();
         for item_156 in var_154 {
             {
+                #[allow(unused_mut)]
                 let mut object_157 = array_155.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_regex_match_set_update(
                     &mut object_157,
@@ -1086,6 +1099,7 @@ pub fn serialize_structure_crate_input_update_regex_pattern_set_input(
         let mut array_161 = object.key("Updates").start_array();
         for item_162 in var_160 {
             {
+                #[allow(unused_mut)]
                 let mut object_163 = array_161.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_regex_pattern_set_update(
                     &mut object_163,
@@ -1116,6 +1130,7 @@ pub fn serialize_structure_crate_input_update_rule_input(
         let mut array_168 = object.key("Updates").start_array();
         for item_169 in var_167 {
             {
+                #[allow(unused_mut)]
                 let mut object_170 = array_168.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_rule_update(
                     &mut object_170,
@@ -1140,6 +1155,7 @@ pub fn serialize_structure_crate_input_update_rule_group_input(
         let mut array_173 = object.key("Updates").start_array();
         for item_174 in var_172 {
             {
+                #[allow(unused_mut)]
                 let mut object_175 = array_173.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_rule_group_update(
                     &mut object_175,
@@ -1170,6 +1186,7 @@ pub fn serialize_structure_crate_input_update_size_constraint_set_input(
         let mut array_180 = object.key("Updates").start_array();
         for item_181 in var_179 {
             {
+                #[allow(unused_mut)]
                 let mut object_182 = array_180.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_size_constraint_set_update(
                     &mut object_182,
@@ -1199,6 +1216,7 @@ pub fn serialize_structure_crate_input_update_sql_injection_match_set_input(
         let mut array_186 = object.key("Updates").start_array();
         for item_187 in var_185 {
             {
+                #[allow(unused_mut)]
                 let mut object_188 = array_186.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_sql_injection_match_set_update(
                     &mut object_188,
@@ -1226,6 +1244,7 @@ pub fn serialize_structure_crate_input_update_web_acl_input(
         let mut array_192 = object.key("Updates").start_array();
         for item_193 in var_191 {
             {
+                #[allow(unused_mut)]
                 let mut object_194 = array_192.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_web_acl_update(
                     &mut object_194,
@@ -1237,6 +1256,7 @@ pub fn serialize_structure_crate_input_update_web_acl_input(
         array_192.finish();
     }
     if let Some(var_195) = &input.default_action {
+        #[allow(unused_mut)]
         let mut object_196 = object.key("DefaultAction").start_object();
         crate::json_ser::serialize_structure_crate_model_waf_action(&mut object_196, var_195)?;
         object_196.finish();
@@ -1258,6 +1278,7 @@ pub fn serialize_structure_crate_input_update_xss_match_set_input(
         let mut array_200 = object.key("Updates").start_array();
         for item_201 in var_199 {
             {
+                #[allow(unused_mut)]
                 let mut object_202 = array_200.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_xss_match_set_update(
                     &mut object_202,
@@ -1331,6 +1352,7 @@ pub fn serialize_structure_crate_model_logging_configuration(
         let mut array_213 = object.key("RedactedFields").start_array();
         for item_214 in var_212 {
             {
+                #[allow(unused_mut)]
                 let mut object_215 = array_213.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_field_to_match(
                     &mut object_215,
@@ -1352,6 +1374,7 @@ pub fn serialize_structure_crate_model_byte_match_set_update(
         object.key("Action").string(var_216.as_str());
     }
     if let Some(var_217) = &input.byte_match_tuple {
+        #[allow(unused_mut)]
         let mut object_218 = object.key("ByteMatchTuple").start_object();
         crate::json_ser::serialize_structure_crate_model_byte_match_tuple(
             &mut object_218,
@@ -1370,6 +1393,7 @@ pub fn serialize_structure_crate_model_geo_match_set_update(
         object.key("Action").string(var_219.as_str());
     }
     if let Some(var_220) = &input.geo_match_constraint {
+        #[allow(unused_mut)]
         let mut object_221 = object.key("GeoMatchConstraint").start_object();
         crate::json_ser::serialize_structure_crate_model_geo_match_constraint(
             &mut object_221,
@@ -1388,6 +1412,7 @@ pub fn serialize_structure_crate_model_ip_set_update(
         object.key("Action").string(var_222.as_str());
     }
     if let Some(var_223) = &input.ip_set_descriptor {
+        #[allow(unused_mut)]
         let mut object_224 = object.key("IPSetDescriptor").start_object();
         crate::json_ser::serialize_structure_crate_model_ip_set_descriptor(
             &mut object_224,
@@ -1406,6 +1431,7 @@ pub fn serialize_structure_crate_model_rule_update(
         object.key("Action").string(var_225.as_str());
     }
     if let Some(var_226) = &input.predicate {
+        #[allow(unused_mut)]
         let mut object_227 = object.key("Predicate").start_object();
         crate::json_ser::serialize_structure_crate_model_predicate(&mut object_227, var_226)?;
         object_227.finish();
@@ -1421,6 +1447,7 @@ pub fn serialize_structure_crate_model_regex_match_set_update(
         object.key("Action").string(var_228.as_str());
     }
     if let Some(var_229) = &input.regex_match_tuple {
+        #[allow(unused_mut)]
         let mut object_230 = object.key("RegexMatchTuple").start_object();
         crate::json_ser::serialize_structure_crate_model_regex_match_tuple(
             &mut object_230,
@@ -1452,6 +1479,7 @@ pub fn serialize_structure_crate_model_rule_group_update(
         object.key("Action").string(var_233.as_str());
     }
     if let Some(var_234) = &input.activated_rule {
+        #[allow(unused_mut)]
         let mut object_235 = object.key("ActivatedRule").start_object();
         crate::json_ser::serialize_structure_crate_model_activated_rule(&mut object_235, var_234)?;
         object_235.finish();
@@ -1467,6 +1495,7 @@ pub fn serialize_structure_crate_model_size_constraint_set_update(
         object.key("Action").string(var_236.as_str());
     }
     if let Some(var_237) = &input.size_constraint {
+        #[allow(unused_mut)]
         let mut object_238 = object.key("SizeConstraint").start_object();
         crate::json_ser::serialize_structure_crate_model_size_constraint(&mut object_238, var_237)?;
         object_238.finish();
@@ -1482,6 +1511,7 @@ pub fn serialize_structure_crate_model_sql_injection_match_set_update(
         object.key("Action").string(var_239.as_str());
     }
     if let Some(var_240) = &input.sql_injection_match_tuple {
+        #[allow(unused_mut)]
         let mut object_241 = object.key("SqlInjectionMatchTuple").start_object();
         crate::json_ser::serialize_structure_crate_model_sql_injection_match_tuple(
             &mut object_241,
@@ -1500,6 +1530,7 @@ pub fn serialize_structure_crate_model_web_acl_update(
         object.key("Action").string(var_242.as_str());
     }
     if let Some(var_243) = &input.activated_rule {
+        #[allow(unused_mut)]
         let mut object_244 = object.key("ActivatedRule").start_object();
         crate::json_ser::serialize_structure_crate_model_activated_rule(&mut object_244, var_243)?;
         object_244.finish();
@@ -1515,6 +1546,7 @@ pub fn serialize_structure_crate_model_xss_match_set_update(
         object.key("Action").string(var_245.as_str());
     }
     if let Some(var_246) = &input.xss_match_tuple {
+        #[allow(unused_mut)]
         let mut object_247 = object.key("XssMatchTuple").start_object();
         crate::json_ser::serialize_structure_crate_model_xss_match_tuple(&mut object_247, var_246)?;
         object_247.finish();
@@ -1540,6 +1572,7 @@ pub fn serialize_structure_crate_model_byte_match_tuple(
     input: &crate::model::ByteMatchTuple,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_250) = &input.field_to_match {
+        #[allow(unused_mut)]
         let mut object_251 = object.key("FieldToMatch").start_object();
         crate::json_ser::serialize_structure_crate_model_field_to_match(&mut object_251, var_250)?;
         object_251.finish();
@@ -1605,6 +1638,7 @@ pub fn serialize_structure_crate_model_regex_match_tuple(
     input: &crate::model::RegexMatchTuple,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_262) = &input.field_to_match {
+        #[allow(unused_mut)]
         let mut object_263 = object.key("FieldToMatch").start_object();
         crate::json_ser::serialize_structure_crate_model_field_to_match(&mut object_263, var_262)?;
         object_263.finish();
@@ -1632,11 +1666,13 @@ pub fn serialize_structure_crate_model_activated_rule(
         object.key("RuleId").string(var_267.as_str());
     }
     if let Some(var_268) = &input.action {
+        #[allow(unused_mut)]
         let mut object_269 = object.key("Action").start_object();
         crate::json_ser::serialize_structure_crate_model_waf_action(&mut object_269, var_268)?;
         object_269.finish();
     }
     if let Some(var_270) = &input.override_action {
+        #[allow(unused_mut)]
         let mut object_271 = object.key("OverrideAction").start_object();
         crate::json_ser::serialize_structure_crate_model_waf_override_action(
             &mut object_271,
@@ -1651,6 +1687,7 @@ pub fn serialize_structure_crate_model_activated_rule(
         let mut array_274 = object.key("ExcludedRules").start_array();
         for item_275 in var_273 {
             {
+                #[allow(unused_mut)]
                 let mut object_276 = array_274.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_excluded_rule(
                     &mut object_276,
@@ -1669,6 +1706,7 @@ pub fn serialize_structure_crate_model_size_constraint(
     input: &crate::model::SizeConstraint,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_277) = &input.field_to_match {
+        #[allow(unused_mut)]
         let mut object_278 = object.key("FieldToMatch").start_object();
         crate::json_ser::serialize_structure_crate_model_field_to_match(&mut object_278, var_277)?;
         object_278.finish();
@@ -1693,6 +1731,7 @@ pub fn serialize_structure_crate_model_sql_injection_match_tuple(
     input: &crate::model::SqlInjectionMatchTuple,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_281) = &input.field_to_match {
+        #[allow(unused_mut)]
         let mut object_282 = object.key("FieldToMatch").start_object();
         crate::json_ser::serialize_structure_crate_model_field_to_match(&mut object_282, var_281)?;
         object_282.finish();
@@ -1708,6 +1747,7 @@ pub fn serialize_structure_crate_model_xss_match_tuple(
     input: &crate::model::XssMatchTuple,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_284) = &input.field_to_match {
+        #[allow(unused_mut)]
         let mut object_285 = object.key("FieldToMatch").start_object();
         crate::json_ser::serialize_structure_crate_model_field_to_match(&mut object_285, var_284)?;
         object_285.finish();

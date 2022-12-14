@@ -12,9 +12,11 @@ pub fn serialize_structure_crate_input_create_workflow_input(
         object.key("description").string(var_2.as_str());
     }
     if let Some(var_3) = &input.input_parameters {
+        #[allow(unused_mut)]
         let mut object_4 = object.key("inputParameters").start_object();
         for (key_5, value_6) in var_3 {
             {
+                #[allow(unused_mut)]
                 let mut object_7 = object_4.key(key_5.as_str()).start_object();
                 crate::json_ser::serialize_union_crate_model_step_input(&mut object_7, value_6)?;
                 object_7.finish();
@@ -35,6 +37,7 @@ pub fn serialize_structure_crate_input_create_workflow_input(
         array_10.finish();
     }
     if let Some(var_12) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_13 = object.key("tags").start_object();
         for (key_14, value_15) in var_12 {
             {
@@ -72,6 +75,7 @@ pub fn serialize_structure_crate_input_create_workflow_step_input(
         let mut array_23 = object.key("outputs").start_array();
         for item_24 in var_22 {
             {
+                #[allow(unused_mut)]
                 let mut object_25 = array_23.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_workflow_step_output(
                     &mut object_25,
@@ -110,6 +114,7 @@ pub fn serialize_structure_crate_input_create_workflow_step_input(
         object.key("workflowId").string(var_34.as_str());
     }
     if let Some(var_35) = &input.workflow_step_automation_configuration {
+        #[allow(unused_mut)]
         let mut object_36 = object
             .key("workflowStepAutomationConfiguration")
             .start_object();
@@ -161,6 +166,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_46) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_47 = object.key("tags").start_object();
         for (key_48, value_49) in var_46 {
             {
@@ -180,9 +186,11 @@ pub fn serialize_structure_crate_input_update_workflow_input(
         object.key("description").string(var_50.as_str());
     }
     if let Some(var_51) = &input.input_parameters {
+        #[allow(unused_mut)]
         let mut object_52 = object.key("inputParameters").start_object();
         for (key_53, value_54) in var_51 {
             {
+                #[allow(unused_mut)]
                 let mut object_55 = object_52.key(key_53.as_str()).start_object();
                 crate::json_ser::serialize_union_crate_model_step_input(&mut object_55, value_54)?;
                 object_55.finish();
@@ -228,6 +236,7 @@ pub fn serialize_structure_crate_input_update_workflow_step_input(
         let mut array_66 = object.key("outputs").start_array();
         for item_67 in var_65 {
             {
+                #[allow(unused_mut)]
                 let mut object_68 = array_66.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_workflow_step_output(
                     &mut object_68,
@@ -269,6 +278,7 @@ pub fn serialize_structure_crate_input_update_workflow_step_input(
         object.key("workflowId").string(var_78.as_str());
     }
     if let Some(var_79) = &input.workflow_step_automation_configuration {
+        #[allow(unused_mut)]
         let mut object_80 = object
             .key("workflowStepAutomationConfiguration")
             .start_object();
@@ -336,6 +346,7 @@ pub fn serialize_union_crate_model_step_input(
             array_89.finish();
         }
         crate::model::StepInput::MapOfStringValue(inner) => {
+            #[allow(unused_mut)]
             let mut object_91 = object_7.key("mapOfStringValue").start_object();
             for (key_92, value_93) in inner {
                 {
@@ -367,6 +378,7 @@ pub fn serialize_structure_crate_model_workflow_step_output(
         object.key("required").boolean(*var_96);
     }
     if let Some(var_97) = &input.value {
+        #[allow(unused_mut)]
         let mut object_98 = object.key("value").start_object();
         crate::json_ser::serialize_union_crate_model_workflow_step_output_union(
             &mut object_98,
@@ -385,6 +397,7 @@ pub fn serialize_structure_crate_model_workflow_step_automation_configuration(
         object.key("scriptLocationS3Bucket").string(var_99.as_str());
     }
     if let Some(var_100) = &input.script_location_s3_key {
+        #[allow(unused_mut)]
         let mut object_101 = object.key("scriptLocationS3Key").start_object();
         crate::json_ser::serialize_structure_crate_model_platform_script_key(
             &mut object_101,
@@ -393,6 +406,7 @@ pub fn serialize_structure_crate_model_workflow_step_automation_configuration(
         object_101.finish();
     }
     if let Some(var_102) = &input.command {
+        #[allow(unused_mut)]
         let mut object_103 = object.key("command").start_object();
         crate::json_ser::serialize_structure_crate_model_platform_command(
             &mut object_103,

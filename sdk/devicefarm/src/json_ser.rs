@@ -16,6 +16,7 @@ pub fn serialize_structure_crate_input_create_device_pool_input(
         let mut array_5 = object.key("rules").start_array();
         for item_6 in var_4 {
             {
+                #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_rule(&mut object_7, item_6)?;
                 object_7.finish();
@@ -141,6 +142,7 @@ pub fn serialize_structure_crate_input_create_project_input(
         );
     }
     if let Some(var_28) = &input.vpc_config {
+        #[allow(unused_mut)]
         let mut object_29 = object.key("vpcConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_vpc_config(&mut object_29, var_28)?;
         object_29.finish();
@@ -180,6 +182,7 @@ pub fn serialize_structure_crate_input_create_remote_access_session_input(
         object.key("clientId").string(var_38.as_str());
     }
     if let Some(var_39) = &input.configuration {
+        #[allow(unused_mut)]
         let mut object_40 = object.key("configuration").start_object();
         crate::json_ser::serialize_structure_crate_model_create_remote_access_session_configuration(&mut object_40, var_39)?;
         object_40.finish();
@@ -204,6 +207,7 @@ pub fn serialize_structure_crate_input_create_test_grid_project_input(
         object.key("description").string(var_44.as_str());
     }
     if let Some(var_45) = &input.vpc_config {
+        #[allow(unused_mut)]
         let mut object_46 = object.key("vpcConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_test_grid_vpc_config(
             &mut object_46,
@@ -404,11 +408,13 @@ pub fn serialize_structure_crate_input_get_device_pool_compatibility_input(
         object.key("testType").string(var_71.as_str());
     }
     if let Some(var_72) = &input.test {
+        #[allow(unused_mut)]
         let mut object_73 = object.key("test").start_object();
         crate::json_ser::serialize_structure_crate_model_schedule_run_test(&mut object_73, var_72)?;
         object_73.finish();
     }
     if let Some(var_74) = &input.configuration {
+        #[allow(unused_mut)]
         let mut object_75 = object.key("configuration").start_object();
         crate::json_ser::serialize_structure_crate_model_schedule_run_configuration(
             &mut object_75,
@@ -630,6 +636,7 @@ pub fn serialize_structure_crate_input_list_devices_input(
         let mut array_104 = object.key("filters").start_array();
         for item_105 in var_103 {
             {
+                #[allow(unused_mut)]
                 let mut object_106 = array_104.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_device_filter(
                     &mut object_106,
@@ -999,6 +1006,7 @@ pub fn serialize_structure_crate_input_schedule_run_input(
         object.key("devicePoolArn").string(var_161.as_str());
     }
     if let Some(var_162) = &input.device_selection_configuration {
+        #[allow(unused_mut)]
         let mut object_163 = object.key("deviceSelectionConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_device_selection_configuration(
             &mut object_163,
@@ -1010,6 +1018,7 @@ pub fn serialize_structure_crate_input_schedule_run_input(
         object.key("name").string(var_164.as_str());
     }
     if let Some(var_165) = &input.test {
+        #[allow(unused_mut)]
         let mut object_166 = object.key("test").start_object();
         crate::json_ser::serialize_structure_crate_model_schedule_run_test(
             &mut object_166,
@@ -1018,6 +1027,7 @@ pub fn serialize_structure_crate_input_schedule_run_input(
         object_166.finish();
     }
     if let Some(var_167) = &input.configuration {
+        #[allow(unused_mut)]
         let mut object_168 = object.key("configuration").start_object();
         crate::json_ser::serialize_structure_crate_model_schedule_run_configuration(
             &mut object_168,
@@ -1026,6 +1036,7 @@ pub fn serialize_structure_crate_input_schedule_run_input(
         object_168.finish();
     }
     if let Some(var_169) = &input.execution_configuration {
+        #[allow(unused_mut)]
         let mut object_170 = object.key("executionConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_execution_configuration(
             &mut object_170,
@@ -1077,6 +1088,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_176 = object.key("Tags").start_array();
         for item_177 in var_175 {
             {
+                #[allow(unused_mut)]
                 let mut object_178 = array_176.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_178, item_177)?;
                 object_178.finish();
@@ -1145,6 +1157,7 @@ pub fn serialize_structure_crate_input_update_device_pool_input(
         let mut array_192 = object.key("rules").start_array();
         for item_193 in var_191 {
             {
+                #[allow(unused_mut)]
                 let mut object_194 = array_192.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_rule(&mut object_194, item_193)?;
                 object_194.finish();
@@ -1279,6 +1292,7 @@ pub fn serialize_structure_crate_input_update_project_input(
         );
     }
     if let Some(var_218) = &input.vpc_config {
+        #[allow(unused_mut)]
         let mut object_219 = object.key("vpcConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_vpc_config(&mut object_219, var_218)?;
         object_219.finish();
@@ -1300,6 +1314,7 @@ pub fn serialize_structure_crate_input_update_test_grid_project_input(
         object.key("description").string(var_222.as_str());
     }
     if let Some(var_223) = &input.vpc_config {
+        #[allow(unused_mut)]
         let mut object_224 = object.key("vpcConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_test_grid_vpc_config(
             &mut object_224,
@@ -1461,6 +1476,7 @@ pub fn serialize_structure_crate_model_schedule_run_test(
         object.key("filter").string(var_258.as_str());
     }
     if let Some(var_259) = &input.parameters {
+        #[allow(unused_mut)]
         let mut object_260 = object.key("parameters").start_object();
         for (key_261, value_262) in var_259 {
             {
@@ -1486,6 +1502,7 @@ pub fn serialize_structure_crate_model_schedule_run_configuration(
         object.key("locale").string(var_265.as_str());
     }
     if let Some(var_266) = &input.location {
+        #[allow(unused_mut)]
         let mut object_267 = object.key("location").start_object();
         crate::json_ser::serialize_structure_crate_model_location(&mut object_267, var_266)?;
         object_267.finish();
@@ -1500,6 +1517,7 @@ pub fn serialize_structure_crate_model_schedule_run_configuration(
         array_269.finish();
     }
     if let Some(var_271) = &input.customer_artifact_paths {
+        #[allow(unused_mut)]
         let mut object_272 = object.key("customerArtifactPaths").start_object();
         crate::json_ser::serialize_structure_crate_model_customer_artifact_paths(
             &mut object_272,
@@ -1508,6 +1526,7 @@ pub fn serialize_structure_crate_model_schedule_run_configuration(
         object_272.finish();
     }
     if let Some(var_273) = &input.radios {
+        #[allow(unused_mut)]
         let mut object_274 = object.key("radios").start_object();
         crate::json_ser::serialize_structure_crate_model_radios(&mut object_274, var_273)?;
         object_274.finish();
@@ -1557,6 +1576,7 @@ pub fn serialize_structure_crate_model_device_selection_configuration(
         let mut array_285 = object.key("filters").start_array();
         for item_286 in var_284 {
             {
+                #[allow(unused_mut)]
                 let mut object_287 = array_285.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_device_filter(
                     &mut object_287,

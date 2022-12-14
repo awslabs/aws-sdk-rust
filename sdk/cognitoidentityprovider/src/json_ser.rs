@@ -10,6 +10,7 @@ pub fn serialize_structure_crate_input_add_custom_attributes_input(
         let mut array_3 = object.key("CustomAttributes").start_array();
         for item_4 in var_2 {
             {
+                #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_schema_attribute_type(
                     &mut object_5,
@@ -50,6 +51,7 @@ pub fn serialize_structure_crate_input_admin_confirm_sign_up_input(
         object.key("Username").string(var_10.as_str());
     }
     if let Some(var_11) = &input.client_metadata {
+        #[allow(unused_mut)]
         let mut object_12 = object.key("ClientMetadata").start_object();
         for (key_13, value_14) in var_11 {
             {
@@ -75,6 +77,7 @@ pub fn serialize_structure_crate_input_admin_create_user_input(
         let mut array_18 = object.key("UserAttributes").start_array();
         for item_19 in var_17 {
             {
+                #[allow(unused_mut)]
                 let mut object_20 = array_18.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_attribute_type(
                     &mut object_20,
@@ -89,6 +92,7 @@ pub fn serialize_structure_crate_input_admin_create_user_input(
         let mut array_22 = object.key("ValidationData").start_array();
         for item_23 in var_21 {
             {
+                #[allow(unused_mut)]
                 let mut object_24 = array_22.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_attribute_type(
                     &mut object_24,
@@ -120,6 +124,7 @@ pub fn serialize_structure_crate_input_admin_create_user_input(
         array_28.finish();
     }
     if let Some(var_30) = &input.client_metadata {
+        #[allow(unused_mut)]
         let mut object_31 = object.key("ClientMetadata").start_object();
         for (key_32, value_33) in var_30 {
             {
@@ -174,6 +179,7 @@ pub fn serialize_structure_crate_input_admin_disable_provider_for_user_input(
         object.key("UserPoolId").string(var_41.as_str());
     }
     if let Some(var_42) = &input.user {
+        #[allow(unused_mut)]
         let mut object_43 = object.key("User").start_object();
         crate::json_ser::serialize_structure_crate_model_provider_user_identifier_type(
             &mut object_43,
@@ -269,6 +275,7 @@ pub fn serialize_structure_crate_input_admin_initiate_auth_input(
         object.key("AuthFlow").string(var_58.as_str());
     }
     if let Some(var_59) = &input.auth_parameters {
+        #[allow(unused_mut)]
         let mut object_60 = object.key("AuthParameters").start_object();
         for (key_61, value_62) in var_59 {
             {
@@ -278,6 +285,7 @@ pub fn serialize_structure_crate_input_admin_initiate_auth_input(
         object_60.finish();
     }
     if let Some(var_63) = &input.client_metadata {
+        #[allow(unused_mut)]
         let mut object_64 = object.key("ClientMetadata").start_object();
         for (key_65, value_66) in var_63 {
             {
@@ -287,6 +295,7 @@ pub fn serialize_structure_crate_input_admin_initiate_auth_input(
         object_64.finish();
     }
     if let Some(var_67) = &input.analytics_metadata {
+        #[allow(unused_mut)]
         let mut object_68 = object.key("AnalyticsMetadata").start_object();
         crate::json_ser::serialize_structure_crate_model_analytics_metadata_type(
             &mut object_68,
@@ -295,6 +304,7 @@ pub fn serialize_structure_crate_input_admin_initiate_auth_input(
         object_68.finish();
     }
     if let Some(var_69) = &input.context_data {
+        #[allow(unused_mut)]
         let mut object_70 = object.key("ContextData").start_object();
         crate::json_ser::serialize_structure_crate_model_context_data_type(&mut object_70, var_69)?;
         object_70.finish();
@@ -310,6 +320,7 @@ pub fn serialize_structure_crate_input_admin_link_provider_for_user_input(
         object.key("UserPoolId").string(var_71.as_str());
     }
     if let Some(var_72) = &input.destination_user {
+        #[allow(unused_mut)]
         let mut object_73 = object.key("DestinationUser").start_object();
         crate::json_ser::serialize_structure_crate_model_provider_user_identifier_type(
             &mut object_73,
@@ -318,6 +329,7 @@ pub fn serialize_structure_crate_input_admin_link_provider_for_user_input(
         object_73.finish();
     }
     if let Some(var_74) = &input.source_user {
+        #[allow(unused_mut)]
         let mut object_75 = object.key("SourceUser").start_object();
         crate::json_ser::serialize_structure_crate_model_provider_user_identifier_type(
             &mut object_75,
@@ -421,6 +433,7 @@ pub fn serialize_structure_crate_input_admin_reset_user_password_input(
         object.key("Username").string(var_92.as_str());
     }
     if let Some(var_93) = &input.client_metadata {
+        #[allow(unused_mut)]
         let mut object_94 = object.key("ClientMetadata").start_object();
         for (key_95, value_96) in var_93 {
             {
@@ -446,6 +459,7 @@ pub fn serialize_structure_crate_input_admin_respond_to_auth_challenge_input(
         object.key("ChallengeName").string(var_99.as_str());
     }
     if let Some(var_100) = &input.challenge_responses {
+        #[allow(unused_mut)]
         let mut object_101 = object.key("ChallengeResponses").start_object();
         for (key_102, value_103) in var_100 {
             {
@@ -458,6 +472,7 @@ pub fn serialize_structure_crate_input_admin_respond_to_auth_challenge_input(
         object.key("Session").string(var_104.as_str());
     }
     if let Some(var_105) = &input.analytics_metadata {
+        #[allow(unused_mut)]
         let mut object_106 = object.key("AnalyticsMetadata").start_object();
         crate::json_ser::serialize_structure_crate_model_analytics_metadata_type(
             &mut object_106,
@@ -466,6 +481,7 @@ pub fn serialize_structure_crate_input_admin_respond_to_auth_challenge_input(
         object_106.finish();
     }
     if let Some(var_107) = &input.context_data {
+        #[allow(unused_mut)]
         let mut object_108 = object.key("ContextData").start_object();
         crate::json_ser::serialize_structure_crate_model_context_data_type(
             &mut object_108,
@@ -474,6 +490,7 @@ pub fn serialize_structure_crate_input_admin_respond_to_auth_challenge_input(
         object_108.finish();
     }
     if let Some(var_109) = &input.client_metadata {
+        #[allow(unused_mut)]
         let mut object_110 = object.key("ClientMetadata").start_object();
         for (key_111, value_112) in var_109 {
             {
@@ -490,6 +507,7 @@ pub fn serialize_structure_crate_input_admin_set_user_mfa_preference_input(
     input: &crate::input::AdminSetUserMfaPreferenceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_113) = &input.sms_mfa_settings {
+        #[allow(unused_mut)]
         let mut object_114 = object.key("SMSMfaSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_sms_mfa_settings_type(
             &mut object_114,
@@ -498,6 +516,7 @@ pub fn serialize_structure_crate_input_admin_set_user_mfa_preference_input(
         object_114.finish();
     }
     if let Some(var_115) = &input.software_token_mfa_settings {
+        #[allow(unused_mut)]
         let mut object_116 = object.key("SoftwareTokenMfaSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_software_token_mfa_settings_type(
             &mut object_116,
@@ -547,6 +566,7 @@ pub fn serialize_structure_crate_input_admin_set_user_settings_input(
         let mut array_125 = object.key("MFAOptions").start_array();
         for item_126 in var_124 {
             {
+                #[allow(unused_mut)]
                 let mut object_127 = array_125.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_mfa_option_type(
                     &mut object_127,
@@ -614,6 +634,7 @@ pub fn serialize_structure_crate_input_admin_update_user_attributes_input(
         let mut array_139 = object.key("UserAttributes").start_array();
         for item_140 in var_138 {
             {
+                #[allow(unused_mut)]
                 let mut object_141 = array_139.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_attribute_type(
                     &mut object_141,
@@ -625,6 +646,7 @@ pub fn serialize_structure_crate_input_admin_update_user_attributes_input(
         array_139.finish();
     }
     if let Some(var_142) = &input.client_metadata {
+        #[allow(unused_mut)]
         let mut object_143 = object.key("ClientMetadata").start_object();
         for (key_144, value_145) in var_142 {
             {
@@ -689,6 +711,7 @@ pub fn serialize_structure_crate_input_confirm_device_input(
         object.key("DeviceKey").string(var_154.as_str());
     }
     if let Some(var_155) = &input.device_secret_verifier_config {
+        #[allow(unused_mut)]
         let mut object_156 = object.key("DeviceSecretVerifierConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_device_secret_verifier_config_type(
             &mut object_156,
@@ -722,6 +745,7 @@ pub fn serialize_structure_crate_input_confirm_forgot_password_input(
         object.key("Password").string(var_162.as_str());
     }
     if let Some(var_163) = &input.analytics_metadata {
+        #[allow(unused_mut)]
         let mut object_164 = object.key("AnalyticsMetadata").start_object();
         crate::json_ser::serialize_structure_crate_model_analytics_metadata_type(
             &mut object_164,
@@ -730,6 +754,7 @@ pub fn serialize_structure_crate_input_confirm_forgot_password_input(
         object_164.finish();
     }
     if let Some(var_165) = &input.user_context_data {
+        #[allow(unused_mut)]
         let mut object_166 = object.key("UserContextData").start_object();
         crate::json_ser::serialize_structure_crate_model_user_context_data_type(
             &mut object_166,
@@ -738,6 +763,7 @@ pub fn serialize_structure_crate_input_confirm_forgot_password_input(
         object_166.finish();
     }
     if let Some(var_167) = &input.client_metadata {
+        #[allow(unused_mut)]
         let mut object_168 = object.key("ClientMetadata").start_object();
         for (key_169, value_170) in var_167 {
             {
@@ -771,6 +797,7 @@ pub fn serialize_structure_crate_input_confirm_sign_up_input(
             .boolean(input.force_alias_creation);
     }
     if let Some(var_175) = &input.analytics_metadata {
+        #[allow(unused_mut)]
         let mut object_176 = object.key("AnalyticsMetadata").start_object();
         crate::json_ser::serialize_structure_crate_model_analytics_metadata_type(
             &mut object_176,
@@ -779,6 +806,7 @@ pub fn serialize_structure_crate_input_confirm_sign_up_input(
         object_176.finish();
     }
     if let Some(var_177) = &input.user_context_data {
+        #[allow(unused_mut)]
         let mut object_178 = object.key("UserContextData").start_object();
         crate::json_ser::serialize_structure_crate_model_user_context_data_type(
             &mut object_178,
@@ -787,6 +815,7 @@ pub fn serialize_structure_crate_input_confirm_sign_up_input(
         object_178.finish();
     }
     if let Some(var_179) = &input.client_metadata {
+        #[allow(unused_mut)]
         let mut object_180 = object.key("ClientMetadata").start_object();
         for (key_181, value_182) in var_179 {
             {
@@ -837,6 +866,7 @@ pub fn serialize_structure_crate_input_create_identity_provider_input(
         object.key("ProviderType").string(var_190.as_str());
     }
     if let Some(var_191) = &input.provider_details {
+        #[allow(unused_mut)]
         let mut object_192 = object.key("ProviderDetails").start_object();
         for (key_193, value_194) in var_191 {
             {
@@ -846,6 +876,7 @@ pub fn serialize_structure_crate_input_create_identity_provider_input(
         object_192.finish();
     }
     if let Some(var_195) = &input.attribute_mapping {
+        #[allow(unused_mut)]
         let mut object_196 = object.key("AttributeMapping").start_object();
         for (key_197, value_198) in var_195 {
             {
@@ -883,6 +914,7 @@ pub fn serialize_structure_crate_input_create_resource_server_input(
         let mut array_206 = object.key("Scopes").start_array();
         for item_207 in var_205 {
             {
+                #[allow(unused_mut)]
                 let mut object_208 = array_206.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_resource_server_scope_type(
                     &mut object_208,
@@ -920,6 +952,7 @@ pub fn serialize_structure_crate_input_create_user_pool_input(
         object.key("PoolName").string(var_212.as_str());
     }
     if let Some(var_213) = &input.policies {
+        #[allow(unused_mut)]
         let mut object_214 = object.key("Policies").start_object();
         crate::json_ser::serialize_structure_crate_model_user_pool_policy_type(
             &mut object_214,
@@ -928,6 +961,7 @@ pub fn serialize_structure_crate_input_create_user_pool_input(
         object_214.finish();
     }
     if let Some(var_215) = &input.lambda_config {
+        #[allow(unused_mut)]
         let mut object_216 = object.key("LambdaConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_lambda_config_type(
             &mut object_216,
@@ -978,6 +1012,7 @@ pub fn serialize_structure_crate_input_create_user_pool_input(
             .string(var_228.as_str());
     }
     if let Some(var_229) = &input.verification_message_template {
+        #[allow(unused_mut)]
         let mut object_230 = object.key("VerificationMessageTemplate").start_object();
         crate::json_ser::serialize_structure_crate_model_verification_message_template_type(
             &mut object_230,
@@ -994,6 +1029,7 @@ pub fn serialize_structure_crate_input_create_user_pool_input(
         object.key("MfaConfiguration").string(var_232.as_str());
     }
     if let Some(var_233) = &input.user_attribute_update_settings {
+        #[allow(unused_mut)]
         let mut object_234 = object.key("UserAttributeUpdateSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_user_attribute_update_settings_type(
             &mut object_234,
@@ -1002,6 +1038,7 @@ pub fn serialize_structure_crate_input_create_user_pool_input(
         object_234.finish();
     }
     if let Some(var_235) = &input.device_configuration {
+        #[allow(unused_mut)]
         let mut object_236 = object.key("DeviceConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_device_configuration_type(
             &mut object_236,
@@ -1010,6 +1047,7 @@ pub fn serialize_structure_crate_input_create_user_pool_input(
         object_236.finish();
     }
     if let Some(var_237) = &input.email_configuration {
+        #[allow(unused_mut)]
         let mut object_238 = object.key("EmailConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_email_configuration_type(
             &mut object_238,
@@ -1018,6 +1056,7 @@ pub fn serialize_structure_crate_input_create_user_pool_input(
         object_238.finish();
     }
     if let Some(var_239) = &input.sms_configuration {
+        #[allow(unused_mut)]
         let mut object_240 = object.key("SmsConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_sms_configuration_type(
             &mut object_240,
@@ -1026,6 +1065,7 @@ pub fn serialize_structure_crate_input_create_user_pool_input(
         object_240.finish();
     }
     if let Some(var_241) = &input.user_pool_tags {
+        #[allow(unused_mut)]
         let mut object_242 = object.key("UserPoolTags").start_object();
         for (key_243, value_244) in var_241 {
             {
@@ -1035,6 +1075,7 @@ pub fn serialize_structure_crate_input_create_user_pool_input(
         object_242.finish();
     }
     if let Some(var_245) = &input.admin_create_user_config {
+        #[allow(unused_mut)]
         let mut object_246 = object.key("AdminCreateUserConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_admin_create_user_config_type(
             &mut object_246,
@@ -1046,6 +1087,7 @@ pub fn serialize_structure_crate_input_create_user_pool_input(
         let mut array_248 = object.key("Schema").start_array();
         for item_249 in var_247 {
             {
+                #[allow(unused_mut)]
                 let mut object_250 = array_248.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_schema_attribute_type(
                     &mut object_250,
@@ -1057,6 +1099,7 @@ pub fn serialize_structure_crate_input_create_user_pool_input(
         array_248.finish();
     }
     if let Some(var_251) = &input.user_pool_add_ons {
+        #[allow(unused_mut)]
         let mut object_252 = object.key("UserPoolAddOns").start_object();
         crate::json_ser::serialize_structure_crate_model_user_pool_add_ons_type(
             &mut object_252,
@@ -1065,6 +1108,7 @@ pub fn serialize_structure_crate_input_create_user_pool_input(
         object_252.finish();
     }
     if let Some(var_253) = &input.username_configuration {
+        #[allow(unused_mut)]
         let mut object_254 = object.key("UsernameConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_username_configuration_type(
             &mut object_254,
@@ -1073,6 +1117,7 @@ pub fn serialize_structure_crate_input_create_user_pool_input(
         object_254.finish();
     }
     if let Some(var_255) = &input.account_recovery_setting {
+        #[allow(unused_mut)]
         let mut object_256 = object.key("AccountRecoverySetting").start_object();
         crate::json_ser::serialize_structure_crate_model_account_recovery_setting_type(
             &mut object_256,
@@ -1115,6 +1160,7 @@ pub fn serialize_structure_crate_input_create_user_pool_client_input(
         );
     }
     if let Some(var_261) = &input.token_validity_units {
+        #[allow(unused_mut)]
         let mut object_262 = object.key("TokenValidityUnits").start_object();
         crate::json_ser::serialize_structure_crate_model_token_validity_units_type(
             &mut object_262,
@@ -1203,6 +1249,7 @@ pub fn serialize_structure_crate_input_create_user_pool_client_input(
             .boolean(input.allowed_o_auth_flows_user_pool_client);
     }
     if let Some(var_288) = &input.analytics_configuration {
+        #[allow(unused_mut)]
         let mut object_289 = object.key("AnalyticsConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_analytics_configuration_type(
             &mut object_289,
@@ -1243,6 +1290,7 @@ pub fn serialize_structure_crate_input_create_user_pool_domain_input(
         object.key("UserPoolId").string(var_295.as_str());
     }
     if let Some(var_296) = &input.custom_domain_config {
+        #[allow(unused_mut)]
         let mut object_297 = object.key("CustomDomainConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_custom_domain_config_type(
             &mut object_297,
@@ -1466,6 +1514,7 @@ pub fn serialize_structure_crate_input_forgot_password_input(
         object.key("SecretHash").string(var_329.as_str());
     }
     if let Some(var_330) = &input.user_context_data {
+        #[allow(unused_mut)]
         let mut object_331 = object.key("UserContextData").start_object();
         crate::json_ser::serialize_structure_crate_model_user_context_data_type(
             &mut object_331,
@@ -1477,6 +1526,7 @@ pub fn serialize_structure_crate_input_forgot_password_input(
         object.key("Username").string(var_332.as_str());
     }
     if let Some(var_333) = &input.analytics_metadata {
+        #[allow(unused_mut)]
         let mut object_334 = object.key("AnalyticsMetadata").start_object();
         crate::json_ser::serialize_structure_crate_model_analytics_metadata_type(
             &mut object_334,
@@ -1485,6 +1535,7 @@ pub fn serialize_structure_crate_input_forgot_password_input(
         object_334.finish();
     }
     if let Some(var_335) = &input.client_metadata {
+        #[allow(unused_mut)]
         let mut object_336 = object.key("ClientMetadata").start_object();
         for (key_337, value_338) in var_335 {
             {
@@ -1589,6 +1640,7 @@ pub fn serialize_structure_crate_input_get_user_attribute_verification_code_inpu
         object.key("AttributeName").string(var_351.as_str());
     }
     if let Some(var_352) = &input.client_metadata {
+        #[allow(unused_mut)]
         let mut object_353 = object.key("ClientMetadata").start_object();
         for (key_354, value_355) in var_352 {
             {
@@ -1628,6 +1680,7 @@ pub fn serialize_structure_crate_input_initiate_auth_input(
         object.key("AuthFlow").string(var_358.as_str());
     }
     if let Some(var_359) = &input.auth_parameters {
+        #[allow(unused_mut)]
         let mut object_360 = object.key("AuthParameters").start_object();
         for (key_361, value_362) in var_359 {
             {
@@ -1637,6 +1690,7 @@ pub fn serialize_structure_crate_input_initiate_auth_input(
         object_360.finish();
     }
     if let Some(var_363) = &input.client_metadata {
+        #[allow(unused_mut)]
         let mut object_364 = object.key("ClientMetadata").start_object();
         for (key_365, value_366) in var_363 {
             {
@@ -1649,6 +1703,7 @@ pub fn serialize_structure_crate_input_initiate_auth_input(
         object.key("ClientId").string(var_367.as_str());
     }
     if let Some(var_368) = &input.analytics_metadata {
+        #[allow(unused_mut)]
         let mut object_369 = object.key("AnalyticsMetadata").start_object();
         crate::json_ser::serialize_structure_crate_model_analytics_metadata_type(
             &mut object_369,
@@ -1657,6 +1712,7 @@ pub fn serialize_structure_crate_input_initiate_auth_input(
         object_369.finish();
     }
     if let Some(var_370) = &input.user_context_data {
+        #[allow(unused_mut)]
         let mut object_371 = object.key("UserContextData").start_object();
         crate::json_ser::serialize_structure_crate_model_user_context_data_type(
             &mut object_371,
@@ -1871,6 +1927,7 @@ pub fn serialize_structure_crate_input_resend_confirmation_code_input(
         object.key("SecretHash").string(var_401.as_str());
     }
     if let Some(var_402) = &input.user_context_data {
+        #[allow(unused_mut)]
         let mut object_403 = object.key("UserContextData").start_object();
         crate::json_ser::serialize_structure_crate_model_user_context_data_type(
             &mut object_403,
@@ -1882,6 +1939,7 @@ pub fn serialize_structure_crate_input_resend_confirmation_code_input(
         object.key("Username").string(var_404.as_str());
     }
     if let Some(var_405) = &input.analytics_metadata {
+        #[allow(unused_mut)]
         let mut object_406 = object.key("AnalyticsMetadata").start_object();
         crate::json_ser::serialize_structure_crate_model_analytics_metadata_type(
             &mut object_406,
@@ -1890,6 +1948,7 @@ pub fn serialize_structure_crate_input_resend_confirmation_code_input(
         object_406.finish();
     }
     if let Some(var_407) = &input.client_metadata {
+        #[allow(unused_mut)]
         let mut object_408 = object.key("ClientMetadata").start_object();
         for (key_409, value_410) in var_407 {
             {
@@ -1915,6 +1974,7 @@ pub fn serialize_structure_crate_input_respond_to_auth_challenge_input(
         object.key("Session").string(var_413.as_str());
     }
     if let Some(var_414) = &input.challenge_responses {
+        #[allow(unused_mut)]
         let mut object_415 = object.key("ChallengeResponses").start_object();
         for (key_416, value_417) in var_414 {
             {
@@ -1924,6 +1984,7 @@ pub fn serialize_structure_crate_input_respond_to_auth_challenge_input(
         object_415.finish();
     }
     if let Some(var_418) = &input.analytics_metadata {
+        #[allow(unused_mut)]
         let mut object_419 = object.key("AnalyticsMetadata").start_object();
         crate::json_ser::serialize_structure_crate_model_analytics_metadata_type(
             &mut object_419,
@@ -1932,6 +1993,7 @@ pub fn serialize_structure_crate_input_respond_to_auth_challenge_input(
         object_419.finish();
     }
     if let Some(var_420) = &input.user_context_data {
+        #[allow(unused_mut)]
         let mut object_421 = object.key("UserContextData").start_object();
         crate::json_ser::serialize_structure_crate_model_user_context_data_type(
             &mut object_421,
@@ -1940,6 +2002,7 @@ pub fn serialize_structure_crate_input_respond_to_auth_challenge_input(
         object_421.finish();
     }
     if let Some(var_422) = &input.client_metadata {
+        #[allow(unused_mut)]
         let mut object_423 = object.key("ClientMetadata").start_object();
         for (key_424, value_425) in var_422 {
             {
@@ -1978,6 +2041,7 @@ pub fn serialize_structure_crate_input_set_risk_configuration_input(
         object.key("ClientId").string(var_430.as_str());
     }
     if let Some(var_431) = &input.compromised_credentials_risk_configuration {
+        #[allow(unused_mut)]
         let mut object_432 = object
             .key("CompromisedCredentialsRiskConfiguration")
             .start_object();
@@ -1985,6 +2049,7 @@ pub fn serialize_structure_crate_input_set_risk_configuration_input(
         object_432.finish();
     }
     if let Some(var_433) = &input.account_takeover_risk_configuration {
+        #[allow(unused_mut)]
         let mut object_434 = object
             .key("AccountTakeoverRiskConfiguration")
             .start_object();
@@ -1995,6 +2060,7 @@ pub fn serialize_structure_crate_input_set_risk_configuration_input(
         object_434.finish();
     }
     if let Some(var_435) = &input.risk_exception_configuration {
+        #[allow(unused_mut)]
         let mut object_436 = object.key("RiskExceptionConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_risk_exception_configuration_type(
             &mut object_436,
@@ -2031,6 +2097,7 @@ pub fn serialize_structure_crate_input_set_user_mfa_preference_input(
     input: &crate::input::SetUserMfaPreferenceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_441) = &input.sms_mfa_settings {
+        #[allow(unused_mut)]
         let mut object_442 = object.key("SMSMfaSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_sms_mfa_settings_type(
             &mut object_442,
@@ -2039,6 +2106,7 @@ pub fn serialize_structure_crate_input_set_user_mfa_preference_input(
         object_442.finish();
     }
     if let Some(var_443) = &input.software_token_mfa_settings {
+        #[allow(unused_mut)]
         let mut object_444 = object.key("SoftwareTokenMfaSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_software_token_mfa_settings_type(
             &mut object_444,
@@ -2060,6 +2128,7 @@ pub fn serialize_structure_crate_input_set_user_pool_mfa_config_input(
         object.key("UserPoolId").string(var_446.as_str());
     }
     if let Some(var_447) = &input.sms_mfa_configuration {
+        #[allow(unused_mut)]
         let mut object_448 = object.key("SmsMfaConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_sms_mfa_config_type(
             &mut object_448,
@@ -2068,6 +2137,7 @@ pub fn serialize_structure_crate_input_set_user_pool_mfa_config_input(
         object_448.finish();
     }
     if let Some(var_449) = &input.software_token_mfa_configuration {
+        #[allow(unused_mut)]
         let mut object_450 = object.key("SoftwareTokenMfaConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_software_token_mfa_config_type(
             &mut object_450,
@@ -2092,6 +2162,7 @@ pub fn serialize_structure_crate_input_set_user_settings_input(
         let mut array_454 = object.key("MFAOptions").start_array();
         for item_455 in var_453 {
             {
+                #[allow(unused_mut)]
                 let mut object_456 = array_454.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_mfa_option_type(
                     &mut object_456,
@@ -2125,6 +2196,7 @@ pub fn serialize_structure_crate_input_sign_up_input(
         let mut array_462 = object.key("UserAttributes").start_array();
         for item_463 in var_461 {
             {
+                #[allow(unused_mut)]
                 let mut object_464 = array_462.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_attribute_type(
                     &mut object_464,
@@ -2139,6 +2211,7 @@ pub fn serialize_structure_crate_input_sign_up_input(
         let mut array_466 = object.key("ValidationData").start_array();
         for item_467 in var_465 {
             {
+                #[allow(unused_mut)]
                 let mut object_468 = array_466.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_attribute_type(
                     &mut object_468,
@@ -2150,6 +2223,7 @@ pub fn serialize_structure_crate_input_sign_up_input(
         array_466.finish();
     }
     if let Some(var_469) = &input.analytics_metadata {
+        #[allow(unused_mut)]
         let mut object_470 = object.key("AnalyticsMetadata").start_object();
         crate::json_ser::serialize_structure_crate_model_analytics_metadata_type(
             &mut object_470,
@@ -2158,6 +2232,7 @@ pub fn serialize_structure_crate_input_sign_up_input(
         object_470.finish();
     }
     if let Some(var_471) = &input.user_context_data {
+        #[allow(unused_mut)]
         let mut object_472 = object.key("UserContextData").start_object();
         crate::json_ser::serialize_structure_crate_model_user_context_data_type(
             &mut object_472,
@@ -2166,6 +2241,7 @@ pub fn serialize_structure_crate_input_sign_up_input(
         object_472.finish();
     }
     if let Some(var_473) = &input.client_metadata {
+        #[allow(unused_mut)]
         let mut object_474 = object.key("ClientMetadata").start_object();
         for (key_475, value_476) in var_473 {
             {
@@ -2211,6 +2287,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         object.key("ResourceArn").string(var_481.as_str());
     }
     if let Some(var_482) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_483 = object.key("Tags").start_object();
         for (key_484, value_485) in var_482 {
             {
@@ -2317,6 +2394,7 @@ pub fn serialize_structure_crate_input_update_identity_provider_input(
         object.key("ProviderName").string(var_504.as_str());
     }
     if let Some(var_505) = &input.provider_details {
+        #[allow(unused_mut)]
         let mut object_506 = object.key("ProviderDetails").start_object();
         for (key_507, value_508) in var_505 {
             {
@@ -2326,6 +2404,7 @@ pub fn serialize_structure_crate_input_update_identity_provider_input(
         object_506.finish();
     }
     if let Some(var_509) = &input.attribute_mapping {
+        #[allow(unused_mut)]
         let mut object_510 = object.key("AttributeMapping").start_object();
         for (key_511, value_512) in var_509 {
             {
@@ -2363,6 +2442,7 @@ pub fn serialize_structure_crate_input_update_resource_server_input(
         let mut array_520 = object.key("Scopes").start_array();
         for item_521 in var_519 {
             {
+                #[allow(unused_mut)]
                 let mut object_522 = array_520.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_resource_server_scope_type(
                     &mut object_522,
@@ -2384,6 +2464,7 @@ pub fn serialize_structure_crate_input_update_user_attributes_input(
         let mut array_524 = object.key("UserAttributes").start_array();
         for item_525 in var_523 {
             {
+                #[allow(unused_mut)]
                 let mut object_526 = array_524.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_attribute_type(
                     &mut object_526,
@@ -2398,6 +2479,7 @@ pub fn serialize_structure_crate_input_update_user_attributes_input(
         object.key("AccessToken").string(var_527.as_str());
     }
     if let Some(var_528) = &input.client_metadata {
+        #[allow(unused_mut)]
         let mut object_529 = object.key("ClientMetadata").start_object();
         for (key_530, value_531) in var_528 {
             {
@@ -2417,6 +2499,7 @@ pub fn serialize_structure_crate_input_update_user_pool_input(
         object.key("UserPoolId").string(var_532.as_str());
     }
     if let Some(var_533) = &input.policies {
+        #[allow(unused_mut)]
         let mut object_534 = object.key("Policies").start_object();
         crate::json_ser::serialize_structure_crate_model_user_pool_policy_type(
             &mut object_534,
@@ -2425,6 +2508,7 @@ pub fn serialize_structure_crate_input_update_user_pool_input(
         object_534.finish();
     }
     if let Some(var_535) = &input.lambda_config {
+        #[allow(unused_mut)]
         let mut object_536 = object.key("LambdaConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_lambda_config_type(
             &mut object_536,
@@ -2457,6 +2541,7 @@ pub fn serialize_structure_crate_input_update_user_pool_input(
             .string(var_542.as_str());
     }
     if let Some(var_543) = &input.verification_message_template {
+        #[allow(unused_mut)]
         let mut object_544 = object.key("VerificationMessageTemplate").start_object();
         crate::json_ser::serialize_structure_crate_model_verification_message_template_type(
             &mut object_544,
@@ -2470,6 +2555,7 @@ pub fn serialize_structure_crate_input_update_user_pool_input(
             .string(var_545.as_str());
     }
     if let Some(var_546) = &input.user_attribute_update_settings {
+        #[allow(unused_mut)]
         let mut object_547 = object.key("UserAttributeUpdateSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_user_attribute_update_settings_type(
             &mut object_547,
@@ -2481,6 +2567,7 @@ pub fn serialize_structure_crate_input_update_user_pool_input(
         object.key("MfaConfiguration").string(var_548.as_str());
     }
     if let Some(var_549) = &input.device_configuration {
+        #[allow(unused_mut)]
         let mut object_550 = object.key("DeviceConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_device_configuration_type(
             &mut object_550,
@@ -2489,6 +2576,7 @@ pub fn serialize_structure_crate_input_update_user_pool_input(
         object_550.finish();
     }
     if let Some(var_551) = &input.email_configuration {
+        #[allow(unused_mut)]
         let mut object_552 = object.key("EmailConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_email_configuration_type(
             &mut object_552,
@@ -2497,6 +2585,7 @@ pub fn serialize_structure_crate_input_update_user_pool_input(
         object_552.finish();
     }
     if let Some(var_553) = &input.sms_configuration {
+        #[allow(unused_mut)]
         let mut object_554 = object.key("SmsConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_sms_configuration_type(
             &mut object_554,
@@ -2505,6 +2594,7 @@ pub fn serialize_structure_crate_input_update_user_pool_input(
         object_554.finish();
     }
     if let Some(var_555) = &input.user_pool_tags {
+        #[allow(unused_mut)]
         let mut object_556 = object.key("UserPoolTags").start_object();
         for (key_557, value_558) in var_555 {
             {
@@ -2514,6 +2604,7 @@ pub fn serialize_structure_crate_input_update_user_pool_input(
         object_556.finish();
     }
     if let Some(var_559) = &input.admin_create_user_config {
+        #[allow(unused_mut)]
         let mut object_560 = object.key("AdminCreateUserConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_admin_create_user_config_type(
             &mut object_560,
@@ -2522,6 +2613,7 @@ pub fn serialize_structure_crate_input_update_user_pool_input(
         object_560.finish();
     }
     if let Some(var_561) = &input.user_pool_add_ons {
+        #[allow(unused_mut)]
         let mut object_562 = object.key("UserPoolAddOns").start_object();
         crate::json_ser::serialize_structure_crate_model_user_pool_add_ons_type(
             &mut object_562,
@@ -2530,6 +2622,7 @@ pub fn serialize_structure_crate_input_update_user_pool_input(
         object_562.finish();
     }
     if let Some(var_563) = &input.account_recovery_setting {
+        #[allow(unused_mut)]
         let mut object_564 = object.key("AccountRecoverySetting").start_object();
         crate::json_ser::serialize_structure_crate_model_account_recovery_setting_type(
             &mut object_564,
@@ -2572,6 +2665,7 @@ pub fn serialize_structure_crate_input_update_user_pool_client_input(
         );
     }
     if let Some(var_570) = &input.token_validity_units {
+        #[allow(unused_mut)]
         let mut object_571 = object.key("TokenValidityUnits").start_object();
         crate::json_ser::serialize_structure_crate_model_token_validity_units_type(
             &mut object_571,
@@ -2660,6 +2754,7 @@ pub fn serialize_structure_crate_input_update_user_pool_client_input(
             .boolean(input.allowed_o_auth_flows_user_pool_client);
     }
     if let Some(var_597) = &input.analytics_configuration {
+        #[allow(unused_mut)]
         let mut object_598 = object.key("AnalyticsConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_analytics_configuration_type(
             &mut object_598,
@@ -2700,6 +2795,7 @@ pub fn serialize_structure_crate_input_update_user_pool_domain_input(
         object.key("UserPoolId").string(var_604.as_str());
     }
     if let Some(var_605) = &input.custom_domain_config {
+        #[allow(unused_mut)]
         let mut object_606 = object.key("CustomDomainConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_custom_domain_config_type(
             &mut object_606,
@@ -2765,6 +2861,7 @@ pub fn serialize_structure_crate_model_schema_attribute_type(
         object.key("Required").boolean(*var_618);
     }
     if let Some(var_619) = &input.number_attribute_constraints {
+        #[allow(unused_mut)]
         let mut object_620 = object.key("NumberAttributeConstraints").start_object();
         crate::json_ser::serialize_structure_crate_model_number_attribute_constraints_type(
             &mut object_620,
@@ -2773,6 +2870,7 @@ pub fn serialize_structure_crate_model_schema_attribute_type(
         object_620.finish();
     }
     if let Some(var_621) = &input.string_attribute_constraints {
+        #[allow(unused_mut)]
         let mut object_622 = object.key("StringAttributeConstraints").start_object();
         crate::json_ser::serialize_structure_crate_model_string_attribute_constraints_type(
             &mut object_622,
@@ -2841,6 +2939,7 @@ pub fn serialize_structure_crate_model_context_data_type(
         let mut array_633 = object.key("HttpHeaders").start_array();
         for item_634 in var_632 {
             {
+                #[allow(unused_mut)]
                 let mut object_635 = array_633.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_http_header(
                     &mut object_635,
@@ -2940,6 +3039,7 @@ pub fn serialize_structure_crate_model_user_pool_policy_type(
     input: &crate::model::UserPoolPolicyType,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_645) = &input.password_policy {
+        #[allow(unused_mut)]
         let mut object_646 = object.key("PasswordPolicy").start_object();
         crate::json_ser::serialize_structure_crate_model_password_policy_type(
             &mut object_646,
@@ -2987,6 +3087,7 @@ pub fn serialize_structure_crate_model_lambda_config_type(
         object.key("UserMigration").string(var_656.as_str());
     }
     if let Some(var_657) = &input.custom_sms_sender {
+        #[allow(unused_mut)]
         let mut object_658 = object.key("CustomSMSSender").start_object();
         crate::json_ser::serialize_structure_crate_model_custom_sms_lambda_version_config_type(
             &mut object_658,
@@ -2995,6 +3096,7 @@ pub fn serialize_structure_crate_model_lambda_config_type(
         object_658.finish();
     }
     if let Some(var_659) = &input.custom_email_sender {
+        #[allow(unused_mut)]
         let mut object_660 = object.key("CustomEmailSender").start_object();
         crate::json_ser::serialize_structure_crate_model_custom_email_lambda_version_config_type(
             &mut object_660,
@@ -3122,6 +3224,7 @@ pub fn serialize_structure_crate_model_admin_create_user_config_type(
         );
     }
     if let Some(var_679) = &input.invite_message_template {
+        #[allow(unused_mut)]
         let mut object_680 = object.key("InviteMessageTemplate").start_object();
         crate::json_ser::serialize_structure_crate_model_message_template_type(
             &mut object_680,
@@ -3160,6 +3263,7 @@ pub fn serialize_structure_crate_model_account_recovery_setting_type(
         let mut array_684 = object.key("RecoveryMechanisms").start_array();
         for item_685 in var_683 {
             {
+                #[allow(unused_mut)]
                 let mut object_686 = array_684.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_recovery_option_type(
                     &mut object_686,
@@ -3235,6 +3339,7 @@ pub fn serialize_structure_crate_model_compromised_credentials_risk_configuratio
         array_696.finish();
     }
     if let Some(var_698) = &input.actions {
+        #[allow(unused_mut)]
         let mut object_699 = object.key("Actions").start_object();
         crate::json_ser::serialize_structure_crate_model_compromised_credentials_actions_type(
             &mut object_699,
@@ -3250,6 +3355,7 @@ pub fn serialize_structure_crate_model_account_takeover_risk_configuration_type(
     input: &crate::model::AccountTakeoverRiskConfigurationType,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_700) = &input.notify_configuration {
+        #[allow(unused_mut)]
         let mut object_701 = object.key("NotifyConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_notify_configuration_type(
             &mut object_701,
@@ -3258,6 +3364,7 @@ pub fn serialize_structure_crate_model_account_takeover_risk_configuration_type(
         object_701.finish();
     }
     if let Some(var_702) = &input.actions {
+        #[allow(unused_mut)]
         let mut object_703 = object.key("Actions").start_object();
         crate::json_ser::serialize_structure_crate_model_account_takeover_actions_type(
             &mut object_703,
@@ -3303,6 +3410,7 @@ pub fn serialize_structure_crate_model_sms_mfa_config_type(
             .string(var_710.as_str());
     }
     if let Some(var_711) = &input.sms_configuration {
+        #[allow(unused_mut)]
         let mut object_712 = object.key("SmsConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_sms_configuration_type(
             &mut object_712,
@@ -3479,6 +3587,7 @@ pub fn serialize_structure_crate_model_notify_configuration_type(
         object.key("SourceArn").string(var_730.as_str());
     }
     if let Some(var_731) = &input.block_email {
+        #[allow(unused_mut)]
         let mut object_732 = object.key("BlockEmail").start_object();
         crate::json_ser::serialize_structure_crate_model_notify_email_type(
             &mut object_732,
@@ -3487,6 +3596,7 @@ pub fn serialize_structure_crate_model_notify_configuration_type(
         object_732.finish();
     }
     if let Some(var_733) = &input.no_action_email {
+        #[allow(unused_mut)]
         let mut object_734 = object.key("NoActionEmail").start_object();
         crate::json_ser::serialize_structure_crate_model_notify_email_type(
             &mut object_734,
@@ -3495,6 +3605,7 @@ pub fn serialize_structure_crate_model_notify_configuration_type(
         object_734.finish();
     }
     if let Some(var_735) = &input.mfa_email {
+        #[allow(unused_mut)]
         let mut object_736 = object.key("MfaEmail").start_object();
         crate::json_ser::serialize_structure_crate_model_notify_email_type(
             &mut object_736,
@@ -3510,6 +3621,7 @@ pub fn serialize_structure_crate_model_account_takeover_actions_type(
     input: &crate::model::AccountTakeoverActionsType,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_737) = &input.low_action {
+        #[allow(unused_mut)]
         let mut object_738 = object.key("LowAction").start_object();
         crate::json_ser::serialize_structure_crate_model_account_takeover_action_type(
             &mut object_738,
@@ -3518,6 +3630,7 @@ pub fn serialize_structure_crate_model_account_takeover_actions_type(
         object_738.finish();
     }
     if let Some(var_739) = &input.medium_action {
+        #[allow(unused_mut)]
         let mut object_740 = object.key("MediumAction").start_object();
         crate::json_ser::serialize_structure_crate_model_account_takeover_action_type(
             &mut object_740,
@@ -3526,6 +3639,7 @@ pub fn serialize_structure_crate_model_account_takeover_actions_type(
         object_740.finish();
     }
     if let Some(var_741) = &input.high_action {
+        #[allow(unused_mut)]
         let mut object_742 = object.key("HighAction").start_object();
         crate::json_ser::serialize_structure_crate_model_account_takeover_action_type(
             &mut object_742,

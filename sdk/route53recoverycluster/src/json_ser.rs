@@ -58,6 +58,7 @@ pub fn serialize_structure_crate_input_update_routing_control_states_input(
         let mut array_11 = object.key("UpdateRoutingControlStateEntries").start_array();
         for item_12 in var_10 {
             {
+                #[allow(unused_mut)]
                 let mut object_13 = array_11.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_update_routing_control_state_entry(&mut object_13, item_12)?;
                 object_13.finish();

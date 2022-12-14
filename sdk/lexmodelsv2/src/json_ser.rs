@@ -7,6 +7,7 @@ pub fn serialize_structure_crate_input_create_bot_input(
         object.key("botName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.bot_tags {
+        #[allow(unused_mut)]
         let mut object_3 = object.key("botTags").start_object();
         for (key_4, value_5) in var_2 {
             {
@@ -16,6 +17,7 @@ pub fn serialize_structure_crate_input_create_bot_input(
         object_3.finish();
     }
     if let Some(var_6) = &input.data_privacy {
+        #[allow(unused_mut)]
         let mut object_7 = object.key("dataPrivacy").start_object();
         crate::json_ser::serialize_structure_crate_model_data_privacy(&mut object_7, var_6)?;
         object_7.finish();
@@ -33,6 +35,7 @@ pub fn serialize_structure_crate_input_create_bot_input(
         object.key("roleArn").string(var_10.as_str());
     }
     if let Some(var_11) = &input.test_bot_alias_tags {
+        #[allow(unused_mut)]
         let mut object_12 = object.key("testBotAliasTags").start_object();
         for (key_13, value_14) in var_11 {
             {
@@ -49,9 +52,11 @@ pub fn serialize_structure_crate_input_create_bot_alias_input(
     input: &crate::input::CreateBotAliasInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_15) = &input.bot_alias_locale_settings {
+        #[allow(unused_mut)]
         let mut object_16 = object.key("botAliasLocaleSettings").start_object();
         for (key_17, value_18) in var_15 {
             {
+                #[allow(unused_mut)]
                 let mut object_19 = object_16.key(key_17.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_bot_alias_locale_settings(
                     &mut object_19,
@@ -69,6 +74,7 @@ pub fn serialize_structure_crate_input_create_bot_alias_input(
         object.key("botVersion").string(var_21.as_str());
     }
     if let Some(var_22) = &input.conversation_log_settings {
+        #[allow(unused_mut)]
         let mut object_23 = object.key("conversationLogSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_conversation_log_settings(
             &mut object_23,
@@ -80,6 +86,7 @@ pub fn serialize_structure_crate_input_create_bot_alias_input(
         object.key("description").string(var_24.as_str());
     }
     if let Some(var_25) = &input.sentiment_analysis_settings {
+        #[allow(unused_mut)]
         let mut object_26 = object.key("sentimentAnalysisSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_sentiment_analysis_settings(
             &mut object_26,
@@ -88,6 +95,7 @@ pub fn serialize_structure_crate_input_create_bot_alias_input(
         object_26.finish();
     }
     if let Some(var_27) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_28 = object.key("tags").start_object();
         for (key_29, value_30) in var_27 {
             {
@@ -116,6 +124,7 @@ pub fn serialize_structure_crate_input_create_bot_locale_input(
         );
     }
     if let Some(var_34) = &input.voice_settings {
+        #[allow(unused_mut)]
         let mut object_35 = object.key("voiceSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_voice_settings(&mut object_35, var_34)?;
         object_35.finish();
@@ -128,9 +137,11 @@ pub fn serialize_structure_crate_input_create_bot_version_input(
     input: &crate::input::CreateBotVersionInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_36) = &input.bot_version_locale_specification {
+        #[allow(unused_mut)]
         let mut object_37 = object.key("botVersionLocaleSpecification").start_object();
         for (key_38, value_39) in var_36 {
             {
+                #[allow(unused_mut)]
                 let mut object_40 = object_37.key(key_38.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_bot_version_locale_details(
                     &mut object_40,
@@ -158,6 +169,7 @@ pub fn serialize_structure_crate_input_create_export_input(
         object.key("filePassword").string(var_43.as_str());
     }
     if let Some(var_44) = &input.resource_specification {
+        #[allow(unused_mut)]
         let mut object_45 = object.key("resourceSpecification").start_object();
         crate::json_ser::serialize_structure_crate_model_export_resource_specification(
             &mut object_45,
@@ -176,6 +188,7 @@ pub fn serialize_structure_crate_input_create_intent_input(
         object.key("description").string(var_46.as_str());
     }
     if let Some(var_47) = &input.dialog_code_hook {
+        #[allow(unused_mut)]
         let mut object_48 = object.key("dialogCodeHook").start_object();
         crate::json_ser::serialize_structure_crate_model_dialog_code_hook_settings(
             &mut object_48,
@@ -184,6 +197,7 @@ pub fn serialize_structure_crate_input_create_intent_input(
         object_48.finish();
     }
     if let Some(var_49) = &input.fulfillment_code_hook {
+        #[allow(unused_mut)]
         let mut object_50 = object.key("fulfillmentCodeHook").start_object();
         crate::json_ser::serialize_structure_crate_model_fulfillment_code_hook_settings(
             &mut object_50,
@@ -192,6 +206,7 @@ pub fn serialize_structure_crate_input_create_intent_input(
         object_50.finish();
     }
     if let Some(var_51) = &input.initial_response_setting {
+        #[allow(unused_mut)]
         let mut object_52 = object.key("initialResponseSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_initial_response_setting(
             &mut object_52,
@@ -203,6 +218,7 @@ pub fn serialize_structure_crate_input_create_intent_input(
         let mut array_54 = object.key("inputContexts").start_array();
         for item_55 in var_53 {
             {
+                #[allow(unused_mut)]
                 let mut object_56 = array_54.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_input_context(
                     &mut object_56,
@@ -214,6 +230,7 @@ pub fn serialize_structure_crate_input_create_intent_input(
         array_54.finish();
     }
     if let Some(var_57) = &input.intent_closing_setting {
+        #[allow(unused_mut)]
         let mut object_58 = object.key("intentClosingSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_intent_closing_setting(
             &mut object_58,
@@ -222,6 +239,7 @@ pub fn serialize_structure_crate_input_create_intent_input(
         object_58.finish();
     }
     if let Some(var_59) = &input.intent_confirmation_setting {
+        #[allow(unused_mut)]
         let mut object_60 = object.key("intentConfirmationSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_intent_confirmation_setting(
             &mut object_60,
@@ -233,6 +251,7 @@ pub fn serialize_structure_crate_input_create_intent_input(
         object.key("intentName").string(var_61.as_str());
     }
     if let Some(var_62) = &input.kendra_configuration {
+        #[allow(unused_mut)]
         let mut object_63 = object.key("kendraConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_kendra_configuration(
             &mut object_63,
@@ -244,6 +263,7 @@ pub fn serialize_structure_crate_input_create_intent_input(
         let mut array_65 = object.key("outputContexts").start_array();
         for item_66 in var_64 {
             {
+                #[allow(unused_mut)]
                 let mut object_67 = array_65.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_output_context(
                     &mut object_67,
@@ -261,6 +281,7 @@ pub fn serialize_structure_crate_input_create_intent_input(
         let mut array_70 = object.key("sampleUtterances").start_array();
         for item_71 in var_69 {
             {
+                #[allow(unused_mut)]
                 let mut object_72 = array_70.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_sample_utterance(
                     &mut object_72,
@@ -298,9 +319,11 @@ pub fn serialize_structure_crate_input_create_resource_policy_statement_input(
         array_75.finish();
     }
     if let Some(var_77) = &input.condition {
+        #[allow(unused_mut)]
         let mut object_78 = object.key("condition").start_object();
         for (key_79, value_80) in var_77 {
             {
+                #[allow(unused_mut)]
                 let mut object_81 = object_78.key(key_79.as_str()).start_object();
                 for (key_82, value_83) in value_80 {
                     {
@@ -319,6 +342,7 @@ pub fn serialize_structure_crate_input_create_resource_policy_statement_input(
         let mut array_86 = object.key("principal").start_array();
         for item_87 in var_85 {
             {
+                #[allow(unused_mut)]
                 let mut object_88 = array_86.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_principal(
                     &mut object_88,
@@ -343,6 +367,7 @@ pub fn serialize_structure_crate_input_create_slot_input(
         object.key("description").string(var_90.as_str());
     }
     if let Some(var_91) = &input.multiple_values_setting {
+        #[allow(unused_mut)]
         let mut object_92 = object.key("multipleValuesSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_multiple_values_setting(
             &mut object_92,
@@ -351,6 +376,7 @@ pub fn serialize_structure_crate_input_create_slot_input(
         object_92.finish();
     }
     if let Some(var_93) = &input.obfuscation_setting {
+        #[allow(unused_mut)]
         let mut object_94 = object.key("obfuscationSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_obfuscation_setting(
             &mut object_94,
@@ -365,11 +391,13 @@ pub fn serialize_structure_crate_input_create_slot_input(
         object.key("slotTypeId").string(var_96.as_str());
     }
     if let Some(var_97) = &input.sub_slot_setting {
+        #[allow(unused_mut)]
         let mut object_98 = object.key("subSlotSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_sub_slot_setting(&mut object_98, var_97)?;
         object_98.finish();
     }
     if let Some(var_99) = &input.value_elicitation_setting {
+        #[allow(unused_mut)]
         let mut object_100 = object.key("valueElicitationSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_slot_value_elicitation_setting(
             &mut object_100,
@@ -385,6 +413,7 @@ pub fn serialize_structure_crate_input_create_slot_type_input(
     input: &crate::input::CreateSlotTypeInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_101) = &input.composite_slot_type_setting {
+        #[allow(unused_mut)]
         let mut object_102 = object.key("compositeSlotTypeSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_composite_slot_type_setting(
             &mut object_102,
@@ -396,6 +425,7 @@ pub fn serialize_structure_crate_input_create_slot_type_input(
         object.key("description").string(var_103.as_str());
     }
     if let Some(var_104) = &input.external_source_setting {
+        #[allow(unused_mut)]
         let mut object_105 = object.key("externalSourceSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_external_source_setting(
             &mut object_105,
@@ -415,6 +445,7 @@ pub fn serialize_structure_crate_input_create_slot_type_input(
         let mut array_109 = object.key("slotTypeValues").start_array();
         for item_110 in var_108 {
             {
+                #[allow(unused_mut)]
                 let mut object_111 = array_109.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_slot_type_value(
                     &mut object_111,
@@ -426,6 +457,7 @@ pub fn serialize_structure_crate_input_create_slot_type_input(
         array_109.finish();
     }
     if let Some(var_112) = &input.value_selection_setting {
+        #[allow(unused_mut)]
         let mut object_113 = object.key("valueSelectionSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_slot_value_selection_setting(
             &mut object_113,
@@ -441,6 +473,7 @@ pub fn serialize_structure_crate_input_list_aggregated_utterances_input(
     input: &crate::input::ListAggregatedUtterancesInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_114) = &input.aggregation_duration {
+        #[allow(unused_mut)]
         let mut object_115 = object.key("aggregationDuration").start_object();
         crate::json_ser::serialize_structure_crate_model_utterance_aggregation_duration(
             &mut object_115,
@@ -458,6 +491,7 @@ pub fn serialize_structure_crate_input_list_aggregated_utterances_input(
         let mut array_119 = object.key("filters").start_array();
         for item_120 in var_118 {
             {
+                #[allow(unused_mut)]
                 let mut object_121 = array_119.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_aggregated_utterances_filter(
                     &mut object_121,
@@ -481,6 +515,7 @@ pub fn serialize_structure_crate_input_list_aggregated_utterances_input(
         object.key("nextToken").string(var_124.as_str());
     }
     if let Some(var_125) = &input.sort_by {
+        #[allow(unused_mut)]
         let mut object_126 = object.key("sortBy").start_object();
         crate::json_ser::serialize_structure_crate_model_aggregated_utterances_sort_by(
             &mut object_126,
@@ -515,6 +550,7 @@ pub fn serialize_structure_crate_input_list_bot_locales_input(
         let mut array_130 = object.key("filters").start_array();
         for item_131 in var_129 {
             {
+                #[allow(unused_mut)]
                 let mut object_132 = array_130.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_bot_locale_filter(
                     &mut object_132,
@@ -535,6 +571,7 @@ pub fn serialize_structure_crate_input_list_bot_locales_input(
         object.key("nextToken").string(var_134.as_str());
     }
     if let Some(var_135) = &input.sort_by {
+        #[allow(unused_mut)]
         let mut object_136 = object.key("sortBy").start_object();
         crate::json_ser::serialize_structure_crate_model_bot_locale_sort_by(
             &mut object_136,
@@ -569,6 +606,7 @@ pub fn serialize_structure_crate_input_list_bots_input(
         let mut array_140 = object.key("filters").start_array();
         for item_141 in var_139 {
             {
+                #[allow(unused_mut)]
                 let mut object_142 = array_140.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_bot_filter(
                     &mut object_142,
@@ -589,6 +627,7 @@ pub fn serialize_structure_crate_input_list_bots_input(
         object.key("nextToken").string(var_144.as_str());
     }
     if let Some(var_145) = &input.sort_by {
+        #[allow(unused_mut)]
         let mut object_146 = object.key("sortBy").start_object();
         crate::json_ser::serialize_structure_crate_model_bot_sort_by(&mut object_146, var_145)?;
         object_146.finish();
@@ -610,6 +649,7 @@ pub fn serialize_structure_crate_input_list_bot_versions_input(
         object.key("nextToken").string(var_148.as_str());
     }
     if let Some(var_149) = &input.sort_by {
+        #[allow(unused_mut)]
         let mut object_150 = object.key("sortBy").start_object();
         crate::json_ser::serialize_structure_crate_model_bot_version_sort_by(
             &mut object_150,
@@ -634,6 +674,7 @@ pub fn serialize_structure_crate_input_list_built_in_intents_input(
         object.key("nextToken").string(var_152.as_str());
     }
     if let Some(var_153) = &input.sort_by {
+        #[allow(unused_mut)]
         let mut object_154 = object.key("sortBy").start_object();
         crate::json_ser::serialize_structure_crate_model_built_in_intent_sort_by(
             &mut object_154,
@@ -658,6 +699,7 @@ pub fn serialize_structure_crate_input_list_built_in_slot_types_input(
         object.key("nextToken").string(var_156.as_str());
     }
     if let Some(var_157) = &input.sort_by {
+        #[allow(unused_mut)]
         let mut object_158 = object.key("sortBy").start_object();
         crate::json_ser::serialize_structure_crate_model_built_in_slot_type_sort_by(
             &mut object_158,
@@ -682,6 +724,7 @@ pub fn serialize_structure_crate_input_list_exports_input(
         let mut array_162 = object.key("filters").start_array();
         for item_163 in var_161 {
             {
+                #[allow(unused_mut)]
                 let mut object_164 = array_162.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_export_filter(
                     &mut object_164,
@@ -705,6 +748,7 @@ pub fn serialize_structure_crate_input_list_exports_input(
         object.key("nextToken").string(var_167.as_str());
     }
     if let Some(var_168) = &input.sort_by {
+        #[allow(unused_mut)]
         let mut object_169 = object.key("sortBy").start_object();
         crate::json_ser::serialize_structure_crate_model_export_sort_by(&mut object_169, var_168)?;
         object_169.finish();
@@ -726,6 +770,7 @@ pub fn serialize_structure_crate_input_list_imports_input(
         let mut array_173 = object.key("filters").start_array();
         for item_174 in var_172 {
             {
+                #[allow(unused_mut)]
                 let mut object_175 = array_173.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_import_filter(
                     &mut object_175,
@@ -749,6 +794,7 @@ pub fn serialize_structure_crate_input_list_imports_input(
         object.key("nextToken").string(var_178.as_str());
     }
     if let Some(var_179) = &input.sort_by {
+        #[allow(unused_mut)]
         let mut object_180 = object.key("sortBy").start_object();
         crate::json_ser::serialize_structure_crate_model_import_sort_by(&mut object_180, var_179)?;
         object_180.finish();
@@ -764,6 +810,7 @@ pub fn serialize_structure_crate_input_list_intents_input(
         let mut array_182 = object.key("filters").start_array();
         for item_183 in var_181 {
             {
+                #[allow(unused_mut)]
                 let mut object_184 = array_182.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_intent_filter(
                     &mut object_184,
@@ -784,6 +831,7 @@ pub fn serialize_structure_crate_input_list_intents_input(
         object.key("nextToken").string(var_186.as_str());
     }
     if let Some(var_187) = &input.sort_by {
+        #[allow(unused_mut)]
         let mut object_188 = object.key("sortBy").start_object();
         crate::json_ser::serialize_structure_crate_model_intent_sort_by(&mut object_188, var_187)?;
         object_188.finish();
@@ -815,6 +863,7 @@ pub fn serialize_structure_crate_input_list_slots_input(
         let mut array_192 = object.key("filters").start_array();
         for item_193 in var_191 {
             {
+                #[allow(unused_mut)]
                 let mut object_194 = array_192.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_slot_filter(
                     &mut object_194,
@@ -835,6 +884,7 @@ pub fn serialize_structure_crate_input_list_slots_input(
         object.key("nextToken").string(var_196.as_str());
     }
     if let Some(var_197) = &input.sort_by {
+        #[allow(unused_mut)]
         let mut object_198 = object.key("sortBy").start_object();
         crate::json_ser::serialize_structure_crate_model_slot_sort_by(&mut object_198, var_197)?;
         object_198.finish();
@@ -850,6 +900,7 @@ pub fn serialize_structure_crate_input_list_slot_types_input(
         let mut array_200 = object.key("filters").start_array();
         for item_201 in var_199 {
             {
+                #[allow(unused_mut)]
                 let mut object_202 = array_200.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_slot_type_filter(
                     &mut object_202,
@@ -870,6 +921,7 @@ pub fn serialize_structure_crate_input_list_slot_types_input(
         object.key("nextToken").string(var_204.as_str());
     }
     if let Some(var_205) = &input.sort_by {
+        #[allow(unused_mut)]
         let mut object_206 = object.key("sortBy").start_object();
         crate::json_ser::serialize_structure_crate_model_slot_type_sort_by(
             &mut object_206,
@@ -888,6 +940,7 @@ pub fn serialize_structure_crate_input_search_associated_transcripts_input(
         let mut array_208 = object.key("filters").start_array();
         for item_209 in var_207 {
             {
+                #[allow(unused_mut)]
                 let mut object_210 = array_208.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_associated_transcript_filter(
                     &mut object_210,
@@ -921,6 +974,7 @@ pub fn serialize_structure_crate_input_start_bot_recommendation_input(
     input: &crate::input::StartBotRecommendationInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_214) = &input.encryption_setting {
+        #[allow(unused_mut)]
         let mut object_215 = object.key("encryptionSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_encryption_setting(
             &mut object_215,
@@ -929,6 +983,7 @@ pub fn serialize_structure_crate_input_start_bot_recommendation_input(
         object_215.finish();
     }
     if let Some(var_216) = &input.transcript_source_setting {
+        #[allow(unused_mut)]
         let mut object_217 = object.key("transcriptSourceSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_transcript_source_setting(
             &mut object_217,
@@ -953,6 +1008,7 @@ pub fn serialize_structure_crate_input_start_import_input(
         object.key("mergeStrategy").string(var_220.as_str());
     }
     if let Some(var_221) = &input.resource_specification {
+        #[allow(unused_mut)]
         let mut object_222 = object.key("resourceSpecification").start_object();
         crate::json_ser::serialize_structure_crate_model_import_resource_specification(
             &mut object_222,
@@ -968,6 +1024,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_223) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_224 = object.key("tags").start_object();
         for (key_225, value_226) in var_223 {
             {
@@ -987,6 +1044,7 @@ pub fn serialize_structure_crate_input_update_bot_input(
         object.key("botName").string(var_227.as_str());
     }
     if let Some(var_228) = &input.data_privacy {
+        #[allow(unused_mut)]
         let mut object_229 = object.key("dataPrivacy").start_object();
         crate::json_ser::serialize_structure_crate_model_data_privacy(&mut object_229, var_228)?;
         object_229.finish();
@@ -1011,9 +1069,11 @@ pub fn serialize_structure_crate_input_update_bot_alias_input(
     input: &crate::input::UpdateBotAliasInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_233) = &input.bot_alias_locale_settings {
+        #[allow(unused_mut)]
         let mut object_234 = object.key("botAliasLocaleSettings").start_object();
         for (key_235, value_236) in var_233 {
             {
+                #[allow(unused_mut)]
                 let mut object_237 = object_234.key(key_235.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_bot_alias_locale_settings(
                     &mut object_237,
@@ -1031,6 +1091,7 @@ pub fn serialize_structure_crate_input_update_bot_alias_input(
         object.key("botVersion").string(var_239.as_str());
     }
     if let Some(var_240) = &input.conversation_log_settings {
+        #[allow(unused_mut)]
         let mut object_241 = object.key("conversationLogSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_conversation_log_settings(
             &mut object_241,
@@ -1042,6 +1103,7 @@ pub fn serialize_structure_crate_input_update_bot_alias_input(
         object.key("description").string(var_242.as_str());
     }
     if let Some(var_243) = &input.sentiment_analysis_settings {
+        #[allow(unused_mut)]
         let mut object_244 = object.key("sentimentAnalysisSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_sentiment_analysis_settings(
             &mut object_244,
@@ -1066,6 +1128,7 @@ pub fn serialize_structure_crate_input_update_bot_locale_input(
         );
     }
     if let Some(var_247) = &input.voice_settings {
+        #[allow(unused_mut)]
         let mut object_248 = object.key("voiceSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_voice_settings(&mut object_248, var_247)?;
         object_248.finish();
@@ -1078,6 +1141,7 @@ pub fn serialize_structure_crate_input_update_bot_recommendation_input(
     input: &crate::input::UpdateBotRecommendationInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_249) = &input.encryption_setting {
+        #[allow(unused_mut)]
         let mut object_250 = object.key("encryptionSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_encryption_setting(
             &mut object_250,
@@ -1106,6 +1170,7 @@ pub fn serialize_structure_crate_input_update_intent_input(
         object.key("description").string(var_252.as_str());
     }
     if let Some(var_253) = &input.dialog_code_hook {
+        #[allow(unused_mut)]
         let mut object_254 = object.key("dialogCodeHook").start_object();
         crate::json_ser::serialize_structure_crate_model_dialog_code_hook_settings(
             &mut object_254,
@@ -1114,6 +1179,7 @@ pub fn serialize_structure_crate_input_update_intent_input(
         object_254.finish();
     }
     if let Some(var_255) = &input.fulfillment_code_hook {
+        #[allow(unused_mut)]
         let mut object_256 = object.key("fulfillmentCodeHook").start_object();
         crate::json_ser::serialize_structure_crate_model_fulfillment_code_hook_settings(
             &mut object_256,
@@ -1122,6 +1188,7 @@ pub fn serialize_structure_crate_input_update_intent_input(
         object_256.finish();
     }
     if let Some(var_257) = &input.initial_response_setting {
+        #[allow(unused_mut)]
         let mut object_258 = object.key("initialResponseSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_initial_response_setting(
             &mut object_258,
@@ -1133,6 +1200,7 @@ pub fn serialize_structure_crate_input_update_intent_input(
         let mut array_260 = object.key("inputContexts").start_array();
         for item_261 in var_259 {
             {
+                #[allow(unused_mut)]
                 let mut object_262 = array_260.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_input_context(
                     &mut object_262,
@@ -1144,6 +1212,7 @@ pub fn serialize_structure_crate_input_update_intent_input(
         array_260.finish();
     }
     if let Some(var_263) = &input.intent_closing_setting {
+        #[allow(unused_mut)]
         let mut object_264 = object.key("intentClosingSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_intent_closing_setting(
             &mut object_264,
@@ -1152,6 +1221,7 @@ pub fn serialize_structure_crate_input_update_intent_input(
         object_264.finish();
     }
     if let Some(var_265) = &input.intent_confirmation_setting {
+        #[allow(unused_mut)]
         let mut object_266 = object.key("intentConfirmationSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_intent_confirmation_setting(
             &mut object_266,
@@ -1163,6 +1233,7 @@ pub fn serialize_structure_crate_input_update_intent_input(
         object.key("intentName").string(var_267.as_str());
     }
     if let Some(var_268) = &input.kendra_configuration {
+        #[allow(unused_mut)]
         let mut object_269 = object.key("kendraConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_kendra_configuration(
             &mut object_269,
@@ -1174,6 +1245,7 @@ pub fn serialize_structure_crate_input_update_intent_input(
         let mut array_271 = object.key("outputContexts").start_array();
         for item_272 in var_270 {
             {
+                #[allow(unused_mut)]
                 let mut object_273 = array_271.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_output_context(
                     &mut object_273,
@@ -1191,6 +1263,7 @@ pub fn serialize_structure_crate_input_update_intent_input(
         let mut array_276 = object.key("sampleUtterances").start_array();
         for item_277 in var_275 {
             {
+                #[allow(unused_mut)]
                 let mut object_278 = array_276.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_sample_utterance(
                     &mut object_278,
@@ -1205,6 +1278,7 @@ pub fn serialize_structure_crate_input_update_intent_input(
         let mut array_280 = object.key("slotPriorities").start_array();
         for item_281 in var_279 {
             {
+                #[allow(unused_mut)]
                 let mut object_282 = array_280.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_slot_priority(
                     &mut object_282,
@@ -1236,6 +1310,7 @@ pub fn serialize_structure_crate_input_update_slot_input(
         object.key("description").string(var_284.as_str());
     }
     if let Some(var_285) = &input.multiple_values_setting {
+        #[allow(unused_mut)]
         let mut object_286 = object.key("multipleValuesSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_multiple_values_setting(
             &mut object_286,
@@ -1244,6 +1319,7 @@ pub fn serialize_structure_crate_input_update_slot_input(
         object_286.finish();
     }
     if let Some(var_287) = &input.obfuscation_setting {
+        #[allow(unused_mut)]
         let mut object_288 = object.key("obfuscationSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_obfuscation_setting(
             &mut object_288,
@@ -1258,6 +1334,7 @@ pub fn serialize_structure_crate_input_update_slot_input(
         object.key("slotTypeId").string(var_290.as_str());
     }
     if let Some(var_291) = &input.sub_slot_setting {
+        #[allow(unused_mut)]
         let mut object_292 = object.key("subSlotSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_sub_slot_setting(
             &mut object_292,
@@ -1266,6 +1343,7 @@ pub fn serialize_structure_crate_input_update_slot_input(
         object_292.finish();
     }
     if let Some(var_293) = &input.value_elicitation_setting {
+        #[allow(unused_mut)]
         let mut object_294 = object.key("valueElicitationSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_slot_value_elicitation_setting(
             &mut object_294,
@@ -1281,6 +1359,7 @@ pub fn serialize_structure_crate_input_update_slot_type_input(
     input: &crate::input::UpdateSlotTypeInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_295) = &input.composite_slot_type_setting {
+        #[allow(unused_mut)]
         let mut object_296 = object.key("compositeSlotTypeSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_composite_slot_type_setting(
             &mut object_296,
@@ -1292,6 +1371,7 @@ pub fn serialize_structure_crate_input_update_slot_type_input(
         object.key("description").string(var_297.as_str());
     }
     if let Some(var_298) = &input.external_source_setting {
+        #[allow(unused_mut)]
         let mut object_299 = object.key("externalSourceSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_external_source_setting(
             &mut object_299,
@@ -1311,6 +1391,7 @@ pub fn serialize_structure_crate_input_update_slot_type_input(
         let mut array_303 = object.key("slotTypeValues").start_array();
         for item_304 in var_302 {
             {
+                #[allow(unused_mut)]
                 let mut object_305 = array_303.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_slot_type_value(
                     &mut object_305,
@@ -1322,6 +1403,7 @@ pub fn serialize_structure_crate_input_update_slot_type_input(
         array_303.finish();
     }
     if let Some(var_306) = &input.value_selection_setting {
+        #[allow(unused_mut)]
         let mut object_307 = object.key("valueSelectionSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_slot_value_selection_setting(
             &mut object_307,
@@ -1350,6 +1432,7 @@ pub fn serialize_structure_crate_model_bot_alias_locale_settings(
         object.key("enabled").boolean(input.enabled);
     }
     if let Some(var_308) = &input.code_hook_specification {
+        #[allow(unused_mut)]
         let mut object_309 = object.key("codeHookSpecification").start_object();
         crate::json_ser::serialize_structure_crate_model_code_hook_specification(
             &mut object_309,
@@ -1368,6 +1451,7 @@ pub fn serialize_structure_crate_model_conversation_log_settings(
         let mut array_311 = object.key("textLogSettings").start_array();
         for item_312 in var_310 {
             {
+                #[allow(unused_mut)]
                 let mut object_313 = array_311.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_text_log_setting(
                     &mut object_313,
@@ -1382,6 +1466,7 @@ pub fn serialize_structure_crate_model_conversation_log_settings(
         let mut array_315 = object.key("audioLogSettings").start_array();
         for item_316 in var_314 {
             {
+                #[allow(unused_mut)]
                 let mut object_317 = array_315.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_audio_log_setting(
                     &mut object_317,
@@ -1435,6 +1520,7 @@ pub fn serialize_structure_crate_model_export_resource_specification(
     input: &crate::model::ExportResourceSpecification,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_321) = &input.bot_export_specification {
+        #[allow(unused_mut)]
         let mut object_322 = object.key("botExportSpecification").start_object();
         crate::json_ser::serialize_structure_crate_model_bot_export_specification(
             &mut object_322,
@@ -1443,6 +1529,7 @@ pub fn serialize_structure_crate_model_export_resource_specification(
         object_322.finish();
     }
     if let Some(var_323) = &input.bot_locale_export_specification {
+        #[allow(unused_mut)]
         let mut object_324 = object.key("botLocaleExportSpecification").start_object();
         crate::json_ser::serialize_structure_crate_model_bot_locale_export_specification(
             &mut object_324,
@@ -1451,6 +1538,7 @@ pub fn serialize_structure_crate_model_export_resource_specification(
         object_324.finish();
     }
     if let Some(var_325) = &input.custom_vocabulary_export_specification {
+        #[allow(unused_mut)]
         let mut object_326 = object
             .key("customVocabularyExportSpecification")
             .start_object();
@@ -1481,6 +1569,7 @@ pub fn serialize_structure_crate_model_fulfillment_code_hook_settings(
         object.key("enabled").boolean(input.enabled);
     }
     if let Some(var_327) = &input.post_fulfillment_status_specification {
+        #[allow(unused_mut)]
         let mut object_328 = object
             .key("postFulfillmentStatusSpecification")
             .start_object();
@@ -1491,6 +1580,7 @@ pub fn serialize_structure_crate_model_fulfillment_code_hook_settings(
         object_328.finish();
     }
     if let Some(var_329) = &input.fulfillment_updates_specification {
+        #[allow(unused_mut)]
         let mut object_330 = object.key("fulfillmentUpdatesSpecification").start_object();
         crate::json_ser::serialize_structure_crate_model_fulfillment_updates_specification(
             &mut object_330,
@@ -1509,6 +1599,7 @@ pub fn serialize_structure_crate_model_initial_response_setting(
     input: &crate::model::InitialResponseSetting,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_332) = &input.initial_response {
+        #[allow(unused_mut)]
         let mut object_333 = object.key("initialResponse").start_object();
         crate::json_ser::serialize_structure_crate_model_response_specification(
             &mut object_333,
@@ -1517,11 +1608,13 @@ pub fn serialize_structure_crate_model_initial_response_setting(
         object_333.finish();
     }
     if let Some(var_334) = &input.next_step {
+        #[allow(unused_mut)]
         let mut object_335 = object.key("nextStep").start_object();
         crate::json_ser::serialize_structure_crate_model_dialog_state(&mut object_335, var_334)?;
         object_335.finish();
     }
     if let Some(var_336) = &input.conditional {
+        #[allow(unused_mut)]
         let mut object_337 = object.key("conditional").start_object();
         crate::json_ser::serialize_structure_crate_model_conditional_specification(
             &mut object_337,
@@ -1530,6 +1623,7 @@ pub fn serialize_structure_crate_model_initial_response_setting(
         object_337.finish();
     }
     if let Some(var_338) = &input.code_hook {
+        #[allow(unused_mut)]
         let mut object_339 = object.key("codeHook").start_object();
         crate::json_ser::serialize_structure_crate_model_dialog_code_hook_invocation_setting(
             &mut object_339,
@@ -1555,6 +1649,7 @@ pub fn serialize_structure_crate_model_intent_closing_setting(
     input: &crate::model::IntentClosingSetting,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_341) = &input.closing_response {
+        #[allow(unused_mut)]
         let mut object_342 = object.key("closingResponse").start_object();
         crate::json_ser::serialize_structure_crate_model_response_specification(
             &mut object_342,
@@ -1566,11 +1661,13 @@ pub fn serialize_structure_crate_model_intent_closing_setting(
         object.key("active").boolean(*var_343);
     }
     if let Some(var_344) = &input.next_step {
+        #[allow(unused_mut)]
         let mut object_345 = object.key("nextStep").start_object();
         crate::json_ser::serialize_structure_crate_model_dialog_state(&mut object_345, var_344)?;
         object_345.finish();
     }
     if let Some(var_346) = &input.conditional {
+        #[allow(unused_mut)]
         let mut object_347 = object.key("conditional").start_object();
         crate::json_ser::serialize_structure_crate_model_conditional_specification(
             &mut object_347,
@@ -1586,6 +1683,7 @@ pub fn serialize_structure_crate_model_intent_confirmation_setting(
     input: &crate::model::IntentConfirmationSetting,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_348) = &input.prompt_specification {
+        #[allow(unused_mut)]
         let mut object_349 = object.key("promptSpecification").start_object();
         crate::json_ser::serialize_structure_crate_model_prompt_specification(
             &mut object_349,
@@ -1594,6 +1692,7 @@ pub fn serialize_structure_crate_model_intent_confirmation_setting(
         object_349.finish();
     }
     if let Some(var_350) = &input.declination_response {
+        #[allow(unused_mut)]
         let mut object_351 = object.key("declinationResponse").start_object();
         crate::json_ser::serialize_structure_crate_model_response_specification(
             &mut object_351,
@@ -1605,6 +1704,7 @@ pub fn serialize_structure_crate_model_intent_confirmation_setting(
         object.key("active").boolean(*var_352);
     }
     if let Some(var_353) = &input.confirmation_response {
+        #[allow(unused_mut)]
         let mut object_354 = object.key("confirmationResponse").start_object();
         crate::json_ser::serialize_structure_crate_model_response_specification(
             &mut object_354,
@@ -1613,11 +1713,13 @@ pub fn serialize_structure_crate_model_intent_confirmation_setting(
         object_354.finish();
     }
     if let Some(var_355) = &input.confirmation_next_step {
+        #[allow(unused_mut)]
         let mut object_356 = object.key("confirmationNextStep").start_object();
         crate::json_ser::serialize_structure_crate_model_dialog_state(&mut object_356, var_355)?;
         object_356.finish();
     }
     if let Some(var_357) = &input.confirmation_conditional {
+        #[allow(unused_mut)]
         let mut object_358 = object.key("confirmationConditional").start_object();
         crate::json_ser::serialize_structure_crate_model_conditional_specification(
             &mut object_358,
@@ -1626,11 +1728,13 @@ pub fn serialize_structure_crate_model_intent_confirmation_setting(
         object_358.finish();
     }
     if let Some(var_359) = &input.declination_next_step {
+        #[allow(unused_mut)]
         let mut object_360 = object.key("declinationNextStep").start_object();
         crate::json_ser::serialize_structure_crate_model_dialog_state(&mut object_360, var_359)?;
         object_360.finish();
     }
     if let Some(var_361) = &input.declination_conditional {
+        #[allow(unused_mut)]
         let mut object_362 = object.key("declinationConditional").start_object();
         crate::json_ser::serialize_structure_crate_model_conditional_specification(
             &mut object_362,
@@ -1639,6 +1743,7 @@ pub fn serialize_structure_crate_model_intent_confirmation_setting(
         object_362.finish();
     }
     if let Some(var_363) = &input.failure_response {
+        #[allow(unused_mut)]
         let mut object_364 = object.key("failureResponse").start_object();
         crate::json_ser::serialize_structure_crate_model_response_specification(
             &mut object_364,
@@ -1647,11 +1752,13 @@ pub fn serialize_structure_crate_model_intent_confirmation_setting(
         object_364.finish();
     }
     if let Some(var_365) = &input.failure_next_step {
+        #[allow(unused_mut)]
         let mut object_366 = object.key("failureNextStep").start_object();
         crate::json_ser::serialize_structure_crate_model_dialog_state(&mut object_366, var_365)?;
         object_366.finish();
     }
     if let Some(var_367) = &input.failure_conditional {
+        #[allow(unused_mut)]
         let mut object_368 = object.key("failureConditional").start_object();
         crate::json_ser::serialize_structure_crate_model_conditional_specification(
             &mut object_368,
@@ -1660,6 +1767,7 @@ pub fn serialize_structure_crate_model_intent_confirmation_setting(
         object_368.finish();
     }
     if let Some(var_369) = &input.code_hook {
+        #[allow(unused_mut)]
         let mut object_370 = object.key("codeHook").start_object();
         crate::json_ser::serialize_structure_crate_model_dialog_code_hook_invocation_setting(
             &mut object_370,
@@ -1668,6 +1776,7 @@ pub fn serialize_structure_crate_model_intent_confirmation_setting(
         object_370.finish();
     }
     if let Some(var_371) = &input.elicitation_code_hook {
+        #[allow(unused_mut)]
         let mut object_372 = object.key("elicitationCodeHook").start_object();
         crate::json_ser::serialize_structure_crate_model_elicitation_code_hook_invocation_setting(
             &mut object_372,
@@ -1773,9 +1882,11 @@ pub fn serialize_structure_crate_model_sub_slot_setting(
         object.key("expression").string(var_382.as_str());
     }
     if let Some(var_383) = &input.slot_specifications {
+        #[allow(unused_mut)]
         let mut object_384 = object.key("slotSpecifications").start_object();
         for (key_385, value_386) in var_383 {
             {
+                #[allow(unused_mut)]
                 let mut object_387 = object_384.key(key_385.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_specifications(
                     &mut object_387,
@@ -1794,6 +1905,7 @@ pub fn serialize_structure_crate_model_slot_value_elicitation_setting(
     input: &crate::model::SlotValueElicitationSetting,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_388) = &input.default_value_specification {
+        #[allow(unused_mut)]
         let mut object_389 = object.key("defaultValueSpecification").start_object();
         crate::json_ser::serialize_structure_crate_model_slot_default_value_specification(
             &mut object_389,
@@ -1805,6 +1917,7 @@ pub fn serialize_structure_crate_model_slot_value_elicitation_setting(
         object.key("slotConstraint").string(var_390.as_str());
     }
     if let Some(var_391) = &input.prompt_specification {
+        #[allow(unused_mut)]
         let mut object_392 = object.key("promptSpecification").start_object();
         crate::json_ser::serialize_structure_crate_model_prompt_specification(
             &mut object_392,
@@ -1816,6 +1929,7 @@ pub fn serialize_structure_crate_model_slot_value_elicitation_setting(
         let mut array_394 = object.key("sampleUtterances").start_array();
         for item_395 in var_393 {
             {
+                #[allow(unused_mut)]
                 let mut object_396 = array_394.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_sample_utterance(
                     &mut object_396,
@@ -1827,6 +1941,7 @@ pub fn serialize_structure_crate_model_slot_value_elicitation_setting(
         array_394.finish();
     }
     if let Some(var_397) = &input.wait_and_continue_specification {
+        #[allow(unused_mut)]
         let mut object_398 = object.key("waitAndContinueSpecification").start_object();
         crate::json_ser::serialize_structure_crate_model_wait_and_continue_specification(
             &mut object_398,
@@ -1835,6 +1950,7 @@ pub fn serialize_structure_crate_model_slot_value_elicitation_setting(
         object_398.finish();
     }
     if let Some(var_399) = &input.slot_capture_setting {
+        #[allow(unused_mut)]
         let mut object_400 = object.key("slotCaptureSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_slot_capture_setting(
             &mut object_400,
@@ -1853,6 +1969,7 @@ pub fn serialize_structure_crate_model_composite_slot_type_setting(
         let mut array_402 = object.key("subSlots").start_array();
         for item_403 in var_401 {
             {
+                #[allow(unused_mut)]
                 let mut object_404 = array_402.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_sub_slot_type_composition(
                     &mut object_404,
@@ -1871,6 +1988,7 @@ pub fn serialize_structure_crate_model_external_source_setting(
     input: &crate::model::ExternalSourceSetting,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_405) = &input.grammar_slot_type_setting {
+        #[allow(unused_mut)]
         let mut object_406 = object.key("grammarSlotTypeSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_grammar_slot_type_setting(
             &mut object_406,
@@ -1886,6 +2004,7 @@ pub fn serialize_structure_crate_model_slot_type_value(
     input: &crate::model::SlotTypeValue,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_407) = &input.sample_value {
+        #[allow(unused_mut)]
         let mut object_408 = object.key("sampleValue").start_object();
         crate::json_ser::serialize_structure_crate_model_sample_value(&mut object_408, var_407)?;
         object_408.finish();
@@ -1894,6 +2013,7 @@ pub fn serialize_structure_crate_model_slot_type_value(
         let mut array_410 = object.key("synonyms").start_array();
         for item_411 in var_409 {
             {
+                #[allow(unused_mut)]
                 let mut object_412 = array_410.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_sample_value(
                     &mut object_412,
@@ -1915,6 +2035,7 @@ pub fn serialize_structure_crate_model_slot_value_selection_setting(
         object.key("resolutionStrategy").string(var_413.as_str());
     }
     if let Some(var_414) = &input.regex_filter {
+        #[allow(unused_mut)]
         let mut object_415 = object.key("regexFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_slot_value_regex_filter(
             &mut object_415,
@@ -1923,6 +2044,7 @@ pub fn serialize_structure_crate_model_slot_value_selection_setting(
         object_415.finish();
     }
     if let Some(var_416) = &input.advanced_recognition_setting {
+        #[allow(unused_mut)]
         let mut object_417 = object.key("advancedRecognitionSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_advanced_recognition_setting(
             &mut object_417,
@@ -1938,6 +2060,7 @@ pub fn serialize_structure_crate_model_utterance_aggregation_duration(
     input: &crate::model::UtteranceAggregationDuration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_418) = &input.relative_aggregation_duration {
+        #[allow(unused_mut)]
         let mut object_419 = object.key("relativeAggregationDuration").start_object();
         crate::json_ser::serialize_structure_crate_model_relative_aggregation_duration(
             &mut object_419,
@@ -2311,6 +2434,7 @@ pub fn serialize_structure_crate_model_transcript_source_setting(
     input: &crate::model::TranscriptSourceSetting,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_489) = &input.s3_bucket_transcript_source {
+        #[allow(unused_mut)]
         let mut object_490 = object.key("s3BucketTranscriptSource").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_bucket_transcript_source(
             &mut object_490,
@@ -2326,6 +2450,7 @@ pub fn serialize_structure_crate_model_import_resource_specification(
     input: &crate::model::ImportResourceSpecification,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_491) = &input.bot_import_specification {
+        #[allow(unused_mut)]
         let mut object_492 = object.key("botImportSpecification").start_object();
         crate::json_ser::serialize_structure_crate_model_bot_import_specification(
             &mut object_492,
@@ -2334,6 +2459,7 @@ pub fn serialize_structure_crate_model_import_resource_specification(
         object_492.finish();
     }
     if let Some(var_493) = &input.bot_locale_import_specification {
+        #[allow(unused_mut)]
         let mut object_494 = object.key("botLocaleImportSpecification").start_object();
         crate::json_ser::serialize_structure_crate_model_bot_locale_import_specification(
             &mut object_494,
@@ -2342,6 +2468,7 @@ pub fn serialize_structure_crate_model_import_resource_specification(
         object_494.finish();
     }
     if let Some(var_495) = &input.custom_vocabulary_import_specification {
+        #[allow(unused_mut)]
         let mut object_496 = object
             .key("customVocabularyImportSpecification")
             .start_object();
@@ -2375,6 +2502,7 @@ pub fn serialize_structure_crate_model_code_hook_specification(
     input: &crate::model::CodeHookSpecification,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_499) = &input.lambda_code_hook {
+        #[allow(unused_mut)]
         let mut object_500 = object.key("lambdaCodeHook").start_object();
         crate::json_ser::serialize_structure_crate_model_lambda_code_hook(
             &mut object_500,
@@ -2393,6 +2521,7 @@ pub fn serialize_structure_crate_model_text_log_setting(
         object.key("enabled").boolean(input.enabled);
     }
     if let Some(var_501) = &input.destination {
+        #[allow(unused_mut)]
         let mut object_502 = object.key("destination").start_object();
         crate::json_ser::serialize_structure_crate_model_text_log_destination(
             &mut object_502,
@@ -2411,6 +2540,7 @@ pub fn serialize_structure_crate_model_audio_log_setting(
         object.key("enabled").boolean(input.enabled);
     }
     if let Some(var_503) = &input.destination {
+        #[allow(unused_mut)]
         let mut object_504 = object.key("destination").start_object();
         crate::json_ser::serialize_structure_crate_model_audio_log_destination(
             &mut object_504,
@@ -2471,6 +2601,7 @@ pub fn serialize_structure_crate_model_post_fulfillment_status_specification(
     input: &crate::model::PostFulfillmentStatusSpecification,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_513) = &input.success_response {
+        #[allow(unused_mut)]
         let mut object_514 = object.key("successResponse").start_object();
         crate::json_ser::serialize_structure_crate_model_response_specification(
             &mut object_514,
@@ -2479,6 +2610,7 @@ pub fn serialize_structure_crate_model_post_fulfillment_status_specification(
         object_514.finish();
     }
     if let Some(var_515) = &input.failure_response {
+        #[allow(unused_mut)]
         let mut object_516 = object.key("failureResponse").start_object();
         crate::json_ser::serialize_structure_crate_model_response_specification(
             &mut object_516,
@@ -2487,6 +2619,7 @@ pub fn serialize_structure_crate_model_post_fulfillment_status_specification(
         object_516.finish();
     }
     if let Some(var_517) = &input.timeout_response {
+        #[allow(unused_mut)]
         let mut object_518 = object.key("timeoutResponse").start_object();
         crate::json_ser::serialize_structure_crate_model_response_specification(
             &mut object_518,
@@ -2495,11 +2628,13 @@ pub fn serialize_structure_crate_model_post_fulfillment_status_specification(
         object_518.finish();
     }
     if let Some(var_519) = &input.success_next_step {
+        #[allow(unused_mut)]
         let mut object_520 = object.key("successNextStep").start_object();
         crate::json_ser::serialize_structure_crate_model_dialog_state(&mut object_520, var_519)?;
         object_520.finish();
     }
     if let Some(var_521) = &input.success_conditional {
+        #[allow(unused_mut)]
         let mut object_522 = object.key("successConditional").start_object();
         crate::json_ser::serialize_structure_crate_model_conditional_specification(
             &mut object_522,
@@ -2508,11 +2643,13 @@ pub fn serialize_structure_crate_model_post_fulfillment_status_specification(
         object_522.finish();
     }
     if let Some(var_523) = &input.failure_next_step {
+        #[allow(unused_mut)]
         let mut object_524 = object.key("failureNextStep").start_object();
         crate::json_ser::serialize_structure_crate_model_dialog_state(&mut object_524, var_523)?;
         object_524.finish();
     }
     if let Some(var_525) = &input.failure_conditional {
+        #[allow(unused_mut)]
         let mut object_526 = object.key("failureConditional").start_object();
         crate::json_ser::serialize_structure_crate_model_conditional_specification(
             &mut object_526,
@@ -2521,11 +2658,13 @@ pub fn serialize_structure_crate_model_post_fulfillment_status_specification(
         object_526.finish();
     }
     if let Some(var_527) = &input.timeout_next_step {
+        #[allow(unused_mut)]
         let mut object_528 = object.key("timeoutNextStep").start_object();
         crate::json_ser::serialize_structure_crate_model_dialog_state(&mut object_528, var_527)?;
         object_528.finish();
     }
     if let Some(var_529) = &input.timeout_conditional {
+        #[allow(unused_mut)]
         let mut object_530 = object.key("timeoutConditional").start_object();
         crate::json_ser::serialize_structure_crate_model_conditional_specification(
             &mut object_530,
@@ -2544,6 +2683,7 @@ pub fn serialize_structure_crate_model_fulfillment_updates_specification(
         object.key("active").boolean(*var_531);
     }
     if let Some(var_532) = &input.start_response {
+        #[allow(unused_mut)]
         let mut object_533 = object.key("startResponse").start_object();
         crate::json_ser::serialize_structure_crate_model_fulfillment_start_response_specification(
             &mut object_533,
@@ -2552,6 +2692,7 @@ pub fn serialize_structure_crate_model_fulfillment_updates_specification(
         object_533.finish();
     }
     if let Some(var_534) = &input.update_response {
+        #[allow(unused_mut)]
         let mut object_535 = object.key("updateResponse").start_object();
         crate::json_ser::serialize_structure_crate_model_fulfillment_update_response_specification(
             &mut object_535,
@@ -2576,6 +2717,7 @@ pub fn serialize_structure_crate_model_response_specification(
         let mut array_538 = object.key("messageGroups").start_array();
         for item_539 in var_537 {
             {
+                #[allow(unused_mut)]
                 let mut object_540 = array_538.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_message_group(
                     &mut object_540,
@@ -2597,16 +2739,19 @@ pub fn serialize_structure_crate_model_dialog_state(
     input: &crate::model::DialogState,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_542) = &input.dialog_action {
+        #[allow(unused_mut)]
         let mut object_543 = object.key("dialogAction").start_object();
         crate::json_ser::serialize_structure_crate_model_dialog_action(&mut object_543, var_542)?;
         object_543.finish();
     }
     if let Some(var_544) = &input.intent {
+        #[allow(unused_mut)]
         let mut object_545 = object.key("intent").start_object();
         crate::json_ser::serialize_structure_crate_model_intent_override(&mut object_545, var_544)?;
         object_545.finish();
     }
     if let Some(var_546) = &input.session_attributes {
+        #[allow(unused_mut)]
         let mut object_547 = object.key("sessionAttributes").start_object();
         for (key_548, value_549) in var_546 {
             {
@@ -2629,6 +2774,7 @@ pub fn serialize_structure_crate_model_conditional_specification(
         let mut array_552 = object.key("conditionalBranches").start_array();
         for item_553 in var_551 {
             {
+                #[allow(unused_mut)]
                 let mut object_554 = array_552.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_conditional_branch(
                     &mut object_554,
@@ -2640,6 +2786,7 @@ pub fn serialize_structure_crate_model_conditional_specification(
         array_552.finish();
     }
     if let Some(var_555) = &input.default_branch {
+        #[allow(unused_mut)]
         let mut object_556 = object.key("defaultBranch").start_object();
         crate::json_ser::serialize_structure_crate_model_default_conditional_branch(
             &mut object_556,
@@ -2664,6 +2811,7 @@ pub fn serialize_structure_crate_model_dialog_code_hook_invocation_setting(
         object.key("invocationLabel").string(var_559.as_str());
     }
     if let Some(var_560) = &input.post_code_hook_specification {
+        #[allow(unused_mut)]
         let mut object_561 = object.key("postCodeHookSpecification").start_object();
         crate::json_ser::serialize_structure_crate_model_post_dialog_code_hook_invocation_specification(&mut object_561, var_560)?;
         object_561.finish();
@@ -2679,6 +2827,7 @@ pub fn serialize_structure_crate_model_prompt_specification(
         let mut array_563 = object.key("messageGroups").start_array();
         for item_564 in var_562 {
             {
+                #[allow(unused_mut)]
                 let mut object_565 = array_563.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_message_group(
                     &mut object_565,
@@ -2704,9 +2853,11 @@ pub fn serialize_structure_crate_model_prompt_specification(
             .string(var_568.as_str());
     }
     if let Some(var_569) = &input.prompt_attempts_specification {
+        #[allow(unused_mut)]
         let mut object_570 = object.key("promptAttemptsSpecification").start_object();
         for (key_571, value_572) in var_569 {
             {
+                #[allow(unused_mut)]
                 let mut object_573 = object_570.key(key_571.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_prompt_attempt_specification(
                     &mut object_573,
@@ -2741,6 +2892,7 @@ pub fn serialize_structure_crate_model_specifications(
         object.key("slotTypeId").string(var_576.as_str());
     }
     if let Some(var_577) = &input.value_elicitation_setting {
+        #[allow(unused_mut)]
         let mut object_578 = object.key("valueElicitationSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_sub_slot_value_elicitation_setting(
             &mut object_578,
@@ -2759,6 +2911,7 @@ pub fn serialize_structure_crate_model_slot_default_value_specification(
         let mut array_580 = object.key("defaultValueList").start_array();
         for item_581 in var_579 {
             {
+                #[allow(unused_mut)]
                 let mut object_582 = array_580.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_slot_default_value(
                     &mut object_582,
@@ -2777,6 +2930,7 @@ pub fn serialize_structure_crate_model_wait_and_continue_specification(
     input: &crate::model::WaitAndContinueSpecification,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_583) = &input.waiting_response {
+        #[allow(unused_mut)]
         let mut object_584 = object.key("waitingResponse").start_object();
         crate::json_ser::serialize_structure_crate_model_response_specification(
             &mut object_584,
@@ -2785,6 +2939,7 @@ pub fn serialize_structure_crate_model_wait_and_continue_specification(
         object_584.finish();
     }
     if let Some(var_585) = &input.continue_response {
+        #[allow(unused_mut)]
         let mut object_586 = object.key("continueResponse").start_object();
         crate::json_ser::serialize_structure_crate_model_response_specification(
             &mut object_586,
@@ -2793,6 +2948,7 @@ pub fn serialize_structure_crate_model_wait_and_continue_specification(
         object_586.finish();
     }
     if let Some(var_587) = &input.still_waiting_response {
+        #[allow(unused_mut)]
         let mut object_588 = object.key("stillWaitingResponse").start_object();
         crate::json_ser::serialize_structure_crate_model_still_waiting_response_specification(
             &mut object_588,
@@ -2811,6 +2967,7 @@ pub fn serialize_structure_crate_model_slot_capture_setting(
     input: &crate::model::SlotCaptureSetting,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_590) = &input.capture_response {
+        #[allow(unused_mut)]
         let mut object_591 = object.key("captureResponse").start_object();
         crate::json_ser::serialize_structure_crate_model_response_specification(
             &mut object_591,
@@ -2819,11 +2976,13 @@ pub fn serialize_structure_crate_model_slot_capture_setting(
         object_591.finish();
     }
     if let Some(var_592) = &input.capture_next_step {
+        #[allow(unused_mut)]
         let mut object_593 = object.key("captureNextStep").start_object();
         crate::json_ser::serialize_structure_crate_model_dialog_state(&mut object_593, var_592)?;
         object_593.finish();
     }
     if let Some(var_594) = &input.capture_conditional {
+        #[allow(unused_mut)]
         let mut object_595 = object.key("captureConditional").start_object();
         crate::json_ser::serialize_structure_crate_model_conditional_specification(
             &mut object_595,
@@ -2832,6 +2991,7 @@ pub fn serialize_structure_crate_model_slot_capture_setting(
         object_595.finish();
     }
     if let Some(var_596) = &input.failure_response {
+        #[allow(unused_mut)]
         let mut object_597 = object.key("failureResponse").start_object();
         crate::json_ser::serialize_structure_crate_model_response_specification(
             &mut object_597,
@@ -2840,11 +3000,13 @@ pub fn serialize_structure_crate_model_slot_capture_setting(
         object_597.finish();
     }
     if let Some(var_598) = &input.failure_next_step {
+        #[allow(unused_mut)]
         let mut object_599 = object.key("failureNextStep").start_object();
         crate::json_ser::serialize_structure_crate_model_dialog_state(&mut object_599, var_598)?;
         object_599.finish();
     }
     if let Some(var_600) = &input.failure_conditional {
+        #[allow(unused_mut)]
         let mut object_601 = object.key("failureConditional").start_object();
         crate::json_ser::serialize_structure_crate_model_conditional_specification(
             &mut object_601,
@@ -2853,6 +3015,7 @@ pub fn serialize_structure_crate_model_slot_capture_setting(
         object_601.finish();
     }
     if let Some(var_602) = &input.code_hook {
+        #[allow(unused_mut)]
         let mut object_603 = object.key("codeHook").start_object();
         crate::json_ser::serialize_structure_crate_model_dialog_code_hook_invocation_setting(
             &mut object_603,
@@ -2861,6 +3024,7 @@ pub fn serialize_structure_crate_model_slot_capture_setting(
         object_603.finish();
     }
     if let Some(var_604) = &input.elicitation_code_hook {
+        #[allow(unused_mut)]
         let mut object_605 = object.key("elicitationCodeHook").start_object();
         crate::json_ser::serialize_structure_crate_model_elicitation_code_hook_invocation_setting(
             &mut object_605,
@@ -2889,6 +3053,7 @@ pub fn serialize_structure_crate_model_grammar_slot_type_setting(
     input: &crate::model::GrammarSlotTypeSetting,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_608) = &input.source {
+        #[allow(unused_mut)]
         let mut object_609 = object.key("source").start_object();
         crate::json_ser::serialize_structure_crate_model_grammar_slot_type_source(
             &mut object_609,
@@ -2955,6 +3120,7 @@ pub fn serialize_structure_crate_model_s3_bucket_transcript_source(
         object.key("s3BucketName").string(var_614.as_str());
     }
     if let Some(var_615) = &input.path_format {
+        #[allow(unused_mut)]
         let mut object_616 = object.key("pathFormat").start_object();
         crate::json_ser::serialize_structure_crate_model_path_format(&mut object_616, var_615)?;
         object_616.finish();
@@ -2963,6 +3129,7 @@ pub fn serialize_structure_crate_model_s3_bucket_transcript_source(
         object.key("transcriptFormat").string(var_617.as_str());
     }
     if let Some(var_618) = &input.transcript_filter {
+        #[allow(unused_mut)]
         let mut object_619 = object.key("transcriptFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_transcript_filter(
             &mut object_619,
@@ -2987,6 +3154,7 @@ pub fn serialize_structure_crate_model_bot_import_specification(
         object.key("roleArn").string(var_622.as_str());
     }
     if let Some(var_623) = &input.data_privacy {
+        #[allow(unused_mut)]
         let mut object_624 = object.key("dataPrivacy").start_object();
         crate::json_ser::serialize_structure_crate_model_data_privacy(&mut object_624, var_623)?;
         object_624.finish();
@@ -2998,6 +3166,7 @@ pub fn serialize_structure_crate_model_bot_import_specification(
         );
     }
     if let Some(var_626) = &input.bot_tags {
+        #[allow(unused_mut)]
         let mut object_627 = object.key("botTags").start_object();
         for (key_628, value_629) in var_626 {
             {
@@ -3007,6 +3176,7 @@ pub fn serialize_structure_crate_model_bot_import_specification(
         object_627.finish();
     }
     if let Some(var_630) = &input.test_bot_alias_tags {
+        #[allow(unused_mut)]
         let mut object_631 = object.key("testBotAliasTags").start_object();
         for (key_632, value_633) in var_630 {
             {
@@ -3038,6 +3208,7 @@ pub fn serialize_structure_crate_model_bot_locale_import_specification(
         );
     }
     if let Some(var_638) = &input.voice_settings {
+        #[allow(unused_mut)]
         let mut object_639 = object.key("voiceSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_voice_settings(&mut object_639, var_638)?;
         object_639.finish();
@@ -3081,6 +3252,7 @@ pub fn serialize_structure_crate_model_text_log_destination(
     input: &crate::model::TextLogDestination,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_645) = &input.cloud_watch {
+        #[allow(unused_mut)]
         let mut object_646 = object.key("cloudWatch").start_object();
         crate::json_ser::serialize_structure_crate_model_cloud_watch_log_group_log_destination(
             &mut object_646,
@@ -3096,6 +3268,7 @@ pub fn serialize_structure_crate_model_audio_log_destination(
     input: &crate::model::AudioLogDestination,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_647) = &input.s3_bucket {
+        #[allow(unused_mut)]
         let mut object_648 = object.key("s3Bucket").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_bucket_log_destination(
             &mut object_648,
@@ -3120,6 +3293,7 @@ pub fn serialize_structure_crate_model_fulfillment_start_response_specification(
         let mut array_651 = object.key("messageGroups").start_array();
         for item_652 in var_650 {
             {
+                #[allow(unused_mut)]
                 let mut object_653 = array_651.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_message_group(
                     &mut object_653,
@@ -3150,6 +3324,7 @@ pub fn serialize_structure_crate_model_fulfillment_update_response_specification
         let mut array_657 = object.key("messageGroups").start_array();
         for item_658 in var_656 {
             {
+                #[allow(unused_mut)]
                 let mut object_659 = array_657.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_message_group(
                     &mut object_659,
@@ -3171,6 +3346,7 @@ pub fn serialize_structure_crate_model_message_group(
     input: &crate::model::MessageGroup,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_661) = &input.message {
+        #[allow(unused_mut)]
         let mut object_662 = object.key("message").start_object();
         crate::json_ser::serialize_structure_crate_model_message(&mut object_662, var_661)?;
         object_662.finish();
@@ -3179,6 +3355,7 @@ pub fn serialize_structure_crate_model_message_group(
         let mut array_664 = object.key("variations").start_array();
         for item_665 in var_663 {
             {
+                #[allow(unused_mut)]
                 let mut object_666 = array_664.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_message(
                     &mut object_666,
@@ -3216,9 +3393,11 @@ pub fn serialize_structure_crate_model_intent_override(
         object.key("name").string(var_670.as_str());
     }
     if let Some(var_671) = &input.slots {
+        #[allow(unused_mut)]
         let mut object_672 = object.key("slots").start_object();
         for (key_673, value_674) in var_671 {
             {
+                #[allow(unused_mut)]
                 let mut object_675 = object_672.key(key_673.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_slot_value_override(
                     &mut object_675,
@@ -3240,16 +3419,19 @@ pub fn serialize_structure_crate_model_conditional_branch(
         object.key("name").string(var_676.as_str());
     }
     if let Some(var_677) = &input.condition {
+        #[allow(unused_mut)]
         let mut object_678 = object.key("condition").start_object();
         crate::json_ser::serialize_structure_crate_model_condition(&mut object_678, var_677)?;
         object_678.finish();
     }
     if let Some(var_679) = &input.next_step {
+        #[allow(unused_mut)]
         let mut object_680 = object.key("nextStep").start_object();
         crate::json_ser::serialize_structure_crate_model_dialog_state(&mut object_680, var_679)?;
         object_680.finish();
     }
     if let Some(var_681) = &input.response {
+        #[allow(unused_mut)]
         let mut object_682 = object.key("response").start_object();
         crate::json_ser::serialize_structure_crate_model_response_specification(
             &mut object_682,
@@ -3265,11 +3447,13 @@ pub fn serialize_structure_crate_model_default_conditional_branch(
     input: &crate::model::DefaultConditionalBranch,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_683) = &input.next_step {
+        #[allow(unused_mut)]
         let mut object_684 = object.key("nextStep").start_object();
         crate::json_ser::serialize_structure_crate_model_dialog_state(&mut object_684, var_683)?;
         object_684.finish();
     }
     if let Some(var_685) = &input.response {
+        #[allow(unused_mut)]
         let mut object_686 = object.key("response").start_object();
         crate::json_ser::serialize_structure_crate_model_response_specification(
             &mut object_686,
@@ -3285,6 +3469,7 @@ pub fn serialize_structure_crate_model_post_dialog_code_hook_invocation_specific
     input: &crate::model::PostDialogCodeHookInvocationSpecification,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_687) = &input.success_response {
+        #[allow(unused_mut)]
         let mut object_688 = object.key("successResponse").start_object();
         crate::json_ser::serialize_structure_crate_model_response_specification(
             &mut object_688,
@@ -3293,11 +3478,13 @@ pub fn serialize_structure_crate_model_post_dialog_code_hook_invocation_specific
         object_688.finish();
     }
     if let Some(var_689) = &input.success_next_step {
+        #[allow(unused_mut)]
         let mut object_690 = object.key("successNextStep").start_object();
         crate::json_ser::serialize_structure_crate_model_dialog_state(&mut object_690, var_689)?;
         object_690.finish();
     }
     if let Some(var_691) = &input.success_conditional {
+        #[allow(unused_mut)]
         let mut object_692 = object.key("successConditional").start_object();
         crate::json_ser::serialize_structure_crate_model_conditional_specification(
             &mut object_692,
@@ -3306,6 +3493,7 @@ pub fn serialize_structure_crate_model_post_dialog_code_hook_invocation_specific
         object_692.finish();
     }
     if let Some(var_693) = &input.failure_response {
+        #[allow(unused_mut)]
         let mut object_694 = object.key("failureResponse").start_object();
         crate::json_ser::serialize_structure_crate_model_response_specification(
             &mut object_694,
@@ -3314,11 +3502,13 @@ pub fn serialize_structure_crate_model_post_dialog_code_hook_invocation_specific
         object_694.finish();
     }
     if let Some(var_695) = &input.failure_next_step {
+        #[allow(unused_mut)]
         let mut object_696 = object.key("failureNextStep").start_object();
         crate::json_ser::serialize_structure_crate_model_dialog_state(&mut object_696, var_695)?;
         object_696.finish();
     }
     if let Some(var_697) = &input.failure_conditional {
+        #[allow(unused_mut)]
         let mut object_698 = object.key("failureConditional").start_object();
         crate::json_ser::serialize_structure_crate_model_conditional_specification(
             &mut object_698,
@@ -3327,6 +3517,7 @@ pub fn serialize_structure_crate_model_post_dialog_code_hook_invocation_specific
         object_698.finish();
     }
     if let Some(var_699) = &input.timeout_response {
+        #[allow(unused_mut)]
         let mut object_700 = object.key("timeoutResponse").start_object();
         crate::json_ser::serialize_structure_crate_model_response_specification(
             &mut object_700,
@@ -3335,11 +3526,13 @@ pub fn serialize_structure_crate_model_post_dialog_code_hook_invocation_specific
         object_700.finish();
     }
     if let Some(var_701) = &input.timeout_next_step {
+        #[allow(unused_mut)]
         let mut object_702 = object.key("timeoutNextStep").start_object();
         crate::json_ser::serialize_structure_crate_model_dialog_state(&mut object_702, var_701)?;
         object_702.finish();
     }
     if let Some(var_703) = &input.timeout_conditional {
+        #[allow(unused_mut)]
         let mut object_704 = object.key("timeoutConditional").start_object();
         crate::json_ser::serialize_structure_crate_model_conditional_specification(
             &mut object_704,
@@ -3358,6 +3551,7 @@ pub fn serialize_structure_crate_model_prompt_attempt_specification(
         object.key("allowInterrupt").boolean(*var_705);
     }
     if let Some(var_706) = &input.allowed_input_types {
+        #[allow(unused_mut)]
         let mut object_707 = object.key("allowedInputTypes").start_object();
         crate::json_ser::serialize_structure_crate_model_allowed_input_types(
             &mut object_707,
@@ -3366,6 +3560,7 @@ pub fn serialize_structure_crate_model_prompt_attempt_specification(
         object_707.finish();
     }
     if let Some(var_708) = &input.audio_and_dtmf_input_specification {
+        #[allow(unused_mut)]
         let mut object_709 = object.key("audioAndDTMFInputSpecification").start_object();
         crate::json_ser::serialize_structure_crate_model_audio_and_dtmf_input_specification(
             &mut object_709,
@@ -3374,6 +3569,7 @@ pub fn serialize_structure_crate_model_prompt_attempt_specification(
         object_709.finish();
     }
     if let Some(var_710) = &input.text_input_specification {
+        #[allow(unused_mut)]
         let mut object_711 = object.key("textInputSpecification").start_object();
         crate::json_ser::serialize_structure_crate_model_text_input_specification(
             &mut object_711,
@@ -3389,6 +3585,7 @@ pub fn serialize_structure_crate_model_sub_slot_value_elicitation_setting(
     input: &crate::model::SubSlotValueElicitationSetting,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_712) = &input.default_value_specification {
+        #[allow(unused_mut)]
         let mut object_713 = object.key("defaultValueSpecification").start_object();
         crate::json_ser::serialize_structure_crate_model_slot_default_value_specification(
             &mut object_713,
@@ -3397,6 +3594,7 @@ pub fn serialize_structure_crate_model_sub_slot_value_elicitation_setting(
         object_713.finish();
     }
     if let Some(var_714) = &input.prompt_specification {
+        #[allow(unused_mut)]
         let mut object_715 = object.key("promptSpecification").start_object();
         crate::json_ser::serialize_structure_crate_model_prompt_specification(
             &mut object_715,
@@ -3408,6 +3606,7 @@ pub fn serialize_structure_crate_model_sub_slot_value_elicitation_setting(
         let mut array_717 = object.key("sampleUtterances").start_array();
         for item_718 in var_716 {
             {
+                #[allow(unused_mut)]
                 let mut object_719 = array_717.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_sample_utterance(
                     &mut object_719,
@@ -3419,6 +3618,7 @@ pub fn serialize_structure_crate_model_sub_slot_value_elicitation_setting(
         array_717.finish();
     }
     if let Some(var_720) = &input.wait_and_continue_specification {
+        #[allow(unused_mut)]
         let mut object_721 = object.key("waitAndContinueSpecification").start_object();
         crate::json_ser::serialize_structure_crate_model_wait_and_continue_specification(
             &mut object_721,
@@ -3447,6 +3647,7 @@ pub fn serialize_structure_crate_model_still_waiting_response_specification(
         let mut array_724 = object.key("messageGroups").start_array();
         for item_725 in var_723 {
             {
+                #[allow(unused_mut)]
                 let mut object_726 = array_724.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_message_group(
                     &mut object_726,
@@ -3512,6 +3713,7 @@ pub fn serialize_structure_crate_model_transcript_filter(
     input: &crate::model::TranscriptFilter,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_736) = &input.lex_transcript_filter {
+        #[allow(unused_mut)]
         let mut object_737 = object.key("lexTranscriptFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_lex_transcript_filter(
             &mut object_737,
@@ -3556,6 +3758,7 @@ pub fn serialize_structure_crate_model_message(
     input: &crate::model::Message,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_743) = &input.plain_text_message {
+        #[allow(unused_mut)]
         let mut object_744 = object.key("plainTextMessage").start_object();
         crate::json_ser::serialize_structure_crate_model_plain_text_message(
             &mut object_744,
@@ -3564,16 +3767,19 @@ pub fn serialize_structure_crate_model_message(
         object_744.finish();
     }
     if let Some(var_745) = &input.custom_payload {
+        #[allow(unused_mut)]
         let mut object_746 = object.key("customPayload").start_object();
         crate::json_ser::serialize_structure_crate_model_custom_payload(&mut object_746, var_745)?;
         object_746.finish();
     }
     if let Some(var_747) = &input.ssml_message {
+        #[allow(unused_mut)]
         let mut object_748 = object.key("ssmlMessage").start_object();
         crate::json_ser::serialize_structure_crate_model_ssml_message(&mut object_748, var_747)?;
         object_748.finish();
     }
     if let Some(var_749) = &input.image_response_card {
+        #[allow(unused_mut)]
         let mut object_750 = object.key("imageResponseCard").start_object();
         crate::json_ser::serialize_structure_crate_model_image_response_card(
             &mut object_750,
@@ -3592,6 +3798,7 @@ pub fn serialize_structure_crate_model_slot_value_override(
         object.key("shape").string(var_751.as_str());
     }
     if let Some(var_752) = &input.value {
+        #[allow(unused_mut)]
         let mut object_753 = object.key("value").start_object();
         crate::json_ser::serialize_structure_crate_model_slot_value(&mut object_753, var_752)?;
         object_753.finish();
@@ -3600,6 +3807,7 @@ pub fn serialize_structure_crate_model_slot_value_override(
         let mut array_755 = object.key("values").start_array();
         for item_756 in var_754 {
             {
+                #[allow(unused_mut)]
                 let mut object_757 = array_755.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_slot_value_override(
                     &mut object_757,
@@ -3647,6 +3855,7 @@ pub fn serialize_structure_crate_model_audio_and_dtmf_input_specification(
         );
     }
     if let Some(var_762) = &input.audio_specification {
+        #[allow(unused_mut)]
         let mut object_763 = object.key("audioSpecification").start_object();
         crate::json_ser::serialize_structure_crate_model_audio_specification(
             &mut object_763,
@@ -3655,6 +3864,7 @@ pub fn serialize_structure_crate_model_audio_and_dtmf_input_specification(
         object_763.finish();
     }
     if let Some(var_764) = &input.dtmf_specification {
+        #[allow(unused_mut)]
         let mut object_765 = object.key("dtmfSpecification").start_object();
         crate::json_ser::serialize_structure_crate_model_dtmf_specification(
             &mut object_765,
@@ -3683,6 +3893,7 @@ pub fn serialize_structure_crate_model_lex_transcript_filter(
     input: &crate::model::LexTranscriptFilter,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_767) = &input.date_range_filter {
+        #[allow(unused_mut)]
         let mut object_768 = object.key("dateRangeFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_date_range_filter(
             &mut object_768,
@@ -3740,6 +3951,7 @@ pub fn serialize_structure_crate_model_image_response_card(
         let mut array_776 = object.key("buttons").start_array();
         for item_777 in var_775 {
             {
+                #[allow(unused_mut)]
                 let mut object_778 = array_776.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_button(&mut object_778, item_777)?;
                 object_778.finish();

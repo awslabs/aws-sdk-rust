@@ -4,6 +4,7 @@ pub fn serialize_structure_crate_input_put_raw_message_content_input(
     input: &crate::input::PutRawMessageContentInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.content {
+        #[allow(unused_mut)]
         let mut object_2 = object.key("content").start_object();
         crate::json_ser::serialize_structure_crate_model_raw_message_content(&mut object_2, var_1)?;
         object_2.finish();
@@ -16,6 +17,7 @@ pub fn serialize_structure_crate_model_raw_message_content(
     input: &crate::model::RawMessageContent,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_3) = &input.s3_reference {
+        #[allow(unused_mut)]
         let mut object_4 = object.key("s3Reference").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_reference(&mut object_4, var_3)?;
         object_4.finish();

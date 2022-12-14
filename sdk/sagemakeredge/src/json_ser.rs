@@ -33,6 +33,7 @@ pub fn serialize_structure_crate_input_send_heartbeat_input(
         let mut array_6 = object.key("AgentMetrics").start_array();
         for item_7 in var_5 {
             {
+                #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_edge_metric(
                     &mut object_8,
@@ -47,6 +48,7 @@ pub fn serialize_structure_crate_input_send_heartbeat_input(
         object.key("AgentVersion").string(var_9.as_str());
     }
     if let Some(var_10) = &input.deployment_result {
+        #[allow(unused_mut)]
         let mut object_11 = object.key("DeploymentResult").start_object();
         crate::json_ser::serialize_structure_crate_model_deployment_result(&mut object_11, var_10)?;
         object_11.finish();
@@ -61,6 +63,7 @@ pub fn serialize_structure_crate_input_send_heartbeat_input(
         let mut array_15 = object.key("Models").start_array();
         for item_16 in var_14 {
             {
+                #[allow(unused_mut)]
                 let mut object_17 = array_15.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_model(&mut object_17, item_16)?;
                 object_17.finish();
@@ -124,6 +127,7 @@ pub fn serialize_structure_crate_model_deployment_result(
         let mut array_27 = object.key("DeploymentModels").start_array();
         for item_28 in var_26 {
             {
+                #[allow(unused_mut)]
                 let mut object_29 = array_27.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_deployment_model(
                     &mut object_29,
@@ -161,6 +165,7 @@ pub fn serialize_structure_crate_model_model(
         let mut array_35 = object.key("ModelMetrics").start_array();
         for item_36 in var_34 {
             {
+                #[allow(unused_mut)]
                 let mut object_37 = array_35.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_edge_metric(
                     &mut object_37,

@@ -19,6 +19,7 @@ pub fn serialize_structure_crate_input_create_environment_input(
         object.key("federationMode").string(var_5.as_str());
     }
     if let Some(var_6) = &input.federation_parameters {
+        #[allow(unused_mut)]
         let mut object_7 = object.key("federationParameters").start_object();
         crate::json_ser::serialize_structure_crate_model_federation_parameters(
             &mut object_7,
@@ -33,6 +34,7 @@ pub fn serialize_structure_crate_input_create_environment_input(
         object.key("name").string(var_9.as_str());
     }
     if let Some(var_10) = &input.superuser_parameters {
+        #[allow(unused_mut)]
         let mut object_11 = object.key("superuserParameters").start_object();
         crate::json_ser::serialize_structure_crate_model_superuser_parameters(
             &mut object_11,
@@ -41,6 +43,7 @@ pub fn serialize_structure_crate_input_create_environment_input(
         object_11.finish();
     }
     if let Some(var_12) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_13 = object.key("tags").start_object();
         for (key_14, value_15) in var_12 {
             {
@@ -57,6 +60,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_16) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_17 = object.key("tags").start_object();
         for (key_18, value_19) in var_16 {
             {
@@ -79,6 +83,7 @@ pub fn serialize_structure_crate_input_update_environment_input(
         object.key("federationMode").string(var_21.as_str());
     }
     if let Some(var_22) = &input.federation_parameters {
+        #[allow(unused_mut)]
         let mut object_23 = object.key("federationParameters").start_object();
         crate::json_ser::serialize_structure_crate_model_federation_parameters(
             &mut object_23,
@@ -112,6 +117,7 @@ pub fn serialize_structure_crate_model_federation_parameters(
         object.key("federationProviderName").string(var_29.as_str());
     }
     if let Some(var_30) = &input.attribute_map {
+        #[allow(unused_mut)]
         let mut object_31 = object.key("attributeMap").start_object();
         for (key_32, value_33) in var_30 {
             {

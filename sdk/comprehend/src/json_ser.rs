@@ -153,6 +153,7 @@ pub fn serialize_structure_crate_input_create_document_classifier_input(
         let mut array_32 = object.key("Tags").start_array();
         for item_33 in var_31 {
             {
+                #[allow(unused_mut)]
                 let mut object_34 = array_32.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_34, item_33)?;
                 object_34.finish();
@@ -161,6 +162,7 @@ pub fn serialize_structure_crate_input_create_document_classifier_input(
         array_32.finish();
     }
     if let Some(var_35) = &input.input_data_config {
+        #[allow(unused_mut)]
         let mut object_36 = object.key("InputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_document_classifier_input_data_config(
             &mut object_36,
@@ -169,6 +171,7 @@ pub fn serialize_structure_crate_input_create_document_classifier_input(
         object_36.finish();
     }
     if let Some(var_37) = &input.output_data_config {
+        #[allow(unused_mut)]
         let mut object_38 = object.key("OutputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_document_classifier_output_data_config(
             &mut object_38,
@@ -186,6 +189,7 @@ pub fn serialize_structure_crate_input_create_document_classifier_input(
         object.key("VolumeKmsKeyId").string(var_41.as_str());
     }
     if let Some(var_42) = &input.vpc_config {
+        #[allow(unused_mut)]
         let mut object_43 = object.key("VpcConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_vpc_config(&mut object_43, var_42)?;
         object_43.finish();
@@ -225,6 +229,7 @@ pub fn serialize_structure_crate_input_create_endpoint_input(
         let mut array_52 = object.key("Tags").start_array();
         for item_53 in var_51 {
             {
+                #[allow(unused_mut)]
                 let mut object_54 = array_52.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_54, item_53)?;
                 object_54.finish();
@@ -255,6 +260,7 @@ pub fn serialize_structure_crate_input_create_entity_recognizer_input(
         let mut array_60 = object.key("Tags").start_array();
         for item_61 in var_59 {
             {
+                #[allow(unused_mut)]
                 let mut object_62 = array_60.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_62, item_61)?;
                 object_62.finish();
@@ -263,6 +269,7 @@ pub fn serialize_structure_crate_input_create_entity_recognizer_input(
         array_60.finish();
     }
     if let Some(var_63) = &input.input_data_config {
+        #[allow(unused_mut)]
         let mut object_64 = object.key("InputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_entity_recognizer_input_data_config(
             &mut object_64,
@@ -280,6 +287,7 @@ pub fn serialize_structure_crate_input_create_entity_recognizer_input(
         object.key("VolumeKmsKeyId").string(var_67.as_str());
     }
     if let Some(var_68) = &input.vpc_config {
+        #[allow(unused_mut)]
         let mut object_69 = object.key("VpcConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_vpc_config(&mut object_69, var_68)?;
         object_69.finish();
@@ -580,6 +588,7 @@ pub fn serialize_structure_crate_input_import_model_input(
         let mut array_110 = object.key("Tags").start_array();
         for item_111 in var_109 {
             {
+                #[allow(unused_mut)]
                 let mut object_112 = array_110.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_112, item_111)?;
                 object_112.finish();
@@ -595,6 +604,7 @@ pub fn serialize_structure_crate_input_list_document_classification_jobs_input(
     input: &crate::input::ListDocumentClassificationJobsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_113) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_114 = object.key("Filter").start_object();
         crate::json_ser::serialize_structure_crate_model_document_classification_job_filter(
             &mut object_114,
@@ -619,6 +629,7 @@ pub fn serialize_structure_crate_input_list_document_classifiers_input(
     input: &crate::input::ListDocumentClassifiersInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_117) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_118 = object.key("Filter").start_object();
         crate::json_ser::serialize_structure_crate_model_document_classifier_filter(
             &mut object_118,
@@ -659,6 +670,7 @@ pub fn serialize_structure_crate_input_list_dominant_language_detection_jobs_inp
     input: &crate::input::ListDominantLanguageDetectionJobsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_123) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_124 = object.key("Filter").start_object();
         crate::json_ser::serialize_structure_crate_model_dominant_language_detection_job_filter(
             &mut object_124,
@@ -683,6 +695,7 @@ pub fn serialize_structure_crate_input_list_endpoints_input(
     input: &crate::input::ListEndpointsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_127) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_128 = object.key("Filter").start_object();
         crate::json_ser::serialize_structure_crate_model_endpoint_filter(&mut object_128, var_127)?;
         object_128.finish();
@@ -704,6 +717,7 @@ pub fn serialize_structure_crate_input_list_entities_detection_jobs_input(
     input: &crate::input::ListEntitiesDetectionJobsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_131) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_132 = object.key("Filter").start_object();
         crate::json_ser::serialize_structure_crate_model_entities_detection_job_filter(
             &mut object_132,
@@ -728,6 +742,7 @@ pub fn serialize_structure_crate_input_list_entity_recognizers_input(
     input: &crate::input::ListEntityRecognizersInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_135) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_136 = object.key("Filter").start_object();
         crate::json_ser::serialize_structure_crate_model_entity_recognizer_filter(
             &mut object_136,
@@ -768,6 +783,7 @@ pub fn serialize_structure_crate_input_list_events_detection_jobs_input(
     input: &crate::input::ListEventsDetectionJobsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_141) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_142 = object.key("Filter").start_object();
         crate::json_ser::serialize_structure_crate_model_events_detection_job_filter(
             &mut object_142,
@@ -792,6 +808,7 @@ pub fn serialize_structure_crate_input_list_key_phrases_detection_jobs_input(
     input: &crate::input::ListKeyPhrasesDetectionJobsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_145) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_146 = object.key("Filter").start_object();
         crate::json_ser::serialize_structure_crate_model_key_phrases_detection_job_filter(
             &mut object_146,
@@ -816,6 +833,7 @@ pub fn serialize_structure_crate_input_list_pii_entities_detection_jobs_input(
     input: &crate::input::ListPiiEntitiesDetectionJobsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_149) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_150 = object.key("Filter").start_object();
         crate::json_ser::serialize_structure_crate_model_pii_entities_detection_job_filter(
             &mut object_150,
@@ -840,6 +858,7 @@ pub fn serialize_structure_crate_input_list_sentiment_detection_jobs_input(
     input: &crate::input::ListSentimentDetectionJobsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_153) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_154 = object.key("Filter").start_object();
         crate::json_ser::serialize_structure_crate_model_sentiment_detection_job_filter(
             &mut object_154,
@@ -874,6 +893,7 @@ pub fn serialize_structure_crate_input_list_targeted_sentiment_detection_jobs_in
     input: &crate::input::ListTargetedSentimentDetectionJobsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_158) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_159 = object.key("Filter").start_object();
         crate::json_ser::serialize_structure_crate_model_targeted_sentiment_detection_job_filter(
             &mut object_159,
@@ -898,6 +918,7 @@ pub fn serialize_structure_crate_input_list_topics_detection_jobs_input(
     input: &crate::input::ListTopicsDetectionJobsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_162) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_163 = object.key("Filter").start_object();
         crate::json_ser::serialize_structure_crate_model_topics_detection_job_filter(
             &mut object_163,
@@ -944,6 +965,7 @@ pub fn serialize_structure_crate_input_start_document_classification_job_input(
         object.key("DocumentClassifierArn").string(var_170.as_str());
     }
     if let Some(var_171) = &input.input_data_config {
+        #[allow(unused_mut)]
         let mut object_172 = object.key("InputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_input_data_config(
             &mut object_172,
@@ -952,6 +974,7 @@ pub fn serialize_structure_crate_input_start_document_classification_job_input(
         object_172.finish();
     }
     if let Some(var_173) = &input.output_data_config {
+        #[allow(unused_mut)]
         let mut object_174 = object.key("OutputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_output_data_config(
             &mut object_174,
@@ -969,6 +992,7 @@ pub fn serialize_structure_crate_input_start_document_classification_job_input(
         object.key("VolumeKmsKeyId").string(var_177.as_str());
     }
     if let Some(var_178) = &input.vpc_config {
+        #[allow(unused_mut)]
         let mut object_179 = object.key("VpcConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_vpc_config(&mut object_179, var_178)?;
         object_179.finish();
@@ -977,6 +1001,7 @@ pub fn serialize_structure_crate_input_start_document_classification_job_input(
         let mut array_181 = object.key("Tags").start_array();
         for item_182 in var_180 {
             {
+                #[allow(unused_mut)]
                 let mut object_183 = array_181.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_183, item_182)?;
                 object_183.finish();
@@ -992,6 +1017,7 @@ pub fn serialize_structure_crate_input_start_dominant_language_detection_job_inp
     input: &crate::input::StartDominantLanguageDetectionJobInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_184) = &input.input_data_config {
+        #[allow(unused_mut)]
         let mut object_185 = object.key("InputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_input_data_config(
             &mut object_185,
@@ -1000,6 +1026,7 @@ pub fn serialize_structure_crate_input_start_dominant_language_detection_job_inp
         object_185.finish();
     }
     if let Some(var_186) = &input.output_data_config {
+        #[allow(unused_mut)]
         let mut object_187 = object.key("OutputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_output_data_config(
             &mut object_187,
@@ -1020,6 +1047,7 @@ pub fn serialize_structure_crate_input_start_dominant_language_detection_job_inp
         object.key("VolumeKmsKeyId").string(var_191.as_str());
     }
     if let Some(var_192) = &input.vpc_config {
+        #[allow(unused_mut)]
         let mut object_193 = object.key("VpcConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_vpc_config(&mut object_193, var_192)?;
         object_193.finish();
@@ -1028,6 +1056,7 @@ pub fn serialize_structure_crate_input_start_dominant_language_detection_job_inp
         let mut array_195 = object.key("Tags").start_array();
         for item_196 in var_194 {
             {
+                #[allow(unused_mut)]
                 let mut object_197 = array_195.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_197, item_196)?;
                 object_197.finish();
@@ -1043,6 +1072,7 @@ pub fn serialize_structure_crate_input_start_entities_detection_job_input(
     input: &crate::input::StartEntitiesDetectionJobInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_198) = &input.input_data_config {
+        #[allow(unused_mut)]
         let mut object_199 = object.key("InputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_input_data_config(
             &mut object_199,
@@ -1051,6 +1081,7 @@ pub fn serialize_structure_crate_input_start_entities_detection_job_input(
         object_199.finish();
     }
     if let Some(var_200) = &input.output_data_config {
+        #[allow(unused_mut)]
         let mut object_201 = object.key("OutputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_output_data_config(
             &mut object_201,
@@ -1077,6 +1108,7 @@ pub fn serialize_structure_crate_input_start_entities_detection_job_input(
         object.key("VolumeKmsKeyId").string(var_207.as_str());
     }
     if let Some(var_208) = &input.vpc_config {
+        #[allow(unused_mut)]
         let mut object_209 = object.key("VpcConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_vpc_config(&mut object_209, var_208)?;
         object_209.finish();
@@ -1085,6 +1117,7 @@ pub fn serialize_structure_crate_input_start_entities_detection_job_input(
         let mut array_211 = object.key("Tags").start_array();
         for item_212 in var_210 {
             {
+                #[allow(unused_mut)]
                 let mut object_213 = array_211.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_213, item_212)?;
                 object_213.finish();
@@ -1100,6 +1133,7 @@ pub fn serialize_structure_crate_input_start_events_detection_job_input(
     input: &crate::input::StartEventsDetectionJobInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_214) = &input.input_data_config {
+        #[allow(unused_mut)]
         let mut object_215 = object.key("InputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_input_data_config(
             &mut object_215,
@@ -1108,6 +1142,7 @@ pub fn serialize_structure_crate_input_start_events_detection_job_input(
         object_215.finish();
     }
     if let Some(var_216) = &input.output_data_config {
+        #[allow(unused_mut)]
         let mut object_217 = object.key("OutputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_output_data_config(
             &mut object_217,
@@ -1140,6 +1175,7 @@ pub fn serialize_structure_crate_input_start_events_detection_job_input(
         let mut array_226 = object.key("Tags").start_array();
         for item_227 in var_225 {
             {
+                #[allow(unused_mut)]
                 let mut object_228 = array_226.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_228, item_227)?;
                 object_228.finish();
@@ -1155,6 +1191,7 @@ pub fn serialize_structure_crate_input_start_key_phrases_detection_job_input(
     input: &crate::input::StartKeyPhrasesDetectionJobInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_229) = &input.input_data_config {
+        #[allow(unused_mut)]
         let mut object_230 = object.key("InputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_input_data_config(
             &mut object_230,
@@ -1163,6 +1200,7 @@ pub fn serialize_structure_crate_input_start_key_phrases_detection_job_input(
         object_230.finish();
     }
     if let Some(var_231) = &input.output_data_config {
+        #[allow(unused_mut)]
         let mut object_232 = object.key("OutputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_output_data_config(
             &mut object_232,
@@ -1186,6 +1224,7 @@ pub fn serialize_structure_crate_input_start_key_phrases_detection_job_input(
         object.key("VolumeKmsKeyId").string(var_237.as_str());
     }
     if let Some(var_238) = &input.vpc_config {
+        #[allow(unused_mut)]
         let mut object_239 = object.key("VpcConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_vpc_config(&mut object_239, var_238)?;
         object_239.finish();
@@ -1194,6 +1233,7 @@ pub fn serialize_structure_crate_input_start_key_phrases_detection_job_input(
         let mut array_241 = object.key("Tags").start_array();
         for item_242 in var_240 {
             {
+                #[allow(unused_mut)]
                 let mut object_243 = array_241.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_243, item_242)?;
                 object_243.finish();
@@ -1209,6 +1249,7 @@ pub fn serialize_structure_crate_input_start_pii_entities_detection_job_input(
     input: &crate::input::StartPiiEntitiesDetectionJobInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_244) = &input.input_data_config {
+        #[allow(unused_mut)]
         let mut object_245 = object.key("InputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_input_data_config(
             &mut object_245,
@@ -1217,6 +1258,7 @@ pub fn serialize_structure_crate_input_start_pii_entities_detection_job_input(
         object_245.finish();
     }
     if let Some(var_246) = &input.output_data_config {
+        #[allow(unused_mut)]
         let mut object_247 = object.key("OutputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_output_data_config(
             &mut object_247,
@@ -1228,6 +1270,7 @@ pub fn serialize_structure_crate_input_start_pii_entities_detection_job_input(
         object.key("Mode").string(var_248.as_str());
     }
     if let Some(var_249) = &input.redaction_config {
+        #[allow(unused_mut)]
         let mut object_250 = object.key("RedactionConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_redaction_config(
             &mut object_250,
@@ -1251,6 +1294,7 @@ pub fn serialize_structure_crate_input_start_pii_entities_detection_job_input(
         let mut array_256 = object.key("Tags").start_array();
         for item_257 in var_255 {
             {
+                #[allow(unused_mut)]
                 let mut object_258 = array_256.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_258, item_257)?;
                 object_258.finish();
@@ -1266,6 +1310,7 @@ pub fn serialize_structure_crate_input_start_sentiment_detection_job_input(
     input: &crate::input::StartSentimentDetectionJobInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_259) = &input.input_data_config {
+        #[allow(unused_mut)]
         let mut object_260 = object.key("InputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_input_data_config(
             &mut object_260,
@@ -1274,6 +1319,7 @@ pub fn serialize_structure_crate_input_start_sentiment_detection_job_input(
         object_260.finish();
     }
     if let Some(var_261) = &input.output_data_config {
+        #[allow(unused_mut)]
         let mut object_262 = object.key("OutputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_output_data_config(
             &mut object_262,
@@ -1297,6 +1343,7 @@ pub fn serialize_structure_crate_input_start_sentiment_detection_job_input(
         object.key("VolumeKmsKeyId").string(var_267.as_str());
     }
     if let Some(var_268) = &input.vpc_config {
+        #[allow(unused_mut)]
         let mut object_269 = object.key("VpcConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_vpc_config(&mut object_269, var_268)?;
         object_269.finish();
@@ -1305,6 +1352,7 @@ pub fn serialize_structure_crate_input_start_sentiment_detection_job_input(
         let mut array_271 = object.key("Tags").start_array();
         for item_272 in var_270 {
             {
+                #[allow(unused_mut)]
                 let mut object_273 = array_271.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_273, item_272)?;
                 object_273.finish();
@@ -1320,6 +1368,7 @@ pub fn serialize_structure_crate_input_start_targeted_sentiment_detection_job_in
     input: &crate::input::StartTargetedSentimentDetectionJobInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_274) = &input.input_data_config {
+        #[allow(unused_mut)]
         let mut object_275 = object.key("InputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_input_data_config(
             &mut object_275,
@@ -1328,6 +1377,7 @@ pub fn serialize_structure_crate_input_start_targeted_sentiment_detection_job_in
         object_275.finish();
     }
     if let Some(var_276) = &input.output_data_config {
+        #[allow(unused_mut)]
         let mut object_277 = object.key("OutputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_output_data_config(
             &mut object_277,
@@ -1351,6 +1401,7 @@ pub fn serialize_structure_crate_input_start_targeted_sentiment_detection_job_in
         object.key("VolumeKmsKeyId").string(var_282.as_str());
     }
     if let Some(var_283) = &input.vpc_config {
+        #[allow(unused_mut)]
         let mut object_284 = object.key("VpcConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_vpc_config(&mut object_284, var_283)?;
         object_284.finish();
@@ -1359,6 +1410,7 @@ pub fn serialize_structure_crate_input_start_targeted_sentiment_detection_job_in
         let mut array_286 = object.key("Tags").start_array();
         for item_287 in var_285 {
             {
+                #[allow(unused_mut)]
                 let mut object_288 = array_286.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_288, item_287)?;
                 object_288.finish();
@@ -1374,6 +1426,7 @@ pub fn serialize_structure_crate_input_start_topics_detection_job_input(
     input: &crate::input::StartTopicsDetectionJobInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_289) = &input.input_data_config {
+        #[allow(unused_mut)]
         let mut object_290 = object.key("InputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_input_data_config(
             &mut object_290,
@@ -1382,6 +1435,7 @@ pub fn serialize_structure_crate_input_start_topics_detection_job_input(
         object_290.finish();
     }
     if let Some(var_291) = &input.output_data_config {
+        #[allow(unused_mut)]
         let mut object_292 = object.key("OutputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_output_data_config(
             &mut object_292,
@@ -1408,6 +1462,7 @@ pub fn serialize_structure_crate_input_start_topics_detection_job_input(
         object.key("VolumeKmsKeyId").string(var_297.as_str());
     }
     if let Some(var_298) = &input.vpc_config {
+        #[allow(unused_mut)]
         let mut object_299 = object.key("VpcConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_vpc_config(&mut object_299, var_298)?;
         object_299.finish();
@@ -1416,6 +1471,7 @@ pub fn serialize_structure_crate_input_start_topics_detection_job_input(
         let mut array_301 = object.key("Tags").start_array();
         for item_302 in var_300 {
             {
+                #[allow(unused_mut)]
                 let mut object_303 = array_301.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_303, item_302)?;
                 object_303.finish();
@@ -1527,6 +1583,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_315 = object.key("Tags").start_array();
         for item_316 in var_314 {
             {
+                #[allow(unused_mut)]
                 let mut object_317 = array_315.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_317, item_316)?;
                 object_317.finish();
@@ -1613,6 +1670,7 @@ pub fn serialize_structure_crate_model_document_classifier_input_data_config(
         let mut array_333 = object.key("AugmentedManifests").start_array();
         for item_334 in var_332 {
             {
+                #[allow(unused_mut)]
                 let mut object_335 = array_333.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_augmented_manifests_list_item(
                     &mut object_335,
@@ -1675,6 +1733,7 @@ pub fn serialize_structure_crate_model_entity_recognizer_input_data_config(
         let mut array_346 = object.key("EntityTypes").start_array();
         for item_347 in var_345 {
             {
+                #[allow(unused_mut)]
                 let mut object_348 = array_346.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_entity_types_list_item(
                     &mut object_348,
@@ -1686,6 +1745,7 @@ pub fn serialize_structure_crate_model_entity_recognizer_input_data_config(
         array_346.finish();
     }
     if let Some(var_349) = &input.documents {
+        #[allow(unused_mut)]
         let mut object_350 = object.key("Documents").start_object();
         crate::json_ser::serialize_structure_crate_model_entity_recognizer_documents(
             &mut object_350,
@@ -1694,6 +1754,7 @@ pub fn serialize_structure_crate_model_entity_recognizer_input_data_config(
         object_350.finish();
     }
     if let Some(var_351) = &input.annotations {
+        #[allow(unused_mut)]
         let mut object_352 = object.key("Annotations").start_object();
         crate::json_ser::serialize_structure_crate_model_entity_recognizer_annotations(
             &mut object_352,
@@ -1702,6 +1763,7 @@ pub fn serialize_structure_crate_model_entity_recognizer_input_data_config(
         object_352.finish();
     }
     if let Some(var_353) = &input.entity_list {
+        #[allow(unused_mut)]
         let mut object_354 = object.key("EntityList").start_object();
         crate::json_ser::serialize_structure_crate_model_entity_recognizer_entity_list(
             &mut object_354,
@@ -1713,6 +1775,7 @@ pub fn serialize_structure_crate_model_entity_recognizer_input_data_config(
         let mut array_356 = object.key("AugmentedManifests").start_array();
         for item_357 in var_355 {
             {
+                #[allow(unused_mut)]
                 let mut object_358 = array_356.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_augmented_manifests_list_item(
                     &mut object_358,
@@ -2015,6 +2078,7 @@ pub fn serialize_structure_crate_model_input_data_config(
         object.key("InputFormat").string(var_408.as_str());
     }
     if let Some(var_409) = &input.document_reader_config {
+        #[allow(unused_mut)]
         let mut object_410 = object.key("DocumentReaderConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_document_reader_config(
             &mut object_410,

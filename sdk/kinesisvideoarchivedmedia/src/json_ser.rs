@@ -4,6 +4,7 @@ pub fn serialize_structure_crate_input_get_clip_input(
     input: &crate::input::GetClipInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.clip_fragment_selector {
+        #[allow(unused_mut)]
         let mut object_2 = object.key("ClipFragmentSelector").start_object();
         crate::json_ser::serialize_structure_crate_model_clip_fragment_selector(
             &mut object_2,
@@ -25,6 +26,7 @@ pub fn serialize_structure_crate_input_get_dash_streaming_session_url_input(
     input: &crate::input::GetDashStreamingSessionUrlInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_5) = &input.dash_fragment_selector {
+        #[allow(unused_mut)]
         let mut object_6 = object.key("DASHFragmentSelector").start_object();
         crate::json_ser::serialize_structure_crate_model_dash_fragment_selector(
             &mut object_6,
@@ -86,6 +88,7 @@ pub fn serialize_structure_crate_input_get_hls_streaming_session_url_input(
         );
     }
     if let Some(var_18) = &input.hls_fragment_selector {
+        #[allow(unused_mut)]
         let mut object_19 = object.key("HLSFragmentSelector").start_object();
         crate::json_ser::serialize_structure_crate_model_hls_fragment_selector(
             &mut object_19,
@@ -124,6 +127,7 @@ pub fn serialize_structure_crate_input_get_images_input(
         object.key("Format").string(var_25.as_str());
     }
     if let Some(var_26) = &input.format_config {
+        #[allow(unused_mut)]
         let mut object_27 = object.key("FormatConfig").start_object();
         for (key_28, value_29) in var_26 {
             {
@@ -203,6 +207,7 @@ pub fn serialize_structure_crate_input_list_fragments_input(
     input: &crate::input::ListFragmentsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_44) = &input.fragment_selector {
+        #[allow(unused_mut)]
         let mut object_45 = object.key("FragmentSelector").start_object();
         crate::json_ser::serialize_structure_crate_model_fragment_selector(&mut object_45, var_44)?;
         object_45.finish();
@@ -233,6 +238,7 @@ pub fn serialize_structure_crate_model_clip_fragment_selector(
         object.key("FragmentSelectorType").string(var_50.as_str());
     }
     if let Some(var_51) = &input.timestamp_range {
+        #[allow(unused_mut)]
         let mut object_52 = object.key("TimestampRange").start_object();
         crate::json_ser::serialize_structure_crate_model_clip_timestamp_range(
             &mut object_52,
@@ -251,6 +257,7 @@ pub fn serialize_structure_crate_model_dash_fragment_selector(
         object.key("FragmentSelectorType").string(var_53.as_str());
     }
     if let Some(var_54) = &input.timestamp_range {
+        #[allow(unused_mut)]
         let mut object_55 = object.key("TimestampRange").start_object();
         crate::json_ser::serialize_structure_crate_model_dash_timestamp_range(
             &mut object_55,
@@ -269,6 +276,7 @@ pub fn serialize_structure_crate_model_hls_fragment_selector(
         object.key("FragmentSelectorType").string(var_56.as_str());
     }
     if let Some(var_57) = &input.timestamp_range {
+        #[allow(unused_mut)]
         let mut object_58 = object.key("TimestampRange").start_object();
         crate::json_ser::serialize_structure_crate_model_hls_timestamp_range(
             &mut object_58,
@@ -287,6 +295,7 @@ pub fn serialize_structure_crate_model_fragment_selector(
         object.key("FragmentSelectorType").string(var_59.as_str());
     }
     if let Some(var_60) = &input.timestamp_range {
+        #[allow(unused_mut)]
         let mut object_61 = object.key("TimestampRange").start_object();
         crate::json_ser::serialize_structure_crate_model_timestamp_range(&mut object_61, var_60)?;
         object_61.finish();

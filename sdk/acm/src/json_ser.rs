@@ -10,6 +10,7 @@ pub fn serialize_structure_crate_input_add_tags_to_certificate_input(
         let mut array_3 = object.key("Tags").start_array();
         for item_4 in var_2 {
             {
+                #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_5, item_4)?;
                 object_5.finish();
@@ -91,6 +92,7 @@ pub fn serialize_structure_crate_input_import_certificate_input(
         let mut array_16 = object.key("Tags").start_array();
         for item_17 in var_15 {
             {
+                #[allow(unused_mut)]
                 let mut object_18 = array_16.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_18, item_17)?;
                 object_18.finish();
@@ -115,6 +117,7 @@ pub fn serialize_structure_crate_input_list_certificates_input(
         array_20.finish();
     }
     if let Some(var_22) = &input.includes {
+        #[allow(unused_mut)]
         let mut object_23 = object.key("Includes").start_object();
         crate::json_ser::serialize_structure_crate_model_filters(&mut object_23, var_22)?;
         object_23.finish();
@@ -152,6 +155,7 @@ pub fn serialize_structure_crate_input_put_account_configuration_input(
     input: &crate::input::PutAccountConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_29) = &input.expiry_events {
+        #[allow(unused_mut)]
         let mut object_30 = object.key("ExpiryEvents").start_object();
         crate::json_ser::serialize_structure_crate_model_expiry_events_configuration(
             &mut object_30,
@@ -176,6 +180,7 @@ pub fn serialize_structure_crate_input_remove_tags_from_certificate_input(
         let mut array_34 = object.key("Tags").start_array();
         for item_35 in var_33 {
             {
+                #[allow(unused_mut)]
                 let mut object_36 = array_34.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_36, item_35)?;
                 object_36.finish();
@@ -222,6 +227,7 @@ pub fn serialize_structure_crate_input_request_certificate_input(
         let mut array_45 = object.key("DomainValidationOptions").start_array();
         for item_46 in var_44 {
             {
+                #[allow(unused_mut)]
                 let mut object_47 = array_45.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_domain_validation_option(
                     &mut object_47,
@@ -233,6 +239,7 @@ pub fn serialize_structure_crate_input_request_certificate_input(
         array_45.finish();
     }
     if let Some(var_48) = &input.options {
+        #[allow(unused_mut)]
         let mut object_49 = object.key("Options").start_object();
         crate::json_ser::serialize_structure_crate_model_certificate_options(
             &mut object_49,
@@ -249,6 +256,7 @@ pub fn serialize_structure_crate_input_request_certificate_input(
         let mut array_52 = object.key("Tags").start_array();
         for item_53 in var_51 {
             {
+                #[allow(unused_mut)]
                 let mut object_54 = array_52.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_54, item_53)?;
                 object_54.finish();
@@ -283,6 +291,7 @@ pub fn serialize_structure_crate_input_update_certificate_options_input(
         object.key("CertificateArn").string(var_58.as_str());
     }
     if let Some(var_59) = &input.options {
+        #[allow(unused_mut)]
         let mut object_60 = object.key("Options").start_object();
         crate::json_ser::serialize_structure_crate_model_certificate_options(
             &mut object_60,

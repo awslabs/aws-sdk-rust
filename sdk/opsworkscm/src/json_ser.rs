@@ -13,6 +13,7 @@ pub fn serialize_structure_crate_input_associate_node_input(
         let mut array_4 = object.key("EngineAttributes").start_array();
         for item_5 in var_3 {
             {
+                #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_engine_attribute(
                     &mut object_6,
@@ -40,6 +41,7 @@ pub fn serialize_structure_crate_input_create_backup_input(
         let mut array_10 = object.key("Tags").start_array();
         for item_11 in var_9 {
             {
+                #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_12, item_11)?;
                 object_12.finish();
@@ -82,6 +84,7 @@ pub fn serialize_structure_crate_input_create_server_input(
         let mut array_22 = object.key("EngineAttributes").start_array();
         for item_23 in var_21 {
             {
+                #[allow(unused_mut)]
                 let mut object_24 = array_22.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_engine_attribute(
                     &mut object_24,
@@ -143,6 +146,7 @@ pub fn serialize_structure_crate_input_create_server_input(
         let mut array_40 = object.key("Tags").start_array();
         for item_41 in var_39 {
             {
+                #[allow(unused_mut)]
                 let mut object_42 = array_40.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_42, item_41)?;
                 object_42.finish();
@@ -265,6 +269,7 @@ pub fn serialize_structure_crate_input_disassociate_node_input(
         let mut array_61 = object.key("EngineAttributes").start_array();
         for item_62 in var_60 {
             {
+                #[allow(unused_mut)]
                 let mut object_63 = array_61.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_engine_attribute(
                     &mut object_63,
@@ -292,6 +297,7 @@ pub fn serialize_structure_crate_input_export_server_engine_attribute_input(
         let mut array_67 = object.key("InputAttributes").start_array();
         for item_68 in var_66 {
             {
+                #[allow(unused_mut)]
                 let mut object_69 = array_67.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_engine_attribute(
                     &mut object_69,
@@ -354,6 +360,7 @@ pub fn serialize_structure_crate_input_start_maintenance_input(
         let mut array_79 = object.key("EngineAttributes").start_array();
         for item_80 in var_78 {
             {
+                #[allow(unused_mut)]
                 let mut object_81 = array_79.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_engine_attribute(
                     &mut object_81,
@@ -378,6 +385,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_84 = object.key("Tags").start_array();
         for item_85 in var_83 {
             {
+                #[allow(unused_mut)]
                 let mut object_86 = array_84.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_86, item_85)?;
                 object_86.finish();

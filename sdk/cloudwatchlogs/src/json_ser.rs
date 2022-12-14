@@ -67,6 +67,7 @@ pub fn serialize_structure_crate_input_create_log_group_input(
         object.key("kmsKeyId").string(var_12.as_str());
     }
     if let Some(var_13) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_14 = object.key("tags").start_object();
         for (key_15, value_16) in var_13 {
             {
@@ -565,6 +566,7 @@ pub fn serialize_structure_crate_input_put_log_events_input(
         let mut array_98 = object.key("logEvents").start_array();
         for item_99 in var_97 {
             {
+                #[allow(unused_mut)]
                 let mut object_100 = array_98.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_input_log_event(
                     &mut object_100,
@@ -598,6 +600,7 @@ pub fn serialize_structure_crate_input_put_metric_filter_input(
         let mut array_106 = object.key("metricTransformations").start_array();
         for item_107 in var_105 {
             {
+                #[allow(unused_mut)]
                 let mut object_108 = array_106.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_metric_transformation(
                     &mut object_108,
@@ -748,6 +751,7 @@ pub fn serialize_structure_crate_input_tag_log_group_input(
         object.key("logGroupName").string(var_134.as_str());
     }
     if let Some(var_135) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_136 = object.key("tags").start_object();
         for (key_137, value_138) in var_135 {
             {
@@ -833,6 +837,7 @@ pub fn serialize_structure_crate_model_metric_transformation(
         );
     }
     if let Some(var_153) = &input.dimensions {
+        #[allow(unused_mut)]
         let mut object_154 = object.key("dimensions").start_object();
         for (key_155, value_156) in var_153 {
             {

@@ -42,6 +42,7 @@ pub fn serialize_structure_crate_input_authorize_ip_rules_input(
         let mut array_9 = object.key("UserRules").start_array();
         for item_10 in var_8 {
             {
+                #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_ip_rule_item(
                     &mut object_11,
@@ -75,6 +76,7 @@ pub fn serialize_structure_crate_input_copy_workspace_image_input(
         let mut array_17 = object.key("Tags").start_array();
         for item_18 in var_16 {
             {
+                #[allow(unused_mut)]
                 let mut object_19 = array_17.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_19, item_18)?;
                 object_19.finish();
@@ -112,6 +114,7 @@ pub fn serialize_structure_crate_input_create_connection_alias_input(
         let mut array_25 = object.key("Tags").start_array();
         for item_26 in var_24 {
             {
+                #[allow(unused_mut)]
                 let mut object_27 = array_25.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_27, item_26)?;
                 object_27.finish();
@@ -136,6 +139,7 @@ pub fn serialize_structure_crate_input_create_ip_group_input(
         let mut array_31 = object.key("UserRules").start_array();
         for item_32 in var_30 {
             {
+                #[allow(unused_mut)]
                 let mut object_33 = array_31.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_ip_rule_item(
                     &mut object_33,
@@ -150,6 +154,7 @@ pub fn serialize_structure_crate_input_create_ip_group_input(
         let mut array_35 = object.key("Tags").start_array();
         for item_36 in var_34 {
             {
+                #[allow(unused_mut)]
                 let mut object_37 = array_35.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_37, item_36)?;
                 object_37.finish();
@@ -171,6 +176,7 @@ pub fn serialize_structure_crate_input_create_tags_input(
         let mut array_40 = object.key("Tags").start_array();
         for item_41 in var_39 {
             {
+                #[allow(unused_mut)]
                 let mut object_42 = array_40.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_42, item_41)?;
                 object_42.finish();
@@ -198,6 +204,7 @@ pub fn serialize_structure_crate_input_create_updated_workspace_image_input(
         let mut array_47 = object.key("Tags").start_array();
         for item_48 in var_46 {
             {
+                #[allow(unused_mut)]
                 let mut object_49 = array_47.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_49, item_48)?;
                 object_49.finish();
@@ -222,16 +229,19 @@ pub fn serialize_structure_crate_input_create_workspace_bundle_input(
         object.key("ImageId").string(var_52.as_str());
     }
     if let Some(var_53) = &input.compute_type {
+        #[allow(unused_mut)]
         let mut object_54 = object.key("ComputeType").start_object();
         crate::json_ser::serialize_structure_crate_model_compute_type(&mut object_54, var_53)?;
         object_54.finish();
     }
     if let Some(var_55) = &input.user_storage {
+        #[allow(unused_mut)]
         let mut object_56 = object.key("UserStorage").start_object();
         crate::json_ser::serialize_structure_crate_model_user_storage(&mut object_56, var_55)?;
         object_56.finish();
     }
     if let Some(var_57) = &input.root_storage {
+        #[allow(unused_mut)]
         let mut object_58 = object.key("RootStorage").start_object();
         crate::json_ser::serialize_structure_crate_model_root_storage(&mut object_58, var_57)?;
         object_58.finish();
@@ -240,6 +250,7 @@ pub fn serialize_structure_crate_input_create_workspace_bundle_input(
         let mut array_60 = object.key("Tags").start_array();
         for item_61 in var_59 {
             {
+                #[allow(unused_mut)]
                 let mut object_62 = array_60.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_62, item_61)?;
                 object_62.finish();
@@ -267,6 +278,7 @@ pub fn serialize_structure_crate_input_create_workspace_image_input(
         let mut array_67 = object.key("Tags").start_array();
         for item_68 in var_66 {
             {
+                #[allow(unused_mut)]
                 let mut object_69 = array_67.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_69, item_68)?;
                 object_69.finish();
@@ -285,6 +297,7 @@ pub fn serialize_structure_crate_input_create_workspaces_input(
         let mut array_71 = object.key("Workspaces").start_array();
         for item_72 in var_70 {
             {
+                #[allow(unused_mut)]
                 let mut object_73 = array_71.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_workspace_request(
                     &mut object_73,
@@ -730,6 +743,7 @@ pub fn serialize_structure_crate_input_import_client_branding_input(
         object.key("ResourceId").string(var_149.as_str());
     }
     if let Some(var_150) = &input.device_type_windows {
+        #[allow(unused_mut)]
         let mut object_151 = object.key("DeviceTypeWindows").start_object();
         crate::json_ser::serialize_structure_crate_model_default_import_client_branding_attributes(
             &mut object_151,
@@ -738,6 +752,7 @@ pub fn serialize_structure_crate_input_import_client_branding_input(
         object_151.finish();
     }
     if let Some(var_152) = &input.device_type_osx {
+        #[allow(unused_mut)]
         let mut object_153 = object.key("DeviceTypeOsx").start_object();
         crate::json_ser::serialize_structure_crate_model_default_import_client_branding_attributes(
             &mut object_153,
@@ -746,6 +761,7 @@ pub fn serialize_structure_crate_input_import_client_branding_input(
         object_153.finish();
     }
     if let Some(var_154) = &input.device_type_android {
+        #[allow(unused_mut)]
         let mut object_155 = object.key("DeviceTypeAndroid").start_object();
         crate::json_ser::serialize_structure_crate_model_default_import_client_branding_attributes(
             &mut object_155,
@@ -754,6 +770,7 @@ pub fn serialize_structure_crate_input_import_client_branding_input(
         object_155.finish();
     }
     if let Some(var_156) = &input.device_type_ios {
+        #[allow(unused_mut)]
         let mut object_157 = object.key("DeviceTypeIos").start_object();
         crate::json_ser::serialize_structure_crate_model_ios_import_client_branding_attributes(
             &mut object_157,
@@ -762,6 +779,7 @@ pub fn serialize_structure_crate_input_import_client_branding_input(
         object_157.finish();
     }
     if let Some(var_158) = &input.device_type_linux {
+        #[allow(unused_mut)]
         let mut object_159 = object.key("DeviceTypeLinux").start_object();
         crate::json_ser::serialize_structure_crate_model_default_import_client_branding_attributes(
             &mut object_159,
@@ -770,6 +788,7 @@ pub fn serialize_structure_crate_input_import_client_branding_input(
         object_159.finish();
     }
     if let Some(var_160) = &input.device_type_web {
+        #[allow(unused_mut)]
         let mut object_161 = object.key("DeviceTypeWeb").start_object();
         crate::json_ser::serialize_structure_crate_model_default_import_client_branding_attributes(
             &mut object_161,
@@ -800,6 +819,7 @@ pub fn serialize_structure_crate_input_import_workspace_image_input(
         let mut array_167 = object.key("Tags").start_array();
         for item_168 in var_166 {
             {
+                #[allow(unused_mut)]
                 let mut object_169 = array_167.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_169, item_168)?;
                 object_169.finish();
@@ -878,6 +898,7 @@ pub fn serialize_structure_crate_input_modify_client_properties_input(
         object.key("ResourceId").string(var_180.as_str());
     }
     if let Some(var_181) = &input.client_properties {
+        #[allow(unused_mut)]
         let mut object_182 = object.key("ClientProperties").start_object();
         crate::json_ser::serialize_structure_crate_model_client_properties(
             &mut object_182,
@@ -896,6 +917,7 @@ pub fn serialize_structure_crate_input_modify_saml_properties_input(
         object.key("ResourceId").string(var_183.as_str());
     }
     if let Some(var_184) = &input.saml_properties {
+        #[allow(unused_mut)]
         let mut object_185 = object.key("SamlProperties").start_object();
         crate::json_ser::serialize_structure_crate_model_saml_properties(&mut object_185, var_184)?;
         object_185.finish();
@@ -920,6 +942,7 @@ pub fn serialize_structure_crate_input_modify_selfservice_permissions_input(
         object.key("ResourceId").string(var_189.as_str());
     }
     if let Some(var_190) = &input.selfservice_permissions {
+        #[allow(unused_mut)]
         let mut object_191 = object.key("SelfservicePermissions").start_object();
         crate::json_ser::serialize_structure_crate_model_selfservice_permissions(
             &mut object_191,
@@ -938,6 +961,7 @@ pub fn serialize_structure_crate_input_modify_workspace_access_properties_input(
         object.key("ResourceId").string(var_192.as_str());
     }
     if let Some(var_193) = &input.workspace_access_properties {
+        #[allow(unused_mut)]
         let mut object_194 = object.key("WorkspaceAccessProperties").start_object();
         crate::json_ser::serialize_structure_crate_model_workspace_access_properties(
             &mut object_194,
@@ -956,6 +980,7 @@ pub fn serialize_structure_crate_input_modify_workspace_creation_properties_inpu
         object.key("ResourceId").string(var_195.as_str());
     }
     if let Some(var_196) = &input.workspace_creation_properties {
+        #[allow(unused_mut)]
         let mut object_197 = object.key("WorkspaceCreationProperties").start_object();
         crate::json_ser::serialize_structure_crate_model_workspace_creation_properties(
             &mut object_197,
@@ -974,6 +999,7 @@ pub fn serialize_structure_crate_input_modify_workspace_properties_input(
         object.key("WorkspaceId").string(var_198.as_str());
     }
     if let Some(var_199) = &input.workspace_properties {
+        #[allow(unused_mut)]
         let mut object_200 = object.key("WorkspaceProperties").start_object();
         crate::json_ser::serialize_structure_crate_model_workspace_properties(
             &mut object_200,
@@ -1005,6 +1031,7 @@ pub fn serialize_structure_crate_input_reboot_workspaces_input(
         let mut array_204 = object.key("RebootWorkspaceRequests").start_array();
         for item_205 in var_203 {
             {
+                #[allow(unused_mut)]
                 let mut object_206 = array_204.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_reboot_request(
                     &mut object_206,
@@ -1026,6 +1053,7 @@ pub fn serialize_structure_crate_input_rebuild_workspaces_input(
         let mut array_208 = object.key("RebuildWorkspaceRequests").start_array();
         for item_209 in var_207 {
             {
+                #[allow(unused_mut)]
                 let mut object_210 = array_208.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_rebuild_request(
                     &mut object_210,
@@ -1068,6 +1096,7 @@ pub fn serialize_structure_crate_input_register_workspace_directory_input(
         let mut array_219 = object.key("Tags").start_array();
         for item_220 in var_218 {
             {
+                #[allow(unused_mut)]
                 let mut object_221 = array_219.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_221, item_220)?;
                 object_221.finish();
@@ -1115,6 +1144,7 @@ pub fn serialize_structure_crate_input_start_workspaces_input(
         let mut array_228 = object.key("StartWorkspaceRequests").start_array();
         for item_229 in var_227 {
             {
+                #[allow(unused_mut)]
                 let mut object_230 = array_228.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_start_request(
                     &mut object_230,
@@ -1136,6 +1166,7 @@ pub fn serialize_structure_crate_input_stop_workspaces_input(
         let mut array_232 = object.key("StopWorkspaceRequests").start_array();
         for item_233 in var_231 {
             {
+                #[allow(unused_mut)]
                 let mut object_234 = array_232.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_stop_request(
                     &mut object_234,
@@ -1157,6 +1188,7 @@ pub fn serialize_structure_crate_input_terminate_workspaces_input(
         let mut array_236 = object.key("TerminateWorkspaceRequests").start_array();
         for item_237 in var_235 {
             {
+                #[allow(unused_mut)]
                 let mut object_238 = array_236.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_terminate_request(
                     &mut object_238,
@@ -1197,6 +1229,7 @@ pub fn serialize_structure_crate_input_update_connection_alias_permission_input(
         object.key("AliasId").string(var_243.as_str());
     }
     if let Some(var_244) = &input.connection_alias_permission {
+        #[allow(unused_mut)]
         let mut object_245 = object.key("ConnectionAliasPermission").start_object();
         crate::json_ser::serialize_structure_crate_model_connection_alias_permission(
             &mut object_245,
@@ -1218,6 +1251,7 @@ pub fn serialize_structure_crate_input_update_rules_of_ip_group_input(
         let mut array_248 = object.key("UserRules").start_array();
         for item_249 in var_247 {
             {
+                #[allow(unused_mut)]
                 let mut object_250 = array_248.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_ip_rule_item(
                     &mut object_250,
@@ -1339,6 +1373,7 @@ pub fn serialize_structure_crate_model_workspace_request(
         object.key("RootVolumeEncryptionEnabled").boolean(*var_268);
     }
     if let Some(var_269) = &input.workspace_properties {
+        #[allow(unused_mut)]
         let mut object_270 = object.key("WorkspaceProperties").start_object();
         crate::json_ser::serialize_structure_crate_model_workspace_properties(
             &mut object_270,
@@ -1350,6 +1385,7 @@ pub fn serialize_structure_crate_model_workspace_request(
         let mut array_272 = object.key("Tags").start_array();
         for item_273 in var_271 {
             {
+                #[allow(unused_mut)]
                 let mut object_274 = array_272.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_274, item_273)?;
                 object_274.finish();
@@ -1379,6 +1415,7 @@ pub fn serialize_structure_crate_model_default_import_client_branding_attributes
         object.key("ForgotPasswordLink").string(var_278.as_str());
     }
     if let Some(var_279) = &input.login_message {
+        #[allow(unused_mut)]
         let mut object_280 = object.key("LoginMessage").start_object();
         for (key_281, value_282) in var_279 {
             {
@@ -1419,6 +1456,7 @@ pub fn serialize_structure_crate_model_ios_import_client_branding_attributes(
         object.key("ForgotPasswordLink").string(var_288.as_str());
     }
     if let Some(var_289) = &input.login_message {
+        #[allow(unused_mut)]
         let mut object_290 = object.key("LoginMessage").start_object();
         for (key_291, value_292) in var_289 {
             {

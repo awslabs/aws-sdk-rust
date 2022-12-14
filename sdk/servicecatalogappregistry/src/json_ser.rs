@@ -13,6 +13,7 @@ pub fn serialize_structure_crate_input_create_application_input(
         object.key("name").string(var_3.as_str());
     }
     if let Some(var_4) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_5 = object.key("tags").start_object();
         for (key_6, value_7) in var_4 {
             {
@@ -41,6 +42,7 @@ pub fn serialize_structure_crate_input_create_attribute_group_input(
         object.key("name").string(var_11.as_str());
     }
     if let Some(var_12) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_13 = object.key("tags").start_object();
         for (key_14, value_15) in var_12 {
             {
@@ -57,6 +59,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_16) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_17 = object.key("tags").start_object();
         for (key_18, value_19) in var_16 {
             {

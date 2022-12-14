@@ -41,6 +41,7 @@ pub fn serialize_structure_crate_input_create_project_input(
         let mut array_11 = object.key("sourceCode").start_array();
         for item_12 in var_10 {
             {
+                #[allow(unused_mut)]
                 let mut object_13 = array_11.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_code(&mut object_13, item_12)?;
                 object_13.finish();
@@ -49,11 +50,13 @@ pub fn serialize_structure_crate_input_create_project_input(
         array_11.finish();
     }
     if let Some(var_14) = &input.toolchain {
+        #[allow(unused_mut)]
         let mut object_15 = object.key("toolchain").start_object();
         crate::json_ser::serialize_structure_crate_model_toolchain(&mut object_15, var_14)?;
         object_15.finish();
     }
     if let Some(var_16) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_17 = object.key("tags").start_object();
         for (key_18, value_19) in var_16 {
             {
@@ -240,6 +243,7 @@ pub fn serialize_structure_crate_input_tag_project_input(
         object.key("id").string(var_44.as_str());
     }
     if let Some(var_45) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_46 = object.key("tags").start_object();
         for (key_47, value_48) in var_45 {
             {
@@ -329,11 +333,13 @@ pub fn serialize_structure_crate_model_code(
     input: &crate::model::Code,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_64) = &input.source {
+        #[allow(unused_mut)]
         let mut object_65 = object.key("source").start_object();
         crate::json_ser::serialize_structure_crate_model_code_source(&mut object_65, var_64)?;
         object_65.finish();
     }
     if let Some(var_66) = &input.destination {
+        #[allow(unused_mut)]
         let mut object_67 = object.key("destination").start_object();
         crate::json_ser::serialize_structure_crate_model_code_destination(&mut object_67, var_66)?;
         object_67.finish();
@@ -346,6 +352,7 @@ pub fn serialize_structure_crate_model_toolchain(
     input: &crate::model::Toolchain,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_68) = &input.source {
+        #[allow(unused_mut)]
         let mut object_69 = object.key("source").start_object();
         crate::json_ser::serialize_structure_crate_model_toolchain_source(&mut object_69, var_68)?;
         object_69.finish();
@@ -354,6 +361,7 @@ pub fn serialize_structure_crate_model_toolchain(
         object.key("roleArn").string(var_70.as_str());
     }
     if let Some(var_71) = &input.stack_parameters {
+        #[allow(unused_mut)]
         let mut object_72 = object.key("stackParameters").start_object();
         for (key_73, value_74) in var_71 {
             {
@@ -370,6 +378,7 @@ pub fn serialize_structure_crate_model_code_source(
     input: &crate::model::CodeSource,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_75) = &input.s3 {
+        #[allow(unused_mut)]
         let mut object_76 = object.key("s3").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_location(&mut object_76, var_75)?;
         object_76.finish();
@@ -382,6 +391,7 @@ pub fn serialize_structure_crate_model_code_destination(
     input: &crate::model::CodeDestination,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_77) = &input.code_commit {
+        #[allow(unused_mut)]
         let mut object_78 = object.key("codeCommit").start_object();
         crate::json_ser::serialize_structure_crate_model_code_commit_code_destination(
             &mut object_78,
@@ -390,6 +400,7 @@ pub fn serialize_structure_crate_model_code_destination(
         object_78.finish();
     }
     if let Some(var_79) = &input.git_hub {
+        #[allow(unused_mut)]
         let mut object_80 = object.key("gitHub").start_object();
         crate::json_ser::serialize_structure_crate_model_git_hub_code_destination(
             &mut object_80,
@@ -405,6 +416,7 @@ pub fn serialize_structure_crate_model_toolchain_source(
     input: &crate::model::ToolchainSource,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_81) = &input.s3 {
+        #[allow(unused_mut)]
         let mut object_82 = object.key("s3").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_location(&mut object_82, var_81)?;
         object_82.finish();

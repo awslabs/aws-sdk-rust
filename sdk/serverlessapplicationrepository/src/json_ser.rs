@@ -111,6 +111,7 @@ pub fn serialize_structure_crate_input_create_cloud_formation_change_set_input(
         let mut array_32 = object.key("parameterOverrides").start_array();
         for item_33 in var_31 {
             {
+                #[allow(unused_mut)]
                 let mut object_34 = array_32.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_parameter_value(
                     &mut object_34,
@@ -131,6 +132,7 @@ pub fn serialize_structure_crate_input_create_cloud_formation_change_set_input(
         array_36.finish();
     }
     if let Some(var_38) = &input.rollback_configuration {
+        #[allow(unused_mut)]
         let mut object_39 = object.key("rollbackConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_rollback_configuration(
             &mut object_39,
@@ -148,6 +150,7 @@ pub fn serialize_structure_crate_input_create_cloud_formation_change_set_input(
         let mut array_43 = object.key("tags").start_array();
         for item_44 in var_42 {
             {
+                #[allow(unused_mut)]
                 let mut object_45 = array_43.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_45, item_44)?;
                 object_45.finish();
@@ -179,6 +182,7 @@ pub fn serialize_structure_crate_input_put_application_policy_input(
         let mut array_49 = object.key("statements").start_array();
         for item_50 in var_48 {
             {
+                #[allow(unused_mut)]
                 let mut object_51 = array_49.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_application_policy_statement(
                     &mut object_51,
@@ -260,6 +264,7 @@ pub fn serialize_structure_crate_model_rollback_configuration(
         let mut array_64 = object.key("rollbackTriggers").start_array();
         for item_65 in var_63 {
             {
+                #[allow(unused_mut)]
                 let mut object_66 = array_64.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_rollback_trigger(
                     &mut object_66,

@@ -74,6 +74,7 @@ pub fn serialize_structure_crate_input_create_grant_input(
         array_13.finish();
     }
     if let Some(var_15) = &input.constraints {
+        #[allow(unused_mut)]
         let mut object_16 = object.key("Constraints").start_object();
         crate::json_ser::serialize_structure_crate_model_grant_constraints(&mut object_16, var_15)?;
         object_16.finish();
@@ -127,6 +128,7 @@ pub fn serialize_structure_crate_input_create_key_input(
         let mut array_29 = object.key("Tags").start_array();
         for item_30 in var_28 {
             {
+                #[allow(unused_mut)]
                 let mut object_31 = array_29.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_31, item_30)?;
                 object_31.finish();
@@ -150,6 +152,7 @@ pub fn serialize_structure_crate_input_decrypt_input(
             .string_unchecked(&aws_smithy_types::base64::encode(var_33));
     }
     if let Some(var_34) = &input.encryption_context {
+        #[allow(unused_mut)]
         let mut object_35 = object.key("EncryptionContext").start_object();
         for (key_36, value_37) in var_34 {
             {
@@ -310,6 +313,7 @@ pub fn serialize_structure_crate_input_encrypt_input(
             .string_unchecked(&aws_smithy_types::base64::encode(var_60));
     }
     if let Some(var_61) = &input.encryption_context {
+        #[allow(unused_mut)]
         let mut object_62 = object.key("EncryptionContext").start_object();
         for (key_63, value_64) in var_61 {
             {
@@ -341,6 +345,7 @@ pub fn serialize_structure_crate_input_generate_data_key_input(
         object.key("KeyId").string(var_69.as_str());
     }
     if let Some(var_70) = &input.encryption_context {
+        #[allow(unused_mut)]
         let mut object_71 = object.key("EncryptionContext").start_object();
         for (key_72, value_73) in var_70 {
             {
@@ -375,6 +380,7 @@ pub fn serialize_structure_crate_input_generate_data_key_pair_input(
     input: &crate::input::GenerateDataKeyPairInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_79) = &input.encryption_context {
+        #[allow(unused_mut)]
         let mut object_80 = object.key("EncryptionContext").start_object();
         for (key_81, value_82) in var_79 {
             {
@@ -406,6 +412,7 @@ pub fn serialize_structure_crate_input_generate_data_key_pair_without_plaintext_
     input: &crate::input::GenerateDataKeyPairWithoutPlaintextInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_88) = &input.encryption_context {
+        #[allow(unused_mut)]
         let mut object_89 = object.key("EncryptionContext").start_object();
         for (key_90, value_91) in var_88 {
             {
@@ -440,6 +447,7 @@ pub fn serialize_structure_crate_input_generate_data_key_without_plaintext_input
         object.key("KeyId").string(var_97.as_str());
     }
     if let Some(var_98) = &input.encryption_context {
+        #[allow(unused_mut)]
         let mut object_99 = object.key("EncryptionContext").start_object();
         for (key_100, value_101) in var_98 {
             {
@@ -746,6 +754,7 @@ pub fn serialize_structure_crate_input_re_encrypt_input(
             .string_unchecked(&aws_smithy_types::base64::encode(var_152));
     }
     if let Some(var_153) = &input.source_encryption_context {
+        #[allow(unused_mut)]
         let mut object_154 = object.key("SourceEncryptionContext").start_object();
         for (key_155, value_156) in var_153 {
             {
@@ -761,6 +770,7 @@ pub fn serialize_structure_crate_input_re_encrypt_input(
         object.key("DestinationKeyId").string(var_158.as_str());
     }
     if let Some(var_159) = &input.destination_encryption_context {
+        #[allow(unused_mut)]
         let mut object_160 = object.key("DestinationEncryptionContext").start_object();
         for (key_161, value_162) in var_159 {
             {
@@ -816,6 +826,7 @@ pub fn serialize_structure_crate_input_replicate_key_input(
         let mut array_173 = object.key("Tags").start_array();
         for item_174 in var_172 {
             {
+                #[allow(unused_mut)]
                 let mut object_175 = array_173.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_175, item_174)?;
                 object_175.finish();
@@ -912,6 +923,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_192 = object.key("Tags").start_array();
         for item_193 in var_191 {
             {
+                #[allow(unused_mut)]
                 let mut object_194 = array_192.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_194, item_193)?;
                 object_194.finish();
@@ -1071,6 +1083,7 @@ pub fn serialize_structure_crate_model_grant_constraints(
     input: &crate::model::GrantConstraints,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_224) = &input.encryption_context_subset {
+        #[allow(unused_mut)]
         let mut object_225 = object.key("EncryptionContextSubset").start_object();
         for (key_226, value_227) in var_224 {
             {
@@ -1080,6 +1093,7 @@ pub fn serialize_structure_crate_model_grant_constraints(
         object_225.finish();
     }
     if let Some(var_228) = &input.encryption_context_equals {
+        #[allow(unused_mut)]
         let mut object_229 = object.key("EncryptionContextEquals").start_object();
         for (key_230, value_231) in var_228 {
             {

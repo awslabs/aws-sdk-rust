@@ -13,6 +13,7 @@ pub fn serialize_structure_crate_input_create_game_input(
         object.key("GameName").string(var_3.as_str());
     }
     if let Some(var_4) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_5 = object.key("Tags").start_object();
         for (key_6, value_7) in var_4 {
             {
@@ -51,6 +52,7 @@ pub fn serialize_structure_crate_input_create_stage_input(
         object.key("StageName").string(var_12.as_str());
     }
     if let Some(var_13) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_14 = object.key("Tags").start_object();
         for (key_15, value_16) in var_13 {
             {
@@ -67,6 +69,7 @@ pub fn serialize_structure_crate_input_import_game_configuration_input(
     input: &crate::input::ImportGameConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_17) = &input.import_source {
+        #[allow(unused_mut)]
         let mut object_18 = object.key("ImportSource").start_object();
         crate::json_ser::serialize_structure_crate_model_import_game_configuration_source(
             &mut object_18,
@@ -82,6 +85,7 @@ pub fn serialize_structure_crate_input_start_generated_code_job_input(
     input: &crate::input::StartGeneratedCodeJobInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_19) = &input.generator {
+        #[allow(unused_mut)]
         let mut object_20 = object.key("Generator").start_object();
         crate::json_ser::serialize_structure_crate_model_generator(&mut object_20, var_19)?;
         object_20.finish();
@@ -107,6 +111,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_23) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_24 = object.key("tags").start_object();
         for (key_25, value_26) in var_23 {
             {
@@ -136,6 +141,7 @@ pub fn serialize_structure_crate_input_update_game_configuration_input(
         let mut array_29 = object.key("Modifications").start_array();
         for item_30 in var_28 {
             {
+                #[allow(unused_mut)]
                 let mut object_31 = array_29.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_section_modification(
                     &mut object_31,

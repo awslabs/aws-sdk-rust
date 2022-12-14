@@ -7,6 +7,7 @@ pub fn serialize_structure_crate_input_send_command_input(
         object.key("SessionToken").string(var_1.as_str());
     }
     if let Some(var_2) = &input.start_session {
+        #[allow(unused_mut)]
         let mut object_3 = object.key("StartSession").start_object();
         crate::json_ser::serialize_structure_crate_model_start_session_request(
             &mut object_3,
@@ -15,6 +16,7 @@ pub fn serialize_structure_crate_input_send_command_input(
         object_3.finish();
     }
     if let Some(var_4) = &input.start_transaction {
+        #[allow(unused_mut)]
         let mut object_5 = object.key("StartTransaction").start_object();
         crate::json_ser::serialize_structure_crate_model_start_transaction_request(
             &mut object_5,
@@ -23,11 +25,13 @@ pub fn serialize_structure_crate_input_send_command_input(
         object_5.finish();
     }
     if let Some(var_6) = &input.end_session {
+        #[allow(unused_mut)]
         let mut object_7 = object.key("EndSession").start_object();
         crate::json_ser::serialize_structure_crate_model_end_session_request(&mut object_7, var_6)?;
         object_7.finish();
     }
     if let Some(var_8) = &input.commit_transaction {
+        #[allow(unused_mut)]
         let mut object_9 = object.key("CommitTransaction").start_object();
         crate::json_ser::serialize_structure_crate_model_commit_transaction_request(
             &mut object_9,
@@ -36,6 +40,7 @@ pub fn serialize_structure_crate_input_send_command_input(
         object_9.finish();
     }
     if let Some(var_10) = &input.abort_transaction {
+        #[allow(unused_mut)]
         let mut object_11 = object.key("AbortTransaction").start_object();
         crate::json_ser::serialize_structure_crate_model_abort_transaction_request(
             &mut object_11,
@@ -44,6 +49,7 @@ pub fn serialize_structure_crate_input_send_command_input(
         object_11.finish();
     }
     if let Some(var_12) = &input.execute_statement {
+        #[allow(unused_mut)]
         let mut object_13 = object.key("ExecuteStatement").start_object();
         crate::json_ser::serialize_structure_crate_model_execute_statement_request(
             &mut object_13,
@@ -52,6 +58,7 @@ pub fn serialize_structure_crate_input_send_command_input(
         object_13.finish();
     }
     if let Some(var_14) = &input.fetch_page {
+        #[allow(unused_mut)]
         let mut object_15 = object.key("FetchPage").start_object();
         crate::json_ser::serialize_structure_crate_model_fetch_page_request(
             &mut object_15,
@@ -125,6 +132,7 @@ pub fn serialize_structure_crate_model_execute_statement_request(
         let mut array_22 = object.key("Parameters").start_array();
         for item_23 in var_21 {
             {
+                #[allow(unused_mut)]
                 let mut object_24 = array_22.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_value_holder(
                     &mut object_24,

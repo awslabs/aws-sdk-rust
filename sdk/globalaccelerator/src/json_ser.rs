@@ -7,6 +7,7 @@ pub fn serialize_structure_crate_input_add_custom_routing_endpoints_input(
         let mut array_2 = object.key("EndpointConfigurations").start_array();
         for item_3 in var_1 {
             {
+                #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_custom_routing_endpoint_configuration(&mut object_4, item_3)?;
                 object_4.finish();
@@ -96,6 +97,7 @@ pub fn serialize_structure_crate_input_create_accelerator_input(
         let mut array_24 = object.key("Tags").start_array();
         for item_25 in var_23 {
             {
+                #[allow(unused_mut)]
                 let mut object_26 = array_24.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_26, item_25)?;
                 object_26.finish();
@@ -135,6 +137,7 @@ pub fn serialize_structure_crate_input_create_custom_routing_accelerator_input(
         let mut array_35 = object.key("Tags").start_array();
         for item_36 in var_34 {
             {
+                #[allow(unused_mut)]
                 let mut object_37 = array_35.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_37, item_36)?;
                 object_37.finish();
@@ -159,6 +162,7 @@ pub fn serialize_structure_crate_input_create_custom_routing_endpoint_group_inpu
         let mut array_41 = object.key("DestinationConfigurations").start_array();
         for item_42 in var_40 {
             {
+                #[allow(unused_mut)]
                 let mut object_43 = array_41.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_custom_routing_destination_configuration(&mut object_43, item_42)?;
                 object_43.finish();
@@ -183,6 +187,7 @@ pub fn serialize_structure_crate_input_create_custom_routing_listener_input(
         let mut array_47 = object.key("PortRanges").start_array();
         for item_48 in var_46 {
             {
+                #[allow(unused_mut)]
                 let mut object_49 = array_47.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_port_range(
                     &mut object_49,
@@ -213,6 +218,7 @@ pub fn serialize_structure_crate_input_create_endpoint_group_input(
         let mut array_54 = object.key("EndpointConfigurations").start_array();
         for item_55 in var_53 {
             {
+                #[allow(unused_mut)]
                 let mut object_56 = array_54.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_endpoint_configuration(
                     &mut object_56,
@@ -260,6 +266,7 @@ pub fn serialize_structure_crate_input_create_endpoint_group_input(
         let mut array_65 = object.key("PortOverrides").start_array();
         for item_66 in var_64 {
             {
+                #[allow(unused_mut)]
                 let mut object_67 = array_65.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_port_override(
                     &mut object_67,
@@ -284,6 +291,7 @@ pub fn serialize_structure_crate_input_create_listener_input(
         let mut array_70 = object.key("PortRanges").start_array();
         for item_71 in var_69 {
             {
+                #[allow(unused_mut)]
                 let mut object_72 = array_70.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_port_range(
                     &mut object_72,
@@ -679,6 +687,7 @@ pub fn serialize_structure_crate_input_provision_byoip_cidr_input(
         object.key("Cidr").string(var_127.as_str());
     }
     if let Some(var_128) = &input.cidr_authorization_context {
+        #[allow(unused_mut)]
         let mut object_129 = object.key("CidrAuthorizationContext").start_object();
         crate::json_ser::serialize_structure_crate_model_cidr_authorization_context(
             &mut object_129,
@@ -719,6 +728,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_136 = object.key("Tags").start_array();
         for item_137 in var_135 {
             {
+                #[allow(unused_mut)]
                 let mut object_138 = array_136.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_138, item_137)?;
                 object_138.finish();
@@ -835,6 +845,7 @@ pub fn serialize_structure_crate_input_update_custom_routing_listener_input(
         let mut array_161 = object.key("PortRanges").start_array();
         for item_162 in var_160 {
             {
+                #[allow(unused_mut)]
                 let mut object_163 = array_161.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_port_range(
                     &mut object_163,
@@ -859,6 +870,7 @@ pub fn serialize_structure_crate_input_update_endpoint_group_input(
         let mut array_166 = object.key("EndpointConfigurations").start_array();
         for item_167 in var_165 {
             {
+                #[allow(unused_mut)]
                 let mut object_168 = array_166.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_endpoint_configuration(
                     &mut object_168,
@@ -903,6 +915,7 @@ pub fn serialize_structure_crate_input_update_endpoint_group_input(
         let mut array_176 = object.key("PortOverrides").start_array();
         for item_177 in var_175 {
             {
+                #[allow(unused_mut)]
                 let mut object_178 = array_176.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_port_override(
                     &mut object_178,
@@ -927,6 +940,7 @@ pub fn serialize_structure_crate_input_update_listener_input(
         let mut array_181 = object.key("PortRanges").start_array();
         for item_182 in var_180 {
             {
+                #[allow(unused_mut)]
                 let mut object_183 = array_181.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_port_range(
                     &mut object_183,

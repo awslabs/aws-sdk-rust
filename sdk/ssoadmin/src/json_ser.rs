@@ -10,6 +10,7 @@ pub fn serialize_structure_crate_input_attach_customer_managed_policy_reference_
         object.key("PermissionSetArn").string(var_2.as_str());
     }
     if let Some(var_3) = &input.customer_managed_policy_reference {
+        #[allow(unused_mut)]
         let mut object_4 = object.key("CustomerManagedPolicyReference").start_object();
         crate::json_ser::serialize_structure_crate_model_customer_managed_policy_reference(
             &mut object_4,
@@ -69,6 +70,7 @@ pub fn serialize_structure_crate_input_create_instance_access_control_attribute_
         object.key("InstanceArn").string(var_14.as_str());
     }
     if let Some(var_15) = &input.instance_access_control_attribute_configuration {
+        #[allow(unused_mut)]
         let mut object_16 = object
             .key("InstanceAccessControlAttributeConfiguration")
             .start_object();
@@ -101,6 +103,7 @@ pub fn serialize_structure_crate_input_create_permission_set_input(
         let mut array_23 = object.key("Tags").start_array();
         for item_24 in var_22 {
             {
+                #[allow(unused_mut)]
                 let mut object_25 = array_23.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_25, item_24)?;
                 object_25.finish();
@@ -264,6 +267,7 @@ pub fn serialize_structure_crate_input_detach_customer_managed_policy_reference_
         object.key("PermissionSetArn").string(var_49.as_str());
     }
     if let Some(var_50) = &input.customer_managed_policy_reference {
+        #[allow(unused_mut)]
         let mut object_51 = object.key("CustomerManagedPolicyReference").start_object();
         crate::json_ser::serialize_structure_crate_model_customer_managed_policy_reference(
             &mut object_51,
@@ -333,6 +337,7 @@ pub fn serialize_structure_crate_input_list_account_assignment_creation_status_i
         object.key("NextToken").string(var_61.as_str());
     }
     if let Some(var_62) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_63 = object.key("Filter").start_object();
         crate::json_ser::serialize_structure_crate_model_operation_status_filter(
             &mut object_63,
@@ -360,6 +365,7 @@ pub fn serialize_structure_crate_input_list_account_assignment_deletion_status_i
         object.key("NextToken").string(var_66.as_str());
     }
     if let Some(var_67) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_68 = object.key("Filter").start_object();
         crate::json_ser::serialize_structure_crate_model_operation_status_filter(
             &mut object_68,
@@ -497,6 +503,7 @@ pub fn serialize_structure_crate_input_list_permission_set_provisioning_status_i
         object.key("NextToken").string(var_91.as_str());
     }
     if let Some(var_92) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_93 = object.key("Filter").start_object();
         crate::json_ser::serialize_structure_crate_model_operation_status_filter(
             &mut object_93,
@@ -613,6 +620,7 @@ pub fn serialize_structure_crate_input_put_permissions_boundary_to_permission_se
         object.key("PermissionSetArn").string(var_113.as_str());
     }
     if let Some(var_114) = &input.permissions_boundary {
+        #[allow(unused_mut)]
         let mut object_115 = object.key("PermissionsBoundary").start_object();
         crate::json_ser::serialize_structure_crate_model_permissions_boundary(
             &mut object_115,
@@ -637,6 +645,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_119 = object.key("Tags").start_array();
         for item_120 in var_118 {
             {
+                #[allow(unused_mut)]
                 let mut object_121 = array_119.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_121, item_120)?;
                 object_121.finish();
@@ -677,6 +686,7 @@ pub fn serialize_structure_crate_input_update_instance_access_control_attribute_
         object.key("InstanceArn").string(var_127.as_str());
     }
     if let Some(var_128) = &input.instance_access_control_attribute_configuration {
+        #[allow(unused_mut)]
         let mut object_129 = object
             .key("InstanceAccessControlAttributeConfiguration")
             .start_object();
@@ -729,6 +739,7 @@ pub fn serialize_structure_crate_model_instance_access_control_attribute_configu
         let mut array_138 = object.key("AccessControlAttributes").start_array();
         for item_139 in var_137 {
             {
+                #[allow(unused_mut)]
                 let mut object_140 = array_138.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_access_control_attribute(
                     &mut object_140,
@@ -770,6 +781,7 @@ pub fn serialize_structure_crate_model_permissions_boundary(
     input: &crate::model::PermissionsBoundary,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_144) = &input.customer_managed_policy_reference {
+        #[allow(unused_mut)]
         let mut object_145 = object.key("CustomerManagedPolicyReference").start_object();
         crate::json_ser::serialize_structure_crate_model_customer_managed_policy_reference(
             &mut object_145,
@@ -791,6 +803,7 @@ pub fn serialize_structure_crate_model_access_control_attribute(
         object.key("Key").string(var_147.as_str());
     }
     if let Some(var_148) = &input.value {
+        #[allow(unused_mut)]
         let mut object_149 = object.key("Value").start_object();
         crate::json_ser::serialize_structure_crate_model_access_control_attribute_value(
             &mut object_149,

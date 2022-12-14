@@ -66,6 +66,7 @@ pub fn serialize_structure_crate_input_create_fleet_input(
         object.key("OptimizeForEndUserLocation").boolean(*var_13);
     }
     if let Some(var_14) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_15 = object.key("Tags").start_object();
         for (key_16, value_17) in var_14 {
             {
@@ -353,6 +354,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_56) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_57 = object.key("Tags").start_object();
         for (key_58, value_59) in var_56 {
             {

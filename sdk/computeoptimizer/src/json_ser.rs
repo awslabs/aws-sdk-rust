@@ -7,6 +7,7 @@ pub fn serialize_structure_crate_input_delete_recommendation_preferences_input(
         object.key("resourceType").string(var_1.as_str());
     }
     if let Some(var_2) = &input.scope {
+        #[allow(unused_mut)]
         let mut object_3 = object.key("scope").start_object();
         crate::json_ser::serialize_structure_crate_model_scope(&mut object_3, var_2)?;
         object_3.finish();
@@ -40,6 +41,7 @@ pub fn serialize_structure_crate_input_describe_recommendation_export_jobs_input
         let mut array_11 = object.key("filters").start_array();
         for item_12 in var_10 {
             {
+                #[allow(unused_mut)]
                 let mut object_13 = array_11.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_job_filter(
                     &mut object_13,
@@ -79,6 +81,7 @@ pub fn serialize_structure_crate_input_export_auto_scaling_group_recommendations
         let mut array_20 = object.key("filters").start_array();
         for item_21 in var_19 {
             {
+                #[allow(unused_mut)]
                 let mut object_22 = array_20.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_22, item_21)?;
                 object_22.finish();
@@ -96,6 +99,7 @@ pub fn serialize_structure_crate_input_export_auto_scaling_group_recommendations
         array_24.finish();
     }
     if let Some(var_26) = &input.s3_destination_config {
+        #[allow(unused_mut)]
         let mut object_27 = object.key("s3DestinationConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_destination_config(
             &mut object_27,
@@ -112,6 +116,7 @@ pub fn serialize_structure_crate_input_export_auto_scaling_group_recommendations
             .boolean(input.include_member_accounts);
     }
     if let Some(var_29) = &input.recommendation_preferences {
+        #[allow(unused_mut)]
         let mut object_30 = object.key("recommendationPreferences").start_object();
         crate::json_ser::serialize_structure_crate_model_recommendation_preferences(
             &mut object_30,
@@ -139,6 +144,7 @@ pub fn serialize_structure_crate_input_export_ebs_volume_recommendations_input(
         let mut array_35 = object.key("filters").start_array();
         for item_36 in var_34 {
             {
+                #[allow(unused_mut)]
                 let mut object_37 = array_35.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_ebs_filter(
                     &mut object_37,
@@ -159,6 +165,7 @@ pub fn serialize_structure_crate_input_export_ebs_volume_recommendations_input(
         array_39.finish();
     }
     if let Some(var_41) = &input.s3_destination_config {
+        #[allow(unused_mut)]
         let mut object_42 = object.key("s3DestinationConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_destination_config(
             &mut object_42,
@@ -194,6 +201,7 @@ pub fn serialize_structure_crate_input_export_ec2_instance_recommendations_input
         let mut array_48 = object.key("filters").start_array();
         for item_49 in var_47 {
             {
+                #[allow(unused_mut)]
                 let mut object_50 = array_48.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_50, item_49)?;
                 object_50.finish();
@@ -211,6 +219,7 @@ pub fn serialize_structure_crate_input_export_ec2_instance_recommendations_input
         array_52.finish();
     }
     if let Some(var_54) = &input.s3_destination_config {
+        #[allow(unused_mut)]
         let mut object_55 = object.key("s3DestinationConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_destination_config(
             &mut object_55,
@@ -227,6 +236,7 @@ pub fn serialize_structure_crate_input_export_ec2_instance_recommendations_input
             .boolean(input.include_member_accounts);
     }
     if let Some(var_57) = &input.recommendation_preferences {
+        #[allow(unused_mut)]
         let mut object_58 = object.key("recommendationPreferences").start_object();
         crate::json_ser::serialize_structure_crate_model_recommendation_preferences(
             &mut object_58,
@@ -254,6 +264,7 @@ pub fn serialize_structure_crate_input_export_lambda_function_recommendations_in
         let mut array_63 = object.key("filters").start_array();
         for item_64 in var_62 {
             {
+                #[allow(unused_mut)]
                 let mut object_65 = array_63.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_lambda_function_recommendation_filter(&mut object_65, item_64)?;
                 object_65.finish();
@@ -271,6 +282,7 @@ pub fn serialize_structure_crate_input_export_lambda_function_recommendations_in
         array_67.finish();
     }
     if let Some(var_69) = &input.s3_destination_config {
+        #[allow(unused_mut)]
         let mut object_70 = object.key("s3DestinationConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_destination_config(
             &mut object_70,
@@ -324,6 +336,7 @@ pub fn serialize_structure_crate_input_get_auto_scaling_group_recommendations_in
         let mut array_81 = object.key("filters").start_array();
         for item_82 in var_80 {
             {
+                #[allow(unused_mut)]
                 let mut object_83 = array_81.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_83, item_82)?;
                 object_83.finish();
@@ -332,6 +345,7 @@ pub fn serialize_structure_crate_input_get_auto_scaling_group_recommendations_in
         array_81.finish();
     }
     if let Some(var_84) = &input.recommendation_preferences {
+        #[allow(unused_mut)]
         let mut object_85 = object.key("recommendationPreferences").start_object();
         crate::json_ser::serialize_structure_crate_model_recommendation_preferences(
             &mut object_85,
@@ -368,6 +382,7 @@ pub fn serialize_structure_crate_input_get_ebs_volume_recommendations_input(
         let mut array_92 = object.key("filters").start_array();
         for item_93 in var_91 {
             {
+                #[allow(unused_mut)]
                 let mut object_94 = array_92.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_ebs_filter(
                     &mut object_94,
@@ -416,6 +431,7 @@ pub fn serialize_structure_crate_input_get_ec2_instance_recommendations_input(
         let mut array_104 = object.key("filters").start_array();
         for item_105 in var_103 {
             {
+                #[allow(unused_mut)]
                 let mut object_106 = array_104.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_106, item_105)?;
                 object_106.finish();
@@ -433,6 +449,7 @@ pub fn serialize_structure_crate_input_get_ec2_instance_recommendations_input(
         array_108.finish();
     }
     if let Some(var_110) = &input.recommendation_preferences {
+        #[allow(unused_mut)]
         let mut object_111 = object.key("recommendationPreferences").start_object();
         crate::json_ser::serialize_structure_crate_model_recommendation_preferences(
             &mut object_111,
@@ -470,6 +487,7 @@ pub fn serialize_structure_crate_input_get_ec2_recommendation_projected_metrics_
             .date_time(var_115, aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     if let Some(var_116) = &input.recommendation_preferences {
+        #[allow(unused_mut)]
         let mut object_117 = object.key("recommendationPreferences").start_object();
         crate::json_ser::serialize_structure_crate_model_recommendation_preferences(
             &mut object_117,
@@ -498,6 +516,7 @@ pub fn serialize_structure_crate_input_get_enrollment_statuses_for_organization_
         let mut array_120 = object.key("filters").start_array();
         for item_121 in var_119 {
             {
+                #[allow(unused_mut)]
                 let mut object_122 = array_120.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_enrollment_filter(
                     &mut object_122,
@@ -546,6 +565,7 @@ pub fn serialize_structure_crate_input_get_lambda_function_recommendations_input
         let mut array_132 = object.key("filters").start_array();
         for item_133 in var_131 {
             {
+                #[allow(unused_mut)]
                 let mut object_134 = array_132.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_lambda_function_recommendation_filter(&mut object_134, item_133)?;
                 object_134.finish();
@@ -573,6 +593,7 @@ pub fn serialize_structure_crate_input_get_recommendation_preferences_input(
         object.key("resourceType").string(var_137.as_str());
     }
     if let Some(var_138) = &input.scope {
+        #[allow(unused_mut)]
         let mut object_139 = object.key("scope").start_object();
         crate::json_ser::serialize_structure_crate_model_scope(&mut object_139, var_138)?;
         object_139.finish();
@@ -622,6 +643,7 @@ pub fn serialize_structure_crate_input_put_recommendation_preferences_input(
         object.key("resourceType").string(var_147.as_str());
     }
     if let Some(var_148) = &input.scope {
+        #[allow(unused_mut)]
         let mut object_149 = object.key("scope").start_object();
         crate::json_ser::serialize_structure_crate_model_scope(&mut object_149, var_148)?;
         object_149.finish();

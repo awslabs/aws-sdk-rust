@@ -16,6 +16,7 @@ pub fn serialize_structure_crate_input_create_application_input(
         object.key("roleArn").string(var_4.as_str());
     }
     if let Some(var_5) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_6 = object.key("tags").start_object();
         for (key_7, value_8) in var_5 {
             {
@@ -32,6 +33,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_9) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_10 = object.key("tags").start_object();
         for (key_11, value_12) in var_9 {
             {

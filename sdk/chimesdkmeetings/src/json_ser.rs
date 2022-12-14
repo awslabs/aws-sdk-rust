@@ -7,6 +7,7 @@ pub fn serialize_structure_crate_input_batch_create_attendee_input(
         let mut array_2 = object.key("Attendees").start_array();
         for item_3 in var_1 {
             {
+                #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_create_attendee_request_item(
                     &mut object_4,
@@ -25,6 +26,7 @@ pub fn serialize_structure_crate_input_batch_update_attendee_capabilities_except
     input: &crate::input::BatchUpdateAttendeeCapabilitiesExceptInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_5) = &input.capabilities {
+        #[allow(unused_mut)]
         let mut object_6 = object.key("Capabilities").start_object();
         crate::json_ser::serialize_structure_crate_model_attendee_capabilities(
             &mut object_6,
@@ -36,6 +38,7 @@ pub fn serialize_structure_crate_input_batch_update_attendee_capabilities_except
         let mut array_8 = object.key("ExcludedAttendeeIds").start_array();
         for item_9 in var_7 {
             {
+                #[allow(unused_mut)]
                 let mut object_10 = array_8.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_attendee_id_item(
                     &mut object_10,
@@ -54,6 +57,7 @@ pub fn serialize_structure_crate_input_create_attendee_input(
     input: &crate::input::CreateAttendeeInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_11) = &input.capabilities {
+        #[allow(unused_mut)]
         let mut object_12 = object.key("Capabilities").start_object();
         crate::json_ser::serialize_structure_crate_model_attendee_capabilities(
             &mut object_12,
@@ -81,6 +85,7 @@ pub fn serialize_structure_crate_input_create_meeting_input(
         object.key("MediaRegion").string(var_16.as_str());
     }
     if let Some(var_17) = &input.meeting_features {
+        #[allow(unused_mut)]
         let mut object_18 = object.key("MeetingFeatures").start_object();
         crate::json_ser::serialize_structure_crate_model_meeting_features_configuration(
             &mut object_18,
@@ -92,6 +97,7 @@ pub fn serialize_structure_crate_input_create_meeting_input(
         object.key("MeetingHostId").string(var_19.as_str());
     }
     if let Some(var_20) = &input.notifications_configuration {
+        #[allow(unused_mut)]
         let mut object_21 = object.key("NotificationsConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_notifications_configuration(
             &mut object_21,
@@ -106,6 +112,7 @@ pub fn serialize_structure_crate_input_create_meeting_input(
         let mut array_24 = object.key("Tags").start_array();
         for item_25 in var_23 {
             {
+                #[allow(unused_mut)]
                 let mut object_26 = array_24.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_26, item_25)?;
                 object_26.finish();
@@ -133,6 +140,7 @@ pub fn serialize_structure_crate_input_create_meeting_with_attendees_input(
         let mut array_31 = object.key("Attendees").start_array();
         for item_32 in var_30 {
             {
+                #[allow(unused_mut)]
                 let mut object_33 = array_31.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_create_attendee_request_item(
                     &mut object_33,
@@ -153,6 +161,7 @@ pub fn serialize_structure_crate_input_create_meeting_with_attendees_input(
         object.key("MediaRegion").string(var_36.as_str());
     }
     if let Some(var_37) = &input.meeting_features {
+        #[allow(unused_mut)]
         let mut object_38 = object.key("MeetingFeatures").start_object();
         crate::json_ser::serialize_structure_crate_model_meeting_features_configuration(
             &mut object_38,
@@ -164,6 +173,7 @@ pub fn serialize_structure_crate_input_create_meeting_with_attendees_input(
         object.key("MeetingHostId").string(var_39.as_str());
     }
     if let Some(var_40) = &input.notifications_configuration {
+        #[allow(unused_mut)]
         let mut object_41 = object.key("NotificationsConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_notifications_configuration(
             &mut object_41,
@@ -178,6 +188,7 @@ pub fn serialize_structure_crate_input_create_meeting_with_attendees_input(
         let mut array_44 = object.key("Tags").start_array();
         for item_45 in var_43 {
             {
+                #[allow(unused_mut)]
                 let mut object_46 = array_44.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_46, item_45)?;
                 object_46.finish();
@@ -202,6 +213,7 @@ pub fn serialize_structure_crate_input_start_meeting_transcription_input(
     input: &crate::input::StartMeetingTranscriptionInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_50) = &input.transcription_configuration {
+        #[allow(unused_mut)]
         let mut object_51 = object.key("TranscriptionConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_transcription_configuration(
             &mut object_51,
@@ -223,6 +235,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_54 = object.key("Tags").start_array();
         for item_55 in var_53 {
             {
+                #[allow(unused_mut)]
                 let mut object_56 = array_54.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_56, item_55)?;
                 object_56.finish();
@@ -257,6 +270,7 @@ pub fn serialize_structure_crate_input_update_attendee_capabilities_input(
     input: &crate::input::UpdateAttendeeCapabilitiesInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_61) = &input.capabilities {
+        #[allow(unused_mut)]
         let mut object_62 = object.key("Capabilities").start_object();
         crate::json_ser::serialize_structure_crate_model_attendee_capabilities(
             &mut object_62,
@@ -275,6 +289,7 @@ pub fn serialize_structure_crate_model_create_attendee_request_item(
         object.key("ExternalUserId").string(var_63.as_str());
     }
     if let Some(var_64) = &input.capabilities {
+        #[allow(unused_mut)]
         let mut object_65 = object.key("Capabilities").start_object();
         crate::json_ser::serialize_structure_crate_model_attendee_capabilities(
             &mut object_65,
@@ -316,6 +331,7 @@ pub fn serialize_structure_crate_model_meeting_features_configuration(
     input: &crate::model::MeetingFeaturesConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_70) = &input.audio {
+        #[allow(unused_mut)]
         let mut object_71 = object.key("Audio").start_object();
         crate::json_ser::serialize_structure_crate_model_audio_features(&mut object_71, var_70)?;
         object_71.finish();
@@ -357,6 +373,7 @@ pub fn serialize_structure_crate_model_transcription_configuration(
     input: &crate::model::TranscriptionConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_77) = &input.engine_transcribe_settings {
+        #[allow(unused_mut)]
         let mut object_78 = object.key("EngineTranscribeSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_engine_transcribe_settings(
             &mut object_78,
@@ -365,6 +382,7 @@ pub fn serialize_structure_crate_model_transcription_configuration(
         object_78.finish();
     }
     if let Some(var_79) = &input.engine_transcribe_medical_settings {
+        #[allow(unused_mut)]
         let mut object_80 = object.key("EngineTranscribeMedicalSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_engine_transcribe_medical_settings(
             &mut object_80,

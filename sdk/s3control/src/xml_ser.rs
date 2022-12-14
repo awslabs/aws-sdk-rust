@@ -538,12 +538,8 @@ pub fn serialize_structure_crate_model_job_operation(
             inner_writer,
         )?
     }
-    if let Some(var_46) = &input.s3_delete_object_tagging {
-        let inner_writer = scope.start_el("S3DeleteObjectTagging");
-        crate::xml_ser::serialize_structure_crate_model_s3_delete_object_tagging_operation(
-            var_46,
-            inner_writer,
-        )?
+    if let Some(_var_46) = &input.s3_delete_object_tagging {
+        scope.start_el("S3DeleteObjectTagging").finish();
     }
     if let Some(var_47) = &input.s3_initiate_restore_object {
         let inner_writer = scope.start_el("S3InitiateRestoreObject");
@@ -566,12 +562,8 @@ pub fn serialize_structure_crate_model_job_operation(
             inner_writer,
         )?
     }
-    if let Some(var_50) = &input.s3_replicate_object {
-        let inner_writer = scope.start_el("S3ReplicateObject");
-        crate::xml_ser::serialize_structure_crate_model_s3_replicate_object_operation(
-            var_50,
-            inner_writer,
-        )?
+    if let Some(_var_50) = &input.s3_replicate_object {
+        scope.start_el("S3ReplicateObject").finish();
     }
     scope.finish();
     Ok(())
@@ -1077,17 +1069,6 @@ pub fn serialize_structure_crate_model_s3_set_object_tagging_operation(
     Ok(())
 }
 
-pub fn serialize_structure_crate_model_s3_delete_object_tagging_operation(
-    input: &crate::model::S3DeleteObjectTaggingOperation,
-    writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    let _ = input;
-    #[allow(unused_mut)]
-    let mut scope = writer.finish();
-    scope.finish();
-    Ok(())
-}
-
 pub fn serialize_structure_crate_model_s3_initiate_restore_object_operation(
     input: &crate::model::S3InitiateRestoreObjectOperation,
     writer: aws_smithy_xml::encode::ElWriter,
@@ -1137,17 +1118,6 @@ pub fn serialize_structure_crate_model_s3_set_object_retention_operation(
         let inner_writer = scope.start_el("Retention");
         crate::xml_ser::serialize_structure_crate_model_s3_retention(var_118, inner_writer)?
     }
-    scope.finish();
-    Ok(())
-}
-
-pub fn serialize_structure_crate_model_s3_replicate_object_operation(
-    input: &crate::model::S3ReplicateObjectOperation,
-    writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    let _ = input;
-    #[allow(unused_mut)]
-    let mut scope = writer.finish();
     scope.finish();
     Ok(())
 }
@@ -1817,9 +1787,8 @@ pub fn serialize_structure_crate_model_generated_manifest_encryption(
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_189) = &input.sses3 {
-        let inner_writer = scope.start_el("SSE-S3");
-        crate::xml_ser::serialize_structure_crate_model_sses3_encryption(var_189, inner_writer)?
+    if let Some(_var_189) = &input.sses3 {
+        scope.start_el("SSE-S3").finish();
     }
     if let Some(var_190) = &input.ssekms {
         let inner_writer = scope.start_el("SSE-KMS");
@@ -1923,25 +1892,13 @@ pub fn serialize_structure_crate_model_storage_lens_data_export_encryption(
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_201) = &input.sses3 {
-        let inner_writer = scope.start_el("SSE-S3");
-        crate::xml_ser::serialize_structure_crate_model_sses3(var_201, inner_writer)?
+    if let Some(_var_201) = &input.sses3 {
+        scope.start_el("SSE-S3").finish();
     }
     if let Some(var_202) = &input.ssekms {
         let inner_writer = scope.start_el("SSE-KMS");
         crate::xml_ser::serialize_structure_crate_model_ssekms(var_202, inner_writer)?
     }
-    scope.finish();
-    Ok(())
-}
-
-pub fn serialize_structure_crate_model_sses3_encryption(
-    input: &crate::model::Sses3Encryption,
-    writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    let _ = input;
-    #[allow(unused_mut)]
-    let mut scope = writer.finish();
     scope.finish();
     Ok(())
 }
@@ -1992,17 +1949,6 @@ pub fn serialize_structure_crate_model_prefix_level_storage_metrics(
         let inner_writer = scope.start_el("SelectionCriteria");
         crate::xml_ser::serialize_structure_crate_model_selection_criteria(var_206, inner_writer)?
     }
-    scope.finish();
-    Ok(())
-}
-
-pub fn serialize_structure_crate_model_sses3(
-    input: &crate::model::Sses3,
-    writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    let _ = input;
-    #[allow(unused_mut)]
-    let mut scope = writer.finish();
     scope.finish();
     Ok(())
 }

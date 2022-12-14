@@ -4,6 +4,7 @@ pub fn serialize_structure_crate_input_create_app_monitor_input(
     input: &crate::input::CreateAppMonitorInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.app_monitor_configuration {
+        #[allow(unused_mut)]
         let mut object_2 = object.key("AppMonitorConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_app_monitor_configuration(
             &mut object_2,
@@ -21,6 +22,7 @@ pub fn serialize_structure_crate_input_create_app_monitor_input(
         object.key("Name").string(var_5.as_str());
     }
     if let Some(var_6) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_7 = object.key("Tags").start_object();
         for (key_8, value_9) in var_6 {
             {
@@ -40,6 +42,7 @@ pub fn serialize_structure_crate_input_get_app_monitor_data_input(
         let mut array_11 = object.key("Filters").start_array();
         for item_12 in var_10 {
             {
+                #[allow(unused_mut)]
                 let mut object_13 = array_11.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_query_filter(
                     &mut object_13,
@@ -60,6 +63,7 @@ pub fn serialize_structure_crate_input_get_app_monitor_data_input(
         object.key("NextToken").string(var_14.as_str());
     }
     if let Some(var_15) = &input.time_range {
+        #[allow(unused_mut)]
         let mut object_16 = object.key("TimeRange").start_object();
         crate::json_ser::serialize_structure_crate_model_time_range(&mut object_16, var_15)?;
         object_16.finish();
@@ -72,6 +76,7 @@ pub fn serialize_structure_crate_input_put_rum_events_input(
     input: &crate::input::PutRumEventsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_17) = &input.app_monitor_details {
+        #[allow(unused_mut)]
         let mut object_18 = object.key("AppMonitorDetails").start_object();
         crate::json_ser::serialize_structure_crate_model_app_monitor_details(
             &mut object_18,
@@ -86,6 +91,7 @@ pub fn serialize_structure_crate_input_put_rum_events_input(
         let mut array_21 = object.key("RumEvents").start_array();
         for item_22 in var_20 {
             {
+                #[allow(unused_mut)]
                 let mut object_23 = array_21.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_rum_event(
                     &mut object_23,
@@ -97,6 +103,7 @@ pub fn serialize_structure_crate_input_put_rum_events_input(
         array_21.finish();
     }
     if let Some(var_24) = &input.user_details {
+        #[allow(unused_mut)]
         let mut object_25 = object.key("UserDetails").start_object();
         crate::json_ser::serialize_structure_crate_model_user_details(&mut object_25, var_24)?;
         object_25.finish();
@@ -109,6 +116,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_26) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_27 = object.key("Tags").start_object();
         for (key_28, value_29) in var_26 {
             {
@@ -125,6 +133,7 @@ pub fn serialize_structure_crate_input_update_app_monitor_input(
     input: &crate::input::UpdateAppMonitorInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_30) = &input.app_monitor_configuration {
+        #[allow(unused_mut)]
         let mut object_31 = object.key("AppMonitorConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_app_monitor_configuration(
             &mut object_31,

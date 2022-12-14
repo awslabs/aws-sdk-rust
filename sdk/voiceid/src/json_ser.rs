@@ -10,6 +10,7 @@ pub fn serialize_structure_crate_input_create_domain_input(
         object.key("Description").string(var_2.as_str());
     }
     if let Some(var_3) = &input.server_side_encryption_configuration {
+        #[allow(unused_mut)]
         let mut object_4 = object
             .key("ServerSideEncryptionConfiguration")
             .start_object();
@@ -26,6 +27,7 @@ pub fn serialize_structure_crate_input_create_domain_input(
         let mut array_7 = object.key("Tags").start_array();
         for item_8 in var_6 {
             {
+                #[allow(unused_mut)]
                 let mut object_9 = array_7.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_9, item_8)?;
                 object_9.finish();
@@ -266,6 +268,7 @@ pub fn serialize_structure_crate_input_start_fraudster_registration_job_input(
         object.key("DataAccessRoleArn").string(var_45.as_str());
     }
     if let Some(var_46) = &input.registration_config {
+        #[allow(unused_mut)]
         let mut object_47 = object.key("RegistrationConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_registration_config(
             &mut object_47,
@@ -274,11 +277,13 @@ pub fn serialize_structure_crate_input_start_fraudster_registration_job_input(
         object_47.finish();
     }
     if let Some(var_48) = &input.input_data_config {
+        #[allow(unused_mut)]
         let mut object_49 = object.key("InputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_input_data_config(&mut object_49, var_48)?;
         object_49.finish();
     }
     if let Some(var_50) = &input.output_data_config {
+        #[allow(unused_mut)]
         let mut object_51 = object.key("OutputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_output_data_config(
             &mut object_51,
@@ -306,16 +311,19 @@ pub fn serialize_structure_crate_input_start_speaker_enrollment_job_input(
         object.key("DataAccessRoleArn").string(var_55.as_str());
     }
     if let Some(var_56) = &input.enrollment_config {
+        #[allow(unused_mut)]
         let mut object_57 = object.key("EnrollmentConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_enrollment_config(&mut object_57, var_56)?;
         object_57.finish();
     }
     if let Some(var_58) = &input.input_data_config {
+        #[allow(unused_mut)]
         let mut object_59 = object.key("InputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_input_data_config(&mut object_59, var_58)?;
         object_59.finish();
     }
     if let Some(var_60) = &input.output_data_config {
+        #[allow(unused_mut)]
         let mut object_61 = object.key("OutputDataConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_output_data_config(
             &mut object_61,
@@ -337,6 +345,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_64 = object.key("Tags").start_array();
         for item_65 in var_63 {
             {
+                #[allow(unused_mut)]
                 let mut object_66 = array_64.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_66, item_65)?;
                 object_66.finish();
@@ -380,6 +389,7 @@ pub fn serialize_structure_crate_input_update_domain_input(
         object.key("Description").string(var_73.as_str());
     }
     if let Some(var_74) = &input.server_side_encryption_configuration {
+        #[allow(unused_mut)]
         let mut object_75 = object
             .key("ServerSideEncryptionConfiguration")
             .start_object();
@@ -466,6 +476,7 @@ pub fn serialize_structure_crate_model_enrollment_config(
             .string(var_84.as_str());
     }
     if let Some(var_85) = &input.fraud_detection_config {
+        #[allow(unused_mut)]
         let mut object_86 = object.key("FraudDetectionConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_enrollment_job_fraud_detection_config(
             &mut object_86,

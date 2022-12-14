@@ -14,6 +14,7 @@ pub fn serialize_structure_crate_input_create_placement_input(
     input: &crate::input::CreatePlacementInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_2) = &input.attributes {
+        #[allow(unused_mut)]
         let mut object_3 = object.key("attributes").start_object();
         for (key_4, value_5) in var_2 {
             {
@@ -36,6 +37,7 @@ pub fn serialize_structure_crate_input_create_project_input(
         object.key("description").string(var_7.as_str());
     }
     if let Some(var_8) = &input.placement_template {
+        #[allow(unused_mut)]
         let mut object_9 = object.key("placementTemplate").start_object();
         crate::json_ser::serialize_structure_crate_model_placement_template(&mut object_9, var_8)?;
         object_9.finish();
@@ -44,6 +46,7 @@ pub fn serialize_structure_crate_input_create_project_input(
         object.key("projectName").string(var_10.as_str());
     }
     if let Some(var_11) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_12 = object.key("tags").start_object();
         for (key_13, value_14) in var_11 {
             {
@@ -60,6 +63,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_15) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_16 = object.key("tags").start_object();
         for (key_17, value_18) in var_15 {
             {
@@ -76,6 +80,7 @@ pub fn serialize_structure_crate_input_update_placement_input(
     input: &crate::input::UpdatePlacementInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_19) = &input.attributes {
+        #[allow(unused_mut)]
         let mut object_20 = object.key("attributes").start_object();
         for (key_21, value_22) in var_19 {
             {
@@ -95,6 +100,7 @@ pub fn serialize_structure_crate_input_update_project_input(
         object.key("description").string(var_23.as_str());
     }
     if let Some(var_24) = &input.placement_template {
+        #[allow(unused_mut)]
         let mut object_25 = object.key("placementTemplate").start_object();
         crate::json_ser::serialize_structure_crate_model_placement_template(
             &mut object_25,
@@ -110,6 +116,7 @@ pub fn serialize_structure_crate_model_placement_template(
     input: &crate::model::PlacementTemplate,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_26) = &input.default_attributes {
+        #[allow(unused_mut)]
         let mut object_27 = object.key("defaultAttributes").start_object();
         for (key_28, value_29) in var_26 {
             {
@@ -119,9 +126,11 @@ pub fn serialize_structure_crate_model_placement_template(
         object_27.finish();
     }
     if let Some(var_30) = &input.device_templates {
+        #[allow(unused_mut)]
         let mut object_31 = object.key("deviceTemplates").start_object();
         for (key_32, value_33) in var_30 {
             {
+                #[allow(unused_mut)]
                 let mut object_34 = object_31.key(key_32.as_str()).start_object();
                 crate::json_ser::serialize_structure_crate_model_device_template(
                     &mut object_34,
@@ -143,6 +152,7 @@ pub fn serialize_structure_crate_model_device_template(
         object.key("deviceType").string(var_35.as_str());
     }
     if let Some(var_36) = &input.callback_overrides {
+        #[allow(unused_mut)]
         let mut object_37 = object.key("callbackOverrides").start_object();
         for (key_38, value_39) in var_36 {
             {

@@ -10,6 +10,7 @@ pub fn serialize_structure_crate_input_add_tags_to_resource_input(
         let mut array_3 = object.key("TagList").start_array();
         for item_4 in var_2 {
             {
+                #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_5, item_4)?;
                 object_5.finish();

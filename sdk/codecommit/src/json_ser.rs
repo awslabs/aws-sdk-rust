@@ -213,6 +213,7 @@ pub fn serialize_structure_crate_input_create_commit_input(
         let mut array_43 = object.key("putFiles").start_array();
         for item_44 in var_42 {
             {
+                #[allow(unused_mut)]
                 let mut object_45 = array_43.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_put_file_entry(
                     &mut object_45,
@@ -227,6 +228,7 @@ pub fn serialize_structure_crate_input_create_commit_input(
         let mut array_47 = object.key("deleteFiles").start_array();
         for item_48 in var_46 {
             {
+                #[allow(unused_mut)]
                 let mut object_49 = array_47.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_delete_file_entry(
                     &mut object_49,
@@ -241,6 +243,7 @@ pub fn serialize_structure_crate_input_create_commit_input(
         let mut array_51 = object.key("setFileModes").start_array();
         for item_52 in var_50 {
             {
+                #[allow(unused_mut)]
                 let mut object_53 = array_51.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_set_file_mode_entry(
                     &mut object_53,
@@ -268,6 +271,7 @@ pub fn serialize_structure_crate_input_create_pull_request_input(
         let mut array_57 = object.key("targets").start_array();
         for item_58 in var_56 {
             {
+                #[allow(unused_mut)]
                 let mut object_59 = array_57.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_target(&mut object_59, item_58)?;
                 object_59.finish();
@@ -308,6 +312,7 @@ pub fn serialize_structure_crate_input_create_repository_input(
         object.key("repositoryDescription").string(var_65.as_str());
     }
     if let Some(var_66) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_67 = object.key("tags").start_object();
         for (key_68, value_69) in var_66 {
             {
@@ -360,6 +365,7 @@ pub fn serialize_structure_crate_input_create_unreferenced_merge_commit_input(
             .boolean(input.keep_empty_folders);
     }
     if let Some(var_79) = &input.conflict_resolution {
+        #[allow(unused_mut)]
         let mut object_80 = object.key("conflictResolution").start_object();
         crate::json_ser::serialize_structure_crate_model_conflict_resolution(
             &mut object_80,
@@ -1085,6 +1091,7 @@ pub fn serialize_structure_crate_input_merge_branches_by_squash_input(
             .boolean(input.keep_empty_folders);
     }
     if let Some(var_207) = &input.conflict_resolution {
+        #[allow(unused_mut)]
         let mut object_208 = object.key("conflictResolution").start_object();
         crate::json_ser::serialize_structure_crate_model_conflict_resolution(
             &mut object_208,
@@ -1136,6 +1143,7 @@ pub fn serialize_structure_crate_input_merge_branches_by_three_way_input(
             .boolean(input.keep_empty_folders);
     }
     if let Some(var_218) = &input.conflict_resolution {
+        #[allow(unused_mut)]
         let mut object_219 = object.key("conflictResolution").start_object();
         crate::json_ser::serialize_structure_crate_model_conflict_resolution(
             &mut object_219,
@@ -1198,6 +1206,7 @@ pub fn serialize_structure_crate_input_merge_pull_request_by_squash_input(
             .boolean(input.keep_empty_folders);
     }
     if let Some(var_231) = &input.conflict_resolution {
+        #[allow(unused_mut)]
         let mut object_232 = object.key("conflictResolution").start_object();
         crate::json_ser::serialize_structure_crate_model_conflict_resolution(
             &mut object_232,
@@ -1244,6 +1253,7 @@ pub fn serialize_structure_crate_input_merge_pull_request_by_three_way_input(
             .boolean(input.keep_empty_folders);
     }
     if let Some(var_241) = &input.conflict_resolution {
+        #[allow(unused_mut)]
         let mut object_242 = object.key("conflictResolution").start_object();
         crate::json_ser::serialize_structure_crate_model_conflict_resolution(
             &mut object_242,
@@ -1284,6 +1294,7 @@ pub fn serialize_structure_crate_input_post_comment_for_compared_commit_input(
         object.key("afterCommitId").string(var_248.as_str());
     }
     if let Some(var_249) = &input.location {
+        #[allow(unused_mut)]
         let mut object_250 = object.key("location").start_object();
         crate::json_ser::serialize_structure_crate_model_location(&mut object_250, var_249)?;
         object_250.finish();
@@ -1314,6 +1325,7 @@ pub fn serialize_structure_crate_input_post_comment_for_pull_request_input(
         object.key("afterCommitId").string(var_256.as_str());
     }
     if let Some(var_257) = &input.location {
+        #[allow(unused_mut)]
         let mut object_258 = object.key("location").start_object();
         crate::json_ser::serialize_structure_crate_model_location(&mut object_258, var_257)?;
         object_258.finish();
@@ -1403,6 +1415,7 @@ pub fn serialize_structure_crate_input_put_repository_triggers_input(
         let mut array_277 = object.key("triggers").start_array();
         for item_278 in var_276 {
             {
+                #[allow(unused_mut)]
                 let mut object_279 = array_277.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_repository_trigger(
                     &mut object_279,
@@ -1424,6 +1437,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         object.key("resourceArn").string(var_280.as_str());
     }
     if let Some(var_281) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_282 = object.key("tags").start_object();
         for (key_283, value_284) in var_281 {
             {
@@ -1446,6 +1460,7 @@ pub fn serialize_structure_crate_input_test_repository_triggers_input(
         let mut array_287 = object.key("triggers").start_array();
         for item_288 in var_286 {
             {
+                #[allow(unused_mut)]
                 let mut object_289 = array_287.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_repository_trigger(
                     &mut object_289,
@@ -1676,6 +1691,7 @@ pub fn serialize_structure_crate_model_put_file_entry(
             .string_unchecked(&aws_smithy_types::base64::encode(var_324));
     }
     if let Some(var_325) = &input.source_file {
+        #[allow(unused_mut)]
         let mut object_326 = object.key("sourceFile").start_object();
         crate::json_ser::serialize_structure_crate_model_source_file_specifier(
             &mut object_326,
@@ -1733,6 +1749,7 @@ pub fn serialize_structure_crate_model_conflict_resolution(
         let mut array_334 = object.key("replaceContents").start_array();
         for item_335 in var_333 {
             {
+                #[allow(unused_mut)]
                 let mut object_336 = array_334.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_replace_content_entry(
                     &mut object_336,
@@ -1747,6 +1764,7 @@ pub fn serialize_structure_crate_model_conflict_resolution(
         let mut array_338 = object.key("deleteFiles").start_array();
         for item_339 in var_337 {
             {
+                #[allow(unused_mut)]
                 let mut object_340 = array_338.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_delete_file_entry(
                     &mut object_340,
@@ -1761,6 +1779,7 @@ pub fn serialize_structure_crate_model_conflict_resolution(
         let mut array_342 = object.key("setFileModes").start_array();
         for item_343 in var_341 {
             {
+                #[allow(unused_mut)]
                 let mut object_344 = array_342.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_set_file_mode_entry(
                     &mut object_344,

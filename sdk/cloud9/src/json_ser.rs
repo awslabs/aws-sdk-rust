@@ -34,6 +34,7 @@ pub fn serialize_structure_crate_input_create_environment_ec2_input(
         let mut array_10 = object.key("tags").start_array();
         for item_11 in var_9 {
             {
+                #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_12, item_11)?;
                 object_12.finish();
@@ -183,6 +184,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_37 = object.key("Tags").start_array();
         for item_38 in var_36 {
             {
+                #[allow(unused_mut)]
                 let mut object_39 = array_37.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_39, item_38)?;
                 object_39.finish();

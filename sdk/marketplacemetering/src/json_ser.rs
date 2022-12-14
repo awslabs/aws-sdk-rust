@@ -7,6 +7,7 @@ pub fn serialize_structure_crate_input_batch_meter_usage_input(
         let mut array_2 = object.key("UsageRecords").start_array();
         for item_3 in var_1 {
             {
+                #[allow(unused_mut)]
                 let mut object_4 = array_2.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_usage_record(
                     &mut object_4,
@@ -51,6 +52,7 @@ pub fn serialize_structure_crate_input_meter_usage_input(
         let mut array_12 = object.key("UsageAllocations").start_array();
         for item_13 in var_11 {
             {
+                #[allow(unused_mut)]
                 let mut object_14 = array_12.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_usage_allocation(
                     &mut object_14,
@@ -118,6 +120,7 @@ pub fn serialize_structure_crate_model_usage_record(
         let mut array_24 = object.key("UsageAllocations").start_array();
         for item_25 in var_23 {
             {
+                #[allow(unused_mut)]
                 let mut object_26 = array_24.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_usage_allocation(
                     &mut object_26,
@@ -145,6 +148,7 @@ pub fn serialize_structure_crate_model_usage_allocation(
         let mut array_29 = object.key("Tags").start_array();
         for item_30 in var_28 {
             {
+                #[allow(unused_mut)]
                 let mut object_31 = array_29.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_31, item_30)?;
                 object_31.finish();

@@ -49,6 +49,7 @@ pub fn serialize_structure_crate_input_create_graph_input(
     input: &crate::input::CreateGraphInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_9) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_10 = object.key("Tags").start_object();
         for (key_11, value_12) in var_9 {
             {
@@ -68,6 +69,7 @@ pub fn serialize_structure_crate_input_create_members_input(
         let mut array_14 = object.key("Accounts").start_array();
         for item_15 in var_13 {
             {
+                #[allow(unused_mut)]
                 let mut object_16 = array_14.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_account(&mut object_16, item_15)?;
                 object_16.finish();
@@ -281,6 +283,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_46) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_47 = object.key("Tags").start_object();
         for (key_48, value_49) in var_46 {
             {

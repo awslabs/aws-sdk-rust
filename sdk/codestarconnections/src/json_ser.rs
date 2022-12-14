@@ -13,6 +13,7 @@ pub fn serialize_structure_crate_input_create_connection_input(
         let mut array_4 = object.key("Tags").start_array();
         for item_5 in var_3 {
             {
+                #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_6, item_5)?;
                 object_6.finish();
@@ -40,6 +41,7 @@ pub fn serialize_structure_crate_input_create_host_input(
         object.key("ProviderEndpoint").string(var_10.as_str());
     }
     if let Some(var_11) = &input.vpc_configuration {
+        #[allow(unused_mut)]
         let mut object_12 = object.key("VpcConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_vpc_configuration(&mut object_12, var_11)?;
         object_12.finish();
@@ -48,6 +50,7 @@ pub fn serialize_structure_crate_input_create_host_input(
         let mut array_14 = object.key("Tags").start_array();
         for item_15 in var_13 {
             {
+                #[allow(unused_mut)]
                 let mut object_16 = array_14.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_16, item_15)?;
                 object_16.finish();
@@ -157,6 +160,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_28 = object.key("Tags").start_array();
         for item_29 in var_27 {
             {
+                #[allow(unused_mut)]
                 let mut object_30 = array_28.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_30, item_29)?;
                 object_30.finish();
@@ -197,6 +201,7 @@ pub fn serialize_structure_crate_input_update_host_input(
         object.key("ProviderEndpoint").string(var_36.as_str());
     }
     if let Some(var_37) = &input.vpc_configuration {
+        #[allow(unused_mut)]
         let mut object_38 = object.key("VpcConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_vpc_configuration(&mut object_38, var_37)?;
         object_38.finish();

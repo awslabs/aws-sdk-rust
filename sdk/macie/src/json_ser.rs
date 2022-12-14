@@ -20,6 +20,7 @@ pub fn serialize_structure_crate_input_associate_s3_resources_input(
         let mut array_4 = object.key("s3Resources").start_array();
         for item_5 in var_3 {
             {
+                #[allow(unused_mut)]
                 let mut object_6 = array_4.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_s3_resource_classification(
                     &mut object_6,
@@ -54,6 +55,7 @@ pub fn serialize_structure_crate_input_disassociate_s3_resources_input(
         let mut array_10 = object.key("associatedS3Resources").start_array();
         for item_11 in var_9 {
             {
+                #[allow(unused_mut)]
                 let mut object_12 = array_10.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_s3_resource(
                     &mut object_12,
@@ -113,6 +115,7 @@ pub fn serialize_structure_crate_input_update_s3_resources_input(
         let mut array_20 = object.key("s3ResourcesUpdate").start_array();
         for item_21 in var_19 {
             {
+                #[allow(unused_mut)]
                 let mut object_22 = array_20.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_s3_resource_classification_update(
                     &mut object_22,
@@ -137,6 +140,7 @@ pub fn serialize_structure_crate_model_s3_resource_classification(
         object.key("prefix").string(var_24.as_str());
     }
     if let Some(var_25) = &input.classification_type {
+        #[allow(unused_mut)]
         let mut object_26 = object.key("classificationType").start_object();
         crate::json_ser::serialize_structure_crate_model_classification_type(
             &mut object_26,
@@ -171,6 +175,7 @@ pub fn serialize_structure_crate_model_s3_resource_classification_update(
         object.key("prefix").string(var_30.as_str());
     }
     if let Some(var_31) = &input.classification_type_update {
+        #[allow(unused_mut)]
         let mut object_32 = object.key("classificationTypeUpdate").start_object();
         crate::json_ser::serialize_structure_crate_model_classification_type_update(
             &mut object_32,

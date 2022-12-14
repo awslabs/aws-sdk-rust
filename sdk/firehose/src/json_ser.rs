@@ -10,6 +10,7 @@ pub fn serialize_structure_crate_input_create_delivery_stream_input(
         object.key("DeliveryStreamType").string(var_2.as_str());
     }
     if let Some(var_3) = &input.kinesis_stream_source_configuration {
+        #[allow(unused_mut)]
         let mut object_4 = object
             .key("KinesisStreamSourceConfiguration")
             .start_object();
@@ -20,6 +21,7 @@ pub fn serialize_structure_crate_input_create_delivery_stream_input(
         object_4.finish();
     }
     if let Some(var_5) = &input.delivery_stream_encryption_configuration_input {
+        #[allow(unused_mut)]
         let mut object_6 = object
             .key("DeliveryStreamEncryptionConfigurationInput")
             .start_object();
@@ -27,6 +29,7 @@ pub fn serialize_structure_crate_input_create_delivery_stream_input(
         object_6.finish();
     }
     if let Some(var_7) = &input.s3_destination_configuration {
+        #[allow(unused_mut)]
         let mut object_8 = object.key("S3DestinationConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_destination_configuration(
             &mut object_8,
@@ -35,6 +38,7 @@ pub fn serialize_structure_crate_input_create_delivery_stream_input(
         object_8.finish();
     }
     if let Some(var_9) = &input.extended_s3_destination_configuration {
+        #[allow(unused_mut)]
         let mut object_10 = object
             .key("ExtendedS3DestinationConfiguration")
             .start_object();
@@ -45,6 +49,7 @@ pub fn serialize_structure_crate_input_create_delivery_stream_input(
         object_10.finish();
     }
     if let Some(var_11) = &input.redshift_destination_configuration {
+        #[allow(unused_mut)]
         let mut object_12 = object
             .key("RedshiftDestinationConfiguration")
             .start_object();
@@ -55,6 +60,7 @@ pub fn serialize_structure_crate_input_create_delivery_stream_input(
         object_12.finish();
     }
     if let Some(var_13) = &input.elasticsearch_destination_configuration {
+        #[allow(unused_mut)]
         let mut object_14 = object
             .key("ElasticsearchDestinationConfiguration")
             .start_object();
@@ -65,6 +71,7 @@ pub fn serialize_structure_crate_input_create_delivery_stream_input(
         object_14.finish();
     }
     if let Some(var_15) = &input.amazonopensearchservice_destination_configuration {
+        #[allow(unused_mut)]
         let mut object_16 = object
             .key("AmazonopensearchserviceDestinationConfiguration")
             .start_object();
@@ -72,6 +79,7 @@ pub fn serialize_structure_crate_input_create_delivery_stream_input(
         object_16.finish();
     }
     if let Some(var_17) = &input.splunk_destination_configuration {
+        #[allow(unused_mut)]
         let mut object_18 = object.key("SplunkDestinationConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_splunk_destination_configuration(
             &mut object_18,
@@ -80,6 +88,7 @@ pub fn serialize_structure_crate_input_create_delivery_stream_input(
         object_18.finish();
     }
     if let Some(var_19) = &input.http_endpoint_destination_configuration {
+        #[allow(unused_mut)]
         let mut object_20 = object
             .key("HttpEndpointDestinationConfiguration")
             .start_object();
@@ -93,6 +102,7 @@ pub fn serialize_structure_crate_input_create_delivery_stream_input(
         let mut array_22 = object.key("Tags").start_array();
         for item_23 in var_21 {
             {
+                #[allow(unused_mut)]
                 let mut object_24 = array_22.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_24, item_23)?;
                 object_24.finish();
@@ -185,6 +195,7 @@ pub fn serialize_structure_crate_input_put_record_input(
         object.key("DeliveryStreamName").string(var_36.as_str());
     }
     if let Some(var_37) = &input.record {
+        #[allow(unused_mut)]
         let mut object_38 = object.key("Record").start_object();
         crate::json_ser::serialize_structure_crate_model_record(&mut object_38, var_37)?;
         object_38.finish();
@@ -203,6 +214,7 @@ pub fn serialize_structure_crate_input_put_record_batch_input(
         let mut array_41 = object.key("Records").start_array();
         for item_42 in var_40 {
             {
+                #[allow(unused_mut)]
                 let mut object_43 = array_41.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_record(&mut object_43, item_42)?;
                 object_43.finish();
@@ -221,6 +233,7 @@ pub fn serialize_structure_crate_input_start_delivery_stream_encryption_input(
         object.key("DeliveryStreamName").string(var_44.as_str());
     }
     if let Some(var_45) = &input.delivery_stream_encryption_configuration_input {
+        #[allow(unused_mut)]
         let mut object_46 = object
             .key("DeliveryStreamEncryptionConfigurationInput")
             .start_object();
@@ -251,6 +264,7 @@ pub fn serialize_structure_crate_input_tag_delivery_stream_input(
         let mut array_50 = object.key("Tags").start_array();
         for item_51 in var_49 {
             {
+                #[allow(unused_mut)]
                 let mut object_52 = array_50.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_52, item_51)?;
                 object_52.finish();
@@ -296,6 +310,7 @@ pub fn serialize_structure_crate_input_update_destination_input(
         object.key("DestinationId").string(var_59.as_str());
     }
     if let Some(var_60) = &input.s3_destination_update {
+        #[allow(unused_mut)]
         let mut object_61 = object.key("S3DestinationUpdate").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_destination_update(
             &mut object_61,
@@ -304,6 +319,7 @@ pub fn serialize_structure_crate_input_update_destination_input(
         object_61.finish();
     }
     if let Some(var_62) = &input.extended_s3_destination_update {
+        #[allow(unused_mut)]
         let mut object_63 = object.key("ExtendedS3DestinationUpdate").start_object();
         crate::json_ser::serialize_structure_crate_model_extended_s3_destination_update(
             &mut object_63,
@@ -312,6 +328,7 @@ pub fn serialize_structure_crate_input_update_destination_input(
         object_63.finish();
     }
     if let Some(var_64) = &input.redshift_destination_update {
+        #[allow(unused_mut)]
         let mut object_65 = object.key("RedshiftDestinationUpdate").start_object();
         crate::json_ser::serialize_structure_crate_model_redshift_destination_update(
             &mut object_65,
@@ -320,6 +337,7 @@ pub fn serialize_structure_crate_input_update_destination_input(
         object_65.finish();
     }
     if let Some(var_66) = &input.elasticsearch_destination_update {
+        #[allow(unused_mut)]
         let mut object_67 = object.key("ElasticsearchDestinationUpdate").start_object();
         crate::json_ser::serialize_structure_crate_model_elasticsearch_destination_update(
             &mut object_67,
@@ -328,6 +346,7 @@ pub fn serialize_structure_crate_input_update_destination_input(
         object_67.finish();
     }
     if let Some(var_68) = &input.amazonopensearchservice_destination_update {
+        #[allow(unused_mut)]
         let mut object_69 = object
             .key("AmazonopensearchserviceDestinationUpdate")
             .start_object();
@@ -335,6 +354,7 @@ pub fn serialize_structure_crate_input_update_destination_input(
         object_69.finish();
     }
     if let Some(var_70) = &input.splunk_destination_update {
+        #[allow(unused_mut)]
         let mut object_71 = object.key("SplunkDestinationUpdate").start_object();
         crate::json_ser::serialize_structure_crate_model_splunk_destination_update(
             &mut object_71,
@@ -343,6 +363,7 @@ pub fn serialize_structure_crate_input_update_destination_input(
         object_71.finish();
     }
     if let Some(var_72) = &input.http_endpoint_destination_update {
+        #[allow(unused_mut)]
         let mut object_73 = object.key("HttpEndpointDestinationUpdate").start_object();
         crate::json_ser::serialize_structure_crate_model_http_endpoint_destination_update(
             &mut object_73,
@@ -396,6 +417,7 @@ pub fn serialize_structure_crate_model_s3_destination_configuration(
         object.key("ErrorOutputPrefix").string(var_81.as_str());
     }
     if let Some(var_82) = &input.buffering_hints {
+        #[allow(unused_mut)]
         let mut object_83 = object.key("BufferingHints").start_object();
         crate::json_ser::serialize_structure_crate_model_buffering_hints(&mut object_83, var_82)?;
         object_83.finish();
@@ -404,6 +426,7 @@ pub fn serialize_structure_crate_model_s3_destination_configuration(
         object.key("CompressionFormat").string(var_84.as_str());
     }
     if let Some(var_85) = &input.encryption_configuration {
+        #[allow(unused_mut)]
         let mut object_86 = object.key("EncryptionConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_encryption_configuration(
             &mut object_86,
@@ -412,6 +435,7 @@ pub fn serialize_structure_crate_model_s3_destination_configuration(
         object_86.finish();
     }
     if let Some(var_87) = &input.cloud_watch_logging_options {
+        #[allow(unused_mut)]
         let mut object_88 = object.key("CloudWatchLoggingOptions").start_object();
         crate::json_ser::serialize_structure_crate_model_cloud_watch_logging_options(
             &mut object_88,
@@ -439,6 +463,7 @@ pub fn serialize_structure_crate_model_extended_s3_destination_configuration(
         object.key("ErrorOutputPrefix").string(var_92.as_str());
     }
     if let Some(var_93) = &input.buffering_hints {
+        #[allow(unused_mut)]
         let mut object_94 = object.key("BufferingHints").start_object();
         crate::json_ser::serialize_structure_crate_model_buffering_hints(&mut object_94, var_93)?;
         object_94.finish();
@@ -447,6 +472,7 @@ pub fn serialize_structure_crate_model_extended_s3_destination_configuration(
         object.key("CompressionFormat").string(var_95.as_str());
     }
     if let Some(var_96) = &input.encryption_configuration {
+        #[allow(unused_mut)]
         let mut object_97 = object.key("EncryptionConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_encryption_configuration(
             &mut object_97,
@@ -455,6 +481,7 @@ pub fn serialize_structure_crate_model_extended_s3_destination_configuration(
         object_97.finish();
     }
     if let Some(var_98) = &input.cloud_watch_logging_options {
+        #[allow(unused_mut)]
         let mut object_99 = object.key("CloudWatchLoggingOptions").start_object();
         crate::json_ser::serialize_structure_crate_model_cloud_watch_logging_options(
             &mut object_99,
@@ -463,6 +490,7 @@ pub fn serialize_structure_crate_model_extended_s3_destination_configuration(
         object_99.finish();
     }
     if let Some(var_100) = &input.processing_configuration {
+        #[allow(unused_mut)]
         let mut object_101 = object.key("ProcessingConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_processing_configuration(
             &mut object_101,
@@ -474,6 +502,7 @@ pub fn serialize_structure_crate_model_extended_s3_destination_configuration(
         object.key("S3BackupMode").string(var_102.as_str());
     }
     if let Some(var_103) = &input.s3_backup_configuration {
+        #[allow(unused_mut)]
         let mut object_104 = object.key("S3BackupConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_destination_configuration(
             &mut object_104,
@@ -482,6 +511,7 @@ pub fn serialize_structure_crate_model_extended_s3_destination_configuration(
         object_104.finish();
     }
     if let Some(var_105) = &input.data_format_conversion_configuration {
+        #[allow(unused_mut)]
         let mut object_106 = object
             .key("DataFormatConversionConfiguration")
             .start_object();
@@ -492,6 +522,7 @@ pub fn serialize_structure_crate_model_extended_s3_destination_configuration(
         object_106.finish();
     }
     if let Some(var_107) = &input.dynamic_partitioning_configuration {
+        #[allow(unused_mut)]
         let mut object_108 = object
             .key("DynamicPartitioningConfiguration")
             .start_object();
@@ -515,6 +546,7 @@ pub fn serialize_structure_crate_model_redshift_destination_configuration(
         object.key("ClusterJDBCURL").string(var_110.as_str());
     }
     if let Some(var_111) = &input.copy_command {
+        #[allow(unused_mut)]
         let mut object_112 = object.key("CopyCommand").start_object();
         crate::json_ser::serialize_structure_crate_model_copy_command(&mut object_112, var_111)?;
         object_112.finish();
@@ -526,6 +558,7 @@ pub fn serialize_structure_crate_model_redshift_destination_configuration(
         object.key("Password").string(var_114.as_str());
     }
     if let Some(var_115) = &input.retry_options {
+        #[allow(unused_mut)]
         let mut object_116 = object.key("RetryOptions").start_object();
         crate::json_ser::serialize_structure_crate_model_redshift_retry_options(
             &mut object_116,
@@ -534,6 +567,7 @@ pub fn serialize_structure_crate_model_redshift_destination_configuration(
         object_116.finish();
     }
     if let Some(var_117) = &input.s3_configuration {
+        #[allow(unused_mut)]
         let mut object_118 = object.key("S3Configuration").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_destination_configuration(
             &mut object_118,
@@ -542,6 +576,7 @@ pub fn serialize_structure_crate_model_redshift_destination_configuration(
         object_118.finish();
     }
     if let Some(var_119) = &input.processing_configuration {
+        #[allow(unused_mut)]
         let mut object_120 = object.key("ProcessingConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_processing_configuration(
             &mut object_120,
@@ -553,6 +588,7 @@ pub fn serialize_structure_crate_model_redshift_destination_configuration(
         object.key("S3BackupMode").string(var_121.as_str());
     }
     if let Some(var_122) = &input.s3_backup_configuration {
+        #[allow(unused_mut)]
         let mut object_123 = object.key("S3BackupConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_destination_configuration(
             &mut object_123,
@@ -561,6 +597,7 @@ pub fn serialize_structure_crate_model_redshift_destination_configuration(
         object_123.finish();
     }
     if let Some(var_124) = &input.cloud_watch_logging_options {
+        #[allow(unused_mut)]
         let mut object_125 = object.key("CloudWatchLoggingOptions").start_object();
         crate::json_ser::serialize_structure_crate_model_cloud_watch_logging_options(
             &mut object_125,
@@ -594,6 +631,7 @@ pub fn serialize_structure_crate_model_elasticsearch_destination_configuration(
         object.key("IndexRotationPeriod").string(var_131.as_str());
     }
     if let Some(var_132) = &input.buffering_hints {
+        #[allow(unused_mut)]
         let mut object_133 = object.key("BufferingHints").start_object();
         crate::json_ser::serialize_structure_crate_model_elasticsearch_buffering_hints(
             &mut object_133,
@@ -602,6 +640,7 @@ pub fn serialize_structure_crate_model_elasticsearch_destination_configuration(
         object_133.finish();
     }
     if let Some(var_134) = &input.retry_options {
+        #[allow(unused_mut)]
         let mut object_135 = object.key("RetryOptions").start_object();
         crate::json_ser::serialize_structure_crate_model_elasticsearch_retry_options(
             &mut object_135,
@@ -613,6 +652,7 @@ pub fn serialize_structure_crate_model_elasticsearch_destination_configuration(
         object.key("S3BackupMode").string(var_136.as_str());
     }
     if let Some(var_137) = &input.s3_configuration {
+        #[allow(unused_mut)]
         let mut object_138 = object.key("S3Configuration").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_destination_configuration(
             &mut object_138,
@@ -621,6 +661,7 @@ pub fn serialize_structure_crate_model_elasticsearch_destination_configuration(
         object_138.finish();
     }
     if let Some(var_139) = &input.processing_configuration {
+        #[allow(unused_mut)]
         let mut object_140 = object.key("ProcessingConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_processing_configuration(
             &mut object_140,
@@ -629,6 +670,7 @@ pub fn serialize_structure_crate_model_elasticsearch_destination_configuration(
         object_140.finish();
     }
     if let Some(var_141) = &input.cloud_watch_logging_options {
+        #[allow(unused_mut)]
         let mut object_142 = object.key("CloudWatchLoggingOptions").start_object();
         crate::json_ser::serialize_structure_crate_model_cloud_watch_logging_options(
             &mut object_142,
@@ -637,6 +679,7 @@ pub fn serialize_structure_crate_model_elasticsearch_destination_configuration(
         object_142.finish();
     }
     if let Some(var_143) = &input.vpc_configuration {
+        #[allow(unused_mut)]
         let mut object_144 = object.key("VpcConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_vpc_configuration(
             &mut object_144,
@@ -670,6 +713,7 @@ pub fn serialize_structure_crate_model_amazonopensearchservice_destination_confi
         object.key("IndexRotationPeriod").string(var_150.as_str());
     }
     if let Some(var_151) = &input.buffering_hints {
+        #[allow(unused_mut)]
         let mut object_152 = object.key("BufferingHints").start_object();
         crate::json_ser::serialize_structure_crate_model_amazonopensearchservice_buffering_hints(
             &mut object_152,
@@ -678,6 +722,7 @@ pub fn serialize_structure_crate_model_amazonopensearchservice_destination_confi
         object_152.finish();
     }
     if let Some(var_153) = &input.retry_options {
+        #[allow(unused_mut)]
         let mut object_154 = object.key("RetryOptions").start_object();
         crate::json_ser::serialize_structure_crate_model_amazonopensearchservice_retry_options(
             &mut object_154,
@@ -689,6 +734,7 @@ pub fn serialize_structure_crate_model_amazonopensearchservice_destination_confi
         object.key("S3BackupMode").string(var_155.as_str());
     }
     if let Some(var_156) = &input.s3_configuration {
+        #[allow(unused_mut)]
         let mut object_157 = object.key("S3Configuration").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_destination_configuration(
             &mut object_157,
@@ -697,6 +743,7 @@ pub fn serialize_structure_crate_model_amazonopensearchservice_destination_confi
         object_157.finish();
     }
     if let Some(var_158) = &input.processing_configuration {
+        #[allow(unused_mut)]
         let mut object_159 = object.key("ProcessingConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_processing_configuration(
             &mut object_159,
@@ -705,6 +752,7 @@ pub fn serialize_structure_crate_model_amazonopensearchservice_destination_confi
         object_159.finish();
     }
     if let Some(var_160) = &input.cloud_watch_logging_options {
+        #[allow(unused_mut)]
         let mut object_161 = object.key("CloudWatchLoggingOptions").start_object();
         crate::json_ser::serialize_structure_crate_model_cloud_watch_logging_options(
             &mut object_161,
@@ -713,6 +761,7 @@ pub fn serialize_structure_crate_model_amazonopensearchservice_destination_confi
         object_161.finish();
     }
     if let Some(var_162) = &input.vpc_configuration {
+        #[allow(unused_mut)]
         let mut object_163 = object.key("VpcConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_vpc_configuration(
             &mut object_163,
@@ -743,6 +792,7 @@ pub fn serialize_structure_crate_model_splunk_destination_configuration(
         );
     }
     if let Some(var_168) = &input.retry_options {
+        #[allow(unused_mut)]
         let mut object_169 = object.key("RetryOptions").start_object();
         crate::json_ser::serialize_structure_crate_model_splunk_retry_options(
             &mut object_169,
@@ -754,6 +804,7 @@ pub fn serialize_structure_crate_model_splunk_destination_configuration(
         object.key("S3BackupMode").string(var_170.as_str());
     }
     if let Some(var_171) = &input.s3_configuration {
+        #[allow(unused_mut)]
         let mut object_172 = object.key("S3Configuration").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_destination_configuration(
             &mut object_172,
@@ -762,6 +813,7 @@ pub fn serialize_structure_crate_model_splunk_destination_configuration(
         object_172.finish();
     }
     if let Some(var_173) = &input.processing_configuration {
+        #[allow(unused_mut)]
         let mut object_174 = object.key("ProcessingConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_processing_configuration(
             &mut object_174,
@@ -770,6 +822,7 @@ pub fn serialize_structure_crate_model_splunk_destination_configuration(
         object_174.finish();
     }
     if let Some(var_175) = &input.cloud_watch_logging_options {
+        #[allow(unused_mut)]
         let mut object_176 = object.key("CloudWatchLoggingOptions").start_object();
         crate::json_ser::serialize_structure_crate_model_cloud_watch_logging_options(
             &mut object_176,
@@ -785,6 +838,7 @@ pub fn serialize_structure_crate_model_http_endpoint_destination_configuration(
     input: &crate::model::HttpEndpointDestinationConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_177) = &input.endpoint_configuration {
+        #[allow(unused_mut)]
         let mut object_178 = object.key("EndpointConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_http_endpoint_configuration(
             &mut object_178,
@@ -793,6 +847,7 @@ pub fn serialize_structure_crate_model_http_endpoint_destination_configuration(
         object_178.finish();
     }
     if let Some(var_179) = &input.buffering_hints {
+        #[allow(unused_mut)]
         let mut object_180 = object.key("BufferingHints").start_object();
         crate::json_ser::serialize_structure_crate_model_http_endpoint_buffering_hints(
             &mut object_180,
@@ -801,6 +856,7 @@ pub fn serialize_structure_crate_model_http_endpoint_destination_configuration(
         object_180.finish();
     }
     if let Some(var_181) = &input.cloud_watch_logging_options {
+        #[allow(unused_mut)]
         let mut object_182 = object.key("CloudWatchLoggingOptions").start_object();
         crate::json_ser::serialize_structure_crate_model_cloud_watch_logging_options(
             &mut object_182,
@@ -809,6 +865,7 @@ pub fn serialize_structure_crate_model_http_endpoint_destination_configuration(
         object_182.finish();
     }
     if let Some(var_183) = &input.request_configuration {
+        #[allow(unused_mut)]
         let mut object_184 = object.key("RequestConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_http_endpoint_request_configuration(
             &mut object_184,
@@ -817,6 +874,7 @@ pub fn serialize_structure_crate_model_http_endpoint_destination_configuration(
         object_184.finish();
     }
     if let Some(var_185) = &input.processing_configuration {
+        #[allow(unused_mut)]
         let mut object_186 = object.key("ProcessingConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_processing_configuration(
             &mut object_186,
@@ -828,6 +886,7 @@ pub fn serialize_structure_crate_model_http_endpoint_destination_configuration(
         object.key("RoleARN").string(var_187.as_str());
     }
     if let Some(var_188) = &input.retry_options {
+        #[allow(unused_mut)]
         let mut object_189 = object.key("RetryOptions").start_object();
         crate::json_ser::serialize_structure_crate_model_http_endpoint_retry_options(
             &mut object_189,
@@ -839,6 +898,7 @@ pub fn serialize_structure_crate_model_http_endpoint_destination_configuration(
         object.key("S3BackupMode").string(var_190.as_str());
     }
     if let Some(var_191) = &input.s3_configuration {
+        #[allow(unused_mut)]
         let mut object_192 = object.key("S3Configuration").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_destination_configuration(
             &mut object_192,
@@ -891,6 +951,7 @@ pub fn serialize_structure_crate_model_s3_destination_update(
         object.key("ErrorOutputPrefix").string(var_199.as_str());
     }
     if let Some(var_200) = &input.buffering_hints {
+        #[allow(unused_mut)]
         let mut object_201 = object.key("BufferingHints").start_object();
         crate::json_ser::serialize_structure_crate_model_buffering_hints(&mut object_201, var_200)?;
         object_201.finish();
@@ -899,6 +960,7 @@ pub fn serialize_structure_crate_model_s3_destination_update(
         object.key("CompressionFormat").string(var_202.as_str());
     }
     if let Some(var_203) = &input.encryption_configuration {
+        #[allow(unused_mut)]
         let mut object_204 = object.key("EncryptionConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_encryption_configuration(
             &mut object_204,
@@ -907,6 +969,7 @@ pub fn serialize_structure_crate_model_s3_destination_update(
         object_204.finish();
     }
     if let Some(var_205) = &input.cloud_watch_logging_options {
+        #[allow(unused_mut)]
         let mut object_206 = object.key("CloudWatchLoggingOptions").start_object();
         crate::json_ser::serialize_structure_crate_model_cloud_watch_logging_options(
             &mut object_206,
@@ -934,6 +997,7 @@ pub fn serialize_structure_crate_model_extended_s3_destination_update(
         object.key("ErrorOutputPrefix").string(var_210.as_str());
     }
     if let Some(var_211) = &input.buffering_hints {
+        #[allow(unused_mut)]
         let mut object_212 = object.key("BufferingHints").start_object();
         crate::json_ser::serialize_structure_crate_model_buffering_hints(&mut object_212, var_211)?;
         object_212.finish();
@@ -942,6 +1006,7 @@ pub fn serialize_structure_crate_model_extended_s3_destination_update(
         object.key("CompressionFormat").string(var_213.as_str());
     }
     if let Some(var_214) = &input.encryption_configuration {
+        #[allow(unused_mut)]
         let mut object_215 = object.key("EncryptionConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_encryption_configuration(
             &mut object_215,
@@ -950,6 +1015,7 @@ pub fn serialize_structure_crate_model_extended_s3_destination_update(
         object_215.finish();
     }
     if let Some(var_216) = &input.cloud_watch_logging_options {
+        #[allow(unused_mut)]
         let mut object_217 = object.key("CloudWatchLoggingOptions").start_object();
         crate::json_ser::serialize_structure_crate_model_cloud_watch_logging_options(
             &mut object_217,
@@ -958,6 +1024,7 @@ pub fn serialize_structure_crate_model_extended_s3_destination_update(
         object_217.finish();
     }
     if let Some(var_218) = &input.processing_configuration {
+        #[allow(unused_mut)]
         let mut object_219 = object.key("ProcessingConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_processing_configuration(
             &mut object_219,
@@ -969,6 +1036,7 @@ pub fn serialize_structure_crate_model_extended_s3_destination_update(
         object.key("S3BackupMode").string(var_220.as_str());
     }
     if let Some(var_221) = &input.s3_backup_update {
+        #[allow(unused_mut)]
         let mut object_222 = object.key("S3BackupUpdate").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_destination_update(
             &mut object_222,
@@ -977,6 +1045,7 @@ pub fn serialize_structure_crate_model_extended_s3_destination_update(
         object_222.finish();
     }
     if let Some(var_223) = &input.data_format_conversion_configuration {
+        #[allow(unused_mut)]
         let mut object_224 = object
             .key("DataFormatConversionConfiguration")
             .start_object();
@@ -987,6 +1056,7 @@ pub fn serialize_structure_crate_model_extended_s3_destination_update(
         object_224.finish();
     }
     if let Some(var_225) = &input.dynamic_partitioning_configuration {
+        #[allow(unused_mut)]
         let mut object_226 = object
             .key("DynamicPartitioningConfiguration")
             .start_object();
@@ -1010,6 +1080,7 @@ pub fn serialize_structure_crate_model_redshift_destination_update(
         object.key("ClusterJDBCURL").string(var_228.as_str());
     }
     if let Some(var_229) = &input.copy_command {
+        #[allow(unused_mut)]
         let mut object_230 = object.key("CopyCommand").start_object();
         crate::json_ser::serialize_structure_crate_model_copy_command(&mut object_230, var_229)?;
         object_230.finish();
@@ -1021,6 +1092,7 @@ pub fn serialize_structure_crate_model_redshift_destination_update(
         object.key("Password").string(var_232.as_str());
     }
     if let Some(var_233) = &input.retry_options {
+        #[allow(unused_mut)]
         let mut object_234 = object.key("RetryOptions").start_object();
         crate::json_ser::serialize_structure_crate_model_redshift_retry_options(
             &mut object_234,
@@ -1029,6 +1101,7 @@ pub fn serialize_structure_crate_model_redshift_destination_update(
         object_234.finish();
     }
     if let Some(var_235) = &input.s3_update {
+        #[allow(unused_mut)]
         let mut object_236 = object.key("S3Update").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_destination_update(
             &mut object_236,
@@ -1037,6 +1110,7 @@ pub fn serialize_structure_crate_model_redshift_destination_update(
         object_236.finish();
     }
     if let Some(var_237) = &input.processing_configuration {
+        #[allow(unused_mut)]
         let mut object_238 = object.key("ProcessingConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_processing_configuration(
             &mut object_238,
@@ -1048,6 +1122,7 @@ pub fn serialize_structure_crate_model_redshift_destination_update(
         object.key("S3BackupMode").string(var_239.as_str());
     }
     if let Some(var_240) = &input.s3_backup_update {
+        #[allow(unused_mut)]
         let mut object_241 = object.key("S3BackupUpdate").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_destination_update(
             &mut object_241,
@@ -1056,6 +1131,7 @@ pub fn serialize_structure_crate_model_redshift_destination_update(
         object_241.finish();
     }
     if let Some(var_242) = &input.cloud_watch_logging_options {
+        #[allow(unused_mut)]
         let mut object_243 = object.key("CloudWatchLoggingOptions").start_object();
         crate::json_ser::serialize_structure_crate_model_cloud_watch_logging_options(
             &mut object_243,
@@ -1089,6 +1165,7 @@ pub fn serialize_structure_crate_model_elasticsearch_destination_update(
         object.key("IndexRotationPeriod").string(var_249.as_str());
     }
     if let Some(var_250) = &input.buffering_hints {
+        #[allow(unused_mut)]
         let mut object_251 = object.key("BufferingHints").start_object();
         crate::json_ser::serialize_structure_crate_model_elasticsearch_buffering_hints(
             &mut object_251,
@@ -1097,6 +1174,7 @@ pub fn serialize_structure_crate_model_elasticsearch_destination_update(
         object_251.finish();
     }
     if let Some(var_252) = &input.retry_options {
+        #[allow(unused_mut)]
         let mut object_253 = object.key("RetryOptions").start_object();
         crate::json_ser::serialize_structure_crate_model_elasticsearch_retry_options(
             &mut object_253,
@@ -1105,6 +1183,7 @@ pub fn serialize_structure_crate_model_elasticsearch_destination_update(
         object_253.finish();
     }
     if let Some(var_254) = &input.s3_update {
+        #[allow(unused_mut)]
         let mut object_255 = object.key("S3Update").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_destination_update(
             &mut object_255,
@@ -1113,6 +1192,7 @@ pub fn serialize_structure_crate_model_elasticsearch_destination_update(
         object_255.finish();
     }
     if let Some(var_256) = &input.processing_configuration {
+        #[allow(unused_mut)]
         let mut object_257 = object.key("ProcessingConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_processing_configuration(
             &mut object_257,
@@ -1121,6 +1201,7 @@ pub fn serialize_structure_crate_model_elasticsearch_destination_update(
         object_257.finish();
     }
     if let Some(var_258) = &input.cloud_watch_logging_options {
+        #[allow(unused_mut)]
         let mut object_259 = object.key("CloudWatchLoggingOptions").start_object();
         crate::json_ser::serialize_structure_crate_model_cloud_watch_logging_options(
             &mut object_259,
@@ -1154,6 +1235,7 @@ pub fn serialize_structure_crate_model_amazonopensearchservice_destination_updat
         object.key("IndexRotationPeriod").string(var_265.as_str());
     }
     if let Some(var_266) = &input.buffering_hints {
+        #[allow(unused_mut)]
         let mut object_267 = object.key("BufferingHints").start_object();
         crate::json_ser::serialize_structure_crate_model_amazonopensearchservice_buffering_hints(
             &mut object_267,
@@ -1162,6 +1244,7 @@ pub fn serialize_structure_crate_model_amazonopensearchservice_destination_updat
         object_267.finish();
     }
     if let Some(var_268) = &input.retry_options {
+        #[allow(unused_mut)]
         let mut object_269 = object.key("RetryOptions").start_object();
         crate::json_ser::serialize_structure_crate_model_amazonopensearchservice_retry_options(
             &mut object_269,
@@ -1170,6 +1253,7 @@ pub fn serialize_structure_crate_model_amazonopensearchservice_destination_updat
         object_269.finish();
     }
     if let Some(var_270) = &input.s3_update {
+        #[allow(unused_mut)]
         let mut object_271 = object.key("S3Update").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_destination_update(
             &mut object_271,
@@ -1178,6 +1262,7 @@ pub fn serialize_structure_crate_model_amazonopensearchservice_destination_updat
         object_271.finish();
     }
     if let Some(var_272) = &input.processing_configuration {
+        #[allow(unused_mut)]
         let mut object_273 = object.key("ProcessingConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_processing_configuration(
             &mut object_273,
@@ -1186,6 +1271,7 @@ pub fn serialize_structure_crate_model_amazonopensearchservice_destination_updat
         object_273.finish();
     }
     if let Some(var_274) = &input.cloud_watch_logging_options {
+        #[allow(unused_mut)]
         let mut object_275 = object.key("CloudWatchLoggingOptions").start_object();
         crate::json_ser::serialize_structure_crate_model_cloud_watch_logging_options(
             &mut object_275,
@@ -1216,6 +1302,7 @@ pub fn serialize_structure_crate_model_splunk_destination_update(
         );
     }
     if let Some(var_280) = &input.retry_options {
+        #[allow(unused_mut)]
         let mut object_281 = object.key("RetryOptions").start_object();
         crate::json_ser::serialize_structure_crate_model_splunk_retry_options(
             &mut object_281,
@@ -1227,6 +1314,7 @@ pub fn serialize_structure_crate_model_splunk_destination_update(
         object.key("S3BackupMode").string(var_282.as_str());
     }
     if let Some(var_283) = &input.s3_update {
+        #[allow(unused_mut)]
         let mut object_284 = object.key("S3Update").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_destination_update(
             &mut object_284,
@@ -1235,6 +1323,7 @@ pub fn serialize_structure_crate_model_splunk_destination_update(
         object_284.finish();
     }
     if let Some(var_285) = &input.processing_configuration {
+        #[allow(unused_mut)]
         let mut object_286 = object.key("ProcessingConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_processing_configuration(
             &mut object_286,
@@ -1243,6 +1332,7 @@ pub fn serialize_structure_crate_model_splunk_destination_update(
         object_286.finish();
     }
     if let Some(var_287) = &input.cloud_watch_logging_options {
+        #[allow(unused_mut)]
         let mut object_288 = object.key("CloudWatchLoggingOptions").start_object();
         crate::json_ser::serialize_structure_crate_model_cloud_watch_logging_options(
             &mut object_288,
@@ -1258,6 +1348,7 @@ pub fn serialize_structure_crate_model_http_endpoint_destination_update(
     input: &crate::model::HttpEndpointDestinationUpdate,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_289) = &input.endpoint_configuration {
+        #[allow(unused_mut)]
         let mut object_290 = object.key("EndpointConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_http_endpoint_configuration(
             &mut object_290,
@@ -1266,6 +1357,7 @@ pub fn serialize_structure_crate_model_http_endpoint_destination_update(
         object_290.finish();
     }
     if let Some(var_291) = &input.buffering_hints {
+        #[allow(unused_mut)]
         let mut object_292 = object.key("BufferingHints").start_object();
         crate::json_ser::serialize_structure_crate_model_http_endpoint_buffering_hints(
             &mut object_292,
@@ -1274,6 +1366,7 @@ pub fn serialize_structure_crate_model_http_endpoint_destination_update(
         object_292.finish();
     }
     if let Some(var_293) = &input.cloud_watch_logging_options {
+        #[allow(unused_mut)]
         let mut object_294 = object.key("CloudWatchLoggingOptions").start_object();
         crate::json_ser::serialize_structure_crate_model_cloud_watch_logging_options(
             &mut object_294,
@@ -1282,6 +1375,7 @@ pub fn serialize_structure_crate_model_http_endpoint_destination_update(
         object_294.finish();
     }
     if let Some(var_295) = &input.request_configuration {
+        #[allow(unused_mut)]
         let mut object_296 = object.key("RequestConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_http_endpoint_request_configuration(
             &mut object_296,
@@ -1290,6 +1384,7 @@ pub fn serialize_structure_crate_model_http_endpoint_destination_update(
         object_296.finish();
     }
     if let Some(var_297) = &input.processing_configuration {
+        #[allow(unused_mut)]
         let mut object_298 = object.key("ProcessingConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_processing_configuration(
             &mut object_298,
@@ -1301,6 +1396,7 @@ pub fn serialize_structure_crate_model_http_endpoint_destination_update(
         object.key("RoleARN").string(var_299.as_str());
     }
     if let Some(var_300) = &input.retry_options {
+        #[allow(unused_mut)]
         let mut object_301 = object.key("RetryOptions").start_object();
         crate::json_ser::serialize_structure_crate_model_http_endpoint_retry_options(
             &mut object_301,
@@ -1312,6 +1408,7 @@ pub fn serialize_structure_crate_model_http_endpoint_destination_update(
         object.key("S3BackupMode").string(var_302.as_str());
     }
     if let Some(var_303) = &input.s3_update {
+        #[allow(unused_mut)]
         let mut object_304 = object.key("S3Update").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_destination_update(
             &mut object_304,
@@ -1349,6 +1446,7 @@ pub fn serialize_structure_crate_model_encryption_configuration(
         object.key("NoEncryptionConfig").string(var_307.as_str());
     }
     if let Some(var_308) = &input.kms_encryption_config {
+        #[allow(unused_mut)]
         let mut object_309 = object.key("KMSEncryptionConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_kms_encryption_config(
             &mut object_309,
@@ -1386,6 +1484,7 @@ pub fn serialize_structure_crate_model_processing_configuration(
         let mut array_315 = object.key("Processors").start_array();
         for item_316 in var_314 {
             {
+                #[allow(unused_mut)]
                 let mut object_317 = array_315.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_processor(
                     &mut object_317,
@@ -1404,6 +1503,7 @@ pub fn serialize_structure_crate_model_data_format_conversion_configuration(
     input: &crate::model::DataFormatConversionConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_318) = &input.schema_configuration {
+        #[allow(unused_mut)]
         let mut object_319 = object.key("SchemaConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_schema_configuration(
             &mut object_319,
@@ -1412,6 +1512,7 @@ pub fn serialize_structure_crate_model_data_format_conversion_configuration(
         object_319.finish();
     }
     if let Some(var_320) = &input.input_format_configuration {
+        #[allow(unused_mut)]
         let mut object_321 = object.key("InputFormatConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_input_format_configuration(
             &mut object_321,
@@ -1420,6 +1521,7 @@ pub fn serialize_structure_crate_model_data_format_conversion_configuration(
         object_321.finish();
     }
     if let Some(var_322) = &input.output_format_configuration {
+        #[allow(unused_mut)]
         let mut object_323 = object.key("OutputFormatConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_output_format_configuration(
             &mut object_323,
@@ -1438,6 +1540,7 @@ pub fn serialize_structure_crate_model_dynamic_partitioning_configuration(
     input: &crate::model::DynamicPartitioningConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_325) = &input.retry_options {
+        #[allow(unused_mut)]
         let mut object_326 = object.key("RetryOptions").start_object();
         crate::json_ser::serialize_structure_crate_model_retry_options(&mut object_326, var_325)?;
         object_326.finish();
@@ -1628,6 +1731,7 @@ pub fn serialize_structure_crate_model_http_endpoint_request_configuration(
         let mut array_353 = object.key("CommonAttributes").start_array();
         for item_354 in var_352 {
             {
+                #[allow(unused_mut)]
                 let mut object_355 = array_353.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_http_endpoint_common_attribute(
                     &mut object_355,
@@ -1675,6 +1779,7 @@ pub fn serialize_structure_crate_model_processor(
         let mut array_360 = object.key("Parameters").start_array();
         for item_361 in var_359 {
             {
+                #[allow(unused_mut)]
                 let mut object_362 = array_360.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_processor_parameter(
                     &mut object_362,
@@ -1718,6 +1823,7 @@ pub fn serialize_structure_crate_model_input_format_configuration(
     input: &crate::model::InputFormatConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_369) = &input.deserializer {
+        #[allow(unused_mut)]
         let mut object_370 = object.key("Deserializer").start_object();
         crate::json_ser::serialize_structure_crate_model_deserializer(&mut object_370, var_369)?;
         object_370.finish();
@@ -1730,6 +1836,7 @@ pub fn serialize_structure_crate_model_output_format_configuration(
     input: &crate::model::OutputFormatConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_371) = &input.serializer {
+        #[allow(unused_mut)]
         let mut object_372 = object.key("Serializer").start_object();
         crate::json_ser::serialize_structure_crate_model_serializer(&mut object_372, var_371)?;
         object_372.finish();
@@ -1781,6 +1888,7 @@ pub fn serialize_structure_crate_model_deserializer(
     input: &crate::model::Deserializer,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_378) = &input.open_x_json_ser_de {
+        #[allow(unused_mut)]
         let mut object_379 = object.key("OpenXJsonSerDe").start_object();
         crate::json_ser::serialize_structure_crate_model_open_x_json_ser_de(
             &mut object_379,
@@ -1789,6 +1897,7 @@ pub fn serialize_structure_crate_model_deserializer(
         object_379.finish();
     }
     if let Some(var_380) = &input.hive_json_ser_de {
+        #[allow(unused_mut)]
         let mut object_381 = object.key("HiveJsonSerDe").start_object();
         crate::json_ser::serialize_structure_crate_model_hive_json_ser_de(
             &mut object_381,
@@ -1804,11 +1913,13 @@ pub fn serialize_structure_crate_model_serializer(
     input: &crate::model::Serializer,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_382) = &input.parquet_ser_de {
+        #[allow(unused_mut)]
         let mut object_383 = object.key("ParquetSerDe").start_object();
         crate::json_ser::serialize_structure_crate_model_parquet_ser_de(&mut object_383, var_382)?;
         object_383.finish();
     }
     if let Some(var_384) = &input.orc_ser_de {
+        #[allow(unused_mut)]
         let mut object_385 = object.key("OrcSerDe").start_object();
         crate::json_ser::serialize_structure_crate_model_orc_ser_de(&mut object_385, var_384)?;
         object_385.finish();
@@ -1829,6 +1940,7 @@ pub fn serialize_structure_crate_model_open_x_json_ser_de(
         object.key("CaseInsensitive").boolean(*var_387);
     }
     if let Some(var_388) = &input.column_to_json_key_mappings {
+        #[allow(unused_mut)]
         let mut object_389 = object.key("ColumnToJsonKeyMappings").start_object();
         for (key_390, value_391) in var_388 {
             {

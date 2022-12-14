@@ -40,6 +40,7 @@ pub fn serialize_structure_crate_input_associate_proactive_engagement_details_in
         let mut array_6 = object.key("EmergencyContactList").start_array();
         for item_7 in var_5 {
             {
+                #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_emergency_contact(
                     &mut object_8,
@@ -67,6 +68,7 @@ pub fn serialize_structure_crate_input_create_protection_input(
         let mut array_12 = object.key("Tags").start_array();
         for item_13 in var_11 {
             {
+                #[allow(unused_mut)]
                 let mut object_14 = array_12.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_14, item_13)?;
                 object_14.finish();
@@ -106,6 +108,7 @@ pub fn serialize_structure_crate_input_create_protection_group_input(
         let mut array_23 = object.key("Tags").start_array();
         for item_24 in var_22 {
             {
+                #[allow(unused_mut)]
                 let mut object_25 = array_23.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_25, item_24)?;
                 object_25.finish();
@@ -210,6 +213,7 @@ pub fn serialize_structure_crate_input_enable_application_layer_automatic_respon
         object.key("ResourceArn").string(var_36.as_str());
     }
     if let Some(var_37) = &input.action {
+        #[allow(unused_mut)]
         let mut object_38 = object.key("Action").start_object();
         crate::json_ser::serialize_structure_crate_model_response_action(&mut object_38, var_37)?;
         object_38.finish();
@@ -231,11 +235,13 @@ pub fn serialize_structure_crate_input_list_attacks_input(
         array_40.finish();
     }
     if let Some(var_42) = &input.start_time {
+        #[allow(unused_mut)]
         let mut object_43 = object.key("StartTime").start_object();
         crate::json_ser::serialize_structure_crate_model_time_range(&mut object_43, var_42)?;
         object_43.finish();
     }
     if let Some(var_44) = &input.end_time {
+        #[allow(unused_mut)]
         let mut object_45 = object.key("EndTime").start_object();
         crate::json_ser::serialize_structure_crate_model_time_range(&mut object_45, var_44)?;
         object_45.finish();
@@ -266,6 +272,7 @@ pub fn serialize_structure_crate_input_list_protection_groups_input(
         );
     }
     if let Some(var_50) = &input.inclusion_filters {
+        #[allow(unused_mut)]
         let mut object_51 = object.key("InclusionFilters").start_object();
         crate::json_ser::serialize_structure_crate_model_inclusion_protection_group_filters(
             &mut object_51,
@@ -290,6 +297,7 @@ pub fn serialize_structure_crate_input_list_protections_input(
         );
     }
     if let Some(var_54) = &input.inclusion_filters {
+        #[allow(unused_mut)]
         let mut object_55 = object.key("InclusionFilters").start_object();
         crate::json_ser::serialize_structure_crate_model_inclusion_protection_filters(
             &mut object_55,
@@ -340,6 +348,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_62 = object.key("Tags").start_array();
         for item_63 in var_61 {
             {
+                #[allow(unused_mut)]
                 let mut object_64 = array_62.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_64, item_63)?;
                 object_64.finish();
@@ -377,6 +386,7 @@ pub fn serialize_structure_crate_input_update_application_layer_automatic_respon
         object.key("ResourceArn").string(var_69.as_str());
     }
     if let Some(var_70) = &input.action {
+        #[allow(unused_mut)]
         let mut object_71 = object.key("Action").start_object();
         crate::json_ser::serialize_structure_crate_model_response_action(&mut object_71, var_70)?;
         object_71.finish();
@@ -392,6 +402,7 @@ pub fn serialize_structure_crate_input_update_emergency_contact_settings_input(
         let mut array_73 = object.key("EmergencyContactList").start_array();
         for item_74 in var_72 {
             {
+                #[allow(unused_mut)]
                 let mut object_75 = array_73.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_emergency_contact(
                     &mut object_75,
@@ -477,11 +488,13 @@ pub fn serialize_structure_crate_model_response_action(
     input: &crate::model::ResponseAction,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_89) = &input.block {
+        #[allow(unused_mut)]
         let mut object_90 = object.key("Block").start_object();
         crate::json_ser::serialize_structure_crate_model_block_action(&mut object_90, var_89)?;
         object_90.finish();
     }
     if let Some(var_91) = &input.count {
+        #[allow(unused_mut)]
         let mut object_92 = object.key("Count").start_object();
         crate::json_ser::serialize_structure_crate_model_count_action(&mut object_92, var_91)?;
         object_92.finish();

@@ -33,6 +33,7 @@ pub fn serialize_structure_crate_input_checkout_borrow_license_input(
         let mut array_6 = object.key("Entitlements").start_array();
         for item_7 in var_5 {
             {
+                #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_entitlement_data(
                     &mut object_8,
@@ -53,6 +54,7 @@ pub fn serialize_structure_crate_input_checkout_borrow_license_input(
         let mut array_12 = object.key("CheckoutMetadata").start_array();
         for item_13 in var_11 {
             {
+                #[allow(unused_mut)]
                 let mut object_14 = array_12.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_metadata(&mut object_14, item_13)?;
                 object_14.finish();
@@ -83,6 +85,7 @@ pub fn serialize_structure_crate_input_checkout_license_input(
         let mut array_20 = object.key("Entitlements").start_array();
         for item_21 in var_19 {
             {
+                #[allow(unused_mut)]
                 let mut object_22 = array_20.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_entitlement_data(
                     &mut object_22,
@@ -190,6 +193,7 @@ pub fn serialize_structure_crate_input_create_license_input(
         object.key("ProductSKU").string(var_47.as_str());
     }
     if let Some(var_48) = &input.issuer {
+        #[allow(unused_mut)]
         let mut object_49 = object.key("Issuer").start_object();
         crate::json_ser::serialize_structure_crate_model_issuer(&mut object_49, var_48)?;
         object_49.finish();
@@ -198,6 +202,7 @@ pub fn serialize_structure_crate_input_create_license_input(
         object.key("HomeRegion").string(var_50.as_str());
     }
     if let Some(var_51) = &input.validity {
+        #[allow(unused_mut)]
         let mut object_52 = object.key("Validity").start_object();
         crate::json_ser::serialize_structure_crate_model_datetime_range(&mut object_52, var_51)?;
         object_52.finish();
@@ -206,6 +211,7 @@ pub fn serialize_structure_crate_input_create_license_input(
         let mut array_54 = object.key("Entitlements").start_array();
         for item_55 in var_53 {
             {
+                #[allow(unused_mut)]
                 let mut object_56 = array_54.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_entitlement(
                     &mut object_56,
@@ -220,6 +226,7 @@ pub fn serialize_structure_crate_input_create_license_input(
         object.key("Beneficiary").string(var_57.as_str());
     }
     if let Some(var_58) = &input.consumption_configuration {
+        #[allow(unused_mut)]
         let mut object_59 = object.key("ConsumptionConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_consumption_configuration(
             &mut object_59,
@@ -231,6 +238,7 @@ pub fn serialize_structure_crate_input_create_license_input(
         let mut array_61 = object.key("LicenseMetadata").start_array();
         for item_62 in var_60 {
             {
+                #[allow(unused_mut)]
                 let mut object_63 = array_61.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_metadata(&mut object_63, item_62)?;
                 object_63.finish();
@@ -279,6 +287,7 @@ pub fn serialize_structure_crate_input_create_license_configuration_input(
         let mut array_74 = object.key("Tags").start_array();
         for item_75 in var_73 {
             {
+                #[allow(unused_mut)]
                 let mut object_76 = array_74.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_76, item_75)?;
                 object_76.finish();
@@ -293,6 +302,7 @@ pub fn serialize_structure_crate_input_create_license_configuration_input(
         let mut array_79 = object.key("ProductInformationList").start_array();
         for item_80 in var_78 {
             {
+                #[allow(unused_mut)]
                 let mut object_81 = array_79.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_product_information(
                     &mut object_81,
@@ -314,6 +324,7 @@ pub fn serialize_structure_crate_input_create_license_conversion_task_for_resour
         object.key("ResourceArn").string(var_82.as_str());
     }
     if let Some(var_83) = &input.source_license_context {
+        #[allow(unused_mut)]
         let mut object_84 = object.key("SourceLicenseContext").start_object();
         crate::json_ser::serialize_structure_crate_model_license_conversion_context(
             &mut object_84,
@@ -322,6 +333,7 @@ pub fn serialize_structure_crate_input_create_license_conversion_task_for_resour
         object_84.finish();
     }
     if let Some(var_85) = &input.destination_license_context {
+        #[allow(unused_mut)]
         let mut object_86 = object.key("DestinationLicenseContext").start_object();
         crate::json_ser::serialize_structure_crate_model_license_conversion_context(
             &mut object_86,
@@ -349,11 +361,13 @@ pub fn serialize_structure_crate_input_create_license_manager_report_generator_i
         array_89.finish();
     }
     if let Some(var_91) = &input.report_context {
+        #[allow(unused_mut)]
         let mut object_92 = object.key("ReportContext").start_object();
         crate::json_ser::serialize_structure_crate_model_report_context(&mut object_92, var_91)?;
         object_92.finish();
     }
     if let Some(var_93) = &input.report_frequency {
+        #[allow(unused_mut)]
         let mut object_94 = object.key("ReportFrequency").start_object();
         crate::json_ser::serialize_structure_crate_model_report_frequency(&mut object_94, var_93)?;
         object_94.finish();
@@ -368,6 +382,7 @@ pub fn serialize_structure_crate_input_create_license_manager_report_generator_i
         let mut array_98 = object.key("Tags").start_array();
         for item_99 in var_97 {
             {
+                #[allow(unused_mut)]
                 let mut object_100 = array_98.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_100, item_99)?;
                 object_100.finish();
@@ -392,6 +407,7 @@ pub fn serialize_structure_crate_input_create_license_version_input(
         object.key("ProductName").string(var_103.as_str());
     }
     if let Some(var_104) = &input.issuer {
+        #[allow(unused_mut)]
         let mut object_105 = object.key("Issuer").start_object();
         crate::json_ser::serialize_structure_crate_model_issuer(&mut object_105, var_104)?;
         object_105.finish();
@@ -400,6 +416,7 @@ pub fn serialize_structure_crate_input_create_license_version_input(
         object.key("HomeRegion").string(var_106.as_str());
     }
     if let Some(var_107) = &input.validity {
+        #[allow(unused_mut)]
         let mut object_108 = object.key("Validity").start_object();
         crate::json_ser::serialize_structure_crate_model_datetime_range(&mut object_108, var_107)?;
         object_108.finish();
@@ -408,6 +425,7 @@ pub fn serialize_structure_crate_input_create_license_version_input(
         let mut array_110 = object.key("LicenseMetadata").start_array();
         for item_111 in var_109 {
             {
+                #[allow(unused_mut)]
                 let mut object_112 = array_110.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_metadata(
                     &mut object_112,
@@ -422,6 +440,7 @@ pub fn serialize_structure_crate_input_create_license_version_input(
         let mut array_114 = object.key("Entitlements").start_array();
         for item_115 in var_113 {
             {
+                #[allow(unused_mut)]
                 let mut object_116 = array_114.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_entitlement(
                     &mut object_116,
@@ -433,6 +452,7 @@ pub fn serialize_structure_crate_input_create_license_version_input(
         array_114.finish();
     }
     if let Some(var_117) = &input.consumption_configuration {
+        #[allow(unused_mut)]
         let mut object_118 = object.key("ConsumptionConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_consumption_configuration(
             &mut object_118,
@@ -696,6 +716,7 @@ pub fn serialize_structure_crate_input_list_distributed_grants_input(
         let mut array_159 = object.key("Filters").start_array();
         for item_160 in var_158 {
             {
+                #[allow(unused_mut)]
                 let mut object_161 = array_159.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_161, item_160)?;
                 object_161.finish();
@@ -762,6 +783,7 @@ pub fn serialize_structure_crate_input_list_license_configurations_input(
         let mut array_173 = object.key("Filters").start_array();
         for item_174 in var_172 {
             {
+                #[allow(unused_mut)]
                 let mut object_175 = array_173.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_175, item_174)?;
                 object_175.finish();
@@ -789,6 +811,7 @@ pub fn serialize_structure_crate_input_list_license_conversion_tasks_input(
         let mut array_179 = object.key("Filters").start_array();
         for item_180 in var_178 {
             {
+                #[allow(unused_mut)]
                 let mut object_181 = array_179.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_181, item_180)?;
                 object_181.finish();
@@ -807,6 +830,7 @@ pub fn serialize_structure_crate_input_list_license_manager_report_generators_in
         let mut array_183 = object.key("Filters").start_array();
         for item_184 in var_182 {
             {
+                #[allow(unused_mut)]
                 let mut object_185 = array_183.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_185, item_184)?;
                 object_185.finish();
@@ -843,6 +867,7 @@ pub fn serialize_structure_crate_input_list_licenses_input(
         let mut array_192 = object.key("Filters").start_array();
         for item_193 in var_191 {
             {
+                #[allow(unused_mut)]
                 let mut object_194 = array_192.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_194, item_193)?;
                 object_194.finish();
@@ -917,6 +942,7 @@ pub fn serialize_structure_crate_input_list_received_grants_input(
         let mut array_207 = object.key("Filters").start_array();
         for item_208 in var_206 {
             {
+                #[allow(unused_mut)]
                 let mut object_209 = array_207.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_209, item_208)?;
                 object_209.finish();
@@ -953,6 +979,7 @@ pub fn serialize_structure_crate_input_list_received_licenses_input(
         let mut array_216 = object.key("Filters").start_array();
         for item_217 in var_215 {
             {
+                #[allow(unused_mut)]
                 let mut object_218 = array_216.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_218, item_217)?;
                 object_218.finish();
@@ -989,6 +1016,7 @@ pub fn serialize_structure_crate_input_list_resource_inventory_input(
         let mut array_224 = object.key("Filters").start_array();
         for item_225 in var_223 {
             {
+                #[allow(unused_mut)]
                 let mut object_226 = array_224.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_inventory_filter(
                     &mut object_226,
@@ -1029,6 +1057,7 @@ pub fn serialize_structure_crate_input_list_tokens_input(
         let mut array_232 = object.key("Filters").start_array();
         for item_233 in var_231 {
             {
+                #[allow(unused_mut)]
                 let mut object_234 = array_232.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_234, item_233)?;
                 object_234.finish();
@@ -1070,6 +1099,7 @@ pub fn serialize_structure_crate_input_list_usage_for_license_configuration_inpu
         let mut array_241 = object.key("Filters").start_array();
         for item_242 in var_240 {
             {
+                #[allow(unused_mut)]
                 let mut object_243 = array_241.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_243, item_242)?;
                 object_243.finish();
@@ -1101,6 +1131,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_247 = object.key("Tags").start_array();
         for item_248 in var_246 {
             {
+                #[allow(unused_mut)]
                 let mut object_249 = array_247.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_249, item_248)?;
                 object_249.finish();
@@ -1172,6 +1203,7 @@ pub fn serialize_structure_crate_input_update_license_configuration_input(
         let mut array_264 = object.key("ProductInformationList").start_array();
         for item_265 in var_263 {
             {
+                #[allow(unused_mut)]
                 let mut object_266 = array_264.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_product_information(
                     &mut object_266,
@@ -1210,11 +1242,13 @@ pub fn serialize_structure_crate_input_update_license_manager_report_generator_i
         array_271.finish();
     }
     if let Some(var_273) = &input.report_context {
+        #[allow(unused_mut)]
         let mut object_274 = object.key("ReportContext").start_object();
         crate::json_ser::serialize_structure_crate_model_report_context(&mut object_274, var_273)?;
         object_274.finish();
     }
     if let Some(var_275) = &input.report_frequency {
+        #[allow(unused_mut)]
         let mut object_276 = object.key("ReportFrequency").start_object();
         crate::json_ser::serialize_structure_crate_model_report_frequency(
             &mut object_276,
@@ -1242,6 +1276,7 @@ pub fn serialize_structure_crate_input_update_license_specifications_for_resourc
         let mut array_281 = object.key("AddLicenseSpecifications").start_array();
         for item_282 in var_280 {
             {
+                #[allow(unused_mut)]
                 let mut object_283 = array_281.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_license_specification(
                     &mut object_283,
@@ -1256,6 +1291,7 @@ pub fn serialize_structure_crate_input_update_license_specifications_for_resourc
         let mut array_285 = object.key("RemoveLicenseSpecifications").start_array();
         for item_286 in var_284 {
             {
+                #[allow(unused_mut)]
                 let mut object_287 = array_285.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_license_specification(
                     &mut object_287,
@@ -1280,6 +1316,7 @@ pub fn serialize_structure_crate_input_update_service_settings_input(
         object.key("SnsTopicArn").string(var_289.as_str());
     }
     if let Some(var_290) = &input.organization_configuration {
+        #[allow(unused_mut)]
         let mut object_291 = object.key("OrganizationConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_organization_configuration(
             &mut object_291,
@@ -1384,6 +1421,7 @@ pub fn serialize_structure_crate_model_consumption_configuration(
         object.key("RenewType").string(var_308.as_str());
     }
     if let Some(var_309) = &input.provisional_configuration {
+        #[allow(unused_mut)]
         let mut object_310 = object.key("ProvisionalConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_provisional_configuration(
             &mut object_310,
@@ -1392,6 +1430,7 @@ pub fn serialize_structure_crate_model_consumption_configuration(
         object_310.finish();
     }
     if let Some(var_311) = &input.borrow_configuration {
+        #[allow(unused_mut)]
         let mut object_312 = object.key("BorrowConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_borrow_configuration(
             &mut object_312,
@@ -1426,6 +1465,7 @@ pub fn serialize_structure_crate_model_product_information(
         let mut array_317 = object.key("ProductInformationFilterList").start_array();
         for item_318 in var_316 {
             {
+                #[allow(unused_mut)]
                 let mut object_319 = array_317.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_product_information_filter(
                     &mut object_319,

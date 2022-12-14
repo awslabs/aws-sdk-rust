@@ -10,6 +10,7 @@ pub fn serialize_structure_crate_input_associate_encryption_config_input(
         let mut array_3 = object.key("encryptionConfig").start_array();
         for item_4 in var_2 {
             {
+                #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_encryption_config(
                     &mut object_5,
@@ -31,6 +32,7 @@ pub fn serialize_structure_crate_input_associate_identity_provider_config_input(
         object.key("clientRequestToken").string(var_6.as_str());
     }
     if let Some(var_7) = &input.oidc {
+        #[allow(unused_mut)]
         let mut object_8 = object.key("oidc").start_object();
         crate::json_ser::serialize_structure_crate_model_oidc_identity_provider_config_request(
             &mut object_8,
@@ -39,6 +41,7 @@ pub fn serialize_structure_crate_input_associate_identity_provider_config_input(
         object_8.finish();
     }
     if let Some(var_9) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_10 = object.key("tags").start_object();
         for (key_11, value_12) in var_9 {
             {
@@ -70,6 +73,7 @@ pub fn serialize_structure_crate_input_create_addon_input(
         object.key("serviceAccountRoleArn").string(var_17.as_str());
     }
     if let Some(var_18) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_19 = object.key("tags").start_object();
         for (key_20, value_21) in var_18 {
             {
@@ -92,6 +96,7 @@ pub fn serialize_structure_crate_input_create_cluster_input(
         let mut array_24 = object.key("encryptionConfig").start_array();
         for item_25 in var_23 {
             {
+                #[allow(unused_mut)]
                 let mut object_26 = array_24.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_encryption_config(
                     &mut object_26,
@@ -103,6 +108,7 @@ pub fn serialize_structure_crate_input_create_cluster_input(
         array_24.finish();
     }
     if let Some(var_27) = &input.kubernetes_network_config {
+        #[allow(unused_mut)]
         let mut object_28 = object.key("kubernetesNetworkConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_kubernetes_network_config_request(
             &mut object_28,
@@ -111,6 +117,7 @@ pub fn serialize_structure_crate_input_create_cluster_input(
         object_28.finish();
     }
     if let Some(var_29) = &input.logging {
+        #[allow(unused_mut)]
         let mut object_30 = object.key("logging").start_object();
         crate::json_ser::serialize_structure_crate_model_logging(&mut object_30, var_29)?;
         object_30.finish();
@@ -119,6 +126,7 @@ pub fn serialize_structure_crate_input_create_cluster_input(
         object.key("name").string(var_31.as_str());
     }
     if let Some(var_32) = &input.outpost_config {
+        #[allow(unused_mut)]
         let mut object_33 = object.key("outpostConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_outpost_config_request(
             &mut object_33,
@@ -127,6 +135,7 @@ pub fn serialize_structure_crate_input_create_cluster_input(
         object_33.finish();
     }
     if let Some(var_34) = &input.resources_vpc_config {
+        #[allow(unused_mut)]
         let mut object_35 = object.key("resourcesVpcConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_vpc_config_request(
             &mut object_35,
@@ -138,6 +147,7 @@ pub fn serialize_structure_crate_input_create_cluster_input(
         object.key("roleArn").string(var_36.as_str());
     }
     if let Some(var_37) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_38 = object.key("tags").start_object();
         for (key_39, value_40) in var_37 {
             {
@@ -169,6 +179,7 @@ pub fn serialize_structure_crate_input_create_fargate_profile_input(
         let mut array_46 = object.key("selectors").start_array();
         for item_47 in var_45 {
             {
+                #[allow(unused_mut)]
                 let mut object_48 = array_46.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_fargate_profile_selector(
                     &mut object_48,
@@ -189,6 +200,7 @@ pub fn serialize_structure_crate_input_create_fargate_profile_input(
         array_50.finish();
     }
     if let Some(var_52) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_53 = object.key("tags").start_object();
         for (key_54, value_55) in var_52 {
             {
@@ -229,6 +241,7 @@ pub fn serialize_structure_crate_input_create_nodegroup_input(
         array_61.finish();
     }
     if let Some(var_63) = &input.labels {
+        #[allow(unused_mut)]
         let mut object_64 = object.key("labels").start_object();
         for (key_65, value_66) in var_63 {
             {
@@ -238,6 +251,7 @@ pub fn serialize_structure_crate_input_create_nodegroup_input(
         object_64.finish();
     }
     if let Some(var_67) = &input.launch_template {
+        #[allow(unused_mut)]
         let mut object_68 = object.key("launchTemplate").start_object();
         crate::json_ser::serialize_structure_crate_model_launch_template_specification(
             &mut object_68,
@@ -255,6 +269,7 @@ pub fn serialize_structure_crate_input_create_nodegroup_input(
         object.key("releaseVersion").string(var_71.as_str());
     }
     if let Some(var_72) = &input.remote_access {
+        #[allow(unused_mut)]
         let mut object_73 = object.key("remoteAccess").start_object();
         crate::json_ser::serialize_structure_crate_model_remote_access_config(
             &mut object_73,
@@ -263,6 +278,7 @@ pub fn serialize_structure_crate_input_create_nodegroup_input(
         object_73.finish();
     }
     if let Some(var_74) = &input.scaling_config {
+        #[allow(unused_mut)]
         let mut object_75 = object.key("scalingConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_nodegroup_scaling_config(
             &mut object_75,
@@ -280,6 +296,7 @@ pub fn serialize_structure_crate_input_create_nodegroup_input(
         array_77.finish();
     }
     if let Some(var_79) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_80 = object.key("tags").start_object();
         for (key_81, value_82) in var_79 {
             {
@@ -292,6 +309,7 @@ pub fn serialize_structure_crate_input_create_nodegroup_input(
         let mut array_84 = object.key("taints").start_array();
         for item_85 in var_83 {
             {
+                #[allow(unused_mut)]
                 let mut object_86 = array_84.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_taint(&mut object_86, item_85)?;
                 object_86.finish();
@@ -300,6 +318,7 @@ pub fn serialize_structure_crate_input_create_nodegroup_input(
         array_84.finish();
     }
     if let Some(var_87) = &input.update_config {
+        #[allow(unused_mut)]
         let mut object_88 = object.key("updateConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_nodegroup_update_config(
             &mut object_88,
@@ -318,6 +337,7 @@ pub fn serialize_structure_crate_input_describe_identity_provider_config_input(
     input: &crate::input::DescribeIdentityProviderConfigInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_90) = &input.identity_provider_config {
+        #[allow(unused_mut)]
         let mut object_91 = object.key("identityProviderConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_identity_provider_config(
             &mut object_91,
@@ -336,6 +356,7 @@ pub fn serialize_structure_crate_input_disassociate_identity_provider_config_inp
         object.key("clientRequestToken").string(var_92.as_str());
     }
     if let Some(var_93) = &input.identity_provider_config {
+        #[allow(unused_mut)]
         let mut object_94 = object.key("identityProviderConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_identity_provider_config(
             &mut object_94,
@@ -354,6 +375,7 @@ pub fn serialize_structure_crate_input_register_cluster_input(
         object.key("clientRequestToken").string(var_95.as_str());
     }
     if let Some(var_96) = &input.connector_config {
+        #[allow(unused_mut)]
         let mut object_97 = object.key("connectorConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_connector_config_request(
             &mut object_97,
@@ -365,6 +387,7 @@ pub fn serialize_structure_crate_input_register_cluster_input(
         object.key("name").string(var_98.as_str());
     }
     if let Some(var_99) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_100 = object.key("tags").start_object();
         for (key_101, value_102) in var_99 {
             {
@@ -381,6 +404,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_103) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_104 = object.key("tags").start_object();
         for (key_105, value_106) in var_103 {
             {
@@ -419,11 +443,13 @@ pub fn serialize_structure_crate_input_update_cluster_config_input(
         object.key("clientRequestToken").string(var_111.as_str());
     }
     if let Some(var_112) = &input.logging {
+        #[allow(unused_mut)]
         let mut object_113 = object.key("logging").start_object();
         crate::json_ser::serialize_structure_crate_model_logging(&mut object_113, var_112)?;
         object_113.finish();
     }
     if let Some(var_114) = &input.resources_vpc_config {
+        #[allow(unused_mut)]
         let mut object_115 = object.key("resourcesVpcConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_vpc_config_request(
             &mut object_115,
@@ -455,6 +481,7 @@ pub fn serialize_structure_crate_input_update_nodegroup_config_input(
         object.key("clientRequestToken").string(var_118.as_str());
     }
     if let Some(var_119) = &input.labels {
+        #[allow(unused_mut)]
         let mut object_120 = object.key("labels").start_object();
         crate::json_ser::serialize_structure_crate_model_update_labels_payload(
             &mut object_120,
@@ -463,6 +490,7 @@ pub fn serialize_structure_crate_input_update_nodegroup_config_input(
         object_120.finish();
     }
     if let Some(var_121) = &input.scaling_config {
+        #[allow(unused_mut)]
         let mut object_122 = object.key("scalingConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_nodegroup_scaling_config(
             &mut object_122,
@@ -471,6 +499,7 @@ pub fn serialize_structure_crate_input_update_nodegroup_config_input(
         object_122.finish();
     }
     if let Some(var_123) = &input.taints {
+        #[allow(unused_mut)]
         let mut object_124 = object.key("taints").start_object();
         crate::json_ser::serialize_structure_crate_model_update_taints_payload(
             &mut object_124,
@@ -479,6 +508,7 @@ pub fn serialize_structure_crate_input_update_nodegroup_config_input(
         object_124.finish();
     }
     if let Some(var_125) = &input.update_config {
+        #[allow(unused_mut)]
         let mut object_126 = object.key("updateConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_nodegroup_update_config(
             &mut object_126,
@@ -500,6 +530,7 @@ pub fn serialize_structure_crate_input_update_nodegroup_version_input(
         object.key("force").boolean(input.force);
     }
     if let Some(var_128) = &input.launch_template {
+        #[allow(unused_mut)]
         let mut object_129 = object.key("launchTemplate").start_object();
         crate::json_ser::serialize_structure_crate_model_launch_template_specification(
             &mut object_129,
@@ -530,6 +561,7 @@ pub fn serialize_structure_crate_model_encryption_config(
         array_133.finish();
     }
     if let Some(var_135) = &input.provider {
+        #[allow(unused_mut)]
         let mut object_136 = object.key("provider").start_object();
         crate::json_ser::serialize_structure_crate_model_provider(&mut object_136, var_135)?;
         object_136.finish();
@@ -565,6 +597,7 @@ pub fn serialize_structure_crate_model_oidc_identity_provider_config_request(
         object.key("groupsPrefix").string(var_143.as_str());
     }
     if let Some(var_144) = &input.required_claims {
+        #[allow(unused_mut)]
         let mut object_145 = object.key("requiredClaims").start_object();
         for (key_146, value_147) in var_144 {
             {
@@ -597,6 +630,7 @@ pub fn serialize_structure_crate_model_logging(
         let mut array_151 = object.key("clusterLogging").start_array();
         for item_152 in var_150 {
             {
+                #[allow(unused_mut)]
                 let mut object_153 = array_151.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_log_setup(
                     &mut object_153,
@@ -679,6 +713,7 @@ pub fn serialize_structure_crate_model_fargate_profile_selector(
         object.key("namespace").string(var_169.as_str());
     }
     if let Some(var_170) = &input.labels {
+        #[allow(unused_mut)]
         let mut object_171 = object.key("labels").start_object();
         for (key_172, value_173) in var_170 {
             {
@@ -816,6 +851,7 @@ pub fn serialize_structure_crate_model_update_labels_payload(
     input: &crate::model::UpdateLabelsPayload,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_193) = &input.add_or_update_labels {
+        #[allow(unused_mut)]
         let mut object_194 = object.key("addOrUpdateLabels").start_object();
         for (key_195, value_196) in var_193 {
             {
@@ -844,6 +880,7 @@ pub fn serialize_structure_crate_model_update_taints_payload(
         let mut array_201 = object.key("addOrUpdateTaints").start_array();
         for item_202 in var_200 {
             {
+                #[allow(unused_mut)]
                 let mut object_203 = array_201.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_taint(&mut object_203, item_202)?;
                 object_203.finish();
@@ -855,6 +892,7 @@ pub fn serialize_structure_crate_model_update_taints_payload(
         let mut array_205 = object.key("removeTaints").start_array();
         for item_206 in var_204 {
             {
+                #[allow(unused_mut)]
                 let mut object_207 = array_205.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_taint(&mut object_207, item_206)?;
                 object_207.finish();

@@ -23,6 +23,7 @@ pub fn serialize_structure_crate_input_create_backend_input(
         object.key("backendEnvironmentName").string(var_4.as_str());
     }
     if let Some(var_5) = &input.resource_config {
+        #[allow(unused_mut)]
         let mut object_6 = object.key("resourceConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_resource_config(&mut object_6, var_5)?;
         object_6.finish();
@@ -41,6 +42,7 @@ pub fn serialize_structure_crate_input_create_backend_api_input(
         object.key("backendEnvironmentName").string(var_8.as_str());
     }
     if let Some(var_9) = &input.resource_config {
+        #[allow(unused_mut)]
         let mut object_10 = object.key("resourceConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_backend_api_resource_config(
             &mut object_10,
@@ -62,6 +64,7 @@ pub fn serialize_structure_crate_input_create_backend_auth_input(
         object.key("backendEnvironmentName").string(var_12.as_str());
     }
     if let Some(var_13) = &input.resource_config {
+        #[allow(unused_mut)]
         let mut object_14 = object.key("resourceConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_create_backend_auth_resource_config(
             &mut object_14,
@@ -93,6 +96,7 @@ pub fn serialize_structure_crate_input_create_backend_storage_input(
         object.key("backendEnvironmentName").string(var_17.as_str());
     }
     if let Some(var_18) = &input.resource_config {
+        #[allow(unused_mut)]
         let mut object_19 = object.key("resourceConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_create_backend_storage_resource_config(
             &mut object_19,
@@ -111,6 +115,7 @@ pub fn serialize_structure_crate_input_delete_backend_api_input(
     input: &crate::input::DeleteBackendApiInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_21) = &input.resource_config {
+        #[allow(unused_mut)]
         let mut object_22 = object.key("resourceConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_backend_api_resource_config(
             &mut object_22,
@@ -172,6 +177,7 @@ pub fn serialize_structure_crate_input_get_backend_api_input(
     input: &crate::input::GetBackendApiInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_29) = &input.resource_config {
+        #[allow(unused_mut)]
         let mut object_30 = object.key("resourceConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_backend_api_resource_config(
             &mut object_30,
@@ -299,6 +305,7 @@ pub fn serialize_structure_crate_input_update_backend_api_input(
     input: &crate::input::UpdateBackendApiInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_46) = &input.resource_config {
+        #[allow(unused_mut)]
         let mut object_47 = object.key("resourceConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_backend_api_resource_config(
             &mut object_47,
@@ -317,6 +324,7 @@ pub fn serialize_structure_crate_input_update_backend_auth_input(
     input: &crate::input::UpdateBackendAuthInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_49) = &input.resource_config {
+        #[allow(unused_mut)]
         let mut object_50 = object.key("resourceConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_update_backend_auth_resource_config(
             &mut object_50,
@@ -335,6 +343,7 @@ pub fn serialize_structure_crate_input_update_backend_config_input(
     input: &crate::input::UpdateBackendConfigInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_52) = &input.login_auth_config {
+        #[allow(unused_mut)]
         let mut object_53 = object.key("loginAuthConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_login_auth_config_req_obj(
             &mut object_53,
@@ -363,6 +372,7 @@ pub fn serialize_structure_crate_input_update_backend_storage_input(
     input: &crate::input::UpdateBackendStorageInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_56) = &input.resource_config {
+        #[allow(unused_mut)]
         let mut object_57 = object.key("resourceConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_update_backend_storage_resource_config(
             &mut object_57,
@@ -392,6 +402,7 @@ pub fn serialize_structure_crate_model_backend_api_resource_config(
         let mut array_60 = object.key("additionalAuthTypes").start_array();
         for item_61 in var_59 {
             {
+                #[allow(unused_mut)]
                 let mut object_62 = array_60.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_backend_api_auth_type(
                     &mut object_62,
@@ -406,6 +417,7 @@ pub fn serialize_structure_crate_model_backend_api_resource_config(
         object.key("apiName").string(var_63.as_str());
     }
     if let Some(var_64) = &input.conflict_resolution {
+        #[allow(unused_mut)]
         let mut object_65 = object.key("conflictResolution").start_object();
         crate::json_ser::serialize_structure_crate_model_backend_api_conflict_resolution(
             &mut object_65,
@@ -414,6 +426,7 @@ pub fn serialize_structure_crate_model_backend_api_resource_config(
         object_65.finish();
     }
     if let Some(var_66) = &input.default_auth_type {
+        #[allow(unused_mut)]
         let mut object_67 = object.key("defaultAuthType").start_object();
         crate::json_ser::serialize_structure_crate_model_backend_api_auth_type(
             &mut object_67,
@@ -438,6 +451,7 @@ pub fn serialize_structure_crate_model_create_backend_auth_resource_config(
         object.key("authResources").string(var_70.as_str());
     }
     if let Some(var_71) = &input.identity_pool_configs {
+        #[allow(unused_mut)]
         let mut object_72 = object.key("identityPoolConfigs").start_object();
         crate::json_ser::serialize_structure_crate_model_create_backend_auth_identity_pool_config(
             &mut object_72,
@@ -449,6 +463,7 @@ pub fn serialize_structure_crate_model_create_backend_auth_resource_config(
         object.key("service").string(var_73.as_str());
     }
     if let Some(var_74) = &input.user_pool_configs {
+        #[allow(unused_mut)]
         let mut object_75 = object.key("userPoolConfigs").start_object();
         crate::json_ser::serialize_structure_crate_model_create_backend_auth_user_pool_config(
             &mut object_75,
@@ -467,6 +482,7 @@ pub fn serialize_structure_crate_model_create_backend_storage_resource_config(
         object.key("bucketName").string(var_76.as_str());
     }
     if let Some(var_77) = &input.permissions {
+        #[allow(unused_mut)]
         let mut object_78 = object.key("permissions").start_object();
         crate::json_ser::serialize_structure_crate_model_backend_storage_permissions(
             &mut object_78,
@@ -488,6 +504,7 @@ pub fn serialize_structure_crate_model_update_backend_auth_resource_config(
         object.key("authResources").string(var_80.as_str());
     }
     if let Some(var_81) = &input.identity_pool_configs {
+        #[allow(unused_mut)]
         let mut object_82 = object.key("identityPoolConfigs").start_object();
         crate::json_ser::serialize_structure_crate_model_update_backend_auth_identity_pool_config(
             &mut object_82,
@@ -499,6 +516,7 @@ pub fn serialize_structure_crate_model_update_backend_auth_resource_config(
         object.key("service").string(var_83.as_str());
     }
     if let Some(var_84) = &input.user_pool_configs {
+        #[allow(unused_mut)]
         let mut object_85 = object.key("userPoolConfigs").start_object();
         crate::json_ser::serialize_structure_crate_model_update_backend_auth_user_pool_config(
             &mut object_85,
@@ -537,6 +555,7 @@ pub fn serialize_structure_crate_model_update_backend_storage_resource_config(
     input: &crate::model::UpdateBackendStorageResourceConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_90) = &input.permissions {
+        #[allow(unused_mut)]
         let mut object_91 = object.key("permissions").start_object();
         crate::json_ser::serialize_structure_crate_model_backend_storage_permissions(
             &mut object_91,
@@ -558,6 +577,7 @@ pub fn serialize_structure_crate_model_backend_api_auth_type(
         object.key("mode").string(var_93.as_str());
     }
     if let Some(var_94) = &input.settings {
+        #[allow(unused_mut)]
         let mut object_95 = object.key("settings").start_object();
         crate::json_ser::serialize_structure_crate_model_backend_api_app_sync_auth_settings(
             &mut object_95,
@@ -598,11 +618,13 @@ pub fn serialize_structure_crate_model_create_backend_auth_user_pool_config(
     input: &crate::model::CreateBackendAuthUserPoolConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_98) = &input.forgot_password {
+        #[allow(unused_mut)]
         let mut object_99 = object.key("forgotPassword").start_object();
         crate::json_ser::serialize_structure_crate_model_create_backend_auth_forgot_password_config(&mut object_99, var_98)?;
         object_99.finish();
     }
     if let Some(var_100) = &input.mfa {
+        #[allow(unused_mut)]
         let mut object_101 = object.key("mfa").start_object();
         crate::json_ser::serialize_structure_crate_model_create_backend_auth_mfa_config(
             &mut object_101,
@@ -611,6 +633,7 @@ pub fn serialize_structure_crate_model_create_backend_auth_user_pool_config(
         object_101.finish();
     }
     if let Some(var_102) = &input.o_auth {
+        #[allow(unused_mut)]
         let mut object_103 = object.key("oAuth").start_object();
         crate::json_ser::serialize_structure_crate_model_create_backend_auth_o_auth_config(
             &mut object_103,
@@ -619,6 +642,7 @@ pub fn serialize_structure_crate_model_create_backend_auth_user_pool_config(
         object_103.finish();
     }
     if let Some(var_104) = &input.password_policy {
+        #[allow(unused_mut)]
         let mut object_105 = object.key("passwordPolicy").start_object();
         crate::json_ser::serialize_structure_crate_model_create_backend_auth_password_policy_config(&mut object_105, var_104)?;
         object_105.finish();
@@ -639,6 +663,7 @@ pub fn serialize_structure_crate_model_create_backend_auth_user_pool_config(
         object.key("userPoolName").string(var_110.as_str());
     }
     if let Some(var_111) = &input.verification_message {
+        #[allow(unused_mut)]
         let mut object_112 = object.key("verificationMessage").start_object();
         crate::json_ser::serialize_structure_crate_model_create_backend_auth_verification_message_config(&mut object_112, var_111)?;
         object_112.finish();
@@ -688,11 +713,13 @@ pub fn serialize_structure_crate_model_update_backend_auth_user_pool_config(
     input: &crate::model::UpdateBackendAuthUserPoolConfig,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_119) = &input.forgot_password {
+        #[allow(unused_mut)]
         let mut object_120 = object.key("forgotPassword").start_object();
         crate::json_ser::serialize_structure_crate_model_update_backend_auth_forgot_password_config(&mut object_120, var_119)?;
         object_120.finish();
     }
     if let Some(var_121) = &input.mfa {
+        #[allow(unused_mut)]
         let mut object_122 = object.key("mfa").start_object();
         crate::json_ser::serialize_structure_crate_model_update_backend_auth_mfa_config(
             &mut object_122,
@@ -701,6 +728,7 @@ pub fn serialize_structure_crate_model_update_backend_auth_user_pool_config(
         object_122.finish();
     }
     if let Some(var_123) = &input.o_auth {
+        #[allow(unused_mut)]
         let mut object_124 = object.key("oAuth").start_object();
         crate::json_ser::serialize_structure_crate_model_update_backend_auth_o_auth_config(
             &mut object_124,
@@ -709,11 +737,13 @@ pub fn serialize_structure_crate_model_update_backend_auth_user_pool_config(
         object_124.finish();
     }
     if let Some(var_125) = &input.password_policy {
+        #[allow(unused_mut)]
         let mut object_126 = object.key("passwordPolicy").start_object();
         crate::json_ser::serialize_structure_crate_model_update_backend_auth_password_policy_config(&mut object_126, var_125)?;
         object_126.finish();
     }
     if let Some(var_127) = &input.verification_message {
+        #[allow(unused_mut)]
         let mut object_128 = object.key("verificationMessage").start_object();
         crate::json_ser::serialize_structure_crate_model_update_backend_auth_verification_message_config(&mut object_128, var_127)?;
         object_128.finish();
@@ -763,11 +793,13 @@ pub fn serialize_structure_crate_model_create_backend_auth_forgot_password_confi
         object.key("deliveryMethod").string(var_136.as_str());
     }
     if let Some(var_137) = &input.email_settings {
+        #[allow(unused_mut)]
         let mut object_138 = object.key("emailSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_email_settings(&mut object_138, var_137)?;
         object_138.finish();
     }
     if let Some(var_139) = &input.sms_settings {
+        #[allow(unused_mut)]
         let mut object_140 = object.key("smsSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_sms_settings(&mut object_140, var_139)?;
         object_140.finish();
@@ -783,6 +815,7 @@ pub fn serialize_structure_crate_model_create_backend_auth_mfa_config(
         object.key("MFAMode").string(var_141.as_str());
     }
     if let Some(var_142) = &input.settings {
+        #[allow(unused_mut)]
         let mut object_143 = object.key("settings").start_object();
         crate::json_ser::serialize_structure_crate_model_settings(&mut object_143, var_142)?;
         object_143.finish();
@@ -828,6 +861,7 @@ pub fn serialize_structure_crate_model_create_backend_auth_o_auth_config(
         array_153.finish();
     }
     if let Some(var_155) = &input.social_provider_settings {
+        #[allow(unused_mut)]
         let mut object_156 = object.key("socialProviderSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_social_provider_settings(
             &mut object_156,
@@ -868,11 +902,13 @@ pub fn serialize_structure_crate_model_create_backend_auth_verification_message_
         object.key("deliveryMethod").string(var_160.as_str());
     }
     if let Some(var_161) = &input.email_settings {
+        #[allow(unused_mut)]
         let mut object_162 = object.key("emailSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_email_settings(&mut object_162, var_161)?;
         object_162.finish();
     }
     if let Some(var_163) = &input.sms_settings {
+        #[allow(unused_mut)]
         let mut object_164 = object.key("smsSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_sms_settings(&mut object_164, var_163)?;
         object_164.finish();
@@ -888,11 +924,13 @@ pub fn serialize_structure_crate_model_update_backend_auth_forgot_password_confi
         object.key("deliveryMethod").string(var_165.as_str());
     }
     if let Some(var_166) = &input.email_settings {
+        #[allow(unused_mut)]
         let mut object_167 = object.key("emailSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_email_settings(&mut object_167, var_166)?;
         object_167.finish();
     }
     if let Some(var_168) = &input.sms_settings {
+        #[allow(unused_mut)]
         let mut object_169 = object.key("smsSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_sms_settings(&mut object_169, var_168)?;
         object_169.finish();
@@ -908,6 +946,7 @@ pub fn serialize_structure_crate_model_update_backend_auth_mfa_config(
         object.key("MFAMode").string(var_170.as_str());
     }
     if let Some(var_171) = &input.settings {
+        #[allow(unused_mut)]
         let mut object_172 = object.key("settings").start_object();
         crate::json_ser::serialize_structure_crate_model_settings(&mut object_172, var_171)?;
         object_172.finish();
@@ -953,6 +992,7 @@ pub fn serialize_structure_crate_model_update_backend_auth_o_auth_config(
         array_182.finish();
     }
     if let Some(var_184) = &input.social_provider_settings {
+        #[allow(unused_mut)]
         let mut object_185 = object.key("socialProviderSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_social_provider_settings(
             &mut object_185,
@@ -993,11 +1033,13 @@ pub fn serialize_structure_crate_model_update_backend_auth_verification_message_
         object.key("deliveryMethod").string(var_189.as_str());
     }
     if let Some(var_190) = &input.email_settings {
+        #[allow(unused_mut)]
         let mut object_191 = object.key("emailSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_email_settings(&mut object_191, var_190)?;
         object_191.finish();
     }
     if let Some(var_192) = &input.sms_settings {
+        #[allow(unused_mut)]
         let mut object_193 = object.key("smsSettings").start_object();
         crate::json_ser::serialize_structure_crate_model_sms_settings(&mut object_193, var_192)?;
         object_193.finish();
@@ -1052,6 +1094,7 @@ pub fn serialize_structure_crate_model_social_provider_settings(
     input: &crate::model::SocialProviderSettings,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_201) = &input.facebook {
+        #[allow(unused_mut)]
         let mut object_202 = object.key("Facebook").start_object();
         crate::json_ser::serialize_structure_crate_model_backend_auth_social_provider_config(
             &mut object_202,
@@ -1060,6 +1103,7 @@ pub fn serialize_structure_crate_model_social_provider_settings(
         object_202.finish();
     }
     if let Some(var_203) = &input.google {
+        #[allow(unused_mut)]
         let mut object_204 = object.key("Google").start_object();
         crate::json_ser::serialize_structure_crate_model_backend_auth_social_provider_config(
             &mut object_204,
@@ -1068,6 +1112,7 @@ pub fn serialize_structure_crate_model_social_provider_settings(
         object_204.finish();
     }
     if let Some(var_205) = &input.login_with_amazon {
+        #[allow(unused_mut)]
         let mut object_206 = object.key("LoginWithAmazon").start_object();
         crate::json_ser::serialize_structure_crate_model_backend_auth_social_provider_config(
             &mut object_206,
@@ -1076,6 +1121,7 @@ pub fn serialize_structure_crate_model_social_provider_settings(
         object_206.finish();
     }
     if let Some(var_207) = &input.sign_in_with_apple {
+        #[allow(unused_mut)]
         let mut object_208 = object.key("SignInWithApple").start_object();
         crate::json_ser::serialize_structure_crate_model_backend_auth_apple_provider_config(
             &mut object_208,

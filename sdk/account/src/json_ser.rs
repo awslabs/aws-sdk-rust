@@ -68,6 +68,7 @@ pub fn serialize_structure_crate_input_put_contact_information_input(
         object.key("AccountId").string(var_12.as_str());
     }
     if let Some(var_13) = &input.contact_information {
+        #[allow(unused_mut)]
         let mut object_14 = object.key("ContactInformation").start_object();
         crate::json_ser::serialize_structure_crate_model_contact_information(
             &mut object_14,

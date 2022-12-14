@@ -10,6 +10,7 @@ pub fn serialize_structure_crate_input_associate_created_artifact_input(
         object.key("MigrationTaskName").string(var_2.as_str());
     }
     if let Some(var_3) = &input.created_artifact {
+        #[allow(unused_mut)]
         let mut object_4 = object.key("CreatedArtifact").start_object();
         crate::json_ser::serialize_structure_crate_model_created_artifact(&mut object_4, var_3)?;
         object_4.finish();
@@ -31,6 +32,7 @@ pub fn serialize_structure_crate_input_associate_discovered_resource_input(
         object.key("MigrationTaskName").string(var_6.as_str());
     }
     if let Some(var_7) = &input.discovered_resource {
+        #[allow(unused_mut)]
         let mut object_8 = object.key("DiscoveredResource").start_object();
         crate::json_ser::serialize_structure_crate_model_discovered_resource(&mut object_8, var_7)?;
         object_8.finish();
@@ -284,6 +286,7 @@ pub fn serialize_structure_crate_input_notify_migration_task_state_input(
         object.key("MigrationTaskName").string(var_44.as_str());
     }
     if let Some(var_45) = &input.task {
+        #[allow(unused_mut)]
         let mut object_46 = object.key("Task").start_object();
         crate::json_ser::serialize_structure_crate_model_task(&mut object_46, var_45)?;
         object_46.finish();
@@ -319,6 +322,7 @@ pub fn serialize_structure_crate_input_put_resource_attributes_input(
         let mut array_51 = object.key("ResourceAttributeList").start_array();
         for item_52 in var_50 {
             {
+                #[allow(unused_mut)]
                 let mut object_53 = array_51.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_resource_attribute(
                     &mut object_53,

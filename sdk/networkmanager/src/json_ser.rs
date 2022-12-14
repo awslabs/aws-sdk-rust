@@ -76,6 +76,7 @@ pub fn serialize_structure_crate_input_create_connect_attachment_input(
         object.key("EdgeLocation").string(var_14.as_str());
     }
     if let Some(var_15) = &input.options {
+        #[allow(unused_mut)]
         let mut object_16 = object.key("Options").start_object();
         crate::json_ser::serialize_structure_crate_model_connect_attachment_options(
             &mut object_16,
@@ -87,6 +88,7 @@ pub fn serialize_structure_crate_input_create_connect_attachment_input(
         let mut array_18 = object.key("Tags").start_array();
         for item_19 in var_17 {
             {
+                #[allow(unused_mut)]
                 let mut object_20 = array_18.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_20, item_19)?;
                 object_20.finish();
@@ -123,6 +125,7 @@ pub fn serialize_structure_crate_input_create_connection_input(
         let mut array_28 = object.key("Tags").start_array();
         for item_29 in var_27 {
             {
+                #[allow(unused_mut)]
                 let mut object_30 = array_28.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_30, item_29)?;
                 object_30.finish();
@@ -138,6 +141,7 @@ pub fn serialize_structure_crate_input_create_connect_peer_input(
     input: &crate::input::CreateConnectPeerInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_31) = &input.bgp_options {
+        #[allow(unused_mut)]
         let mut object_32 = object.key("BgpOptions").start_object();
         crate::json_ser::serialize_structure_crate_model_bgp_options(&mut object_32, var_31)?;
         object_32.finish();
@@ -167,6 +171,7 @@ pub fn serialize_structure_crate_input_create_connect_peer_input(
         let mut array_41 = object.key("Tags").start_array();
         for item_42 in var_40 {
             {
+                #[allow(unused_mut)]
                 let mut object_43 = array_41.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_43, item_42)?;
                 object_43.finish();
@@ -197,6 +202,7 @@ pub fn serialize_structure_crate_input_create_core_network_input(
         let mut array_49 = object.key("Tags").start_array();
         for item_50 in var_48 {
             {
+                #[allow(unused_mut)]
                 let mut object_51 = array_49.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_51, item_50)?;
                 object_51.finish();
@@ -212,6 +218,7 @@ pub fn serialize_structure_crate_input_create_device_input(
     input: &crate::input::CreateDeviceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_52) = &input.aws_location {
+        #[allow(unused_mut)]
         let mut object_53 = object.key("AWSLocation").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_location(&mut object_53, var_52)?;
         object_53.finish();
@@ -220,6 +227,7 @@ pub fn serialize_structure_crate_input_create_device_input(
         object.key("Description").string(var_54.as_str());
     }
     if let Some(var_55) = &input.location {
+        #[allow(unused_mut)]
         let mut object_56 = object.key("Location").start_object();
         crate::json_ser::serialize_structure_crate_model_location(&mut object_56, var_55)?;
         object_56.finish();
@@ -237,6 +245,7 @@ pub fn serialize_structure_crate_input_create_device_input(
         let mut array_61 = object.key("Tags").start_array();
         for item_62 in var_60 {
             {
+                #[allow(unused_mut)]
                 let mut object_63 = array_61.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_63, item_62)?;
                 object_63.finish();
@@ -264,6 +273,7 @@ pub fn serialize_structure_crate_input_create_global_network_input(
         let mut array_68 = object.key("Tags").start_array();
         for item_69 in var_67 {
             {
+                #[allow(unused_mut)]
                 let mut object_70 = array_68.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_70, item_69)?;
                 object_70.finish();
@@ -279,6 +289,7 @@ pub fn serialize_structure_crate_input_create_link_input(
     input: &crate::input::CreateLinkInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_71) = &input.bandwidth {
+        #[allow(unused_mut)]
         let mut object_72 = object.key("Bandwidth").start_object();
         crate::json_ser::serialize_structure_crate_model_bandwidth(&mut object_72, var_71)?;
         object_72.finish();
@@ -296,6 +307,7 @@ pub fn serialize_structure_crate_input_create_link_input(
         let mut array_77 = object.key("Tags").start_array();
         for item_78 in var_76 {
             {
+                #[allow(unused_mut)]
                 let mut object_79 = array_77.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_79, item_78)?;
                 object_79.finish();
@@ -317,6 +329,7 @@ pub fn serialize_structure_crate_input_create_site_input(
         object.key("Description").string(var_81.as_str());
     }
     if let Some(var_82) = &input.location {
+        #[allow(unused_mut)]
         let mut object_83 = object.key("Location").start_object();
         crate::json_ser::serialize_structure_crate_model_location(&mut object_83, var_82)?;
         object_83.finish();
@@ -325,6 +338,7 @@ pub fn serialize_structure_crate_input_create_site_input(
         let mut array_85 = object.key("Tags").start_array();
         for item_86 in var_84 {
             {
+                #[allow(unused_mut)]
                 let mut object_87 = array_85.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_87, item_86)?;
                 object_87.finish();
@@ -349,6 +363,7 @@ pub fn serialize_structure_crate_input_create_site_to_site_vpn_attachment_input(
         let mut array_91 = object.key("Tags").start_array();
         for item_92 in var_90 {
             {
+                #[allow(unused_mut)]
                 let mut object_93 = array_91.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_93, item_92)?;
                 object_93.finish();
@@ -376,6 +391,7 @@ pub fn serialize_structure_crate_input_create_transit_gateway_peering_input(
         let mut array_98 = object.key("Tags").start_array();
         for item_99 in var_97 {
             {
+                #[allow(unused_mut)]
                 let mut object_100 = array_98.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_100, item_99)?;
                 object_100.finish();
@@ -403,6 +419,7 @@ pub fn serialize_structure_crate_input_create_transit_gateway_route_table_attach
         let mut array_105 = object.key("Tags").start_array();
         for item_106 in var_104 {
             {
+                #[allow(unused_mut)]
                 let mut object_107 = array_105.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_107, item_106)?;
                 object_107.finish();
@@ -429,6 +446,7 @@ pub fn serialize_structure_crate_input_create_vpc_attachment_input(
         object.key("CoreNetworkId").string(var_110.as_str());
     }
     if let Some(var_111) = &input.options {
+        #[allow(unused_mut)]
         let mut object_112 = object.key("Options").start_object();
         crate::json_ser::serialize_structure_crate_model_vpc_options(&mut object_112, var_111)?;
         object_112.finish();
@@ -446,6 +464,7 @@ pub fn serialize_structure_crate_input_create_vpc_attachment_input(
         let mut array_117 = object.key("Tags").start_array();
         for item_118 in var_116 {
             {
+                #[allow(unused_mut)]
                 let mut object_119 = array_117.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_119, item_118)?;
                 object_119.finish();
@@ -464,6 +483,7 @@ pub fn serialize_structure_crate_input_get_network_routes_input(
     input: &crate::input::GetNetworkRoutesInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_121) = &input.destination_filters {
+        #[allow(unused_mut)]
         let mut object_122 = object.key("DestinationFilters").start_object();
         for (key_123, value_124) in var_121 {
             {
@@ -506,6 +526,7 @@ pub fn serialize_structure_crate_input_get_network_routes_input(
         array_134.finish();
     }
     if let Some(var_136) = &input.route_table_identifier {
+        #[allow(unused_mut)]
         let mut object_137 = object.key("RouteTableIdentifier").start_object();
         crate::json_ser::serialize_structure_crate_model_route_table_identifier(
             &mut object_137,
@@ -609,6 +630,7 @@ pub fn serialize_structure_crate_input_start_route_analysis_input(
     input: &crate::input::StartRouteAnalysisInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_157) = &input.destination {
+        #[allow(unused_mut)]
         let mut object_158 = object.key("Destination").start_object();
         crate::json_ser::serialize_structure_crate_model_route_analysis_endpoint_options_specification(&mut object_158, var_157)?;
         object_158.finish();
@@ -619,6 +641,7 @@ pub fn serialize_structure_crate_input_start_route_analysis_input(
             .boolean(input.include_return_path);
     }
     if let Some(var_159) = &input.source {
+        #[allow(unused_mut)]
         let mut object_160 = object.key("Source").start_object();
         crate::json_ser::serialize_structure_crate_model_route_analysis_endpoint_options_specification(&mut object_160, var_159)?;
         object_160.finish();
@@ -637,6 +660,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_162 = object.key("Tags").start_array();
         for item_163 in var_161 {
             {
+                #[allow(unused_mut)]
                 let mut object_164 = array_162.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_164, item_163)?;
                 object_164.finish();
@@ -678,6 +702,7 @@ pub fn serialize_structure_crate_input_update_device_input(
     input: &crate::input::UpdateDeviceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_169) = &input.aws_location {
+        #[allow(unused_mut)]
         let mut object_170 = object.key("AWSLocation").start_object();
         crate::json_ser::serialize_structure_crate_model_aws_location(&mut object_170, var_169)?;
         object_170.finish();
@@ -686,6 +711,7 @@ pub fn serialize_structure_crate_input_update_device_input(
         object.key("Description").string(var_171.as_str());
     }
     if let Some(var_172) = &input.location {
+        #[allow(unused_mut)]
         let mut object_173 = object.key("Location").start_object();
         crate::json_ser::serialize_structure_crate_model_location(&mut object_173, var_172)?;
         object_173.finish();
@@ -723,6 +749,7 @@ pub fn serialize_structure_crate_input_update_link_input(
     input: &crate::input::UpdateLinkInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_180) = &input.bandwidth {
+        #[allow(unused_mut)]
         let mut object_181 = object.key("Bandwidth").start_object();
         crate::json_ser::serialize_structure_crate_model_bandwidth(&mut object_181, var_180)?;
         object_181.finish();
@@ -744,6 +771,7 @@ pub fn serialize_structure_crate_input_update_network_resource_metadata_input(
     input: &crate::input::UpdateNetworkResourceMetadataInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_185) = &input.metadata {
+        #[allow(unused_mut)]
         let mut object_186 = object.key("Metadata").start_object();
         for (key_187, value_188) in var_185 {
             {
@@ -763,6 +791,7 @@ pub fn serialize_structure_crate_input_update_site_input(
         object.key("Description").string(var_189.as_str());
     }
     if let Some(var_190) = &input.location {
+        #[allow(unused_mut)]
         let mut object_191 = object.key("Location").start_object();
         crate::json_ser::serialize_structure_crate_model_location(&mut object_191, var_190)?;
         object_191.finish();
@@ -784,6 +813,7 @@ pub fn serialize_structure_crate_input_update_vpc_attachment_input(
         array_193.finish();
     }
     if let Some(var_195) = &input.options {
+        #[allow(unused_mut)]
         let mut object_196 = object.key("Options").start_object();
         crate::json_ser::serialize_structure_crate_model_vpc_options(&mut object_196, var_195)?;
         object_196.finish();
@@ -904,6 +934,7 @@ pub fn serialize_structure_crate_model_route_table_identifier(
             .string(var_211.as_str());
     }
     if let Some(var_212) = &input.core_network_segment_edge {
+        #[allow(unused_mut)]
         let mut object_213 = object.key("CoreNetworkSegmentEdge").start_object();
         crate::json_ser::serialize_structure_crate_model_core_network_segment_edge_identifier(
             &mut object_213,

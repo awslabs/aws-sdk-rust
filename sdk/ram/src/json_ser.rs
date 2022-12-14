@@ -114,6 +114,7 @@ pub fn serialize_structure_crate_input_create_resource_share_input(
         let mut array_29 = object.key("tags").start_array();
         for item_30 in var_28 {
             {
+                #[allow(unused_mut)]
                 let mut object_31 = array_29.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_31, item_30)?;
                 object_31.finish();
@@ -324,6 +325,7 @@ pub fn serialize_structure_crate_input_get_resource_shares_input(
         let mut array_78 = object.key("tagFilters").start_array();
         for item_79 in var_77 {
             {
+                #[allow(unused_mut)]
                 let mut object_80 = array_78.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag_filter(
                     &mut object_80,
@@ -552,6 +554,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_124 = object.key("tags").start_array();
         for item_125 in var_123 {
             {
+                #[allow(unused_mut)]
                 let mut object_126 = array_124.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_126, item_125)?;
                 object_126.finish();

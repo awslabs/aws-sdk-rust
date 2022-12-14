@@ -101,6 +101,7 @@ pub fn serialize_structure_crate_input_create_address_book_input(
         let mut array_17 = object.key("Tags").start_array();
         for item_18 in var_16 {
             {
+                #[allow(unused_mut)]
                 let mut object_19 = array_17.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_19, item_18)?;
                 object_19.finish();
@@ -128,6 +129,7 @@ pub fn serialize_structure_crate_input_create_business_report_schedule_input(
         object.key("Format").string(var_23.as_str());
     }
     if let Some(var_24) = &input.content_range {
+        #[allow(unused_mut)]
         let mut object_25 = object.key("ContentRange").start_object();
         crate::json_ser::serialize_structure_crate_model_business_report_content_range(
             &mut object_25,
@@ -136,6 +138,7 @@ pub fn serialize_structure_crate_input_create_business_report_schedule_input(
         object_25.finish();
     }
     if let Some(var_26) = &input.recurrence {
+        #[allow(unused_mut)]
         let mut object_27 = object.key("Recurrence").start_object();
         crate::json_ser::serialize_structure_crate_model_business_report_recurrence(
             &mut object_27,
@@ -150,6 +153,7 @@ pub fn serialize_structure_crate_input_create_business_report_schedule_input(
         let mut array_30 = object.key("Tags").start_array();
         for item_31 in var_29 {
             {
+                #[allow(unused_mut)]
                 let mut object_32 = array_30.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_32, item_31)?;
                 object_32.finish();
@@ -171,16 +175,19 @@ pub fn serialize_structure_crate_input_create_conference_provider_input(
         object.key("ConferenceProviderType").string(var_34.as_str());
     }
     if let Some(var_35) = &input.ip_dial_in {
+        #[allow(unused_mut)]
         let mut object_36 = object.key("IPDialIn").start_object();
         crate::json_ser::serialize_structure_crate_model_ip_dial_in(&mut object_36, var_35)?;
         object_36.finish();
     }
     if let Some(var_37) = &input.pstn_dial_in {
+        #[allow(unused_mut)]
         let mut object_38 = object.key("PSTNDialIn").start_object();
         crate::json_ser::serialize_structure_crate_model_pstn_dial_in(&mut object_38, var_37)?;
         object_38.finish();
     }
     if let Some(var_39) = &input.meeting_setting {
+        #[allow(unused_mut)]
         let mut object_40 = object.key("MeetingSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_meeting_setting(&mut object_40, var_39)?;
         object_40.finish();
@@ -192,6 +199,7 @@ pub fn serialize_structure_crate_input_create_conference_provider_input(
         let mut array_43 = object.key("Tags").start_array();
         for item_44 in var_42 {
             {
+                #[allow(unused_mut)]
                 let mut object_45 = array_43.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_45, item_44)?;
                 object_45.finish();
@@ -222,6 +230,7 @@ pub fn serialize_structure_crate_input_create_contact_input(
         let mut array_51 = object.key("PhoneNumbers").start_array();
         for item_52 in var_50 {
             {
+                #[allow(unused_mut)]
                 let mut object_53 = array_51.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_phone_number(
                     &mut object_53,
@@ -236,6 +245,7 @@ pub fn serialize_structure_crate_input_create_contact_input(
         let mut array_55 = object.key("SipAddresses").start_array();
         for item_56 in var_54 {
             {
+                #[allow(unused_mut)]
                 let mut object_57 = array_55.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_sip_address(
                     &mut object_57,
@@ -253,6 +263,7 @@ pub fn serialize_structure_crate_input_create_contact_input(
         let mut array_60 = object.key("Tags").start_array();
         for item_61 in var_59 {
             {
+                #[allow(unused_mut)]
                 let mut object_62 = array_60.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_62, item_61)?;
                 object_62.finish();
@@ -280,6 +291,7 @@ pub fn serialize_structure_crate_input_create_gateway_group_input(
         let mut array_67 = object.key("Tags").start_array();
         for item_68 in var_66 {
             {
+                #[allow(unused_mut)]
                 let mut object_69 = array_67.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_69, item_68)?;
                 object_69.finish();
@@ -336,6 +348,7 @@ pub fn serialize_structure_crate_input_create_network_profile_input(
         let mut array_83 = object.key("Tags").start_array();
         for item_84 in var_82 {
             {
+                #[allow(unused_mut)]
                 let mut object_85 = array_83.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_85, item_84)?;
                 object_85.finish();
@@ -390,6 +403,7 @@ pub fn serialize_structure_crate_input_create_profile_input(
         object.key("DataRetentionOptIn").boolean(*var_97);
     }
     if let Some(var_98) = &input.meeting_room_configuration {
+        #[allow(unused_mut)]
         let mut object_99 = object.key("MeetingRoomConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_create_meeting_room_configuration(
             &mut object_99,
@@ -401,6 +415,7 @@ pub fn serialize_structure_crate_input_create_profile_input(
         let mut array_101 = object.key("Tags").start_array();
         for item_102 in var_100 {
             {
+                #[allow(unused_mut)]
                 let mut object_103 = array_101.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_103, item_102)?;
                 object_103.finish();
@@ -434,6 +449,7 @@ pub fn serialize_structure_crate_input_create_room_input(
         let mut array_110 = object.key("Tags").start_array();
         for item_111 in var_109 {
             {
+                #[allow(unused_mut)]
                 let mut object_112 = array_110.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_112, item_111)?;
                 object_112.finish();
@@ -461,6 +477,7 @@ pub fn serialize_structure_crate_input_create_skill_group_input(
         let mut array_117 = object.key("Tags").start_array();
         for item_118 in var_116 {
             {
+                #[allow(unused_mut)]
                 let mut object_119 = array_117.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_119, item_118)?;
                 object_119.finish();
@@ -494,6 +511,7 @@ pub fn serialize_structure_crate_input_create_user_input(
         let mut array_126 = object.key("Tags").start_array();
         for item_127 in var_125 {
             {
+                #[allow(unused_mut)]
                 let mut object_128 = array_126.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_128, item_127)?;
                 object_128.finish();
@@ -1039,6 +1057,7 @@ pub fn serialize_structure_crate_input_put_conference_preference_input(
     input: &crate::input::PutConferencePreferenceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_199) = &input.conference_preference {
+        #[allow(unused_mut)]
         let mut object_200 = object.key("ConferencePreference").start_object();
         crate::json_ser::serialize_structure_crate_model_conference_preference(
             &mut object_200,
@@ -1082,6 +1101,7 @@ pub fn serialize_structure_crate_input_put_room_skill_parameter_input(
         object.key("SkillId").string(var_207.as_str());
     }
     if let Some(var_208) = &input.room_skill_parameter {
+        #[allow(unused_mut)]
         let mut object_209 = object.key("RoomSkillParameter").start_object();
         crate::json_ser::serialize_structure_crate_model_room_skill_parameter(
             &mut object_209,
@@ -1097,6 +1117,7 @@ pub fn serialize_structure_crate_input_put_skill_authorization_input(
     input: &crate::input::PutSkillAuthorizationInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_210) = &input.authorization_result {
+        #[allow(unused_mut)]
         let mut object_211 = object.key("AuthorizationResult").start_object();
         for (key_212, value_213) in var_210 {
             {
@@ -1140,6 +1161,7 @@ pub fn serialize_structure_crate_input_register_avs_device_input(
         let mut array_223 = object.key("Tags").start_array();
         for item_224 in var_222 {
             {
+                #[allow(unused_mut)]
                 let mut object_225 = array_223.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_225, item_224)?;
                 object_225.finish();
@@ -1194,6 +1216,7 @@ pub fn serialize_structure_crate_input_search_address_books_input(
         let mut array_232 = object.key("Filters").start_array();
         for item_233 in var_231 {
             {
+                #[allow(unused_mut)]
                 let mut object_234 = array_232.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_234, item_233)?;
                 object_234.finish();
@@ -1205,6 +1228,7 @@ pub fn serialize_structure_crate_input_search_address_books_input(
         let mut array_236 = object.key("SortCriteria").start_array();
         for item_237 in var_235 {
             {
+                #[allow(unused_mut)]
                 let mut object_238 = array_236.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_sort(&mut object_238, item_237)?;
                 object_238.finish();
@@ -1232,6 +1256,7 @@ pub fn serialize_structure_crate_input_search_contacts_input(
         let mut array_242 = object.key("Filters").start_array();
         for item_243 in var_241 {
             {
+                #[allow(unused_mut)]
                 let mut object_244 = array_242.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_244, item_243)?;
                 object_244.finish();
@@ -1243,6 +1268,7 @@ pub fn serialize_structure_crate_input_search_contacts_input(
         let mut array_246 = object.key("SortCriteria").start_array();
         for item_247 in var_245 {
             {
+                #[allow(unused_mut)]
                 let mut object_248 = array_246.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_sort(&mut object_248, item_247)?;
                 object_248.finish();
@@ -1279,6 +1305,7 @@ pub fn serialize_structure_crate_input_search_devices_input(
         let mut array_254 = object.key("Filters").start_array();
         for item_255 in var_253 {
             {
+                #[allow(unused_mut)]
                 let mut object_256 = array_254.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_256, item_255)?;
                 object_256.finish();
@@ -1290,6 +1317,7 @@ pub fn serialize_structure_crate_input_search_devices_input(
         let mut array_258 = object.key("SortCriteria").start_array();
         for item_259 in var_257 {
             {
+                #[allow(unused_mut)]
                 let mut object_260 = array_258.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_sort(&mut object_260, item_259)?;
                 object_260.finish();
@@ -1317,6 +1345,7 @@ pub fn serialize_structure_crate_input_search_network_profiles_input(
         let mut array_264 = object.key("Filters").start_array();
         for item_265 in var_263 {
             {
+                #[allow(unused_mut)]
                 let mut object_266 = array_264.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_266, item_265)?;
                 object_266.finish();
@@ -1328,6 +1357,7 @@ pub fn serialize_structure_crate_input_search_network_profiles_input(
         let mut array_268 = object.key("SortCriteria").start_array();
         for item_269 in var_267 {
             {
+                #[allow(unused_mut)]
                 let mut object_270 = array_268.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_sort(&mut object_270, item_269)?;
                 object_270.finish();
@@ -1355,6 +1385,7 @@ pub fn serialize_structure_crate_input_search_profiles_input(
         let mut array_274 = object.key("Filters").start_array();
         for item_275 in var_273 {
             {
+                #[allow(unused_mut)]
                 let mut object_276 = array_274.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_276, item_275)?;
                 object_276.finish();
@@ -1366,6 +1397,7 @@ pub fn serialize_structure_crate_input_search_profiles_input(
         let mut array_278 = object.key("SortCriteria").start_array();
         for item_279 in var_277 {
             {
+                #[allow(unused_mut)]
                 let mut object_280 = array_278.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_sort(&mut object_280, item_279)?;
                 object_280.finish();
@@ -1393,6 +1425,7 @@ pub fn serialize_structure_crate_input_search_rooms_input(
         let mut array_284 = object.key("Filters").start_array();
         for item_285 in var_283 {
             {
+                #[allow(unused_mut)]
                 let mut object_286 = array_284.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_286, item_285)?;
                 object_286.finish();
@@ -1404,6 +1437,7 @@ pub fn serialize_structure_crate_input_search_rooms_input(
         let mut array_288 = object.key("SortCriteria").start_array();
         for item_289 in var_287 {
             {
+                #[allow(unused_mut)]
                 let mut object_290 = array_288.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_sort(&mut object_290, item_289)?;
                 object_290.finish();
@@ -1431,6 +1465,7 @@ pub fn serialize_structure_crate_input_search_skill_groups_input(
         let mut array_294 = object.key("Filters").start_array();
         for item_295 in var_293 {
             {
+                #[allow(unused_mut)]
                 let mut object_296 = array_294.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_296, item_295)?;
                 object_296.finish();
@@ -1442,6 +1477,7 @@ pub fn serialize_structure_crate_input_search_skill_groups_input(
         let mut array_298 = object.key("SortCriteria").start_array();
         for item_299 in var_297 {
             {
+                #[allow(unused_mut)]
                 let mut object_300 = array_298.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_sort(&mut object_300, item_299)?;
                 object_300.finish();
@@ -1469,6 +1505,7 @@ pub fn serialize_structure_crate_input_search_users_input(
         let mut array_304 = object.key("Filters").start_array();
         for item_305 in var_303 {
             {
+                #[allow(unused_mut)]
                 let mut object_306 = array_304.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_306, item_305)?;
                 object_306.finish();
@@ -1480,6 +1517,7 @@ pub fn serialize_structure_crate_input_search_users_input(
         let mut array_308 = object.key("SortCriteria").start_array();
         for item_309 in var_307 {
             {
+                #[allow(unused_mut)]
                 let mut object_310 = array_308.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_sort(&mut object_310, item_309)?;
                 object_310.finish();
@@ -1498,6 +1536,7 @@ pub fn serialize_structure_crate_input_send_announcement_input(
         let mut array_312 = object.key("RoomFilters").start_array();
         for item_313 in var_311 {
             {
+                #[allow(unused_mut)]
                 let mut object_314 = array_312.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_314, item_313)?;
                 object_314.finish();
@@ -1506,6 +1545,7 @@ pub fn serialize_structure_crate_input_send_announcement_input(
         array_312.finish();
     }
     if let Some(var_315) = &input.content {
+        #[allow(unused_mut)]
         let mut object_316 = object.key("Content").start_object();
         crate::json_ser::serialize_structure_crate_model_content(&mut object_316, var_315)?;
         object_316.finish();
@@ -1575,6 +1615,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_328 = object.key("Tags").start_array();
         for item_329 in var_327 {
             {
+                #[allow(unused_mut)]
                 let mut object_330 = array_328.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_330, item_329)?;
                 object_330.finish();
@@ -1640,6 +1681,7 @@ pub fn serialize_structure_crate_input_update_business_report_schedule_input(
         object.key("ScheduleName").string(var_342.as_str());
     }
     if let Some(var_343) = &input.recurrence {
+        #[allow(unused_mut)]
         let mut object_344 = object.key("Recurrence").start_object();
         crate::json_ser::serialize_structure_crate_model_business_report_recurrence(
             &mut object_344,
@@ -1663,16 +1705,19 @@ pub fn serialize_structure_crate_input_update_conference_provider_input(
             .string(var_346.as_str());
     }
     if let Some(var_347) = &input.ip_dial_in {
+        #[allow(unused_mut)]
         let mut object_348 = object.key("IPDialIn").start_object();
         crate::json_ser::serialize_structure_crate_model_ip_dial_in(&mut object_348, var_347)?;
         object_348.finish();
     }
     if let Some(var_349) = &input.pstn_dial_in {
+        #[allow(unused_mut)]
         let mut object_350 = object.key("PSTNDialIn").start_object();
         crate::json_ser::serialize_structure_crate_model_pstn_dial_in(&mut object_350, var_349)?;
         object_350.finish();
     }
     if let Some(var_351) = &input.meeting_setting {
+        #[allow(unused_mut)]
         let mut object_352 = object.key("MeetingSetting").start_object();
         crate::json_ser::serialize_structure_crate_model_meeting_setting(&mut object_352, var_351)?;
         object_352.finish();
@@ -1703,6 +1748,7 @@ pub fn serialize_structure_crate_input_update_contact_input(
         let mut array_359 = object.key("PhoneNumbers").start_array();
         for item_360 in var_358 {
             {
+                #[allow(unused_mut)]
                 let mut object_361 = array_359.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_phone_number(
                     &mut object_361,
@@ -1717,6 +1763,7 @@ pub fn serialize_structure_crate_input_update_contact_input(
         let mut array_363 = object.key("SipAddresses").start_array();
         for item_364 in var_362 {
             {
+                #[allow(unused_mut)]
                 let mut object_365 = array_363.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_sip_address(
                     &mut object_365,
@@ -1861,6 +1908,7 @@ pub fn serialize_structure_crate_input_update_profile_input(
         object.key("DataRetentionOptIn").boolean(*var_396);
     }
     if let Some(var_397) = &input.meeting_room_configuration {
+        #[allow(unused_mut)]
         let mut object_398 = object.key("MeetingRoomConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_update_meeting_room_configuration(
             &mut object_398,
@@ -2020,6 +2068,7 @@ pub fn serialize_structure_crate_model_create_meeting_room_configuration(
             .boolean(*var_422);
     }
     if let Some(var_423) = &input.end_of_meeting_reminder {
+        #[allow(unused_mut)]
         let mut object_424 = object.key("EndOfMeetingReminder").start_object();
         crate::json_ser::serialize_structure_crate_model_create_end_of_meeting_reminder(
             &mut object_424,
@@ -2028,6 +2077,7 @@ pub fn serialize_structure_crate_model_create_meeting_room_configuration(
         object_424.finish();
     }
     if let Some(var_425) = &input.instant_booking {
+        #[allow(unused_mut)]
         let mut object_426 = object.key("InstantBooking").start_object();
         crate::json_ser::serialize_structure_crate_model_create_instant_booking(
             &mut object_426,
@@ -2036,6 +2086,7 @@ pub fn serialize_structure_crate_model_create_meeting_room_configuration(
         object_426.finish();
     }
     if let Some(var_427) = &input.require_check_in {
+        #[allow(unused_mut)]
         let mut object_428 = object.key("RequireCheckIn").start_object();
         crate::json_ser::serialize_structure_crate_model_create_require_check_in(
             &mut object_428,
@@ -2111,6 +2162,7 @@ pub fn serialize_structure_crate_model_content(
         let mut array_439 = object.key("TextList").start_array();
         for item_440 in var_438 {
             {
+                #[allow(unused_mut)]
                 let mut object_441 = array_439.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_text(&mut object_441, item_440)?;
                 object_441.finish();
@@ -2122,6 +2174,7 @@ pub fn serialize_structure_crate_model_content(
         let mut array_443 = object.key("SsmlList").start_array();
         for item_444 in var_442 {
             {
+                #[allow(unused_mut)]
                 let mut object_445 = array_443.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_ssml(&mut object_445, item_444)?;
                 object_445.finish();
@@ -2133,6 +2186,7 @@ pub fn serialize_structure_crate_model_content(
         let mut array_447 = object.key("AudioList").start_array();
         for item_448 in var_446 {
             {
+                #[allow(unused_mut)]
                 let mut object_449 = array_447.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_audio(&mut object_449, item_448)?;
                 object_449.finish();
@@ -2153,6 +2207,7 @@ pub fn serialize_structure_crate_model_update_meeting_room_configuration(
             .boolean(*var_450);
     }
     if let Some(var_451) = &input.end_of_meeting_reminder {
+        #[allow(unused_mut)]
         let mut object_452 = object.key("EndOfMeetingReminder").start_object();
         crate::json_ser::serialize_structure_crate_model_update_end_of_meeting_reminder(
             &mut object_452,
@@ -2161,6 +2216,7 @@ pub fn serialize_structure_crate_model_update_meeting_room_configuration(
         object_452.finish();
     }
     if let Some(var_453) = &input.instant_booking {
+        #[allow(unused_mut)]
         let mut object_454 = object.key("InstantBooking").start_object();
         crate::json_ser::serialize_structure_crate_model_update_instant_booking(
             &mut object_454,
@@ -2169,6 +2225,7 @@ pub fn serialize_structure_crate_model_update_meeting_room_configuration(
         object_454.finish();
     }
     if let Some(var_455) = &input.require_check_in {
+        #[allow(unused_mut)]
         let mut object_456 = object.key("RequireCheckIn").start_object();
         crate::json_ser::serialize_structure_crate_model_update_require_check_in(
             &mut object_456,

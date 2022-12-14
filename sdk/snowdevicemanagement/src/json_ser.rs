@@ -7,6 +7,7 @@ pub fn serialize_structure_crate_input_create_task_input(
         object.key("clientToken").string(var_1.as_str());
     }
     if let Some(var_2) = &input.command {
+        #[allow(unused_mut)]
         let mut object_3 = object.key("command").start_object();
         crate::json_ser::serialize_union_crate_model_command(&mut object_3, var_2)?;
         object_3.finish();
@@ -15,6 +16,7 @@ pub fn serialize_structure_crate_input_create_task_input(
         object.key("description").string(var_4.as_str());
     }
     if let Some(var_5) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_6 = object.key("tags").start_object();
         for (key_7, value_8) in var_5 {
             {
@@ -56,6 +58,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_15) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_16 = object.key("tags").start_object();
         for (key_17, value_18) in var_15 {
             {
@@ -73,11 +76,13 @@ pub fn serialize_union_crate_model_command(
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::Command::Unlock(inner) => {
+            #[allow(unused_mut)]
             let mut object_19 = object_3.key("unlock").start_object();
             crate::json_ser::serialize_structure_crate_model_unlock(&mut object_19, inner)?;
             object_19.finish();
         }
         crate::model::Command::Reboot(inner) => {
+            #[allow(unused_mut)]
             let mut object_20 = object_3.key("reboot").start_object();
             crate::json_ser::serialize_structure_crate_model_reboot(&mut object_20, inner)?;
             object_20.finish();

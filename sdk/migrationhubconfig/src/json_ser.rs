@@ -7,6 +7,7 @@ pub fn serialize_structure_crate_input_create_home_region_control_input(
         object.key("HomeRegion").string(var_1.as_str());
     }
     if let Some(var_2) = &input.target {
+        #[allow(unused_mut)]
         let mut object_3 = object.key("Target").start_object();
         crate::json_ser::serialize_structure_crate_model_target(&mut object_3, var_2)?;
         object_3.finish();
@@ -28,6 +29,7 @@ pub fn serialize_structure_crate_input_describe_home_region_controls_input(
         object.key("HomeRegion").string(var_5.as_str());
     }
     if let Some(var_6) = &input.target {
+        #[allow(unused_mut)]
         let mut object_7 = object.key("Target").start_object();
         crate::json_ser::serialize_structure_crate_model_target(&mut object_7, var_6)?;
         object_7.finish();

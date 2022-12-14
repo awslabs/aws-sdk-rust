@@ -74,6 +74,7 @@ pub fn serialize_structure_crate_input_clone_stack_input(
         object.key("VpcId").string(var_14.as_str());
     }
     if let Some(var_15) = &input.attributes {
+        #[allow(unused_mut)]
         let mut object_16 = object.key("Attributes").start_object();
         for (key_17, value_18) in var_15 {
             {
@@ -108,6 +109,7 @@ pub fn serialize_structure_crate_input_clone_stack_input(
         object.key("CustomJson").string(var_25.as_str());
     }
     if let Some(var_26) = &input.configuration_manager {
+        #[allow(unused_mut)]
         let mut object_27 = object.key("ConfigurationManager").start_object();
         crate::json_ser::serialize_structure_crate_model_stack_configuration_manager(
             &mut object_27,
@@ -116,6 +118,7 @@ pub fn serialize_structure_crate_input_clone_stack_input(
         object_27.finish();
     }
     if let Some(var_28) = &input.chef_configuration {
+        #[allow(unused_mut)]
         let mut object_29 = object.key("ChefConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_chef_configuration(
             &mut object_29,
@@ -130,6 +133,7 @@ pub fn serialize_structure_crate_input_clone_stack_input(
         object.key("UseOpsworksSecurityGroups").boolean(*var_31);
     }
     if let Some(var_32) = &input.custom_cookbooks_source {
+        #[allow(unused_mut)]
         let mut object_33 = object.key("CustomCookbooksSource").start_object();
         crate::json_ser::serialize_structure_crate_model_source(&mut object_33, var_32)?;
         object_33.finish();
@@ -178,6 +182,7 @@ pub fn serialize_structure_crate_input_create_app_input(
         let mut array_46 = object.key("DataSources").start_array();
         for item_47 in var_45 {
             {
+                #[allow(unused_mut)]
                 let mut object_48 = array_46.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_data_source(
                     &mut object_48,
@@ -192,6 +197,7 @@ pub fn serialize_structure_crate_input_create_app_input(
         object.key("Type").string(var_49.as_str());
     }
     if let Some(var_50) = &input.app_source {
+        #[allow(unused_mut)]
         let mut object_51 = object.key("AppSource").start_object();
         crate::json_ser::serialize_structure_crate_model_source(&mut object_51, var_50)?;
         object_51.finish();
@@ -209,11 +215,13 @@ pub fn serialize_structure_crate_input_create_app_input(
         object.key("EnableSsl").boolean(*var_55);
     }
     if let Some(var_56) = &input.ssl_configuration {
+        #[allow(unused_mut)]
         let mut object_57 = object.key("SslConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_ssl_configuration(&mut object_57, var_56)?;
         object_57.finish();
     }
     if let Some(var_58) = &input.attributes {
+        #[allow(unused_mut)]
         let mut object_59 = object.key("Attributes").start_object();
         for (key_60, value_61) in var_58 {
             {
@@ -226,6 +234,7 @@ pub fn serialize_structure_crate_input_create_app_input(
         let mut array_63 = object.key("Environment").start_array();
         for item_64 in var_62 {
             {
+                #[allow(unused_mut)]
                 let mut object_65 = array_63.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_environment_variable(
                     &mut object_65,
@@ -268,6 +277,7 @@ pub fn serialize_structure_crate_input_create_deployment_input(
         array_72.finish();
     }
     if let Some(var_74) = &input.command {
+        #[allow(unused_mut)]
         let mut object_75 = object.key("Command").start_object();
         crate::json_ser::serialize_structure_crate_model_deployment_command(
             &mut object_75,
@@ -337,6 +347,7 @@ pub fn serialize_structure_crate_input_create_instance_input(
         let mut array_94 = object.key("BlockDeviceMappings").start_array();
         for item_95 in var_93 {
             {
+                #[allow(unused_mut)]
                 let mut object_96 = array_94.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_block_device_mapping(
                     &mut object_96,
@@ -379,6 +390,7 @@ pub fn serialize_structure_crate_input_create_layer_input(
         object.key("Shortname").string(var_104.as_str());
     }
     if let Some(var_105) = &input.attributes {
+        #[allow(unused_mut)]
         let mut object_106 = object.key("Attributes").start_object();
         for (key_107, value_108) in var_105 {
             {
@@ -388,6 +400,7 @@ pub fn serialize_structure_crate_input_create_layer_input(
         object_106.finish();
     }
     if let Some(var_109) = &input.cloud_watch_logs_configuration {
+        #[allow(unused_mut)]
         let mut object_110 = object.key("CloudWatchLogsConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_cloud_watch_logs_configuration(
             &mut object_110,
@@ -425,6 +438,7 @@ pub fn serialize_structure_crate_input_create_layer_input(
         let mut array_120 = object.key("VolumeConfigurations").start_array();
         for item_121 in var_119 {
             {
+                #[allow(unused_mut)]
                 let mut object_122 = array_120.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_volume_configuration(
                     &mut object_122,
@@ -445,6 +459,7 @@ pub fn serialize_structure_crate_input_create_layer_input(
         object.key("AutoAssignPublicIps").boolean(*var_125);
     }
     if let Some(var_126) = &input.custom_recipes {
+        #[allow(unused_mut)]
         let mut object_127 = object.key("CustomRecipes").start_object();
         crate::json_ser::serialize_structure_crate_model_recipes(&mut object_127, var_126)?;
         object_127.finish();
@@ -456,6 +471,7 @@ pub fn serialize_structure_crate_input_create_layer_input(
         object.key("UseEbsOptimizedInstances").boolean(*var_129);
     }
     if let Some(var_130) = &input.lifecycle_event_configuration {
+        #[allow(unused_mut)]
         let mut object_131 = object.key("LifecycleEventConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_lifecycle_event_configuration(
             &mut object_131,
@@ -480,6 +496,7 @@ pub fn serialize_structure_crate_input_create_stack_input(
         object.key("VpcId").string(var_134.as_str());
     }
     if let Some(var_135) = &input.attributes {
+        #[allow(unused_mut)]
         let mut object_136 = object.key("Attributes").start_object();
         for (key_137, value_138) in var_135 {
             {
@@ -514,6 +531,7 @@ pub fn serialize_structure_crate_input_create_stack_input(
         object.key("CustomJson").string(var_145.as_str());
     }
     if let Some(var_146) = &input.configuration_manager {
+        #[allow(unused_mut)]
         let mut object_147 = object.key("ConfigurationManager").start_object();
         crate::json_ser::serialize_structure_crate_model_stack_configuration_manager(
             &mut object_147,
@@ -522,6 +540,7 @@ pub fn serialize_structure_crate_input_create_stack_input(
         object_147.finish();
     }
     if let Some(var_148) = &input.chef_configuration {
+        #[allow(unused_mut)]
         let mut object_149 = object.key("ChefConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_chef_configuration(
             &mut object_149,
@@ -536,6 +555,7 @@ pub fn serialize_structure_crate_input_create_stack_input(
         object.key("UseOpsworksSecurityGroups").boolean(*var_151);
     }
     if let Some(var_152) = &input.custom_cookbooks_source {
+        #[allow(unused_mut)]
         let mut object_153 = object.key("CustomCookbooksSource").start_object();
         crate::json_ser::serialize_structure_crate_model_source(&mut object_153, var_152)?;
         object_153.finish();
@@ -685,6 +705,7 @@ pub fn serialize_structure_crate_input_describe_agent_versions_input(
         object.key("StackId").string(var_173.as_str());
     }
     if let Some(var_174) = &input.configuration_manager {
+        #[allow(unused_mut)]
         let mut object_175 = object.key("ConfigurationManager").start_object();
         crate::json_ser::serialize_structure_crate_model_stack_configuration_manager(
             &mut object_175,
@@ -1184,6 +1205,7 @@ pub fn serialize_structure_crate_input_register_instance_input(
             .string(var_268.as_str());
     }
     if let Some(var_269) = &input.instance_identity {
+        #[allow(unused_mut)]
         let mut object_270 = object.key("InstanceIdentity").start_object();
         crate::json_ser::serialize_structure_crate_model_instance_identity(
             &mut object_270,
@@ -1237,6 +1259,7 @@ pub fn serialize_structure_crate_input_set_load_based_auto_scaling_input(
         object.key("Enable").boolean(*var_278);
     }
     if let Some(var_279) = &input.up_scaling {
+        #[allow(unused_mut)]
         let mut object_280 = object.key("UpScaling").start_object();
         crate::json_ser::serialize_structure_crate_model_auto_scaling_thresholds(
             &mut object_280,
@@ -1245,6 +1268,7 @@ pub fn serialize_structure_crate_input_set_load_based_auto_scaling_input(
         object_280.finish();
     }
     if let Some(var_281) = &input.down_scaling {
+        #[allow(unused_mut)]
         let mut object_282 = object.key("DownScaling").start_object();
         crate::json_ser::serialize_structure_crate_model_auto_scaling_thresholds(
             &mut object_282,
@@ -1285,6 +1309,7 @@ pub fn serialize_structure_crate_input_set_time_based_auto_scaling_input(
         object.key("InstanceId").string(var_288.as_str());
     }
     if let Some(var_289) = &input.auto_scaling_schedule {
+        #[allow(unused_mut)]
         let mut object_290 = object.key("AutoScalingSchedule").start_object();
         crate::json_ser::serialize_structure_crate_model_weekly_auto_scaling_schedule(
             &mut object_290,
@@ -1346,6 +1371,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         object.key("ResourceArn").string(var_296.as_str());
     }
     if let Some(var_297) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_298 = object.key("Tags").start_object();
         for (key_299, value_300) in var_297 {
             {
@@ -1413,6 +1439,7 @@ pub fn serialize_structure_crate_input_update_app_input(
         let mut array_311 = object.key("DataSources").start_array();
         for item_312 in var_310 {
             {
+                #[allow(unused_mut)]
                 let mut object_313 = array_311.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_data_source(
                     &mut object_313,
@@ -1427,6 +1454,7 @@ pub fn serialize_structure_crate_input_update_app_input(
         object.key("Type").string(var_314.as_str());
     }
     if let Some(var_315) = &input.app_source {
+        #[allow(unused_mut)]
         let mut object_316 = object.key("AppSource").start_object();
         crate::json_ser::serialize_structure_crate_model_source(&mut object_316, var_315)?;
         object_316.finish();
@@ -1444,6 +1472,7 @@ pub fn serialize_structure_crate_input_update_app_input(
         object.key("EnableSsl").boolean(*var_320);
     }
     if let Some(var_321) = &input.ssl_configuration {
+        #[allow(unused_mut)]
         let mut object_322 = object.key("SslConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_ssl_configuration(
             &mut object_322,
@@ -1452,6 +1481,7 @@ pub fn serialize_structure_crate_input_update_app_input(
         object_322.finish();
     }
     if let Some(var_323) = &input.attributes {
+        #[allow(unused_mut)]
         let mut object_324 = object.key("Attributes").start_object();
         for (key_325, value_326) in var_323 {
             {
@@ -1464,6 +1494,7 @@ pub fn serialize_structure_crate_input_update_app_input(
         let mut array_328 = object.key("Environment").start_array();
         for item_329 in var_327 {
             {
+                #[allow(unused_mut)]
                 let mut object_330 = array_328.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_environment_variable(
                     &mut object_330,
@@ -1553,6 +1584,7 @@ pub fn serialize_structure_crate_input_update_layer_input(
         object.key("Shortname").string(var_349.as_str());
     }
     if let Some(var_350) = &input.attributes {
+        #[allow(unused_mut)]
         let mut object_351 = object.key("Attributes").start_object();
         for (key_352, value_353) in var_350 {
             {
@@ -1562,6 +1594,7 @@ pub fn serialize_structure_crate_input_update_layer_input(
         object_351.finish();
     }
     if let Some(var_354) = &input.cloud_watch_logs_configuration {
+        #[allow(unused_mut)]
         let mut object_355 = object.key("CloudWatchLogsConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_cloud_watch_logs_configuration(
             &mut object_355,
@@ -1599,6 +1632,7 @@ pub fn serialize_structure_crate_input_update_layer_input(
         let mut array_365 = object.key("VolumeConfigurations").start_array();
         for item_366 in var_364 {
             {
+                #[allow(unused_mut)]
                 let mut object_367 = array_365.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_volume_configuration(
                     &mut object_367,
@@ -1619,6 +1653,7 @@ pub fn serialize_structure_crate_input_update_layer_input(
         object.key("AutoAssignPublicIps").boolean(*var_370);
     }
     if let Some(var_371) = &input.custom_recipes {
+        #[allow(unused_mut)]
         let mut object_372 = object.key("CustomRecipes").start_object();
         crate::json_ser::serialize_structure_crate_model_recipes(&mut object_372, var_371)?;
         object_372.finish();
@@ -1630,6 +1665,7 @@ pub fn serialize_structure_crate_input_update_layer_input(
         object.key("UseEbsOptimizedInstances").boolean(*var_374);
     }
     if let Some(var_375) = &input.lifecycle_event_configuration {
+        #[allow(unused_mut)]
         let mut object_376 = object.key("LifecycleEventConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_lifecycle_event_configuration(
             &mut object_376,
@@ -1677,6 +1713,7 @@ pub fn serialize_structure_crate_input_update_stack_input(
         object.key("Name").string(var_382.as_str());
     }
     if let Some(var_383) = &input.attributes {
+        #[allow(unused_mut)]
         let mut object_384 = object.key("Attributes").start_object();
         for (key_385, value_386) in var_383 {
             {
@@ -1711,6 +1748,7 @@ pub fn serialize_structure_crate_input_update_stack_input(
         object.key("CustomJson").string(var_393.as_str());
     }
     if let Some(var_394) = &input.configuration_manager {
+        #[allow(unused_mut)]
         let mut object_395 = object.key("ConfigurationManager").start_object();
         crate::json_ser::serialize_structure_crate_model_stack_configuration_manager(
             &mut object_395,
@@ -1719,6 +1757,7 @@ pub fn serialize_structure_crate_input_update_stack_input(
         object_395.finish();
     }
     if let Some(var_396) = &input.chef_configuration {
+        #[allow(unused_mut)]
         let mut object_397 = object.key("ChefConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_chef_configuration(
             &mut object_397,
@@ -1730,6 +1769,7 @@ pub fn serialize_structure_crate_input_update_stack_input(
         object.key("UseCustomCookbooks").boolean(*var_398);
     }
     if let Some(var_399) = &input.custom_cookbooks_source {
+        #[allow(unused_mut)]
         let mut object_400 = object.key("CustomCookbooksSource").start_object();
         crate::json_ser::serialize_structure_crate_model_source(&mut object_400, var_399)?;
         object_400.finish();
@@ -1891,6 +1931,7 @@ pub fn serialize_structure_crate_model_deployment_command(
         object.key("Name").string(var_431.as_str());
     }
     if let Some(var_432) = &input.args {
+        #[allow(unused_mut)]
         let mut object_433 = object.key("Args").start_object();
         for (key_434, value_435) in var_432 {
             {
@@ -1922,6 +1963,7 @@ pub fn serialize_structure_crate_model_block_device_mapping(
         object.key("VirtualName").string(var_440.as_str());
     }
     if let Some(var_441) = &input.ebs {
+        #[allow(unused_mut)]
         let mut object_442 = object.key("Ebs").start_object();
         crate::json_ser::serialize_structure_crate_model_ebs_block_device(
             &mut object_442,
@@ -1943,6 +1985,7 @@ pub fn serialize_structure_crate_model_cloud_watch_logs_configuration(
         let mut array_445 = object.key("LogStreams").start_array();
         for item_446 in var_444 {
             {
+                #[allow(unused_mut)]
                 let mut object_447 = array_445.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_cloud_watch_logs_log_stream(
                     &mut object_447,
@@ -2053,6 +2096,7 @@ pub fn serialize_structure_crate_model_lifecycle_event_configuration(
     input: &crate::model::LifecycleEventConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_470) = &input.shutdown {
+        #[allow(unused_mut)]
         let mut object_471 = object.key("Shutdown").start_object();
         crate::json_ser::serialize_structure_crate_model_shutdown_event_configuration(
             &mut object_471,
@@ -2133,6 +2177,7 @@ pub fn serialize_structure_crate_model_weekly_auto_scaling_schedule(
     input: &crate::model::WeeklyAutoScalingSchedule,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_483) = &input.monday {
+        #[allow(unused_mut)]
         let mut object_484 = object.key("Monday").start_object();
         for (key_485, value_486) in var_483 {
             {
@@ -2142,6 +2187,7 @@ pub fn serialize_structure_crate_model_weekly_auto_scaling_schedule(
         object_484.finish();
     }
     if let Some(var_487) = &input.tuesday {
+        #[allow(unused_mut)]
         let mut object_488 = object.key("Tuesday").start_object();
         for (key_489, value_490) in var_487 {
             {
@@ -2151,6 +2197,7 @@ pub fn serialize_structure_crate_model_weekly_auto_scaling_schedule(
         object_488.finish();
     }
     if let Some(var_491) = &input.wednesday {
+        #[allow(unused_mut)]
         let mut object_492 = object.key("Wednesday").start_object();
         for (key_493, value_494) in var_491 {
             {
@@ -2160,6 +2207,7 @@ pub fn serialize_structure_crate_model_weekly_auto_scaling_schedule(
         object_492.finish();
     }
     if let Some(var_495) = &input.thursday {
+        #[allow(unused_mut)]
         let mut object_496 = object.key("Thursday").start_object();
         for (key_497, value_498) in var_495 {
             {
@@ -2169,6 +2217,7 @@ pub fn serialize_structure_crate_model_weekly_auto_scaling_schedule(
         object_496.finish();
     }
     if let Some(var_499) = &input.friday {
+        #[allow(unused_mut)]
         let mut object_500 = object.key("Friday").start_object();
         for (key_501, value_502) in var_499 {
             {
@@ -2178,6 +2227,7 @@ pub fn serialize_structure_crate_model_weekly_auto_scaling_schedule(
         object_500.finish();
     }
     if let Some(var_503) = &input.saturday {
+        #[allow(unused_mut)]
         let mut object_504 = object.key("Saturday").start_object();
         for (key_505, value_506) in var_503 {
             {
@@ -2187,6 +2237,7 @@ pub fn serialize_structure_crate_model_weekly_auto_scaling_schedule(
         object_504.finish();
     }
     if let Some(var_507) = &input.sunday {
+        #[allow(unused_mut)]
         let mut object_508 = object.key("Sunday").start_object();
         for (key_509, value_510) in var_507 {
             {

@@ -10,11 +10,13 @@ pub fn serialize_structure_crate_input_create_access_point_input(
         object.key("FileSystemId").string(var_2.as_str());
     }
     if let Some(var_3) = &input.posix_user {
+        #[allow(unused_mut)]
         let mut object_4 = object.key("PosixUser").start_object();
         crate::json_ser::serialize_structure_crate_model_posix_user(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.root_directory {
+        #[allow(unused_mut)]
         let mut object_6 = object.key("RootDirectory").start_object();
         crate::json_ser::serialize_structure_crate_model_root_directory(&mut object_6, var_5)?;
         object_6.finish();
@@ -23,6 +25,7 @@ pub fn serialize_structure_crate_input_create_access_point_input(
         let mut array_8 = object.key("Tags").start_array();
         for item_9 in var_7 {
             {
+                #[allow(unused_mut)]
                 let mut object_10 = array_8.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_10, item_9)?;
                 object_10.finish();
@@ -65,6 +68,7 @@ pub fn serialize_structure_crate_input_create_file_system_input(
         let mut array_19 = object.key("Tags").start_array();
         for item_20 in var_18 {
             {
+                #[allow(unused_mut)]
                 let mut object_21 = array_19.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_21, item_20)?;
                 object_21.finish();
@@ -111,6 +115,7 @@ pub fn serialize_structure_crate_input_create_replication_configuration_input(
         let mut array_30 = object.key("Destinations").start_array();
         for item_31 in var_29 {
             {
+                #[allow(unused_mut)]
                 let mut object_32 = array_30.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_destination_to_create(
                     &mut object_32,
@@ -132,6 +137,7 @@ pub fn serialize_structure_crate_input_create_tags_input(
         let mut array_34 = object.key("Tags").start_array();
         for item_35 in var_33 {
             {
+                #[allow(unused_mut)]
                 let mut object_36 = array_34.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_36, item_35)?;
                 object_36.finish();
@@ -205,6 +211,7 @@ pub fn serialize_structure_crate_input_put_backup_policy_input(
     input: &crate::input::PutBackupPolicyInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_46) = &input.backup_policy {
+        #[allow(unused_mut)]
         let mut object_47 = object.key("BackupPolicy").start_object();
         crate::json_ser::serialize_structure_crate_model_backup_policy(&mut object_47, var_46)?;
         object_47.finish();
@@ -235,6 +242,7 @@ pub fn serialize_structure_crate_input_put_lifecycle_configuration_input(
         let mut array_50 = object.key("LifecyclePolicies").start_array();
         for item_51 in var_49 {
             {
+                #[allow(unused_mut)]
                 let mut object_52 = array_50.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_lifecycle_policy(
                     &mut object_52,
@@ -256,6 +264,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_54 = object.key("Tags").start_array();
         for item_55 in var_53 {
             {
+                #[allow(unused_mut)]
                 let mut object_56 = array_54.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_56, item_55)?;
                 object_56.finish();
@@ -321,6 +330,7 @@ pub fn serialize_structure_crate_model_root_directory(
         object.key("Path").string(var_64.as_str());
     }
     if let Some(var_65) = &input.creation_info {
+        #[allow(unused_mut)]
         let mut object_66 = object.key("CreationInfo").start_object();
         crate::json_ser::serialize_structure_crate_model_creation_info(&mut object_66, var_65)?;
         object_66.finish();

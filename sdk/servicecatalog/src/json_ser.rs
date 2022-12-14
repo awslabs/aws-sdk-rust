@@ -106,6 +106,7 @@ pub fn serialize_structure_crate_input_batch_associate_service_action_with_provi
         let mut array_21 = object.key("ServiceActionAssociations").start_array();
         for item_22 in var_20 {
             {
+                #[allow(unused_mut)]
                 let mut object_23 = array_21.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_service_action_association(
                     &mut object_23,
@@ -130,6 +131,7 @@ pub fn serialize_structure_crate_input_batch_disassociate_service_action_from_pr
         let mut array_26 = object.key("ServiceActionAssociations").start_array();
         for item_27 in var_25 {
             {
+                #[allow(unused_mut)]
                 let mut object_28 = array_26.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_service_action_association(
                     &mut object_28,
@@ -168,6 +170,7 @@ pub fn serialize_structure_crate_input_copy_product_input(
             .start_array();
         for item_36 in var_34 {
             {
+                #[allow(unused_mut)]
                 let mut object_37 = array_35.value().start_object();
                 for (key_38, value_39) in item_36 {
                     {
@@ -242,6 +245,7 @@ pub fn serialize_structure_crate_input_create_portfolio_input(
         let mut array_56 = object.key("Tags").start_array();
         for item_57 in var_55 {
             {
+                #[allow(unused_mut)]
                 let mut object_58 = array_56.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_58, item_57)?;
                 object_58.finish();
@@ -269,6 +273,7 @@ pub fn serialize_structure_crate_input_create_portfolio_share_input(
         object.key("AccountId").string(var_62.as_str());
     }
     if let Some(var_63) = &input.organization_node {
+        #[allow(unused_mut)]
         let mut object_64 = object.key("OrganizationNode").start_object();
         crate::json_ser::serialize_structure_crate_model_organization_node(&mut object_64, var_63)?;
         object_64.finish();
@@ -316,6 +321,7 @@ pub fn serialize_structure_crate_input_create_product_input(
         let mut array_75 = object.key("Tags").start_array();
         for item_76 in var_74 {
             {
+                #[allow(unused_mut)]
                 let mut object_77 = array_75.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_77, item_76)?;
                 object_77.finish();
@@ -324,6 +330,7 @@ pub fn serialize_structure_crate_input_create_product_input(
         array_75.finish();
     }
     if let Some(var_78) = &input.provisioning_artifact_parameters {
+        #[allow(unused_mut)]
         let mut object_79 = object.key("ProvisioningArtifactParameters").start_object();
         crate::json_ser::serialize_structure_crate_model_provisioning_artifact_properties(
             &mut object_79,
@@ -375,6 +382,7 @@ pub fn serialize_structure_crate_input_create_provisioned_product_plan_input(
         let mut array_92 = object.key("ProvisioningParameters").start_array();
         for item_93 in var_91 {
             {
+                #[allow(unused_mut)]
                 let mut object_94 = array_92.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_update_provisioning_parameter(
                     &mut object_94,
@@ -392,6 +400,7 @@ pub fn serialize_structure_crate_input_create_provisioned_product_plan_input(
         let mut array_97 = object.key("Tags").start_array();
         for item_98 in var_96 {
             {
+                #[allow(unused_mut)]
                 let mut object_99 = array_97.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_99, item_98)?;
                 object_99.finish();
@@ -413,6 +422,7 @@ pub fn serialize_structure_crate_input_create_provisioning_artifact_input(
         object.key("ProductId").string(var_101.as_str());
     }
     if let Some(var_102) = &input.parameters {
+        #[allow(unused_mut)]
         let mut object_103 = object.key("Parameters").start_object();
         crate::json_ser::serialize_structure_crate_model_provisioning_artifact_properties(
             &mut object_103,
@@ -437,6 +447,7 @@ pub fn serialize_structure_crate_input_create_service_action_input(
         object.key("DefinitionType").string(var_106.as_str());
     }
     if let Some(var_107) = &input.definition {
+        #[allow(unused_mut)]
         let mut object_108 = object.key("Definition").start_object();
         for (key_109, value_110) in var_107 {
             {
@@ -510,6 +521,7 @@ pub fn serialize_structure_crate_input_delete_portfolio_share_input(
         object.key("AccountId").string(var_122.as_str());
     }
     if let Some(var_123) = &input.organization_node {
+        #[allow(unused_mut)]
         let mut object_124 = object.key("OrganizationNode").start_object();
         crate::json_ser::serialize_structure_crate_model_organization_node(
             &mut object_124,
@@ -981,6 +993,7 @@ pub fn serialize_structure_crate_input_execute_provisioned_product_service_actio
         object.key("AcceptLanguage").string(var_201.as_str());
     }
     if let Some(var_202) = &input.parameters {
+        #[allow(unused_mut)]
         let mut object_203 = object.key("Parameters").start_object();
         for (key_204, value_205) in var_202 {
             {
@@ -1287,6 +1300,7 @@ pub fn serialize_structure_crate_input_list_provisioned_product_plans_input(
         object.key("PageToken").string(var_252.as_str());
     }
     if let Some(var_253) = &input.access_level_filter {
+        #[allow(unused_mut)]
         let mut object_254 = object.key("AccessLevelFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_access_level_filter(
             &mut object_254,
@@ -1340,6 +1354,7 @@ pub fn serialize_structure_crate_input_list_record_history_input(
         object.key("AcceptLanguage").string(var_260.as_str());
     }
     if let Some(var_261) = &input.access_level_filter {
+        #[allow(unused_mut)]
         let mut object_262 = object.key("AccessLevelFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_access_level_filter(
             &mut object_262,
@@ -1348,6 +1363,7 @@ pub fn serialize_structure_crate_input_list_record_history_input(
         object_262.finish();
     }
     if let Some(var_263) = &input.search_filter {
+        #[allow(unused_mut)]
         let mut object_264 = object.key("SearchFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_list_record_history_search_filter(
             &mut object_264,
@@ -1462,6 +1478,7 @@ pub fn serialize_structure_crate_input_list_tag_options_input(
     input: &crate::input::ListTagOptionsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_278) = &input.filters {
+        #[allow(unused_mut)]
         let mut object_279 = object.key("Filters").start_object();
         crate::json_ser::serialize_structure_crate_model_list_tag_options_filters(
             &mut object_279,
@@ -1519,6 +1536,7 @@ pub fn serialize_structure_crate_input_provision_product_input(
         let mut array_290 = object.key("ProvisioningParameters").start_array();
         for item_291 in var_289 {
             {
+                #[allow(unused_mut)]
                 let mut object_292 = array_290.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_provisioning_parameter(
                     &mut object_292,
@@ -1530,6 +1548,7 @@ pub fn serialize_structure_crate_input_provision_product_input(
         array_290.finish();
     }
     if let Some(var_293) = &input.provisioning_preferences {
+        #[allow(unused_mut)]
         let mut object_294 = object.key("ProvisioningPreferences").start_object();
         crate::json_ser::serialize_structure_crate_model_provisioning_preferences(
             &mut object_294,
@@ -1541,6 +1560,7 @@ pub fn serialize_structure_crate_input_provision_product_input(
         let mut array_296 = object.key("Tags").start_array();
         for item_297 in var_295 {
             {
+                #[allow(unused_mut)]
                 let mut object_298 = array_296.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_298, item_297)?;
                 object_298.finish();
@@ -1587,6 +1607,7 @@ pub fn serialize_structure_crate_input_scan_provisioned_products_input(
         object.key("AcceptLanguage").string(var_306.as_str());
     }
     if let Some(var_307) = &input.access_level_filter {
+        #[allow(unused_mut)]
         let mut object_308 = object.key("AccessLevelFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_access_level_filter(
             &mut object_308,
@@ -1614,6 +1635,7 @@ pub fn serialize_structure_crate_input_search_products_input(
         object.key("AcceptLanguage").string(var_310.as_str());
     }
     if let Some(var_311) = &input.filters {
+        #[allow(unused_mut)]
         let mut object_312 = object.key("Filters").start_object();
         for (key_313, value_314) in var_311 {
             {
@@ -1657,6 +1679,7 @@ pub fn serialize_structure_crate_input_search_products_as_admin_input(
         object.key("PortfolioId").string(var_321.as_str());
     }
     if let Some(var_322) = &input.filters {
+        #[allow(unused_mut)]
         let mut object_323 = object.key("Filters").start_object();
         for (key_324, value_325) in var_322 {
             {
@@ -1700,6 +1723,7 @@ pub fn serialize_structure_crate_input_search_provisioned_products_input(
         object.key("AcceptLanguage").string(var_332.as_str());
     }
     if let Some(var_333) = &input.access_level_filter {
+        #[allow(unused_mut)]
         let mut object_334 = object.key("AccessLevelFilter").start_object();
         crate::json_ser::serialize_structure_crate_model_access_level_filter(
             &mut object_334,
@@ -1708,6 +1732,7 @@ pub fn serialize_structure_crate_input_search_provisioned_products_input(
         object_334.finish();
     }
     if let Some(var_335) = &input.filters {
+        #[allow(unused_mut)]
         let mut object_336 = object.key("Filters").start_object();
         for (key_337, value_338) in var_335 {
             {
@@ -1811,6 +1836,7 @@ pub fn serialize_structure_crate_input_update_portfolio_input(
         let mut array_358 = object.key("AddTags").start_array();
         for item_359 in var_357 {
             {
+                #[allow(unused_mut)]
                 let mut object_360 = array_358.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_360, item_359)?;
                 object_360.finish();
@@ -1844,6 +1870,7 @@ pub fn serialize_structure_crate_input_update_portfolio_share_input(
         object.key("AccountId").string(var_366.as_str());
     }
     if let Some(var_367) = &input.organization_node {
+        #[allow(unused_mut)]
         let mut object_368 = object.key("OrganizationNode").start_object();
         crate::json_ser::serialize_structure_crate_model_organization_node(
             &mut object_368,
@@ -1892,6 +1919,7 @@ pub fn serialize_structure_crate_input_update_product_input(
         let mut array_380 = object.key("AddTags").start_array();
         for item_381 in var_379 {
             {
+                #[allow(unused_mut)]
                 let mut object_382 = array_380.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_382, item_381)?;
                 object_382.finish();
@@ -1952,6 +1980,7 @@ pub fn serialize_structure_crate_input_update_provisioned_product_input(
         let mut array_396 = object.key("ProvisioningParameters").start_array();
         for item_397 in var_395 {
             {
+                #[allow(unused_mut)]
                 let mut object_398 = array_396.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_update_provisioning_parameter(
                     &mut object_398,
@@ -1963,6 +1992,7 @@ pub fn serialize_structure_crate_input_update_provisioned_product_input(
         array_396.finish();
     }
     if let Some(var_399) = &input.provisioning_preferences {
+        #[allow(unused_mut)]
         let mut object_400 = object.key("ProvisioningPreferences").start_object();
         crate::json_ser::serialize_structure_crate_model_update_provisioning_preferences(
             &mut object_400,
@@ -1974,6 +2004,7 @@ pub fn serialize_structure_crate_input_update_provisioned_product_input(
         let mut array_402 = object.key("Tags").start_array();
         for item_403 in var_401 {
             {
+                #[allow(unused_mut)]
                 let mut object_404 = array_402.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_404, item_403)?;
                 object_404.finish();
@@ -1998,6 +2029,7 @@ pub fn serialize_structure_crate_input_update_provisioned_product_properties_inp
         object.key("ProvisionedProductId").string(var_407.as_str());
     }
     if let Some(var_408) = &input.provisioned_product_properties {
+        #[allow(unused_mut)]
         let mut object_409 = object.key("ProvisionedProductProperties").start_object();
         for (key_410, value_411) in var_408 {
             {
@@ -2053,6 +2085,7 @@ pub fn serialize_structure_crate_input_update_service_action_input(
         object.key("Name").string(var_421.as_str());
     }
     if let Some(var_422) = &input.definition {
+        #[allow(unused_mut)]
         let mut object_423 = object.key("Definition").start_object();
         for (key_424, value_425) in var_422 {
             {
@@ -2141,6 +2174,7 @@ pub fn serialize_structure_crate_model_provisioning_artifact_properties(
         object.key("Description").string(var_439.as_str());
     }
     if let Some(var_440) = &input.info {
+        #[allow(unused_mut)]
         let mut object_441 = object.key("Info").start_object();
         for (key_442, value_443) in var_440 {
             {

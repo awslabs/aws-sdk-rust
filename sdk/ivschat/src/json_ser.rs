@@ -4,6 +4,7 @@ pub fn serialize_structure_crate_input_create_chat_token_input(
     input: &crate::input::CreateChatTokenInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.attributes {
+        #[allow(unused_mut)]
         let mut object_2 = object.key("attributes").start_object();
         for (key_3, value_4) in var_1 {
             {
@@ -53,6 +54,7 @@ pub fn serialize_structure_crate_input_create_room_input(
         );
     }
     if let Some(var_10) = &input.message_review_handler {
+        #[allow(unused_mut)]
         let mut object_11 = object.key("messageReviewHandler").start_object();
         crate::json_ser::serialize_structure_crate_model_message_review_handler(
             &mut object_11,
@@ -64,6 +66,7 @@ pub fn serialize_structure_crate_input_create_room_input(
         object.key("name").string(var_12.as_str());
     }
     if let Some(var_13) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_14 = object.key("tags").start_object();
         for (key_15, value_16) in var_13 {
             {
@@ -156,6 +159,7 @@ pub fn serialize_structure_crate_input_send_event_input(
     input: &crate::input::SendEventInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_28) = &input.attributes {
+        #[allow(unused_mut)]
         let mut object_29 = object.key("attributes").start_object();
         for (key_30, value_31) in var_28 {
             {
@@ -178,6 +182,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_34) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_35 = object.key("tags").start_object();
         for (key_36, value_37) in var_34 {
             {
@@ -209,6 +214,7 @@ pub fn serialize_structure_crate_input_update_room_input(
         );
     }
     if let Some(var_39) = &input.message_review_handler {
+        #[allow(unused_mut)]
         let mut object_40 = object.key("messageReviewHandler").start_object();
         crate::json_ser::serialize_structure_crate_model_message_review_handler(
             &mut object_40,

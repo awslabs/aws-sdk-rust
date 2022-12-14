@@ -776,12 +776,8 @@ pub fn serialize_structure_crate_model_notification_configuration(
             }
         }
     }
-    if let Some(var_46) = &input.event_bridge_configuration {
-        let inner_writer = scope.start_el("EventBridgeConfiguration");
-        crate::xml_ser::serialize_structure_crate_model_event_bridge_configuration(
-            var_46,
-            inner_writer,
-        )?
+    if let Some(_var_46) = &input.event_bridge_configuration {
+        scope.start_el("EventBridgeConfiguration").finish();
     }
     scope.finish();
     Ok(())
@@ -1065,9 +1061,8 @@ pub fn serialize_structure_crate_model_input_serialization(
         let inner_writer = scope.start_el("JSON");
         crate::xml_ser::serialize_structure_crate_model_json_input(var_75, inner_writer)?
     }
-    if let Some(var_76) = &input.parquet {
-        let inner_writer = scope.start_el("Parquet");
-        crate::xml_ser::serialize_structure_crate_model_parquet_input(var_76, inner_writer)?
+    if let Some(_var_76) = &input.parquet {
+        scope.start_el("Parquet").finish();
     }
     scope.finish();
     Ok(())
@@ -1654,17 +1649,6 @@ pub fn serialize_structure_crate_model_lambda_function_configuration(
     Ok(())
 }
 
-pub fn serialize_structure_crate_model_event_bridge_configuration(
-    input: &crate::model::EventBridgeConfiguration,
-    writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    let _ = input;
-    #[allow(unused_mut)]
-    let mut scope = writer.finish();
-    scope.finish();
-    Ok(())
-}
-
 pub fn serialize_structure_crate_model_ownership_controls_rule(
     input: &crate::model::OwnershipControlsRule,
     writer: aws_smithy_xml::encode::ElWriter,
@@ -1935,17 +1919,6 @@ pub fn serialize_structure_crate_model_json_input(
         let mut inner_writer = scope.start_el("Type").finish();
         inner_writer.data(var_168.as_str());
     }
-    scope.finish();
-    Ok(())
-}
-
-pub fn serialize_structure_crate_model_parquet_input(
-    input: &crate::model::ParquetInput,
-    writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    let _ = input;
-    #[allow(unused_mut)]
-    let mut scope = writer.finish();
     scope.finish();
     Ok(())
 }
@@ -2628,9 +2601,8 @@ pub fn serialize_structure_crate_model_inventory_encryption(
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_236) = &input.sses3 {
-        let inner_writer = scope.start_el("SSE-S3");
-        crate::xml_ser::serialize_structure_crate_model_sses3(var_236, inner_writer)?
+    if let Some(_var_236) = &input.sses3 {
+        scope.start_el("SSE-S3").finish();
     }
     if let Some(var_237) = &input.ssekms {
         let inner_writer = scope.start_el("SSE-KMS");
@@ -2876,17 +2848,6 @@ pub fn serialize_structure_crate_model_analytics_s3_bucket_destination(
         let mut inner_writer = scope.start_el("Prefix").finish();
         inner_writer.data(var_262.as_str());
     }
-    scope.finish();
-    Ok(())
-}
-
-pub fn serialize_structure_crate_model_sses3(
-    input: &crate::model::Sses3,
-    writer: aws_smithy_xml::encode::ElWriter,
-) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
-    let _ = input;
-    #[allow(unused_mut)]
-    let mut scope = writer.finish();
     scope.finish();
     Ok(())
 }

@@ -57,6 +57,7 @@ pub fn serialize_structure_crate_input_create_cluster_input(
         let mut array_16 = object.key("Tags").start_array();
         for item_17 in var_15 {
             {
+                #[allow(unused_mut)]
                 let mut object_18 = array_16.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_18, item_17)?;
                 object_18.finish();
@@ -65,6 +66,7 @@ pub fn serialize_structure_crate_input_create_cluster_input(
         array_16.finish();
     }
     if let Some(var_19) = &input.sse_specification {
+        #[allow(unused_mut)]
         let mut object_20 = object.key("SSESpecification").start_object();
         crate::json_ser::serialize_structure_crate_model_sse_specification(&mut object_20, var_19)?;
         object_20.finish();
@@ -389,6 +391,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_77 = object.key("Tags").start_array();
         for item_78 in var_76 {
             {
+                #[allow(unused_mut)]
                 let mut object_79 = array_77.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_79, item_78)?;
                 object_79.finish();
@@ -467,6 +470,7 @@ pub fn serialize_structure_crate_input_update_parameter_group_input(
         let mut array_95 = object.key("ParameterNameValues").start_array();
         for item_96 in var_94 {
             {
+                #[allow(unused_mut)]
                 let mut object_97 = array_95.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_parameter_name_value(
                     &mut object_97,

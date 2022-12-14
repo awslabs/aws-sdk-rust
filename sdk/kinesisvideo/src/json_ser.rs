@@ -10,6 +10,7 @@ pub fn serialize_structure_crate_input_create_signaling_channel_input(
         object.key("ChannelType").string(var_2.as_str());
     }
     if let Some(var_3) = &input.single_master_configuration {
+        #[allow(unused_mut)]
         let mut object_4 = object.key("SingleMasterConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_single_master_configuration(
             &mut object_4,
@@ -21,6 +22,7 @@ pub fn serialize_structure_crate_input_create_signaling_channel_input(
         let mut array_6 = object.key("Tags").start_array();
         for item_7 in var_5 {
             {
+                #[allow(unused_mut)]
                 let mut object_8 = array_6.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_8, item_7)?;
                 object_8.finish();
@@ -54,6 +56,7 @@ pub fn serialize_structure_crate_input_create_stream_input(
         object.key("StreamName").string(var_13.as_str());
     }
     if let Some(var_14) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_15 = object.key("Tags").start_object();
         for (key_16, value_17) in var_14 {
             {
@@ -167,6 +170,7 @@ pub fn serialize_structure_crate_input_get_signaling_channel_endpoint_input(
         object.key("ChannelARN").string(var_33.as_str());
     }
     if let Some(var_34) = &input.single_master_channel_endpoint_configuration {
+        #[allow(unused_mut)]
         let mut object_35 = object
             .key("SingleMasterChannelEndpointConfiguration")
             .start_object();
@@ -181,6 +185,7 @@ pub fn serialize_structure_crate_input_list_signaling_channels_input(
     input: &crate::input::ListSignalingChannelsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_36) = &input.channel_name_condition {
+        #[allow(unused_mut)]
         let mut object_37 = object.key("ChannelNameCondition").start_object();
         crate::json_ser::serialize_structure_crate_model_channel_name_condition(
             &mut object_37,
@@ -214,6 +219,7 @@ pub fn serialize_structure_crate_input_list_streams_input(
         object.key("NextToken").string(var_41.as_str());
     }
     if let Some(var_42) = &input.stream_name_condition {
+        #[allow(unused_mut)]
         let mut object_43 = object.key("StreamNameCondition").start_object();
         crate::json_ser::serialize_structure_crate_model_stream_name_condition(
             &mut object_43,
@@ -264,6 +270,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_51 = object.key("Tags").start_array();
         for item_52 in var_50 {
             {
+                #[allow(unused_mut)]
                 let mut object_53 = array_51.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_53, item_52)?;
                 object_53.finish();
@@ -285,6 +292,7 @@ pub fn serialize_structure_crate_input_tag_stream_input(
         object.key("StreamName").string(var_55.as_str());
     }
     if let Some(var_56) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_57 = object.key("Tags").start_object();
         for (key_58, value_59) in var_56 {
             {
@@ -367,6 +375,7 @@ pub fn serialize_structure_crate_input_update_image_generation_configuration_inp
     input: &crate::input::UpdateImageGenerationConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_74) = &input.image_generation_configuration {
+        #[allow(unused_mut)]
         let mut object_75 = object.key("ImageGenerationConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_image_generation_configuration(
             &mut object_75,
@@ -388,6 +397,7 @@ pub fn serialize_structure_crate_input_update_notification_configuration_input(
     input: &crate::input::UpdateNotificationConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_78) = &input.notification_configuration {
+        #[allow(unused_mut)]
         let mut object_79 = object.key("NotificationConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_notification_configuration(
             &mut object_79,
@@ -415,6 +425,7 @@ pub fn serialize_structure_crate_input_update_signaling_channel_input(
         object.key("CurrentVersion").string(var_83.as_str());
     }
     if let Some(var_84) = &input.single_master_configuration {
+        #[allow(unused_mut)]
         let mut object_85 = object.key("SingleMasterConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_single_master_configuration(
             &mut object_85,
@@ -529,6 +540,7 @@ pub fn serialize_structure_crate_model_image_generation_configuration(
         object.key("ImageSelectorType").string(var_103.as_str());
     }
     if let Some(var_104) = &input.destination_config {
+        #[allow(unused_mut)]
         let mut object_105 = object.key("DestinationConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_image_generation_destination_config(
             &mut object_105,
@@ -546,6 +558,7 @@ pub fn serialize_structure_crate_model_image_generation_configuration(
         object.key("Format").string(var_107.as_str());
     }
     if let Some(var_108) = &input.format_config {
+        #[allow(unused_mut)]
         let mut object_109 = object.key("FormatConfig").start_object();
         for (key_110, value_111) in var_108 {
             {
@@ -577,6 +590,7 @@ pub fn serialize_structure_crate_model_notification_configuration(
         object.key("Status").string(var_114.as_str());
     }
     if let Some(var_115) = &input.destination_config {
+        #[allow(unused_mut)]
         let mut object_116 = object.key("DestinationConfig").start_object();
         crate::json_ser::serialize_structure_crate_model_notification_destination_config(
             &mut object_116,

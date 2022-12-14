@@ -35,6 +35,7 @@ pub fn serialize_structure_crate_input_batch_delete_image_input(
         let mut array_9 = object.key("imageIds").start_array();
         for item_10 in var_8 {
             {
+                #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_image_identifier(
                     &mut object_11,
@@ -62,6 +63,7 @@ pub fn serialize_structure_crate_input_batch_get_image_input(
         let mut array_15 = object.key("imageIds").start_array();
         for item_16 in var_14 {
             {
+                #[allow(unused_mut)]
                 let mut object_17 = array_15.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_image_identifier(
                     &mut object_17,
@@ -155,6 +157,7 @@ pub fn serialize_structure_crate_input_create_repository_input(
         let mut array_36 = object.key("tags").start_array();
         for item_37 in var_35 {
             {
+                #[allow(unused_mut)]
                 let mut object_38 = array_36.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_38, item_37)?;
                 object_38.finish();
@@ -166,6 +169,7 @@ pub fn serialize_structure_crate_input_create_repository_input(
         object.key("imageTagMutability").string(var_39.as_str());
     }
     if let Some(var_40) = &input.image_scanning_configuration {
+        #[allow(unused_mut)]
         let mut object_41 = object.key("imageScanningConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_image_scanning_configuration(
             &mut object_41,
@@ -174,6 +178,7 @@ pub fn serialize_structure_crate_input_create_repository_input(
         object_41.finish();
     }
     if let Some(var_42) = &input.encryption_configuration {
+        #[allow(unused_mut)]
         let mut object_43 = object.key("encryptionConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_encryption_configuration(
             &mut object_43,
@@ -247,6 +252,7 @@ pub fn serialize_structure_crate_input_describe_image_replication_status_input(
         object.key("repositoryName").string(var_52.as_str());
     }
     if let Some(var_53) = &input.image_id {
+        #[allow(unused_mut)]
         let mut object_54 = object.key("imageId").start_object();
         crate::json_ser::serialize_structure_crate_model_image_identifier(&mut object_54, var_53)?;
         object_54.finish();
@@ -271,6 +277,7 @@ pub fn serialize_structure_crate_input_describe_images_input(
         let mut array_59 = object.key("imageIds").start_array();
         for item_60 in var_58 {
             {
+                #[allow(unused_mut)]
                 let mut object_61 = array_59.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_image_identifier(
                     &mut object_61,
@@ -291,6 +298,7 @@ pub fn serialize_structure_crate_input_describe_images_input(
         );
     }
     if let Some(var_64) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_65 = object.key("filter").start_object();
         crate::json_ser::serialize_structure_crate_model_describe_images_filter(
             &mut object_65,
@@ -312,6 +320,7 @@ pub fn serialize_structure_crate_input_describe_image_scan_findings_input(
         object.key("repositoryName").string(var_67.as_str());
     }
     if let Some(var_68) = &input.image_id {
+        #[allow(unused_mut)]
         let mut object_69 = object.key("imageId").start_object();
         crate::json_ser::serialize_structure_crate_model_image_identifier(&mut object_69, var_68)?;
         object_69.finish();
@@ -443,6 +452,7 @@ pub fn serialize_structure_crate_input_get_lifecycle_policy_preview_input(
         let mut array_95 = object.key("imageIds").start_array();
         for item_96 in var_94 {
             {
+                #[allow(unused_mut)]
                 let mut object_97 = array_95.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_image_identifier(
                     &mut object_97,
@@ -463,6 +473,7 @@ pub fn serialize_structure_crate_input_get_lifecycle_policy_preview_input(
         );
     }
     if let Some(var_100) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_101 = object.key("filter").start_object();
         crate::json_ser::serialize_structure_crate_model_lifecycle_policy_preview_filter(
             &mut object_101,
@@ -519,6 +530,7 @@ pub fn serialize_structure_crate_input_list_images_input(
         );
     }
     if let Some(var_110) = &input.filter {
+        #[allow(unused_mut)]
         let mut object_111 = object.key("filter").start_object();
         crate::json_ser::serialize_structure_crate_model_list_images_filter(
             &mut object_111,
@@ -577,6 +589,7 @@ pub fn serialize_structure_crate_input_put_image_scanning_configuration_input(
         object.key("repositoryName").string(var_120.as_str());
     }
     if let Some(var_121) = &input.image_scanning_configuration {
+        #[allow(unused_mut)]
         let mut object_122 = object.key("imageScanningConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_image_scanning_configuration(
             &mut object_122,
@@ -640,6 +653,7 @@ pub fn serialize_structure_crate_input_put_registry_scanning_configuration_input
         let mut array_132 = object.key("rules").start_array();
         for item_133 in var_131 {
             {
+                #[allow(unused_mut)]
                 let mut object_134 = array_132.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_registry_scanning_rule(
                     &mut object_134,
@@ -658,6 +672,7 @@ pub fn serialize_structure_crate_input_put_replication_configuration_input(
     input: &crate::input::PutReplicationConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_135) = &input.replication_configuration {
+        #[allow(unused_mut)]
         let mut object_136 = object.key("replicationConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_replication_configuration(
             &mut object_136,
@@ -698,6 +713,7 @@ pub fn serialize_structure_crate_input_start_image_scan_input(
         object.key("repositoryName").string(var_141.as_str());
     }
     if let Some(var_142) = &input.image_id {
+        #[allow(unused_mut)]
         let mut object_143 = object.key("imageId").start_object();
         crate::json_ser::serialize_structure_crate_model_image_identifier(
             &mut object_143,
@@ -735,6 +751,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_149 = object.key("tags").start_array();
         for item_150 in var_148 {
             {
+                #[allow(unused_mut)]
                 let mut object_151 = array_149.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_151, item_150)?;
                 object_151.finish();
@@ -887,6 +904,7 @@ pub fn serialize_structure_crate_model_registry_scanning_rule(
         let mut array_173 = object.key("repositoryFilters").start_array();
         for item_174 in var_172 {
             {
+                #[allow(unused_mut)]
                 let mut object_175 = array_173.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_scanning_repository_filter(
                     &mut object_175,
@@ -908,6 +926,7 @@ pub fn serialize_structure_crate_model_replication_configuration(
         let mut array_177 = object.key("rules").start_array();
         for item_178 in var_176 {
             {
+                #[allow(unused_mut)]
                 let mut object_179 = array_177.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_replication_rule(
                     &mut object_179,
@@ -942,6 +961,7 @@ pub fn serialize_structure_crate_model_replication_rule(
         let mut array_183 = object.key("destinations").start_array();
         for item_184 in var_182 {
             {
+                #[allow(unused_mut)]
                 let mut object_185 = array_183.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_replication_destination(
                     &mut object_185,
@@ -956,6 +976,7 @@ pub fn serialize_structure_crate_model_replication_rule(
         let mut array_187 = object.key("repositoryFilters").start_array();
         for item_188 in var_186 {
             {
+                #[allow(unused_mut)]
                 let mut object_189 = array_187.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_repository_filter(
                     &mut object_189,

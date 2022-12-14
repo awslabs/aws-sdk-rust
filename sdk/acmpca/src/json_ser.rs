@@ -4,6 +4,7 @@ pub fn serialize_structure_crate_input_create_certificate_authority_input(
     input: &crate::input::CreateCertificateAuthorityInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.certificate_authority_configuration {
+        #[allow(unused_mut)]
         let mut object_2 = object
             .key("CertificateAuthorityConfiguration")
             .start_object();
@@ -14,6 +15,7 @@ pub fn serialize_structure_crate_input_create_certificate_authority_input(
         object_2.finish();
     }
     if let Some(var_3) = &input.revocation_configuration {
+        #[allow(unused_mut)]
         let mut object_4 = object.key("RevocationConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_revocation_configuration(
             &mut object_4,
@@ -38,6 +40,7 @@ pub fn serialize_structure_crate_input_create_certificate_authority_input(
         let mut array_9 = object.key("Tags").start_array();
         for item_10 in var_8 {
             {
+                #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_11, item_10)?;
                 object_11.finish();
@@ -244,6 +247,7 @@ pub fn serialize_structure_crate_input_issue_certificate_input(
     input: &crate::input::IssueCertificateInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_38) = &input.api_passthrough {
+        #[allow(unused_mut)]
         let mut object_39 = object.key("ApiPassthrough").start_object();
         crate::json_ser::serialize_structure_crate_model_api_passthrough(&mut object_39, var_38)?;
         object_39.finish();
@@ -265,11 +269,13 @@ pub fn serialize_structure_crate_input_issue_certificate_input(
         object.key("TemplateArn").string(var_43.as_str());
     }
     if let Some(var_44) = &input.validity {
+        #[allow(unused_mut)]
         let mut object_45 = object.key("Validity").start_object();
         crate::json_ser::serialize_structure_crate_model_validity(&mut object_45, var_44)?;
         object_45.finish();
     }
     if let Some(var_46) = &input.validity_not_before {
+        #[allow(unused_mut)]
         let mut object_47 = object.key("ValidityNotBefore").start_object();
         crate::json_ser::serialize_structure_crate_model_validity(&mut object_47, var_46)?;
         object_47.finish();
@@ -397,6 +403,7 @@ pub fn serialize_structure_crate_input_tag_certificate_authority_input(
         let mut array_66 = object.key("Tags").start_array();
         for item_67 in var_65 {
             {
+                #[allow(unused_mut)]
                 let mut object_68 = array_66.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_68, item_67)?;
                 object_68.finish();
@@ -420,6 +427,7 @@ pub fn serialize_structure_crate_input_untag_certificate_authority_input(
         let mut array_71 = object.key("Tags").start_array();
         for item_72 in var_70 {
             {
+                #[allow(unused_mut)]
                 let mut object_73 = array_71.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_73, item_72)?;
                 object_73.finish();
@@ -440,6 +448,7 @@ pub fn serialize_structure_crate_input_update_certificate_authority_input(
             .string(var_74.as_str());
     }
     if let Some(var_75) = &input.revocation_configuration {
+        #[allow(unused_mut)]
         let mut object_76 = object.key("RevocationConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_revocation_configuration(
             &mut object_76,
@@ -464,11 +473,13 @@ pub fn serialize_structure_crate_model_certificate_authority_configuration(
         object.key("SigningAlgorithm").string(var_79.as_str());
     }
     if let Some(var_80) = &input.subject {
+        #[allow(unused_mut)]
         let mut object_81 = object.key("Subject").start_object();
         crate::json_ser::serialize_structure_crate_model_asn1_subject(&mut object_81, var_80)?;
         object_81.finish();
     }
     if let Some(var_82) = &input.csr_extensions {
+        #[allow(unused_mut)]
         let mut object_83 = object.key("CsrExtensions").start_object();
         crate::json_ser::serialize_structure_crate_model_csr_extensions(&mut object_83, var_82)?;
         object_83.finish();
@@ -481,11 +492,13 @@ pub fn serialize_structure_crate_model_revocation_configuration(
     input: &crate::model::RevocationConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_84) = &input.crl_configuration {
+        #[allow(unused_mut)]
         let mut object_85 = object.key("CrlConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_crl_configuration(&mut object_85, var_84)?;
         object_85.finish();
     }
     if let Some(var_86) = &input.ocsp_configuration {
+        #[allow(unused_mut)]
         let mut object_87 = object.key("OcspConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_ocsp_configuration(
             &mut object_87,
@@ -514,11 +527,13 @@ pub fn serialize_structure_crate_model_api_passthrough(
     input: &crate::model::ApiPassthrough,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_90) = &input.extensions {
+        #[allow(unused_mut)]
         let mut object_91 = object.key("Extensions").start_object();
         crate::json_ser::serialize_structure_crate_model_extensions(&mut object_91, var_90)?;
         object_91.finish();
     }
     if let Some(var_92) = &input.subject {
+        #[allow(unused_mut)]
         let mut object_93 = object.key("Subject").start_object();
         crate::json_ser::serialize_structure_crate_model_asn1_subject(&mut object_93, var_92)?;
         object_93.finish();
@@ -594,6 +609,7 @@ pub fn serialize_structure_crate_model_asn1_subject(
         let mut array_111 = object.key("CustomAttributes").start_array();
         for item_112 in var_110 {
             {
+                #[allow(unused_mut)]
                 let mut object_113 = array_111.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_custom_attribute(
                     &mut object_113,
@@ -612,6 +628,7 @@ pub fn serialize_structure_crate_model_csr_extensions(
     input: &crate::model::CsrExtensions,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_114) = &input.key_usage {
+        #[allow(unused_mut)]
         let mut object_115 = object.key("KeyUsage").start_object();
         crate::json_ser::serialize_structure_crate_model_key_usage(&mut object_115, var_114)?;
         object_115.finish();
@@ -620,6 +637,7 @@ pub fn serialize_structure_crate_model_csr_extensions(
         let mut array_117 = object.key("SubjectInformationAccess").start_array();
         for item_118 in var_116 {
             {
+                #[allow(unused_mut)]
                 let mut object_119 = array_117.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_access_description(
                     &mut object_119,
@@ -679,6 +697,7 @@ pub fn serialize_structure_crate_model_extensions(
         let mut array_128 = object.key("CertificatePolicies").start_array();
         for item_129 in var_127 {
             {
+                #[allow(unused_mut)]
                 let mut object_130 = array_128.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_policy_information(
                     &mut object_130,
@@ -693,6 +712,7 @@ pub fn serialize_structure_crate_model_extensions(
         let mut array_132 = object.key("ExtendedKeyUsage").start_array();
         for item_133 in var_131 {
             {
+                #[allow(unused_mut)]
                 let mut object_134 = array_132.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_extended_key_usage(
                     &mut object_134,
@@ -704,6 +724,7 @@ pub fn serialize_structure_crate_model_extensions(
         array_132.finish();
     }
     if let Some(var_135) = &input.key_usage {
+        #[allow(unused_mut)]
         let mut object_136 = object.key("KeyUsage").start_object();
         crate::json_ser::serialize_structure_crate_model_key_usage(&mut object_136, var_135)?;
         object_136.finish();
@@ -712,6 +733,7 @@ pub fn serialize_structure_crate_model_extensions(
         let mut array_138 = object.key("SubjectAlternativeNames").start_array();
         for item_139 in var_137 {
             {
+                #[allow(unused_mut)]
                 let mut object_140 = array_138.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_general_name(
                     &mut object_140,
@@ -726,6 +748,7 @@ pub fn serialize_structure_crate_model_extensions(
         let mut array_142 = object.key("CustomExtensions").start_array();
         for item_143 in var_141 {
             {
+                #[allow(unused_mut)]
                 let mut object_144 = array_142.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_custom_extension(
                     &mut object_144,
@@ -797,11 +820,13 @@ pub fn serialize_structure_crate_model_access_description(
     input: &crate::model::AccessDescription,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_147) = &input.access_method {
+        #[allow(unused_mut)]
         let mut object_148 = object.key("AccessMethod").start_object();
         crate::json_ser::serialize_structure_crate_model_access_method(&mut object_148, var_147)?;
         object_148.finish();
     }
     if let Some(var_149) = &input.access_location {
+        #[allow(unused_mut)]
         let mut object_150 = object.key("AccessLocation").start_object();
         crate::json_ser::serialize_structure_crate_model_general_name(&mut object_150, var_149)?;
         object_150.finish();
@@ -820,6 +845,7 @@ pub fn serialize_structure_crate_model_policy_information(
         let mut array_153 = object.key("PolicyQualifiers").start_array();
         for item_154 in var_152 {
             {
+                #[allow(unused_mut)]
                 let mut object_155 = array_153.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_policy_qualifier_info(
                     &mut object_155,
@@ -853,6 +879,7 @@ pub fn serialize_structure_crate_model_general_name(
     input: &crate::model::GeneralName,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_158) = &input.other_name {
+        #[allow(unused_mut)]
         let mut object_159 = object.key("OtherName").start_object();
         crate::json_ser::serialize_structure_crate_model_other_name(&mut object_159, var_158)?;
         object_159.finish();
@@ -864,11 +891,13 @@ pub fn serialize_structure_crate_model_general_name(
         object.key("DnsName").string(var_161.as_str());
     }
     if let Some(var_162) = &input.directory_name {
+        #[allow(unused_mut)]
         let mut object_163 = object.key("DirectoryName").start_object();
         crate::json_ser::serialize_structure_crate_model_asn1_subject(&mut object_163, var_162)?;
         object_163.finish();
     }
     if let Some(var_164) = &input.edi_party_name {
+        #[allow(unused_mut)]
         let mut object_165 = object.key("EdiPartyName").start_object();
         crate::json_ser::serialize_structure_crate_model_edi_party_name(&mut object_165, var_164)?;
         object_165.finish();
@@ -926,6 +955,7 @@ pub fn serialize_structure_crate_model_policy_qualifier_info(
         object.key("PolicyQualifierId").string(var_174.as_str());
     }
     if let Some(var_175) = &input.qualifier {
+        #[allow(unused_mut)]
         let mut object_176 = object.key("Qualifier").start_object();
         crate::json_ser::serialize_structure_crate_model_qualifier(&mut object_176, var_175)?;
         object_176.finish();

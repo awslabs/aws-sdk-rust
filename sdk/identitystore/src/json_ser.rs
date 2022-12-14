@@ -26,6 +26,7 @@ pub fn serialize_structure_crate_input_create_group_membership_input(
         object.key("GroupId").string(var_5.as_str());
     }
     if let Some(var_6) = &input.member_id {
+        #[allow(unused_mut)]
         let mut object_7 = object.key("MemberId").start_object();
         crate::json_ser::serialize_union_crate_model_member_id(&mut object_7, var_6)?;
         object_7.finish();
@@ -44,6 +45,7 @@ pub fn serialize_structure_crate_input_create_user_input(
         object.key("UserName").string(var_9.as_str());
     }
     if let Some(var_10) = &input.name {
+        #[allow(unused_mut)]
         let mut object_11 = object.key("Name").start_object();
         crate::json_ser::serialize_structure_crate_model_name(&mut object_11, var_10)?;
         object_11.finish();
@@ -61,6 +63,7 @@ pub fn serialize_structure_crate_input_create_user_input(
         let mut array_16 = object.key("Emails").start_array();
         for item_17 in var_15 {
             {
+                #[allow(unused_mut)]
                 let mut object_18 = array_16.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_email(&mut object_18, item_17)?;
                 object_18.finish();
@@ -72,6 +75,7 @@ pub fn serialize_structure_crate_input_create_user_input(
         let mut array_20 = object.key("Addresses").start_array();
         for item_21 in var_19 {
             {
+                #[allow(unused_mut)]
                 let mut object_22 = array_20.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_address(&mut object_22, item_21)?;
                 object_22.finish();
@@ -83,6 +87,7 @@ pub fn serialize_structure_crate_input_create_user_input(
         let mut array_24 = object.key("PhoneNumbers").start_array();
         for item_25 in var_23 {
             {
+                #[allow(unused_mut)]
                 let mut object_26 = array_24.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_phone_number(
                     &mut object_26,
@@ -197,6 +202,7 @@ pub fn serialize_structure_crate_input_get_group_id_input(
         object.key("IdentityStoreId").string(var_44.as_str());
     }
     if let Some(var_45) = &input.alternate_identifier {
+        #[allow(unused_mut)]
         let mut object_46 = object.key("AlternateIdentifier").start_object();
         crate::json_ser::serialize_union_crate_model_alternate_identifier(&mut object_46, var_45)?;
         object_46.finish();
@@ -215,6 +221,7 @@ pub fn serialize_structure_crate_input_get_group_membership_id_input(
         object.key("GroupId").string(var_48.as_str());
     }
     if let Some(var_49) = &input.member_id {
+        #[allow(unused_mut)]
         let mut object_50 = object.key("MemberId").start_object();
         crate::json_ser::serialize_union_crate_model_member_id(&mut object_50, var_49)?;
         object_50.finish();
@@ -230,6 +237,7 @@ pub fn serialize_structure_crate_input_get_user_id_input(
         object.key("IdentityStoreId").string(var_51.as_str());
     }
     if let Some(var_52) = &input.alternate_identifier {
+        #[allow(unused_mut)]
         let mut object_53 = object.key("AlternateIdentifier").start_object();
         crate::json_ser::serialize_union_crate_model_alternate_identifier(&mut object_53, var_52)?;
         object_53.finish();
@@ -245,6 +253,7 @@ pub fn serialize_structure_crate_input_is_member_in_groups_input(
         object.key("IdentityStoreId").string(var_54.as_str());
     }
     if let Some(var_55) = &input.member_id {
+        #[allow(unused_mut)]
         let mut object_56 = object.key("MemberId").start_object();
         crate::json_ser::serialize_union_crate_model_member_id(&mut object_56, var_55)?;
         object_56.finish();
@@ -291,6 +300,7 @@ pub fn serialize_structure_crate_input_list_group_memberships_for_member_input(
         object.key("IdentityStoreId").string(var_64.as_str());
     }
     if let Some(var_65) = &input.member_id {
+        #[allow(unused_mut)]
         let mut object_66 = object.key("MemberId").start_object();
         crate::json_ser::serialize_union_crate_model_member_id(&mut object_66, var_65)?;
         object_66.finish();
@@ -327,6 +337,7 @@ pub fn serialize_structure_crate_input_list_groups_input(
         let mut array_73 = object.key("Filters").start_array();
         for item_74 in var_72 {
             {
+                #[allow(unused_mut)]
                 let mut object_75 = array_73.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_75, item_74)?;
                 object_75.finish();
@@ -357,6 +368,7 @@ pub fn serialize_structure_crate_input_list_users_input(
         let mut array_80 = object.key("Filters").start_array();
         for item_81 in var_79 {
             {
+                #[allow(unused_mut)]
                 let mut object_82 = array_80.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_82, item_81)?;
                 object_82.finish();
@@ -381,6 +393,7 @@ pub fn serialize_structure_crate_input_update_group_input(
         let mut array_86 = object.key("Operations").start_array();
         for item_87 in var_85 {
             {
+                #[allow(unused_mut)]
                 let mut object_88 = array_86.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_attribute_operation(
                     &mut object_88,
@@ -408,6 +421,7 @@ pub fn serialize_structure_crate_input_update_user_input(
         let mut array_92 = object.key("Operations").start_array();
         for item_93 in var_91 {
             {
+                #[allow(unused_mut)]
                 let mut object_94 = array_92.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_attribute_operation(
                     &mut object_94,
@@ -532,11 +546,13 @@ pub fn serialize_union_crate_model_alternate_identifier(
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     match input {
         crate::model::AlternateIdentifier::ExternalId(inner) => {
+            #[allow(unused_mut)]
             let mut object_112 = object_46.key("ExternalId").start_object();
             crate::json_ser::serialize_structure_crate_model_external_id(&mut object_112, inner)?;
             object_112.finish();
         }
         crate::model::AlternateIdentifier::UniqueAttribute(inner) => {
+            #[allow(unused_mut)]
             let mut object_113 = object_46.key("UniqueAttribute").start_object();
             crate::json_ser::serialize_structure_crate_model_unique_attribute(
                 &mut object_113,

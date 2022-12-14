@@ -10,6 +10,7 @@ pub fn serialize_structure_crate_input_create_activity_input(
         let mut array_3 = object.key("tags").start_array();
         for item_4 in var_2 {
             {
+                #[allow(unused_mut)]
                 let mut object_5 = array_3.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_5, item_4)?;
                 object_5.finish();
@@ -37,6 +38,7 @@ pub fn serialize_structure_crate_input_create_state_machine_input(
         object.key("type").string(var_9.as_str());
     }
     if let Some(var_10) = &input.logging_configuration {
+        #[allow(unused_mut)]
         let mut object_11 = object.key("loggingConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_logging_configuration(
             &mut object_11,
@@ -48,6 +50,7 @@ pub fn serialize_structure_crate_input_create_state_machine_input(
         let mut array_13 = object.key("tags").start_array();
         for item_14 in var_12 {
             {
+                #[allow(unused_mut)]
                 let mut object_15 = array_13.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_15, item_14)?;
                 object_15.finish();
@@ -56,6 +59,7 @@ pub fn serialize_structure_crate_input_create_state_machine_input(
         array_13.finish();
     }
     if let Some(var_16) = &input.tracing_configuration {
+        #[allow(unused_mut)]
         let mut object_17 = object.key("tracingConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_tracing_configuration(
             &mut object_17,
@@ -332,6 +336,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_54 = object.key("tags").start_array();
         for item_55 in var_53 {
             {
+                #[allow(unused_mut)]
                 let mut object_56 = array_54.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_56, item_55)?;
                 object_56.finish();
@@ -375,6 +380,7 @@ pub fn serialize_structure_crate_input_update_state_machine_input(
         object.key("roleArn").string(var_63.as_str());
     }
     if let Some(var_64) = &input.logging_configuration {
+        #[allow(unused_mut)]
         let mut object_65 = object.key("loggingConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_logging_configuration(
             &mut object_65,
@@ -383,6 +389,7 @@ pub fn serialize_structure_crate_input_update_state_machine_input(
         object_65.finish();
     }
     if let Some(var_66) = &input.tracing_configuration {
+        #[allow(unused_mut)]
         let mut object_67 = object.key("tracingConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_tracing_configuration(
             &mut object_67,
@@ -422,6 +429,7 @@ pub fn serialize_structure_crate_model_logging_configuration(
         let mut array_72 = object.key("destinations").start_array();
         for item_73 in var_71 {
             {
+                #[allow(unused_mut)]
                 let mut object_74 = array_72.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_log_destination(
                     &mut object_74,
@@ -450,6 +458,7 @@ pub fn serialize_structure_crate_model_log_destination(
     input: &crate::model::LogDestination,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_75) = &input.cloud_watch_logs_log_group {
+        #[allow(unused_mut)]
         let mut object_76 = object.key("cloudWatchLogsLogGroup").start_object();
         crate::json_ser::serialize_structure_crate_model_cloud_watch_logs_log_group(
             &mut object_76,

@@ -28,6 +28,7 @@ pub fn serialize_structure_crate_input_associate_firewall_rule_group_input(
         let mut array_8 = object.key("Tags").start_array();
         for item_9 in var_7 {
             {
+                #[allow(unused_mut)]
                 let mut object_10 = array_8.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_10, item_9)?;
                 object_10.finish();
@@ -46,6 +47,7 @@ pub fn serialize_structure_crate_input_associate_resolver_endpoint_ip_address_in
         object.key("ResolverEndpointId").string(var_11.as_str());
     }
     if let Some(var_12) = &input.ip_address {
+        #[allow(unused_mut)]
         let mut object_13 = object.key("IpAddress").start_object();
         crate::json_ser::serialize_structure_crate_model_ip_address_update(&mut object_13, var_12)?;
         object_13.finish();
@@ -98,6 +100,7 @@ pub fn serialize_structure_crate_input_create_firewall_domain_list_input(
         let mut array_22 = object.key("Tags").start_array();
         for item_23 in var_21 {
             {
+                #[allow(unused_mut)]
                 let mut object_24 = array_22.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_24, item_23)?;
                 object_24.finish();
@@ -165,6 +168,7 @@ pub fn serialize_structure_crate_input_create_firewall_rule_group_input(
         let mut array_38 = object.key("Tags").start_array();
         for item_39 in var_37 {
             {
+                #[allow(unused_mut)]
                 let mut object_40 = array_38.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_40, item_39)?;
                 object_40.finish();
@@ -201,6 +205,7 @@ pub fn serialize_structure_crate_input_create_resolver_endpoint_input(
         let mut array_48 = object.key("IpAddresses").start_array();
         for item_49 in var_47 {
             {
+                #[allow(unused_mut)]
                 let mut object_50 = array_48.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_ip_address_request(
                     &mut object_50,
@@ -215,6 +220,7 @@ pub fn serialize_structure_crate_input_create_resolver_endpoint_input(
         let mut array_52 = object.key("Tags").start_array();
         for item_53 in var_51 {
             {
+                #[allow(unused_mut)]
                 let mut object_54 = array_52.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_54, item_53)?;
                 object_54.finish();
@@ -242,6 +248,7 @@ pub fn serialize_structure_crate_input_create_resolver_query_log_config_input(
         let mut array_59 = object.key("Tags").start_array();
         for item_60 in var_58 {
             {
+                #[allow(unused_mut)]
                 let mut object_61 = array_59.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_61, item_60)?;
                 object_61.finish();
@@ -272,6 +279,7 @@ pub fn serialize_structure_crate_input_create_resolver_rule_input(
         let mut array_67 = object.key("TargetIps").start_array();
         for item_68 in var_66 {
             {
+                #[allow(unused_mut)]
                 let mut object_69 = array_67.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_target_address(
                     &mut object_69,
@@ -289,6 +297,7 @@ pub fn serialize_structure_crate_input_create_resolver_rule_input(
         let mut array_72 = object.key("Tags").start_array();
         for item_73 in var_71 {
             {
+                #[allow(unused_mut)]
                 let mut object_74 = array_72.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_74, item_73)?;
                 object_74.finish();
@@ -384,6 +393,7 @@ pub fn serialize_structure_crate_input_disassociate_resolver_endpoint_ip_address
         object.key("ResolverEndpointId").string(var_83.as_str());
     }
     if let Some(var_84) = &input.ip_address {
+        #[allow(unused_mut)]
         let mut object_85 = object.key("IpAddress").start_object();
         crate::json_ser::serialize_structure_crate_model_ip_address_update(&mut object_85, var_84)?;
         object_85.finish();
@@ -742,6 +752,7 @@ pub fn serialize_structure_crate_input_list_resolver_dnssec_configs_input(
         let mut array_132 = object.key("Filters").start_array();
         for item_133 in var_131 {
             {
+                #[allow(unused_mut)]
                 let mut object_134 = array_132.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_134, item_133)?;
                 object_134.finish();
@@ -788,6 +799,7 @@ pub fn serialize_structure_crate_input_list_resolver_endpoints_input(
         let mut array_141 = object.key("Filters").start_array();
         for item_142 in var_140 {
             {
+                #[allow(unused_mut)]
                 let mut object_143 = array_141.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_143, item_142)?;
                 object_143.finish();
@@ -815,6 +827,7 @@ pub fn serialize_structure_crate_input_list_resolver_query_log_config_associatio
         let mut array_147 = object.key("Filters").start_array();
         for item_148 in var_146 {
             {
+                #[allow(unused_mut)]
                 let mut object_149 = array_147.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_149, item_148)?;
                 object_149.finish();
@@ -848,6 +861,7 @@ pub fn serialize_structure_crate_input_list_resolver_query_log_configs_input(
         let mut array_155 = object.key("Filters").start_array();
         for item_156 in var_154 {
             {
+                #[allow(unused_mut)]
                 let mut object_157 = array_155.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_157, item_156)?;
                 object_157.finish();
@@ -881,6 +895,7 @@ pub fn serialize_structure_crate_input_list_resolver_rule_associations_input(
         let mut array_163 = object.key("Filters").start_array();
         for item_164 in var_162 {
             {
+                #[allow(unused_mut)]
                 let mut object_165 = array_163.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_165, item_164)?;
                 object_165.finish();
@@ -908,6 +923,7 @@ pub fn serialize_structure_crate_input_list_resolver_rules_input(
         let mut array_169 = object.key("Filters").start_array();
         for item_170 in var_168 {
             {
+                #[allow(unused_mut)]
                 let mut object_171 = array_169.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_filter(&mut object_171, item_170)?;
                 object_171.finish();
@@ -991,6 +1007,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_183 = object.key("Tags").start_array();
         for item_184 in var_182 {
             {
+                #[allow(unused_mut)]
                 let mut object_185 = array_183.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_185, item_184)?;
                 object_185.finish();
@@ -1168,6 +1185,7 @@ pub fn serialize_structure_crate_input_update_resolver_rule_input(
         object.key("ResolverRuleId").string(var_216.as_str());
     }
     if let Some(var_217) = &input.config {
+        #[allow(unused_mut)]
         let mut object_218 = object.key("Config").start_object();
         crate::json_ser::serialize_structure_crate_model_resolver_rule_config(
             &mut object_218,
@@ -1266,6 +1284,7 @@ pub fn serialize_structure_crate_model_resolver_rule_config(
         let mut array_234 = object.key("TargetIps").start_array();
         for item_235 in var_233 {
             {
+                #[allow(unused_mut)]
                 let mut object_236 = array_234.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_target_address(
                     &mut object_236,

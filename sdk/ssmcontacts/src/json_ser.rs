@@ -51,6 +51,7 @@ pub fn serialize_structure_crate_input_create_contact_input(
         object.key("Type").string(var_11.as_str());
     }
     if let Some(var_12) = &input.plan {
+        #[allow(unused_mut)]
         let mut object_13 = object.key("Plan").start_object();
         crate::json_ser::serialize_structure_crate_model_plan(&mut object_13, var_12)?;
         object_13.finish();
@@ -59,6 +60,7 @@ pub fn serialize_structure_crate_input_create_contact_input(
         let mut array_15 = object.key("Tags").start_array();
         for item_16 in var_14 {
             {
+                #[allow(unused_mut)]
                 let mut object_17 = array_15.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_17, item_16)?;
                 object_17.finish();
@@ -86,6 +88,7 @@ pub fn serialize_structure_crate_input_create_contact_channel_input(
         object.key("Type").string(var_21.as_str());
     }
     if let Some(var_22) = &input.delivery_address {
+        #[allow(unused_mut)]
         let mut object_23 = object.key("DeliveryAddress").start_object();
         crate::json_ser::serialize_structure_crate_model_contact_channel_address(
             &mut object_23,
@@ -240,6 +243,7 @@ pub fn serialize_structure_crate_input_list_engagements_input(
         object.key("IncidentId").string(var_43.as_str());
     }
     if let Some(var_44) = &input.time_range_value {
+        #[allow(unused_mut)]
         let mut object_45 = object.key("TimeRangeValue").start_object();
         crate::json_ser::serialize_structure_crate_model_time_range(&mut object_45, var_44)?;
         object_45.finish();
@@ -392,6 +396,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
         let mut array_71 = object.key("Tags").start_array();
         for item_72 in var_70 {
             {
+                #[allow(unused_mut)]
                 let mut object_73 = array_71.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_73, item_72)?;
                 object_73.finish();
@@ -432,6 +437,7 @@ pub fn serialize_structure_crate_input_update_contact_input(
         object.key("DisplayName").string(var_79.as_str());
     }
     if let Some(var_80) = &input.plan {
+        #[allow(unused_mut)]
         let mut object_81 = object.key("Plan").start_object();
         crate::json_ser::serialize_structure_crate_model_plan(&mut object_81, var_80)?;
         object_81.finish();
@@ -450,6 +456,7 @@ pub fn serialize_structure_crate_input_update_contact_channel_input(
         object.key("Name").string(var_83.as_str());
     }
     if let Some(var_84) = &input.delivery_address {
+        #[allow(unused_mut)]
         let mut object_85 = object.key("DeliveryAddress").start_object();
         crate::json_ser::serialize_structure_crate_model_contact_channel_address(
             &mut object_85,
@@ -468,6 +475,7 @@ pub fn serialize_structure_crate_model_plan(
         let mut array_87 = object.key("Stages").start_array();
         for item_88 in var_86 {
             {
+                #[allow(unused_mut)]
                 let mut object_89 = array_87.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_stage(&mut object_89, item_88)?;
                 object_89.finish();
@@ -532,6 +540,7 @@ pub fn serialize_structure_crate_model_stage(
         let mut array_97 = object.key("Targets").start_array();
         for item_98 in var_96 {
             {
+                #[allow(unused_mut)]
                 let mut object_99 = array_97.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_target(&mut object_99, item_98)?;
                 object_99.finish();
@@ -547,6 +556,7 @@ pub fn serialize_structure_crate_model_target(
     input: &crate::model::Target,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_100) = &input.channel_target_info {
+        #[allow(unused_mut)]
         let mut object_101 = object.key("ChannelTargetInfo").start_object();
         crate::json_ser::serialize_structure_crate_model_channel_target_info(
             &mut object_101,
@@ -555,6 +565,7 @@ pub fn serialize_structure_crate_model_target(
         object_101.finish();
     }
     if let Some(var_102) = &input.contact_target_info {
+        #[allow(unused_mut)]
         let mut object_103 = object.key("ContactTargetInfo").start_object();
         crate::json_ser::serialize_structure_crate_model_contact_target_info(
             &mut object_103,

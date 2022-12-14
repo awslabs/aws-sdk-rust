@@ -4,6 +4,7 @@ pub fn serialize_structure_crate_input_start_human_loop_input(
     input: &crate::input::StartHumanLoopInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_1) = &input.data_attributes {
+        #[allow(unused_mut)]
         let mut object_2 = object.key("DataAttributes").start_object();
         crate::json_ser::serialize_structure_crate_model_human_loop_data_attributes(
             &mut object_2,
@@ -15,6 +16,7 @@ pub fn serialize_structure_crate_input_start_human_loop_input(
         object.key("FlowDefinitionArn").string(var_3.as_str());
     }
     if let Some(var_4) = &input.human_loop_input {
+        #[allow(unused_mut)]
         let mut object_5 = object.key("HumanLoopInput").start_object();
         crate::json_ser::serialize_structure_crate_model_human_loop_input(&mut object_5, var_4)?;
         object_5.finish();

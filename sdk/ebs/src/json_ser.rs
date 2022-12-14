@@ -22,6 +22,7 @@ pub fn serialize_structure_crate_input_start_snapshot_input(
         let mut array_7 = object.key("Tags").start_array();
         for item_8 in var_6 {
             {
+                #[allow(unused_mut)]
                 let mut object_9 = array_7.value().start_object();
                 crate::json_ser::serialize_structure_crate_model_tag(&mut object_9, item_8)?;
                 object_9.finish();

@@ -50,6 +50,7 @@ pub fn serialize_structure_crate_input_create_channel_input(
             .string(var_9.as_str());
     }
     if let Some(var_10) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_11 = object.key("tags").start_object();
         for (key_12, value_13) in var_10 {
             {
@@ -69,6 +70,7 @@ pub fn serialize_structure_crate_input_create_recording_configuration_input(
     input: &crate::input::CreateRecordingConfigurationInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_15) = &input.destination_configuration {
+        #[allow(unused_mut)]
         let mut object_16 = object.key("destinationConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_destination_configuration(
             &mut object_16,
@@ -86,6 +88,7 @@ pub fn serialize_structure_crate_input_create_recording_configuration_input(
         );
     }
     if let Some(var_18) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_19 = object.key("tags").start_object();
         for (key_20, value_21) in var_18 {
             {
@@ -95,6 +98,7 @@ pub fn serialize_structure_crate_input_create_recording_configuration_input(
         object_19.finish();
     }
     if let Some(var_22) = &input.thumbnail_configuration {
+        #[allow(unused_mut)]
         let mut object_23 = object.key("thumbnailConfiguration").start_object();
         crate::json_ser::serialize_structure_crate_model_thumbnail_configuration(
             &mut object_23,
@@ -113,6 +117,7 @@ pub fn serialize_structure_crate_input_create_stream_key_input(
         object.key("channelArn").string(var_24.as_str());
     }
     if let Some(var_25) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_26 = object.key("tags").start_object();
         for (key_27, value_28) in var_25 {
             {
@@ -238,6 +243,7 @@ pub fn serialize_structure_crate_input_import_playback_key_pair_input(
         object.key("publicKeyMaterial").string(var_41.as_str());
     }
     if let Some(var_42) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_43 = object.key("tags").start_object();
         for (key_44, value_45) in var_42 {
             {
@@ -329,6 +335,7 @@ pub fn serialize_structure_crate_input_list_streams_input(
     input: &crate::input::ListStreamsInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_53) = &input.filter_by {
+        #[allow(unused_mut)]
         let mut object_54 = object.key("filterBy").start_object();
         crate::json_ser::serialize_structure_crate_model_stream_filters(&mut object_54, var_53)?;
         object_54.finish();
@@ -392,6 +399,7 @@ pub fn serialize_structure_crate_input_tag_resource_input(
     input: &crate::input::TagResourceInput,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_61) = &input.tags {
+        #[allow(unused_mut)]
         let mut object_62 = object.key("tags").start_object();
         for (key_63, value_64) in var_61 {
             {
@@ -435,6 +443,7 @@ pub fn serialize_structure_crate_model_destination_configuration(
     input: &crate::model::DestinationConfiguration,
 ) -> Result<(), aws_smithy_http::operation::error::SerializationError> {
     if let Some(var_70) = &input.s3 {
+        #[allow(unused_mut)]
         let mut object_71 = object.key("s3").start_object();
         crate::json_ser::serialize_structure_crate_model_s3_destination_configuration(
             &mut object_71,
