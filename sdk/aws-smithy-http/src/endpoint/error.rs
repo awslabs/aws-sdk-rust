@@ -23,11 +23,8 @@ impl ResolveEndpointError {
     }
 
     /// Add a source to the error
-    pub fn with_source(self, source: impl Into<Box<dyn std::error::Error + Send + Sync>>) -> Self {
-        Self {
-            source: Some(source.into()),
-            ..self
-        }
+    pub fn with_source(self, source: Option<Box<dyn std::error::Error + Send + Sync>>) -> Self {
+        Self { source, ..self }
     }
 }
 

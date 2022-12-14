@@ -63,7 +63,7 @@ impl ResolveEndpoint<Params> for EndpointShim {
                     .ok_or_else(|| ResolveEndpointError::message("no region in params"))?,
             )
             .map_err(|err| {
-                ResolveEndpointError::message("failure resolving endpoint").with_source(err)
+                ResolveEndpointError::message("failure resolving endpoint").with_source(Some(err))
             })?;
         let uri = aws_endpoint.endpoint().uri();
         let mut auth_scheme =

@@ -11,9 +11,9 @@ use std::result::Result as StdResult;
 use std::str::FromStr;
 
 pub mod error;
+pub use error::ResolveEndpointError;
 
-pub type Result =
-    std::result::Result<aws_smithy_types::endpoint::Endpoint, error::ResolveEndpointError>;
+pub type Result = std::result::Result<aws_smithy_types::endpoint::Endpoint, ResolveEndpointError>;
 
 pub trait ResolveEndpoint<Params>: Send + Sync {
     fn resolve_endpoint(&self, params: &Params) -> Result;
