@@ -82,11 +82,12 @@ async fn timeout_test(sleep_impl: Arc<dyn AsyncSleep>) -> Result<(), Box<dyn std
         .build();
     let config = Config::builder()
         .region(region)
+        .http_connector(conn.clone())
         .credentials_provider(credentials)
         .timeout_config(timeout_config)
         .sleep_impl(sleep_impl)
         .build();
-    let client = Client::from_conf_conn(config, conn.clone());
+    let client = Client::from_conf(config);
 
     let now = Instant::now();
 
@@ -127,6 +128,7 @@ async fn retry_test(sleep_impl: Arc<dyn AsyncSleep>) -> Result<(), Box<dyn std::
     let credentials = Credentials::new("test", "test", None, None, "test");
     let conf = aws_types::SdkConfig::builder()
         .region(Region::new("us-east-2"))
+        .http_connector(conn.clone())
         .credentials_provider(aws_types::credentials::SharedCredentialsProvider::new(
             credentials,
         ))
@@ -138,7 +140,7 @@ async fn retry_test(sleep_impl: Arc<dyn AsyncSleep>) -> Result<(), Box<dyn std::
         )
         .sleep_impl(sleep_impl)
         .build();
-    let client = Client::from_conf_conn(Config::new(&conf), conn.clone());
+    let client = Client::new(&conf);
     let resp = client
         .list_buckets()
         .send()

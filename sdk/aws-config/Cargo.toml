@@ -27,13 +27,17 @@ zeroize = "1"
 bytes = "1.1.0"
 http = "0.2.4"
 
-[dependencies.aws-sdk-sts]
-path = "../sts"
-default-features = false
-version = "0.22.0"
+[dependencies.aws-http]
+path = "../aws-http"
+version = "0.51.0"
 
 [dependencies.aws-sdk-sso]
 path = "../sso"
+default-features = false
+version = "0.22.0"
+
+[dependencies.aws-sdk-sts]
+path = "../sts"
 default-features = false
 version = "0.22.0"
 
@@ -44,33 +48,6 @@ version = "0.51.0"
 [dependencies.aws-smithy-client]
 path = "../aws-smithy-client"
 default-features = false
-version = "0.51.0"
-
-[dependencies.aws-smithy-types]
-path = "../aws-smithy-types"
-version = "0.51.0"
-
-[dependencies.aws-types]
-path = "../aws-types"
-version = "0.51.0"
-
-[dependencies.time]
-version = "0.3.4"
-features = ["parsing"]
-
-[dependencies.tokio]
-version = "1.8.4"
-features = ["sync"]
-
-[dependencies.tracing]
-version = "0.1"
-
-[dependencies.hyper]
-version = "0.14.12"
-default-features = false
-
-[dependencies.aws-http]
-path = "../aws-http"
 version = "0.51.0"
 
 [dependencies.aws-smithy-http]
@@ -84,6 +61,29 @@ version = "0.51.0"
 [dependencies.aws-smithy-json]
 path = "../aws-smithy-json"
 version = "0.51.0"
+
+[dependencies.aws-smithy-types]
+path = "../aws-smithy-types"
+version = "0.51.0"
+
+[dependencies.aws-types]
+path = "../aws-types"
+version = "0.51.0"
+
+[dependencies.hyper]
+version = "0.14.12"
+default-features = false
+
+[dependencies.time]
+version = "0.3.4"
+features = ["parsing"]
+
+[dependencies.tokio]
+version = "1.8.4"
+features = ["sync"]
+
+[dependencies.tracing]
+version = "0.1"
 
 [dependencies.tower]
 version = "0.4.8"

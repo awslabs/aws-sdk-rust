@@ -21,6 +21,7 @@ pub struct Config {
     sleep_impl: Option<std::sync::Arc<dyn aws_smithy_async::rt::sleep::AsyncSleep>>,
     timeout_config: Option<aws_smithy_types::timeout::TimeoutConfig>,
     app_name: Option<aws_types::app_name::AppName>,
+    http_connector: Option<aws_smithy_client::http_connector::HttpConnector>,
     pub(crate) endpoint_resolver:
         std::sync::Arc<dyn aws_smithy_http::endpoint::ResolveEndpoint<aws_endpoint::Params>>,
     pub(crate) region: Option<aws_types::region::Region>,
@@ -60,6 +61,10 @@ impl Config {
     pub fn app_name(&self) -> Option<&aws_types::app_name::AppName> {
         self.app_name.as_ref()
     }
+    /// Return an [`HttpConnector`](aws_smithy_client::http_connector::HttpConnector) to use when making requests, if any.
+    pub fn http_connector(&self) -> Option<&aws_smithy_client::http_connector::HttpConnector> {
+        self.http_connector.as_ref()
+    }
     /// Creates a new [service config](crate::Config) from a [shared `config`](aws_types::sdk_config::SdkConfig).
     pub fn new(config: &aws_types::sdk_config::SdkConfig) -> Self {
         Builder::from(config).build()
@@ -87,6 +92,7 @@ pub struct Builder {
     sleep_impl: Option<std::sync::Arc<dyn aws_smithy_async::rt::sleep::AsyncSleep>>,
     timeout_config: Option<aws_smithy_types::timeout::TimeoutConfig>,
     app_name: Option<aws_types::app_name::AppName>,
+    http_connector: Option<aws_smithy_client::http_connector::HttpConnector>,
     endpoint_resolver: Option<
         std::sync::Arc<dyn aws_smithy_http::endpoint::ResolveEndpoint<aws_endpoint::Params>>,
     >,
@@ -263,6 +269,90 @@ impl Builder {
         self.app_name = app_name;
         self
     }
+    /// Sets the HTTP connector to use when making requests.
+    ///
+    /// # Examples
+    /// ```no_run
+    /// # #[cfg(test)]
+    /// # mod tests {
+    /// # #[test]
+    /// # fn example() {
+    /// use std::time::Duration;
+    /// use aws_smithy_client::{Client, hyper_ext};
+    /// use aws_smithy_client::erase::DynConnector;
+    /// use aws_smithy_client::http_connector::ConnectorSettings;
+    /// use aws_sdk_computeoptimizer::config::Config;
+    ///
+    /// let https_connector = hyper_rustls::HttpsConnectorBuilder::new()
+    ///     .with_webpki_roots()
+    ///     .https_only()
+    ///     .enable_http1()
+    ///     .enable_http2()
+    ///     .build();
+    /// let smithy_connector = hyper_ext::Adapter::builder()
+    ///     // Optionally set things like timeouts as well
+    ///     .connector_settings(
+    ///         ConnectorSettings::builder()
+    ///             .connect_timeout(Duration::from_secs(5))
+    ///             .build()
+    ///     )
+    ///     .build(https_connector);
+    /// # }
+    /// # }
+    /// ```
+    pub fn http_connector(
+        mut self,
+        http_connector: impl Into<aws_smithy_client::http_connector::HttpConnector>,
+    ) -> Self {
+        self.http_connector = Some(http_connector.into());
+        self
+    }
+
+    /// Sets the HTTP connector to use when making requests.
+    ///
+    /// # Examples
+    /// ```no_run
+    /// # #[cfg(test)]
+    /// # mod tests {
+    /// # #[test]
+    /// # fn example() {
+    /// use std::time::Duration;
+    /// use aws_smithy_client::hyper_ext;
+    /// use aws_smithy_client::http_connector::ConnectorSettings;
+    /// use crate::sdk_config::{SdkConfig, Builder};
+    /// use aws_sdk_computeoptimizer::config::{Builder, Config};
+    ///
+    /// fn override_http_connector(builder: &mut Builder) {
+    ///     let https_connector = hyper_rustls::HttpsConnectorBuilder::new()
+    ///         .with_webpki_roots()
+    ///         .https_only()
+    ///         .enable_http1()
+    ///         .enable_http2()
+    ///         .build();
+    ///     let smithy_connector = hyper_ext::Adapter::builder()
+    ///         // Optionally set things like timeouts as well
+    ///         .connector_settings(
+    ///             ConnectorSettings::builder()
+    ///                 .connect_timeout(Duration::from_secs(5))
+    ///                 .build()
+    ///         )
+    ///         .build(https_connector);
+    ///     builder.set_http_connector(Some(smithy_connector));
+    /// }
+    ///
+    /// let mut builder = aws_sdk_computeoptimizer::Config::builder();
+    /// override_http_connector(&mut builder);
+    /// let config = builder.build();
+    /// # }
+    /// # }
+    /// ```
+    pub fn set_http_connector(
+        &mut self,
+        http_connector: Option<impl Into<aws_smithy_client::http_connector::HttpConnector>>,
+    ) -> &mut Self {
+        self.http_connector = http_connector.map(|inner| inner.into());
+        self
+    }
     /// Overrides the endpoint resolver to use when making requests.
     ///
     /// When unset, the client will used a generated endpoint resolver based on the endpoint metadata
@@ -339,6 +429,7 @@ impl Builder {
             sleep_impl: self.sleep_impl,
             timeout_config: self.timeout_config,
             app_name: self.app_name,
+            http_connector: self.http_connector,
             endpoint_resolver: self.endpoint_resolver.unwrap_or_else(|| {
                 std::sync::Arc::new(aws_endpoint::EndpointShim::from_resolver(
                     crate::aws_endpoint::endpoint_resolver(),
@@ -364,6 +455,7 @@ impl From<&aws_types::sdk_config::SdkConfig> for Builder {
         builder.set_sleep_impl(input.sleep_impl());
         builder.set_credentials_provider(input.credentials_provider().cloned());
         builder.set_app_name(input.app_name().cloned());
+        builder.set_http_connector(input.http_connector().cloned());
         builder
     }
 }

@@ -3,19 +3,22 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use crate::dvr::{Action, ConnectionId, Direction, Event};
-use aws_smithy_http::body::SdkBody;
-use aws_smithy_http::result::ConnectorError;
-use bytes::{Bytes, BytesMut};
-use http::{Request, Version};
-use http_body::Body;
 use std::collections::{HashMap, VecDeque};
 use std::error::Error;
 use std::ops::DerefMut;
 use std::sync::atomic::{AtomicUsize, Ordering};
 use std::sync::{Arc, Mutex};
 use std::task::{Context, Poll};
+
+use bytes::{Bytes, BytesMut};
+use http::{Request, Version};
+use http_body::Body;
 use tokio::task::JoinHandle;
+
+use aws_smithy_http::body::SdkBody;
+use aws_smithy_http::result::ConnectorError;
+
+use crate::dvr::{Action, ConnectionId, Direction, Event};
 
 /// Wrapper type to enable optionally waiting for a future to complete
 #[derive(Debug)]
@@ -227,7 +230,7 @@ impl tower::Service<http::Request<SdkBody>> for ReplayingConnection {
                 return Box::pin(std::future::ready(Err(ConnectorError::other(
                     format!("no data for event {}. req: {:?}", event_id.0, req).into(),
                     None,
-                ))))
+                ))));
             }
         };
 

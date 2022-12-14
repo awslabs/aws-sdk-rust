@@ -43,8 +43,9 @@ async fn generate_random_cn() {
     let conf = Config::builder()
         .region(Region::new("cn-north-1"))
         .credentials_provider(creds)
+        .http_connector(conn.clone())
         .build();
-    let client = kms::Client::from_conf_conn(conf, conn.clone());
+    let client = kms::Client::from_conf(conf);
     let _ = client
         .generate_random()
         .number_of_bytes(64)

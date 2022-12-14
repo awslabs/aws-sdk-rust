@@ -148,6 +148,7 @@ async fn movies_it() {
     let conn = movies_it_test_connection(); // RecordingConnection::https();
     let conf = dynamodb::Config::builder()
         .region(Region::new("us-east-1"))
+        .http_connector(conn.clone())
         .credentials_provider(Credentials::new(
             "AKNOTREAL",
             "NOT_A_SECRET",
@@ -156,7 +157,7 @@ async fn movies_it() {
             "test",
         ))
         .build();
-    let client = Client::from_conf_conn(conf, conn.clone());
+    let client = Client::from_conf(conf);
 
     create_table(&client, table_name).await;
 

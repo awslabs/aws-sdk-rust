@@ -14,6 +14,7 @@ rustdoc-args = ["--cfg", "docsrs"]
 
 [features]
 hardcoded-credentials = []
+examples = ["aws-smithy-client/client-hyper", "aws-smithy-client/rustls", "hyper-rustls"]
 
 [dependencies]
 tracing = "0.1"
@@ -35,6 +36,11 @@ version = "0.51.0"
 [dependencies.aws-smithy-http]
 path = "../aws-smithy-http"
 version = "0.51.0"
+
+[dependencies.hyper-rustls]
+version = "0.23.0"
+optional = true
+features = ["rustls-native-certs", "http2", "webpki-roots"]
 
 [dev-dependencies]
 futures-util = "0.3.16"

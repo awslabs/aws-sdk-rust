@@ -4,22 +4,19 @@
  */
 
 use aws_http::user_agent::AwsUserAgent;
-use aws_sdk_s3::{
-    middleware::DefaultMiddleware, model::ObjectAttributes, operation::GetObjectAttributes,
-    Credentials, Region,
-};
-use aws_smithy_client::{test_connection::TestConnection, Client as CoreClient};
+use aws_sdk_s3::{model::ObjectAttributes, Client, Credentials, Region};
+use aws_smithy_client::test_connection::TestConnection;
 use aws_smithy_http::body::SdkBody;
-use std::time::{Duration, UNIX_EPOCH};
-
-pub type Client<C> = CoreClient<C, DefaultMiddleware>;
+use aws_types::{credentials::SharedCredentialsProvider, SdkConfig};
+use std::{
+    convert::Infallible,
+    time::{Duration, UNIX_EPOCH},
+};
 
 const RESPONSE_BODY_XML: &[u8] = b"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<GetObjectAttributesResponse xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\"><Checksum><ChecksumSHA1>e1AsOh9IyGCa4hLN+2Od7jlnP14=</ChecksumSHA1></Checksum></GetObjectAttributesResponse>";
 
 #[tokio::test]
 async fn ignore_invalid_xml_body_root() {
-    tracing_subscriber::fmt::init();
-
     let conn = TestConnection::new(vec![
         (http::Request::builder()
              .header("x-amz-object-attributes", "Checksum")
@@ -45,35 +42,39 @@ async fn ignore_invalid_xml_body_root() {
              .body(RESPONSE_BODY_XML)
              .unwrap())
     ]);
-    let creds = Credentials::new(
-        "ANOTREAL",
-        "notrealrnrELgWzOk3IfjzDKtFBhDby",
-        Some("notarealsessiontoken".to_string()),
-        None,
-        "test",
-    );
-    let conf = aws_sdk_s3::Config::builder()
-        .credentials_provider(creds)
-        .region(Region::new("us-east-1"))
-        .build();
-    let client = Client::new(conn.clone());
 
-    let mut op = GetObjectAttributes::builder()
+    let sdk_config = SdkConfig::builder()
+        .credentials_provider(SharedCredentialsProvider::new(Credentials::new(
+            "ANOTREAL",
+            "notrealrnrELgWzOk3IfjzDKtFBhDby",
+            Some("notarealsessiontoken".to_string()),
+            None,
+            "test",
+        )))
+        .region(Region::new("us-east-1"))
+        .http_connector(conn.clone())
+        .build();
+    let client = Client::new(&sdk_config);
+
+    let _ = client
+        .get_object_attributes()
         .bucket("some-test-bucket")
         .key("test.txt")
         .object_attributes(ObjectAttributes::Checksum)
-        .build()
+        .customize()
+        .await
         .unwrap()
-        .make_operation(&conf)
+        .map_operation(|mut op| {
+            op.properties_mut()
+                .insert(UNIX_EPOCH + Duration::from_secs(1624036048));
+            op.properties_mut().insert(AwsUserAgent::for_tests());
+
+            Result::Ok::<_, Infallible>(op)
+        })
+        .unwrap()
+        .send()
         .await
         .unwrap();
-    op.properties_mut()
-        .insert(UNIX_EPOCH + Duration::from_secs(1624036048));
-    op.properties_mut().insert(AwsUserAgent::for_tests());
-
-    let res = client.call(op).await.unwrap();
 
     conn.assert_requests_match(&[]);
-
-    println!("res: {:#?}", res)
 }

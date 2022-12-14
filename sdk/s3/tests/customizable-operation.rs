@@ -3,32 +3,31 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use aws_config::SdkConfig;
 use aws_http::user_agent::AwsUserAgent;
-use aws_sdk_s3::{Credentials, Region};
-use aws_smithy_async::rt::sleep::TokioSleep;
+use aws_sdk_s3::{Client, Credentials, Region};
 use aws_smithy_client::test_connection::capture_request;
+use aws_types::credentials::SharedCredentialsProvider;
 
 use std::convert::Infallible;
-use std::sync::Arc;
 use std::time::{Duration, UNIX_EPOCH};
 
 #[tokio::test]
-async fn test_s3_ops_are_customizable() -> Result<(), aws_sdk_s3::Error> {
-    let creds = Credentials::new(
-        "ANOTREAL",
-        "notrealrnrELgWzOk3IfjzDKtFBhDby",
-        Some("notarealsessiontoken".to_string()),
-        None,
-        "test",
-    );
-    let conf = aws_sdk_s3::Config::builder()
-        .credentials_provider(creds)
-        .region(Region::new("us-east-1"))
-        .sleep_impl(Arc::new(TokioSleep::new()))
-        .build();
+async fn test_s3_ops_are_customizable() {
     let (conn, rcvr) = capture_request(None);
+    let sdk_config = SdkConfig::builder()
+        .credentials_provider(SharedCredentialsProvider::new(Credentials::new(
+            "ANOTREAL",
+            "notrealrnrELgWzOk3IfjzDKtFBhDby",
+            Some("notarealsessiontoken".to_string()),
+            None,
+            "test",
+        )))
+        .region(Region::new("us-east-1"))
+        .http_connector(conn.clone())
+        .build();
 
-    let client = aws_sdk_s3::Client::from_conf_conn(conf, conn);
+    let client = Client::new(&sdk_config);
 
     let op = client
         .list_buckets()
@@ -70,6 +69,4 @@ async fn test_s3_ops_are_customizable() -> Result<(), aws_sdk_s3::Error> {
         auth_header.to_str().unwrap(),
         snapshot_signature
     );
-
-    Ok(())
 }
