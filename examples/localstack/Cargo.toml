@@ -10,7 +10,7 @@ http = "0.2"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.52.0"
+version = "0.51.0"
 
 [dependencies.aws-sdk-s3]
 path = "../../sdk/s3"
@@ -22,11 +22,11 @@ version = "0.22.0"
 
 [dependencies.aws-types]
 path = "../../sdk/aws-types"
-version = "0.52.0"
+version = "0.51.0"
 
 [dependencies.aws-smithy-http]
 path = "../../sdk/aws-smithy-http"
-version = "0.52.0"
+version = "0.51.0"
 
 [dependencies.tokio]
 version = "1.20.1"

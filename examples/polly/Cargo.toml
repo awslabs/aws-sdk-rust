@@ -10,7 +10,7 @@ bytes = "1"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.52.0"
+version = "0.51.0"
 
 [dependencies.aws-sdk-polly]
 path = "../../sdk/polly"

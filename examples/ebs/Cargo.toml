@@ -11,7 +11,7 @@ sha2 = "0.9.5"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.52.0"
+version = "0.51.0"
 
 [dependencies.aws-sdk-ebs]
 path = "../../sdk/ebs"

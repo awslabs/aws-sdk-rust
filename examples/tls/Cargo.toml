@@ -18,11 +18,11 @@ rustls = "0.20.6"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.52.0"
+version = "0.51.0"
 
 [dependencies.aws-smithy-client]
 path = "../../sdk/aws-smithy-client"
-version = "0.52.0"
+version = "0.51.0"
 
 [dependencies.aws-sdk-kms]
 default-features = false

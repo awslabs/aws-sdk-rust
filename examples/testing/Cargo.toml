@@ -15,7 +15,7 @@ serde_json = "1"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.52.0"
+version = "0.51.0"
 
 [dependencies.aws-sdk-s3]
 path = "../../sdk/s3"
@@ -24,7 +24,7 @@ version = "0.22.0"
 [dependencies.aws-smithy-client]
 features = ["test-util"]
 path = "../../sdk/aws-smithy-client"
-version = "0.52.0"
+version = "0.51.0"
 
 [dependencies.tokio]
 version = "1.20.1"

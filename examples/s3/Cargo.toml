@@ -26,11 +26,11 @@ rand = "0.5.0"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.52.0"
+version = "0.51.0"
 
 [dependencies.aws-endpoint]
 path = "../../sdk/aws-endpoint"
-version = "0.52.0"
+version = "0.51.0"
 
 [dependencies.aws-sdk-s3]
 path = "../../sdk/s3"
@@ -55,7 +55,7 @@ features = ["serde", "v4"]
 [dependencies.aws-smithy-http]
 features = ["rt-tokio"]
 path = "../../sdk/aws-smithy-http"
-version = "0.52.0"
+version = "0.51.0"
 
 [dependencies.futures-util]
 version = "0.3.21"
