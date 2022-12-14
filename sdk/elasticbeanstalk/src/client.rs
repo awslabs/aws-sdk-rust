@@ -6322,13 +6322,25 @@ pub mod fluent_builders {
 
 impl Client {
     /// Creates a new client from an [SDK Config](aws_types::sdk_config::SdkConfig).
-    #[cfg(any(feature = "rustls", feature = "native-tls"))]
+    ///
+    /// # Panics
+    ///
+    /// - This method will panic if the `sdk_config` is missing an async sleep implementation. If you experience this panic, set
+    ///     the `sleep_impl` on the Config passed into this function to fix it.
+    /// - This method will panic if the `sdk_config` is missing an HTTP connector. If you experience this panic, set the
+    ///     `http_connector` on the Config passed into this function to fix it.
     pub fn new(sdk_config: &aws_types::sdk_config::SdkConfig) -> Self {
         Self::from_conf(sdk_config.into())
     }
 
     /// Creates a new client from the service [`Config`](crate::Config).
-    #[cfg(any(feature = "rustls", feature = "native-tls"))]
+    ///
+    /// # Panics
+    ///
+    /// - This method will panic if the `conf` is missing an async sleep implementation. If you experience this panic, set
+    ///     the `sleep_impl` on the Config passed into this function to fix it.
+    /// - This method will panic if the `conf` is missing an HTTP connector. If you experience this panic, set the
+    ///     `http_connector` on the Config passed into this function to fix it.
     pub fn from_conf(conf: crate::Config) -> Self {
         let retry_config = conf
             .retry_config()
@@ -6357,15 +6369,25 @@ impl Client {
         });
 
         let builder = aws_smithy_client::Builder::new();
+
         let builder = match connector {
             // Use provided connector
             Some(c) => builder.connector(c),
-            // Use default connector based on enabled features
-            None => builder.dyn_https_connector(
-                aws_smithy_client::http_connector::ConnectorSettings::from_timeout_config(
-                    &timeout_config,
-                ),
-            ),
+            None => {
+                #[cfg(any(feature = "rustls", feature = "native-tls"))]
+                {
+                    // Use default connector based on enabled features
+                    builder.dyn_https_connector(
+                        aws_smithy_client::http_connector::ConnectorSettings::from_timeout_config(
+                            &timeout_config,
+                        ),
+                    )
+                }
+                #[cfg(not(any(feature = "rustls", feature = "native-tls")))]
+                {
+                    panic!("No HTTP connector was available. Enable the `rustls` or `native-tls` crate feature or set a connector to fix this.");
+                }
+            }
         };
         let mut builder = builder
             .middleware(aws_smithy_client::erase::DynMiddleware::new(
