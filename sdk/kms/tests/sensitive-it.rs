@@ -55,7 +55,12 @@ async fn client_is_debug() {
 async fn client_is_clone() {
     let conf = kms::Config::builder().build();
     let client = kms::Client::from_conf(conf);
-    let _ = client.clone();
+
+    fn is_clone(it: impl Clone) {
+        drop(it)
+    }
+
+    is_clone(client);
 }
 
 #[test]

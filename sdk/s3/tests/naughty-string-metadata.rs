@@ -74,7 +74,7 @@ async fn test_s3_signer_with_naughty_string_metadata() {
     for (idx, line) in NAUGHTY_STRINGS.split('\n').enumerate() {
         // add lines to metadata unless they're a comment or empty
         // Some naughty strings aren't valid HeaderValues so we skip those too
-        if !line.starts_with("#") && !line.is_empty() && HeaderValue::from_str(line).is_ok() {
+        if !line.starts_with('#') && !line.is_empty() && HeaderValue::from_str(line).is_ok() {
             let key = format!("line-{}", idx);
 
             builder = builder.metadata(key, line);

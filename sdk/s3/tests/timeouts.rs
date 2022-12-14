@@ -81,11 +81,10 @@ async fn test_read_timeout() {
         (
             async move {
                 while shutdown_receiver.try_recv().is_err() {
-                    if let Ok(result) = timeout(Duration::from_millis(100), listener.accept()).await
+                    if let Ok(Ok((_socket, _))) =
+                        timeout(Duration::from_millis(100), listener.accept()).await
                     {
-                        if let Ok((_socket, _)) = result {
-                            tokio::time::sleep(Duration::from_millis(1000)).await;
-                        }
+                        tokio::time::sleep(Duration::from_millis(1000)).await;
                     }
                 }
             },

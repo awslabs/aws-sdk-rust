@@ -244,7 +244,7 @@ pub fn forbid_headers(
 ) -> Result<(), ProtocolTestFailure> {
     for key in forbidden_headers {
         // Protocol tests store header lists as comma-delimited
-        if let Some(value) = normalized_header(headers, *key) {
+        if let Some(value) = normalized_header(headers, key) {
             return Err(ProtocolTestFailure::ForbiddenHeader {
                 forbidden: key.to_string(),
                 found: format!("{}: {}", key, value),
@@ -260,7 +260,7 @@ pub fn require_headers(
 ) -> Result<(), ProtocolTestFailure> {
     for key in required_headers {
         // Protocol tests store header lists as comma-delimited
-        if normalized_header(headers, *key).is_none() {
+        if normalized_header(headers, key).is_none() {
             return Err(ProtocolTestFailure::MissingHeader {
                 expected: key.to_string(),
             });

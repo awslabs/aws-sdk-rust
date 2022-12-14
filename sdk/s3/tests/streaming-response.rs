@@ -111,15 +111,13 @@ Hello"#;
                 }
             }
 
-            if socket.writable().await.is_ok() {
-                if time_to_respond {
-                    // The content length is 12 but we'll only write 5 bytes
-                    socket.try_write(&response).unwrap();
-                    // We break from the R/W loop after sending a partial response in order to
-                    // close the connection early.
-                    debug!("faulty server has written partial response, now closing connection");
-                    break;
-                }
+            if socket.writable().await.is_ok() && time_to_respond {
+                // The content length is 12 but we'll only write 5 bytes
+                socket.try_write(response).unwrap();
+                // We break from the R/W loop after sending a partial response in order to
+                // close the connection early.
+                debug!("faulty server has written partial response, now closing connection");
+                break;
             }
         }
     }

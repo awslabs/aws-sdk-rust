@@ -140,7 +140,7 @@ fn validate_identifier(input: &str) -> Result<&str, ()> {
                     .iter()
                     .any(|c| *c == ch)
         })
-        .then(|| input)
+        .then_some(input)
         .ok_or(())
 }
 
