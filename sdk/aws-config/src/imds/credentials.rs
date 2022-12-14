@@ -152,7 +152,7 @@ impl ImdsCredentialsProvider {
             Err(ImdsError::ErrorResponse(context))
                 if context.response().status().as_u16() == 404 =>
             {
-                tracing::info!(
+                tracing::warn!(
                     "received 404 from IMDS when loading profile information. \
                     Hint: This instance may not have an IAM role associated."
                 );

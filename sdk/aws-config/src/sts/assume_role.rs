@@ -235,8 +235,6 @@ impl AssumeRoleProviderBuilder {
 
 impl Inner {
     async fn credentials(&self) -> credentials::Result {
-        tracing::info!("assuming role");
-
         tracing::debug!("retrieving assumed credentials");
         let op = self
             .op
@@ -281,7 +279,7 @@ impl ProvideCredentials for Inner {
     {
         future::ProvideCredentials::new(
             self.credentials()
-                .instrument(tracing::info_span!("assume_role")),
+                .instrument(tracing::debug_span!("assume_role")),
         )
     }
 }

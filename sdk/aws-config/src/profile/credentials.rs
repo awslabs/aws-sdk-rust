@@ -46,10 +46,7 @@ impl ProvideCredentials for ProfileFileCredentialsProvider {
     where
         Self: 'a,
     {
-        future::ProvideCredentials::new(self.load_credentials().instrument(tracing::debug_span!(
-            "load_credentials",
-            provider = %"Profile"
-        )))
+        future::ProvideCredentials::new(self.load_credentials())
     }
 }
 
