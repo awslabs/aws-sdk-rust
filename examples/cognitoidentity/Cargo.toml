@@ -10,7 +10,7 @@ chrono = "0.4"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.51.0"
+version = "0.52.0"
 
 [dependencies.aws-sdk-cognitoidentity]
 path = "../../sdk/cognitoidentity"
@@ -19,7 +19,7 @@ version = "0.22.0"
 [dependencies.aws-smithy-types-convert]
 features = ["convert-chrono"]
 path = "../../sdk/aws-smithy-types-convert"
-version = "0.51.0"
+version = "0.52.0"
 
 [dependencies.tokio]
 version = "1.20.1"

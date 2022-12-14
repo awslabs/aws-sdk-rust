@@ -19,7 +19,7 @@ serde_json = "1"
 
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
-version = "0.51.0"
+version = "0.52.0"
 
 [dependencies.aws-sdk-iam]
 path = "../../sdk/iam"
@@ -35,12 +35,12 @@ version = "0.22.0"
 
 [dependencies.aws-hyper]
 path = "../../sdk/aws-hyper"
-version = "0.51.0"
+version = "0.52.0"
 
 [dependencies.aws-types]
 features = ["hardcoded-credentials"]
 path = "../../sdk/aws-types"
-version = "0.51.0"
+version = "0.52.0"
 
 [dependencies.tokio]
 version = "1.20.1"
